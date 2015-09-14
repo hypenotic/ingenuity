@@ -6,6 +6,8 @@ node_modules/
 
 # Wordpress specific
 
+styleguide/wordpress/
+styleguide/wordpress/*
 wordpress/
 wordpress/*
 wp-config.php
