@@ -1,0 +1,35 @@
+aside {
+	@include media($bp-large) {
+		@include span-columns(3);
+		// float: left;
+		position: fixed;
+		max-width: 200px;
+    }
+	// margin-top: 10px;
+	@include media($bp-small) {
+		display: none;
+    }
+}
+
+.sidebar__nav ul {
+	list-style-type: none;
+	padding-left: 0;
+	li {
+		padding: 5px 0;
+	}
+}
+
+#left {
+    // background: red;
+}
+#left.stick {
+    position:fixed;
+    top: 0;
+}
+#left.unstick {
+	position: relative;
+}
+
+
+#mainmenu li.selected { font-weight: 500; }
+

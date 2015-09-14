@@ -1,0 +1,40 @@
+// LOGO
+
+ul.logo__list {
+	li {
+		padding: 5px 0;
+		// text-indent: 20px;
+	}
+}
+
+.logopackage {
+	width: 266px;
+	height: 151px;
+	border: 1px solid $logo-pack-color;
+	margin: 30px auto;
+	figcaption {
+		background-color: $button-color;
+		height: 42px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		a {
+			text-decoration: none;
+		}
+		h3 {
+			margin: 8px;
+		}
+		img {
+			margin: 8px;
+		}
+	}
+}
+
+.logopackage__logocontainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		margin: 15px;
+	}
+}

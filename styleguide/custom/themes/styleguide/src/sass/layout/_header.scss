@@ -1,0 +1,26 @@
+header {
+	width: 100%;
+	min-height: 150px;
+	display: flex;
+	// justify-content: flex-end;
+	h1 {
+		flex: 1 0 60%;
+	}
+	.logo__holder {
+		flex: 1 0 40%;
+		display: flex;
+		justify-content: flex-end;
+		img {
+			max-width: 116px;
+			max-height: 103px;
+			margin-top: 42px;
+			margin-right: 0px;
+			@include media($bp-small) {
+				margin-top: 20px;
+				width: 70%;
+				height: 70%;
+		    }
+		}
+	}
+	
+}

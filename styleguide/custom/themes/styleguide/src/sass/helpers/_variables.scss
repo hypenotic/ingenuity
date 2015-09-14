@@ -1,0 +1,51 @@
+$title-font: "futura-pt",sans-serif;
+$p-font: 'chaparral-pro',sans-serif;
+$main-headings: "futura-pt",sans-serif;
+$feature-font: "adelle",serif;
+$script-font: "grafolita-script",sans-serif;
+$quote-src: 'Lucida Grande',sans-serif;
+
+$main-body-font: $p-font;
+
+//	Modular Scale
+$modular-scale-ratio: $perfect-fourth;
+$modular-scale-base: 1.1rem;
+
+// Sizes
+$base-line-height: $modular-scale-base * 1.5;
+$base-border-radius: rem(3);
+
+// Colors
+$white: 	rgba(255, 255, 255, 1);
+$black: 	rgba(0, 0, 0, 1);
+$grey: 		rgba(151, 151, 151, 1);
+$green: 	rgba(57, 148 , 107, 1);
+$orange: 	rgba(223, 110, 29, 1);
+$yellow:	rgba(253, 191, 86, 1);
+
+//Colours Column
+$color-column-one: $green;
+$color-column-two: $orange;
+$color-column-three: $yellow;
+
+// Background Color
+$body-bg-color: $white;
+
+// Buttons
+$button-color: $green;
+$button-hover-color: $green;
+
+// Font Colors
+$base-font-color: $black;
+$base-accent-color: $green;
+$light-font-color: $white;
+$header-font-color: $green;
+$headline-font-color: $white;
+
+// Link Colors
+$base-link-color: $base-font-color;
+$hover-link-color: darken($base-accent-color, 15);
+$hover-button-color: $hover-link-color;
+
+// Border color
+$logo-pack-color: $grey;

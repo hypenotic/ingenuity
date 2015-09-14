@@ -1,0 +1,45 @@
+// COLORS
+.colors__holder {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	@include media($bp-small) {
+		flex-direction: column;
+
+    }
+}
+
+.colors__column-3 {
+	width: 193px;
+	height: 294px;
+	// @include span-columns(3);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include media($bp-small) {
+		margin: 10px;
+    }
+}
+
+.colors figcaption {
+	h3.colors__pms {
+		padding-bottom: 25px;
+	}
+	h3.colors__hex {
+		padding-top: 25px;
+	}
+}
+
+.colors__column-3--first {
+	background-color: $color-column-one;
+}
+
+.colors__column-3-second {
+	background-color: $color-column-two;
+}
+
+.colors__column-3-third {
+	background-color: $color-column-three;
+}

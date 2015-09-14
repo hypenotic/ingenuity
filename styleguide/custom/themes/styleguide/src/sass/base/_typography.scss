@@ -1,0 +1,252 @@
+// Modular scale is in relation to 1.1rem = 22px
+
+h1 {
+	// font-family: 'FuturaStd-Bold';
+	font-family: $title-font;
+	font-style: normal;
+	font-weight: 700;
+	font-size: modular-scale(0, 3.33rem); //60px
+	line-height: modular-scale(0, 3.44rem); //62px
+}
+
+h1.title {
+	float: left;
+	@include media($bp-small) {
+		font-size: modular-scale(3); 
+		line-height: modular-scale(3); 
+    }
+}
+
+h2 {
+	font-family: $main-headings;
+	font-weight: 500;
+	font-size: modular-scale(3, 1rem); //32px
+	line-height: modular-scale(1, 1rem);
+}
+
+h3 {
+	font-family: $main-headings;
+	font-weight: 700;
+	font-size: modular-scale(1); 
+	line-height: modular-scale(1); 
+}
+
+//h3.overview__tagline,
+.overview__content h3 {
+	font-family: $main-body-font;
+	font-style: italic;
+	font-weight: 300;
+	font-size: modular-scale(0, 1.25rem); //20px
+	line-height: modular-scale(1, 1.25rem);
+}
+
+h3.tone__principals, 
+h3.photography__principals,
+h3.typography__fonts,
+#templates ul li {
+	font-family: $main-headings;
+	font-style: normal;
+	font-weight: 300;
+	font-size: modular-scale(1, 1.25rem); //20px
+	line-height: modular-scale(0, 1.25rem);
+	// margin-bottom: 0;
+}
+
+h3.tone__principals, 
+h3.photography__principals,
+h3.typography__fonts {
+	margin-bottom: modular-scale(-2);
+}
+
+#templates ul li {
+	line-height: modular-scale(2, 1.25rem);
+}
+
+// MAIN ============================
+
+.font-sample {
+ 	margin: 0;
+}
+
+main {
+	p { 
+		font-family: $main-body-font;
+		font-weight: 400;
+		font-size: modular-scale(0);
+		line-height: modular-scale(1);
+		margin-top: 0;
+	}
+	p.no-space {
+		margin: 0;
+	}
+}
+
+// SIDEBAR ============================
+
+aside h3 {
+	font-size: modular-scale(0, 1.25rem); //20px
+	// line-height: modular-scale(3, 1.25rem); //20px
+	// margin-bottom: 0;
+}
+
+.sidebar__nav ul {
+	font-family: $main-headings;
+	font-weight: 300;
+	// font-size: modular-scale(-4, 5rem);
+	font-size: modular-scale(1);
+	line-height: modular-scale(2);
+	margin: 0;
+	li {
+		// padding: 5px 0;
+		a {
+			text-decoration: none;
+			color: $base-font-color;
+			&:hover {
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+.sidebar__button,
+figure.colors__column-3 figcaption {
+	h3 {
+		font-family: $main-headings;
+		font-weight: 300;
+		font-size: modular-scale(1);
+		line-height: modular-scale(1);
+		color: $white;
+		margin: 0;
+	}
+}
+
+// LOGO SECTION ============================
+
+h3.logopackage__caption {
+	font-family: $main-headings;
+	font-weight: 300;
+	font-size: modular-scale(0, 1.25rem); //20px
+	line-height: modular-scale(0, 1.25rem); //20px
+	color: $white;
+}
+
+.logo__list,
+.logo__content ul {
+	font-family: $main-body-font;
+	font-weight: 300;
+	font-size: modular-scale(0); 
+	line-height: modular-scale(1); 
+}
+
+// TYPOGRAPHY SECTION ============================
+
+p.custom-heading {
+	margin-bottom: 20px;
+}
+
+.typography__content {
+	h4 {
+		font-family: $main-headings;
+		font-style: normal;
+		font-weight: 300;
+		font-size: modular-scale(1, 1.25rem); //20px
+		line-height: modular-scale(0, 1.25rem);
+		margin-bottom: 15px;
+	}
+}
+
+h1.font-title {
+	font-family: $feature-font;
+	font-weight: 700;
+	font-size: modular-scale(0, 3.125rem); 
+	line-height: modular-scale(0, 3.125rem); 
+}
+
+h2.font-subtitle {
+	font-family: $feature-font;
+	font-size: modular-scale(0, 2.22rem); //40px
+	line-height: modular-scale(0, 3.33rem); //60px
+}
+
+h3.font-sect-title {
+	font-family: $feature-font;
+	font-weight: 700;
+	font-size: modular-scale(0, 1.23rem); //23px
+	line-height: modular-scale(0, 1.94rem); //35px
+	text-transform: uppercase;
+}
+
+h4.font-sect-subtitle {
+	font-family: $script-font;
+	font-weight: 600;
+	font-size: modular-scale(0, 1.33rem); //24px
+	line-height: modular-scale(0, 1.83rem); //33px
+}
+
+p.typography__introtext {
+	font-family: $feature-font;
+	font-style: italic;
+	font-weight: 400;
+	font-size: modular-scale(0);
+	line-height: modular-scale(0, 1.33rem);
+	margin-top: modular-scale(0, 1.25rem); //20px
+}
+
+p.typography__bodycopy {
+	font-family: $feature-font;
+	font-weight: 400;
+	font-size: modular-scale(0);
+	line-height: modular-scale(0, 1.25rem); //20px
+	margin-top: modular-scale(0, 1.25rem); //20px
+}
+
+p.typography__blockquote {
+	font-family: $script-font;
+	font-weight: 600;
+	font-size: modular-scale(0, 1.22rem);
+	line-height: modular-scale(0, 1.44rem);
+	color: #181818;
+	margin-bottom: 0;
+	margin-top: modular-scale(0, 1.25rem); //20px
+}
+
+p.typography__blockquote--src {
+	font-family: $quote-src;
+	font-size: modular-scale(0, 0.78rem); //14px
+	// line-height: modular-scale(0, 1.33rem); //24px
+	line-height: modular-scale(3);
+	color: #131313;
+	// margin-top: modular-scale(-3);
+	text-transform: uppercase;
+}
+
+// PHOTOGRAPHY SECTION ==================
+	// NOTE JULY 31st
+		// DON'T FORGET TO COMBINE THESE STYLES UNDER A GROUP OF SELECTORS
+		// (LOOK AT TONE SECTION BELOW SAME STYLING!)
+
+.photography__content {
+	h4 {
+		font-family: $main-headings;
+		font-style: normal;
+		font-weight: 300;
+		font-size: modular-scale(1, 1.25rem); //20px
+		line-height: modular-scale(0, 1.25rem);
+		margin-bottom: 15px;
+	}
+}
+
+
+// TONE SECTION ======================
+
+.tone__content {
+	h4 {
+		font-family: $main-headings;
+		font-style: normal;
+		font-weight: 300;
+		font-size: modular-scale(1, 1.25rem); //20px
+		line-height: modular-scale(0, 1.25rem);
+		margin-bottom: 15px;
+	}
+}
+
