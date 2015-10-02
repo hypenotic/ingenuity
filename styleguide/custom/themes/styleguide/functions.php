@@ -3,6 +3,7 @@ include('includes/wp-cuztom-helper/cuztom.php');
 //Include post custom posts type. Dependent on /wp-cuztom-helper classes.
 // include('includes/wp-cuztom-posts/custom-post-team.php'); example from pfennings
 include('includes/wp-cuztom-posts/custom-post-styleguide.php');
+include('includes/wp-cuztom-posts/custom-post-about.php');
 include('includes/wp-cuztom-posts/custom-post-overview.php');
 include('includes/wp-cuztom-posts/custom-post-logo.php');
 include('includes/wp-cuztom-posts/custom-post-colour.php');
@@ -18,4 +19,9 @@ require_once('includes/functions/enqueue-script.php');
 
 //Load shortcodes
 require_once('includes/shortcodes/template-bullets.php');
+
+// Increase File Upload Size
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
 ?>

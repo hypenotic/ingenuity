@@ -1,10 +1,11 @@
 body {
-
+	overflow-x: hidden;
 }
 
-main {
+main,
+.main-wrapper {
 	// max-width: 1024px;
-	margin: 0 auto;
+	// margin: auto;
 	padding: 0 50px 50px;
 	@include outer-container;
 	@include media($bp-small) {
@@ -12,20 +13,74 @@ main {
     }
 }
 
-.contentwrapper {
+.content-wrapper {
+	padding-top: 120px;
+	z-index: 998;
 }
 
-.mainarticles {
+.main-articles {
+	position: relative;
+	background-color: $white;
+	padding: 20px 10px;
 	@include media($bp-large) {
 		@include span-columns(9);
 		@include shift(3);
-		// float: left;
+		float: none;
+		padding: 10px 40px 40px;
+		// margin-top: -200px;
+		// margin-left: 30px;
+    }
+    // border: 1px solid lightgrey;
+    img {
+    	position: relative;
+    	width: 100%;
+		height: auto;
+    }
+    blockquote {
+    	margin-top: 40px;
+    	margin-bottom: 40px;
+    	margin-right: -70px;
+    	border-left: 5px solid lightgrey;
+    	padding-left: 15px;
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+    	@include media($bp-med) {
+    	    margin-right: -10px;
+    	}
+    	@include media($bp-small) {
+    	    margin-top: 40px;
+    	    margin-bottom: 40px;
+    	    padding-left: 15px;
+    	    margin-left: 10px;
+    	}
+    }
+    ul {
+    	margin: 0;
+    	li {
+    		padding: 5px 0;
+    	}
     }
 }
 
 article {
-	margin-bottom: 70px;
+	// margin-top: 50px;
+	margin-bottom: 120px;
 }
+
+nav.main-nav {
+	height: 75px;
+	background-color: $white;
+}
+
+.hero {
+	height: 350px;
+	margin-left: -50%;
+	margin-right: -50%;
+	background-position: center center;
+	background: lightgrey;
+}
+
+
 
 
 // PHOTOGRAPHY

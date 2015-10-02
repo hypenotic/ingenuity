@@ -32,6 +32,18 @@ $guide->add_meta_box(
             'label'         => 'Main Accent Color',
             'description'   => 'Color for sidebar button, and other accents.',
             'type'          => 'color',
+        ),
+        array(
+            'name'          => 'headercol',
+            'label'         => 'Header Color',
+            'description'   => 'Color for header.',
+            'type'          => 'color',
+        ),
+        array(
+            'name'          => 'headerfont',
+            'label'         => 'Main Title Font',
+            'description'   => '',
+            'type'          => 'text',
         )
     )
 );

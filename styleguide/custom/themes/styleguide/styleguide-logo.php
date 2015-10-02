@@ -8,35 +8,66 @@
 
           <!-- Get custom meta values -->
           <?php 
-            $label = get_post_meta($post->ID,'_logo_label',true);
+            $label      = get_post_meta($post->ID,'_logo_label',true);
             $labelcolor = get_post_meta($post->ID,'_logo_labelc',true);
-            $link = get_post_meta($post->ID,'_logo_upload',true);
-            $plogoId = get_post_meta($post->ID, '_logo_logo_1', true);
-            $plogoUrl = wp_get_attachment_image_src($plogoId,'logo', true);
-            $slogoId = get_post_meta($post->ID, '_logo_logo_2', true);
-            $slogoUrl = wp_get_attachment_image_src($slogoId,'logo', true);
+            $link       = get_post_meta($post->ID,'_logo_upload',true);
+            $plogoId    = get_post_meta($post->ID, '_logo_logo_1', true);
+            $plogoUrl   = wp_get_attachment_image_src($plogoId,'logo', true);
+            $slogoId    = get_post_meta($post->ID, '_logo_logo_2', true);
+            $slogoUrl   = wp_get_attachment_image_src($slogoId,'logo', true);
+
+            $logos      = get_post_meta($post->ID,'_logos',true);
           ?>
 
-          <article id="logo">
-              <h2 class="sidebar-link">Logo</h2>
+      <article id="logo">
+        <h2 class="sidebar-link">Logo</h2>
 
       <div class="logo__content"><?php the_content(); ?></div>
 
       <figure class="logopackage">
           <div class="logopackage__logocontainer">
-              <img src="<?php echo $plogoUrl[0]; ?>" alt="">
-              <img src="<?php echo $slogoUrl[0]; ?>" alt="">
+                <div class="logopackage__single">
+                    <img src="<?php echo $plogoUrl[0]; ?>" alt="">
+                </div>
+                <div class="logopackage__single">
+                    <img src="<?php echo $slogoUrl[0]; ?>" alt="">
+                </div>
           </div>
-  
-          <?php if ($labelcolor): 
-             echo '<figcaption style="background-color: ' . $labelcolor . ';">'; 
-          endif ?>
-              <a href="<?php echo $link; ?>">
-                  <h3 class="logopackage__caption"><?php echo $label; ?></h3>
-              </a>
-              <img src="<?php bloginfo('template_directory'); ?>/src/images/download-white.png" alt="">
-          </figcaption>
       </figure>
+
+      <figure class="logo-samples">
+                    <!-- For loop cycle through Array -->
+                    <?php if($logos) {
+                        foreach($logos as $logo) {
+
+                        // Get custom meta values    
+                        $singlelogo     = $logo['_logo'];
+                        $logourl        = wp_get_attachment_image_src($singlelogo,'banner', true);
+                        $descrip        = $logo['_descrip'];
+                    ?>
+
+                        <figure class="logo-samples__single">
+                            <?php if ($singlelogo) {
+                                echo '<img src="' . $logourl[0] . '" alt="'. $name .'"/>'; 
+                            } else { } ?>
+                            
+                            <figcaption>
+                                <p><?php echo $descrip; ?></p>
+                            </figcaption>
+                        </figure>
+                                
+                    <?php
+                            }
+                        }
+                    ?> <!-- End foreach and if loop for cuztom bundle -->  
+      </figure>
+
+        <figcaption class="logopack__download">
+          <a href="<?php echo $link; ?>">
+            <h3 class="logopackage__caption"><?php echo $label; ?></h3>
+          </a>
+      </figcaption>
+
      </article>
 
       <?php endwhile;

@@ -38,7 +38,7 @@
                         gap = (getScrollTopElement(element) - getScrollTopDocumentAtBegin) / hop_count;
                     
                     if(window.history && typeof window.history.pushState == 'function')
-                        window.history.pushState({}, undefined, url+'#'+id);// Change URL for modern browser
+                        window.history.pushState({}, undefined, url+'#'+id); // Change URL for modern browser
                     
                     for(var i = 1; i <= hop_count; i++)
                     {

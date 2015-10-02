@@ -64,6 +64,12 @@ $type->add_meta_box(
                     'label'         => 'Uppercase?',
                     'description'   => 'Possible values: lowercase, uppercase.',
                     'type'          => 'text'
+                ),
+                array(
+                    'name'          => 'spacing',
+                    'label'         => 'Letter Spacing',
+                    'description'   => '',
+                    'type'          => 'text'
                 )
             )
         )

@@ -86,4 +86,31 @@ $colors->add_meta_box(
             )
         )
 );  
+$colors->add_meta_box(
+    'secondary',
+    'Secondary Color Samples', 
+    array(
+        'bundle',    
+            array( 
+                array(
+                    'name'          => 'hex',
+                    'label'         => 'Color',
+                    'description'   => 'Choose color.',
+                    'type'          => 'color',          
+                ),
+                array(
+                    'name'          => 'pms',
+                    'label'         => 'PMS Value',
+                    'description'   => 'Enter the PMS value (just the number).',
+                    'type'          => 'text',          
+                ),
+                array(
+                    'name'          => 'cmyk',
+                    'label'         => 'CMYK Value',
+                    'description'   => 'Enter CMYK Value',
+                    'type'          => 'text',          
+                )
+            )
+        )
+); 
 ?>

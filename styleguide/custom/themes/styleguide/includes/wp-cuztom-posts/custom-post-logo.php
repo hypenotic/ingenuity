@@ -41,4 +41,25 @@ $guide->add_meta_box(
         )
     )
 );
+$guide->add_meta_box(
+    'logos',
+    'Logo Samples', 
+    array(
+        'bundle',    
+            array( 
+                array(
+                    'name'          => 'logo',
+                    'label'         => 'Logo',
+                    'description'   => '',
+                    'type'          => 'image',
+                ),
+                array(
+                    'name'          => 'descrip',
+                    'label'         => 'Description',
+                    'description'   => '',
+                    'type'          => 'text',          
+                )
+            )
+        )
+);  
 ?>

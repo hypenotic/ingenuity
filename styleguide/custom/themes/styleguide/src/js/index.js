@@ -36,7 +36,7 @@ for (var i = 0; i < menuheadings.length; i++) {
 
         // append 'listItem' (which is a <li>) into 'mainmenu' (which is an <ul>)
         mainmenu.appendChild(listItem);
-};
+}
 
 
 var links = mainmenu.children;
@@ -45,79 +45,53 @@ console.log(links);
 var clickFn = function() {
   var hash = links[i].firstChild.hash;
   console.log(hash);
-}
+};
 
 
-// for (var i = 0; i < links.length; i++) {
-//   // links.item(i).firstChild.onclick = clickFn;
-//    console.log(links[i].firstChild.hash);
-// }
+$('ul#mainmenu li a').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top - 150
+            }, 500);
+            return false;
+        }
+    }
+});
 
 
-// links.addEventListener('click', function() {
-//   console.log('hey!'); 
-// }, false);
+// Make variables to hold some boundary measurements
+var topRange      = 200,  // measure from the top of the viewport to X pixels down
+    edgeMargin    = 500,   // margin above the top or margin from the end of the page
+    contentTop = [];
 
-// FIND A WAY TO DYNAMICALLY CREATE THE CONTAINER ID
+$(document).ready(function(){ 
 
+    // Set up an array of locations based on h2 positions
+     $('#mainmenu').find('a').each(function(){
+      contentTop.push( $( $(this).attr('href') ).offset().top );
+      console.log(contentTop);
+     })
+ 
+ // adjust side menu
+ $(window).scroll(function(){
+  var winTop = $(window).scrollTop(),
+      bodyHt = $(document).height(),
+      vpHt = $(window).height() + edgeMargin;  // viewport height + margin
+  $.each( contentTop, function(i,loc){
+   if ( ( loc > winTop - edgeMargin && ( loc < winTop + topRange || ( winTop + vpHt ) >= bodyHt ) ) ){
+    $('#mainmenu li')
+     .removeClass('selected')
+     .eq(i).addClass('selected');
+   }
+  })
+ })
+  
+})
 
-// CHANGE SIDEBAR LINK CSS WHEN DIV IS IN VIEW
-
-
-// when you click on an sidebar <a> tag, scroll to section
-
-// var el = document.getElementsByClassName('sidebar-anchor');
-
-// var clickerFn = function() {
-// 		var linkhash = this.hash;
-//     console.log(linkhash);
-// };
-
-// for (var i=0; i < el.length; i++) {
-//     // Here we have the same onclick
-//     el.item(i).onclick = clickerFn;
-// }
-
-// set everything outside the onscroll event (less work per scroll)
-// var left      = document.getElementById("left"),
-//     // -60 so it won't be jumpy
-//     stop      = left.offsetTop - 60,
-//     docBody   = document.documentElement || document.body.parentNode || document.body,
-//     hasOffset = window.pageYOffset !== undefined,
-//     scrollTop;
-
-// window.onscroll = function (e) {
-//   // cross-browser compatible scrollTop.
-//   scrollTop = hasOffset ? window.pageYOffset : docBody.scrollTop;
-
-//   // if user scrolls to 60px from the top of the left div
-//   if (scrollTop >= stop) {
-//     // stick the div
-//     left.className = 'stick';
-//   } else {
-//     // release the div
-//     left.className = 'unstick'; 
-//   }
-// }
-
-
-
-
-// STICKY SIDEBAR ======================================
-// var left = document.getElementById("left");
-// var stop = (left.offsetTop - 100);
-
-// window.onscroll = function (e) {
-//     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-//     console.log(scrollTop, left.offsetTop);
-//     // left.offsetTop;
-
-//     if (scrollTop >= stop) {
-//         left.className = 'stick';
-//     } else {
-//         left.className = '';
-//     }
-
-// };
 
 

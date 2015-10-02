@@ -29,7 +29,7 @@ console.log(anchors);
   $('#mainmenu').find('a').click(function(){
    var sel = this,
        newTop = Math.min( contentTop[ $('#mainmenu a').index( $(this) ) ], $(document).height() - $(window).height() ); // get content top or top position if at the document bottom
-   $('html,body').stop().animate({ 'scrollTop' : newTop - 50 }, animationTime, function(){
+   $('html,body').stop().animate({ 'scrollTop' : newTop + 200 }, animationTime, function(){
     window.location.hash = $(sel).attr( 'href' );
    }); // the '- 50' leaves a bit of room above the section you scroll to
    return false;

@@ -1,10 +1,17 @@
 // Modular scale is in relation to 1.1rem = 22px
+body {
+	color: rgba(0,0,0,0.85);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	// margin-bottom: 30px;
+}
 
 h1 {
-	// font-family: 'FuturaStd-Bold';
 	font-family: $title-font;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 400;
 	font-size: modular-scale(0, 3.33rem); //60px
 	line-height: modular-scale(0, 3.44rem); //62px
 }
@@ -18,17 +25,84 @@ h1.title {
 }
 
 h2 {
-	font-family: $main-headings;
-	font-weight: 500;
+	font-family: $big-headings;
+	text-transform: uppercase;
+	font-weight: 800;
 	font-size: modular-scale(3, 1rem); //32px
-	line-height: modular-scale(1, 1rem);
+	line-height: modular-scale(3, 1rem);
+	// margin-bottom: 25px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	@include media($bp-large) {
+	    font-size: modular-scale(5, 1.2rem); //32px
+	    line-height: modular-scale(5, 1.2rem);
+	    margin-bottom: 20px;
+	    margin-top: 20px;
+	}
+	@include media($bp-xlarge) {
+	    font-size: modular-scale(6, 1.15rem); //32px
+	    line-height: modular-scale(6, 1rem);
+	    margin-bottom: 20px;
+	    margin-top: 20px;
+	}
 }
 
 h3 {
 	font-family: $main-headings;
-	font-weight: 700;
-	font-size: modular-scale(1); 
+	font-style: normal;
+	font-weight: 600;
+	font-size: modular-scale(1, 1.1rem); //20px
+	line-height: modular-scale(2, 1.25rem);
+	text-transform: uppercase;
+	@include media($bp-large) {
+	    font-size: modular-scale(2, 1.25rem); //20px
+	    line-height: modular-scale(3, 1.25rem);
+	    margin-bottom: 15px;
+	    padding-top: 20px;
+	}
+}
+
+h4 {
+	font-family: $main-headings;
+	font-style: normal;
+	font-weight: 300;
+	font-size: modular-scale(0, 1.25rem); //20px
+	line-height: modular-scale(1, 1.25rem);
+	text-transform: uppercase;
+	margin-top: 20px;
+	@include media($bp-large) {
+	    font-size: modular-scale(1, 1.25rem); //20px
+	    line-height: modular-scale(2, 1.25rem);
+	}
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+ul {
+	font-family: $p-font;
+	padding-bottom: 15px;
+	font-size: modular-scale(0); 
 	line-height: modular-scale(1); 
+	li {
+		font-weight: 300;
+	}
+}
+
+blockquote {
+	font-style: italic;
+	font-size: modular-scale(3); 
+	line-height: modular-scale(3); 
 }
 
 //h3.overview__tagline,
@@ -38,24 +112,20 @@ h3 {
 	font-weight: 300;
 	font-size: modular-scale(0, 1.25rem); //20px
 	line-height: modular-scale(1, 1.25rem);
+	margin-bottom: 15px;
 }
 
 h3.tone__principals, 
 h3.photography__principals,
 h3.typography__fonts,
 #templates ul li {
-	font-family: $main-headings;
-	font-style: normal;
 	font-weight: 300;
-	font-size: modular-scale(1, 1.25rem); //20px
-	line-height: modular-scale(0, 1.25rem);
-	// margin-bottom: 0;
 }
 
 h3.tone__principals, 
 h3.photography__principals,
 h3.typography__fonts {
-	margin-bottom: modular-scale(-2);
+	// margin-top: 20px;
 }
 
 #templates ul li {
@@ -71,29 +141,95 @@ h3.typography__fonts {
 main {
 	p { 
 		font-family: $main-body-font;
-		font-weight: 400;
-		font-size: modular-scale(0);
-		line-height: modular-scale(1);
+		font-weight: 300;
+		font-size: modular-scale(0, 1rem);
+		line-height: modular-scale(1, 1.2rem);
 		margin-top: 0;
+		margin-bottom: 30px;
+		// letter-spacing: 1px;
+		@include media($bp-large) {
+		    font-size: modular-scale(0);
+		    line-height: modular-scale(1, 1.4rem);
+		}
 	}
 	p.no-space {
 		margin: 0;
 	}
 }
 
+.main-articles {
+	blockquote,
+	blockquote p {
+		font-size: modular-scale(2, 1rem); 
+		line-height: modular-scale(3); 
+		@include media($bp-med) {
+		    font-size: modular-scale(1); //20px
+		    line-height: modular-scale(2);
+		}
+	}
+}
+
+article {
+	a {
+		border-bottom: 1px solid rgba(0,0,0,0.3);
+		transition: all 0.5s;
+		text-decoration: none;
+	}
+}
+
 // SIDEBAR ============================
 
-aside h3 {
-	font-size: modular-scale(0, 1.25rem); //20px
+#mainmenu li a {
+	font-size: modular-scale(0, 0.9rem); //20px
+	line-height: modular-scale(0);
+	.selected {
+		font-weight: 600;
+		// background-color: #FFDD35;
+	}
+}
+
+.selected {
+		font-weight: 600;
+		// background-color: #FFDD35;
+}
+
+aside {
+	text-transform: uppercase;
+}
+
+aside h3,
+aside p {
+	font-size: modular-scale(0, 0.9rem); //20px
+	line-height: modular-scale(0);
+	text-transform: uppercase;
 	// line-height: modular-scale(3, 1.25rem); //20px
-	// margin-bottom: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.get-in-touch {
+	p {
+		margin: 0;
+		font-weight: 400;
+	}
+}
+
+.sidebar__button {
+	color:$white;
+	a {
+
+	}
+	p {
+
+	}
 }
 
 .sidebar__nav ul {
 	font-family: $main-headings;
 	font-weight: 300;
 	// font-size: modular-scale(-4, 5rem);
-	font-size: modular-scale(1);
+	font-size: modular-scale(0);
 	line-height: modular-scale(2);
 	margin: 0;
 	li {
@@ -102,13 +238,12 @@ aside h3 {
 			text-decoration: none;
 			color: $base-font-color;
 			&:hover {
-				font-weight: 500;
+				font-weight: 600;
 			}
 		}
 	}
 }
 
-.sidebar__button,
 figure.colors__column-3 figcaption {
 	h3 {
 		font-family: $main-headings;
@@ -141,112 +276,128 @@ h3.logopackage__caption {
 // TYPOGRAPHY SECTION ============================
 
 p.custom-heading {
-	margin-bottom: 20px;
+	padding: 0;
+	margin: 0;
 }
 
-.typography__content {
-	h4 {
-		font-family: $main-headings;
-		font-style: normal;
-		font-weight: 300;
-		font-size: modular-scale(1, 1.25rem); //20px
-		line-height: modular-scale(0, 1.25rem);
-		margin-bottom: 15px;
-	}
-}
-
-h1.font-title {
-	font-family: $feature-font;
-	font-weight: 700;
-	font-size: modular-scale(0, 3.125rem); 
-	line-height: modular-scale(0, 3.125rem); 
-}
-
-h2.font-subtitle {
-	font-family: $feature-font;
-	font-size: modular-scale(0, 2.22rem); //40px
-	line-height: modular-scale(0, 3.33rem); //60px
-}
-
-h3.font-sect-title {
-	font-family: $feature-font;
-	font-weight: 700;
-	font-size: modular-scale(0, 1.23rem); //23px
-	line-height: modular-scale(0, 1.94rem); //35px
+.font-meta,
+.logo-samples__single p {
+	font-family: $main-headings;
 	text-transform: uppercase;
+	font-weight: 300;
+	font-size: modular-scale(0, 0.9rem);
+	color: grey;
+	letter-spacing: 1px;
+	margin-top: 20px;
 }
 
-h4.font-sect-subtitle {
-	font-family: $script-font;
-	font-weight: 600;
-	font-size: modular-scale(0, 1.33rem); //24px
-	line-height: modular-scale(0, 1.83rem); //33px
+.logo-samples__single p {
+	line-height: modular-scale(0, 1rem);
 }
 
-p.typography__introtext {
-	font-family: $feature-font;
-	font-style: italic;
-	font-weight: 400;
-	font-size: modular-scale(0);
-	line-height: modular-scale(0, 1.33rem);
-	margin-top: modular-scale(0, 1.25rem); //20px
-}
 
-p.typography__bodycopy {
-	font-family: $feature-font;
-	font-weight: 400;
-	font-size: modular-scale(0);
-	line-height: modular-scale(0, 1.25rem); //20px
-	margin-top: modular-scale(0, 1.25rem); //20px
-}
 
-p.typography__blockquote {
-	font-family: $script-font;
-	font-weight: 600;
-	font-size: modular-scale(0, 1.22rem);
-	line-height: modular-scale(0, 1.44rem);
-	color: #181818;
-	margin-bottom: 0;
-	margin-top: modular-scale(0, 1.25rem); //20px
-}
+// h1.font-title {
+// 	font-family: $feature-font;
+// 	font-weight: 700;
+// 	font-size: modular-scale(0, 3.125rem); 
+// 	line-height: modular-scale(0, 3.125rem); 
+// }
 
-p.typography__blockquote--src {
-	font-family: $quote-src;
-	font-size: modular-scale(0, 0.78rem); //14px
-	// line-height: modular-scale(0, 1.33rem); //24px
-	line-height: modular-scale(3);
-	color: #131313;
-	// margin-top: modular-scale(-3);
-	text-transform: uppercase;
-}
+// h2.font-subtitle {
+// 	font-family: $feature-font;
+// 	font-size: modular-scale(0, 2.22rem); //40px
+// 	line-height: modular-scale(0, 3.33rem); //60px
+// }
+
+// h3.font-sect-title {
+// 	font-family: $feature-font;
+// 	font-weight: 700;
+// 	font-size: modular-scale(0, 1.23rem); //23px
+// 	line-height: modular-scale(0, 1.94rem); //35px
+// 	text-transform: uppercase;
+// }
+
+// h4.font-sect-subtitle {
+// 	font-family: $script-font;
+// 	font-weight: 600;
+// 	font-size: modular-scale(0, 1.33rem); //24px
+// 	line-height: modular-scale(0, 1.83rem); //33px
+// }
+
+// p.typography__introtext {
+// 	font-family: $feature-font;
+// 	font-style: italic;
+// 	font-weight: 400;
+// 	font-size: modular-scale(0);
+// 	line-height: modular-scale(0, 1.33rem);
+// 	margin-top: modular-scale(0, 1.25rem); //20px
+// }
+
+// p.typography__bodycopy {
+// 	font-family: $feature-font;
+// 	font-weight: 400;
+// 	font-size: modular-scale(0);
+// 	line-height: modular-scale(0, 1.25rem); //20px
+// 	margin-top: modular-scale(0, 1.25rem); //20px
+// }
+
+// p.typography__blockquote {
+// 	font-family: $script-font;
+// 	font-weight: 600;
+// 	font-size: modular-scale(0, 1.22rem);
+// 	line-height: modular-scale(0, 1.44rem);
+// 	color: #181818;
+// 	margin-bottom: 0;
+// 	margin-top: modular-scale(0, 1.25rem); //20px
+// }
+
+// p.typography__blockquote--src {
+// 	font-family: $quote-src;
+// 	font-size: modular-scale(0, 0.78rem); //14px
+// 	// line-height: modular-scale(0, 1.33rem); //24px
+// 	line-height: modular-scale(3);
+// 	color: #131313;
+// 	// margin-top: modular-scale(-3);
+// 	text-transform: uppercase;
+// }
 
 // PHOTOGRAPHY SECTION ==================
-	// NOTE JULY 31st
-		// DON'T FORGET TO COMBINE THESE STYLES UNDER A GROUP OF SELECTORS
-		// (LOOK AT TONE SECTION BELOW SAME STYLING!)
 
 .photography__content {
-	h4 {
-		font-family: $main-headings;
-		font-style: normal;
-		font-weight: 300;
-		font-size: modular-scale(1, 1.25rem); //20px
-		line-height: modular-scale(0, 1.25rem);
-		margin-bottom: 15px;
-	}
+
 }
 
 
 // TONE SECTION ======================
 
 .tone__content {
-	h4 {
+}
+
+// COLOURS 
+.color-details,
+.scolor-details {
+	padding: 5px 10px;
+	p {
 		font-family: $main-headings;
-		font-style: normal;
+		text-transform: uppercase;
 		font-weight: 300;
-		font-size: modular-scale(1, 1.25rem); //20px
-		line-height: modular-scale(0, 1.25rem);
-		margin-bottom: 15px;
+		font-size: modular-scale(0, 0.9rem);
+		color: grey;
+		// letter-spacing: 1px;
+		margin: 0;
+		background-color: white;
+		padding: 3px;
 	}
 }
+
+.scolor-details {
+	padding: 10px 0;
+	p {
+		padding: 0;
+		font-size: modular-scale(0, 0.9rem);
+		line-height: modular-scale(1, 1rem);
+	}
+}
+
 

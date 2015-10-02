@@ -8,12 +8,15 @@
 
 	  		<article class="colors" id="colours">
 	  			<h2 class="sidebar-link">Colours</h2>
-	  			<div class="colors__holder">
+	  			<!-- <div class="colors__holder"> -->
 
 		  		<div class="color__content">
 		  			<?php the_content(); ?>
 		  		</div>
-	  		
+
+			<h3>Primary Colours</h3>
+
+		  	<div class="color-container">
 	  		<!-- Get custom meta values -->
 	  		<?php 
 	  			$colors = get_post_meta($post->ID,'_color',true);
@@ -24,52 +27,86 @@
 	       	    foreach($colors as $color) {
 
 	       	    // Get custom meta values    
-	       	    $hex   = $color['_hex'];
-	       	    $pms  = $color['_pms'];
-	       	    $cyan = $color['_cyan'];
-	       	    $magenta  = $color['_magenta'];
-	       	    $yellow  = $color['_yellow'];
-	       	    $key  = $color['_black'];
+	       	    $hex   		= $color['_hex'];
+	       	    $pms  		= $color['_pms'];
+	       	    $cyan 		= $color['_cyan'];
+	       	    $magenta  	= $color['_magenta'];
+	       	    $yellow  	= $color['_yellow'];
+	       	    $key  		= $color['_black'];
 	       	?>
 	       	
+	       	<div class="single-color">
 	       	<?php if ($hex): 
-	       	   echo '<figure class="colors__column-3" style="background-color: ' . $hex . ';">'; 
-	       	endif ?>
+	       		   echo '<figure class="colors__column-4" style="background-color: ' . $hex . ';">'; 
+	       		endif ?>
+	       		
+	       		</figure>
+	       		
+	       		<figcaption>
+		           <div class="color-details">
+		           		<p><?php echo $hex; ?></p>
+		           		<?php if ($pms) { ?>
+		           			<p>PMS <?php echo $pms; ?></p>
+		           		<?php } ?>
+		           		<p>CMYK (<?php echo $cyan; ?>, <?php echo $magenta; ?>, <?php echo $yellow; ?>, <?php echo $key; ?>)</p>
+		           </div>
+	           	</figcaption>
+	       		
+	       	</div> 
+	       	<!-- end of single chip -->
+	       		<?php
+	       		        }
+	       		    }
+	       		?>
+			</div>
+			<!-- end of primary color container -->
 
-           	<figcaption>
-	           	<?php if ($pms): 
-	           	   echo '<h3 class="colors__pms">' . 'PMS ' . $pms . '</h3>'; 
-	           	endif ?>
+			<h3>Secondary Colours</h3>
 
-	           	<?php if ($cyan || $cyan == 0): 
-	           	   echo '<h3>' . 'C  ' . $cyan . '</h3>';
-	           	endif ?>
+			<div class="secondary-colors">
+			<!-- Get custom meta values -->
+	  		<?php 
+	  			$scolors = get_post_meta($post->ID,'_secondary',true);
+	  		?>
 
-	           	<?php if ($magenta || $magenta == 0): 
-	           	   echo '<h3>' . 'M ' . $magenta . '</h3>';
-	           	endif ?>
+	       	<!-- For loop cycle through Array -->
+	       	<?php if($scolors) {
+	       	    foreach($scolors as $scolor) {
 
-	           	<?php if ($yellow || $yellow == 0): 
-	           	   echo '<h3>' . 'Y ' . $yellow . '</h3>';
-	           	endif ?>
-
-	           	<?php if ($key || $key == 0): 
-	           	   echo '<h3>' . 'K ' . $key . '</h3>';
-	           	endif ?>
-	           	
-	           	<?php if ($hex): 
-	           	   echo '<h3 class="colors__hex">' . $hex . '</h3>';
-	           	endif ?>
-           	</figcaption>
-
-	       	</figure>
-	       	
-	       	<?php
-	       	        }
-	       	    }
+	       	    // Get custom meta values    
+	       	    $shex 		= $scolor['_hex'];
+	       	    $spms  		= $scolor['_pms'];
+	       	    $scmyk 		= $scolor['_cmyk'];
 	       	?>
-					</div>
-				</article>
+	       	
+	       	<div class="single-scolor">
+	       	<?php if ($shex): 
+	       		   echo '<figure class="scolors__column" style="background-color: ' . $shex . ';">'; 
+	       		endif ?>
+	       		
+	       		</figure>
+	       		
+	       		<figcaption>
+		           <div class="scolor-details">
+		           		<p><?php echo $shex; ?></p>
+		           		<?php if ($spms) { ?>
+		           			<p>PMS <?php echo $spms; ?></p>
+		           		<?php } ?>
+		           		<p>CMYK (<?php echo $scmyk; ?>)</p>
+		           </div>
+	           	</figcaption>
+	       		
+	       	</div> 
+	       	<!-- end of single chip -->
+	       		<?php
+	       		        }
+	       		    }
+	       		?>
+	       	</div>
+	       	<!-- end of secondary colors div -->
+		</article>
+
+
 	    <?php endwhile;
 
 	endif;

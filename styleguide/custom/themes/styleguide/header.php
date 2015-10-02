@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-	<title><?php echo the_title(); ?></title>
+	<title><?php bloginfo('name'); ?></title>
 	<!-- FONTS -->
 	<script>
 	  (function(d) {
@@ -34,26 +34,60 @@
 
 	<!-- Get custom meta values -->
 	<?php 
-		$maincolor = get_post_meta($post->ID,'_sgbasics_maincolor',true);
-	    $maintitle = get_post_meta($post->ID,'_sgheader_title',true);
-	    $headerImageId = get_post_meta($post->ID, '_sgheader_logo', true);
+		$maincolor 		= get_post_meta($post->ID,'_sgbasics_name_color',true);
+		$headercolor 	= get_post_meta($post->ID,'_sgbasics_headercol',true);
+	    $maintitle 		= get_post_meta($post->ID,'_sgheader_title',true);
+	    $headerImageId 	= get_post_meta($post->ID, '_sgheader_logo', true);
 	    $headerImageUrl = wp_get_attachment_image_src($headerImageId,'sgheader', true);
 	?>
 
+	<!-- These are all accent colors from cuztom post fields -->
+	<style>
+		.selected {
+			border-left: 2px solid <?php echo $headercolor; ?>;
+			padding-left: 8px;
+		}
+
+		.get-in-touch a:hover h3 {
+			color: <?php echo $headercolor; ?>;
+		}
+
+		::selection {
+		  background: <?php echo $headercolor; ?>;
+		}
+
+		article a:hover {
+			background-color: <?php echo $headercolor; ?>;
+		}
+	</style>
+
+	<?php if ($headercolor) { ?> 
+         <header class="main-header" style="background-color:<?php echo $headercolor; ?>;"> 
+      <?php }  else { ?>
+		<header class="main-header">
+      <?php }?>
+	<!-- <header class="main-header"> -->
+		<div class="main-wrapper">
+			<a href="<?php echo get_home_url(); ?>"><img class="main-logo" src="<?php echo $headerImageUrl[0]; ?>" alt="Main Logo"></a>
+			<h1><?php bloginfo('name'); ?></h1>
+		</div>
+	</header>
+	
+	
 	<main> <!-- mainWrapper begins here -->
-		<header id="mainheader">
+<!-- 		<header id="mainheader">
 			<h1 class="title">
 			
-				<?php if ($maintitle) { ?>
-				    <?php echo $maintitle; ?>
-				<?php } else { ?>
-				    <p><?php echo the_title(); ?></p>
-				<?php  } ?> 
+				<?php //if ($maintitle) { ?>
+				    <?php //echo $maintitle; ?>
+				<?php //} else { ?>
+				    <p><?php //echo the_title(); ?></p>
+				<?php  //} ?> 
 				
 			</h1>
 			<div class="logo__holder">
-				<img class="logo" src="<?php echo $headerImageUrl[0]; ?>" alt="Main Logo">
+				<img class="logo" src="<?php //echo $headerImageUrl[0]; ?>" alt="Main Logo">
 			</div>
-		</header>
+		</header> -->
 
 	<?php endwhile; endif; ?>

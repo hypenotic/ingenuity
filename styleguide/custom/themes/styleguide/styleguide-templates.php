@@ -11,6 +11,9 @@
 
           <div class="tone__content"><?php the_content(); ?></div>
 
+          <!-- check if we actually have templates -->
+          <?php if($temps) { ?>
+          
           <h3>Templates for download:</h3>
 
          		<ul class="template-links">
@@ -25,8 +28,8 @@
                  	    foreach($temps as $temp) {
 
                  	    // Get custom meta values    
-                 	    $label   = $temp['_label'];
-                 	    $link  = $temp['_upload'];
+                 	    $label    = $temp['_label'];
+                 	    $link     = $temp['_upload'];
                  	?>
                  	
                  	<?php if ($label && $link): 
@@ -39,6 +42,9 @@
                  	?>
 			
 						</ul>
+
+                        <?php } ?> 
+                        <!-- end of if statement that checks if any templates are uploaded -->
 
 					</article>
 		   

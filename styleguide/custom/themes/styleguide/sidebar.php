@@ -9,13 +9,18 @@
 	<!-- Get custom meta values -->
 	<?php 
 		// $maincolor = get_post_meta($post->ID,'_sgbasics_maincolor',true);
+		$maintitle = get_post_meta($post->ID,'_sgheader_title',true);
 		$picker = get_post_meta($post->ID,'_sgbasics_name_color',true);
+		$headerImageId = get_post_meta($post->ID, '_sgheader_logo', true);
+	    $headerImageUrl = wp_get_attachment_image_src($headerImageId,'sgheader', true);
 	?>
 
 
 	<aside id="left"> <!-- SIDEBAR begins here -->
+			<!-- <div class="logo__holder">
+				<img class="logo" src="<?php //echo $headerImageUrl[0]; ?>" alt="Main Logo">
+			</div> -->
 			<nav id="submenu" class="sidebar__nav">
-			<h3>Table of Contents</h3>
 				<ul id="mainmenu">
 					<!-- <li><a href="<?php echo site_url(); ?>/overview">Overview</a></li>
 					<li><a href="<?php echo site_url(); ?>/logo">Logo</a></li>
@@ -35,15 +40,18 @@
 					<li class="navLinkPhone"><a href="#contact">contact</a></li>
 				</ul>
 			</nav>
-			<h3>Need help? Situation not covered?</h3>
-			<a href="<?php echo site_url(); ?>">
-			<?php if ($picker): 
-			   echo '<button class="sidebar__button" style="background-color: ' . $picker . ';">'; 
-			endif ?>
-				<!-- <button class="sidebar__button"> -->
-					<h3>Get in touch!</h3>
-				</button>
-			</a>
+			<div class="get-in-touch">
+				<p>Need help?</p>
+				<p>Situation not covered?</p>
+				<a href="mailto:s3c2e8i7q1z8n5i6@hypenotic.slack.com">
+				<?php if ($picker): 
+				   echo '<button class="sidebar__button" style="background-color: ' . $picker . ';">'; 
+				endif ?>
+					<!-- <button class="sidebar__button"> -->
+						<h3>Bat Phone</h3>
+					</button>
+				</a>
+			</div>
 	</aside>
 
 <?php endwhile; endif; ?>

@@ -13,35 +13,35 @@
 
   	  		<!-- Get custom meta values -->
   	  		<?php 
-  	  			$types = get_post_meta($post->ID,'_type',true);
+  	  			$types      = get_post_meta($post->ID,'_type',true);
   	  			// INTRO TEXT
-  	  			$introfont = get_post_meta($post->ID,'_introtext_introfont',true);
-  	  			$introex = get_post_meta($post->ID,'_introtext_introexample',true);
-  	  			$introsize = get_post_meta($post->ID,'_introtext_fsize',true);
-  	  			$introweight = get_post_meta($post->ID,'_introtext_fweight',true);
+  	  			$introfont  = get_post_meta($post->ID,'_introtext_introfont',true);
+  	  			$introex    = get_post_meta($post->ID,'_introtext_introexample',true);
+  	  			$introsize  = get_post_meta($post->ID,'_introtext_fsize',true);
+  	  			$introweight= get_post_meta($post->ID,'_introtext_fweight',true);
   	  			$introstyle = get_post_meta($post->ID,'_introtext_fstyle',true);
-  	  			$introcase = get_post_meta($post->ID,'_introtext_case',true);
+  	  			$introcase  = get_post_meta($post->ID,'_introtext_case',true);
   	  			// BODY COPY
-  	  			$bodyfont = get_post_meta($post->ID,'_bodyfont_bodyfont',true);
-  	  			$bodyex = get_post_meta($post->ID,'_bodyfont_bodyexample',true);
-  	  			$bodysize = get_post_meta($post->ID,'_bodyfont_fsize',true);
+  	  			$bodyfont   = get_post_meta($post->ID,'_bodyfont_bodyfont',true);
+  	  			$bodyex     = get_post_meta($post->ID,'_bodyfont_bodyexample',true);
+  	  			$bodysize   = get_post_meta($post->ID,'_bodyfont_fsize',true);
   	  			$bodyweight = get_post_meta($post->ID,'_bodyfont_fweight',true);
-  	  			$bodystyle = get_post_meta($post->ID,'_bodyfont_fstyle',true);
-  	  			$bodycase = get_post_meta($post->ID,'_bodyfont_case',true);
+  	  			$bodystyle  = get_post_meta($post->ID,'_bodyfont_fstyle',true);
+  	  			$bodycase   = get_post_meta($post->ID,'_bodyfont_case',true);
   	  			// QUOTATION
-  	  			$quotefont = get_post_meta($post->ID,'_quotetext_quotefont',true);
-  	  			$quoteex = get_post_meta($post->ID,'_quotetext_quoteexample',true);
-  	  			$quotesize = get_post_meta($post->ID,'_quotetext_fsize',true);
-  	  			$quoteweight = get_post_meta($post->ID,'_quotetext_fweight',true);
+  	  			$quotefont  = get_post_meta($post->ID,'_quotetext_quotefont',true);
+  	  			$quoteex    = get_post_meta($post->ID,'_quotetext_quoteexample',true);
+  	  			$quotesize  = get_post_meta($post->ID,'_quotetext_fsize',true);
+  	  			$quoteweight= get_post_meta($post->ID,'_quotetext_fweight',true);
   	  			$quotestyle = get_post_meta($post->ID,'_quotetext_fstyle',true);
-  	  			$quotecase = get_post_meta($post->ID,'_quotetext_case',true);
+  	  			$quotecase  = get_post_meta($post->ID,'_quotetext_case',true);
   	  			// QUOTATION SOURCE
-  	  			$srcfont = get_post_meta($post->ID,'_quotetext_srcfont',true);
-  	  			$srcex = get_post_meta($post->ID,'_quotetext_srcex',true);
-  	  			$srcsize = get_post_meta($post->ID,'_quotetext_fsize_2',true);
-  	  			$srcweight = get_post_meta($post->ID,'_quotetext_fweight_2',true);
-  	  			$srcstyle = get_post_meta($post->ID,'_quotetext_fstyle_2',true);
-  	  			$srccase = get_post_meta($post->ID,'_quotetext_case_2',true);
+  	  			$srcfont    = get_post_meta($post->ID,'_quotetext_srcfont',true);
+  	  			$srcex      = get_post_meta($post->ID,'_quotetext_srcex',true);
+  	  			$srcsize    = get_post_meta($post->ID,'_quotetext_fsize_2',true);
+  	  			$srcweight  = get_post_meta($post->ID,'_quotetext_fweight_2',true);
+  	  			$srcstyle   = get_post_meta($post->ID,'_quotetext_fstyle_2',true);
+  	  			$srccase    = get_post_meta($post->ID,'_quotetext_case_2',true);
   	  		?>
 
   	       	<!-- For loop cycle through Array -->
@@ -49,20 +49,24 @@
   	       	    foreach($types as $type) {
 
   	       	    // Get custom meta values    
-  	       	    $name   = $type['_fontname'];
-  	       	    $examp  = $type['_extext'];
-  	       	    $size = $type['_fsize'];
+  	       	    $name    = $type['_fontname'];
+  	       	    $examp   = $type['_extext'];
+  	       	    $size    = $type['_fsize'];
                 $lheight = $type['_lineheight'];
   	       	    $weight  = $type['_fweight'];
-  	       	    $style  = $type['_fstyle'];
-  	       	    $case  = $type['_case'];
+  	       	    $style   = $type['_fstyle'];
+  	       	    $case    = $type['_case'];
+                $space    = $type['_spacing'];
 
   	       	?>
+
+            <p class="font-meta"><?php echo $name; ?> – <?php echo $size; ?></p>
   	       	
   	       	<?php if ($name || $examp || $size || $lheight || $weight || $style || $case): 
-  	       	   echo '<p class="custom-heading" style="font-family: ' . $name . ';' . 'font-size:' . $size . ';' . 'font-weight:' . $weight . ';' . 'font-style:' . $style . ';' . 'line-height:' . $lheight . ';' . 'text-transform:' . $case . '">' . $examp . '</p>';  
-  	       	endif ?>
-  	       	
+  	       	   echo '<p class="custom-heading" style="font-family: ' . $name . ';' . 'font-size:' . $size . ';' . 'font-weight:' . $weight . ';' . 'font-style:' . $style . ';' . 'letter-spacing:' . $space . ';' . 'text-transform:' . $case . ';">' . $examp . '</p>'; ?> 
+
+  	       	<?php endif ?>
+
   	       	<?php
   	       	        }
   	       	    }
