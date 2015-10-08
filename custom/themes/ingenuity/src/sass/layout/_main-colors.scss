@@ -1,0 +1,94 @@
+// COLORS
+.colors__holder {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	@include media($bp-small) {
+		flex-direction: column;
+
+    }
+}
+
+.color-container {
+	padding-bottom: 25px;
+	@include media($bp-small) {
+		@include flex-direction(column);
+    }
+}
+
+.color-container,
+.secondary-colors {
+	display: flex;
+	padding-top: 25px;
+	// @include justify-content(space-between);
+	
+}
+
+.single-color {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: 25px;
+}
+
+.single-scolor {
+	display: flex;
+	flex-direction: column;
+	@include flex(0 0 30%);
+	.scolors__column {
+		height: 100px;
+		width: 100px;
+		margin: 0;
+	}
+}
+
+.colors__column-3 {
+	width: 193px;
+	height: 294px;
+	// @include span-columns(3);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include media($bp-small) {
+		margin: 10px;
+    }
+}
+
+.colors__column-4 {
+	width: 150px;
+	height: 150px;
+	margin: 0;
+	position: relative;
+	// border: 1px solid lightgrey;
+	@include media($bp-small) {
+		margin: 10px;
+    }
+    figcaption {
+		// position: absolute;
+		// bottom: 10px;
+		// left: 5px;
+		// background-color: white;
+    }
+}
+
+.colors figcaption {
+	h3.colors__pms {
+		padding-bottom: 25px;
+	}
+	h3.colors__hex {
+		padding-top: 25px;
+	}
+}
+
+.colors__column-3--first {
+	background-color: $color-column-one;
+}
+
+.colors__column-3-second {
+	background-color: $color-column-two;
+}
+
+.colors__column-3-third {
+	background-color: $color-column-three;
+}

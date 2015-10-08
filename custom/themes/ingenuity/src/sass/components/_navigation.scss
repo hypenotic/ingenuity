@@ -1,0 +1,6 @@
+ul.mainNavMobile {
+	display: none;
+	@include media($bp-small) {
+		display: block;
+    }
+}
