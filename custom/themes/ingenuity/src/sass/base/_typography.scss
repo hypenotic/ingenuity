@@ -14,6 +14,8 @@ h1 {
 	font-weight: 400;
 	font-size: modular-scale(0, 3.33rem); //60px
 	line-height: modular-scale(0, 3.44rem); //62px
+	color: $white;
+	text-transform: uppercase;
 }
 
 h1.title {
@@ -25,7 +27,7 @@ h1.title {
 }
 
 h2 {
-	font-family: $big-headings;
+	font-family: $main-headings;
 	text-transform: uppercase;
 	font-weight: 800;
 	font-size: modular-scale(3, 1rem); //32px
@@ -142,8 +144,6 @@ main {
 	p { 
 		font-family: $main-body-font;
 		font-weight: 300;
-		font-size: modular-scale(0, 1rem);
-		line-height: modular-scale(1, 1.2rem);
 		margin-top: 0;
 		margin-bottom: 30px;
 		// letter-spacing: 1px;
@@ -157,247 +157,8 @@ main {
 	}
 }
 
-.main-articles {
-	blockquote,
-	blockquote p {
-		font-size: modular-scale(2, 1rem); 
-		line-height: modular-scale(3); 
-		@include media($bp-med) {
-		    font-size: modular-scale(1); //20px
-		    line-height: modular-scale(2);
-		}
-	}
-}
-
-article {
-	a {
-		border-bottom: 1px solid rgba(0,0,0,0.3);
-		transition: all 0.5s;
-		text-decoration: none;
-	}
-}
-
 // SIDEBAR ============================
 
-#mainmenu li a {
-	font-size: modular-scale(0, 0.9rem); //20px
-	line-height: modular-scale(0);
-	.selected {
-		font-weight: 600;
-		// background-color: #FFDD35;
-	}
-}
 
-.selected {
-		font-weight: 600;
-		// background-color: #FFDD35;
-}
-
-aside {
-	text-transform: uppercase;
-}
-
-aside h3,
-aside p {
-	font-size: modular-scale(0, 0.9rem); //20px
-	line-height: modular-scale(0);
-	text-transform: uppercase;
-	// line-height: modular-scale(3, 1.25rem); //20px
-	margin-bottom: 0;
-	margin-top: 0;
-	padding-top: 0;
-}
-
-.get-in-touch {
-	p {
-		margin: 0;
-		font-weight: 400;
-	}
-}
-
-.sidebar__button {
-	color:$white;
-	a {
-
-	}
-	p {
-
-	}
-}
-
-.sidebar__nav ul {
-	font-family: $main-headings;
-	font-weight: 300;
-	// font-size: modular-scale(-4, 5rem);
-	font-size: modular-scale(0);
-	line-height: modular-scale(2);
-	margin: 0;
-	li {
-		// padding: 5px 0;
-		a {
-			text-decoration: none;
-			color: $base-font-color;
-			&:hover {
-				font-weight: 600;
-			}
-		}
-	}
-}
-
-figure.colors__column-3 figcaption {
-	h3 {
-		font-family: $main-headings;
-		font-weight: 300;
-		font-size: modular-scale(1);
-		line-height: modular-scale(1);
-		color: $white;
-		margin: 0;
-	}
-}
-
-// LOGO SECTION ============================
-
-h3.logopackage__caption {
-	font-family: $main-headings;
-	font-weight: 300;
-	font-size: modular-scale(0, 1.25rem); //20px
-	line-height: modular-scale(0, 1.25rem); //20px
-	color: $white;
-}
-
-.logo__list,
-.logo__content ul {
-	font-family: $main-body-font;
-	font-weight: 300;
-	font-size: modular-scale(0); 
-	line-height: modular-scale(1); 
-}
-
-// TYPOGRAPHY SECTION ============================
-
-p.custom-heading {
-	padding: 0;
-	margin: 0;
-}
-
-.font-meta,
-.logo-samples__single p {
-	font-family: $main-headings;
-	text-transform: uppercase;
-	font-weight: 300;
-	font-size: modular-scale(0, 0.9rem);
-	color: grey;
-	letter-spacing: 1px;
-	margin-top: 20px;
-}
-
-.logo-samples__single p {
-	line-height: modular-scale(0, 1rem);
-}
-
-
-
-// h1.font-title {
-// 	font-family: $feature-font;
-// 	font-weight: 700;
-// 	font-size: modular-scale(0, 3.125rem); 
-// 	line-height: modular-scale(0, 3.125rem); 
-// }
-
-// h2.font-subtitle {
-// 	font-family: $feature-font;
-// 	font-size: modular-scale(0, 2.22rem); //40px
-// 	line-height: modular-scale(0, 3.33rem); //60px
-// }
-
-// h3.font-sect-title {
-// 	font-family: $feature-font;
-// 	font-weight: 700;
-// 	font-size: modular-scale(0, 1.23rem); //23px
-// 	line-height: modular-scale(0, 1.94rem); //35px
-// 	text-transform: uppercase;
-// }
-
-// h4.font-sect-subtitle {
-// 	font-family: $script-font;
-// 	font-weight: 600;
-// 	font-size: modular-scale(0, 1.33rem); //24px
-// 	line-height: modular-scale(0, 1.83rem); //33px
-// }
-
-// p.typography__introtext {
-// 	font-family: $feature-font;
-// 	font-style: italic;
-// 	font-weight: 400;
-// 	font-size: modular-scale(0);
-// 	line-height: modular-scale(0, 1.33rem);
-// 	margin-top: modular-scale(0, 1.25rem); //20px
-// }
-
-// p.typography__bodycopy {
-// 	font-family: $feature-font;
-// 	font-weight: 400;
-// 	font-size: modular-scale(0);
-// 	line-height: modular-scale(0, 1.25rem); //20px
-// 	margin-top: modular-scale(0, 1.25rem); //20px
-// }
-
-// p.typography__blockquote {
-// 	font-family: $script-font;
-// 	font-weight: 600;
-// 	font-size: modular-scale(0, 1.22rem);
-// 	line-height: modular-scale(0, 1.44rem);
-// 	color: #181818;
-// 	margin-bottom: 0;
-// 	margin-top: modular-scale(0, 1.25rem); //20px
-// }
-
-// p.typography__blockquote--src {
-// 	font-family: $quote-src;
-// 	font-size: modular-scale(0, 0.78rem); //14px
-// 	// line-height: modular-scale(0, 1.33rem); //24px
-// 	line-height: modular-scale(3);
-// 	color: #131313;
-// 	// margin-top: modular-scale(-3);
-// 	text-transform: uppercase;
-// }
-
-// PHOTOGRAPHY SECTION ==================
-
-.photography__content {
-
-}
-
-
-// TONE SECTION ======================
-
-.tone__content {
-}
-
-// COLOURS 
-.color-details,
-.scolor-details {
-	padding: 5px 10px;
-	p {
-		font-family: $main-headings;
-		text-transform: uppercase;
-		font-weight: 300;
-		font-size: modular-scale(0, 0.9rem);
-		color: grey;
-		// letter-spacing: 1px;
-		margin: 0;
-		background-color: white;
-		padding: 3px;
-	}
-}
-
-.scolor-details {
-	padding: 10px 0;
-	p {
-		padding: 0;
-		font-size: modular-scale(0, 0.9rem);
-		line-height: modular-scale(1, 1rem);
-	}
-}
 
 

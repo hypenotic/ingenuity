@@ -1,97 +1,50 @@
-//GENERATE SIDEBAR MENU FROM MAIN H2 ELEMENT VALUES ================================
+// ====================== DISPLAY BLOG POST
 
-// find all the elements with the class of menu-heading
-	//specifically applied to all main h2 elements to be a part of main nav
-var menuheadings = document.getElementsByClassName('sidebar-link');
-// specify ul or ol into which the <li>s will be appended
-var mainmenu = document.getElementById('mainmenu');
+var displayBlogPost = { };
 
-console.log(menuheadings);
+// grab the id from the data attribute and pass it on
+displayBlogPost.grabid = function($thepost) {
 
-//for each items in the menuheadings array do the following:
-for (var i = 0; i < menuheadings.length; i++) {
-	// grab the value of h2 - stored in 'headingvalue'
-		var headingvalue = menuheadings[i].innerHTML;
-	// remove special characters and spaces, and replace them with an underscore
-		var plainvalue = headingvalue.replace(/[^A-Z0-9]+/ig, "_"); 
-	// convert all uppercase characters to lowercase
-		var lowercase = plainvalue.toLowerCase();
+  var $theid = $('.blog-entry').data('postid');
 
-	// create a link (<a>)
-	var menuLink = document.createElement("A");
-		// give said link an href of # + 'lowercase'
-        menuLink.setAttribute("href", "#" + lowercase);
-        // menuLink.setAttribute("href", "#scroll-nav_" + i);
-
-        menuLink.className = "sidebar-anchor";
-        // menuLink.setAttribute("id", "sidebar-anchor_" + i);
-
-        // append the text value of 'headingvalue' into the created <a> element
-        menuLink.appendChild(document.createTextNode(headingvalue));
-
-    // create a <li> element
-    var listItem = document.createElement("LI");
-    	// append 'menulink' (which is an <a>) into the created <li> element
-        listItem.appendChild(menuLink);
-
-        // append 'listItem' (which is a <li>) into 'mainmenu' (which is an <ul>)
-        mainmenu.appendChild(listItem);
-}
-
-
-var links = mainmenu.children;
-console.log(links);
-
-var clickFn = function() {
-  var hash = links[i].firstChild.hash;
-  console.log(hash);
+  displayBlogPost.getcontent($theid);
 };
 
 
-$('ul#mainmenu li a').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-        || location.hostname == this.hostname) {
+// use the API to grab the post info
+displayBlogPost.getcontent = function($theid){
+  $.ajax( {
+      url: '/wp-json/posts/' + $theid, 
+      //this needs to be '/apron-strings/wp-json/posts/' on hypelabs
+      success: function ( res ) {
+        console.log(res);
+        displayBlogPost.printInfo(res);
+      },
+      cache: false
+    } );
+};
 
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-           if (target.length) {
-             $('html,body').animate({
-                 scrollTop: target.offset().top - 150
-            }, 500);
-            return false;
-        }
-    }
+
+// print a post in the proper container
+displayBlogPost.printInfo = function(thepost) {
+    var $header     = $('.default-hero').css('background-image', 'url(' + thepost.featured_image.guid + ')');
+
+    var $title      = $('<h2>').html(thepost.title);
+    var $thedate    = $('<p>'). html(thepost.date);
+    var $content    = $('<div>').addClass('the-post').html(thepost.content); 
+
+    $('.blog-entry').append($content);
+    $('.default-hero hgroup h2').append($title);
+};
+
+
+// initialize displayBlogPost events
+// displayBlogPost.init = function() {
+//   displayBlogPost.grabid();
+//   console.log('hey');
+// };
+
+$(function() {
+    console.log( "ready!" );
+    displayBlogPost.grabid();
 });
-
-
-// Make variables to hold some boundary measurements
-var topRange      = 200,  // measure from the top of the viewport to X pixels down
-    edgeMargin    = 500,   // margin above the top or margin from the end of the page
-    contentTop = [];
-
-$(document).ready(function(){ 
-
-    // Set up an array of locations based on h2 positions
-     $('#mainmenu').find('a').each(function(){
-      contentTop.push( $( $(this).attr('href') ).offset().top );
-      console.log(contentTop);
-     })
- 
- // adjust side menu
- $(window).scroll(function(){
-  var winTop = $(window).scrollTop(),
-      bodyHt = $(document).height(),
-      vpHt = $(window).height() + edgeMargin;  // viewport height + margin
-  $.each( contentTop, function(i,loc){
-   if ( ( loc > winTop - edgeMargin && ( loc < winTop + topRange || ( winTop + vpHt ) >= bodyHt ) ) ){
-    $('#mainmenu li')
-     .removeClass('selected')
-     .eq(i).addClass('selected');
-   }
-  })
- })
-  
-})
-
-
-

@@ -44,7 +44,7 @@ gulp.task('imagemin', function () {
 // Create js scripts concat and minify task.
 gulp.task('js', function() {
   return gulp.src(scriptList)
-    .pipe(jshint('.jshintrc'))
+    // .pipe(jshint('.jshintrc'))
       .pipe(jshint.reporter('default'))
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
       .pipe(uglify('app.min.js', {outSourceMap: true}))
@@ -82,3 +82,7 @@ gulp.task('watch', function() {
 
 // Create default task so you can gulp whenever you don't want to watch
 gulp.task('default', ['sass', 'js', 'imagemin', 'watch']);
+
+
+
+

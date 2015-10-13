@@ -22,7 +22,7 @@
 <body>
 	<header class="main-header">
 		<div class="main-wrapper">
-			<a href="<?php echo get_home_url(); ?>"><img class="main-logo" src="<?php echo $headerImageUrl[0]; ?>" alt="Main Logo"></a>
+			<!-- <a href="<?php // echo get_home_url(); ?>"><img class="main-logo" src="<?php echo $headerImageUrl[0]; ?>" alt="Main Logo"></a> -->
 			<h1><?php bloginfo('name'); ?></h1>
 		</div>
 	</header>
