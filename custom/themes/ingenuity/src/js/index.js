@@ -1,4 +1,35 @@
-// ====================== DISPLAY BLOG POST
+// ====================== BLOG INDEX PAGE
+
+var displayBlogIndex = { };
+
+// use the API to grab the post info
+displayBlogIndex.getcontent = function(){
+  $.ajax( {
+      url: '/wp-json/posts/', 
+      success: function ( res ) {
+        console.log(res);
+        displayBlogIndex.printInfo(res);
+      },
+      cache: false
+    } );
+};
+
+
+// print a post in the proper container
+displayBlogIndex.printInfo = function(theposts) {
+    $.each(theposts, function(i, item) {
+
+            console.log(item);
+            var $title      = $('<h2>').html(item.title);
+            var $content    = $('<div>').addClass('the-post').html(item.content);
+
+            var $fullpost = $('<div>').append($title, $content);
+
+            $('.main-content').append($fullpost);
+        });
+};
+
+// ====================== DISPLAY SINGLE BLOG POST
 
 var displayBlogPost = { };
 
@@ -15,7 +46,6 @@ displayBlogPost.grabid = function($thepost) {
 displayBlogPost.getcontent = function($theid){
   $.ajax( {
       url: '/wp-json/posts/' + $theid, 
-      //this needs to be '/apron-strings/wp-json/posts/' on hypelabs
       success: function ( res ) {
         console.log(res);
         displayBlogPost.printInfo(res);
@@ -46,5 +76,6 @@ displayBlogPost.printInfo = function(thepost) {
 
 $(function() {
     console.log( "ready!" );
-    displayBlogPost.grabid();
+    // displayBlogPost.grabid();
+    displayBlogIndex.getcontent();
 });
