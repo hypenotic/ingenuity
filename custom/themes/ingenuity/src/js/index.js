@@ -5,7 +5,7 @@ var displayBlogIndex = { };
 // use the API to grab the post info
 displayBlogIndex.getcontent = function(){
   $.ajax( {
-      url: '/wp-json/posts/', 
+      url: '/wp-json/wp/v2/posts/', 
       success: function ( res ) {
         console.log(res);
         displayBlogIndex.printInfo(res);
@@ -20,8 +20,8 @@ displayBlogIndex.printInfo = function(theposts) {
     $.each(theposts, function(i, item) {
 
             console.log(item);
-            var $title      = $('<h2>').html(item.title);
-            var $content    = $('<div>').addClass('the-post').html(item.content);
+            var $title      = $('<h2>').html(item.title.rendered);
+            var $content    = $('<div>').addClass('the-post').html(item.content.rendered);
 
             var $fullpost = $('<div>').append($title, $content);
 
@@ -45,7 +45,7 @@ displayBlogPost.grabid = function($thepost) {
 // use the API to grab the post info
 displayBlogPost.getcontent = function($theid){
   $.ajax( {
-      url: '/wp-json/posts/' + $theid, 
+      url: '/wp-json/wp/v2/posts/' + $theid, 
       success: function ( res ) {
         console.log(res);
         displayBlogPost.printInfo(res);
@@ -76,6 +76,6 @@ displayBlogPost.printInfo = function(thepost) {
 
 $(function() {
     console.log( "ready!" );
-    displayBlogPost.grabid();
+    // displayBlogPost.grabid();
     displayBlogIndex.getcontent();
 });
