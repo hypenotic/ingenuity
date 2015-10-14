@@ -76,6 +76,6 @@ displayBlogPost.printInfo = function(thepost) {
 
 $(function() {
     console.log( "ready!" );
-    // displayBlogPost.grabid();
+    displayBlogPost.grabid();
     displayBlogIndex.getcontent();
 });

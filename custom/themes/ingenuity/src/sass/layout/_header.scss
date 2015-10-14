@@ -12,9 +12,7 @@
 .main-header {
 	.main-wrapper {
 		display: flex;
-		// justify-content: space-between;
 		align-items: center;
-		// margin: 0;
 		h1 {
 			text-transform: uppercase;
 			margin: 0;
@@ -37,8 +35,6 @@
 	min-height: 100vh;
 	background: black;
 	width: 100%;
-	// margin: -200px 0;
-	// background: url(../ingenuity/dist/images/site.jpg) center center;
 	background-position: center center;
 	background-size: cover;
 	@include display(flex);

@@ -7,22 +7,22 @@
     $url        =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
   ?>
 
-	<div class="default-hero" style="background-image: url('<?php echo $url[0] ?>'); background-size: cover;">
-	<div class="home-hero">
+	<div class="home-hero" style="background-image: url('<?php echo $url[0] ?>'); background-size: cover;">
 		<hgroup>
 			<h1>Insert Main Heading Here</h1>
 			<h2>Insert sub heading/intro here.</h2>
 		</hgroup>
 	</div>
 	
-	<div class="content-wrapper"> <!-- contentwrapper begins here -->
+	<div class="main-wrapper"> 
 			
-		<section class="main-content"> <!-- ARTICLE WRAP begins here -->
+		<section class="main-content"> 
 			
 			
 
-		</section> <!-- ARTICLE WRAP ends here -->
-	</div> <!-- contentWrapper ends here -->
+		</section> 
+
+	</div> 
 
 	<?php endwhile; else : ?>
 	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
