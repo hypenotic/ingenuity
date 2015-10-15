@@ -2,8 +2,8 @@ var mainApp = { };
 
 // FIND OUT WHAT PAGE WE'RE ON - WHERE ARE WE?!?
 mainApp.grabType = function(){
-    var $type = $('body').data('type');
-    var $archive = $('body').data('archive');
+    var $type       = $('body').data('type');
+    var $archive    = $('body').data('archive');
 
     var $postid = $('body').data('theid');
 
@@ -40,11 +40,11 @@ mainApp.grabType = function(){
             }
 
             // STATS
-            var $client = $('<p>').html('<span class="stats_label">Client</span>: ' + thepost.cuztom_post_meta.client); 
-            var $sqft = $('<p>').html('<span class="stats_label">SF</span>: ' + thepost.cuztom_post_meta.sqft); 
-            var $budget = $('<p>').html('<span class="stats_label">Budget</span>: ' + thepost.cuztom_post_meta.budget); 
-            var $duration = $('<p>').html('<span class="stats_label">Duration</span>: ' + thepost.cuztom_post_meta.duration); 
-            var $loc = $('<p>').html('<span class="stats_label">Location</span>: ' + thepost.cuztom_post_meta.location); 
+            var $client     = $('<p>').html('<span class="stats_label">Client</span>: ' + thepost.cuztom_post_meta.client); 
+            var $sqft       = $('<p>').html('<span class="stats_label">SF</span>: ' + thepost.cuztom_post_meta.sqft); 
+            var $budget     = $('<p>').html('<span class="stats_label">Budget</span>: ' + thepost.cuztom_post_meta.budget); 
+            var $duration   = $('<p>').html('<span class="stats_label">Duration</span>: ' + thepost.cuztom_post_meta.duration); 
+            var $loc        = $('<p>').html('<span class="stats_label">Location</span>: ' + thepost.cuztom_post_meta.location); 
 
             var $statsbox = $('<section>', {
                 class: 'project__stats'
@@ -133,6 +133,29 @@ mainApp.grabType = function(){
 
     } else if ( $type == 'project' && $archive !== false ) {
         console.log('Project ARCHIVEEEEEE');
+
+        // use the API to grab PROJECT info
+        mainApp.grabProjectArchive = function(){
+          $.ajax( {
+              url: '/wp-json/wp/v2/project/', 
+              success: function ( res ) {
+                console.log(res);
+
+                mainApp.projectArchiveSingle(res);
+              },
+              cache: false
+            } );
+        };
+
+        mainApp.projectArchiveSingle = function(res) {
+            $.each(res, function(i, item) {
+                console.log('Data for ' + (i +1) + ' is coming a back!');
+                console.log(item);
+            });
+        };
+
+
+        mainApp.grabProjectArchive();
     }
 };
 
