@@ -9,7 +9,7 @@ $args = array(
 $projects = register_cuztom_post_type('Project', $args);
 $projects->add_meta_box(
     'banner',
-    'Featured banner', 
+    'Hero Banner', 
     array(
         array(
             'name'          => 'image',

@@ -19,7 +19,9 @@
 
 	<?php wp_head(); ?> 
 </head>
-<body>
+
+
+<body data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
 
 	<header class="main-header">
 		<div class="main-wrapper">
