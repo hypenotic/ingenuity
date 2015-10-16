@@ -22,8 +22,7 @@ require_once('includes/shortcodes/template-bullets.php');
 add_theme_support( 'post-thumbnails' ); 
 
 // Increase File Upload Size
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
+@ini_set( 'upload_max_size' , '300M' );
+@ini_set( 'post_max_size', '200M');
 
 ?>
