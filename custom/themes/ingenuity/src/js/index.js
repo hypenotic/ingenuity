@@ -1,5 +1,0 @@
-$ = jQuery;
-
-$('.gallery').flickity({
-
-});
