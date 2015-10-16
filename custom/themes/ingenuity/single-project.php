@@ -29,7 +29,7 @@
             $test       = get_post_meta( $post->ID, '_testimonial_select', true );
 
             // Gallery
-            $gallery    = get_post_meta( $post->ID, '_gallery_select', true );
+            $gallery    = get_post_meta( $post->ID, '_slide_select', true );
 
         ?>
 
@@ -94,6 +94,7 @@
                 <?php // if there is a GALLERY, display it here
                     if ($gallery) { ?>
                     
+                    <?php print_r($gallery) ?>
                     <section class="project__gallery">
                         <?php get_template_part( 'template-part-gallery' ); ?> 
                     </section>

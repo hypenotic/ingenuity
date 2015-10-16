@@ -123,21 +123,20 @@ $projects->add_meta_box(
 );
 
 $projects->add_meta_box(
-    'gallery',
-    'Gallery <i>(Optional)</i>',
+    'slide',
+    'Gallery <i>(Optional)</i>', 
     array(
         array(
-        'name'          => 'select',
-        'label'         => 'Select a testimonial',
-        'description'   => '',
-        'type'          => 'post_select',
-        'args'          => array(
-            'post_type' => 'gallery',
-            'show_option_none' => "Select a gallery",
+            'name'          => 'select',
+            'label'         => 'Select a related gallery',
+            'description'   => '',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'gallery',
+                'show_option_none' => "Select a Gallery",
             )
         )
     )
 );
-
 
 ?>

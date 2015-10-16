@@ -32,7 +32,6 @@
 
 .home-hero,
 .default-hero {
-	min-height: 100vh;
 	background: black;
 	width: 100%;
 	background-position: center center;
@@ -51,7 +50,11 @@
 	}
 }
 
+.home-hero {
+	min-height: 100vh;
+}
+
 .default-hero {
 	width: 100%;
-	max-height: 70vh;
+	min-height: 70vh;
 }

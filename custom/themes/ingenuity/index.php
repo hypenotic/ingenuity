@@ -1,10 +1,12 @@
 <?php get_header(); ?>	
 
-	 <!-- The loop starts here -->
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	 
+  <?php // The loop starts here 
+  	if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+  ?>
 
-  <!-- Grabbing meta variables -->
-  <?php 
+  
+  <?php // Grabbing meta variables
     $pullquote  = wpautop(get_post_meta($post->ID,'_blogadd_pullquote',true));
     $url        =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
   ?>
@@ -16,9 +18,8 @@
 		</hgroup>
 	</div>
 	
-	<div class="content-wrapper"> <!-- contentwrapper begins here -->
-			
-		<section class="main-content"> <!-- ARTICLE WRAP begins here -->
+	<div class="content-wrapper"> 
+		<section class="main-content"> 
 			
 			
 
