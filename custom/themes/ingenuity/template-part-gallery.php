@@ -2,22 +2,22 @@
 /**
 * Template for Flickity Gallery
 * @author Lionel Mann (Hypenotic)
-* @example <?php get_template_part( 'template-part-gallery' ); ?>
+* @example <?php get_template_part( 'template-part-gallery'); ?>
 * @link http://flickity.metafizzy.co/
 * Dependency: jQuery, flickity.js, custom-post-slider.php, gallery.scss
 * This template part allows a slider on any page or custom post type. Content is 
 * managed through a custom post type. Any page can have a Gallery with multiple slides.
 * Galleries are added via Wordpress backend by a post select via the cuztom helper.
 */
-$gallery_id = get_post_meta($post->ID,'_gallery_select',true);
+$slide_id = get_post_meta($post->ID,'_slide_select',true); 
     
-if($gallery_id) : ?>
+if($slide_id) : ?>
    
 <div class="gallery">
     <?php
         $args = array(
             'post_type' => 'gallery',
-            'post__in'  => array($gallery_id)
+            'post__in'  => array($slide_id)
         );
     $gallery = new WP_Query( $args );
     if ( $gallery->have_posts() ) : while ( $gallery->have_posts() ) : $gallery->the_post(); 

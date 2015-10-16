@@ -27,7 +27,7 @@ $quote_id = get_post_meta( $post->ID, '_testimonial_select', true ); ?>
           	$srctitle	= get_post_meta( $post->ID, '_single_title', true );
         ?>
 
-		<h3><?php echo $quotation; ?></h3>
+		<blockquote><?php echo $quotation; ?></blockquote>
 		<p><?php echo $src; ?></p>
 		<p><?php echo $srctitle; ?></p>
 
