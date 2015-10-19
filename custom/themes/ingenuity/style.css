@@ -465,10 +465,10 @@ blockquote {
   line-height: 2.84231rem; }
 
 ::-moz-selection {
-  color: #fdbf56; }
+  background-color: #fdbf56; }
 
 ::selection {
-  color: #fdbf56; }
+  background-color: #fdbf56; }
 
 main p {
   font-family: "Audimat3000-Leger", sans-serif;
