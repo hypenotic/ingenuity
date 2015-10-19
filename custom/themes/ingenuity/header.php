@@ -24,7 +24,20 @@
 <body data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
 	
 	<?php if (is_front_page()) { ?>
-
+		
+		<div class="main-wrapper">
+			<nav class="navigation">
+				<nav class="nav__bottom-links">
+					<?php 
+					wp_nav_menu(array(
+					  'menu' => 'Main Menu', 
+					  'container_id' => 'main-menu', 
+					  'walker' => new Main_Menu_Walker()
+					)); 
+					?> 
+				</nav>
+			</nav>
+		</div>
 		
 
 	<?php } else { ?> 

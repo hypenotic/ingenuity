@@ -382,7 +382,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
 h1 {
-  color: white;
+  color: #fcd838;
   text-align: center;
   font-family: "Audimat3000-Regulier", sans-serif;
   text-transform: uppercase;
@@ -398,7 +398,7 @@ h1 {
       margin: 20px 100px; } }
   @media screen and (min-width: 70em) {
     h1 {
-      font-size: 4.84004rem;
+      font-size: 3.63093rem;
       line-height: 4.20873rem;
       margin-bottom: 20px;
       margin-top: 20px; } }
@@ -434,10 +434,10 @@ blockquote {
   line-height: 2.84231rem; }
 
 ::-moz-selection {
-  background-color: #fdbf56; }
+  background-color: #fcd838; }
 
 ::selection {
-  background-color: #fdbf56; }
+  background-color: #fcd838; }
 
 main p {
   font-family: "Audimat3000-Leger", sans-serif;
@@ -453,7 +453,7 @@ main p.no-space {
 
 .blog-entry blockquote {
   font-family: "Audimat3000-Regulier", sans-serif;
-  border-left: 4px solid #fdbf56;
+  border-left: 4px solid #fcd838;
   padding-left: 20px;
   font-size: 1.5996rem;
   line-height: 2.13227rem; }
@@ -475,9 +475,11 @@ figcaption.logopack__download:hover {
   padding: 10px 15px;
   margin-top: 20px; }
 
+.navigation {
+  padding-top: 25px; }
+
 #main-menu,
 #mobile-menu {
-  background: white;
   margin: 0;
   width: 100%;
   padding: 0;
@@ -535,7 +537,8 @@ figcaption.logopack__download:hover {
   margin: 0;
   -webkit-transition: color .2s ease;
           transition: color .2s ease;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.3); }
 
 #main-menu ul li ul,
 #mobile-menu ul li ul {
@@ -550,7 +553,9 @@ figcaption.logopack__download:hover {
   position: absolute;
   -webkit-transition: max-height 0.4s ease-out;
           transition: max-height 0.4s ease-out;
-  background: #ffffff; }
+  font-family: "Audimat3000-Leger", sans-serif;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.3); }
 
 #main-menu ul li ul li.has-sub:after,
 #mobile-menu ul li ul li.has-sub:after {
@@ -594,8 +599,8 @@ figcaption.logopack__download:hover {
 #mobile-menu ul li ul li a {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #fdbf56;
-  background: white;
+  color: #fcd838;
+  background: none;
   letter-spacing: 0;
   display: block;
   width: 170px;
@@ -605,13 +610,13 @@ figcaption.logopack__download:hover {
 #main-menu ul li ul li.active > a,
 #mobile-menu ul li ul li:hover > a,
 #mobile-menu ul li ul li.active > a {
-  color: #df6e1d; }
+  color: white; }
 
 #main-menu ul li ul li:hover:after,
 #main-menu ul li ul li.active:after,
 #mobile-menu ul li ul li:hover:after,
 #mobile-menu ul li ul li.active:after {
-  background: #df6e1d; }
+  background: white; }
 
 #main-menu ul li ul li:hover > ul,
 #mobile-menu ul li ul li:hover > ul {
@@ -668,20 +673,20 @@ figcaption.logopack__download:hover {
 
 #main-menu > ul > li.has-sub > a,
 #mobile-menu > ul > li.has-sub > a {
-  padding-right: 40px; }
+  padding-right: 20px; }
 
 #main-menu > ul > li.has-sub > a:before,
 #mobile-menu > ul > li.has-sub > a:before {
   display: block;
   content: "";
   border: 4px solid transparent;
-  border-top-color: #df6e1d;
+  border-top-color: white;
   z-index: 2;
   height: 0;
   width: 0;
   position: absolute;
-  right: 25px;
-  top: 5px; }
+  right: 8px;
+  top: 13px; }
 
 #main-menu > ul > li.has-sub > a:after,
 #mobile-menu > ul > li.has-sub > a:after {
@@ -694,16 +699,12 @@ figcaption.logopack__download:hover {
   right: 23px;
   top: 0px; }
 
-#main-menu > ul > li:hover > a:after,
-#main-menu > ul > li.active > a:after,
-#mobile-menu > ul > li:hover > a:after,
-#mobile-menu > ul > li.active > a:after {
-  background: #df6e1d; }
-
 #main-menu > ul > li > a,
 #mobile-menu > ul > li > a {
-  color: #979797;
-  padding: 0px 20px;
+  font-family: "Audimat3000-Leger", sans-serif;
+  color: #fcd838;
+  padding: 5px 10px;
+  margin: 0 5px;
   font-weight: 300;
   letter-spacing: 1px;
   font-size: 1.2rem;
@@ -720,7 +721,7 @@ figcaption.logopack__download:hover {
 #main-menu > ul > li.active > a,
 #mobile-menu > ul > li:hover > a,
 #mobile-menu > ul > li.active > a {
-  color: #fdbf56; }
+  color: #fcd838; }
 
 #main-menu > ul > li:hover > a:before,
 #main-menu > ul > li.active > a:before,
@@ -864,7 +865,7 @@ figcaption.logopack__download:hover {
   #main-menu ul li ul li a,
   #mobile-menu ul li ul li a {
     padding: 8px 20px 8px 35px;
-    color: #fdbf56; }
+    color: #fcd838; }
 
   #main-menu ul li ul ul li a,
   #mobile-menu ul li ul ul li a {
@@ -872,11 +873,11 @@ figcaption.logopack__download:hover {
 
   #main-menu ul li ul li:hover > a,
   #mobile-menu ul li ul li:hover > a {
-    color: #df6e1d; }
+    color: white; }
 
   #main-menu #menu-button,
   #mobile-menu #menu-button {
-    color: #fdbf56;
+    color: #fcd838;
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -893,20 +894,20 @@ figcaption.logopack__download:hover {
     position: absolute;
     height: 7px;
     width: 22px;
-    border-top: 2px solid #fdbf56;
-    border-bottom: 2px solid #fdbf56;
+    border-top: 2px solid #fcd838;
+    border-bottom: 2px solid #fcd838;
     right: 20px;
     top: 20px; }
 
   #main-menu #menu-button:before,
   #mobile-menu #menu-button:before {
-    color: #fdbf56;
+    color: #fcd838;
     display: block;
     content: '';
     position: absolute;
     height: 3px;
     width: 22px;
-    border-top: 2px solid #fdbf56;
+    border-top: 2px solid #fcd838;
     right: 20px;
     top: 30px; } }
 @media screen and (max-height: 25em) {
@@ -1129,6 +1130,10 @@ figcaption.logopack__download:hover {
 
 .home-hero {
   min-height: 100vh; }
+  .home-hero hgroup img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 25px; }
 
 .default-hero {
   width: 100%;
@@ -1160,12 +1165,6 @@ figcaption.logopack__download:hover {
   .fullscreen-bg__video {
     width: 300%;
     left: -100%; } }
-@media (max-width: 767px) {
-  .fullscreen-bg {
-    background: url("../img/videoframe.jpg") center center/cover no-repeat; }
-
-  .fullscreen-bg__video {
-    display: none; } }
 body {
   overflow-x: hidden; }
 
@@ -1277,7 +1276,7 @@ nav.main-nav {
   text-align: center;
   padding: 40px 0; }
   .full-width.full-quote p {
-    color: #fdbf56;
+    color: #fcd838;
     font-family: "Audimat3000-Leger", sans-serif;
     font-style: italic;
     font-weight: 600;

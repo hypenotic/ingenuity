@@ -52,6 +52,13 @@
 
 .home-hero {
 	min-height: 100vh;
+	hgroup {
+		img {
+			width: 200px;
+			height: auto;
+			margin-bottom: 25px;
+		}
+	}
 }
 
 .default-hero {
