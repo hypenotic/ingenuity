@@ -1373,8 +1373,7 @@ aside {
   margin-bottom: 40px;
   position: relative;
   -webkit-transition: all 0.5s;
-          transition: all 0.5s;
-  -webkit-transform: skew(16deg, 0); }
+          transition: all 0.5s; }
   .projects__panel:hover .color-overlay {
     background-color: transparent;
     -webkit-filter: brightness(0.7);
