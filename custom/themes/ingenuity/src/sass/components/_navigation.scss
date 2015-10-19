@@ -74,6 +74,20 @@
   background-color: rgba(0,0,0,0.3);
   // text-transform: uppercase;
 }
+
+.default-nav {
+  #main-menu ul li a,
+  #mobile-menu ul li a  {
+    text-decoration: none;
+    display: block;
+    margin: 0;
+    transition: color .2s ease;
+    box-sizing: border-box;
+    background-color: $black;
+    // text-transform: uppercase;
+  } 
+}
+
 #main-menu ul li ul,
 #mobile-menu ul li ul {
   position: absolute;

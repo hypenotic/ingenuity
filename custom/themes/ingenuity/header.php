@@ -26,7 +26,7 @@
 	<?php if (is_front_page()) { ?>
 		
 		<div class="main-wrapper">
-			<nav class="navigation">
+			<nav class="navigation home">
 				<nav class="nav__bottom-links">
 					<?php 
 					wp_nav_menu(array(
@@ -44,22 +44,20 @@
 
 		<header class="main-header">
 			<div class="main-wrapper">
-				<div class="main-wrapper">
-					<div>
-						<a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.gif" alt="Ingenuity"></a>
-					</div>
-					<nav class="navigation">
-						<nav class="nav__bottom-links">
-							<?php 
-							wp_nav_menu(array(
-							  'menu' => 'Main Menu', 
-							  'container_id' => 'main-menu', 
-							  'walker' => new Main_Menu_Walker()
-							)); 
-							?> 
-						</nav>
-					</nav>
+				<div>
+					<a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/nofillyellowlogo.png" alt="Ingenuity"></a>
 				</div>
+				<nav class="navigation default-nav">
+					<nav class="nav__bottom-links">
+						<?php 
+						wp_nav_menu(array(
+						  'menu' => 'Main Menu', 
+						  'container_id' => 'main-menu', 
+						  'walker' => new Main_Menu_Walker()
+						)); 
+						?> 
+					</nav>
+				</nav>
 			</div>
 		</header>
 
