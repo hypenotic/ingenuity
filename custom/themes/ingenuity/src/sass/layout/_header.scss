@@ -10,6 +10,9 @@
 }
 
 .main-header {
+	// @include display(flex);
+	// @include align-items(center);
+	// @include justify-content(center);
 	.main-wrapper {
 		@include display(flex);
 		@include align-items(center);
@@ -64,7 +67,7 @@
 .home-hero {
 	min-height: 100vh;
 	hgroup {
-		margin-top: -100px;
+		margin-top: -110px;
 		img {
 			width: 200px;
 			height: auto;

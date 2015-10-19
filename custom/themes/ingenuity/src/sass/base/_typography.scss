@@ -24,7 +24,7 @@ h1 {
 	    margin: 20px 100px;
 	}
 	@include media($bp-xlarge) {
-	    font-size: modular-scale(4, 1.15rem); //32px
+	    font-size: modular-scale(5, 1.15rem); //32px
 	    line-height: modular-scale(5, 1rem);
 	    margin-bottom: 20px;
 	    margin-top: 20px;

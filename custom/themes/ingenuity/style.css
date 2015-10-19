@@ -398,7 +398,7 @@ h1 {
       margin: 20px 100px; } }
   @media screen and (min-width: 70em) {
     h1 {
-      font-size: 3.63093rem;
+      font-size: 4.84004rem;
       line-height: 4.20873rem;
       margin-bottom: 20px;
       margin-top: 20px; } }
@@ -1169,7 +1169,7 @@ figcaption.logopack__download:hover {
 .home-hero {
   min-height: 100vh; }
   .home-hero hgroup {
-    margin-top: -100px; }
+    margin-top: -110px; }
     .home-hero hgroup img {
       width: 200px;
       height: auto;

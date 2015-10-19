@@ -25,19 +25,21 @@
 	
 	<?php if (is_front_page()) { ?>
 		
-		<div class="main-wrapper">
-			<nav class="navigation home">
-				<nav class="nav__bottom-links">
-					<?php 
-					wp_nav_menu(array(
-					  'menu' => 'Main Menu', 
-					  'container_id' => 'main-menu', 
-					  'walker' => new Main_Menu_Walker()
-					)); 
-					?> 
+		<!-- <header class="main-header"> -->
+			<div class="main-wrapper">
+				<nav class="navigation home">
+					<nav class="nav__bottom-links">
+						<?php 
+						wp_nav_menu(array(
+						  'menu' => 'Main Menu', 
+						  'container_id' => 'main-menu', 
+						  'walker' => new Main_Menu_Walker()
+						)); 
+						?> 
+					</nav>
 				</nav>
-			</nav>
-		</div>
+			</div>
+		<!-- </header> -->
 		
 
 	<?php } else { ?> 
