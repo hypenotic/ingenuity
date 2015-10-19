@@ -7,16 +7,14 @@ var gulp    = require('gulp'),
   pngquant  = require('imagemin-pngquant'),
   livereload  = require('gulp-livereload'),
   notify    = require('gulp-notify'),
+  autoprefixer = require('gulp-autoprefixer'),
   jshint    = require('gulp-jshint');
-  autoprefixer = require('gulp-autoprefixer');
 
 // Create custom variables to make life easier
 var outputDir = 'dist';
 
 var scriptList = [
-  // 'src/components/modernizer/modernizr.js',
-  // 'src/components/jquery/dist/jquery.js',
-    'src/js/index.js',
+  'src/js/index.js'
 ];
 
 var fontIcons = [
@@ -25,12 +23,12 @@ var fontIcons = [
 ];
 
 var sassOptions = {
-  style: 'compressed'
+  style: 'nested'
 };
 
 // Create image minification task
 gulp.task('imagemin', function () {
-    return gulp.src(['src/images/*','src/images/**/*'])
+    return gulp.src('src/images/*')
       //.pipe(cache())
         .pipe(imagemin({
             progressive: true,
@@ -58,7 +56,7 @@ gulp.task('js', function() {
 gulp.task('sass', function() {
     return sass('src/sass/style.scss', sassOptions) 
     .on('error', function (err) { console.error('Error!', err.message); })
-    .pipe(autoprefixer())
+    .pipe(autoprefixer('last 2 version', 'ie 9'))
     .pipe(gulp.dest(''))
     .pipe(livereload())
     .pipe(notify("sass task finished"));
@@ -81,8 +79,6 @@ gulp.task('watch', function() {
 });
 
 // Create default task so you can gulp whenever you don't want to watch
-gulp.task('default', ['sass', 'js', 'imagemin', 'watch']);
-
-
+gulp.task('default', ['sass', 'js', 'imagemin', 'icons', 'watch']);
 
 
