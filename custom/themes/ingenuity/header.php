@@ -46,7 +46,7 @@
 			<div class="main-wrapper">
 				<div class="main-wrapper">
 					<div>
-						<a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.gif" alt="BeneFACT"></a>
+						<a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.gif" alt="Ingenuity"></a>
 					</div>
 					<nav class="navigation">
 						<nav class="nav__bottom-links">

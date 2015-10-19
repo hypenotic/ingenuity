@@ -1130,10 +1130,12 @@ figcaption.logopack__download:hover {
 
 .home-hero {
   min-height: 100vh; }
-  .home-hero hgroup img {
-    width: 200px;
-    height: auto;
-    margin-bottom: 25px; }
+  .home-hero hgroup {
+    margin-top: -50px; }
+    .home-hero hgroup img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 25px; }
 
 .default-hero {
   width: 100%;
