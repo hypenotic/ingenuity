@@ -22,6 +22,12 @@ $pages->add_meta_box(
             'type'          => 'image',
         ),
         array(
+            'name'          => 'logo',
+            'label'         => 'Logo/Icon',
+            'description'   => '',
+            'type'          => 'image',
+        ),
+        array(
             'name'          => 'heading',
             'label'         => 'Banner Text',
             'description'   => 'Enter text',
@@ -34,6 +40,43 @@ $pages->add_meta_box(
             'description'   => 'Enter text',
             'type'          => 'text'
             
+        )
+    )
+);
+$pages->add_meta_box(
+    'blurb',
+    'Hero Blurb', 
+    array(
+        array(
+            'name'          => 'heroblurb',
+            'label'         => 'Banner Text',
+            'description'   => 'Enter text',
+            'type'          => 'text',
+            
+        )
+    )
+);
+$pages->add_meta_box(
+    'cta',
+    'Bottom Call to Action Panel', 
+    array(
+        array(
+            'name'          => 'heading',
+            'label'         => 'Heading',
+            'description'   => '',
+            'type'          => 'text',
+        ),
+        array(
+            'name'          => 'blink',
+            'label'         => 'Button Link',
+            'description'   => '',
+            'type'          => 'text',
+        ),
+        array(
+            'name'          => 'btext',
+            'label'         => 'Button Text',
+            'description'   => '',
+            'type'          => 'text',
         )
     )
 );

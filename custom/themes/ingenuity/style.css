@@ -722,6 +722,9 @@ body {
 article {
   margin-bottom: 120px; }
 
+figure {
+  margin: 0; }
+
 nav.main-nav {
   height: 75px;
   background-color: white; }
@@ -828,6 +831,13 @@ span.big-quotes {
 #left .logo__holder img {
   width: 90%;
   margin-bottom: 20px; }
+
+.projects__panel {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .project__testimonial blockquote {
   margin-top: 40px;
