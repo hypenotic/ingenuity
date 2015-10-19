@@ -29,8 +29,7 @@ $slide->add_meta_box(
                 'name'          => 'text',
                 'label'         => 'Content',
                 'description'   => '',
-                'type'          => 'textarea',
-                
+                'type'          => 'textarea',        
             ),
             array(
                 'name'          => 'url',

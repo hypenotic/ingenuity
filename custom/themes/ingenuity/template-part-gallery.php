@@ -35,15 +35,6 @@ if($slide_id) : ?>
                 <?php endif ?>
                 <header>
                     <hgroup>
-                        <?php if($s_headline) : ?>
-                            <h1 class="headline"><?php echo $s_headline; ?></h1>
-                        <?php endif ?>
-                        <?php if($s_text) : ?>
-                            <p class="subhead"><?php echo $s_text; ?></p>
-                        <?php endif ?>
-                        <?php if($s_url) : ?>
-                            <a href="<?php echo $s_url ?>" class="ghost ghost__text">Find out more</a>
-                        <?php endif ?>
                     </hgroup>
                 </header>
             </div>
