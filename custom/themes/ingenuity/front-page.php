@@ -11,7 +11,12 @@
       $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
   ?>
 
-	<div class="home-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
+	<div class="home-hero">
+		<div class="fullscreen-bg">
+		    <video loop muted autoplay poster="<?php echo $bannerurl[0] ?>" class="fullscreen-bg__video">
+		        <source src="<?php echo get_template_directory_uri(); ?>/dist/images/herovid.mp4" type="video/mp4">
+		    </video>
+		</div>
 		<hgroup>
 			<h1><?php echo $heading; ?></h1>
 			<h2><?php echo $subheading; ?></h2>

@@ -1,14 +1,22 @@
 aside {
+	border-top: 4px solid $black;
 	@include media($bp-large) {
-		@include span-columns(3);
-		// float: left;
-		position: fixed;
-		max-width: 200px;
-		margin-top: 30px;
+		@include span-columns(2);
+		@include shift(1);
+		height: 100%;
+		margin-top: 70px;
+		padding-top: 25px;
     }
 	// margin-top: 10px;
 	@include media($bp-small) {
 		display: none;
+    }
+    p {
+    	margin: 0;
+    	font-size: modular-scale(0, 1rem);
+    }
+    ul {
+
     }
 }
 
@@ -21,36 +29,3 @@ aside {
 	}
 }
 
-.get-in-touch {
-	border-top: 1px solid lightgrey;
-	padding-top: 20px;
-	margin-top: 20px;
-	a {
-		transition: all 0.5s;
-		&:hover {
-			button h3 {
-				// color: yellow;
-			}
-		}
-	}
-}
-
-#left {
-    // background: red;
-}
-#left.stick {
-    position:fixed;
-    top: 0;
-}
-#left.unstick {
-	position: relative;
-}
-
-
-#mainmenu li.selected { font-weight: 500; }
-
-
-#left .logo__holder img {
-	width: 90%;
-	margin-bottom: 20px;
-}

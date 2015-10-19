@@ -14,6 +14,7 @@ include('includes/wp-cuztom-posts/custom-post-team.php');
 require_once('includes/functions/enqueue-style.php');
 require_once('includes/functions/enqueue-script.php');
 require_once('includes/functions/cuztom-posts.php');
+require_once('includes/functions/register-menu.php');
 
 
 //Load shortcodes

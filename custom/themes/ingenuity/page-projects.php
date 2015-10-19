@@ -39,9 +39,12 @@
 							$bannerurl  = wp_get_attachment_image_src( $banner,'banner', true );
 						?>
 				
-					<figure class="projects__panel" style="background-image: url('<?php echo $bannerurl[0] ?>');">
-						<a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-					</figure>
+					<a href="<?php the_permalink(); ?>">
+						<figure class="projects__panel" style="background-image: url('<?php echo $bannerurl[0] ?>');">
+							<div class="color-overlay"></div>
+							<h2><?php the_title(); ?></h2>
+						</figure>
+					</a>
 				
 				<?php endwhile; endif; ?></div>
 

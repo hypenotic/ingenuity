@@ -22,12 +22,35 @@
 
 
 <body data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
+	
+	<?php if (is_front_page()) { ?>
 
-	<header class="main-header">
-		<div class="main-wrapper">
-			<h1><?php bloginfo('name'); ?></h1>
-		</div>
-	</header>
+		
+
+	<?php } else { ?> 
+
+		<header class="main-header">
+			<div class="main-wrapper">
+				<div class="main-wrapper">
+					<div>
+						<a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/logo.gif" alt="BeneFACT"></a>
+					</div>
+					<nav class="navigation">
+						<nav class="nav__bottom-links">
+							<?php 
+							wp_nav_menu(array(
+							  'menu' => 'Main Menu', 
+							  'container_id' => 'main-menu', 
+							  'walker' => new Main_Menu_Walker()
+							)); 
+							?> 
+						</nav>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+	<?php } ?>
 	
 	
 	<main> 

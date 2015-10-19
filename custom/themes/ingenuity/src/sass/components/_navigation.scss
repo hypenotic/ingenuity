@@ -1,6 +1,525 @@
-ul.mainNavMobile {
-	display: none;
-	@include media($bp-small) {
-		display: block;
-    }
+// KEEPING TYPOGRAPHY STYLING HERE DUE TO COMPLEX SELECTORS
+// Based off: http://cssmenumaker.com/blog/wordpress-3-drop-down-menu-tutorial
+#main-menu,
+#mobile-menu {
+  background: $white;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  position: relative;
+  @include media($bp-med, $bp-ls-small) {
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 900000;
+    border-bottom: 1px solid $orange;
+    // display: none;
+  }
+}
+
+#main-menu {
+   @include media($bp-med, $bp-ls-small) {
+    display: none;
+  } 
+}
+
+#mobile-menu {
+  display: none;
+  @include media($bp-med, $bp-ls-small) {
+   display: block;
+ } 
+}
+
+#main-menu ul,
+#mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  // display: flex;
+  // justify-content: flex-end;
+}
+
+#main-menu ul:after,
+#main-menu:after, 
+#mobile-menu ul:after,
+#mobile-menu:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#main-menu ul li,
+#mobile-menu ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+}
+#main-menu ul li a,
+#mobile-menu ul li a  {
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  transition: color .2s ease;
+  box-sizing: border-box;
+}
+#main-menu ul li ul,
+#mobile-menu ul li ul {
+  position: absolute;
+  left: -9999px;
+  z-index: 9999;
+  top: auto;
+}
+#main-menu ul li ul li,
+#mobile-menu ul li ul li {
+  max-height: 0;
+  position: absolute;
+  transition: max-height 0.4s ease-out;
+  background: #ffffff;
+}
+#main-menu ul li ul li.has-sub:after,
+#mobile-menu ul li ul li.has-sub:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: $orange;
+  z-index: 99;
+  top: 13px;
+  right: 15px;
+}
+#main-menu.align-right ul li ul li.has-sub:after,
+#mobile-menu.align-right ul li ul li.has-sub:after  {
+  right: auto;
+  left: 15px;
+}
+#main-menu ul li ul li.has-sub:before,
+#mobile-menu ul li ul li.has-sub:before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  border: 3px solid transparent;
+  border-left-color: #ffffff;
+  z-index: 4000;
+  top: 15px;
+  right: 15px;
+}
+#main-menu.align-right ul li ul li.has-sub:before,
+#mobile-menu.align-right ul li ul li.has-sub:before {
+  right: auto;
+  left: 15px;
+  border-left-color: transparent;
+  border-right-color: #ffffff;
+}
+#main-menu ul li ul li a,
+#mobile-menu ul li ul li a {
+  font-size: modular-scale(0, 0.8rem);
+  font-weight: 400;
+  // text-transform: none;
+  color: $yellow;
+  background: $white;
+  letter-spacing: 0;
+  display: block;
+  width: 170px;
+  padding: 11px 10px 11px 20px;
+}
+#main-menu ul li ul li:hover > a,
+#main-menu ul li ul li.active > a,
+#mobile-menu ul li ul li:hover > a,
+#mobile-menu ul li ul li.active > a {
+  color: $orange;
+}
+#main-menu ul li ul li:hover:after,
+#main-menu ul li ul li.active:after,
+#mobile-menu ul li ul li:hover:after,
+#mobile-menu ul li ul li.active:after {
+  background: $orange;
+}
+#main-menu ul li ul li:hover > ul,
+#mobile-menu ul li ul li:hover > ul {
+  left: 100%;
+  top: 0;
+}
+#main-menu ul li ul li:hover > ul > li,
+#mobile-menu ul li ul li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#main-menu > ul > li,
+#mobile-menu > ul > li {
+  // float: left;
+}
+#main-menu.align-center > ul > li,
+#mobile-menu.align-center > ul > li {
+  float: none;
+  display: inline-block;
+}
+#main-menu.align-center > ul,
+#mobile-menu.align-center > ul {
+  text-align: center;
+}
+#main-menu.align-center ul ul,
+#mobile-menu.align-center ul ul {
+  text-align: left;
+}
+#main-menu.align-right > ul,
+#mobile-menu.align-right > ul {
+  float: right;
+}
+#main-menu.align-right > ul > li:hover > ul,
+#mobile-menu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+}
+#main-menu.align-right ul ul li:hover > ul,
+#mobile-menu.align-right ul ul li:hover > ul {
+  right: 100%;
+  left: auto;
+}
+#main-menu.align-right ul ul li a,
+#mobile-menu.align-right ul ul li a {
+  text-align: right;
+}
+#main-menu > ul > li:after,
+#mobile-menu > ul > li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  z-index: 0;
+  // background: #ffffff;
+  transition: height .2s;
+}
+#main-menu > ul > li.has-sub > a,
+#mobile-menu > ul > li.has-sub > a {
+  padding-right: 40px;
+}
+// this styles the arrow (▾) beside the main menu <li> that have sub-items
+#main-menu > ul > li.has-sub > a:before,
+#mobile-menu > ul > li.has-sub > a:before {
+  display: block;
+  content: "";
+  border: 4px solid transparent;
+  border-top-color: $orange;
+  z-index: 2;
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 25px;
+  top: 5px;
+}
+// this styles the background behind the (▾)
+#main-menu > ul > li.has-sub > a:after,
+#mobile-menu > ul > li.has-sub > a:after {
+  display: block;
+  content: "";
+  // background: #ffffff;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 13px;
+  right: 23px;
+  top: 0px;
+}
+// colour of ^above background
+#main-menu > ul > li:hover > a:after,
+#main-menu > ul > li.active > a:after,
+#mobile-menu > ul > li:hover > a:after,
+#mobile-menu > ul > li.active > a:after {
+  background: $orange;
+}
+#main-menu > ul > li > a,
+#mobile-menu > ul > li > a {
+  color: $grey;
+  padding: 0px 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: modular-scale(0);
+  z-index: 2;
+  position: relative;
+}
+#main-menu > ul > li:hover:after,
+#main-menu > ul > li.active:after,
+#mobile-menu > ul > li:hover:after,
+#mobile-menu > ul > li.active:after {
+  height: 100%;
+}
+#main-menu > ul > li:hover > a,
+#main-menu > ul > li.active > a,
+#mobile-menu > ul > li:hover > a,
+#mobile-menu > ul > li.active > a {
+  color: $yellow;
+}
+#main-menu > ul > li:hover > a:before,
+#main-menu > ul > li.active > a:before,
+#mobile-menu > ul > li:hover > a:before,
+#mobile-menu > ul > li.active > a:before {
+  border-top-color: #ffffff;
+}
+#main-menu > ul > li:hover > ul,
+#mobile-menu > ul > li:hover > ul {
+  left: 0;
+  padding-top: 15px;
+}
+#main-menu > ul > li:hover > ul > li,
+#mobile-menu > ul > li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#main-menu #menu-button,
+#mobile-menu #menu-button {
+  display: none;
+}
+#main-menu > ul > li > a,
+#mobile-menu > ul > li > a {
+  display: block;
+}
+#main-menu > ul > li,
+#mobile-menu > ul > li {
+  width: auto;
+}
+#main-menu > ul > li > ul,
+#mobile-menu > ul > li > ul {
+  width: 170px;
+  display: block;
+}
+#main-menu > ul > li > ul > li,
+#mobile-menu > ul > li > ul > li {
+  width: 170px;
+  display: block;
+}
+
+@include media($bp-med, $bp-ls-small) {
+  #main-menu > ul,
+  #mobile-menu > ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out;
+  }
+  #main-menu > ul > li > ul,
+  #mobile-menu > ul > li > ul {
+    width: 100%;
+    display: block;
+  }
+  #main-menu.align-right ul li a,
+  #mobile-menu.align-right ul li a {
+    text-align: left;
+  }
+  #main-menu > ul > li > ul > li,
+  #mobile-menu > ul > li > ul > li {
+    width: 100%;
+    display: block;
+  }
+  #main-menu.align-right ul ul li a,
+  #mobile-menu.align-right ul ul li a {
+    text-align: left;
+  }
+  #main-menu > ul > li > ul > li > a,
+  #mobile-menu > ul > li > ul > li > a {
+    width: 100%;
+    display: block;
+  }
+  #main-menu ul li ul li a,
+  #mobile-menu ul li ul li a {
+    width: 100%;
+  }
+  #main-menu.align-center > ul,
+  #mobile-menu.align-center > ul {
+    text-align: left;
+  }
+  #main-menu.align-center > ul > li,
+  #mobile-menu.align-center > ul > li {
+    display: block;
+  }
+  #main-menu > ul.open,
+  #mobile-menu > ul.open {
+    min-height: 120vh;
+    // overflow-y: scroll;
+    border-top: 1px solid $orange;
+  }
+  #main-menu ul,
+  #mobile-menu ul {
+    width: 100%;
+  }
+  #main-menu ul > li,
+  #mobile-menu ul > li {
+    float: none;
+    width: 100%;
+  }
+  #main-menu ul li a,
+  #mobile-menu ul li a {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+  }
+  #main-menu ul > li:after,
+  #mobile-menu ul > li:after {
+    display: none;
+  }
+  #main-menu ul li.has-sub > a:after,
+  #main-menu ul li.has-sub > a:before,
+  #main-menu ul li ul li.has-sub:after,
+  #main-menu ul li ul li.has-sub:before,
+  #mobile-menu ul li.has-sub > a:after,
+  #mobile-menu ul li.has-sub > a:before,
+  #mobile-menu ul li ul li.has-sub:after,
+  #mobile-menu ul li ul li.has-sub:before {
+    display: none;
+  }
+  #main-menu ul li ul,
+  #main-menu ul li ul li ul,
+  #main-menu ul li ul li:hover > ul,
+  #main-menu.align-right ul li ul,
+  #main-menu.align-right ul li ul li ul,
+  #main-menu.align-right ul li ul li:hover > ul,
+  #mobile-menu ul li ul,
+  #mobile-menu ul li ul li ul,
+  #mobile-menu ul li ul li:hover > ul,
+  #mobile-menu.align-right ul li ul,
+  #mobile-menu.align-right ul li ul li ul,
+  #mobile-menu.align-right ul li ul li:hover > ul {
+    left: 0;
+    position: relative;
+    right: auto;
+  }
+  #main-menu ul li ul li,
+  #main-menu ul li:hover > ul > li,
+  #mobile-menu ul li ul li,
+  #mobile-menu ul li:hover > ul > li  {
+    max-height: 999px;
+    position: relative;
+    background: none;
+  }
+  #main-menu ul li ul li a,
+  #mobile-menu ul li ul li a {
+    padding: 8px 20px 8px 35px;
+    color: $yellow;
+  }
+  #main-menu ul li ul ul li a,
+  #mobile-menu ul li ul ul li a {
+    padding: 8px 20px 8px 50px;
+  }
+  #main-menu ul li ul li:hover > a,
+  #mobile-menu ul li ul li:hover > a {
+    color: $orange;
+  }
+  #main-menu #menu-button,
+  #mobile-menu #menu-button {
+    color: $yellow;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: modular-scale(1);
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  #main-menu #menu-button:after,
+  #mobile-menu #menu-button:after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 7px;
+    width: 22px;
+    border-top: 2px solid $yellow;
+    border-bottom: 2px solid $yellow;
+    right: 20px;
+    top: 20px;
+  }
+  #main-menu #menu-button:before,
+  #mobile-menu #menu-button:before {
+    color: $yellow;
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid $yellow;
+    right: 20px;
+    top: 30px;
+  }
+}
+
+@include media($bp-med and $bp-ls-small) {
+  #main-menu ul > li,
+  #mobile-menu ul > li {
+    float: none;
+    width: auto;
+  }
+
+
+  #main-menu ul li a,
+  #mobile-menu ul li a {
+    box-sizing: border-box;
+    width: auto;
+    padding: 12px 20px;
+  }
+
+  #main-menu > ul > li > ul,
+  #mobile-menu > ul > li > ul {
+    width: auto;
+    display: inline-block;
+  }
+
+  #main-menu > ul > li > ul > li,
+  #mobile-menu > ul > li > ul > li {
+    width: auto;
+    display: inline-block;
+  }
+
+  #main-menu > ul > li > ul > li > a,
+  #mobile-menu > ul > li > ul > li > a {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+@include media($bp-small) {
+  
+  #main-menu ul > li,
+  #mobile-menu ul > li {
+    float: none;
+    width: auto;
+  }
+
+  #main-menu ul li a,
+  #mobile-menu ul li a {
+    box-sizing: border-box;
+    width: auto;
+    padding: 12px 20px;
+  }
+
+  #main-menu > ul > li > ul,
+  #mobile-menu > ul > li > ul {
+    width: auto;
+    display: inline-block;
+  }
+
+  #main-menu > ul > li > ul > li,
+  #mobile-menu > ul > li > ul > li {
+    width: auto;
+    display: inline-block;
+  }
+
+  #main-menu > ul > li > ul > li > a,
+  #mobile-menu > ul > li > ul > li > a {
+    // width: auto;
+    display: inline-block;
+    background-color: lightgrey;
+    margin: 0 3px 6px;
+    padding: 3px 5px;
+    text-align: center;
+  }
 }
