@@ -1,0 +1,17 @@
+.team__container {
+	position: relative;
+	// margin-top: 50px;
+	@include display(flex);
+	@include align-items(flex-start);
+	@include justify-content(center);
+	@include flex-wrap(wrap);
+	.team__single {
+		@include flex(0 0 30%);
+		margin: 0 1.5%;
+		img {
+			position: relative;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}

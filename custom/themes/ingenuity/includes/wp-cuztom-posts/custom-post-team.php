@@ -46,6 +46,12 @@ $teampage->add_meta_box(
                     'type'          => 'text',          
                 ),
                 array(
+                    'name'          => 'creds',
+                    'label'         => 'Credentials',
+                    'description'   => '',
+                    'type'          => 'text',          
+                ),
+                array(
                     'name'          => 'jobtitle',
                     'label'         => 'Job Title',
                     'description'   => '',

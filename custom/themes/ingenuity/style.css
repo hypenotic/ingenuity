@@ -376,10 +376,12 @@ html {
   box-sizing: inherit; }
 
 body {
-  color: rgba(0, 0, 0, 0.85); }
+  color: rgba(0, 0, 0, 0.85);
+  font-family: "Audimat3000-Leger", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
+  margin: 0;
+  font-family: "Audimat3000-Leger", sans-serif; }
 
 h1 {
   color: #fcd838;
@@ -418,6 +420,11 @@ h3,
   font-size: 2.13227rem;
   line-height: 2.66533rem; }
 
+h4 {
+  font-family: "Audimat3000-Regulier", sans-serif;
+  font-size: 1.5996rem;
+  line-height: 1.5996rem; }
+
 a {
   text-decoration: none;
   color: #000; }
@@ -432,6 +439,11 @@ blockquote {
   font-style: italic;
   font-size: 2.84231rem;
   line-height: 2.84231rem; }
+
+figcaption {
+  font-family: "Audimat3000-Leger", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5996rem; }
 
 ::-moz-selection {
   background-color: #fcd838; }
@@ -450,6 +462,19 @@ main p {
       line-height: 1.8662rem; } }
 main p.no-space {
   margin-bottom: 0; }
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+  color: black;
+  margin-bottom: 20px; }
+.main-content p {
+  margin-bottom: 20px; }
+
+.team__creds {
+  font-size: 1.2rem; }
+
+.team__single h3,
+.team__single figcaption {
+  margin-top: 20px; }
 
 .blog-entry blockquote {
   font-family: "Audimat3000-Regulier", sans-serif;
@@ -542,12 +567,6 @@ figcaption.logopack__download:hover {
 
 .default-nav #main-menu ul li a,
 .default-nav #mobile-menu ul li a {
-  text-decoration: none;
-  display: block;
-  margin: 0;
-  -webkit-transition: color .2s ease;
-          transition: color .2s ease;
-  box-sizing: border-box;
   background-color: black; }
 
 #main-menu ul li ul,
@@ -720,6 +739,13 @@ figcaption.logopack__download:hover {
   font-size: 1.2rem;
   z-index: 2;
   position: relative; }
+
+.default-nav #main-menu > ul > li > a,
+.default-nav #mobile-menu > ul > li > a {
+  margin: 0 10px; }
+.default-nav #main-menu > ul > li > a:last-child,
+.default-nav #mobile-menu > ul > li > a:last-child {
+  margin: 0 0 0 10px; }
 
 #main-menu > ul > li:hover:after,
 #main-menu > ul > li.active:after,
@@ -1363,6 +1389,50 @@ aside {
   list-style-type: none;
   padding-left: 0;
   padding-bottom: 0; }
+
+.team__container {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  box-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -ms-flex-align: start;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .team__container .team__single {
+    -webkit-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex: 0 0 30%;
+    -moz-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    margin: 0 1.5%; }
+    .team__container .team__single img {
+      position: relative;
+      max-width: 100%;
+      height: auto; }
 
 .projects__panel {
   width: 100%;

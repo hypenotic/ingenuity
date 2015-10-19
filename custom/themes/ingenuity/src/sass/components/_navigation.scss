@@ -75,14 +75,10 @@
   // text-transform: uppercase;
 }
 
+// FOR THE DEFAULT NAV
 .default-nav {
   #main-menu ul li a,
   #mobile-menu ul li a  {
-    text-decoration: none;
-    display: block;
-    margin: 0;
-    transition: color .2s ease;
-    box-sizing: border-box;
     background-color: $black;
     // text-transform: uppercase;
   } 
@@ -274,6 +270,18 @@
   z-index: 2;
   position: relative;
 }
+
+.default-nav {
+  #main-menu > ul > li > a,
+  #mobile-menu > ul > li > a {
+    margin: 0 10px;
+  }
+  #main-menu > ul > li > a:last-child,
+  #mobile-menu > ul > li > a:last-child {
+    margin: 0 0 0 10px;
+  }
+}
+
 #main-menu > ul > li:hover:after,
 #main-menu > ul > li.active:after,
 #mobile-menu > ul > li:hover:after,
