@@ -25,9 +25,9 @@
 	
 	<?php if (is_front_page()) { ?>
 		
-		<!-- <header class="main-header"> -->
+		<header class="main-header home">
 			<div class="main-wrapper">
-				<nav class="navigation home">
+				<nav class="navigation home-nav">
 					<nav class="nav__bottom-links">
 						<?php 
 						wp_nav_menu(array(
@@ -39,7 +39,7 @@
 					</nav>
 				</nav>
 			</div>
-		<!-- </header> -->
+		</header>
 		
 
 	<?php } else { ?> 

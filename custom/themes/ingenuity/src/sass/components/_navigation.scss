@@ -2,6 +2,10 @@
   padding-top: 25px;
 }
 
+.navigation.home-nav {
+  // padding-top: 30px;
+}
+
 // KEEPING TYPOGRAPHY STYLING HERE DUE TO COMPLEX SELECTORS
 // Based off: http://cssmenumaker.com/blog/wordpress-3-drop-down-menu-tutorial
 #main-menu,
@@ -24,6 +28,7 @@
 }
 
 #main-menu {
+
    @include media($bp-med, $bp-ls-small) {
     display: none;
   } 
@@ -71,8 +76,8 @@
   margin: 0;
   transition: color .2s ease;
   box-sizing: border-box;
-  background-color: rgba(0,0,0,0.3);
-  // text-transform: uppercase;
+  background-color: rgba(0,0,0,0.0);
+  text-transform: uppercase;
 }
 
 // FOR THE DEFAULT NAV
@@ -91,9 +96,11 @@
   z-index: 9999;
   top: auto;
 }
+
 #main-menu ul li ul li,
 #mobile-menu ul li ul li {
   max-height: 0;
+  top: 3px;
   position: absolute;
   transition: max-height 0.4s ease-out;
   // background: #ffffff;
@@ -101,6 +108,7 @@
   text-transform: uppercase;
   background-color: rgba(0,0,0,0.3);
 }
+
 #main-menu ul li ul li.has-sub:after,
 #mobile-menu ul li ul li.has-sub:after {
   display: block;
@@ -114,11 +122,13 @@
   top: 13px;
   right: 15px;
 }
+
 #main-menu.align-right ul li ul li.has-sub:after,
 #mobile-menu.align-right ul li ul li.has-sub:after  {
   right: auto;
   left: 15px;
 }
+
 #main-menu ul li ul li.has-sub:before,
 #mobile-menu ul li ul li.has-sub:before {
   display: block;

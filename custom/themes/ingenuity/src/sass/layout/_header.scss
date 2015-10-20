@@ -9,10 +9,17 @@
 	width: 100%;
 }
 
+.main-header.home {
+	background-color: rgba(0,0,0,0.3);
+	height: 70px;
+	.main-wrapper {
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(flex-end);
+	}
+}
+
 .main-header {
-	// @include display(flex);
-	// @include align-items(center);
-	// @include justify-content(center);
 	.main-wrapper {
 		@include display(flex);
 		@include align-items(center);
@@ -67,7 +74,7 @@
 .home-hero {
 	min-height: 100vh;
 	hgroup {
-		margin-top: -110px;
+		margin-top: 10px;
 		img {
 			width: 200px;
 			height: auto;

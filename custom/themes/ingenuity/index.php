@@ -1,26 +1,82 @@
 <?php get_header(); ?>	
 
-	 
-  <?php // The loop starts here 
-  	if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-  ?>
-
-  
-  <?php // Grabbing meta variables
-    $pullquote  = wpautop(get_post_meta($post->ID,'_blogadd_pullquote',true));
-    $url        =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-  ?>
-
-	<div class="default-hero" style="background-image: url('<?php echo $url[0] ?>'); background-size: cover;">
-		<hgroup>
-			<h1>Insert Main Heading Here</h1>
-			<h2>Insert sub heading/intro here.</h2>
-		</hgroup>
-	</div>
 	
-	<div class="content-wrapper"> 
+	<?php // Get custom meta values 
+
+		// Hero Banner
+		$banner     = get_post_meta( $post->ID, '_banner_image', true );
+		$bannerurl  = wp_get_attachment_image_src( $banner,'banner', true );
+		$heading    = get_post_meta( $post->ID, '_banner_heading', true );
+		$subheading = get_post_meta( $post->ID, '_banner_subheading', true );
+  	
+  	?>
+
+	<div class="default-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
+		<hgroup>
+			<h1><?php echo $heading; ?></h1>
+			<h2><?php echo $subheading; ?></h2>
+		</hgroup>
+	</div>	
+
+	<?php // The loop starts here 
+		if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+	?>
+	
+	<div class="main-wrapper"> 
 		<section class="main-content"> 
 			
+			<div class="container blog__corp-new">
+			    <?php  
+			        $banner_id      = get_post_meta($post->ID, '_banner_image', true);
+			        $banner_url     = wp_get_attachment_image_src($banner_id,'banner', true);
+			        ?>
+					
+					<?php $url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+			        <?php $category_classes = ''; ?>
+
+			        <?php $categories = get_the_terms($post->ID , 'category'); 
+			        ?>
+
+			        <?php if($categories){
+			            foreach($categories as $category){
+			                $category_classes .= ' '.$category->slug;
+			            };
+			        }; 
+			        ?>
+
+			        <?php if ( get_the_post_thumbnail($post->ID) != '' ) { ?>
+
+					<div class="blog-single-post">
+						<a href="<?php the_permalink(); ?>">
+							<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
+						</a>
+						<p> <?php the_time('F j, Y'); ?> </p>
+						<p> <?php the_excerpt(); ?> </p>
+						<div class="blog-single__cats">
+							<p>Listed Under:</p> 
+							<?php echo get_the_category_list(); ?>
+						</div>
+					</div>
+
+			        <?php } else { ?>
+
+			        <div class="blog-single-post">
+			        	<a href="<?php the_permalink(); ?>">
+			        		<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
+			        	</a>
+			        	<p> <?php the_time('F j, Y'); ?> </p>
+			        	<p> <?php the_excerpt(); ?> </p>
+			        	<div class="blog-single__cats">
+			        		<p>Listed Under:</p> 
+			        		<?php echo get_the_category_list(); ?>
+			        	</div>
+			        </div>
+			        
+			        <?php } ?>
+			
+			    <p class="pagination-links"><?php echo paginate_links( $args ); ?></p>
+			</div>
+
 			
 
 		</section> <!-- ARTICLE WRAP ends here -->

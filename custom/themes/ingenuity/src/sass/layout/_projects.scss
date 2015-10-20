@@ -1,4 +1,8 @@
 // PROJECTs Landing Page
+.projects__panel-container {
+	margin-top: 50px;
+}
+
 .projects__panel {
 	width: 100%;
 	height: 250px;
@@ -9,6 +13,9 @@
 	position: relative;
 	transition: all 0.5s;
 	// -webkit-transform: skew(16deg, 0);
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
 	&:hover {
 		.color-overlay {
 			background-color: rgba(0,0,0,0.0);
@@ -28,7 +35,7 @@
 		position: relative;
 		text-align: center;
 		margin: 0 auto;
-		padding-top: 100px;
+		// padding-top: 100px;
 	}
 }
 

@@ -33,6 +33,16 @@ h1 {
 	}
 }
 
+.home-hero {
+	h1 {
+		@include media($bp-large) {
+		    font-size: modular-scale(7, 1.2rem); //32px
+		    line-height: modular-scale(7, 1.2rem);
+		    margin: 20px 100px;
+		}
+	}
+}
+
 h2 {
 	font-family: $title-font;
 	font-style: normal;
@@ -159,7 +169,13 @@ main {
 
 // PROJECTS ============================
 
-
+.projects__panel {
+	h2 {
+		color: $white;
+		font-size: modular-scale(6);
+		line-height: modular-scale(6);
+	}
+}
 
 span.stats_label,
 span.bolded-text {
