@@ -78,6 +78,7 @@
   box-sizing: border-box;
   background-color: rgba(0,0,0,0.0);
   text-transform: uppercase;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
 
 // FOR THE DEFAULT NAV
@@ -106,7 +107,7 @@
   // background: #ffffff;
   font-family: $lite-headings;
   text-transform: uppercase;
-  background-color: rgba(0,0,0,0.3);
+  // background-color: rgba(0,0,0,0.3);
 }
 
 #main-menu ul li ul li.has-sub:after,
