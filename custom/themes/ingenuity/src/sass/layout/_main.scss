@@ -83,7 +83,7 @@ body {
     }
 }
 
-.blog-wrapper {
+.cta-wrapper {
 
 }
 
@@ -99,6 +99,50 @@ figure {
 nav.main-nav {
 	height: 75px;
 	background-color: $white;
+}
+
+// CALL TO ACTION PANELS
+.industry-cta {
+	min-height: 400px;
+	background-color: $yellow;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	@include media($bp-small) {
+		height: 100vh;
+	}
+	a {
+		padding-bottom: 2px;
+		// border-bottom: 2px solid rgba(255,255,255,0.4);
+	}
+	i {
+		margin-right: 10px;
+	}
+	.content-wrapper {
+		h2 {
+			margin: 0px 8%; 
+			@include media($bp-small) {
+				margin: 20px 0;
+			}
+		}
+		a button {
+			min-width: 150px;
+			min-height: 50px;
+		}
+	}
+}
+
+.cta-contact {
+	@include flex-direction(column);
+	@include media($bp-large) {
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(center);
+		@include flex-direction(row);
+	}
+	@include media($bp-med) {
+		margin-top: 25px;
+	}
 }
 
 .hero {
