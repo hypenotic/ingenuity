@@ -111,6 +111,10 @@ figcaption {
 
 // MAIN ============================
 
+.navigation {
+	font-family: $main-headings;
+}
+
 main {
 	p { 
 		font-family: $main-body-font;

@@ -104,7 +104,7 @@
   position: absolute;
   transition: max-height 0.4s ease-out;
   // background: #ffffff;
-  font-family: $main-body-font;
+  font-family: $lite-headings;
   text-transform: uppercase;
   background-color: rgba(0,0,0,0.3);
 }
@@ -270,7 +270,7 @@
 }
 #main-menu > ul > li > a,
 #mobile-menu > ul > li > a {
-  font-family: $main-body-font;
+  font-family: $lite-headings;
   color: $yellow;
   padding: 5px 10px;
   margin: 0 5px;

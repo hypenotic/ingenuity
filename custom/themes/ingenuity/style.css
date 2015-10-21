@@ -458,6 +458,9 @@ figcaption {
 ::selection {
   background-color: #fcd838; }
 
+.navigation {
+  font-family: "Audimat3000-Regulier", sans-serif; }
+
 main p {
   font-family: "ff-dagny-web-pro", sans-serif;
   font-weight: 200;
@@ -645,7 +648,7 @@ figcaption.logopack__download:hover {
   position: absolute;
   -webkit-transition: max-height 0.4s ease-out;
           transition: max-height 0.4s ease-out;
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "Audimat3000-Leger", sans-serif;
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.3); }
 
@@ -793,7 +796,7 @@ figcaption.logopack__download:hover {
 
 #main-menu > ul > li > a,
 #mobile-menu > ul > li > a {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "Audimat3000-Leger", sans-serif;
   color: #fcd838;
   padding: 5px 10px;
   margin: 0 5px;
