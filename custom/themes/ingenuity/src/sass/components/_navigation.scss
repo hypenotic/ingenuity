@@ -78,7 +78,7 @@
   box-sizing: border-box;
   background-color: rgba(0,0,0,0.0);
   text-transform: uppercase;
-  text-shadow: 1px 1px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 // FOR THE DEFAULT NAV
@@ -162,6 +162,7 @@
   display: block;
   width: 170px;
   padding: 11px 10px 11px 20px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 #main-menu ul li ul li:hover > a,
 #main-menu ul li ul li.active > a,

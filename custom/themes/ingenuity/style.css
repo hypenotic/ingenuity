@@ -411,7 +411,7 @@ h1 {
     font-size: 8.97413rem;
     line-height: 8.97413rem;
     margin: 20px 100px;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.2); } }
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); } }
 
 h2 {
   font-family: "Audimat3000-Regulier", sans-serif;
@@ -651,7 +651,7 @@ figcaption.logopack__download:hover {
   box-sizing: border-box;
   background-color: transparent;
   text-transform: uppercase;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2); }
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
 
 .default-nav #main-menu ul li a,
 .default-nav #mobile-menu ul li a {
@@ -722,7 +722,8 @@ figcaption.logopack__download:hover {
   letter-spacing: 0;
   display: block;
   width: 170px;
-  padding: 11px 10px 11px 20px; }
+  padding: 11px 10px 11px 20px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
 
 #main-menu ul li ul li:hover > a,
 #main-menu ul li ul li.active > a,
