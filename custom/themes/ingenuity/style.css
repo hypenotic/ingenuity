@@ -623,6 +623,9 @@ figcaption.logopack__download:hover {
 .navigation {
   padding-top: 25px; }
 
+.navigation.home-nav {
+  padding-top: 20px; }
+
 #main-menu,
 #mobile-menu {
   margin: 0;
@@ -695,7 +698,7 @@ figcaption.logopack__download:hover {
   position: absolute;
   left: -9999px;
   z-index: 9999;
-  top: auto; }
+  top: 25px; }
 
 #main-menu ul li ul li,
 #mobile-menu ul li ul li {
@@ -1353,7 +1356,7 @@ figcaption.logopack__download:hover {
 .home-hero {
   min-height: 100vh; }
   .home-hero hgroup {
-    margin-top: 10px; }
+    margin-top: 100px; }
     .home-hero hgroup img {
       width: 200px;
       height: auto;
