@@ -265,4 +265,9 @@ span.bolded-text {
 	font-family: $bold-font;
 }
 
+#left p {
+	line-height: modular-scale(0,1.2rem);
+	margin-bottom: 10px;
+}
+
 

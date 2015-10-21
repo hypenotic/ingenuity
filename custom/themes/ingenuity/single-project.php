@@ -40,69 +40,63 @@
             </hgroup>
         </div>
 
-      
-        <div class="main-wrapper">
-        
-            <div class="main-content">
-              
-                <section class="project__hero-blurb">
-                    <p><?php echo $blurb; ?></p>
+        <div class="main-wrapper blog-wrapper">
+        <aside id="left"> 
+            <?php if ($client) { ?>
+                <p><span class="stats_label">Client</span>: <?php echo $client; ?></p>
+            <?php } ?>
+            <?php if ($sqft) { ?>
+                <p><span class="stats_label">SF</span>: <?php echo $sqft; ?></p>
+            <?php } ?>
+            <?php if ($budget) { ?>
+                <p><span class="stats_label">Budget</span>: <?php echo $budget; ?></p>
+            <?php } ?>
+            <?php if ($duration) { ?>
+                <p><span class="stats_label">Duration</span>: <?php echo $duration; ?></p>
+            <?php } ?>
+            <?php if ($location) { ?>
+                <p><span class="stats_label">Location</span>: <?php echo $location; ?></p>
+            <?php } ?>
+        </aside>
+        <section class="blog-entry">
+            <section class="project__hero-blurb">
+                <p><?php echo $blurb; ?></p>
+            </section>
+
+            <?php // if there is a VIDEO, display it here
+                if ($video) { ?>
+                
+                <section class="project__video">
+                    <?php get_template_part( 'template-part-video' ); ?> 
                 </section>
 
-                <section class="project__stats">
-                    <?php if ($client) { ?>
-                        <p><span class="stats_label">Client</span>: <?php echo $client; ?></p>
-                    <?php } ?>
-                    <?php if ($sqft) { ?>
-                        <p><span class="stats_label">SF</span>: <?php echo $sqft; ?></p>
-                    <?php } ?>
-                    <?php if ($budget) { ?>
-                        <p><span class="stats_label">Budget</span>: <?php echo $budget; ?></p>
-                    <?php } ?>
-                    <?php if ($duration) { ?>
-                        <p><span class="stats_label">Duration</span>: <?php echo $duration; ?></p>
-                    <?php } ?>
-                    <?php if ($location) { ?>
-                        <p><span class="stats_label">Location</span>: <?php echo $location; ?></p>
-                    <?php } ?>
-                </section>
+            <?php } ?> 
 
-                <?php // if there is a VIDEO, display it here
-                    if ($video) { ?>
-                    
-                    <section class="project__video">
-                        <?php get_template_part( 'template-part-video' ); ?> 
-                    </section>
+            <section class="project__dimension">
+                <?php the_content(); ?>
+            </section>
 
-                <?php } ?> 
-
-                <section class="project__dimension">
-                    <?php the_content(); ?>
-                </section>
-
-                
-                <?php // if there is a TESTIMONIAL, display it here
-                    if ($test) { ?>
-
-                    <section class="project__testimonial">
-                        <?php get_template_part( 'template-part-testimonial' ); ?>
-                    </section>
-                
-                <?php } ?> 
-                
-                
-                <?php // if there is a GALLERY, display it here
-                    if ($gallery) { ?>
-                    
-                    <?php print_r($gallery) ?>
-                    <section class="project__gallery">
-                        <?php get_template_part( 'template-part-gallery' ); ?> 
-                    </section>
-
-                <?php } ?> 
             
-            </div>
+            <?php // if there is a TESTIMONIAL, display it here
+                if ($test) { ?>
 
+                <section class="project__testimonial">
+                    <?php get_template_part( 'template-part-testimonial' ); ?>
+                </section>
+            
+            <?php } ?> 
+            
+            
+            <?php // if there is a GALLERY, display it here
+                if ($gallery) { ?>
+                
+                <?php print_r($gallery) ?>
+                <section class="project__gallery">
+                    <?php get_template_part( 'template-part-gallery' ); ?> 
+                </section>
+
+            <?php } ?> 
+        </section>
         </div>
 
     <?php endwhile; else : ?>

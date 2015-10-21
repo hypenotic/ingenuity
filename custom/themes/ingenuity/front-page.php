@@ -18,7 +18,7 @@
 		    </video>
 		</div>
 		<hgroup>
-			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/nofillyellowlogo.png" alt="">
+			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="">
 			<h1><?php echo $heading; ?></h1>
 			<h2><?php echo $subheading; ?></h2>
 		</hgroup>

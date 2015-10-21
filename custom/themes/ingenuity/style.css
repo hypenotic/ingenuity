@@ -610,6 +610,10 @@ span.stats_label,
 span.bolded-text {
   font-family: "Audimat3000-Regulier", sans-serif; }
 
+#left p {
+  line-height: 1.2rem;
+  margin-bottom: 10px; }
+
 figcaption.logopack__download:hover {
   background-color: black; }
   figcaption.logopack__download:hover h3 {
@@ -698,7 +702,7 @@ figcaption.logopack__download:hover {
   position: absolute;
   left: -9999px;
   z-index: 9999;
-  top: 25px; }
+  top: 30px; }
 
 #main-menu ul li ul li,
 #mobile-menu ul li ul li {
