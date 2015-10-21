@@ -12,6 +12,7 @@ $(function() {
     // When the player is ready MUTE
     player.addEvent('ready', function() {
         player.api('setVolume', 0);
+        player.api('seekTo',8);
     });
 });
 
