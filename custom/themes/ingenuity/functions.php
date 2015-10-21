@@ -15,6 +15,8 @@ require_once('includes/functions/enqueue-style.php');
 require_once('includes/functions/enqueue-script.php');
 require_once('includes/functions/cuztom-posts.php');
 require_once('includes/functions/register-menu.php');
+require_once('includes/functions/readmore.php');
+require_once('includes/functions/grabfirstimage.php');
 
 
 //Load shortcodes

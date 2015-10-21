@@ -44,13 +44,14 @@
 			        }; 
 			        ?>
 
-			        <?php if ( get_the_post_thumbnail($post->ID) != '' ) { ?>
+			        <?php if ($url) { ?>
 
 					<div class="blog-single-post">
 						<a href="<?php the_permalink(); ?>">
 							<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
 						</a>
 						<p> <?php the_time('F j, Y'); ?> </p>
+						<img src="<?php echo $url[0] ?>" alt="<?php the_title(); ?>">
 						<p> <?php the_excerpt(); ?> </p>
 						<div class="blog-single__cats">
 							<p>Listed Under:</p> 
@@ -65,6 +66,7 @@
 			        		<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
 			        	</a>
 			        	<p> <?php the_time('F j, Y'); ?> </p>
+			        	<img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>">
 			        	<p> <?php the_excerpt(); ?> </p>
 			        	<div class="blog-single__cats">
 			        		<p>Listed Under:</p> 

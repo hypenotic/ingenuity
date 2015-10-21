@@ -68,6 +68,12 @@
 	}
 	h2 {
 		color: $white;
+		text-align: center;
+		margin: 20px 125px;
+		@include media($bp-large) {
+		    font-size: modular-scale(2); 
+			line-height: modular-scale(2); 
+		}
 	}
 }
 
@@ -85,7 +91,7 @@
 
 .default-hero {
 	width: 100%;
-	min-height: 70vh;
+	min-height: 80vh;
 }
 
 

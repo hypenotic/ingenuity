@@ -48,10 +48,14 @@ h2 {
 	font-family: $title-font;
 	font-style: normal;
 	font-weight: 400;
-	font-size: modular-scale(3); 
-	line-height: modular-scale(3); 
+	font-size: modular-scale(1); 
+	line-height: modular-scale(1); 
 	color: $white;
-	text-transform: uppercase;	
+	text-transform: uppercase;
+	@include media($bp-large) {
+	    font-size: modular-scale(3); 
+		line-height: modular-scale(3); 
+	}	
 }
 
 h3,
@@ -66,7 +70,7 @@ h3,
 h4 {
 	font-family: $main-headings;
 	font-size: modular-scale(1); 
-	line-height: modular-scale(1); 
+	line-height: modular-scale(1, 1.7rem); 
 }
 
 h5 {
@@ -80,6 +84,13 @@ h6 {
 a {
 	text-decoration: none;
 	color: $grey;
+}
+
+ul {
+	font-family: $main-body-font;
+	font-weight: 200;
+	font-size: modular-scale(0, 1.3rem); 
+	line-height: modular-scale(1, 1.3rem); 
 }
 
 ul.post-categories {
@@ -124,7 +135,7 @@ main {
 		// letter-spacing: 1px;
 		@include media($bp-large) {
 		    font-size: modular-scale(0);
-		    line-height: modular-scale(1, 1.4rem);
+		    line-height: modular-scale(1);
 		}
 	}
 	p.no-space {
@@ -164,8 +175,8 @@ main {
 			color: $black;
 			text-transform: uppercase;
 			font-weight: 400;
-			font-size: modular-scale(3); 
-			line-height: modular-scale(3, 1.3rem); 
+			font-size: modular-scale(2); 
+			line-height: modular-scale(2, 1.6rem); 
 			@include media($bp-small) {
 				font-size: modular-scale(0, 1.3rem);
 				line-height: modular-scale(1, 1.3rem);
@@ -178,7 +189,7 @@ main {
 	text-align: center;
 	margin-top: 25px;
 	a:hover button {
-		background-color: $yellow;
+		background-color: $white;
 		p {
 			color: $black;
 		}
@@ -190,6 +201,7 @@ main {
 		transition: all 0.5s;
 		p {
 			color: $yellow;
+			font-family: $lite-headings;
 		}
 	}
 	p {
@@ -214,6 +226,10 @@ main {
 	h3, 
 	figcaption {
 		margin-top: 20px;
+	}
+	figcaption {
+		font-family: $main-body-font;
+		font-weight: 200;
 	}
 }
 

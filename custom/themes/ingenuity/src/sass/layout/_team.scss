@@ -1,6 +1,6 @@
 .team__container {
 	position: relative;
-	// margin-top: 50px;
+	padding: 0 50px;
 	@include display(flex);
 	@include align-items(flex-start);
 	@include justify-content(center);

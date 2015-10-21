@@ -152,6 +152,7 @@
 #main-menu ul li ul li a,
 #mobile-menu ul li ul li a {
   font-size: modular-scale(0, 0.8rem);
+  line-height: modular-scale(0, 1rem); 
   font-weight: 400;
   // text-transform: none;
   color: $yellow;
@@ -246,7 +247,7 @@
   width: 0;
   position: absolute;
   right: 8px;
-  top: 10px;
+  top: 14px;
 }
 // this styles the background behind the (▾)
 #main-menu > ul > li.has-sub > a:after,
