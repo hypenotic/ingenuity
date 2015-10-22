@@ -664,6 +664,13 @@ figcaption.logopack__download:hover {
   z-index: 9999;
   top: 30px; }
 
+.home-nav #main-menu ul li ul,
+.home-nav #mobile-menu ul li ul {
+  position: absolute;
+  left: -9999px;
+  z-index: 9999;
+  top: 10px; }
+
 #main-menu ul li ul li,
 #mobile-menu ul li ul li {
   max-height: 0;
