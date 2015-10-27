@@ -469,6 +469,13 @@ figcaption {
 ::selection {
   background-color: #fcd838; }
 
+span.yellow-highlight {
+  background-color: #fcd838; }
+
+span.black-highlight {
+  background-color: black;
+  padding: 5px 10px; }
+
 .navigation {
   font-family: "Audimat3000-Regulier", sans-serif; }
 
@@ -562,8 +569,8 @@ main p.no-space {
 
 .projects__panel h2 {
   color: white;
-  font-size: 8.41535rem;
-  line-height: 8.41535rem; }
+  font-size: 6.31309rem;
+  line-height: 6.31309rem; }
 
 span.stats_label,
 span.bolded-text {
@@ -663,13 +670,6 @@ figcaption.logopack__download:hover {
   left: -9999px;
   z-index: 9999;
   top: 30px; }
-
-.home-nav #main-menu ul li ul,
-.home-nav #mobile-menu ul li ul {
-  position: absolute;
-  left: -9999px;
-  z-index: 9999;
-  top: 10px; }
 
 #main-menu ul li ul li,
 #mobile-menu ul li ul li {
@@ -1334,9 +1334,12 @@ figcaption.logopack__download:hover {
 
 .default-hero {
   width: 100%;
-  min-height: 100vh; }
-  .default-hero hgroup h1 {
-    background-color: #fcd838; }
+  min-height: 80vh; }
+  .default-hero hgroup {
+    margin-top: 100px; }
+    .default-hero hgroup h1 {
+      color: black;
+      padding: 15px 20px; }
 
 nav.nav__mobile {
   display: none; }
@@ -1675,6 +1678,8 @@ aside {
   position: relative;
   -webkit-transition: all 0.5s;
           transition: all 0.5s;
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1698,10 +1703,13 @@ aside {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
-  .projects__panel:hover .color-overlay {
-    background-color: transparent;
-    -webkit-filter: brightness(0.7);
-            filter: brightness(0.7); }
+  .projects__panel:hover {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); }
+    .projects__panel:hover .color-overlay {
+      background-color: transparent;
+      -webkit-filter: brightness(0.7);
+              filter: brightness(0.7); }
   .projects__panel .color-overlay {
     width: 100%;
     height: 100%;

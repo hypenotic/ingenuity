@@ -12,11 +12,13 @@
 	margin-bottom: 40px;
 	position: relative;
 	transition: all 0.5s;
+	filter: grayscale(0.7);
 	// -webkit-transform: skew(16deg, 0);
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
 	&:hover {
+		filter: grayscale(0.0);
 		.color-overlay {
 			background-color: rgba(0,0,0,0.0);
 			filter: brightness(0.7);

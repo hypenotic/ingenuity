@@ -121,6 +121,15 @@ figcaption {
 	background-color: $yellow;
 }
 
+span.yellow-highlight {
+	background-color: $yellow;
+}
+
+span.black-highlight {
+	background-color: $black;
+	padding: 5px 10px;
+}
+
 // MAIN ============================
 
 .navigation {
@@ -256,8 +265,8 @@ main {
 .projects__panel {
 	h2 {
 		color: $white;
-		font-size: modular-scale(6);
-		line-height: modular-scale(6);
+		font-size: modular-scale(5);
+		line-height: modular-scale(5);
 	}
 }
 

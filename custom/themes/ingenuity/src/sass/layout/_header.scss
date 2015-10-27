@@ -91,13 +91,24 @@
 
 .default-hero {
 	width: 100%;
-	min-height: 100vh;
+	min-height: 80vh;
 	hgroup {
+		margin-top: 100px;
 		h1 {
-			background-color: $yellow;
+			// background-color: $yellow;
+			color: $black;
+			padding: 15px 20px;
+			// text-align: left;
+			// margin: 0;
+			// margin-right: 25%;
+			// padding: 0;
 		}
 		h2 {
-
+			// margin: 0;
+			// margin-top: 25px;
+			// text-align: left;
+			// margin-right: 40%;
+			// background-color: $black;
 		}
 	}
 }
