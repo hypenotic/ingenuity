@@ -1334,7 +1334,9 @@ figcaption.logopack__download:hover {
 
 .default-hero {
   width: 100%;
-  min-height: 80vh; }
+  min-height: 100vh; }
+  .default-hero hgroup h1 {
+    background-color: #fcd838; }
 
 nav.nav__mobile {
   display: none; }

@@ -91,7 +91,15 @@
 
 .default-hero {
 	width: 100%;
-	min-height: 80vh;
+	min-height: 100vh;
+	hgroup {
+		h1 {
+			background-color: $yellow;
+		}
+		h2 {
+
+		}
+	}
 }
 
 
