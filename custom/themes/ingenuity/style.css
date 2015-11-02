@@ -1098,6 +1098,32 @@ figcaption.logopack__download:hover {
     margin: 0 3px 6px;
     padding: 3px 5px;
     text-align: center; } }
+#fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  height: 100vh;
+  z-index: 9000; }
+
+#fs-menu {
+  position: relative;
+  top: 10%;
+  left: 20%; }
+
+#fs-menu ul {
+  list-style-type: none;
+  text-transform: uppercase; }
+
+#fs-menu ul li {
+  font-size: 4.736rem;
+  line-height: 4.736rem;
+  font-weight: 400; }
+  #fs-menu ul li ul li {
+    font-size: 2.66533rem;
+    line-height: 2.66533rem; }
+
 .project__gallery {
   height: 500px; }
 
