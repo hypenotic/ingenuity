@@ -590,6 +590,7 @@
 // FULLSCREEN MENU
 
 #fullscreen-menu {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -600,12 +601,14 @@
 }
 
 #fs-menu {
+  display: none;
   position: relative;
   top: 10%;
   left: 20%;
 }
 
 #fs-menu ul {
+  display: none;
   list-style-type: none;
   text-transform: uppercase;
   

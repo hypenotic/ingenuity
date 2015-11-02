@@ -1099,6 +1099,7 @@ figcaption.logopack__download:hover {
     padding: 3px 5px;
     text-align: center; } }
 #fullscreen-menu {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -1108,11 +1109,13 @@ figcaption.logopack__download:hover {
   z-index: 9000; }
 
 #fs-menu {
+  display: none;
   position: relative;
   top: 10%;
   left: 20%; }
 
 #fs-menu ul {
+  display: none;
   list-style-type: none;
   text-transform: uppercase; }
 
