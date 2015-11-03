@@ -57,18 +57,18 @@
 					?>
 						
 					<figure class="team__single">
+						<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
 						<hgroup>
-							<h3><?php echo $name; ?>
+							<h3 class="team__name"><?php echo $name; ?>
 								<?php if ($creds) { ?>
 									<span class="team__creds">
 										<?php echo $creds; ?>
 									</span>
 								<?php } ?>
 							</h3>
-							<h4><?php echo $title; ?></h4>
+							<h4 class="team__title"><?php echo $title; ?></h4>
 							<figcaption><?php echo $profile; ?></figcaption>
 						</hgroup>
-						<img src="<?php echo $photourl[0] ?>" alt="<?php echo $name; ?>">
 					</figure>
 					
 					<?php

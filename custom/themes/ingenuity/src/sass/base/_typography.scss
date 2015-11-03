@@ -228,8 +228,19 @@ main {
 
 // TEAM =============================
 
+.team__name {
+	font-size: modular-scale(6);
+	line-height:modular-scale(6);
+}
+
+.team__title {
+	font-size: modular-scale(2);
+
+}
+
 .team__creds {
 	font-size: modular-scale(0);
+	line-height:modular-scale(0);
 }
 
 .team__single {

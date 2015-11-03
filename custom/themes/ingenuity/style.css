@@ -547,8 +547,16 @@ main p.no-space {
         font-size: 0.8rem;
         line-height: 2.66533rem; } }
 
+.team__name {
+  font-size: 8.41535rem;
+  line-height: 8.41535rem; }
+
+.team__title {
+  font-size: 2.66533rem; }
+
 .team__creds {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  line-height: 1.5rem; }
 
 .team__single h3,
 .team__single figcaption {
@@ -1850,15 +1858,21 @@ aside {
     -moz-flex: 100%;
     -ms-flex: 100%;
     flex: 100%; }
-    .team__container .team__single img {
+    .team__container .team__single figure {
       position: absolute;
-      width: auto;
-      height: 100%;
       top: 0;
       left: 0;
+      background-position: top center;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      -webkit-filter: grayscale(100%) brightness(0.7);
+              filter: grayscale(100%) brightness(0.7);
       z-index: 600; }
     .team__container .team__single hgroup {
-      z-index: 6000000; }
+      position: relative;
+      padding: 0 25px;
+      z-index: 90000000000; }
 
 .projects__panel-container {
   margin-top: 50px; }
