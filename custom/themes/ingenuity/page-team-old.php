@@ -57,18 +57,16 @@
 					?>
 						
 					<figure class="team__single">
-						<hgroup>
-							<h3><?php echo $name; ?>
-								<?php if ($creds) { ?>
-									<span class="team__creds">
-										<?php echo $creds; ?>
-									</span>
-								<?php } ?>
-							</h3>
-							<h4><?php echo $title; ?></h4>
-							<figcaption><?php echo $profile; ?></figcaption>
-						</hgroup>
 						<img src="<?php echo $photourl[0] ?>" alt="<?php echo $name; ?>">
+						<h3><?php echo $name; ?>
+							<?php if ($creds) { ?>
+								<span class="team__creds">
+									<?php echo $creds; ?>
+								</span>
+							<?php } ?>
+						</h3>
+						<h4><?php echo $title; ?></h4>
+						<figcaption><?php echo $profile; ?></figcaption>
 					</figure>
 					
 					<?php

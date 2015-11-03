@@ -16,4 +16,26 @@ $(function() {
     });
 });
 
+// Menu Toggle 
+
+var anchor = document.getElementById('toggle-button');
+var anchorBtn = document.getElementById('menu-toggle');
+
+    
+var open = false;
+anchor.onclick = function(event){
+	event.preventDefault();
+	if(!open){
+	  anchorBtn.classList.add('close');
+	  open = true;
+	  $( "#fullscreen-menu" ).toggle( "slide" );
+	}
+	else{
+	  anchorBtn.classList.remove('close');
+	  $( "#fullscreen-menu" ).toggle( "slide" );
+	  open = false;
+	}
+};
+
+
 

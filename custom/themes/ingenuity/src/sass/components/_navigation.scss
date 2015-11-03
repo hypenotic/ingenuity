@@ -587,10 +587,179 @@
 }
 
 
-// FULLSCREEN MENU
+// ============ FULLSCREEN MENU
+
+// === Menu Toggle
+
+#toggle-button {
+  position: absolute;
+  top: 25px;
+  right: 80px;
+  z-index: 900000000000;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  background-color: transparent;
+  // border-radius: 25px;
+  // border: 1px solid $black;
+  border: none;
+  p {
+    text-transform: uppercase;
+    margin: 0;
+    padding-right: 10px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+#menu-toggle {
+  position: relative;
+}
+
+// =========== General button styles & variables =======================================//
+#menu-toggle {
+  display:inline-block;
+  margin: 0;
+  border:none;
+  background:none;
+  
+  span{
+    display:block;
+  }
+}
+
+$color : $black;
+$transition: .3s;// increase this to see the transformations happen in slow motion
+
+/* ====================== lines button ==================================================*/
+
+$button-size : 1.5rem; 
+//common to all three-liners
+.lines-button {
+  // padding: $button-size/2 $button-size/4;
+  padding: 0;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $button-size/7;
+/* */
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    transition: 0;
+  }
+}
+//common to all three-liners
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/8;
+  background: $color;
+  border-radius: $button-size/16; 
+  transition: $transition;
+}
+//common to all three-liners
+.lines {
+  @include line;
+  position: relative;
+  // left: 30px; 
+
+  &:before, &:after {
+   @include line;
+    position: absolute;
+    left:0;
+    content: '';
+    -webkit-transform-origin: $button-size/14 center;
+            transform-origin: $button-size/14 center;
+  }
+  &:before { 
+    top: $button-size/4; 
+  }
+  &:after { 
+    top: -$button-size/4; 
+  }
+}
+
+//common to all three-liners
+.lines-button:hover {
+  .lines {
+    &:before { 
+      top: $button-size/3.5; 
+    }
+    &:after { 
+      top: -$button-size/3.5; 
+    }
+  }
+}
+.lines-button.close {
+  -webkit-transform: scale3d(.8,.8,.8);
+          transform: scale3d(.8,.8,.8);
+}
+
+//three-lines to x
+.lines-button.x.close{
+  .lines {
+    background: transparent;
+    &:before, &:after{
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      top: 25px; // default = 0
+      width: 5rem; // change to $button-size if you want it the same size
+      background: $white;
+    }
+    &:before{
+      -webkit-transform: rotate3d(0,0,1,45deg); 
+              transform: rotate3d(0,0,1,45deg); 
+    }
+    &:after{
+      -webkit-transform: rotate3d(0,0,1,-45deg); 
+              transform: rotate3d(0,0,1,-45deg); 
+    }
+  }
+}
+
+//three-lines to x method 2
+.lines-button.x2{
+    .lines{
+      transition: background .3s .5s ease;
+
+      &:before, &:after{
+        //set transform origin
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+        transition: top .3s .6s ease, -webkit-transform .3s ease;
+        transition: top .3s .6s ease, transform .3s ease;
+      }
+    }
+}
+
+.lines-button.x2.close{
+  .lines {
+    transition: background .3s 0s ease;
+    background: transparent;
+
+    &:before, &:after{
+      transition: top .3s ease, -webkit-transform .3s .5s ease;//delay the formation of the x till the minus is formed  
+      transition: top .3s ease, transform .3s .5s ease;//delay the formation of the x till the minus is formed  
+      top:0;
+      width: $button-size;
+    }
+    &:before{
+      -webkit-transform: rotate3d(0,0,1,45deg); 
+              transform: rotate3d(0,0,1,45deg); 
+    }
+    &:after{
+      -webkit-transform: rotate3d(0,0,1,-45deg); 
+              transform: rotate3d(0,0,1,-45deg); 
+    }
+  }
+}
+
+// =======================
 
 #fullscreen-menu {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -598,29 +767,44 @@
   width: 100%;
   height: 100vh;
   z-index: 9000;
+  display: none;
 }
 
 #fs-menu {
-  display: none;
+  // display: none;
   position: relative;
-  top: 10%;
-  left: 20%;
+  top: 12%;
+  left: 42%;
 }
 
 #fs-menu ul {
-  display: none;
+  font-family: $title-font;
+  // text-align: center;
+  // display: none;
   list-style-type: none;
   text-transform: uppercase;
-  
+  padding-left: 0;
+  transition: all 0.3s;
+  a span {
+    transition: all 0.3s;
+    &:hover {
+      color: $yellow;
+    }
+  }
+  ul {
+    padding-left: 25px;
+  } 
 }
 
 #fs-menu ul li {
-  font-size: modular-scale(4);
-  line-height: modular-scale(4);
+  font-size: modular-scale(2);
+  line-height: modular-scale(2, 1.8rem);
   font-weight: 400;
   ul li {
-    font-size: modular-scale(2);
-    line-height: modular-scale(2);
+    font-size: modular-scale(0);
+    line-height: modular-scale(0, 1.7rem);
+    font-weight: 300;
+    font-family: $lite-headings;
   }
 }
 

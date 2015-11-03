@@ -35,11 +35,63 @@
 		?> 
 	</div>
 
-	<button id="toggle-button">
-		<p>Menu</p>
-		<div id="menu-toggle" type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
-		  <span class="lines"></span>
-		</div>
+	<button id="menu-toggle" type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
+	  <span class="lines"></span>
 	</button>
+
+	<?php if (is_front_page()) { ?>
+		
+		<header class="main-header home">
+			<div class="main-wrapper">
+				<nav class="navigation home-nav">
+					<nav class="nav__bottom-links">
+						<?php 
+						wp_nav_menu(array(
+						  'menu' => 'Main Menu', 
+						  'container_id' => 'main-menu', 
+						  'walker' => new Main_Menu_Walker()
+						)); 
+						?> 
+					</nav>
+					<nav class="nav__mobile">
+						<?php 
+						wp_nav_menu(array(
+						  'menu' => 'Mobile Menu', 
+						  'container_id' => 'mobile-menu', 
+						  'walker' => new Main_Menu_Walker()
+						)); 
+						?> 
+						<div id="trigger-overlay__mobile">
+							
+						</div>
+					</nav>
+				</nav>
+			</div>
+		</header>
+		
+
+	<?php } else { ?> 
+
+		<header class="main-header">
+			<div class="main-wrapper">
+				<div>
+					<a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/dist/images/nofillyellowlogo.png" alt="Ingenuity"></a>
+				</div>
+				<nav class="navigation default-nav">
+					<nav class="nav__bottom-links">
+						<?php 
+						wp_nav_menu(array(
+						  'menu' => 'Main Menu', 
+						  'container_id' => 'main-menu', 
+						  'walker' => new Main_Menu_Walker()
+						)); 
+						?> 
+					</nav>
+				</nav>
+			</div>
+		</header>
+
+	<?php } ?>
+	
 	
 	<main> 

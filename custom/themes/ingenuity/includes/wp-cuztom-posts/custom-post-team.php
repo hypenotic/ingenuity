@@ -93,9 +93,8 @@ $teampage->add_meta_box(
                     'description'   => '',
                     'type'          => 'select',
                     'options'       => array(
-                                'value1'    => 'Sales',
-                                'value2'    => 'Consulting',
-                                'value3'    => 'Corporate'
+                                'value1'    => 'Exec',
+                                'value2'    => 'Member'
                             ),
                     'default_value' => 'value1'
                 )
