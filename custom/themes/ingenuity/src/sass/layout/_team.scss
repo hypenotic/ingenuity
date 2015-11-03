@@ -27,7 +27,8 @@
 		background-color: $yellow;
 		position: relative;
 		height: 300px;
-		@include flex(100%); 
+		width: 100%;
+		margin-bottom: 25px;
 		figure {
 			position: absolute;
 			top: 0;
