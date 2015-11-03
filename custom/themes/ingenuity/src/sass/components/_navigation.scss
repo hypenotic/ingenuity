@@ -763,7 +763,7 @@ $button-size : 1.5rem;
   position: fixed;
   top: 0;
   left: 0;
-  background:rgba(0,0,0,0.95);
+  background:rgba(0,0,0,0.98);
   width: 100%;
   height: 100vh;
   z-index: 9000;
@@ -774,7 +774,12 @@ $button-size : 1.5rem;
   // display: none;
   position: relative;
   top: 12%;
-  left: 42%;
+  left: 12%;
+}
+
+li.current_page_item a  {
+  color: $yellow;
+  // font-family: $title-font;
 }
 
 #fs-menu ul {
@@ -788,7 +793,7 @@ $button-size : 1.5rem;
   a span {
     transition: all 0.3s;
     &:hover {
-      color: $yellow;
+      color: $white;
     }
   }
   ul {

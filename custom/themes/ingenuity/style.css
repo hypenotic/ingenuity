@@ -1257,7 +1257,7 @@ figcaption.logopack__download:hover {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.98);
   width: 100%;
   height: 100vh;
   z-index: 9000;
@@ -1266,7 +1266,10 @@ figcaption.logopack__download:hover {
 #fs-menu {
   position: relative;
   top: 12%;
-  left: 42%; }
+  left: 12%; }
+
+li.current_page_item a {
+  color: #fcd838; }
 
 #fs-menu ul {
   font-family: "Audimat3000-Regulier", sans-serif;
@@ -1279,7 +1282,7 @@ figcaption.logopack__download:hover {
     -webkit-transition: all 0.3s;
             transition: all 0.3s; }
     #fs-menu ul a span:hover {
-      color: #fcd838; }
+      color: white; }
   #fs-menu ul ul {
     padding-left: 25px; }
 
@@ -1850,8 +1853,9 @@ aside {
   flex-direction: column;
   -ms-flex-direction: column; }
   .team__container .team__single {
+    background-color: #fcd838;
     position: relative;
-    height: 350px;
+    height: 300px;
     -webkit-box-flex: 100%;
     box-flex: 100%;
     -webkit-flex: 100%;
@@ -1862,17 +1866,17 @@ aside {
       position: absolute;
       top: 0;
       left: 0;
-      background-position: top center;
+      background-position: center center;
       background-size: cover;
       width: 100%;
       height: 100%;
-      -webkit-filter: grayscale(100%) brightness(0.7);
-              filter: grayscale(100%) brightness(0.7);
-      z-index: 600; }
+      -webkit-filter: grayscale(100%) brightness(0.9);
+              filter: grayscale(100%) brightness(0.9);
+      z-index: 3; }
     .team__container .team__single hgroup {
       position: relative;
       padding: 0 25px;
-      z-index: 90000000000; }
+      z-index: 4; }
 
 .projects__panel-container {
   margin-top: 50px; }

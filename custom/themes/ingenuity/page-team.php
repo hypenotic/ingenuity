@@ -57,7 +57,9 @@
 					?>
 						
 					<figure class="team__single">
+					<?php if (wp_attachment_is_image($photoid) == true) { ?>
 						<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
+					<?php } ?>
 						<hgroup>
 							<h3 class="team__name"><?php echo $name; ?>
 								<?php if ($creds) { ?>
