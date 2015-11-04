@@ -1475,30 +1475,6 @@ li.current_page_item a {
   transition: all 0.5s ease; }
 
 /* Example media queries */
-@media screen and (max-width: 55.1875em) {
-  .cbp-spmenu-horizontal {
-    font-size: 75%;
-    height: 110px; }
-
-  .cbp-spmenu-top {
-    top: -110px; }
-
-  .cbp-spmenu-bottom {
-    bottom: -110px; } }
-@media screen and (max-height: 26.375em) {
-  .cbp-spmenu-vertical {
-    font-size: 90%;
-    width: 190px; }
-
-  .cbp-spmenu-left,
-  .cbp-spmenu-push-toleft {
-    left: -190px; }
-
-  .cbp-spmenu-right {
-    right: -190px; }
-
-  .cbp-spmenu-push-toright {
-    left: 190px; } }
 /*!
 Animate.css - http://daneden.me/animate
 Version - 3.4.0
@@ -3677,6 +3653,7 @@ Copyright (c) 2015 Daniel Eden
 
 .main-footer {
   min-height: 400px;
+  width: 100%;
   background: black;
   display: -webkit-box;
   display: -moz-box;
@@ -4187,6 +4164,103 @@ aside {
   list-style-type: none;
   padding-left: 0;
   padding-bottom: 0; }
+
+.two-column {
+  margin: 45px 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column; }
+  @media screen and (min-width: 50em) {
+    .two-column {
+      -webkit-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row; } }
+
+.two-column__half {
+  max-height: 100vh; }
+  @media screen and (min-width: 50em) {
+    .two-column__half {
+      -webkit-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 50%;
+      -moz-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-height: 450px; } }
+  @media screen and (min-width: 50em) {
+    .two-column__half {
+      height: 100vh; } }
+
+.services-testimonial {
+  padding: 25px 40px 25px 0; }
+  .services-testimonial blockquote {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.5996rem;
+    line-height: 1.5996rem;
+    font-weight: 400; }
+  .services-testimonial p {
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 1.2rem; }
+
+.services-cta {
+  background: #fcd838;
+  padding: 25px; }
+  .services-cta p {
+    font-size: 2.30996rem;
+    line-height: 2.30996rem; }
+
+.services-cta__btn {
+  font-family: "Audimat3000-Leger", sans-serif;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  border: none;
+  font-weight: 300;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  border: 1px solid black;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+  letter-spacing: 1px; }
 
 .team__container {
   position: relative;

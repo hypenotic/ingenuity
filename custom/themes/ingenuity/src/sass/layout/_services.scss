@@ -1,0 +1,67 @@
+.two-column {
+	margin: 45px 0;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	@include flex-direction(column);
+	@include media($bp-large) {
+		@include flex-direction(row);
+	}
+}
+
+.two-column__half {
+	max-height: 100vh;
+	@include media($bp-large) {
+		@include flex(0 0 50%);
+		max-height: 450px;
+	}
+	@include media($bp-large) {
+		height: 100vh;
+	}
+}
+
+.services-testimonial {
+	padding: 25px 40px 25px 0;
+	blockquote {
+		margin: 0;
+		font-style: italic;
+		font-size: modular-scale(1, 1.2rem);
+		line-height: modular-scale(1, 1.2rem);
+		font-weight: 400;
+	}
+	p {
+		padding-top: 20px;
+		padding-right: 20px;
+		text-align: right;
+		text-transform: uppercase;
+		font-size: modular-scale(0, 1.2rem);
+		line-height: modular-scale(0, 1.2rem);
+	}
+}
+
+.services-cta {
+	background: $yellow;
+	padding: 25px;
+	p {
+		font-size: modular-scale(2, 1.3rem);
+		line-height: modular-scale(2, 1.3rem);
+	}
+}
+
+.services-cta__btn {
+	font-family: $lite-headings;
+	text-transform: uppercase;
+	background-color: $black;
+	color: $white;
+	border: none;
+	font-weight: 300;
+	padding: 15px 20px;
+	font-size: modular-scale(0, 1.1rem);
+	line-height: modular-scale(0, 1.1rem);
+	border: 1px solid $black;
+	transition: all 0.5s;
+	letter-spacing: 1px;
+	&:hover {
+		// font-family: $main-headings;
+	}
+}

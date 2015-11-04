@@ -12,17 +12,12 @@
 
 				
 	<div class="contact-container">
-		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1s"></div>
-		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1s"></div>
-		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1s"></div>
-		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1s"></div>
+		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s"></div>
+		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s"></div>
+		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s"></div>
+		<div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s"></div>
 	</div>
 
-
-
-
-	
-	
 	<?php endwhile; else : ?>
 	    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?>

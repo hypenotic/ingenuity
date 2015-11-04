@@ -27,66 +27,23 @@
 		<div class="main-content"> <!-- contentwrapper begins here -->
 				
 			<?php the_content(); ?>
+
+			<div class="two-column">
+				<div class="two-column__half services-testimonial wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.3s">
+				<blockquote>"We believe in doing things right. And we want to do things right in everything that we do, so our building is a reflection of that. We want our customers to come here and feel the freshness, the openness, feel the honesty and integrity of our business."</blockquote>
+				<p>- Source</p>
+					
+				</div>
+				<div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.8s">
+					<p>Great buildings begin with a conversation. Whether this is your first time creating space or you're an experienced developer interested in a build with your fingerprint on it...</p>
+					<button class="services-cta__btn">let's talk over an espresso</button>
+				</div>
+			</div>
 		
 		</div> <!-- contentWrapper ends here -->
 	</div>
 
-	<?php if($test || $lists) { ?> 
-		<div class="industry__2-col">
-			<div class="industry__2-col__half industry__testimonial">
-				<figure class="industry__testimonial__bubble">
-					<h3><?php echo $test; ?></h3>
-				</figure>
-				<figcaption class="industry__testimonial__src">
-					<div class="test-src__details">
-						<h4><?php echo $testsrc; ?></h4>
-						<p><?php echo $testtitle; ?></p>
-					</div>
-					<?php if( wp_attachment_is_image($testId) == true) { ?>
-						<img src="<?php echo $testUrl[0]; ?>" alt="<?php echo $testsrc; ?>">
-					<?php } else { ?>
-						<div class="empty-test-pic"></div>
-					<?php } ?>	
-				</figcaption>
-			</div>
-			<div class="industry__2-col__half customlist">
-				<h5>What types of companies do we serve?</h5>
-				<ul>
-					<?php if($lists) {
-					    foreach($lists as $listitem) {
-
-					    // Get custom meta values    
-					    $singleindustry  	= $listitem['_industry'];
-					?>
-							
-						<li><?php echo $singleindustry; ?></li>
-								
-					<?php
-					        }
-					    }
-					// End foreach and if loop for cuztom bundle
-					?> 
-				</ul>
-			</div>
-		</div>
-	<?php } ?>
 	
-	<?php if ( $ctatitle ) { ?>
-	    <section class="industry-cta">
-	    	<div class="content-wrapper">
-	    		<h2><?php echo $ctatitle; ?></h2>
-	    		<div class="cta-contact">
-	    			<div class="cta-email">
-	    				<p><i class="fa fa-envelope-o"></i><a href="mailto:<?php echo $ctalink; ?>"><?php echo $ctalink; ?></a></p>
-	    			</div>
-	    			<p class="cta-or">or</p>
-	    			<div class="cta-phone">
-	    				<p><i class="fa fa-phone"></i><a href="tel:<?php echo $ctaphonea; ?>"><?php echo $ctaphone;?></a></p>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </section>
-	<?php } else { } ?>
 	
 	<?php endwhile; else : ?>
 	    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
