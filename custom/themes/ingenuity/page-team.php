@@ -65,25 +65,49 @@
 					    $title 		= $member['_jobtitle'];
 					    $profile 	= $member['_profile'];
 					    $longbio 	= $member['_longbio'];
+					    $flag		= $member['_flag'];
 
 					?>
-						
-					<figure class="team__single trigger-push-panel" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
-					<?php if (wp_attachment_is_image($photoid) == true) { ?>
-						<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
-					<?php } ?>
-						<hgroup>
-							<h3 class="team__name"><?php echo $name; ?>
-								<?php if ($creds) { ?>
-									<span class="team__creds">
-										<?php echo $creds; ?>
-									</span>
-								<?php } ?>
-							</h3>
-							<h4 class="team__title"><?php echo $title; ?></h4>
-							<figcaption><?php echo $profile; ?></figcaption>
-						</hgroup>
-					</figure>
+
+					<?php if ($flag == 'value1') { ?>
+
+						<figure class="team__single trigger-push-panel wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
+						<?php if (wp_attachment_is_image($photoid) == true) { ?>
+							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
+						<?php } ?>
+							<hgroup>
+								<h3 class="team__name"><?php echo $name; ?>
+									<?php if ($creds) { ?>
+										<span class="team__creds">
+											<?php echo $creds; ?>
+										</span>
+									<?php } ?>
+								</h3>
+								<h4 class="team__title"><?php echo $title; ?></h4>
+								<figcaption><?php echo $profile; ?></figcaption>
+							</hgroup>
+						</figure>
+
+					<?php } else { ?>
+
+						<figure class="team__single trigger-down-panel wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
+						<?php if (wp_attachment_is_image($photoid) == true) { ?>
+							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
+						<?php } ?>
+							<hgroup>
+								<h3 class="team__name"><?php echo $name; ?>
+									<?php if ($creds) { ?>
+										<span class="team__creds">
+											<?php echo $creds; ?>
+										</span>
+									<?php } ?>
+								</h3>
+								<h4 class="team__title"><?php echo $title; ?></h4>
+								<figcaption><?php echo $profile; ?></figcaption>
+							</hgroup>
+						</figure>
+
+					<?php } ?> 
 					
 					<?php
 					        }

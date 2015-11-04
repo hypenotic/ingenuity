@@ -1,22 +1,23 @@
 // Pull in gulp plugins and assign to variables
-var gulp    = require('gulp'),
-  uglify    = require('gulp-uglifyjs'),
-  plumber     = require('gulp-plumber'),
-  sass    = require('gulp-ruby-sass'),
-  imagemin  = require('gulp-imagemin'),
-  pngquant  = require('imagemin-pngquant'),
-  livereload  = require('gulp-livereload'),
-  notify    = require('gulp-notify'),
-  autoprefixer = require('gulp-autoprefixer'),
-  jshint    = require('gulp-jshint');
+var gulp          = require('gulp'),
+    uglify        = require('gulp-uglifyjs'),
+    plumber       = require('gulp-plumber'),
+    sass          = require('gulp-ruby-sass'),
+    imagemin      = require('gulp-imagemin'),
+    pngquant      = require('imagemin-pngquant'),
+    livereload    = require('gulp-livereload'),
+    notify        = require('gulp-notify'),
+    autoprefixer  = require('gulp-autoprefixer'),
+    jshint        = require('gulp-jshint');
 
 // Create custom variables to make life easier
 var outputDir = 'dist';
 
 var scriptList = [
-  'src/js/index.js',
   'src/js/classie.js',
-  'src/js/modernizr.custom.js'
+  'src/js/modernizr.custom.js',
+  'src/js/wow.min.js',
+  'src/js/index.js'
 ];
 
 var fontIcons = [

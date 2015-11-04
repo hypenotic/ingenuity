@@ -5,7 +5,7 @@ $('.gallery').flickity({
 });
 
 $(function() {
-
+	new WOW().init();
 	
     var iframe = $('#vimeo_player')[0],
         player = $f(iframe),
@@ -52,6 +52,8 @@ function init() {
      // How zoomed in you want the map to start at (always required)
      zoom: 15,
 
+     scrollwheel:  false,
+
      // The latitude and longitude to center the map (always required)
      center: new google.maps.LatLng(43.5238744, -79.7086458), // New York
 
@@ -63,15 +65,22 @@ function init() {
  // Get the HTML DOM element that will contain your map 
  // We are using a div with id="map" seen below in the <body>
  var mapElement = document.getElementById('footer-map');
+ var contactMap = document.getElementById('contact-map');
 
  // Create the Google Map using our element and options defined above
  var map = new google.maps.Map(mapElement, mapOptions);
+ var mapC = new google.maps.Map(contactMap, mapOptions);
 
  // Let's also add a marker while we're at it
  var marker = new google.maps.Marker({
      position: new google.maps.LatLng(43.5238744, -79.7086458),
-     map: map,
-     title: 'Ingenuity'
+     map: map
+ });
+
+  // Let's also add a marker while we're at it
+ var markerC = new google.maps.Marker({
+     position: new google.maps.LatLng(43.5238744, -79.7086458),
+     map: mapC
  });
 
 }
@@ -102,7 +111,7 @@ $( ".trigger-push-panel" ).click(function() {
 	$('#push__longbio').empty();
 
 	$('html, body').animate({
-		'scrollTop': $('#push-panel').offset().top - 120
+		'scrollTop': $('#push-panel').offset().top - 20
 	}, 'fast');
 
 	printTeamMemberInfo($(this));

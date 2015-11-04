@@ -260,15 +260,17 @@ h1.team__hero-heading {
 	line-height:modular-scale(5);
 	margin: 0;
 	padding-bottom: 0;
+	color: $white;
 }
 
 h2.team__hero-subheading {
 	font-family: $p-font;
 	font-weight: 300;
-	font-size: modular-scale(0, 1.2rem);
-	line-height:modular-scale(1,1.2rem);
+	font-size: modular-scale(0, 1rem);
+	line-height:modular-scale(1, 1rem);
 	// text-transform: none;
-	margin: 25px 15%;
+	margin: 0 20% 25px;
+	letter-spacing: 1px;
 }
 
 .team__name {
