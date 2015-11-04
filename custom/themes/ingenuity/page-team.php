@@ -84,7 +84,7 @@
 									<?php } ?>
 								</h3>
 								<h4 class="team__title"><?php echo $title; ?></h4>
-								<figcaption><?php echo $profile; ?></figcaption>
+								<!-- <figcaption><?php echo $profile; ?></figcaption> -->
 							</hgroup>
 						</figure>
 
@@ -103,7 +103,7 @@
 									<?php } ?>
 								</h3>
 								<h4 class="team__title"><?php echo $title; ?></h4>
-								<figcaption><?php echo $profile; ?></figcaption>
+								<!-- <figcaption><?php echo $profile; ?></figcaption> -->
 							</hgroup>
 						</figure>
 
