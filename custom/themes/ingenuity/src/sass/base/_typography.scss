@@ -130,6 +130,33 @@ span.black-highlight {
 	padding: 5px 10px;
 }
 
+// HERO HEADERS
+
+.home-hero,
+.default-hero {
+	h2 {
+		color: $white;
+		text-align: center;
+		margin: 20px 125px;
+		@include media($bp-large) {
+		    font-size: modular-scale(2); 
+			line-height: modular-scale(2); 
+		}
+	}
+}
+
+.default-hero {
+	h1 {
+		// background-color: $yellow;
+		color: $black;
+		padding: 15px 20px;
+		// text-align: left;
+		// margin: 0;
+		// margin-right: 25%;
+		// padding: 0;
+	}
+}
+
 // MAIN ============================
 
 .navigation {
@@ -227,6 +254,22 @@ main {
 }
 
 // TEAM =============================
+
+h1.team__hero-heading {
+	font-size: modular-scale(5);
+	line-height:modular-scale(5);
+	margin: 0;
+	padding-bottom: 0;
+}
+
+h2.team__hero-subheading {
+	font-family: $p-font;
+	font-weight: 300;
+	font-size: modular-scale(0, 1.2rem);
+	line-height:modular-scale(1,1.2rem);
+	// text-transform: none;
+	margin: 25px 15%;
+}
 
 .team__name {
 	font-size: modular-scale(6);

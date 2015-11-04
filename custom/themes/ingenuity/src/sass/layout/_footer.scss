@@ -1,0 +1,32 @@
+.main-footer {
+	min-height: 400px;
+	background: $black;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	@include flex-direction(column);
+	@include media($bp-large) {
+		@include flex-direction(row);
+	}
+}
+
+.footer__blog,
+.footer__news,
+.footer__map {
+	@include flex(1 0 auto);
+	@include media($bp-large) {
+		@include flex(0 0 30%);
+		margin: 0 1.5%;
+		// background: $white;
+		height: 350px;
+	}
+}
+
+.footer__map {
+	position: relative;
+	iframe {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+}

@@ -14,7 +14,9 @@ var gulp    = require('gulp'),
 var outputDir = 'dist';
 
 var scriptList = [
-  'src/js/index.js'
+  'src/js/index.js',
+  'src/js/classie.js',
+  'src/js/modernizr.custom.js'
 ];
 
 var fontIcons = [

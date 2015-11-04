@@ -66,15 +66,6 @@
 		@include justify-content(center);
 		@include flex-direction(column);
 	}
-	h2 {
-		color: $white;
-		text-align: center;
-		margin: 20px 125px;
-		@include media($bp-large) {
-		    font-size: modular-scale(2); 
-			line-height: modular-scale(2); 
-		}
-	}
 }
 
 .home-hero {
@@ -93,11 +84,9 @@
 	width: 100%;
 	min-height: 80vh;
 	hgroup {
-		margin-top: 100px;
+		// margin-top: 100px;
 		h1 {
 			// background-color: $yellow;
-			color: $black;
-			padding: 15px 20px;
 			// text-align: left;
 			// margin: 0;
 			// margin-right: 25%;

@@ -19,10 +19,15 @@ $teampage->add_meta_box(
         ),
         array(
             'name'          => 'heading',
-            'label'         => 'Banner Text',
-            'description'   => 'Enter text',
-            'type'          => 'wysiwyg',
-            
+            'label'         => 'Main Heading',
+            'description'   => '',
+            'type'          => 'text',
+        ),
+        array(
+            'name'          => 'subheading',
+            'label'         => 'Subheading',
+            'description'   => '',
+            'type'          => 'text'
         )
     )
 );
@@ -86,6 +91,12 @@ $teampage->add_meta_box(
                     'label'         => 'Profile',
                     'description'   => 'Enter short profile.',
                     'type'          => 'textarea',
+                ),
+                array(
+                    'name'          => 'longbio',
+                    'label'         => 'Longer Bio',
+                    'description'   => 'Enter long profile.',
+                    'type'          => 'wysiwyg',
                 ),
                 array(
                     'name'          => 'flag',

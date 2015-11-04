@@ -1,6 +1,13 @@
 <?php /* Template Name: Team Page */ ?>
 
 <?php get_header(); ?>	
+<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="push-panel">
+	<h2 id="push__name"></h2>
+	<div id="push__longbio">
+		
+	</div>
+	<button id="close-push-panel">CLOSE</button>
+</section>
 
 <?php // The loop starts here
 	if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -18,15 +25,18 @@
 
 	<div class="default-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
 		<hgroup>
-			<h1><?php echo $heading; ?></h1>
-			<h2><?php echo $subheading; ?></h2>
+			<h1 class="team__hero-heading"><?php echo $heading; ?></h1>
+			<h2 class="team__hero-subheading"><?php echo $subheading; ?></h2>
 		</hgroup>
 	</div>
 
 	<div class="main-wrapper">
 		<div class="main-content"> <!-- contentwrapper begins here -->
 				
-			<?php the_content(); ?>
+			<!-- <?php the_content(); ?> -->
+
+			<!-- <button id="showLeftPush">PUSH LEFT</button> -->
+			<!-- <button id="showRightPush">PUSH RIGHT</button> -->
 		
 		</div> <!-- contentWrapper ends here -->
 	</div>
@@ -39,24 +49,26 @@
 			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<?php // Get custom meta values 
-					$industries = get_post_meta($post->ID,'_teammember',true);
+					$members = get_post_meta($post->ID,'_teammember',true);
 				?>
 				
 					<?php // For loop -  cycle through array
 
-						if($industries) {
-					    foreach($industries as $industry) {
+						if($members) {
+					    foreach($members as $member) {
 
 					    // Get custom meta values    
-					    $photoid  	= $industry['_photo'];
+					    $photoid  	= $member['_photo'];
 					    $photourl	= wp_get_attachment_image_src($photoid,'services', true);
-					    $name 		= $industry['_name'];
-					    $creds 		= $industry['_creds'];
-					    $title 		= $industry['_jobtitle'];
-					    $profile 	= $industry['_profile'];
+					    $name 		= $member['_name'];
+					    $creds 		= $member['_creds'];
+					    $title 		= $member['_jobtitle'];
+					    $profile 	= $member['_profile'];
+					    $longbio 	= $member['_longbio'];
+
 					?>
 						
-					<figure class="team__single">
+					<figure class="team__single trigger-push-panel" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
 					<?php if (wp_attachment_is_image($photoid) == true) { ?>
 						<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
 					<?php } ?>
