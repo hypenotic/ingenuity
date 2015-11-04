@@ -4225,12 +4225,12 @@ aside {
       height: 100vh; } }
 
 .services-testimonial {
-  padding: 25px 40px 25px 0; }
+  padding: 0 40px 25px 0; }
   .services-testimonial blockquote {
     margin: 0;
     font-style: italic;
-    font-size: 1.5996rem;
-    line-height: 1.5996rem;
+    font-size: 1.7329rem;
+    line-height: 1.8662rem;
     font-weight: 400; }
   .services-testimonial p {
     padding-top: 20px;
