@@ -25,7 +25,7 @@
 
 <body class="cbp-spmenu-push" data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
 	
-	<div id="fullscreen-menu">
+	<!-- <div id="fullscreen-menu">
 		<?php 
 		wp_nav_menu(array(
 		  'menu' => 'Main Menu', 
@@ -33,13 +33,31 @@
 		  'walker' => new Main_Menu_Walker()
 		)); 
 		?> 
-	</div>
+	</div> -->
 
-	<button id="toggle-button">
+	<nav>
+	    <div class="site-width">
+	      <a href="http://twitter.com/alexcican" target="_blank">INGENUITY</a>
+	      <span class="menu icon" title="Menu (Esc)" tabindex="0" data-icon="m"><span>Menu</span></span>
+	    </div>
+
+
+	    	<?php 
+			    wp_nav_menu(array(
+			      'menu' => 'Main Menu',  
+			      'container_id' => 'navigation',
+			      'walker' => new Main_Menu_Walker()
+			    )); 
+	    	?> 
+
+  	</nav>
+
+
+	<!-- <button id="toggle-button">
 		<p>Menu</p>
 		<div id="menu-toggle" type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
 		  <span class="lines"></span>
 		</div>
-	</button>
+	</button> -->
 	
 	<main> 
