@@ -668,22 +668,23 @@ body.no_scroll {
 
   body.no_scroll .expanded {
     /*padding-right: 7px;*/
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(252, 216, 56, 0.98);
     /* because FF no blur, reduce bg transparency */ } }
 /* === TOP MENU LAYOUT === */
-/* ======================= */
 nav {
-  color: #333;
-  background-color: white;
+  color: black;
+  background-color: #fcd838;
   font-family: "Audimat3000-Regulier", sans-serif;
   font-size: 2.66533rem;
+  letter-spacing: 3px;
   position: absolute;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
   top: 0;
   width: 100%;
   height: 80px;
   /* smaller height because font is smaller */
   right: 0;
-  z-index: 8000000000000000;
+  z-index: 900;
   cursor: pointer;
   overflow: hidden;
   -webkit-transform: translate(0, 0);
@@ -713,14 +714,14 @@ nav:hover {
 
 /* limits width of menu to site width */
 .site-width {
-  max-width: 740px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 2%; }
+  padding: 0 15%; }
 
 /* name of site in main menu (not user selectable) */
 .site-width > a {
   font-weight: bold;
-  color: #555;
+  color: black;
   line-height: 1.9em;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -740,7 +741,7 @@ nav.invisible {
 /* when shown & detached position is fixed */
 nav.detached {
   position: fixed;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(252, 216, 56, 0.9);
   -webkit-transition: -webkit-transform .3s, height .3s, background .4s, opacity .3s;
   transition: transform .3s, height .3s, background .4s, opacity .3s; }
 
@@ -752,7 +753,7 @@ nav.expanded {
   height: 100%;
   position: fixed;
   cursor: default;
-  background: rgba(255, 255, 255, 0.85); }
+  background: rgba(252, 216, 56, 0.95); }
 
 /* positions navigation content */
 #navigation {
@@ -760,7 +761,7 @@ nav.expanded {
   -ms-transform: translate(0, -700px);
       transform: translate(0, -700px);
   opacity: 0;
-  padding-top: 2em;
+  padding-top: 1em;
   width: 50%;
   margin: 0 auto;
   text-align: center;
@@ -768,10 +769,28 @@ nav.expanded {
   transition: transform .15s, opacity .7s; }
 
 #navigation ul {
+  text-transform: uppercase;
+  text-align: left;
   list-style-type: none;
   padding: 0; }
+  #navigation ul a {
+    color: black;
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s; }
+    #navigation ul a:hover {
+      background-color: white; }
   #navigation ul li {
-    padding: 0; }
+    padding: 0;
+    font-size: 2.36859rem;
+    line-height: 2.36859rem;
+    font-weight: 400;
+    font-family: "Audimat3000-Regulier", sans-serif; }
+    #navigation ul li ul li {
+      font-size: 1.77689rem;
+      line-height: 1.77689rem;
+      padding-left: 20px;
+      font-weight: 300;
+      font-family: "Audimat3000-Leger", sans-serif; }
 
 /* shows navigation */
 nav.expanded #navigation {
@@ -799,16 +818,13 @@ nav.expanded #navigation {
   font-size: 1rem; }
 
 /* hides extra text of icon (accessibility) */
-.icon span {
-  display: none; }
-
 /* on focus, don’t show outline */
 .icon:focus {
   outline: none; }
 
 /* icon colour */
 .icon:before, .icon:active:before {
-  color: #fcd838; }
+  color: black; }
 
 /* changes colour on hover or keyboard focus */
 .icon:hover:before, .icon:focus:before {
@@ -839,6 +855,26 @@ nav.expanded #navigation {
   filter: blur(5px);
   -webkit-transition: -webkit-transform .5s, -webkit-filter .5s;
   transition: transform .5s, filter .5s; }
+
+span.menu-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+#nav-menu-text {
+  font-family: "ff-dagny-web-pro", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 0.9rem; }
 
 .project__gallery {
   height: 500px; }
@@ -3398,7 +3434,7 @@ Copyright (c) 2015 Daniel Eden
 
 .default-hero {
   width: 100%;
-  min-height: 80vh; }
+  min-height: 100vh; }
 
 nav.nav__mobile {
   display: none; }
