@@ -488,8 +488,20 @@ span.black-highlight {
       line-height: 2.66533rem; } }
 
 .default-hero h1 {
-  color: black;
-  padding: 15px 20px; }
+  font-size: 6.31309rem;
+  line-height: 6.31309rem;
+  margin: 0 10%;
+  padding-bottom: 0;
+  color: white;
+  text-align: left; }
+.default-hero h2 {
+  font-family: "ff-dagny-web-pro", sans-serif;
+  font-weight: 300;
+  font-size: 1.77689rem;
+  line-height: 1.77689rem;
+  letter-spacing: 1px;
+  text-align: left;
+  margin: 0 10%; }
 
 .navigation {
   font-family: "Audimat3000-Regulier", sans-serif; }
@@ -563,9 +575,9 @@ main p.no-space {
         line-height: 2.66533rem; } }
 
 h1.team__hero-heading {
-  font-size: 6.31309rem;
-  line-height: 6.31309rem;
-  margin: 0;
+  font-size: 5.47134rem;
+  line-height: 5.47134rem;
+  margin: 0 10%;
   padding-bottom: 0;
   color: white; }
 
@@ -574,7 +586,7 @@ h2.team__hero-subheading {
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.333rem;
-  margin: 0 20% 25px;
+  margin: 0 20% 0 12%;
   letter-spacing: 1px; }
 
 .team__name {
@@ -3398,22 +3410,6 @@ Copyright (c) 2015 Daniel Eden
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    box-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center;
     -webkit-box-orient: vertical;
     box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3434,7 +3430,22 @@ Copyright (c) 2015 Daniel Eden
 
 .default-hero {
   width: 100%;
-  min-height: 100vh; }
+  min-height: 100vh;
+  position: relative; }
+  .default-hero figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: grayscale(80%) brightness(0.6) opacity(1);
+            filter: grayscale(80%) brightness(0.6) opacity(1);
+    z-index: 50; }
+  .default-hero hgroup {
+    position: relative;
+    z-index: 51;
+    margin-top: 100px; }
 
 nav.nav__mobile {
   display: none; }

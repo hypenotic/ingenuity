@@ -33,10 +33,11 @@
 
         ?>
 
-        <div class="default-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
-            <hgroup>
-                <h1><span class="yellow-highlight"><?php echo $heading; ?></span></h1>
-                <h2><span class="black-highlight"><?php echo $subheading; ?></span></h2>
+        <div class="default-hero">
+            <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
+            <hgroup class="animated fadeInDown">
+                <h1><?php echo $heading; ?></h1>
+                <h2><?php echo $subheading; ?></h2>
             </hgroup>
         </div>
 

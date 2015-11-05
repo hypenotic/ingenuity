@@ -147,13 +147,23 @@ span.black-highlight {
 
 .default-hero {
 	h1 {
-		// background-color: $yellow;
-		color: $black;
-		padding: 15px 20px;
-		// text-align: left;
-		// margin: 0;
-		// margin-right: 25%;
-		// padding: 0;
+		font-size: modular-scale(5);
+		line-height:modular-scale(5);
+		margin: 0 10%;
+		padding-bottom: 0;
+		color: $white;
+		text-align: left;
+	}
+	h2 {
+		font-family: $p-font;
+		font-weight: 300;
+		font-size: modular-scale(2, 1rem);
+		line-height:modular-scale(2, 1rem);
+		// text-transform: none;
+
+		letter-spacing: 1px;
+		text-align: left;
+		margin: 0 10%;
 	}
 }
 
@@ -256,9 +266,9 @@ main {
 // TEAM =============================
 
 h1.team__hero-heading {
-	font-size: modular-scale(5);
-	line-height:modular-scale(5);
-	margin: 0;
+	font-size: modular-scale(5, 1.3rem);
+	line-height:modular-scale(5, 1.3rem);
+	margin: 0 10%;
 	padding-bottom: 0;
 	color: $white;
 }
@@ -269,7 +279,7 @@ h2.team__hero-subheading {
 	font-size: modular-scale(0, 1rem);
 	line-height:modular-scale(1, 1rem);
 	// text-transform: none;
-	margin: 0 20% 25px;
+	margin: 0 20% 0 12%;
 	letter-spacing: 1px;
 }
 
