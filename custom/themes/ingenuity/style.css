@@ -488,8 +488,8 @@ span.black-highlight {
       line-height: 2.66533rem; } }
 
 .default-hero h1 {
-  font-size: 6.31309rem;
-  line-height: 6.31309rem;
+  font-size: 5.47134rem;
+  line-height: 5.47134rem;
   margin: 0 10%;
   padding-bottom: 0;
   color: white;
@@ -501,7 +501,7 @@ span.black-highlight {
   line-height: 1.77689rem;
   letter-spacing: 1px;
   text-align: left;
-  margin: 0 10%; }
+  margin: 0 20% 0 12%; }
 
 .navigation {
   font-family: "Audimat3000-Regulier", sans-serif; }
@@ -518,10 +518,18 @@ main p {
 main p.no-space {
   margin-bottom: 0; }
 
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6,
+.blog-entry h1,
+.blog-entry h2,
+.blog-entry h3,
+.blog-entry h4,
+.blog-entry h5,
+.blog-entry h6 {
   color: black;
-  margin-bottom: 20px; }
-.main-content p {
+  margin-bottom: 10px;
+  margin-top: 50px; }
+.main-content p,
+.blog-entry p {
   margin-bottom: 20px; }
 
 .industry-cta {

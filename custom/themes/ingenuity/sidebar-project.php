@@ -5,9 +5,6 @@
 	<?php if ($sqft) { ?>
 	    <p><span class="stats_label">SF</span>: <?php echo $sqft; ?></p>
 	<?php } ?>
-	<?php if ($budget) { ?>
-	    <p><span class="stats_label">Budget</span>: <?php echo $budget; ?></p>
-	<?php } ?>
 	<?php if ($duration) { ?>
 	    <p><span class="stats_label">Duration</span>: <?php echo $duration; ?></p>
 	<?php } ?>
