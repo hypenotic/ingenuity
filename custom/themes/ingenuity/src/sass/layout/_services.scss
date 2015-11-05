@@ -1,7 +1,7 @@
 .two-column {
-	margin: 45px 0;
+	margin: 60px 0;
 	@include display(flex);
-	@include align-items(center);
+	@include align-items(flex-start);
 	@include justify-content(center);
 	@include flex-direction(column);
 	@include media($bp-large) {
@@ -13,22 +13,42 @@
 	max-height: 100vh;
 	@include media($bp-large) {
 		@include flex(0 0 50%);
-		max-height: 450px;
+		// max-height: 450px;
 	}
-	@include media($bp-large) {
+	@include media($bp-small) {
 		height: 100vh;
 	}
 }
 
 .services-testimonial {
-	padding: 0 40px 25px 0;
+	padding: 0 70px 25px 0;
 	blockquote {
 		margin: 0;
 		font-style: italic;
-		font-size: modular-scale(1, 1.3rem);
-		line-height: modular-scale(1, 1.4rem);
+		font-size: modular-scale(1, 1.5rem);
+		line-height: modular-scale(1, 1.6rem);
 		font-weight: 400;
 		font-family: $lite-headings;
+		&:before {
+		    content: '"';
+		    position: absolute;
+		    margin-left: -.4em;
+		    font-size: modular-scale(3, 1.3rem);
+		    font-family: $main-headings;
+		}
+
+		&:after {
+		    content: '"';
+		    font-family: $main-headings;
+		}
+	}
+	h4 {
+		margin: 0;
+		margin-top: 25px;
+		text-align: right;
+	}
+	h5 {
+		text-align: right;
 	}
 	p {
 		padding-top: 20px;
