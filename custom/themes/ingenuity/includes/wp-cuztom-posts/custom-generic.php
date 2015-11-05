@@ -57,12 +57,36 @@ $pages->add_meta_box(
     )
 );
 $pages->add_meta_box(
+    'test',
+    'Testimonial', 
+    array(
+        array(
+            'name'          => 'testimonial',
+            'label'         => 'Testimonial',
+            'description'   => '',
+            'type'          => 'wysiwyg',
+        ),
+        array(
+            'name'          => 'source',
+            'label'         => 'Source',
+            'description'   => '',
+            'type'          => 'text',
+        ),
+        array(
+            'name'          => 'title',
+            'label'         => 'Source Title',
+            'description'   => '',
+            'type'          => 'text',
+        )
+    )
+);
+$pages->add_meta_box(
     'cta',
     'Bottom Call to Action Panel', 
     array(
         array(
             'name'          => 'heading',
-            'label'         => 'Heading',
+            'label'         => 'CTA Text',
             'description'   => '',
             'type'          => 'text',
         ),

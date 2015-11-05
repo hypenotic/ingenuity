@@ -13,7 +13,17 @@
       $bannerurl  = wp_get_attachment_image_src( $banner,'banner', true );
       $heading    = get_post_meta( $post->ID, '_banner_heading', true );
       $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
-  	
+
+      // CTA
+  	  $ctatext 	  = get_post_meta( $post->ID, '_cta_heading', true );
+  	  $ctalink 	  = get_post_meta( $post->ID, '_cta_blink', true );
+  	  $ctabtn 	  = get_post_meta( $post->ID, '_cta_btext', true );
+
+  	  // Testimonial
+  	  $test 	  = get_post_meta( $post->ID, '_test_testimonial', true );
+  	  $source 	  = get_post_meta( $post->ID, '_test_source', true );
+  	  $title 	  = get_post_meta( $post->ID, '_test_title', true );
+
   	?>
 
 	<div class="default-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
@@ -30,13 +40,15 @@
 
 			<div class="two-column">
 				<div class="two-column__half services-testimonial wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.3s">
-				<blockquote>"We believe in doing things right. And we want to do things right in everything that we do, so our building is a reflection of that. We want our customers to come here and feel the freshness, the openness, feel the honesty and integrity of our business."</blockquote>
-				<p>- Source</p>
-					
+					<blockquote><?php echo $test; ?></blockquote>
+					<h4><?php echo $source; ?></h4>
+					<h5><?php echo $title; ?></h5>
 				</div>
 				<div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.8s">
-					<p>Great buildings begin with a conversation. Whether this is your first time creating space or you're an experienced developer interested in a build with your fingerprint on it...</p>
-					<button class="services-cta__btn">let's talk over an espresso</button>
+					<p><?php echo $ctatext; ?></p>
+					<a href="<?php echo $ctalink; ?>">
+						<button class="services-cta__btn"><?php echo $ctabtn; ?></button>
+					</a>
 				</div>
 			</div>
 		
