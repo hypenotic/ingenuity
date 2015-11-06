@@ -93,6 +93,21 @@ var previousScroll = 0, // previous scroll position
 
 // ====================================================
 
+$(".team__single").click(function(){
+  var nextPanel = $(this).next(".drop-down-panel");
+  
+  nextPanel.slideToggle(300);
+});
+
+$("#close-push-panel").click(function() {
+  $(this).parent(".drop-down-panel").slideToggle(300);
+
+  $('html, body').animate({
+    'scrollTop': $(this).parent(".drop-down-panel").offset().top - 400
+  }, 'fast');
+
+});
+
 $('.gallery').flickity({
 
 });
@@ -195,7 +210,7 @@ var menuRight = document.getElementById( 'push-panel' ),
 // Grab the data attribute info, and print them into the overlay
 function printTeamMemberInfo($single) {
 	$('#push__name').append($single.data('name'));
-	$('#push__longbio').html($single.data('longbio'))
+	$('#push__longbio').html($single.data('longbio'));
 };
 
 

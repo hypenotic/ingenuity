@@ -2,11 +2,7 @@
 
 <?php get_header(); ?>	
 <section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="push-panel">
-	<h2 id="push__name"></h2>
-	<div id="push__longbio">
-		
-	</div>
-	<button id="close-push-panel">CLOSE</button>
+	
 </section>
 
 <?php // The loop starts here
@@ -59,7 +55,7 @@
 
 					?>
 
-					<?php if ($flag == 'value1') { ?>
+					<?php if ($flag == 'value3') { ?>
 
 						<figure class="team__single trigger-push-panel wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
 						<?php if (wp_attachment_is_image($photoid) == true) { ?>
@@ -80,7 +76,7 @@
 
 					<?php } else { ?>
 
-						<figure class="team__single trigger-down-panel wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
+						<figure class="team__single wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
 						<?php if (wp_attachment_is_image($photoid) == true) { ?>
 							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
 						<?php } ?>
@@ -96,6 +92,12 @@
 								<!-- <figcaption><?php echo $profile; ?></figcaption> -->
 							</hgroup>
 						</figure>
+						<hgroup class="drop-down-panel">
+							<div class="push__longbio animated fadeIn">
+								<?php echo $longbio; ?>
+							</div>
+							<button id="close-push-panel">CLOSE</button>
+						</hgroup>
 
 					<?php } ?> 
 					

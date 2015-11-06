@@ -611,10 +611,11 @@ h2.team__hero-subheading {
   padding-left: 13px; }
 
 .team__creds {
-  position: relative;
+  position: absolute;
+  bottom: 20px;
+  right: -150px;
   font-size: 1.5rem;
-  line-height: 1.5rem;
-  margin-left: -50px; }
+  line-height: 1.5rem; }
 
 .team__single h3,
 .team__single figcaption {
@@ -4058,6 +4059,23 @@ aside {
       position: relative;
       padding: 0 25px;
       z-index: 4; }
+
+.drop-down-panel {
+  padding: 50px 25%;
+  display: none;
+  min-height: 300px;
+  background: black;
+  width: 100%;
+  color: white; }
+  .drop-down-panel button {
+    color: black;
+    background-color: #fcd838;
+    border: none;
+    padding: 10px 15px;
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s; }
+    .drop-down-panel button:hover {
+      background-color: #fbce06; }
 
 .projects__panel-container {
   margin-top: 50px; }

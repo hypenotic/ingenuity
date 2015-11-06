@@ -304,10 +304,11 @@ h2.team__hero-subheading {
 }
 
 .team__creds {
-	position: relative;
+	position: absolute;
+	bottom: 20px;
+	right: -150px;
 	font-size: modular-scale(0);
 	line-height:modular-scale(0);
-	margin-left: -50px;
 }
 
 .team__single {

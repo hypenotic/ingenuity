@@ -56,3 +56,24 @@
 		}
 	}
 }
+
+.drop-down-panel {
+	padding:50px 25%;
+	display: none;
+	min-height: 300px;
+	background: $black;
+	width: 100%;
+	color: $white;
+	button {
+		color: $black;
+		background-color: $yellow;
+		border: none;
+		padding: 10px 15px;
+		transition: all 0.5s;
+		&:hover {
+			background-color: darken($yellow, 10%); 
+		}
+	}
+}
+
+
