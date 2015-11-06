@@ -30,16 +30,6 @@
 		</hgroup>
 	</div>
 
-	<div class="main-wrapper">
-		<div class="main-content"> <!-- contentwrapper begins here -->
-				
-			<!-- <?php the_content(); ?> -->
-
-			<!-- <button id="showLeftPush">PUSH LEFT</button> -->
-			<!-- <button id="showRightPush">PUSH RIGHT</button> -->
-		
-		</div> <!-- contentWrapper ends here -->
-	</div>
 
 		<div class="team__container">
 		<?php // bring in the team members!

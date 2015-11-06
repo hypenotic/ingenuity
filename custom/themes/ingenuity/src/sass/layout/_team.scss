@@ -18,7 +18,7 @@
 
 .team__container {
 	position: relative;
-	padding: 0 50px;
+	padding: 0;
 	@include display(flex);
 	@include align-items(flex-start);
 	@include justify-content(center);
@@ -28,8 +28,12 @@
 		position: relative;
 		min-height: 300px;
 		width: 100%;
-		margin-bottom: 25px;
+		// margin-bottom: 25px;
 		transition: all 0.3s;
+		@include display(flex);
+		@include align-items(flex-start);
+		@include justify-content(center);
+		@include flex-direction(column);
 		&:hover {
 			cursor: pointer;
 			background-color: darken($yellow, 10%);

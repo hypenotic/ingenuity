@@ -292,18 +292,22 @@ h2.team__hero-subheading {
 }
 
 .team__name {
-	font-size: modular-scale(7);
+	font-size: modular-scale(8);
 	line-height:modular-scale(7);
+	position: relative;
 }
 
 .team__title {
-	font-size: modular-scale(2);
-
+	font-size: modular-scale(1);
+	line-height:modular-scale(1);
+	padding-left: 13px;
 }
 
 .team__creds {
+	position: relative;
 	font-size: modular-scale(0);
 	line-height:modular-scale(0);
+	margin-left: -50px;
 }
 
 .team__single {
