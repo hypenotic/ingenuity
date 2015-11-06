@@ -18,7 +18,7 @@
 }
 
 #move-over {
-padding-left: 350px;
+padding-left: 650px;
 font-size: 100%;
 }
 
@@ -26,6 +26,11 @@ font-size: 100%;
 	display: inline;
 	// text-indent: 10px;
 }
+
+div.rw-words.rw-words-1 {
+	// border-bottom: 4px solid $white;
+}
+
 .rw-words-1 span{
 	position: absolute;
 	opacity: 0;

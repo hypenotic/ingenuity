@@ -2,12 +2,17 @@
 	min-height: 400px;
 	width: 100%;
 	background: $black;
+	color: $white;
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
 	@include flex-direction(column);
 	@include media($bp-large) {
 		@include flex-direction(row);
+		padding: 50px;
+	}
+	a {
+		color: $yellow;
 	}
 }
 
@@ -20,6 +25,19 @@
 		margin: 0 1.5%;
 		// background: $white;
 		height: 350px;
+	}
+}
+
+.footer__blog {
+	h3 {
+		font-family: $lite-headings;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+	p {
+		margin-bottom: 5px;
+		padding-left: 10px;
+		font-size: modular-scale(0, 1.2rem);
 	}
 }
 

@@ -41,7 +41,7 @@
         height: auto;
         position: absolute;
         z-index: 0;
-        @include filter(grayscale(100%) blur(1px));
+        // @include filter(grayscale(100%) blur(1px));
     }
 }
 

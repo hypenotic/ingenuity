@@ -3,9 +3,29 @@
 	<?php } else { ?>
 		<footer class="main-footer">
 			<div class="footer__blog">
+				<h3><a href="<?php echo get_home_url(); ?>/news">Recent Posts</a></h3>
+				
+				<?php 
+
+				$args = $args   = array(
+						'post_type' 		=> 'post',
+						'post__not_in' 		=> get_option( 'sticky_posts' ),
+						'posts_per_page' 	=> 4,
+						'order'          	=> 'DESC'
+				);
+
+				$the_query = new WP_Query($args); 
+
+				?>
+				<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+					<a href="<?php the_permalink(); ?>">
+						<p><?php the_title(); ?></p>
+					</a>
+				<?php endwhile; ?>
 				
 			</div>
 			<div class="footer__news">
+				<h3></h3>
 				
 			</div>
 			<div class="footer__map" id="footer-map">

@@ -40,12 +40,12 @@
 			<?php the_content(); ?>
 
 			<div class="two-column">
-				<div class="two-column__half services-testimonial wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.3s">
+				<div class="two-column__half services-testimonial wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="1s">
 					<blockquote><?php echo $test; ?></blockquote>
 					<h4><?php echo $source; ?></h4>
 					<h5><?php echo $title; ?></h5>
 				</div>
-				<div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.8s">
+				<div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.5s">
 					<p><?php echo $ctatext; ?></p>
 					<a href="<?php echo $ctalink; ?>">
 						<button class="services-cta__btn"><?php echo $ctabtn; ?></button>

@@ -18,17 +18,16 @@ $quote_id = get_post_meta( $post->ID, '_testimonial_select', true ); ?>
     );
     $quote = new WP_Query( $args ); ?>
 
-  <?php if ( $quote->have_posts() ) : while ( $quote->have_posts() ) : $quote->the_post(); ?>
+  <?php if ( $quote->have_posts() ) : while ( $quote->have_posts() ) : $quote->the_post(); 
 
-          
-        <?php  //Get custom meta values 
-          	$quotation 	= get_post_meta( $post->ID, '_single_quotation', true );
-          	$src 		= get_post_meta( $post->ID, '_single_source', true );
-          	$srctitle	= get_post_meta( $post->ID, '_single_title', true );
-        ?>
+     //Get custom meta values 
+  	$quotation 	= get_post_meta( $post->ID, '_single_quotation', true );
+  	$src 		    = get_post_meta( $post->ID, '_single_source', true );
+  	$srctitle	   = get_post_meta( $post->ID, '_single_title', true );
+  ?>
 
 		<blockquote><?php echo $quotation; ?></blockquote>
 		<p><?php echo $src; ?></p>
 		<p><?php echo $srctitle; ?></p>
 
-  <?php endwhile; endif ?>
+<?php endwhile; endif; ?>

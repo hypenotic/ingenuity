@@ -484,8 +484,8 @@ span.black-highlight {
   @media screen and (min-width: 50em) {
     .home-hero h2,
     .default-hero h2 {
-      font-size: 3.55289rem;
-      line-height: 3.55289rem; } }
+      font-size: 6.31309rem;
+      line-height: 6.31309rem; } }
 
 .home-hero h2 {
   text-align: left; }
@@ -954,9 +954,7 @@ span.menu-icon {
     width: 100%;
     height: auto;
     position: absolute;
-    z-index: 0;
-    -webkit-filter: grayscale(100%) blur(1px);
-    filter: grayscale(100%) blur(1px); }
+    z-index: 0; }
 
 .flickity-page-dots {
   position: absolute;
@@ -3229,6 +3227,7 @@ Copyright (c) 2015 Daniel Eden
   min-height: 400px;
   width: 100%;
   background: black;
+  color: white;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -3269,7 +3268,10 @@ Copyright (c) 2015 Daniel Eden
       -webkit-flex-direction: row;
       -moz-flex-direction: row;
       flex-direction: row;
-      -ms-flex-direction: row; } }
+      -ms-flex-direction: row;
+      padding: 50px; } }
+  .main-footer a {
+    color: #fcd838; }
 
 .footer__blog,
 .footer__news,
@@ -3292,6 +3294,15 @@ Copyright (c) 2015 Daniel Eden
       flex: 0 0 30%;
       margin: 0 1.5%;
       height: 350px; } }
+
+.footer__blog h3 {
+  font-family: "Audimat3000-Leger", sans-serif;
+  margin-bottom: 20px;
+  text-transform: uppercase; }
+.footer__blog p {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  font-size: 1.2rem; }
 
 .footer__map {
   position: relative; }
@@ -3752,7 +3763,7 @@ aside {
   text-align: center; }
 
 #move-over {
-  padding-left: 350px;
+  padding-left: 650px;
   font-size: 100%; }
 
 .rw-words {

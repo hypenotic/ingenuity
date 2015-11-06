@@ -23,13 +23,13 @@
             $location   = get_post_meta( $post->ID, '_stats_location', true );
 
             // Video
-            $video      = get_post_meta( $post->ID, '_video_select', true );
+            // $video      = get_post_meta( $post->ID, '_video_select', true );
 
             // Testimonial
-            $test       = get_post_meta( $post->ID, '_testimonial_select', true );
+            // $test       = get_post_meta( $post->ID, '_testimonial_select', true );
 
             // Gallery
-            $gallery    = get_post_meta( $post->ID, '_slide_select', true );
+            // $gallery    = get_post_meta( $post->ID, '_slide_select', true );
 
         ?>
 
@@ -57,43 +57,27 @@
             <?php } ?>
         </aside>
         <section class="blog-entry">
-            <section class="project__hero-blurb">
-                <p><?php echo $blurb; ?></p>
-            </section>
-
-            <?php // if there is a VIDEO, display it here
-                if ($video) { ?>
-                
-                <section class="project__video">
-                    <?php get_template_part( 'template-part-video' ); ?> 
-                </section>
-
-            <?php } ?> 
+            <!-- <section class="project__hero-blurb">
+                <p><?php //echo $blurb; ?></p>
+            </section> -->
 
             <section class="project__dimension">
                 <?php the_content(); ?>
             </section>
 
-            
-            <?php // if there is a TESTIMONIAL, display it here
-                if ($test) { ?>
+            <section class="project__video">
+                <?php get_template_part( 'template-part-video' ); ?> 
+            </section>
 
-                <section class="project__testimonial">
-                    <?php get_template_part( 'template-part-testimonial' ); ?>
-                </section>
-            
-            <?php } ?> 
-            
-            
-            <?php // if there is a GALLERY, display it here
-                if ($gallery) { ?>
-                
-                <?php print_r($gallery) ?>
-                <section class="project__gallery">
-                    <?php get_template_part( 'template-part-gallery' ); ?> 
-                </section>
+             <section class="project__gallery">
+                <?php get_template_part( 'template-part-gallery' ); ?> 
+            </section>
+    
+            <!-- THIS IS BREAKING!!!!!! -->
+            <section class="project__testimonial">
+                <?php get_template_part( 'template-part-testimonial' ); ?> 
+            </section>
 
-            <?php } ?> 
         </section>
         </div>
 
