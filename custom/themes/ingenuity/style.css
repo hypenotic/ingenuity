@@ -399,7 +399,7 @@ h1 {
       font-size: 3.7888rem;
       line-height: 3.7888rem;
       margin: 20px 100px; } }
-  @media screen and (min-width: 70em) {
+  @media screen and (min-width: 80em) {
     h1 {
       font-size: 4.84004rem;
       line-height: 4.20873rem;
@@ -601,12 +601,24 @@ h2.team__hero-subheading {
   letter-spacing: 1px; }
 
 .team__name {
-  font-size: 14.95314rem;
-  line-height: 11.21766rem;
+  font-size: 4.736rem;
+  line-height: 3.55289rem;
   position: relative;
   color: rgba(0, 0, 0, 0.8);
   -webkit-transition: all 0.5s;
           transition: all 0.5s; }
+  @media screen and (max-width: 30em) {
+    .team__name {
+      font-size: 6.31309rem;
+      line-height: 4.736rem; } }
+  @media screen and (min-width: 50em) {
+    .team__name {
+      font-size: 11.21766rem;
+      line-height: 8.41535rem; } }
+  @media screen and (min-width: 80em) {
+    .team__name {
+      font-size: 14.95314rem;
+      line-height: 11.21766rem; } }
 
 .team__title {
   font-size: 1.9995rem;
@@ -617,9 +629,6 @@ h2.team__hero-subheading {
           transition: all 0.5s; }
 
 .team__creds {
-  position: absolute;
-  bottom: 20px;
-  right: -150px;
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: rgba(0, 0, 0, 0.8); }
@@ -3483,7 +3492,7 @@ Copyright (c) 2015 Daniel Eden
 
 nav.nav__mobile {
   display: none; }
-  @media screen and (max-width: 49em) {
+  @media screen and (max-width: 30em) {
     nav.nav__mobile {
       display: block; } }
 
@@ -3665,7 +3674,7 @@ nav.main-nav {
       -moz-flex-direction: row;
       flex-direction: row;
       -ms-flex-direction: row; } }
-  @media screen and (max-width: 49em) {
+  @media screen and (max-width: 30em) {
     .cta-contact {
       margin-top: 25px; } }
 
@@ -3803,16 +3812,6 @@ aside {
 .rw-words-1 span:nth-child(4) {
   -webkit-animation-delay: 9s;
   animation-delay: 9s;
-  color: #fcd838; }
-
-.rw-words-1 span:nth-child(5) {
-  -webkit-animation-delay: 12s;
-  animation-delay: 12s;
-  color: #fcd838; }
-
-.rw-words-1 span:nth-child(6) {
-  -webkit-animation-delay: 15s;
-  animation-delay: 15s;
   color: #fcd838; }
 
 @-webkit-keyframes rotateWord {
@@ -4157,7 +4156,7 @@ aside {
   padding-left: 30px;
   padding-top: 10px;
   padding-bottom: 10px; }
-  @media screen and (max-width: 49em) {
+  @media screen and (max-width: 30em) {
     .project__testimonial blockquote {
       margin-right: -10px; } }
   @media screen and (max-width: 30em) {

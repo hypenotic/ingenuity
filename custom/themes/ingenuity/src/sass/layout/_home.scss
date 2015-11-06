@@ -58,18 +58,18 @@ div.rw-words.rw-words-1 {
 	animation-delay: 9s; 
 	color: $yellow;
 }
-.rw-words-1 span:nth-child(5) { 
-    -webkit-animation-delay: 12s; 
-	-ms-animation-delay: 12s; 
-	animation-delay: 12s; 
-	color: $yellow;
-}
-.rw-words-1 span:nth-child(6) { 
-    -webkit-animation-delay: 15s; 
-	-ms-animation-delay: 15s; 
-	animation-delay: 15s; 
-	color: $yellow;
-}
+// .rw-words-1 span:nth-child(5) { 
+//     -webkit-animation-delay: 12s; 
+// 	-ms-animation-delay: 12s; 
+// 	animation-delay: 12s; 
+// 	color: $yellow;
+// }
+// .rw-words-1 span:nth-child(6) { 
+//     -webkit-animation-delay: 15s; 
+// 	-ms-animation-delay: 15s; 
+// 	animation-delay: 15s; 
+// 	color: $yellow;
+// }
 @-webkit-keyframes rotateWord {
     0% { opacity: 0; }
     2% { opacity: 0; -webkit-transform: translateY(-30px); }

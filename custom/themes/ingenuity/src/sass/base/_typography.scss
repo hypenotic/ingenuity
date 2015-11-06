@@ -292,11 +292,23 @@ h2.team__hero-subheading {
 }
 
 .team__name {
-	font-size: modular-scale(8);
-	line-height:modular-scale(7);
+	font-size: modular-scale(4);
+	line-height:modular-scale(3);
 	position: relative;
 	color: rgba(0,0,0,0.8);
 	transition: all 0.5s;
+	@include media($bp-med) {
+		font-size: modular-scale(5);
+		line-height: modular-scale(4);
+	}
+	@include media($bp-large) {
+		font-size: modular-scale(7);
+		line-height: modular-scale(6);
+	}
+	@include media($bp-xlarge) {
+		font-size: modular-scale(8);
+		line-height: modular-scale(7);
+	}
 }
 
 .team__title {
@@ -308,9 +320,9 @@ h2.team__hero-subheading {
 }
 
 .team__creds {
-	position: absolute;
-	bottom: 20px;
-	right: -150px;
+	// position: absolute;
+	// bottom: 20px;
+	// right: -150px;
 	font-size: modular-scale(0);
 	line-height:modular-scale(0);
 	color: rgba(0,0,0,0.8);
