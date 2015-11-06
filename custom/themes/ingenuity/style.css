@@ -652,8 +652,23 @@ h2.team__hero-subheading {
 
 .projects__panel h2 {
   color: white;
-  font-size: 6.31309rem;
-  line-height: 6.31309rem; }
+  font-size: 3.07917rem;
+  line-height: 3.55289rem;
+  position: relative;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s; }
+  @media screen and (max-width: 30em) {
+    .projects__panel h2 {
+      font-size: 4.10453rem;
+      line-height: 4.736rem; } }
+  @media screen and (min-width: 50em) {
+    .projects__panel h2 {
+      font-size: 5.47134rem;
+      line-height: 6.31309rem; } }
+  @media screen and (min-width: 80em) {
+    .projects__panel h2 {
+      font-size: 7.2933rem;
+      line-height: 8.41535rem; } }
 
 span.stats_label,
 span.bolded-text {
@@ -4094,16 +4109,16 @@ aside {
 
 .projects__panel {
   width: 100%;
-  height: 250px;
+  height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-bottom: 40px;
   position: relative;
   -webkit-transition: all 0.5s;
           transition: all 0.5s;
   -webkit-filter: grayscale(0.7);
           filter: grayscale(0.7);
+  padding: 25px;
   display: -webkit-box;
   display: -moz-box;
   display: box;
