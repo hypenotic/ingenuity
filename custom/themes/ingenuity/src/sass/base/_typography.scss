@@ -295,12 +295,16 @@ h2.team__hero-subheading {
 	font-size: modular-scale(8);
 	line-height:modular-scale(7);
 	position: relative;
+	color: rgba(0,0,0,0.8);
+	transition: all 0.5s;
 }
 
 .team__title {
 	font-size: modular-scale(1);
 	line-height:modular-scale(1);
 	padding-left: 13px;
+	color: rgba(0,0,0,0.8);
+	transition: all 0.5s;
 }
 
 .team__creds {
@@ -309,6 +313,7 @@ h2.team__hero-subheading {
 	right: -150px;
 	font-size: modular-scale(0);
 	line-height:modular-scale(0);
+	color: rgba(0,0,0,0.8);
 }
 
 .team__single {

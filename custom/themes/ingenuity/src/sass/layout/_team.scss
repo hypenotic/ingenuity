@@ -29,14 +29,19 @@
 		min-height: 300px;
 		width: 100%;
 		// margin-bottom: 25px;
-		transition: all 0.3s;
+		transition: all 0.5s;
 		@include display(flex);
 		@include align-items(flex-start);
 		@include justify-content(center);
 		@include flex-direction(column);
 		&:hover {
 			cursor: pointer;
-			background-color: darken($yellow, 10%);
+			background-color: $black;
+			hgroup h3,
+			hgroup h4,
+			.team__creds {
+				color: $yellow;
+			}
 		}
 		figure {
 			position: absolute;
@@ -53,6 +58,7 @@
 			position: relative;
 			padding: 0 25px;
 			z-index: 4;
+			transition: all 0.5s;
 		}
 	}
 }
