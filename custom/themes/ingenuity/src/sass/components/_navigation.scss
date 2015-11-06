@@ -51,7 +51,7 @@ body.no_scroll {
 
   body.no_scroll .expanded {
     /*padding-right: 7px;*/
-    background: rgba(252, 216, 56,.98); /* because FF no blur, reduce bg transparency */
+    background: rgba(0, 0, 0,.98); /* because FF no blur, reduce bg transparency */
   }
 }
 
@@ -60,8 +60,8 @@ body.no_scroll {
 /* === TOP MENU LAYOUT === */
 
 nav {
-  color: $black;
-  background-color: $yellow;
+  color: $yellow;
+  background-color: $black;
   font-family: $main-headings;
   font-size: modular-scale(2);
   letter-spacing: 3px;
@@ -105,7 +105,7 @@ nav {
 
 /* on navigation hover add slight white bg */
 nav:hover {
-  background: rgba(255,255,255,.7);
+  background: rgba(0,0,0,.7);
 }
 
 /* limits width of menu to site width */
@@ -118,7 +118,7 @@ nav:hover {
 /* name of site in main menu (not user selectable) */
 .site-width>a {
   font-weight: bold;
-  color: $black;
+  color: $yellow;
   line-height: 1.9em;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -142,7 +142,7 @@ nav.invisible {
 /* when shown & detached position is fixed */
 nav.detached {
   position: fixed;
-  background: rgba(252, 216, 56,0.9);
+  background: rgba(0, 0, 0,0.9);
   -webkit-transition: -webkit-transform .3s, height .3s, background .4s, opacity .3s;
   -moz-transition: -moz-transform .3s, height .3s, background .4s, opacity .3s;
   -o-transition: -o-transform .3s, height .3s, background .4s, opacity .3s;
@@ -161,6 +161,9 @@ nav.expanded {
   position: fixed;
   cursor: default;
   background: rgba(252, 216, 56,0.95);
+  .site-width>a {
+    color: $black;
+  }
 }
 
 /* positions navigation content */
@@ -170,7 +173,7 @@ nav.expanded {
   -o-transform: translate(0,-700px);
   transform: translate(0,-700px);
   opacity: 0;
-  padding-top: 1em;
+  // padding-top: 1em;
   width: 50%;
   margin: 0 auto;
   text-align: center;
@@ -251,7 +254,7 @@ nav.expanded #navigation {
 
 /* icon colour */
 .icon:before, .icon:active:before {
-  color: $black;
+  color: $yellow;
 }
 
 /* changes colour on hover or keyboard focus */

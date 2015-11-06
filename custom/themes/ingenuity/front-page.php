@@ -18,10 +18,24 @@
 		         <source src="<?php // echo get_template_directory_uri(); ?>/dist/images/herovid.mp4" type="video/mp4">
 		     </video> -->
 		</div>
-		<hgroup>
+		<!-- <hgroup>
 			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="">
 			<h1><?php echo $heading; ?></h1>
 			<h2><?php echo $subheading; ?></h2>
+		</hgroup> -->
+		<hgroup class="rw-wrapper">
+			<h2 class="rw-sentence">
+				Design Build and General Contracting that factors in
+				<div class="rw-words rw-words-1">
+					<span>happiness</span>
+					<span>craft</span>
+					<span>productivity</span>
+					<span>wonder</span>
+					<span>detail</span>
+					<span>creativity</span>
+				</div>
+				<span id="move-over">/sq ft.</span>
+			</h2>
 		</hgroup>
 	</div>
 	

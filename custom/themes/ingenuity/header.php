@@ -42,13 +42,13 @@
 	    </div>
 
 
-	    	<?php 
-			    wp_nav_menu(array(
-			      'menu' => 'Main Menu',  
-			      'container_id' => 'navigation',
-			      'walker' => new Main_Menu_Walker()
-			    )); 
-	    	?> 
+    	<?php 
+		    wp_nav_menu(array(
+		      'menu' => 'Main Menu',  
+		      'container_id' => 'navigation',
+		      'walker' => new Main_Menu_Walker()
+		    )); 
+    	?> 
 
   	</nav>
 

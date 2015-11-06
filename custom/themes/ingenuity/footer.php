@@ -1,14 +1,19 @@
-	<footer class="main-footer">
-		<div class="footer__blog">
-			
-		</div>
-		<div class="footer__news">
-			
-		</div>
-		<div class="footer__map" id="footer-map">
-		</div>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w&sensor=false"></script>
-	</footer>
+	<?php if ( is_front_page() || is_home() ) { ?>
+
+	<?php } else { ?>
+		<footer class="main-footer">
+			<div class="footer__blog">
+				
+			</div>
+			<div class="footer__news">
+				
+			</div>
+			<div class="footer__map" id="footer-map">
+			</div>
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w&sensor=false"></script>
+		</footer>
+	<?php } ?>
+	
 
 	</main> <!-- mainWrapper ends here -->
 	<?php wp_footer(); ?>

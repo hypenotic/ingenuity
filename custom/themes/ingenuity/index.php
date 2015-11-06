@@ -46,7 +46,7 @@
 
 			        <?php if ($url) { ?>
 
-					<div class="blog-single-post">
+					<div class="blog-single-post wow fadeIn">
 						<a href="<?php the_permalink(); ?>">
 							<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
 						</a>
@@ -61,7 +61,7 @@
 
 			        <?php } else { ?>
 
-			        <div class="blog-single-post">
+			        <div class="blog-single-post wow fadeIn">
 			        	<a href="<?php the_permalink(); ?>">
 			        		<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
 			        	</a>
