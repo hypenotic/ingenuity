@@ -970,6 +970,7 @@ span.menu-icon {
 .project__gallery {
   width: 100%;
   position: relative;
+  min-height: 100vh;
   display: -webkit-box;
   display: -moz-box;
   display: box;
