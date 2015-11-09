@@ -1123,7 +1123,7 @@ span.menu-icon {
       flex: 0 0 50%; } }
   @media screen and (max-width: 30em) {
     .gallery__single-half {
-      min-height: 100px;
+      min-height: 100vh;
       -webkit-box-flex: 1;
       box-flex: 1;
       -webkit-flex: 1 0 auto;

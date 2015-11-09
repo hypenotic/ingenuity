@@ -48,7 +48,7 @@
         // max-height: 450px;
     }
     @include media($bp-small) {
-        min-height: 100px;
+        min-height: 100vh;
         @include flex(1 0 auto);
     }
 }
