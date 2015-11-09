@@ -72,7 +72,7 @@
                 <?php // get_template_part( 'template-part-video' ); ?> 
             </section> -->
 
-             <section class="project__gallery clearfix">
+            <section class="project__gallery clearfix">
                 <?php get_template_part( 'template-part-gallery' ); ?> 
             </section>
             
@@ -81,10 +81,11 @@
                 <?php // get_template_part( 'template-part-testimonial' ); ?> 
             </section> -->
 
-            <div class="prev-next-link single-project-page">
-              <p><?php previous_post_link('%link', '&larr; Previous Post | '); ?>
-              <?php previous_post_link('%link', 'Next Post &rarr;'); ?></p>
-            </div>
+            <?php if( is_singular('project') ) { ?>
+            <div class="post-nav">
+                <div class="alignleft prev-next-post-nav"><?php previous_post_link( '%link', 'Previous' ) ?></div>
+                <div class="alignright prev-next-post-nav"><?php next_post_link( '%link', 'Next' ) ?></div>
+            </div><?php } ?>
         </div>
 
     <?php endwhile; else : ?>

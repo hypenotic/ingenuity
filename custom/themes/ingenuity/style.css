@@ -542,6 +542,11 @@ main p.no-space {
 .main-content p,
 .blog-entry p {
   margin-bottom: 20px; }
+  @media screen and (max-width: 30em) {
+    .main-content p,
+    .blog-entry p {
+      font-size: 1.3rem;
+      line-height: 1.7329rem; } }
 
 .industry-cta {
   color: black;
@@ -1165,6 +1170,10 @@ span.menu-icon {
   padding: 25px; }
   .gallery__single-half.gallery-caption p {
     margin: 0; }
+    @media screen and (max-width: 30em) {
+      .gallery__single-half.gallery-caption p {
+        font-size: 1.1rem;
+        line-height: 1.4663rem; } }
 
 .gallery__single:nth-child(even) .gallery__single-half.gallery-image {
   -webkit-box-ordinal-group: 2;

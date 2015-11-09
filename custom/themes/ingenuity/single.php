@@ -15,18 +15,20 @@
 
 
     <?php if ( has_post_thumbnail( $post->ID ) ) { ?>
-    <div class="default-hero" style="background-image: url('<?php echo $url[0] ?>'); background-size: cover;">
-      <hgroup>
-        <h1><?php the_title(); ?></h1>
-    <!--       <h2><?php // echo $subheading; ?></h2> -->
-      </hgroup>
+    <div class="default-hero">
+        <figure style="background-image: url('<?php echo $url[0] ?>'); background-size: cover;"></figure>
+        <hgroup class="animated fadeInDown">
+            <h1><?php echo $heading; ?></h1>
+            <h2><?php echo $subheading; ?></h2>
+        </hgroup>
     </div>
     <?php } else { ?>
-    <div class="home-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); default-size: cover;">
-      <hgroup>
-        <h1><?php the_title(); ?></h1>
-        <!-- <h2><?php // echo $subheading; ?></h2> -->
-      </hgroup>
+    <div class="default-hero">
+        <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
+        <hgroup class="animated fadeInDown">
+            <h1><?php echo $heading; ?></h1>
+            <h2><?php echo $subheading; ?></h2>
+        </hgroup>
     </div>
     <?php } ?>
 

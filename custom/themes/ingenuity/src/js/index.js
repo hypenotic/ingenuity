@@ -113,7 +113,9 @@ $('.gallery').flickity({
 });
 
 $(function() {
-	new WOW().init();
+	new WOW({
+     mobile: false
+  }).init();
 	
     var iframe = $('#vimeo_player')[0],
         player = $f(iframe),
