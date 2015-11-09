@@ -18,7 +18,7 @@
     <div class="default-hero">
         <figure style="background-image: url('<?php echo $url[0] ?>'); background-size: cover;"></figure>
         <hgroup class="animated fadeInDown">
-            <h1><?php echo $heading; ?></h1>
+            <h1><?php single_post_title(); ?> </h1>
             <h2><?php echo $subheading; ?></h2>
         </hgroup>
     </div>
@@ -26,7 +26,7 @@
     <div class="default-hero">
         <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
         <hgroup class="animated fadeInDown">
-            <h1><?php echo $heading; ?></h1>
+            <h1><?php single_post_title(); ?> </h1>
             <h2><?php echo $subheading; ?></h2>
         </hgroup>
     </div>
