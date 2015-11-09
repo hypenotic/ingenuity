@@ -47,6 +47,14 @@
 			.team__creds {
 				color: $yellow;
 			}
+			@include media($bp-small) {
+				background-color: $yellow;
+				hgroup h3,
+				hgroup h4,
+				.team__creds {
+					color: $black;
+				}
+			}
 		}
 		figure {
 			position: absolute;

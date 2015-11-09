@@ -1089,6 +1089,7 @@ span.menu-icon {
   position: relative; }
   @media screen and (max-width: 30em) {
     .gallery__single-half.gallery-image {
+      min-height: 50vh;
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -1123,6 +1124,9 @@ span.menu-icon {
   background-color: #fcd838;
   padding: 25px;
   min-height: auto; }
+  @media screen and (max-width: 30em) {
+    .gallery__single-half.gallery-caption {
+      min-height: 50vh; } }
   .gallery__single-half.gallery-caption p {
     margin: 0; }
 
@@ -4326,6 +4330,13 @@ h2.mission {
       .team__container .team__single:hover hgroup h4,
       .team__container .team__single:hover .team__creds {
         color: #fcd838; }
+      @media screen and (max-width: 30em) {
+        .team__container .team__single:hover {
+          background-color: #fcd838; }
+          .team__container .team__single:hover hgroup h3,
+          .team__container .team__single:hover hgroup h4,
+          .team__container .team__single:hover .team__creds {
+            color: black; } }
     .team__container .team__single figure {
       position: absolute;
       top: 0;
