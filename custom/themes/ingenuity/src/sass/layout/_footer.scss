@@ -3,6 +3,7 @@
 	width: 100%;
 	background: $black;
 	color: $white;
+	padding: 25px;
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);

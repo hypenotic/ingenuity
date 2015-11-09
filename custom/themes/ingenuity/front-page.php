@@ -28,11 +28,11 @@
 			<h2 class="rw-sentence">
 				Design Build and General Contracting that factors in
 				<div class="rw-words rw-words-1">
-					<span>happiness</span>
-					<span>craft</span>
-					<span>productivity</span>
-					<span>detail</span>
-					<span>creativity</span>
+					<span class="rotator">happiness <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator">craft <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator">productivity <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator">detail <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator">creativity <span class="sq-ft">/sq ft.</span></span>
 				</div>
 				<span id="move-over">/sq ft.</span>
 			</h2>

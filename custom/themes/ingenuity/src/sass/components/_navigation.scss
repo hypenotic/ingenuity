@@ -113,6 +113,9 @@ nav:hover {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 15%;
+  @include media($bp-small) {
+    padding: 20px 20px 0;
+  }
 }
 
 /* name of site in main menu (not user selectable) */
@@ -124,6 +127,10 @@ nav:hover {
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+  @include media($bp-small) {
+    font-size: modular-scale(2, 1.3rem); 
+    line-height: modular-scale(2, 1.6rem); 
+  }
 }
 
 /* when hidden it goes up */
@@ -181,6 +188,10 @@ nav.expanded {
   -moz-transition: -moz-transform .15s, opacity .7s;
   -o-transition: -o-transform .15s, opacity .7s;
   transition: transform .15s, opacity .7s;
+  @include media($bp-small) {
+    margin: 0 0 0 35px;
+    width: 100%;
+  }
 }
 
 #navigation ul {
@@ -201,6 +212,11 @@ nav.expanded {
     line-height: modular-scale(4,1.2rem);
     font-weight: 400;
     font-family: $main-headings;
+    @include media($bp-small) {
+      font-size: modular-scale(2,1.2rem);
+      line-height: modular-scale(2,1.2rem);
+      padding-bottom: 15px;
+    }
     ul {
       li {
         font-size: modular-scale(2,1rem);
@@ -240,6 +256,9 @@ nav.expanded #navigation {
   -o-user-select: none;
   user-select: none;
   font-size: modular-scale(0,1rem);
+  @include media($bp-small) {
+    padding: 15px 0 0;
+  }
 }
 
 /* hides extra text of icon (accessibility) */
@@ -314,4 +333,7 @@ span.menu-icon {
   text-transform: uppercase;
   font-size: modular-scale(0, 0.9rem);
   // margin-top: 5px;
+  @include media($bp-small) {
+    display: none;
+  }
 }

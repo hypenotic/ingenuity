@@ -1,14 +1,68 @@
+.textwidget {
+	@include media($bp-small) {
+		display: none;
+	}
+}
+
+.fullscreen-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: -100;
+	filter: grayscale(80%) brightness(0.8) opacity(1);
+	@include media($bp-small) {
+		display: none;
+	}
+}
+
+.fullscreen-bg__video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 115%;
+	height: 115%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
 .rw-wrapper{
 	// width: 80%;
 	position: relative;
 	margin: 110px auto 0 auto;
 	font-family: $main-headings;
 	padding: 10px;
+	z-index: 100;
+	@include media($bp-small) {
+		margin-top: 20px;
+		width: 100%;
+	}
 }
-.rw-sentence{
+h2.rw-sentence{
+	position: relative;
 	margin: 0;
 	text-align: left;
 	// text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	z-index: 100;
+	@include media($bp-small) {
+		margin: 0 0 0 20px;
+		font-size: modular-scale(2, 1.3rem); 
+		line-height: modular-scale(2, 1.6rem); 
+	}
 }
 .rw-sentence span {
 	// color: ;
@@ -20,7 +74,12 @@
 #move-over {
 padding-left: 630px;
 font-size: 100%;
+	@include media($bp-small) {
+		display: none
+	}
 }
+
+
 
 .rw-words{
 	display: inline;
@@ -31,7 +90,7 @@ div.rw-words.rw-words-1 {
 	// border-bottom: 4px solid $white;
 }
 
-.rw-words-1 span{
+.rw-words-1 span.rotator {
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
@@ -39,7 +98,22 @@ div.rw-words.rw-words-1 {
 	-webkit-animation: rotateWord 18s linear infinite 0s;
 	-ms-animation: rotateWord 18s linear infinite 0s;
 	animation: rotateWord 18s linear infinite 0s;
+	@include media($bp-small) {
+		bottom: -50px;
+		left: 0;
+	}
 }
+
+span.sq-ft {
+	display: none;
+	@include media($bp-small) {
+		display: inline;
+		font-size: modular-scale(0, 0.8rem);
+		color: $white;
+		z-index: 150;
+	}
+}
+
 .rw-words-1 span:nth-child(2) { 
     -webkit-animation-delay: 3s; 
 	-ms-animation-delay: 3s; 
@@ -96,10 +170,4 @@ div.rw-words.rw-words-1 {
 	20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
 	80% { opacity: 0; }
     100% { opacity: 0; }
-}
-@media screen and (max-width: 768px){
-	.rw-sentence { font-size: 18px; }
-}
-@media screen and (max-width: 320px){
-	.rw-sentence { font-size: 9px; }
 }

@@ -38,17 +38,23 @@
         // max-height: 450px;
     }
     @include media($bp-small) {
-        height: 100vh;
+        min-height: 100px;
     }
 }
 
 .gallery__single-half.gallery-image {
     position: relative;
+    @include media($bp-small) {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+    }
     img {
         position: relative;
         width: 100%;
         max-height: auto;
         padding-right: 25px;
+        
     }
 }
 
@@ -64,6 +70,9 @@
 
 .gallery__single:nth-child(even) .gallery__single-half.gallery-image {
     @include order(2);
+    @include media($bp-small) {
+        @include order(-1);
+    }
     img {
         padding-right: 0;
         padding-left: 25px;
