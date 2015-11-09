@@ -1001,7 +1001,13 @@ span.menu-icon {
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
-  -ms-flex-direction: column; }
+  -ms-flex-direction: column;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   @media screen and (min-width: 50em) {
     .project__gallery {
       -webkit-box-orient: horizontal;
@@ -1069,7 +1075,7 @@ span.menu-icon {
       -moz-flex-direction: row;
       flex-direction: row;
       -ms-flex-direction: row; } }
-  @media screen and (min-width: 50em) {
+  @media screen and (max-width: 30em) {
     .gallery__single {
       -webkit-box-flex: 1;
       box-flex: 1;

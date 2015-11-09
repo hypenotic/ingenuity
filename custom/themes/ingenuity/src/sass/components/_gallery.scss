@@ -8,6 +8,7 @@
     @include align-items(flex-start);
     @include justify-content(center);
     @include flex-direction(column);
+    @include flex-wrap(wrap);
     @include media($bp-large) {
         @include flex-direction(row);
         @include flex-wrap(wrap);
@@ -29,7 +30,7 @@
     @include media($bp-large) {
         @include flex-direction(row);
     }
-    @include media($bp-large) {
+    @include media($bp-small) {
         @include flex(1 0 auto);
     }
 }
