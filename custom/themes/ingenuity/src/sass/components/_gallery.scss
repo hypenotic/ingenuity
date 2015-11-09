@@ -13,7 +13,6 @@
     @include media($bp-small) {
         @include flex-direction(column);
         @include flex-wrap(wrap);
-        min-height: 200vh; 
     }
 }
 
@@ -35,19 +34,16 @@
     @include media($bp-small) {
         @include flex(1 0 auto);
         @include flex-direction(column);
-        min-height: 100vh;
     }
 }
 
 .gallery__single-half {
     position: relative;
-    min-height: 100vh;
     @include media($bp-large) {
         @include flex(0 0 50%);
         // max-height: 450px;
     }
     @include media($bp-small) {
-        min-height: 100vh;
         @include flex(1 0 auto);
     }
 }
@@ -55,7 +51,7 @@
 .gallery__single-half.gallery-image {
     position: relative;
     @include media($bp-small) {
-        min-height: 100vh;
+        // min-height: 100vh;
         @include display(flex);
         @include align-items(center);
         @include justify-content(center);
@@ -73,9 +69,8 @@
     position: relative;
     background-color: $yellow;
     padding: 25px;
-    min-height: 100vh;
+    // min-height: 100vh;
     @include media($bp-small) {
-        // min-height: 50vh;
     }
     p {
         margin: 0;

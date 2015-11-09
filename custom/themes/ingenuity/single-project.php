@@ -80,6 +80,11 @@
             <!-- <section class="project__testimonial">
                 <?php // get_template_part( 'template-part-testimonial' ); ?> 
             </section> -->
+
+            <div class="prev-next-link single-project-page">
+              <p><?php previous_post_link('%link', '&larr; Previous Post | '); ?>
+              <?php previous_post_link('%link', 'Next Post &rarr;'); ?></p>
+            </div>
         </div>
 
     <?php endwhile; else : ?>
