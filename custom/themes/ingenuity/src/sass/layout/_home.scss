@@ -51,6 +51,12 @@
 		margin-top: 20px;
 		width: 100%;
 	}
+	@include media($bp-med) {
+		margin-top: 50px;
+	}
+	@include media($bp-large) {
+		margin-top: 0px;
+	}
 }
 h2.rw-sentence{
 	position: relative;
@@ -63,6 +69,20 @@ h2.rw-sentence{
 		font-size: modular-scale(2, 1.3rem); 
 		line-height: modular-scale(2, 1.6rem); 
 	}
+	@include media($bp-med) {
+		text-align: left;
+		margin: 0 0 0 20px;
+		font-size: modular-scale(5); 
+		line-height: modular-scale(5); 
+	}
+	@include media($bp-large) {
+		margin: 0 8%;
+		text-align: left;
+	    font-size: modular-scale(5); 
+		line-height: modular-scale(5); 
+	}	
+	
+	
 }
 .rw-sentence span {
 	// color: ;
@@ -98,18 +118,31 @@ div.rw-words.rw-words-1 {
 	-webkit-animation: rotateWord 18s linear infinite 0s;
 	-ms-animation: rotateWord 18s linear infinite 0s;
 	animation: rotateWord 18s linear infinite 0s;
+	padding-left: 20px;
 	@include media($bp-small) {
 		bottom: -50px;
 		left: 0;
+		padding-left: 0;
+	}
+	@include media($bp-med) {
+		bottom: -100px;
+		left: -20px;
+	}
+	@include media($bp-large) {
+		bottom: -100px;
+		left: -10px; 
+		// padding-left: 100px;
 	}
 }
 
 span.sq-ft {
-	display: none;
+	display: inline;
+	font-size: modular-scale(2, 1.3rem); 
+	line-height: modular-scale(2, 1.6rem); 
+	color: $white;
 	@include media($bp-small) {
 		display: inline;
-		font-size: modular-scale(0, 0.8rem);
-		color: $white;
+		font-size: modular-scale(0, 0.9rem);
 		z-index: 150;
 	}
 }

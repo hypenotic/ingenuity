@@ -34,7 +34,7 @@
 					<span class="rotator">detail <span class="sq-ft">/sq ft.</span></span>
 					<span class="rotator">creativity <span class="sq-ft">/sq ft.</span></span>
 				</div>
-				<span id="move-over">/sq ft.</span>
+				<!-- <span id="move-over">/sq ft.</span> -->
 			</h2>
 		</hgroup>
 	</div>
