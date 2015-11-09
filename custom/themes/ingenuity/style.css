@@ -969,7 +969,6 @@ span.menu-icon {
 
 .project__gallery {
   width: 100%;
-  min-height: 200vh;
   position: relative;
   display: -webkit-box;
   display: -moz-box;
@@ -1135,6 +1134,7 @@ span.menu-icon {
   position: relative; }
   @media screen and (max-width: 30em) {
     .gallery__single-half.gallery-image {
+      min-height: 100vh;
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -1168,7 +1168,7 @@ span.menu-icon {
   position: relative;
   background-color: #fcd838;
   padding: 25px;
-  min-height: auto; }
+  min-height: 100vh; }
   .gallery__single-half.gallery-caption p {
     margin: 0; }
 
