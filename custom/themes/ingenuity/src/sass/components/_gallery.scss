@@ -1,5 +1,6 @@
 .project__gallery {
     width: 100%;
+    min-height: 200vh; 
     position: relative;
     @include display(flex);
     @include align-items(flex-start);

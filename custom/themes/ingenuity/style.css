@@ -969,8 +969,8 @@ span.menu-icon {
 
 .project__gallery {
   width: 100%;
+  min-height: 200vh;
   position: relative;
-  min-height: 100vh;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1082,7 +1082,16 @@ span.menu-icon {
       -webkit-flex: 1 0 auto;
       -moz-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
-      flex: 1 0 auto; } }
+      flex: 1 0 auto;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-direction: column;
+      min-height: 100vh; } }
 
 .gallery__single-half {
   position: relative;
