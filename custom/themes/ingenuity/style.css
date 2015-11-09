@@ -1040,7 +1040,8 @@ span.menu-icon {
       -ms-flex-direction: row; } }
 
 .gallery__single-half {
-  max-height: 100vh; }
+  position: relative;
+  min-height: 100vh; }
   @media screen and (min-width: 50em) {
     .gallery__single-half {
       -webkit-box-flex: 0;
@@ -1057,14 +1058,15 @@ span.menu-icon {
   position: relative; }
   .gallery__single-half.gallery-image img {
     position: relative;
-    width: auto;
-    max-height: 500px;
+    width: 100%;
+    max-height: auto;
     padding-right: 25px; }
 
 .gallery__single-half.gallery-caption {
   position: relative;
   background-color: #fcd838;
-  padding: 25px; }
+  padding: 25px;
+  min-height: auto; }
   .gallery__single-half.gallery-caption p {
     margin: 0; }
 
@@ -3965,6 +3967,16 @@ aside {
   animation-delay: 9s;
   color: #fcd838; }
 
+.rw-words-1 span:nth-child(5) {
+  -webkit-animation-delay: 12s;
+  animation-delay: 12s;
+  color: #fcd838; }
+
+.rw-words-1 span:nth-child(6) {
+  -webkit-animation-delay: 15s;
+  animation-delay: 15s;
+  color: #fcd838; }
+
 @-webkit-keyframes rotateWord {
   0% {
     opacity: 0; }
@@ -4013,6 +4025,13 @@ aside {
 @media screen and (max-width: 320px) {
   .rw-sentence {
     font-size: 9px; } }
+h2.mission {
+  font-family: "Audimat3000-Regulier", sans-serif;
+  font-size: 4.42027rem;
+  line-height: 4.10453rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9); }
+
 .two-column {
   margin: 60px 0;
   display: -webkit-box;
@@ -4347,14 +4366,14 @@ aside {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
+  -webkit-box-align: start;
+  box-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -ms-flex-align: start;
   -webkit-box-pack: justify;
   box-pack: justify;
   -webkit-justify-content: space-between;
@@ -4374,7 +4393,8 @@ aside {
 .contact__single {
   background-color: #fcd838;
   position: relative;
-  height: 400px;
+  min-height: 400px;
+  padding: 25px;
   margin: 1.5%;
   -webkit-box-flex: 0;
   box-flex: 0;

@@ -13,10 +13,11 @@
 
 	<div class="home-hero">
 		<div class="fullscreen-bg">
-	           <iframe id="vimeo_player" class="fullscreen-bg__video" src="https://player.vimeo.com/video/143153915?api=1&player_id=vimeo_player&autoplay=1&loop=1&title=0&byline=0&portrait=0" width="1423" height="800" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	          <!--  <iframe id="vimeo_player" class="fullscreen-bg__video" src="https://player.vimeo.com/video/143153915?api=1&player_id=vimeo_player&autoplay=1&loop=1&title=0&byline=0&portrait=0" width="1423" height="800" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
 		     <!-- <video loop muted autoplay poster="<?php // echo $bannerurl[0] ?>" class="fullscreen-bg__video">
 		         <source src="<?php // echo get_template_directory_uri(); ?>/dist/images/herovid.mp4" type="video/mp4">
 		     </video> -->
+		     <?php dynamic_sidebar( 'homepage-vid' ); ?>
 		</div>
 		<!-- <hgroup>
 			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="">

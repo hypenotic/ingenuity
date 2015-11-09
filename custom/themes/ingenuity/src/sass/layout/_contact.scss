@@ -5,7 +5,7 @@
 
 .contact-container {
 	@include display(flex);
-	@include align-items(center);
+	@include align-items(flex-start);
 	@include justify-content(space-between);
 	@include flex-wrap(wrap);
 	min-height: 100vh;
@@ -14,7 +14,8 @@
 .contact__single {
 	background-color: $yellow;
 	position: relative;
-	height: 400px;	
+	min-height: 400px;	
+	padding: 25px;
 	margin: 1.5%;
 	@include flex(0 0 47%);
 }

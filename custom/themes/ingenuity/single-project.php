@@ -65,11 +65,12 @@
                     <?php the_content(); ?>
                 </section>
 
+            </section>
 
-            </section>
-            <section class="project__video">
-                <?php get_template_part( 'template-part-video' ); ?> 
-            </section>
+
+            <!-- <section class="project__video">
+                <?php // get_template_part( 'template-part-video' ); ?> 
+            </section> -->
 
              <section class="project__gallery clearfix">
                 <?php get_template_part( 'template-part-gallery' ); ?> 

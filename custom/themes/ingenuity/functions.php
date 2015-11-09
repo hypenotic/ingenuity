@@ -8,6 +8,7 @@ include('includes/wp-cuztom-posts/custom-post-videos.php');
 include('includes/wp-cuztom-posts/custom-post-testimonials.php');
 include('includes/wp-cuztom-posts/custom-post-slider.php');
 include('includes/wp-cuztom-posts/custom-post-team.php');
+include('includes/wp-cuztom-posts/custom-post-contacts.php');
 
 
 //Load custom functions
@@ -15,6 +16,7 @@ require_once('includes/functions/enqueue-style.php');
 require_once('includes/functions/enqueue-script.php');
 require_once('includes/functions/cuztom-posts.php');
 require_once('includes/functions/register-menu.php');
+require_once('includes/functions/register-sidebar.php');
 require_once('includes/functions/readmore.php');
 require_once('includes/functions/grabfirstimage.php');
 
