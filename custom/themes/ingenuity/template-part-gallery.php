@@ -29,11 +29,11 @@ if($slide_id) : ?>
             $s_image_id  = $slides['_image'];
             $s_image_url = wp_get_attachment_image_src($s_image_id,'banner', true); ?>    
             
-            <div class="gallery__single">
-                <div class="gallery__single-half gallery-image wow fadeInLeft">
+            <div class="gallery__single clearfix">
+                <div class="gallery__single-half gallery-image clearfix wow fadeInLeft">
                     <img src="<?php echo $s_image_url[0]; ?>" alt="">
                 </div>
-                <div class="gallery__single-half gallery-caption wow fadeInRight">
+                <div class="gallery__single-half gallery-caption clearfix wow fadeInRight">
                     <p><?php echo $s_text; ?></p>
                 </div>
             </div>
