@@ -1,9 +1,6 @@
 .project__gallery {
-    // margin-left: -50%;
-    // margin-right: -50%;
     width: 100%;
     position: relative;
-    min-height: 100vh;
     @include display(flex);
     @include align-items(flex-start);
     @include justify-content(center);
@@ -32,6 +29,8 @@
     }
     @include media($bp-small) {
         @include flex(1 0 auto);
+        @include flex-direction(column);
+        min-height: 100vh;
     }
 }
 
