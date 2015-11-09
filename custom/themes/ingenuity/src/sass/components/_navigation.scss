@@ -213,8 +213,8 @@ nav.expanded {
     font-weight: 400;
     font-family: $main-headings;
     @include media($bp-small) {
-      font-size: modular-scale(2,1.2rem);
-      line-height: modular-scale(2,1.2rem);
+      font-size: modular-scale(2,1rem);
+      line-height: modular-scale(2,1rem);
       padding-bottom: 15px;
     }
     ul {

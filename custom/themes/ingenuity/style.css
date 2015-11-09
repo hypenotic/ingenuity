@@ -545,8 +545,8 @@ main p.no-space {
   @media screen and (max-width: 30em) {
     .main-content p,
     .blog-entry p {
-      font-size: 1.3rem;
-      line-height: 1.7329rem; } }
+      font-size: 1.5rem;
+      line-height: 1.9995rem; } }
 
 .industry-cta {
   color: black;
@@ -872,8 +872,8 @@ nav.expanded {
     font-family: "Audimat3000-Regulier", sans-serif; }
     @media screen and (max-width: 30em) {
       #navigation ul li {
-        font-size: 2.13227rem;
-        line-height: 2.13227rem;
+        font-size: 1.77689rem;
+        line-height: 1.77689rem;
         padding-bottom: 15px; } }
     #navigation ul li ul li {
       font-size: 1.77689rem;
