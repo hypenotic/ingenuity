@@ -11,6 +11,11 @@
         @include flex-direction(row);
         @include flex-wrap(wrap);
     }
+    @include media($bp-small) {
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
+        min-height: 200vh; 
+    }
 }
 
 .gallery {
