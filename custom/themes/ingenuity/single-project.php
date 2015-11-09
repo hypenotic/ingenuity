@@ -77,9 +77,9 @@
             </section>
             
             <!-- THIS IS BREAKING!!!!!! -->
-            <section class="project__testimonial">
-                <?php get_template_part( 'template-part-testimonial' ); ?> 
-            </section>
+            <!-- <section class="project__testimonial">
+                <?php // get_template_part( 'template-part-testimonial' ); ?> 
+            </section> -->
         </div>
 
     <?php endwhile; else : ?>
