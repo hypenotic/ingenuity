@@ -22,6 +22,9 @@
 .projects__panel-wrap {
 	position: relative;
 	height: 300px;
+	@include media($bp-small) {
+	    height: 150px;
+	}
 	h2 {
 		position: absolute;
 		top: 30%;
@@ -31,6 +34,9 @@
 		text-align: center;
 		margin: 0 auto;
 		// padding-top: 100px;
+		@include media($bp-small) {
+		    top: 50%;
+		}
 		@include media($bp-large) {
 		    font-size: modular-scale(5); 
 			line-height: modular-scale(5); 

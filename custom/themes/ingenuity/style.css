@@ -581,19 +581,26 @@ main p.no-space {
 .main-content.about-page blockquote {
   margin: 30px;
   margin-right: -10%;
-  color: black; }
+  color: black;
+  background: #fcd838;
+  padding: 30px 25px 25px;
+  border-left: 4px solid rgba(0, 0, 0, 0.8); }
+  @media screen and (max-width: 30em) {
+    .blog-entry.blog-page blockquote,
+    .main-content.about-page blockquote {
+      padding: 30px 25px 25px;
+      margin: 10px; } }
   .blog-entry.blog-page blockquote p,
   .main-content.about-page blockquote p {
     padding-left: 20px;
     font-family: "Audimat3000-Leger", sans-serif;
     font-size: 2.84231rem;
     line-height: 2.84231rem; }
-  @media screen and (min-width: 50em) {
-    .blog-entry.blog-page blockquote,
-    .main-content.about-page blockquote {
-      background: #fcd838;
-      padding: 30px 25px 25px;
-      border-left: 4px solid rgba(0, 0, 0, 0.8); } }
+    @media screen and (max-width: 30em) {
+      .blog-entry.blog-page blockquote p,
+      .main-content.about-page blockquote p {
+        font-size: 1.7329rem;
+        line-height: 1.9995rem; } }
   .blog-entry.blog-page blockquote:before,
   .main-content.about-page blockquote:before {
     content: '“';
@@ -604,8 +611,8 @@ main p.no-space {
     @media screen and (max-width: 30em) {
       .blog-entry.blog-page blockquote:before,
       .main-content.about-page blockquote:before {
-        font-size: 2.66533rem;
-        margin-top: -10px; } }
+        font-size: 8.41535rem;
+        margin-top: 15px 0 15px -1em; } }
 
 .industry-cta {
   color: black;
@@ -4218,6 +4225,9 @@ body {
 
 .main-content {
   padding: 50px 25px; }
+  @media screen and (max-width: 30em) {
+    .main-content {
+      padding: 40px 10px; } }
 
 @media screen and (min-width: 50em) {
   .blog-entry {
@@ -4929,6 +4939,9 @@ h3.mission {
 .projects__panel-wrap {
   position: relative;
   height: 300px; }
+  @media screen and (max-width: 30em) {
+    .projects__panel-wrap {
+      height: 150px; } }
   .projects__panel-wrap h2 {
     position: absolute;
     top: 30%;
@@ -4936,6 +4949,9 @@ h3.mission {
     right: 5%;
     text-align: center;
     margin: 0 auto; }
+    @media screen and (max-width: 30em) {
+      .projects__panel-wrap h2 {
+        top: 50%; } }
     @media screen and (min-width: 50em) {
       .projects__panel-wrap h2 {
         font-size: 6.31309rem;

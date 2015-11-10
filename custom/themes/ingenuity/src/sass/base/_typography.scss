@@ -256,11 +256,22 @@ main {
 		margin: 30px;
 		margin-right: -10%;
 		color: $black;
+		background: $yellow;
+		padding: 30px 25px 25px;
+		border-left: 4px solid rgba(0,0,0,0.8);
+		@include media($bp-small) {
+			padding: 30px 25px 25px;
+			margin: 10px;
+	    }
 		p {
 			padding-left: 20px;
 			font-family: $lite-headings;
 			font-size: modular-scale(3, 1.2rem); 
 			line-height: modular-scale(3, 1.2rem); 
+			@include media($bp-small) {
+				font-size: modular-scale(1, 1.3rem); 
+				line-height: modular-scale(1, 1.5rem); 
+		    }
 			&:last-child {
 				&:after {
 				    // content: '”';
@@ -272,11 +283,6 @@ main {
 				}
 			}
 		}
-		@include media($bp-large) {
-		    background: $yellow;
-		    padding: 30px 25px 25px;
-		    border-left: 4px solid rgba(0,0,0,0.8);
-		}
 		&:before {
 		    content: '“';
 		    position: absolute;
@@ -284,8 +290,8 @@ main {
 		    font-size: modular-scale(5, 1.8rem);
 		    color: rgba(0,0,0,0.3);
 		    @include media($bp-small) {
-		    	font-size: modular-scale(2);
-		    	margin-top: -10px;
+		    	font-size: modular-scale(6);
+		    	margin-top: 15px 0 15px -1em;
 		    }
 		}
 		// &:after {

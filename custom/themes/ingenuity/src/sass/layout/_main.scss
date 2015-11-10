@@ -44,6 +44,9 @@ body {
 
 .main-content {
 	padding: 50px 25px;
+	@include media($bp-small) {
+		padding: 40px 10px;
+    }
 }
 
 .blog-entry {
