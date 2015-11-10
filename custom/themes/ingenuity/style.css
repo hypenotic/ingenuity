@@ -456,8 +456,9 @@ ul.post-categories {
 
 blockquote {
   font-style: italic;
-  font-size: 3.55289rem;
-  line-height: 3.55289rem; }
+  font-family: "Audimat3000-Leger", sans-serif;
+  font-size: 3.78975rem;
+  line-height: 3.78975rem; }
 
 figcaption {
   font-family: "ff-dagny-web-pro", sans-serif;
@@ -571,6 +572,35 @@ main p.no-space {
     .blog-entry p {
       font-size: 1.5rem;
       line-height: 1.9995rem; } }
+.main-content blockquote,
+.blog-entry blockquote {
+  margin: 30px;
+  margin-right: -10%;
+  color: black; }
+  .main-content blockquote p,
+  .blog-entry blockquote p {
+    padding-left: 20px;
+    font-family: "Audimat3000-Leger", sans-serif;
+    font-size: 2.84231rem;
+    line-height: 2.84231rem; }
+  @media screen and (min-width: 50em) {
+    .main-content blockquote,
+    .blog-entry blockquote {
+      background: #fcd838;
+      padding: 30px 25px 25px;
+      border-left: 4px solid rgba(0, 0, 0, 0.8); } }
+  .main-content blockquote:before,
+  .blog-entry blockquote:before {
+    content: '“';
+    position: absolute;
+    margin: 10px -0.2em;
+    font-size: 7.57571rem;
+    color: rgba(0, 0, 0, 0.3); }
+    @media screen and (max-width: 30em) {
+      .main-content blockquote:before,
+      .blog-entry blockquote:before {
+        font-size: 2.66533rem;
+        margin-top: -10px; } }
 
 .industry-cta {
   color: black;
@@ -3841,7 +3871,7 @@ body {
       padding: 7px 0; }
 
 .main-content {
-  padding: 50px; }
+  padding: 50px 25px; }
 
 @media screen and (min-width: 50em) {
   .blog-entry {
@@ -4237,7 +4267,9 @@ h3.mission {
   font-size: 3.31603rem;
   line-height: 3.07917rem;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.9); }
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 40px;
+  margin-top: 20px; }
 
 .two-column {
   margin: 60px -20%;
@@ -4351,6 +4383,20 @@ h3.mission {
   -webkit-transition: all 0.5s;
           transition: all 0.5s;
   letter-spacing: 1px; }
+
+.blog-wrapper {
+  position: relative; }
+  .blog-wrapper .diagonal-line {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    height: 100%;
+    width: 30%;
+    background-color: #fcd838;
+    -webkit-transform: skew(15deg, 0);
+    z-index: -1; }
+  .blog-wrapper .blog-entry {
+    background: rgba(255, 255, 255, 0); }
 
 .team__container {
   position: relative;
@@ -4641,14 +4687,14 @@ h3.mission {
   -o-align-items: flex-start;
   align-items: flex-start;
   -ms-flex-align: start;
-  -webkit-box-pack: justify;
-  box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  -ms-flex-pack: justify;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
   box-lines: multiple;

@@ -54,6 +54,7 @@
     
     
     <div class="main-wrapper blog-wrapper">
+    <div class="diagonal-line"></div>
     <?php get_sidebar(); ?>
     <section class="blog-entry">
         <?php the_content(); ?>

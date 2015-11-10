@@ -108,9 +108,9 @@ ul.post-categories {
 
 blockquote {
 	font-style: italic;
-	font-size: modular-scale(3); 
-	line-height: modular-scale(3); 
-
+	font-family: $lite-headings;
+	font-size: modular-scale(3, 1.6rem); 
+	line-height: modular-scale(3, 1.6rem); 
 }
 
 figcaption {
@@ -245,6 +245,51 @@ main {
 		    font-size: modular-scale(0, 1.5rem);
 		    line-height: modular-scale(1, 1.5rem);
 		}
+	}
+	blockquote {
+		margin: 30px;
+		margin-right: -10%;
+		color: $black;
+		p {
+			padding-left: 20px;
+			font-family: $lite-headings;
+			font-size: modular-scale(3, 1.2rem); 
+			line-height: modular-scale(3, 1.2rem); 
+			&:last-child {
+				&:after {
+				    // content: '”';
+				    // font-size: modular-scale(2, 1.3rem);
+				    // // color: rgba(0,0,0,0.3);
+				    // @include media($bp-small) {
+				    // 	font-size: modular-scale(1);
+				    // }
+				}
+			}
+		}
+
+		@include media($bp-large) {
+		    background: $yellow;
+		    padding: 30px 25px 25px;
+		    border-left: 4px solid rgba(0,0,0,0.8);
+		}
+		&:before {
+		    content: '“';
+		    position: absolute;
+		    margin: 10px -0.2em;
+		    font-size: modular-scale(5, 1.8rem);
+		    color: rgba(0,0,0,0.3);
+		    @include media($bp-small) {
+		    	font-size: modular-scale(2);
+		    	margin-top: -10px;
+		    }
+		}
+		// &:after {
+		//     content: '”';
+		//     font-size: modular-scale(2, 1.3rem);
+		//     @include media($bp-small) {
+		//     	font-size: modular-scale(1);
+		//     }
+		// }
 	}
 }
 

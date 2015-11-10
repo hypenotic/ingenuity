@@ -6,7 +6,8 @@
 .contact-container {
 	@include display(flex);
 	@include align-items(flex-start);
-	@include justify-content(space-between);
+	// @include justify-content(space-between);
+	@include justify-content(center);
 	@include flex-wrap(wrap);
 	@include flex-direction(column);
 	min-height: 100vh;
