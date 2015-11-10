@@ -1,11 +1,13 @@
 aside {
-	border-top: 4px solid $black;
+	border-right: 4px solid $black;
 	@include media($bp-large) {
 		@include span-columns(2);
 		@include shift(1);
 		height: 100%;
-		margin-top: 70px;
-		padding-top: 25px;
+		margin-top: 50px;
+		padding-top: 5px;
+		padding-right: 30px;
+		text-align: right;
     }
 	// margin-top: 10px;
 	@include media($bp-small) {
@@ -15,17 +17,16 @@ aside {
     	margin: 0;
     	font-size: modular-scale(0, 1rem);
     }
-    ul {
+    ul.post-categories {
+    	list-style-type: none;
+    	padding-left: 0;
+    	padding-bottom: 0;
+    	text-transform: uppercase;
+    	font-size: modular-scale(0, 0.9rem);
+    	line-height: modular-scale(0, 0.9rem);
+    	li {
 
+    	}
     }
-}
-
-.sidebar__nav ul {
-	list-style-type: none;
-	padding-left: 0;
-	padding-bottom: 0;
-	li {
-		// padding: 5px 0;
-	}
 }
 

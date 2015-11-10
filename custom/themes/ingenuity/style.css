@@ -572,33 +572,34 @@ main p.no-space {
     .blog-entry p {
       font-size: 1.5rem;
       line-height: 1.9995rem; } }
-.main-content blockquote,
-.blog-entry blockquote {
+
+.blog-entry.blog-page blockquote,
+.main-content.about-page blockquote {
   margin: 30px;
   margin-right: -10%;
   color: black; }
-  .main-content blockquote p,
-  .blog-entry blockquote p {
+  .blog-entry.blog-page blockquote p,
+  .main-content.about-page blockquote p {
     padding-left: 20px;
     font-family: "Audimat3000-Leger", sans-serif;
     font-size: 2.84231rem;
     line-height: 2.84231rem; }
   @media screen and (min-width: 50em) {
-    .main-content blockquote,
-    .blog-entry blockquote {
+    .blog-entry.blog-page blockquote,
+    .main-content.about-page blockquote {
       background: #fcd838;
       padding: 30px 25px 25px;
       border-left: 4px solid rgba(0, 0, 0, 0.8); } }
-  .main-content blockquote:before,
-  .blog-entry blockquote:before {
+  .blog-entry.blog-page blockquote:before,
+  .main-content.about-page blockquote:before {
     content: '“';
     position: absolute;
     margin: 10px -0.2em;
     font-size: 7.57571rem;
     color: rgba(0, 0, 0, 0.3); }
     @media screen and (max-width: 30em) {
-      .main-content blockquote:before,
-      .blog-entry blockquote:before {
+      .blog-entry.blog-page blockquote:before,
+      .main-content.about-page blockquote:before {
         font-size: 2.66533rem;
         margin-top: -10px; } }
 
@@ -1220,8 +1221,9 @@ span.menu-icon {
 
 .gallery__single-half.gallery-caption {
   position: relative;
-  background-color: #fcd838;
-  padding: 40px; }
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 40px;
+  color: white; }
   .gallery__single-half.gallery-caption p {
     margin: 0; }
     @media screen and (max-width: 30em) {
@@ -3565,6 +3567,345 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
 
+/*! Hint.css - v1.3.6 - 2015-10-31
+* http://kushagragour.in/lab/hint/
+* Copyright (c) 2015 Kushagra Gour; Licensed MIT */
+/*-------------------------------------*\
+	HINT.css - A CSS tooltip library
+\*-------------------------------------*/
+/**
+ * HINT.css is a tooltip library made in pure CSS.
+ *
+ * Source: https://github.com/chinchang/hint.css
+ * Demo: http://kushagragour.in/lab/hint/
+ *
+ * Release under The MIT License
+ *
+ */
+/**
+ * source: hint-core.scss
+ *
+ * Defines the basic styling for the tooltip.
+ * Each tooltip is made of 2 parts:
+ * 	1) body (:after)
+ * 	2) arrow (:before)
+ *
+ * Classes added:
+ * 	1) hint
+ */
+.hint, [data-hint] {
+  position: relative;
+  display: inline-block;
+  /**
+   * tooltip arrow
+   */
+  /**
+   * tooltip body
+   */ }
+
+.hint:before, .hint:after, [data-hint]:before, [data-hint]:after {
+  position: absolute;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000000;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms; }
+
+.hint:hover:before, .hint:hover:after, .hint:focus:before, .hint:focus:after, [data-hint]:hover:before, [data-hint]:hover:after, [data-hint]:focus:before, [data-hint]:focus:after {
+  visibility: visible;
+  opacity: 1; }
+
+.hint:hover:before, .hint:hover:after, [data-hint]:hover:before, [data-hint]:hover:after {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 100ms; }
+
+.hint:before, [data-hint]:before {
+  content: '';
+  position: absolute;
+  background: transparent;
+  border: 6px solid transparent;
+  z-index: 1000001; }
+
+.hint:after, [data-hint]:after {
+  content: attr(data-hint);
+  background: #383838;
+  width: 300px;
+  height: 300px;
+  color: white;
+  padding: 15px;
+  font-size: 1rem;
+  line-height: 1rem; }
+
+[data-hint='']:before, [data-hint='']:after {
+  display: none !important; }
+
+/**
+ * source: hint-position.scss
+ *
+ * Defines the positoning logic for the tooltips.
+ *
+ * Classes added:
+ * 	1) hint--top
+ * 	2) hint--bottom
+ * 	3) hint--left
+ * 	4) hint--right
+ */
+/**
+ * set default color for tooltip arrows
+ */
+.hint--top:before {
+  border-top-color: #383838; }
+
+.hint--bottom:before {
+  border-bottom-color: #383838; }
+
+.hint--left:before {
+  border-left-color: #383838; }
+
+.hint--right:before {
+  border-right-color: #383838; }
+
+/**
+ * top tooltip
+ */
+.hint--top:before {
+  margin-bottom: -12px; }
+
+.hint--top:after {
+  margin-left: -18px; }
+
+.hint--top:before, .hint--top:after {
+  bottom: 100%;
+  left: 50%; }
+
+.hint--top:hover:after, .hint--top:hover:before, .hint--top:focus:after, .hint--top:focus:before {
+  -webkit-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+      transform: translateY(-8px); }
+
+/**
+ * bottom tooltip
+ */
+.hint--bottom:before {
+  margin-top: -12px; }
+
+.hint--bottom:after {
+  margin-left: -18px; }
+
+.hint--bottom:before, .hint--bottom:after {
+  top: 100%;
+  left: 50%; }
+
+.hint--bottom:hover:after, .hint--bottom:hover:before, .hint--bottom:focus:after, .hint--bottom:focus:before {
+  -webkit-transform: translateY(8px);
+  -ms-transform: translateY(8px);
+      transform: translateY(8px); }
+
+/**
+ * right tooltip
+ */
+.hint--right:before {
+  margin-left: -12px;
+  margin-bottom: -6px; }
+
+.hint--right:after {
+  margin-bottom: -14px; }
+
+.hint--right:before, .hint--right:after {
+  left: 100%;
+  bottom: 50%; }
+
+.hint--right:hover:after, .hint--right:hover:before, .hint--right:focus:after, .hint--right:focus:before {
+  -webkit-transform: translateX(8px);
+  -ms-transform: translateX(8px);
+      transform: translateX(8px); }
+
+/**
+ * left tooltip
+ */
+.hint--left:before {
+  margin-right: -12px;
+  margin-bottom: -6px; }
+
+.hint--left:after {
+  margin-bottom: -14px; }
+
+.hint--left:before, .hint--left:after {
+  right: 100%;
+  bottom: 50%; }
+
+.hint--left:hover:after, .hint--left:hover:before, .hint--left:focus:after, .hint--left:focus:before {
+  -webkit-transform: translateX(-8px);
+  -ms-transform: translateX(-8px);
+      transform: translateX(-8px); }
+
+/**
+ * source: hint-theme.scss
+ *
+ * Defines basic theme for tooltips.
+ *
+ */
+.hint, [data-hint] {
+  /**
+   * tooltip body
+   */ }
+
+/**
+ * source: hint-color-types.scss
+ *
+ * Contains tooltips of various types based on color differences.
+ *
+ * Classes added:
+ * 	1) hint--error
+ * 	2) hint--warning
+ * 	3) hint--info
+ * 	4) hint--success
+ *
+ */
+/**
+ * Error
+ */
+.hint--error:after {
+  background-color: #b34e4d;
+  text-shadow: 0 -1px 0px #592726; }
+
+.hint--error.hint--top:before {
+  border-top-color: #b34e4d; }
+
+.hint--error.hint--bottom:before {
+  border-bottom-color: #b34e4d; }
+
+.hint--error.hint--left:before {
+  border-left-color: #b34e4d; }
+
+.hint--error.hint--right:before {
+  border-right-color: #b34e4d; }
+
+/**
+ * Warning
+ */
+.hint--warning:after {
+  background-color: #c09854;
+  text-shadow: 0 -1px 0px #6c5328; }
+
+.hint--warning.hint--top:before {
+  border-top-color: #c09854; }
+
+.hint--warning.hint--bottom:before {
+  border-bottom-color: #c09854; }
+
+.hint--warning.hint--left:before {
+  border-left-color: #c09854; }
+
+.hint--warning.hint--right:before {
+  border-right-color: #c09854; }
+
+/**
+ * Info
+ */
+.hint--info:after {
+  background-color: #3986ac;
+  text-shadow: 0 -1px 0px #193b4d; }
+
+.hint--info.hint--top:before {
+  border-top-color: #3986ac; }
+
+.hint--info.hint--bottom:before {
+  border-bottom-color: #3986ac; }
+
+.hint--info.hint--left:before {
+  border-left-color: #3986ac; }
+
+.hint--info.hint--right:before {
+  border-right-color: #3986ac; }
+
+/**
+ * Success
+ */
+.hint--success:after {
+  background-color: #458746;
+  text-shadow: 0 -1px 0px #1a321a; }
+
+.hint--success.hint--top:before {
+  border-top-color: #458746; }
+
+.hint--success.hint--bottom:before {
+  border-bottom-color: #458746; }
+
+.hint--success.hint--left:before {
+  border-left-color: #458746; }
+
+.hint--success.hint--right:before {
+  border-right-color: #458746; }
+
+/**
+ * source: hint-always.scss
+ *
+ * Defines a persisted tooltip which shows always.
+ *
+ * Classes added:
+ * 	1) hint--always
+ *
+ */
+.hint--always:after, .hint--always:before {
+  opacity: 1;
+  visibility: visible; }
+
+.hint--always.hint--top:after, .hint--always.hint--top:before {
+  -webkit-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+      transform: translateY(-8px); }
+
+.hint--always.hint--bottom:after, .hint--always.hint--bottom:before {
+  -webkit-transform: translateY(8px);
+  -ms-transform: translateY(8px);
+      transform: translateY(8px); }
+
+.hint--always.hint--left:after, .hint--always.hint--left:before {
+  -webkit-transform: translateX(-8px);
+  -ms-transform: translateX(-8px);
+      transform: translateX(-8px); }
+
+.hint--always.hint--right:after, .hint--always.hint--right:before {
+  -webkit-transform: translateX(8px);
+  -ms-transform: translateX(8px);
+      transform: translateX(8px); }
+
+/**
+ * source: hint-rounded.scss
+ *
+ * Defines rounded corner tooltips.
+ *
+ * Classes added:
+ * 	1) hint--rounded
+ *
+ */
+.hint--rounded:after {
+  border-radius: 4px; }
+
+/**
+ * source: hint-effects.scss
+ *
+ * Defines various transition effects for the tooltips.
+ *
+ * Classes added:
+ * 	1) hint--no-animate
+ * 	2) hint--bounce
+ *
+ */
+.hint--no-animate:before, .hint--no-animate:after {
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms; }
+
+.hint--bounce:before, .hint--bounce:after {
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24); }
+
 .main-footer {
   min-height: 400px;
   width: 100%;
@@ -4049,7 +4390,7 @@ span.big-quotes {
   text-align: center; }
 
 aside {
-  border-top: 4px solid black; }
+  border-right: 4px solid black; }
   @media screen and (min-width: 50em) {
     aside {
       float: left;
@@ -4058,8 +4399,10 @@ aside {
       width: 14.70196%;
       margin-left: 8.5298%;
       height: 100%;
-      margin-top: 70px;
-      padding-top: 25px; }
+      margin-top: 50px;
+      padding-top: 5px;
+      padding-right: 30px;
+      text-align: right; }
       aside:last-child {
         margin-right: 0; } }
   @media screen and (max-width: 30em) {
@@ -4068,11 +4411,13 @@ aside {
   aside p {
     margin: 0;
     font-size: 1rem; }
-
-.sidebar__nav ul {
-  list-style-type: none;
-  padding-left: 0;
-  padding-bottom: 0; }
+  aside ul.post-categories {
+    list-style-type: none;
+    padding-left: 0;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    line-height: 0.9rem; }
 
 @media screen and (max-width: 30em) {
   .textwidget {
@@ -4384,9 +4729,11 @@ h3.mission {
           transition: all 0.5s;
   letter-spacing: 1px; }
 
-.blog-wrapper {
+.blog-wrapper,
+.main-content {
   position: relative; }
-  .blog-wrapper .diagonal-line {
+  .blog-wrapper .diagonal-line,
+  .main-content .diagonal-line {
     position: absolute;
     top: 0;
     left: 60%;
@@ -4395,7 +4742,8 @@ h3.mission {
     background-color: #fcd838;
     -webkit-transform: skew(15deg, 0);
     z-index: -1; }
-  .blog-wrapper .blog-entry {
+  .blog-wrapper .blog-entry,
+  .main-content .blog-entry {
     background: rgba(255, 255, 255, 0); }
 
 .team__container {

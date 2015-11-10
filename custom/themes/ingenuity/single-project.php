@@ -42,6 +42,7 @@
         </div>
 
         <div class="main-wrapper blog-wrapper">
+            <div class="diagonal-line"></div>
             <aside id="left"> 
                 <?php if ($client) { ?>
                     <p><span class="stats_label">Client</span>: <?php echo $client; ?></p>

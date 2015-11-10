@@ -50,17 +50,41 @@
 
     </section>
     <?php } ?>
-
+  
+    
     <div class="main-wrapper blog-wrapper">
-        <!-- <div class="diagonal-line"></div> -->
-        <?php get_sidebar(); ?>
-        <section class="blog-entry blog-page">
-            <?php the_content(); ?>
-            <div class="prev-next-link">
-              <p><?php previous_post_link('%link', '&larr; Previous Post | '); ?>
-              <?php previous_post_link('%link', 'Next Post &rarr;'); ?></p>
-            </div>
-        </section>
+    <div class="diagonal-line"></div>
+    <svg class="diagonal-svg">
+        <line x1="100%" y1="100%" x2="0" y2="0"
+            style="stroke:rgb(255,0,0);stroke-width:150"/>
+    </svg>
+    <?php get_sidebar(); ?>
+    <section class="blog-entry">
+        <?php the_content(); ?>
+        <div class="prev-next-link">
+          <p><?php previous_post_link('%link', '&larr; Previous Post | '); ?>
+          <?php previous_post_link('%link', 'Next Post &rarr;'); ?></p>
+        </div>
+    </section>
+    </div>
+
+
+    <div class="diagonal-svg__wrapper">
+        <svg class="diagonal-svg">
+            <line x1="100%" y1="100%" x2="0" y2="0"
+                style="stroke:rgba(252, 216, 56, 1);stroke-width:5%"/>
+        </svg>
+         <div class="main-wrapper blog-wrapper">
+         <div class="diagonal-line"></div>
+         <?php get_sidebar(); ?>
+         <section class="blog-entry">
+             <?php the_content(); ?>
+             <div class="prev-next-link">
+                 <p><?php previous_post_link('%link', '&larr; Previous Post | '); ?>
+                 <?php previous_post_link('%link', 'Next Post &rarr;'); ?></p>
+             </div>
+         </section>
+         </div>
     </div>
 
   <?php endwhile; else : ?>

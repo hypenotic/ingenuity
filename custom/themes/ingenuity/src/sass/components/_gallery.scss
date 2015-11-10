@@ -67,8 +67,9 @@
 
 .gallery__single-half.gallery-caption {
     position: relative;
-    background-color: $yellow;
+    background-color: rgba(0,0,0,0.9);
     padding: 40px;
+    color: $white;
     // min-height: 100vh;
     @include media($bp-small) {
     }

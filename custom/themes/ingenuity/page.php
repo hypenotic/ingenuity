@@ -27,7 +27,7 @@
 	</div>
 	
 	<div class="main-wrapper">
-		<div class="main-content"> <!-- contentwrapper begins here -->
+		<div class="main-content about-page"> <!-- contentwrapper begins here -->
 				
 			<?php the_content(); ?>
 		

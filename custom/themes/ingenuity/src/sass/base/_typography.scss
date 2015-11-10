@@ -246,6 +246,10 @@ main {
 		    line-height: modular-scale(1, 1.5rem);
 		}
 	}
+}
+
+.blog-entry.blog-page,
+.main-content.about-page {
 	blockquote {
 		margin: 30px;
 		margin-right: -10%;
@@ -266,7 +270,6 @@ main {
 				}
 			}
 		}
-
 		@include media($bp-large) {
 		    background: $yellow;
 		    padding: 30px 25px 25px;

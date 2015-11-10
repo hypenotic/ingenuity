@@ -1,4 +1,5 @@
-.blog-wrapper {
+.blog-wrapper,
+.main-content {
 	position: relative;
 	.diagonal-line {
 	position: absolute;
@@ -14,3 +15,16 @@
 		background: rgba(255,255,255,0.0);
 	}
 }
+
+// .diagonal-svg__wrapper {
+// 	position: relative;
+// 	.diagonal-svg {
+// 		position: absolute;
+// 		top: 0;
+// 		height: 100%;
+// 		width: 100%;
+// 		z-index: -1;
+// 	}
+// }
+
+
