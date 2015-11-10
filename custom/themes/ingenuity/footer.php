@@ -28,7 +28,7 @@
 				<h3></h3>
 				
 			</div>
-			<div class="footer__map" id="footer-map">
+			<div class="footer__map">
 			</div>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w&sensor=false"></script>
 		</footer>

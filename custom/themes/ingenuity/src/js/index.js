@@ -174,18 +174,18 @@ function init() {
 
  // Get the HTML DOM element that will contain your map 
  // We are using a div with id="map" seen below in the <body>
- var mapElement = document.getElementById('footer-map');
+ // var mapElement = document.getElementById('footer-map');
  var contactMap = document.getElementById('contact-map');
 
  // Create the Google Map using our element and options defined above
- var map = new google.maps.Map(mapElement, mapOptions);
+ // var map = new google.maps.Map(mapElement, mapOptions);
  var mapC = new google.maps.Map(contactMap, mapOptions);
 
  // Let's also add a marker while we're at it
- var marker = new google.maps.Marker({
-     position: new google.maps.LatLng(43.5238744, -79.7086458),
-     map: map
- });
+ // var marker = new google.maps.Marker({
+ //     position: new google.maps.LatLng(43.5238744, -79.7086458),
+ //     map: map
+ // });
 
   // Let's also add a marker while we're at it
  var markerC = new google.maps.Marker({
