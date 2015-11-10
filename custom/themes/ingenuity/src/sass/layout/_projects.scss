@@ -1,44 +1,70 @@
 // PROJECTs Landing Page
 .projects__panel-container {
-	margin-top: 50px;
-}
-
-.projects__panel {
 	width: 100%;
-	height: 300px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	// margin-bottom: 40px;
+	margin-top: 50px;
 	position: relative;
-	transition: all 0.5s;
-	filter: grayscale(0.7);
-	// -webkit-transform: skew(16deg, 0);
-	padding: 25px;
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
-	&:hover {
+	@include flex-direction(column);	
+}
+
+.projects__panel-link {
+	width: 100%;
+	transition: all 0.2s;
+	&:hover .projects__panel-wrap .projects__panel-img { 
 		filter: grayscale(0.0);
-		.color-overlay {
-			background-color: rgba(0,0,0,0.0);
-			filter: brightness(0.7);
-		}
+		background-blend-mode: normal;
+		filter: brightness(0.3);
 	}
-	.color-overlay {
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0,0,0,0.3);
-		position: absolute;
-		top: 0;
-		left: 0;
-		transition: all 0.5s;
-	}
+}
+
+.projects__panel-wrap {
+	position: relative;
+	height: 300px;
 	h2 {
-		position: relative;
+		position: absolute;
+		top: 30%;
+		// bottom: 10%;
+		left: 5%;
+		right: 5%;
 		text-align: center;
 		margin: 0 auto;
 		// padding-top: 100px;
+		@include media($bp-large) {
+		    font-size: modular-scale(5); 
+			line-height: modular-scale(5); 
+		}
+	}
+	.projects__panel-img {
+		width: 100%;
+		height: 100%;
+		// height: 300px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		// margin-bottom: 40px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all 0.2s;
+		// -webkit-transform: skew(16deg, 0);
+		padding: 25px;
+		filter: grayscale(0.0);
+		background-blend-mode: overlay;
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(center);
+		.color-overlay {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(252, 216, 56, 0.4);
+			filter: brightness(0.6);
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: all 0.2s;
+		}
 	}
 }
 

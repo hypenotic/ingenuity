@@ -60,7 +60,7 @@
         position: relative;
         width: 100%;
         max-height: auto;
-        padding-right: 25px;
+        // padding-right: 25px;
         
     }
 }
@@ -68,7 +68,7 @@
 .gallery__single-half.gallery-caption {
     position: relative;
     background-color: $yellow;
-    padding: 25px;
+    padding: 40px;
     // min-height: 100vh;
     @include media($bp-small) {
     }
@@ -88,8 +88,12 @@
     }
     img {
         padding-right: 0;
-        padding-left: 25px;
+        padding-left: 0;
     }
+}
+
+.gallery__single:nth-child(even) .gallery__single-half.gallery-caption {
+    // border-right: 25px solid $white;
 }
 
 .cell {

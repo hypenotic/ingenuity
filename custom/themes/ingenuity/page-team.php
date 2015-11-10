@@ -19,11 +19,12 @@
   	
   	?>
 
-	<div class="default-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
-		<hgroup>
-			<h1 class="team__hero-heading"><?php echo $heading; ?></h1>
-			<h2 class="team__hero-subheading"><?php echo $subheading; ?></h2>
-		</hgroup>
+	<div class="default-hero">
+	    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
+	    <hgroup class="animated fadeInDown">
+	        <h1><?php echo $heading; ?></h1>
+	        <h2><?php echo $subheading; ?></h2>
+	    </hgroup>
 	</div>
 
 
@@ -57,8 +58,8 @@
 
 					<?php if ($flag == 'value3') { ?>
 
-						<figure class="team__single trigger-push-panel wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
-						<?php if (wp_attachment_is_image($photoid) == true) { ?>
+						<figure class="team__single trigger-push-panel wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>" data-wow-duration="0.5s" data-wow-delay="0.2s">
+						<?php if ( wp_attachment_is_image($photoid) == true ) { ?>
 							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
 						<?php } ?>
 							<hgroup>
@@ -76,7 +77,7 @@
 
 					<?php } else { ?>
 
-						<figure class="team__single wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>">
+						<figure class="team__single wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>" data-wow-duration="0.5s" data-wow-delay="0.2s">
 						<?php if (wp_attachment_is_image($photoid) == true) { ?>
 							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
 						<?php } ?>

@@ -29,7 +29,7 @@
 		min-height: 200px;
 		width: 100%;
 		// margin-bottom: 25px;
-		transition: all 0.5s;
+		// transition: all 0.5s;
 		border-bottom: 2px solid $black;
 		@include display(flex);
 		@include align-items(flex-start);
@@ -71,13 +71,13 @@
 			position: relative;
 			padding: 0 25px;
 			z-index: 4;
-			transition: all 0.5s;
+			// transition: all 0.5s;
 		}
 	}
 }
 
 .drop-down-panel {
-	padding:50px 25%;
+	padding: 50px 25%;
 	display: none;
 	min-height: 300px;
 	background: $black;

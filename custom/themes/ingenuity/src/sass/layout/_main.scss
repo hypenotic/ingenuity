@@ -41,11 +41,16 @@ body {
     }
 }
 
+.main-content {
+	padding: 50px;
+}
+
 .blog-entry {
 	@include media($bp-large) {
 		@include span-columns(8);
 		@include shift(0);
 		padding: 50px 25px;
+		padding-right: 50px;
     }
 }
 
