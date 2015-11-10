@@ -27,12 +27,12 @@
 	</div>
 	
 	<div class="main-wrapper">
-		<div class="main-content about-page"> <!-- contentwrapper begins here -->
+		<div class="main-content about-page"> 
 				
 			<?php the_content(); ?>
 		
-		</div> <!-- contentWrapper ends here -->
-	</div> <!-- main-wrapper ends here -->
+		</div>
+	</div>
 	
 
 	<?php if ( $ctatitle ) { ?>

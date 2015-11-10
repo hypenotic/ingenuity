@@ -515,6 +515,10 @@ span.black-highlight {
   letter-spacing: 1px;
   text-align: left;
   margin: 0 20% 0 10%; }
+  @media screen and (max-width: 30em) {
+    .default-hero h2 {
+      font-size: 1.333rem;
+      line-height: 1.333rem; } }
 
 .default-hero.blog-hero h1 {
   font-size: 3.07917rem;
@@ -4168,6 +4172,7 @@ body {
   overflow-x: hidden; }
 
 .main-wrapper {
+  overflow-x: hidden;
   max-width: 68.75em;
   margin-left: auto;
   margin-right: auto; }
@@ -4742,6 +4747,12 @@ h3.mission {
     background-color: #fcd838;
     -webkit-transform: skew(15deg, 0);
     z-index: -1; }
+    @media screen and (max-width: 30em) {
+      .blog-wrapper .diagonal-line,
+      .main-content .diagonal-line {
+        left: 80%;
+        width: 40%;
+        -webkit-transform: skew(8deg, 0); } }
   .blog-wrapper .blog-entry,
   .main-content .blog-entry {
     background: rgba(255, 255, 255, 0); }

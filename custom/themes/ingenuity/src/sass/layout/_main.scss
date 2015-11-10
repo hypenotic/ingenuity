@@ -6,6 +6,7 @@ body {
 	// max-width: 1024px;
 	// margin: auto;
 	// padding: 0 50px 50px;
+	overflow-x: hidden;
 	@include outer-container;
 	@include media($bp-small) {
 		padding: 0 30px;

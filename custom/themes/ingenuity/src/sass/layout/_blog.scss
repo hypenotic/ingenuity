@@ -2,14 +2,19 @@
 .main-content {
 	position: relative;
 	.diagonal-line {
-	position: absolute;
-	top: 0;
-	left: 60%;
-	height: 100%;
-	width: 30%;
-	background-color: $yellow;
-	-webkit-transform: skew(15deg, 0);
-	z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 60%;
+		height: 100%;
+		width: 30%;
+		background-color: $yellow;
+		-webkit-transform: skew(15deg, 0);
+		z-index: -1;
+		@include media($bp-small) {
+			left: 80%;
+			width: 40%;
+			-webkit-transform: skew(8deg, 0);
+	    }
 	}	
 	.blog-entry {
 		background: rgba(255,255,255,0.0);
