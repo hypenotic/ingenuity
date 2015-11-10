@@ -99,7 +99,7 @@ $(".team__single").click(function(){
   nextPanel.slideToggle(300);
 });
 
-$("#close-push-panel").click(function() {
+$(".close-push-panel").click(function() {
   $(this).parent(".drop-down-panel").slideToggle(300);
 
   $('html, body').animate({

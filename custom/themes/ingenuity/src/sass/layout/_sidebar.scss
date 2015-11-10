@@ -1,6 +1,19 @@
 aside {
-	border-right: 4px solid $black;
-	@include media($bp-large) {
+	@include media($bp-small) {
+		padding-top: 50px;
+		padding-bottom: 25px;
+		display: block;
+		border-right: none;
+		border-bottom: 4px solid $black;
+    }
+	@include media($bp-med) {
+		padding-top: 50px;
+		padding-bottom: 25px;
+		display: block;
+		border-right: none;
+		border-bottom: 4px solid $black;
+    }
+    @include media($bp-large) {
 		@include span-columns(2);
 		@include shift(1);
 		height: 100%;
@@ -8,10 +21,8 @@ aside {
 		padding-top: 5px;
 		padding-right: 30px;
 		text-align: right;
-    }
-	// margin-top: 10px;
-	@include media($bp-small) {
-		display: none;
+		border-right: 4px solid $black;
+		border-bottom: none;
     }
     p {
     	margin: 0;

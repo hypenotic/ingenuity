@@ -576,6 +576,11 @@ main p.no-space {
     .blog-entry p {
       font-size: 1.5rem;
       line-height: 1.9995rem; } }
+  @media screen and (min-width: 30em) {
+    .main-content p,
+    .blog-entry p {
+      font-size: 1.5rem;
+      line-height: 1.9995rem; } }
 
 .blog-entry.blog-page blockquote,
 .main-content.about-page blockquote {
@@ -755,7 +760,8 @@ span.bolded-text {
 
 #left p {
   line-height: 1.2rem;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-weight: 200; }
 
 figcaption.logopack__download:hover {
   background-color: black; }
@@ -855,7 +861,7 @@ nav:hover {
 .site-width {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 8%; }
+  padding: 0 10%; }
   @media screen and (max-width: 30em) {
     .site-width {
       padding: 20px 20px 0; } }
@@ -4190,6 +4196,9 @@ body {
   @media screen and (max-width: 30em) {
     .main-wrapper {
       padding: 0 30px; } }
+  @media screen and (min-width: 30em) {
+    .main-wrapper {
+      padding: 0 30px; } }
 
 .content-wrapper {
   padding-top: 120px;
@@ -4404,35 +4413,46 @@ span.big-quotes {
   line-height: 4.736rem;
   text-align: center; }
 
-aside {
-  border-right: 4px solid black; }
-  @media screen and (min-width: 50em) {
-    aside {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 14.70196%;
-      margin-left: 8.5298%;
-      height: 100%;
-      margin-top: 50px;
-      padding-top: 5px;
-      padding-right: 30px;
-      text-align: right; }
-      aside:last-child {
-        margin-right: 0; } }
-  @media screen and (max-width: 30em) {
-    aside {
-      display: none; } }
-  aside p {
-    margin: 0;
-    font-size: 1rem; }
-  aside ul.post-categories {
-    list-style-type: none;
-    padding-left: 0;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    line-height: 0.9rem; }
+@media screen and (max-width: 30em) {
+  aside {
+    padding-top: 50px;
+    padding-bottom: 25px;
+    display: block;
+    border-right: none;
+    border-bottom: 4px solid black; } }
+@media screen and (min-width: 30em) {
+  aside {
+    padding-top: 50px;
+    padding-bottom: 25px;
+    display: block;
+    border-right: none;
+    border-bottom: 4px solid black; } }
+@media screen and (min-width: 50em) {
+  aside {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+    margin-left: 8.5298%;
+    height: 100%;
+    margin-top: 50px;
+    padding-top: 5px;
+    padding-right: 30px;
+    text-align: right;
+    border-right: 4px solid black;
+    border-bottom: none; }
+    aside:last-child {
+      margin-right: 0; } }
+aside p {
+  margin: 0;
+  font-size: 1rem; }
+aside ul.post-categories {
+  list-style-type: none;
+  padding-left: 0;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 0.9rem; }
 
 @media screen and (max-width: 30em) {
   .textwidget {
@@ -4878,16 +4898,35 @@ h3.mission {
   min-height: 300px;
   background: black;
   width: 100%;
-  color: white; }
+  color: white;
+  position: relative; }
   .drop-down-panel button {
     color: black;
     background-color: #fcd838;
     border: none;
     padding: 10px 15px;
-    -webkit-transition: all 0.5s;
-            transition: all 0.5s; }
+    margin-top: 25px; }
     .drop-down-panel button:hover {
-      background-color: #fbce06; }
+      background-color: #cba603; }
+
+button.drop-down-cross {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  background-color: black;
+  right: 50px;
+  top: 20px;
+  overflow: hidden;
+  border: none;
+  background: url(../ingenuity/dist/images/cross.png) no-repeat center center;
+  text-indent: 200%;
+  color: transparent;
+  outline: none; }
+
+.push__longbio ul {
+  margin-top: -20px; }
+  .push__longbio ul li {
+    padding-bottom: 10px; }
 
 .projects__panel-container {
   width: 100%;
@@ -4942,6 +4981,12 @@ h3.mission {
   @media screen and (max-width: 30em) {
     .projects__panel-wrap {
       height: 150px; } }
+  @media screen and (min-width: 30em) {
+    .projects__panel-wrap {
+      height: 200px; } }
+  @media screen and (min-width: 50em) {
+    .projects__panel-wrap {
+      height: 300px; } }
   .projects__panel-wrap h2 {
     position: absolute;
     top: 30%;
@@ -4952,6 +4997,11 @@ h3.mission {
     @media screen and (max-width: 30em) {
       .projects__panel-wrap h2 {
         top: 50%; } }
+    @media screen and (min-width: 30em) {
+      .projects__panel-wrap h2 {
+        font-size: 3.55289rem;
+        line-height: 3.55289rem;
+        top: 35%; } }
     @media screen and (min-width: 50em) {
       .projects__panel-wrap h2 {
         font-size: 6.31309rem;

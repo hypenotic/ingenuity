@@ -11,6 +11,9 @@ body {
 	@include media($bp-small) {
 		padding: 0 30px;
     }
+    @include media($bp-med) {
+		padding: 0 30px;
+    }
 }
 
 .content-wrapper {
