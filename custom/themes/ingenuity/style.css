@@ -4300,12 +4300,6 @@ Copyright (c) 2015 Daniel Eden
 .default-hero.blog-hero hgroup {
   margin-top: 50px; }
 
-nav.nav__mobile {
-  display: none; }
-  @media screen and (min-width: 30em) {
-    nav.nav__mobile {
-      display: block; } }
-
 body {
   overflow-x: hidden; }
 
