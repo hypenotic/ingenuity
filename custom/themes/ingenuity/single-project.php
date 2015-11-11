@@ -64,9 +64,11 @@
                     <p><?php //echo $blurb; ?></p>
                 </section> -->
 
-                <section class="project__dimension">
-                    <?php the_content(); ?>
-                </section>
+                 <?php the_content(); ?>
+
+                <!-- <section class="project__dimension">
+                    <?php // the_content(); ?>
+                </section> -->
 
             </section>
 

@@ -65,6 +65,7 @@
 	background: $yellow;
 	padding: 40px;
 	p {
+		font-family: $main-headings;
 		font-size: modular-scale(2, 1.3rem);
 		line-height: modular-scale(2, 1.3rem);
 	}

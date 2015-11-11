@@ -770,6 +770,16 @@ span.bolded-text {
   margin-bottom: 10px;
   font-weight: 200; }
 
+#info-window-content h3 {
+  color: black;
+  font-size: 1.77689rem;
+  margin: 0; }
+#info-window-content p {
+  font-family: "Audimat3000-Leger", sans-serif;
+  font-size: 0.9rem;
+  font-size: 1.1997rem;
+  margin-bottom: 0; }
+
 figcaption.logopack__download:hover {
   background-color: black; }
   figcaption.logopack__download:hover h3 {
@@ -934,7 +944,7 @@ nav.expanded {
   #navigation ul a {
     color: black; }
   #navigation ul li {
-    padding: 2px 10%;
+    padding: 2px 15%;
     font-size: 3.7888rem;
     line-height: 3.7888rem;
     font-weight: 400;
@@ -4483,15 +4493,19 @@ aside ul.post-categories {
   left: 0;
   width: 115%;
   height: 115%; }
+  @media screen and (min-width: 30em) {
+    .fullscreen-bg__video {
+      top: -300px;
+      left: -300px;
+      width: 200%;
+      height: 200%; } }
+  @media screen and (min-width: 50em) {
+    .fullscreen-bg__video {
+      top: 0;
+      left: 0;
+      width: 115%;
+      height: 115%; } }
 
-@media (min-aspect-ratio: 16 / 9) {
-  .fullscreen-bg__video {
-    height: 300%;
-    top: -100%; } }
-@media (max-aspect-ratio: 16 / 9) {
-  .fullscreen-bg__video {
-    width: 300%;
-    left: -100%; } }
 .rw-wrapper {
   position: relative;
   margin: 110px auto 0 auto;
@@ -4507,7 +4521,7 @@ aside ul.post-categories {
       margin-top: 50px; } }
   @media screen and (min-width: 50em) {
     .rw-wrapper {
-      margin-top: 0px; } }
+      margin-top: 50px; } }
 
 h2.rw-sentence {
   position: relative;
@@ -4523,8 +4537,8 @@ h2.rw-sentence {
     h2.rw-sentence {
       text-align: left;
       margin: 0 0 0 20px;
-      font-size: 6.31309rem;
-      line-height: 6.31309rem; } }
+      font-size: 4.10453rem;
+      line-height: 4.10453rem; } }
   @media screen and (min-width: 50em) {
     h2.rw-sentence {
       margin: 0 8%;
@@ -4539,10 +4553,18 @@ h2.rw-sentence {
 
 #move-over {
   padding-left: 630px;
-  font-size: 100%; }
+  font-size: 100%;
+  font-size: 3.07917rem;
+  line-height: 3.78975rem; }
   @media screen and (max-width: 30em) {
     #move-over {
       display: none; } }
+  @media screen and (min-width: 30em) {
+    #move-over {
+      padding-left: 400px; } }
+  @media screen and (min-width: 50em) {
+    #move-over {
+      padding-left: 630px; } }
 
 .rw-words {
   display: inline; }
@@ -4562,18 +4584,19 @@ h2.rw-sentence {
       padding-left: 0; } }
   @media screen and (min-width: 30em) {
     .rw-words-1 span.rotator {
-      bottom: -100px;
+      bottom: 0;
       left: -20px; } }
   @media screen and (min-width: 50em) {
     .rw-words-1 span.rotator {
-      bottom: -100px;
-      left: -10px; } }
+      bottom: 0;
+      left: -20px; } }
 
 span.sq-ft {
   display: inline;
   font-size: 2.30996rem;
   line-height: 2.84302rem;
-  color: white; }
+  color: white;
+  display: none; }
   @media screen and (max-width: 30em) {
     span.sq-ft {
       display: inline;
@@ -4751,6 +4774,7 @@ h3.mission {
   background: #fcd838;
   padding: 40px; }
   .services-cta p {
+    font-family: "Audimat3000-Regulier", sans-serif;
     font-size: 2.30996rem;
     line-height: 2.30996rem; }
 
@@ -5143,7 +5167,8 @@ button.drop-down-cross {
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
-  min-height: 100vh; }
+  min-height: 100vh;
+  width: 100%; }
   @media screen and (min-width: 50em) {
     .contact-container {
       -webkit-box-orient: horizontal;
@@ -5156,14 +5181,29 @@ button.drop-down-cross {
       -ms-flex-direction: row; } }
 
 .contact__single {
-  background-color: #fcd838;
+  width: 100%;
   position: relative;
   min-height: 400px;
-  padding: 25px;
-  margin: 1.5%;
-  -webkit-box-flex: 0;
-  box-flex: 0;
-  -webkit-flex: 0 0 47%;
-  -moz-flex: 0 0 47%;
-  -ms-flex: 0 0 47%;
-  flex: 0 0 47%; }
+  padding: 0 50px;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto; }
+  .contact__single h3 {
+    margin-bottom: 20px; }
+  .contact__single p {
+    margin-bottom: 15px; }
+  .contact__single button {
+    padding: 10px 15px;
+    color: #4f4f4f;
+    margin-top: 20px;
+    background-color: #fcd838;
+    border: none; }
+    .contact__single button:hover {
+      background-color: black;
+      color: #fcd838;
+      border: none; }
+  .contact__single button.contact__email {
+    margin-right: 20px; }

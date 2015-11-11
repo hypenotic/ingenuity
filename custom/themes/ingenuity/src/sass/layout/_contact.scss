@@ -14,13 +14,38 @@
 	@include media($bp-large) {
 		@include flex-direction(row);
 	}
+	width: 100%;
 }
 
 .contact__single {
-	background-color: $yellow;
+	width: 100%;
+	// background-color: $yellow;
 	position: relative;
 	min-height: 400px;	
-	padding: 25px;
-	margin: 1.5%;
-	@include flex(0 0 47%);
+	// padding: 50px;
+	padding: 0 50px;
+	// margin: 1.5%;
+	@include flex(1 0 auto);
+	h3 {
+		margin-bottom: 20px;
+	}
+	p {
+		margin-bottom: 15px;
+	}
+	button {
+		padding: 10px 15px;
+		color: $d-grey;
+		margin-top: 20px;
+		background-color: $yellow;
+		// border: 1px solid $d-grey;
+		border: none;
+		&:hover {
+			background-color: $black;
+			color: $yellow;
+			border: none;
+		}
+	}
+	button.contact__email {
+		margin-right: 20px;
+	}
 }

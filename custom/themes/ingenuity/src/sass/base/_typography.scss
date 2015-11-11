@@ -255,14 +255,12 @@ main {
 }
 
 .blog-entry {
-	p {
-		&:first-child {
-			&:first-letter {
-			    float: left; 
-	            font-size: modular-scale(6); 
-	            line-height: modular-scale(5);
-	            padding: 7px 10px 0px 0px;
-			}
+	p:first-child {
+		&:first-letter {
+		    float: left; 
+            font-size: modular-scale(6); 
+            line-height: modular-scale(5);
+            padding: 7px 10px 0px 0px;
 		}
 	}
 }
@@ -502,6 +500,23 @@ span.bolded-text {
 	line-height: modular-scale(0,1.2rem);
 	margin-bottom: 10px;
 	font-weight: 200;
+}
+
+// CONTACT
+
+#info-window-content {
+	// background-color: $yellow;
+	h3 {
+		color: $black;
+		font-size: modular-scale(2, 1rem);
+		margin: 0;
+	}
+	p {
+		font-family: $lite-headings;
+		font-size: modular-scale(0, 0.9rem);
+		font-size: modular-scale(1, 0.9rem);
+		margin-bottom: 0;
+	}
 }
 
 

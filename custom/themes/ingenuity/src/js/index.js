@@ -193,6 +193,22 @@ function init() {
      map: mapC
  });
 
+var contentString = '<div id="info-window-content">'+
+ '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
+ '<p>3450 Ridgeway Dr. Unit • 3 </p>'+
+ '<p>Mississauga, ON L5L 0A2</p>'+
+ '</div>';
+
+var infowindow = new google.maps.InfoWindow({
+   content: contentString
+});
+
+google.maps.event.addListener(markerC, 'click', function() {
+   infowindow.open(mapC,markerC);
+});
+
+infowindow.open(mapC,markerC);
+
 }
 
 // PUSH PANEL FOR TEAM PAGE ============================================
