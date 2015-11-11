@@ -252,8 +252,8 @@ main {
 	p {
 		margin-bottom: 20px;
 		@include media($bp-small) {
-		    font-size: modular-scale(0, 1.5rem);
-		    line-height: modular-scale(1, 1.5rem);
+		    font-size: modular-scale(0, 1.4rem);
+		    line-height: modular-scale(1, 1.4rem);
 		}
 		@include media($bp-med) {
 		    font-size: modular-scale(0, 1.5rem);
@@ -345,6 +345,9 @@ main {
 	}
 	.cta-wrapper {
 		margin: 0 15%;
+		@include media($bp-small) {
+			margin: 0 10%;
+		}
 		h2 {
 			color: $black;
 			text-transform: uppercase;
@@ -352,8 +355,8 @@ main {
 			font-size: modular-scale(2); 
 			line-height: modular-scale(2, 1.6rem); 
 			@include media($bp-small) {
-				font-size: modular-scale(0, 1.3rem);
-				line-height: modular-scale(1, 1.3rem);
+				font-size: modular-scale(2, 1.3rem);
+				line-height: modular-scale(2, 1.3rem);
 			}
 		}
 	}
@@ -363,9 +366,11 @@ main {
 	text-align: center;
 	margin-top: 25px;
 	a:hover button {
-		background-color: $white;
+	    -webkit-animation: pulse 1s;
+	    animation: pulse 1s;
+		background-color: $black;
 		p {
-			color: $black;
+			color: $yellow;
 		}
 	}
 	button {
@@ -373,6 +378,9 @@ main {
 		background-color: $black;
 		padding: 15px 20px;
 		transition: all 0.5s;
+		@include media($bp-small) {
+			// padding: 10px;
+		}
 		p {
 			color: $yellow;
 			font-family: $lite-headings;
@@ -384,8 +392,8 @@ main {
 		font-size: modular-scale(0);
 		line-height: modular-scale(0);
 		@include media($bp-small) {
-			font-size: modular-scale(0, 0.8rem);
-			line-height: modular-scale(2);
+			font-size: modular-scale(1, 0.8rem);
+			line-height: modular-scale(1, 0.8rem);
 		}
 	}
 }

@@ -4,24 +4,29 @@
 	@include align-items(flex-start);
 	@include justify-content(center);
 	@include flex-direction(column);
+	@include media($bp-small) {
+		margin: 40px -5%;
+	}
 	@include media($bp-large) {
 		@include flex-direction(row);
 	}
 }
 
 .two-column__half {
-	max-height: 100vh;
 	@include media($bp-large) {
 		@include flex(0 0 50%);
 		// max-height: 450px;
 	}
 	@include media($bp-small) {
-		height: 100vh;
+		// min-height: 100vh;
 	}
 }
 
 .services-testimonial {
 	padding: 0 70px 25px 0;
+	@include media($bp-small) {
+		padding: 0 15px 25px;
+	}
 	blockquote {
 		margin: 0;
 		font-style: italic;
@@ -29,11 +34,15 @@
 		line-height: modular-scale(1, 1.6rem);
 		font-weight: 400;
 		font-family: $lite-headings;
+		@include media($bp-small) {
+			font-size: modular-scale(1, 1.1rem);
+			line-height: modular-scale(1, 1.1rem);
+		}
 		&:before {
 		    content: '“';
 		    position: absolute;
 		    margin-left: -.4em;
-		    font-size: modular-scale(3, 1.3rem);
+		    font-size: modular-scale(3, 1.6rem);
 		    font-family: $main-headings;
 		}
 
@@ -64,10 +73,17 @@
 .services-cta {
 	background: $yellow;
 	padding: 40px;
+	@include media($bp-small) {
+		padding: 30px;
+	}
 	p {
 		font-family: $main-headings;
 		font-size: modular-scale(2, 1.3rem);
 		line-height: modular-scale(2, 1.3rem);
+		@include media($bp-small) {
+			font-size: modular-scale(1, 1.3rem);
+			line-height: modular-scale(1, 1.3rem);
+		}
 	}
 }
 

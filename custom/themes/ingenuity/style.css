@@ -577,8 +577,8 @@ main p.no-space {
   @media screen and (max-width: 30em) {
     .main-content p,
     .blog-entry p {
-      font-size: 1.5rem;
-      line-height: 1.9995rem; } }
+      font-size: 1.4rem;
+      line-height: 1.8662rem; } }
   @media screen and (min-width: 30em) {
     .main-content p,
     .blog-entry p {
@@ -641,6 +641,9 @@ main p.no-space {
     border-bottom: none; }
   .industry-cta .cta-wrapper {
     margin: 0 15%; }
+    @media screen and (max-width: 30em) {
+      .industry-cta .cta-wrapper {
+        margin: 0 10%; } }
     .industry-cta .cta-wrapper h2 {
       color: black;
       text-transform: uppercase;
@@ -649,16 +652,18 @@ main p.no-space {
       line-height: 2.84302rem; }
       @media screen and (max-width: 30em) {
         .industry-cta .cta-wrapper h2 {
-          font-size: 1.3rem;
-          line-height: 1.7329rem; } }
+          font-size: 2.30996rem;
+          line-height: 2.30996rem; } }
 
 .cta-contact {
   text-align: center;
   margin-top: 25px; }
   .cta-contact a:hover button {
-    background-color: white; }
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
+    background-color: black; }
     .cta-contact a:hover button p {
-      color: black; }
+      color: #fcd838; }
   .cta-contact button {
     border: 1px solid black;
     background-color: black;
@@ -675,8 +680,8 @@ main p.no-space {
     line-height: 1.5rem; }
     @media screen and (max-width: 30em) {
       .cta-contact p {
-        font-size: 0.8rem;
-        line-height: 2.66533rem; } }
+        font-size: 1.0664rem;
+        line-height: 1.0664rem; } }
 
 h1.team__hero-heading {
   font-size: 5.47134rem;
@@ -931,7 +936,8 @@ nav.expanded {
   list-style-type: none;
   padding: 0; }
   #navigation ul a {
-    color: black; }
+    color: black;
+    width: 100%; }
   #navigation ul li {
     padding: 2px 15%;
     padding-top: 10px;
@@ -944,7 +950,8 @@ nav.expanded {
       color: #fcd838;
       cursor: pointer; }
       #navigation ul li:hover a {
-        color: #fcd838; }
+        color: #fcd838;
+        width: 100%; }
     @media screen and (max-width: 30em) {
       #navigation ul li {
         font-size: 1.77689rem;
@@ -4406,7 +4413,7 @@ nav.main-nav {
   -ms-flex-pack: center; }
   @media screen and (max-width: 30em) {
     .industry-cta {
-      height: 100vh; } }
+      min-height: 80vh; } }
   .industry-cta a {
     padding-bottom: 2px; }
   .industry-cta i {
@@ -4823,6 +4830,9 @@ h3.mission {
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column; }
+  @media screen and (max-width: 30em) {
+    .two-column {
+      margin: 40px -5%; } }
   @media screen and (min-width: 50em) {
     .two-column {
       -webkit-box-orient: horizontal;
@@ -4834,22 +4844,20 @@ h3.mission {
       flex-direction: row;
       -ms-flex-direction: row; } }
 
-.two-column__half {
-  max-height: 100vh; }
-  @media screen and (min-width: 50em) {
-    .two-column__half {
-      -webkit-box-flex: 0;
-      box-flex: 0;
-      -webkit-flex: 0 0 50%;
-      -moz-flex: 0 0 50%;
-      -ms-flex: 0 0 50%;
-      flex: 0 0 50%; } }
-  @media screen and (max-width: 30em) {
-    .two-column__half {
-      height: 100vh; } }
+@media screen and (min-width: 50em) {
+  .two-column__half {
+    -webkit-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -moz-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%; } }
 
 .services-testimonial {
   padding: 0 70px 25px 0; }
+  @media screen and (max-width: 30em) {
+    .services-testimonial {
+      padding: 0 15px 25px; } }
   .services-testimonial blockquote {
     margin: 0;
     font-style: italic;
@@ -4857,11 +4865,15 @@ h3.mission {
     line-height: 2.1328rem;
     font-weight: 400;
     font-family: "Audimat3000-Leger", sans-serif; }
+    @media screen and (max-width: 30em) {
+      .services-testimonial blockquote {
+        font-size: 1.4663rem;
+        line-height: 1.4663rem; } }
     .services-testimonial blockquote:before {
       content: '“';
       position: absolute;
       margin-left: -.4em;
-      font-size: 3.07917rem;
+      font-size: 3.78975rem;
       font-family: "Audimat3000-Regulier", sans-serif; }
     .services-testimonial blockquote:after {
       content: '”';
@@ -4884,10 +4896,17 @@ h3.mission {
 .services-cta {
   background: #fcd838;
   padding: 40px; }
+  @media screen and (max-width: 30em) {
+    .services-cta {
+      padding: 30px; } }
   .services-cta p {
     font-family: "Audimat3000-Regulier", sans-serif;
     font-size: 2.30996rem;
     line-height: 2.30996rem; }
+    @media screen and (max-width: 30em) {
+      .services-cta p {
+        font-size: 1.7329rem;
+        line-height: 1.7329rem; } }
 
 .services-cta__btn {
   font-family: "Audimat3000-Leger", sans-serif;
