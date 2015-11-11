@@ -198,8 +198,9 @@ nav.expanded {
   }
   li {
     padding: 2px 15%;
-    font-size: modular-scale(4,1.2rem);
-    line-height: modular-scale(4,1.2rem);
+    padding-top: 10px;
+    font-size: modular-scale(3,1.1rem);
+    line-height: modular-scale(3,1.1rem);
     font-weight: 400;
     font-family: $main-headings;
     &:hover{

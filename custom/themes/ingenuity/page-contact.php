@@ -10,7 +10,6 @@
 		
 	</section>
 
-	<div class="main-content">
 		<div class="contact-container">
 			<?php // bring in the team members!
 		
@@ -39,7 +38,7 @@
 		
 						?>
 		
-						 <div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s">
+						 <div class="contact__single wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.5s">
 						 	<?php if ($heading) { ?>
 						 		<h3>
 						 			<?php echo $heading; ?>
@@ -69,7 +68,6 @@
 		
 			<?php endwhile; endif; ?>	
 		</div>
-	</div>
 
 	<?php endwhile; else : ?>
 	    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
