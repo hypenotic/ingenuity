@@ -6,9 +6,20 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+a {
+	text-decoration: none;
+	color: $grey;
+	&:hover {
+		// text-decoration: underline;
+	}
+}
+
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	font-family: $title-font;
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 h1 {
@@ -80,11 +91,6 @@ h5 {
 
 h6 {
 
-}
-
-a {
-	text-decoration: none;
-	color: $grey;
 }
 
 ul,
@@ -465,6 +471,22 @@ h2.team__hero-subheading {
 		font-size: modular-scale(1);
 		line-height: modular-scale(2);
 	}
+}
+
+.blog-single-post {
+	.blog-single__title {
+		padding: 5px;
+		&:hover {
+			background-color: $yellow;
+		}
+	}
+	ul.post-categories {
+		padding: 0;
+	}
+}
+
+.blog-single__date {
+	font-family: $lite-headings;
 }
 
 // PROJECTS ============================

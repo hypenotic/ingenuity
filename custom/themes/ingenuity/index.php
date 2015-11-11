@@ -48,9 +48,9 @@
 
 					<div class="blog-single-post wow fadeIn">
 						<a href="<?php the_permalink(); ?>">
-							<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
+							<h3 class="blog-single__title">?php the_title(); ?></h3>
 						</a>
-						<p> <?php the_time('F j, Y'); ?> </p>
+						<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
 						<img src="<?php echo $url[0] ?>" alt="<?php the_title(); ?>">
 						<p> <?php the_excerpt(); ?> </p>
 						<div class="blog-single__cats">
@@ -63,9 +63,9 @@
 
 			        <div class="blog-single-post wow fadeIn">
 			        	<a href="<?php the_permalink(); ?>">
-			        		<h3><span class="grey-hover"><?php the_title(); ?></span></h3>
+			        		<h3 class="blog-single__title"><?php the_title(); ?></h3>
 			        	</a>
-			        	<p> <?php the_time('F j, Y'); ?> </p>
+			        	<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
 			        	<img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>">
 			        	<p> <?php the_excerpt(); ?> </p>
 			        	<div class="blog-single__cats">

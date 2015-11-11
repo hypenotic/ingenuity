@@ -24,7 +24,8 @@ body {
 .main-content,
 .blog-entry {
 	position: relative;
-	background-color: $white;
+	// background-color: $white;
+	background-color: none;
 	padding: 50px 0;
 	@include media($bp-large) {
 		@include span-columns(8);

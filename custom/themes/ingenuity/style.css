@@ -381,9 +381,15 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased; }
 
+a {
+  text-decoration: none;
+  color: #979797; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-family: "Audimat3000-Regulier", sans-serif; }
+  h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    text-decoration: none; }
 
 h1 {
   color: #fcd838;
@@ -437,10 +443,6 @@ h4 {
   font-family: "Audimat3000-Regulier", sans-serif;
   font-size: 1.9995rem;
   line-height: 2.2661rem; }
-
-a {
-  text-decoration: none;
-  color: #979797; }
 
 ul,
 ol {
@@ -740,6 +742,16 @@ h2.team__hero-subheading {
 .blog-entry blockquote p {
   font-size: 1.9995rem;
   line-height: 2.66533rem; }
+
+.blog-single-post .blog-single__title {
+  padding: 5px; }
+  .blog-single-post .blog-single__title:hover {
+    background-color: #fcd838; }
+.blog-single-post ul.post-categories {
+  padding: 0; }
+
+.blog-single__date {
+  font-family: "Audimat3000-Leger", sans-serif; }
 
 .projects__panel h2 {
   color: white;
@@ -4223,7 +4235,7 @@ body {
 .main-content,
 .blog-entry {
   position: relative;
-  background-color: white;
+  background-color: none;
   padding: 50px 0; }
   @media screen and (min-width: 50em) {
     .main-content,
@@ -4794,32 +4806,13 @@ h3.mission {
           transition: all 0.5s;
   letter-spacing: 1px; }
 
-.blog-wrapper,
-.main-content,
-.diagonal-wrapper {
+.diagonal-svg__wrapper {
   position: relative; }
-  .blog-wrapper .diagonal-line,
-  .main-content .diagonal-line,
-  .diagonal-wrapper .diagonal-line {
+  .diagonal-svg__wrapper .diagonal-svg {
     position: absolute;
-    top: 0;
-    left: 60%;
     height: 100%;
-    width: 30%;
-    background-color: #fcd838;
-    -webkit-transform: skew(15deg, 0);
+    width: 100%;
     z-index: -1; }
-    @media screen and (max-width: 30em) {
-      .blog-wrapper .diagonal-line,
-      .main-content .diagonal-line,
-      .diagonal-wrapper .diagonal-line {
-        left: 80%;
-        width: 40%;
-        -webkit-transform: skew(8deg, 0); } }
-  .blog-wrapper .blog-entry,
-  .main-content .blog-entry,
-  .diagonal-wrapper .blog-entry {
-    background: rgba(255, 255, 255, 0); }
 
 .team__container {
   position: relative;
