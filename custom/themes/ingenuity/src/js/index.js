@@ -205,7 +205,7 @@ var contentString = '<div id="info-window-content">'+
  '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
  '<a href="https://www.google.ca/maps/place/Ingenuity+Developments+Inc/@43.52352,-79.7077452,14.98z/data=!4m2!3m1!1s0x0:0x621fce01694efaaf" target="_blank"><p>3450 Ridgeway Dr. Unit • 3 </p>'+
  '<p>Mississauga, ON L5L 0A2</p></a>'+
- '<a href="tel:905-569-2624" target="_blank"><p>(905) 569-2624</p></a>'+
+ '<a href="tel:+1-905-569-2624" target="_blank"><p>(905) 569-2624</p></a>'+
  '</div>';
 
 var infowindow = new google.maps.InfoWindow({
