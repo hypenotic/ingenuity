@@ -4,14 +4,14 @@ aside {
 		padding-bottom: 25px;
 		display: block;
 		border-right: none;
-		border-bottom: 4px solid $black;
+		border-bottom: 4px solid rgba(0, 0, 0, 0.9);
     }
 	@include media($bp-med) {
 		padding-top: 50px;
 		padding-bottom: 25px;
 		display: block;
 		border-right: none;
-		border-bottom: 4px solid $black;
+		border-bottom: 4px solid rgba(0, 0, 0, 0.9);
     }
     @include media($bp-large) {
 		@include span-columns(2);
@@ -21,7 +21,7 @@ aside {
 		padding-top: 5px;
 		padding-right: 30px;
 		text-align: right;
-		border-right: 4px solid $black;
+		border-right: 4px solid rgba(0, 0, 0, 0.8);
 		border-bottom: none;
     }
     p {

@@ -1,14 +1,10 @@
 $title-font: "Audimat3000-Regulier",sans-serif;
-$p-font: "ff-dagny-web-pro",sans-serif;
+// $p-font: "ff-dagny-web-pro",sans-serif;
+$p-font: "leitura-news", serif;
 $main-headings: "Audimat3000-Regulier",sans-serif;
 $lite-headings: "Audimat3000-Leger", sans-serif;
-$big-headings: "open-sans", sans-serif;
-$feature-font: "adelle",serif;
-$script-font: "grafolita-script",sans-serif;
-$quote-src: "Lucida Grande",sans-serif;
 
 $bold-font: "Audimat3000-Regulier", sans-serif;
-
 $main-body-font: $p-font;
 
 
@@ -24,6 +20,7 @@ $base-border-radius: rem(3);
 $white: 	rgba(255, 255, 255, 1);
 $black: 	rgba(0, 0, 0, 1);
 $grey: 		rgba(151, 151, 151, 1);
+$d-grey:	rgba(79, 79, 79, 1);
 $green: 	rgba(57, 148 , 107, 1);
 $orange: 	rgba(223, 110, 29, 1);
 $yellow:	rgba(252, 216, 56, 1);

@@ -31,12 +31,6 @@
   transition: color .4s;
 }
 
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-}
-
 /* when navigation is shown, don’t allow scrolling of content */
 body.no_scroll {
   overflow: hidden;
@@ -332,7 +326,7 @@ span.menu-icon {
 }
 
 #nav-menu-text {
-  font-family: $p-font;
+  font-family: $lite-headings;
   font-weight: 300;
   text-transform: uppercase;
   font-size: modular-scale(0, 0.9rem);

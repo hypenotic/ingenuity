@@ -376,9 +376,10 @@ html {
   box-sizing: inherit; }
 
 body {
-  color: rgba(0, 0, 0, 0.85);
-  font-family: "ff-dagny-web-pro", sans-serif;
-  font-weight: 400; }
+  color: #4f4f4f;
+  font-family: "leitura-news", serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -443,13 +444,13 @@ a {
 
 ul,
 ol {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   font-weight: 400;
   font-size: 1.3rem;
   line-height: 1.7329rem; }
 
 ul.post-categories {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   padding: 0 0 0 10px;
   margin: 0;
   list-style-type: none; }
@@ -461,7 +462,7 @@ blockquote {
   line-height: 3.78975rem; }
 
 figcaption {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   font-size: 1.5rem;
   line-height: 1.9995rem; }
 
@@ -508,7 +509,7 @@ span.black-highlight {
       font-size: 5.89222rem;
       line-height: 5.89222rem; } }
 .default-hero h2 {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "Audimat3000-Leger", sans-serif;
   font-weight: 300;
   font-size: 1.77689rem;
   line-height: 1.77689rem;
@@ -540,7 +541,7 @@ span.black-highlight {
   font-family: "Audimat3000-Regulier", sans-serif; }
 
 main p {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 30px; }
@@ -581,6 +582,12 @@ main p.no-space {
     .blog-entry p {
       font-size: 1.5rem;
       line-height: 1.9995rem; } }
+
+.blog-entry p:first-child:first-letter {
+  float: left;
+  font-size: 8.41535rem;
+  line-height: 6.31309rem;
+  padding: 7px 10px 0px 0px; }
 
 .blog-entry.blog-page blockquote,
 .main-content.about-page blockquote {
@@ -677,7 +684,7 @@ h1.team__hero-heading {
   color: white; }
 
 h2.team__hero-subheading {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.333rem;
@@ -721,7 +728,7 @@ h2.team__hero-subheading {
 .team__single figcaption {
   margin-top: 20px; }
 .team__single figcaption {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   font-weight: 200; }
 
 .blog-entry blockquote {
@@ -795,11 +802,6 @@ figcaption.logopack__download:hover {
   font-size: 1.8em;
   -webkit-transition: color .4s;
   transition: color .4s; }
-
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  color: #444;
-  -webkit-font-smoothing: antialiased; }
 
 /* when navigation is shown, don’t allow scrolling of content */
 body.no_scroll {
@@ -1037,7 +1039,7 @@ span.menu-icon {
           justify-content: center; }
 
 #nav-menu-text {
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "Audimat3000-Leger", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 0.9rem; }
@@ -1242,7 +1244,10 @@ span.menu-icon {
   padding: 40px;
   color: white; }
   .gallery__single-half.gallery-caption p {
-    margin: 0; }
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.7329rem;
+    font-weight: 300; }
     @media screen and (max-width: 30em) {
       .gallery__single-half.gallery-caption p {
         font-size: 1.1rem;
@@ -1355,7 +1360,7 @@ span.menu-icon {
 
 .cbp-spmenu p {
   color: white;
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   font-weight: 300; }
 
 /* Orientation-dependent styles for the content of the menu */
@@ -4383,7 +4388,7 @@ nav.main-nav {
 
 .full-width.full-quote {
   overflow-x: hidden;
-  font-family: "ff-dagny-web-pro", sans-serif;
+  font-family: "leitura-news", serif;
   font-style: italic;
   font-weight: 600;
   font-size: 2.66533rem;
@@ -4392,7 +4397,7 @@ nav.main-nav {
   padding: 40px 0; }
   .full-width.full-quote p {
     color: #fcd838;
-    font-family: "ff-dagny-web-pro", sans-serif;
+    font-family: "leitura-news", serif;
     font-style: italic;
     font-weight: 600;
     font-size: 2.66533rem;
@@ -4419,14 +4424,14 @@ span.big-quotes {
     padding-bottom: 25px;
     display: block;
     border-right: none;
-    border-bottom: 4px solid black; } }
+    border-bottom: 4px solid rgba(0, 0, 0, 0.9); } }
 @media screen and (min-width: 30em) {
   aside {
     padding-top: 50px;
     padding-bottom: 25px;
     display: block;
     border-right: none;
-    border-bottom: 4px solid black; } }
+    border-bottom: 4px solid rgba(0, 0, 0, 0.9); } }
 @media screen and (min-width: 50em) {
   aside {
     float: left;
@@ -4439,7 +4444,7 @@ span.big-quotes {
     padding-top: 5px;
     padding-right: 30px;
     text-align: right;
-    border-right: 4px solid black;
+    border-right: 4px solid rgba(0, 0, 0, 0.8);
     border-bottom: none; }
     aside:last-child {
       margin-right: 0; } }
@@ -4765,10 +4770,12 @@ h3.mission {
   letter-spacing: 1px; }
 
 .blog-wrapper,
-.main-content {
+.main-content,
+.diagonal-wrapper {
   position: relative; }
   .blog-wrapper .diagonal-line,
-  .main-content .diagonal-line {
+  .main-content .diagonal-line,
+  .diagonal-wrapper .diagonal-line {
     position: absolute;
     top: 0;
     left: 60%;
@@ -4779,12 +4786,14 @@ h3.mission {
     z-index: -1; }
     @media screen and (max-width: 30em) {
       .blog-wrapper .diagonal-line,
-      .main-content .diagonal-line {
+      .main-content .diagonal-line,
+      .diagonal-wrapper .diagonal-line {
         left: 80%;
         width: 40%;
         -webkit-transform: skew(8deg, 0); } }
   .blog-wrapper .blog-entry,
-  .main-content .blog-entry {
+  .main-content .blog-entry,
+  .diagonal-wrapper .blog-entry {
     background: rgba(255, 255, 255, 0); }
 
 .team__container {

@@ -1,8 +1,9 @@
 // Modular scale is in relation to 1.2rem = 22px
 body {
-	color: rgba(0,0,0,0.85);
+	color: $d-grey;
 	font-family: $main-body-font;
 	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -170,7 +171,7 @@ span.black-highlight {
 		}
 	}
 	h2 {
-		font-family: $p-font;
+		font-family: $lite-headings;
 		font-weight: 300;
 		font-size: modular-scale(2, 1rem);
 		line-height:modular-scale(2, 1rem);
@@ -249,6 +250,19 @@ main {
 		@include media($bp-med) {
 		    font-size: modular-scale(0, 1.5rem);
 		    line-height: modular-scale(1, 1.5rem);
+		}
+	}
+}
+
+.blog-entry {
+	p {
+		&:first-child {
+			&:first-letter {
+			    float: left; 
+	            font-size: modular-scale(6); 
+	            line-height: modular-scale(5);
+	            padding: 7px 10px 0px 0px;
+			}
 		}
 	}
 }

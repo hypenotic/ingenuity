@@ -41,8 +41,10 @@
             </hgroup>
         </div>
 
-        <div class="main-wrapper blog-wrapper">
+        <div class="diagonal-wrapper">
             <div class="diagonal-line"></div>
+
+        <div class="main-wrapper blog-wrapper">
             <aside id="left"> 
                 <?php if ($client) { ?>
                     <p><span class="stats_label">Client</span>: <?php echo $client; ?></p>
@@ -88,6 +90,8 @@
                 <div class="alignright prev-next-post-nav"><?php next_post_link( '%link', 'Next' ) ?></div>
             </div><?php } ?>
         </div>
+
+    </div>
 
     <?php endwhile; else : ?>
         <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>

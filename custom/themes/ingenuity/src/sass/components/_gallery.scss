@@ -75,6 +75,9 @@
     }
     p {
         margin: 0;
+        font-size: modular-scale(0, 1.3rem);
+        line-height: modular-scale(1, 1.3rem);
+        font-weight: 300;
         @include media($bp-small) {
             font-size: modular-scale(0, 1.1rem);
             line-height: modular-scale(1, 1.1rem);
