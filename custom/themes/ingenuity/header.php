@@ -49,7 +49,6 @@
 		      'walker' => new Main_Menu_Walker()
 		    )); 
     	?> 
-
   	</nav>
 
 

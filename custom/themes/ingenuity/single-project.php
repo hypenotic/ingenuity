@@ -44,8 +44,7 @@
         <div class="diagonal-wrapper diagonal-svg__wrapper">
             <!-- <div class="diagonal-line"></div> -->
             <svg class="diagonal-svg">
-                <line x1="100%" y1="110%" x2="30%" y2="-10%"
-                    style="stroke:rgba(252, 216, 56, 1);stroke-width:350"/>
+                <line id="the-line" x1="100%" y1="110%" x2="30%" y2="-10%"/>
             </svg>
         <div class="main-wrapper blog-wrapper">
             <aside id="left"> 
