@@ -149,7 +149,7 @@ nav.expanded {
   -o-transition: -o-transform .15s, opacity .7s;
   transition: transform .15s, opacity .7s;
   @include media($bp-small) {
-    margin: 0 0 0 35px;
+    margin: 0;
     width: 100%;
   }
 }
@@ -292,6 +292,10 @@ span.menu.icon {
   align-items: center;
   justify-content: center;
   padding-top: 50px;
+  @include media($bp-small) {
+    padding-top: 27px;
+    padding-right: 15px;
+  }
 }
 
 #nav-menu-text {

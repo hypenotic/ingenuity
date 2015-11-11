@@ -536,9 +536,9 @@ span.bolded-text {
 		margin: 0;
 	}
 	p {
-		font-family: $lite-headings;
-		font-size: modular-scale(0, 0.9rem);
-		font-size: modular-scale(1, 0.9rem);
+		font-family: $main-headings;
+		font-size: modular-scale(1, 1rem);
+		line-height: modular-scale(1, 1.3rem);
 		margin-bottom: 0;
 	}
 }

@@ -38,7 +38,7 @@
 		
 						?>
 		
-						 <div class="contact__single wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.5s">
+						 <div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s">
 						 	<?php if ($heading) { ?>
 						 		<h3>
 						 			<?php echo $heading; ?>

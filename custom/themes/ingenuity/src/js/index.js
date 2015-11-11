@@ -180,6 +180,7 @@ function init() {
  // Create the Google Map using our element and options defined above
  // var map = new google.maps.Map(mapElement, mapOptions);
  var mapC = new google.maps.Map(contactMap, mapOptions);
+ mapC.panBy(0, -150);
 
  // Let's also add a marker while we're at it
  // var marker = new google.maps.Marker({
@@ -187,27 +188,35 @@ function init() {
  //     map: map
  // });
 
+var iconBase = 'http://www.ingenuity.dev/custom/themes/ingenuity/dist/';
+var marker = new google.maps.Marker({
+  position: new google.maps.LatLng(43.5238744, -79.7086458),
+  map: mapC,
+  icon: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Map_marker_icon_%E2%80%93_Nicolas_Mollet_%E2%80%93_Home_%E2%80%93_People_%E2%80%93_Default.png'
+});
+
   // Let's also add a marker while we're at it
- var markerC = new google.maps.Marker({
-     position: new google.maps.LatLng(43.5238744, -79.7086458),
-     map: mapC
- });
+ // var markerC = new google.maps.Marker({
+ //     position: new google.maps.LatLng(43.5238744, -79.7086458),
+ //     map: mapC
+ // });
 
 var contentString = '<div id="info-window-content">'+
  '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
- '<p>3450 Ridgeway Dr. Unit • 3 </p>'+
- '<p>Mississauga, ON L5L 0A2</p>'+
+ '<a href="https://www.google.ca/maps/place/Ingenuity+Developments+Inc/@43.52352,-79.7077452,14.98z/data=!4m2!3m1!1s0x0:0x621fce01694efaaf" target="_blank"><p>3450 Ridgeway Dr. Unit • 3 </p>'+
+ '<p>Mississauga, ON L5L 0A2</p></a>'+
+ '<a href="tel:905-569-2624" target="_blank"><p>(905) 569-2624</p></a>'+
  '</div>';
 
 var infowindow = new google.maps.InfoWindow({
    content: contentString
 });
 
-google.maps.event.addListener(markerC, 'click', function() {
-   infowindow.open(mapC,markerC);
+google.maps.event.addListener(marker, 'click', function() {
+   infowindow.open(mapC,marker);
 });
 
-infowindow.open(mapC,markerC);
+infowindow.open(mapC,marker);
 
 }
 
