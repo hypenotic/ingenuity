@@ -1,36 +1,3 @@
-// DD MENU ===================
-
-/* embedded font that has hamburger and x icon */
-@font-face {
-  font-family: 'sicanstudios-demo';
-  src:url('fonts/sicanstudios-demo.eot');
-}
-
-@font-face {
-  font-family: 'sicanstudios-demo';
-  src: url(data:application/font-woff;charset=utf-8;base64,d09GRk9UVE8AAAWoAAsAAAAACQwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAABCAAAAmUAAAPJ8avxu0ZGVE0AAANwAAAAGgAAABxmU0KwR0RFRgAAA4wAAAAdAAAAIAAxAARPUy8yAAADrAAAAE0AAABgUErdwGNtYXAAAAP8AAAASgAAAVrgexZjaGVhZAAABEgAAAAuAAAANv3pFDtoaGVhAAAEeAAAAB4AAAAkBBD/5GhtdHgAAASYAAAADgAAAA4EAAAgbWF4cAAABKgAAAAGAAAABgAEUABuYW1lAAAEsAAAAOwAAAH16Df8JXBvc3QAAAWcAAAADAAAACAAAwAAeJxlkk1oE1EQx2eT3SSNy1ZDIhbWqtcWIeAHxEPBUMR6sNLsIT2JGsWoSQ9JPWiSoq3xsJ5CvBgQD6KFVCgIpQcJohDwozc923N7qaWHlybNOPNeGoRe/szuezP/37wZDXQdNE0L5dK3bmRz+dlUeiZ3OnU7MwOaBzQYE7ZHHPeKY7prel1THw7CUCKErtsPTL97T7wUecOG6qANcNiG2hEbjtrejyHwco0ADMHIbDZ9KRqNHrA56AugPYerMA06J3vAhBGvabkir3eqouq36iIcGRXOpr/jtA9EFmpt5xPCeP1ZBEFbCiB2E6sUnXtK0aEmAjQXEfc2ywieEyXE3ck/dPCtg9hK/kZsZywplLfyZoElbvCPSu+olfxF17+PceJrLlHoFZNlu2aArZ6waZ7tB6gOdh/SseZDTH2wEGqJMyrC1NIa1UYssBRZSiyNvhS5zgqJE2P4MjvPsR+BYSypGHBvnT5b00l2/kKYD9YQ9Mq27CCOMHG9KDsYlH9Vr+B7P8rwDQRj+RTDb9Bn+LGCB20nRlJvcgdX6BTiLPN9udiXhQA3dJYlzw39pGhqi3te5Z4vGwx/YX8QBE+1Gwqe/B4x/DwznGTnr8T1boMx//Y6IPgGy2dDwZMs86VFun5e58S3XCLOxfgVY68UPFmV2HRC2gckSg+qNrX9H6jklsNRtJTzYr/1nYJaGwlKT3SH/W6qmUsGuQfqUduZa5K2xI9elrRbamMkqFobOajdyXUFSmMcV6ByL2nSQo67tzGSlvak0qfNysiwRDXsRu7/EI7rGw5qzt05c8A1g/8AVu305QAAAHicY2BgYGQAgpOd+YYg+lzKy/0wGgBJ3QeoAAB4nGNgZGBg4ANiCQYQYGJgBEJmIGYB8xgABGsANgAAAHicY2BmYmCcwMDKwMHow5jGwMDgDqW/MkgytDAwMDGwMjPAAKMAAwIEpLmmMDgw5H5gYHzw/wGDHuMDBoUGoBqwQiCDQQEIGQEGMgwuAAAAeJxjYGBgZoBgGQZGBhAIAfIYwXwWBgsgzcXAwcAEhAwMuQwVHxj+/wergrP/T/3fLcAI1QsFjGwMqAK0BkwIJjM97cUDAF10C80AAHicY2BkYGAA4qwPfHnx/DZfGbiZGEDgXMrL/Qj6/wMmBsYHQC4HA1gaAEfUDAUAAHicY2BkYGB88P8Bgx4TAwPDPwYgCRRBAcwAbecD9gAAAgAAAAAAAAACAAAgAAAAAAAAUAAABAAAeJydj7FOwzAQhj+3SQWCpQsbklWxMDhKjITUTix0Y+3AVjVRlaGOlKSvws4T8TC8AL9bi4UBqbZO993df/YdcMsHhngMcx4ST8h4STzF8Zk4k+Y7cc6NuU88Y27epDTZtTKLU1fkCVc8J57yzmviTJqvxDl3Jk88Y2EeGWjZsSWIRo7UijuxEzUcxAztbhuG8Vi33eDq5qDUb+0croVB7dH37FW0eApK+ZXs/0/OOq/rWMq8eiue9HQXxnXX7xvri9Ku7J9hlPPeLZ0vK8kvW2ejWn/qjXtY/RxnZ9P0Q9sFWxXlhS//AEv5VgZ4nGNgZsALAAB9AAQ=) format('woff'),
-     url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAANAIAAAwBQRkZUTWZTQrAAAAZwAAAAHEdERUYAMwAGAAAGUAAAACBPUy8yUCjcHwAAAVgAAABWY21hcOB9GW4AAAHIAAABWmdhc3D//wADAAAGSAAAAAhnbHlmpsu8yAAAAzQAAADkaGVhZP3pFDsAAADcAAAANmhoZWEEEP/mAAABFAAAACRobXR4BKsAIAAAAbAAAAAWbG9jYQCAACgAAAMkAAAADm1heHAASwAvAAABOAAAACBuYW1l6Df8JQAABBgAAAH1cG9zdJ//TfcAAAYQAAAANgABAAAAAQAAFWzHU18PPPUACwIAAAAAAM5k6b8AAAAAzmTpvwAA/+ACAAHgAAAACAACAAAAAAAAAAEAAAHg/+AALgIAAAD+AAIAAAEAAAAAAAAAAAAAAAAAAAAFAAEAAAAGACwAAwAAAAAAAgAAAAEAAQAAAEAAAAAAAAAAAQIAAZAABQAIAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAIABQMAAAAAAAAAAAABEAAAAAAAAAAAAAAAUGZFZABAAG3wAAHg/+AALgHgACCAAAABAAAAAAAAAgAAAAAAAAAAqgAAAAAAAAIAACAAAQAAAAAAAwAAAAMAAAAcAAEAAAAAAFQAAwABAAAAHAAEADgAAAAKAAgAAgACAAAAbQB48AD//wAAAAAAbQB48AD//wAA/5f/jRADAAEAAAAAAAAAAAAAAAABBgAAAQAAAAAAAAABAgAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAoAHIAAAABAAD/4AIAAeAAAgAAEQEhAgD+AAHg/gAAAAAAAwAgACAB4AGAAAMABwALAAATIRUhFSEVIRUhFSEgAcD+QAHA/kABwP5AAYBgIGAgYAAAAAEAAf/hAf8B3wArAAAlJzc2NzYvASYHBg8BJyYnJg8BBhcWHwEHBgcGHwEWNzY/ARcWFxY/ATYnJgH7m5sDAQQISQcKAwObmwMDCgdJCAQBA5ubAwEECEkHCgMDm5sDAwoHSQgEAUWbmwMDCgdJCAQBA5ubAwEECEkHCgMDm5sDAwoHSQgEAQObmwMBBAhJBwoDAAAAAAwAlgABAAAAAAABABEAJAABAAAAAAACAAQAQAABAAAAAAADAC0AoQABAAAAAAAEABEA8wABAAAAAAAFAAsBHQABAAAAAAAGABEBTQADAAEECQABACIAAAADAAEECQACAAgANgADAAEECQADAFoARQADAAEECQAEACIAzwADAAEECQAFABYBBQADAAEECQAGACIBKQBzAGkAYwBhAG4AcwB0AHUAZABpAG8AcwAtAGQAZQBtAG8AAHNpY2Fuc3R1ZGlvcy1kZW1vAABkAGUAbQBvAABkZW1vAABGAG8AbgB0AEYAbwByAGcAZQAgADIALgAwACAAOgAgAHMAaQBjAGEAbgBzAHQAdQBkAGkAbwBzAC0AZABlAG0AbwAgADoAIAAyADIALQA5AC0AMgAwADEAMwAARm9udEZvcmdlIDIuMCA6IHNpY2Fuc3R1ZGlvcy1kZW1vIDogMjItOS0yMDEzAABzAGkAYwBhAG4AcwB0AHUAZABpAG8AcwAtAGQAZQBtAG8AAHNpY2Fuc3R1ZGlvcy1kZW1vAABWAGUAcgBzAGkAbwBuACAAMQAuADAAAFZlcnNpb24gMS4wAABzAGkAYwBhAG4AcwB0AHUAZABpAG8AcwAtAGQAZQBtAG8AAHNpY2Fuc3R1ZGlvcy1kZW1vAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAABAAIBAgBQAFsHdW5pRjAwMAAAAAAAAf//AAIAAQAAAA4AAAAYAAAAAAACAAEAAwAFAAEABAAAAAIAAAAAAAEAAAAAyYlvMQAAAADOZOm/AAAAAM5k6b8=) format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[data-icon]:before {
-  font-family: 'sicanstudios-demo';
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1.8em;
-  -webkit-transition: color .4s;
-  -moz-transition: color .4s;
-  -o-transition: color .4s;
-  transition: color .4s;
-}
-
 /* when navigation is shown, don’t allow scrolling of content */
 body.no_scroll {
   overflow: hidden;
@@ -320,10 +287,11 @@ nav.expanded #navigation {
 
 // =======================================
 
-span.menu-icon {
+span.menu.icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 50px;
 }
 
 #nav-menu-text {
@@ -332,7 +300,150 @@ span.menu-icon {
   text-transform: uppercase;
   font-size: modular-scale(0, 0.9rem);
   // margin-top: 5px;
+  // margin-top: 20px;
+  padding-left: 10px;
   @include media($bp-small) {
     display: none;
+  }
+}
+
+
+// =========== General button styles & variables =======================================//
+#menu-toggle {
+  display:inline-block;
+  margin: 0;
+  border:none;
+  background:none;
+  
+  span{
+    display:block;
+  }
+}
+
+$color : $yellow;
+$transition: .3s;// increase this to see the transformations happen in slow motion
+
+/* ====================== lines button ==================================================*/
+
+$button-size : 1.5rem; 
+//common to all three-liners
+.lines-button {
+  // padding: $button-size/2 $button-size/4;
+  padding: 0;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $button-size/7;
+/* */
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    transition: 0;
+  }
+}
+//common to all three-liners
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/8;
+  background: $color;
+  border-radius: $button-size/16; 
+  transition: $transition;
+}
+//common to all three-liners
+.lines {
+  @include line;
+  position: relative;
+  // left: 30px; 
+
+  &:before, &:after {
+   @include line;
+    position: absolute;
+    left:0;
+    content: '';
+    -webkit-transform-origin: $button-size/14 center;
+            transform-origin: $button-size/14 center;
+  }
+  &:before { 
+    top: $button-size/4; 
+  }
+  &:after { 
+    top: -$button-size/4; 
+  }
+}
+
+//common to all three-liners
+.lines-button:hover {
+  .lines {
+    &:before { 
+      top: $button-size/3.5; 
+    }
+    &:after { 
+      top: -$button-size/3.5; 
+    }
+  }
+}
+.lines-button.close {
+  -webkit-transform: scale3d(.8,.8,.8);
+          transform: scale3d(.8,.8,.8);
+}
+
+//three-lines to x
+.lines-button.x.close{
+  .lines {
+    background: transparent;
+    &:before, &:after{
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      top: 25px; // default = 0
+      width: 5rem; // change to $button-size if you want it the same size
+      background: $white;
+    }
+    &:before{
+      -webkit-transform: rotate3d(0,0,1,45deg); 
+              transform: rotate3d(0,0,1,45deg); 
+    }
+    &:after{
+      -webkit-transform: rotate3d(0,0,1,-45deg); 
+              transform: rotate3d(0,0,1,-45deg); 
+    }
+  }
+}
+
+//three-lines to x method 2
+.lines-button.x2{
+    .lines{
+      transition: background .3s .5s ease;
+
+      &:before, &:after{
+        //set transform origin
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+        transition: top .3s .6s ease, -webkit-transform .3s ease;
+        transition: top .3s .6s ease, transform .3s ease;
+      }
+    }
+}
+
+.lines-button.x2.close{
+  .lines {
+    transition: background .3s 0s ease;
+    background: transparent;
+
+    &:before, &:after{
+      transition: top .3s ease, -webkit-transform .3s .5s ease;//delay the formation of the x till the minus is formed  
+      transition: top .3s ease, transform .3s .5s ease;//delay the formation of the x till the minus is formed  
+      top:0;
+      width: $button-size;
+    }
+    &:before{
+      -webkit-transform: rotate3d(0,0,1,45deg); 
+              transform: rotate3d(0,0,1,45deg); 
+    }
+    &:after{
+      -webkit-transform: rotate3d(0,0,1,-45deg); 
+              transform: rotate3d(0,0,1,-45deg); 
+    }
   }
 }

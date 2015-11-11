@@ -1,6 +1,7 @@
 // Modular scale is in relation to 1.2rem = 22px
 body {
-	color: $d-grey;
+	// color: $d-grey;
+	color: #444;
 	font-family: $main-body-font;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
@@ -236,7 +237,8 @@ main {
 .main-content,
 .blog-entry {
 	h1, h2, h3, h4, h5, h6 {
-		color: $black;
+		// color: $black;
+		color: #444;
 		margin-bottom: 10px;
 		margin-top: 50px;
 	}

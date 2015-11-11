@@ -38,7 +38,7 @@
 	<nav>
 	    <div class="site-width">
 	      <a href="http://www.ingenuity.ca" target="_blank">INGENUITY</a>
-	      <span class="menu icon" title="Menu (Esc)" tabindex="0" data-icon="m"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
+	      <span class="menu icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
 	    </div>
 
 
