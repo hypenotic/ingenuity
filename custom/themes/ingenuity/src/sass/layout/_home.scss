@@ -62,7 +62,7 @@
 	font-family: $main-headings;
 	padding: 10px;
 	z-index: 100;
-	width: 100%;
+	width: 100%; //added because of IE
 	@include media($bp-small) {
 		margin-top: 20px;
 		width: 100%;

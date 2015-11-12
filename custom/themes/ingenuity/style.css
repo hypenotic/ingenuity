@@ -5495,7 +5495,6 @@ button.drop-down-cross {
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
-  min-height: 100vh;
   width: 100%;
   padding: 25px; }
   @media screen and (min-width: 50em) {

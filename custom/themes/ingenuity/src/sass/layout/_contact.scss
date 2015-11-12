@@ -10,7 +10,7 @@
 	@include justify-content(center);
 	@include flex-wrap(wrap);
 	@include flex-direction(column);
-	min-height: 100vh;
+	// min-height: 100vh;
 	@include media($bp-large) {
 		@include flex-direction(row);
 	}
