@@ -4617,11 +4617,11 @@ aside ul.post-categories {
     width: 300%;
     left: -100%; } }
 .rw-wrapper {
-  position: relative;
   margin: 110px auto 0 auto;
   font-family: "Audimat3000-Regulier", sans-serif;
   padding: 10px;
-  z-index: 100; }
+  z-index: 100;
+  width: 100%; }
   @media screen and (max-width: 30em) {
     .rw-wrapper {
       margin-top: 20px;
@@ -4638,8 +4638,7 @@ h2.rw-sentence {
   position: relative;
   margin: 0;
   text-align: left;
-  z-index: 100;
-  width: 100%; }
+  z-index: 100; }
   @media screen and (max-width: 30em) {
     h2.rw-sentence {
       margin: 0 0 0 20px;
