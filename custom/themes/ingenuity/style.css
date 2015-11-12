@@ -450,6 +450,11 @@ ol {
   font-weight: 400;
   font-size: 1.3rem;
   line-height: 1.7329rem; }
+  @media screen and (max-width: 30em) {
+    ul,
+    ol {
+      font-size: 1rem;
+      line-height: 1.333rem; } }
 
 ul.post-categories {
   font-family: "leitura-news", serif;
@@ -5074,6 +5079,9 @@ h3.mission {
   width: 100%;
   color: white;
   position: relative; }
+  @media screen and (max-width: 30em) {
+    .drop-down-panel {
+      padding: 70px 10% 50px; } }
   .drop-down-panel button {
     color: black;
     background-color: #fcd838;
@@ -5097,6 +5105,12 @@ button.drop-down-cross {
   text-indent: 200%;
   color: transparent;
   outline: none; }
+  @media screen and (max-width: 30em) {
+    button.drop-down-cross {
+      width: 30px;
+      height: 30px;
+      top: 0px;
+      right: 10px; } }
 
 .push__longbio ul {
   margin-top: -20px; }

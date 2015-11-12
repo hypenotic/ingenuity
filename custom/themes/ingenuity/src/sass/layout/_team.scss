@@ -84,6 +84,9 @@
 	width: 100%;
 	color: $white;
 	position: relative;
+	@include media($bp-small) {
+		padding: 70px 10% 50px;
+	}
 	button {
 		color: $black;
 		background-color: $yellow;
@@ -111,6 +114,12 @@ button.drop-down-cross {
 	text-indent: 200%;
 	color: transparent;
 	outline: none;
+	@include media($bp-small) {
+		width: 30px;
+		height: 30px;
+		top: 0px;
+		right: 10px;
+	}
 }
 
 .push__longbio {

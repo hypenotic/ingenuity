@@ -100,6 +100,10 @@ ol {
 	font-weight: 400;
 	font-size: modular-scale(0, 1.3rem); 
 	line-height: modular-scale(1, 1.3rem); 
+	@include media($bp-small) {
+	    font-size: modular-scale(0, 1rem);
+	    line-height: modular-scale(1, 1rem);
+	}
 }
 
 ul.post-categories {
