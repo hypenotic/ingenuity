@@ -24,16 +24,6 @@
 
 
 <body class="cbp-spmenu-push" data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
-	
-	<!-- <div id="fullscreen-menu">
-		<?php 
-		wp_nav_menu(array(
-		  'menu' => 'Main Menu', 
-		  'container_id' => 'fs-menu', 
-		  'walker' => new Main_Menu_Walker()
-		)); 
-		?> 
-	</div> -->
 
 	<nav>
 	    <div class="site-width">
@@ -50,13 +40,5 @@
 		    )); 
     	?> 
   	</nav>
-
-
-	<!-- <button id="toggle-button">
-		<p>Menu</p>
-		<div id="menu-toggle" type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
-		  <span class="lines"></span>
-		</div>
-	</button> -->
 	
 	<main> 

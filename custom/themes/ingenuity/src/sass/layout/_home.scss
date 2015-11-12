@@ -71,6 +71,7 @@
 	}
 	@include media($bp-large) {
 		margin-top: 50px;
+		position: relative;
 	}
 }
 
@@ -80,6 +81,7 @@ h2.rw-sentence{
 	text-align: left;
 	// text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
 	z-index: 100;
+	width: 100%;
 	@include media($bp-small) {
 		margin: 0 0 0 20px;
 		font-size: modular-scale(2, 1.3rem); 

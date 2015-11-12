@@ -4631,13 +4631,15 @@ aside ul.post-categories {
       margin-top: 50px; } }
   @media screen and (min-width: 50em) {
     .rw-wrapper {
-      margin-top: 50px; } }
+      margin-top: 50px;
+      position: relative; } }
 
 h2.rw-sentence {
   position: relative;
   margin: 0;
   text-align: left;
-  z-index: 100; }
+  z-index: 100;
+  width: 100%; }
   @media screen and (max-width: 30em) {
     h2.rw-sentence {
       margin: 0 0 0 20px;
