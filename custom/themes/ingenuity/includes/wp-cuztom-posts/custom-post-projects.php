@@ -106,7 +106,7 @@ $projects->add_meta_box(
 );
 
 $projects->add_meta_box(
-    'testimonial',
+    'test',
     'Testimonial <i>(Optional)</i>',
     array(
         array(

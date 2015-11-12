@@ -816,7 +816,8 @@ h2.team__hero-subheading {
 
 span.stats_label,
 span.bolded-text {
-  font-family: "Audimat3000-Regulier", sans-serif; }
+  font-family: "Audimat3000-Regulier", sans-serif;
+  font-weight: 800; }
 
 #left p {
   line-height: 1.2rem;
@@ -1417,7 +1418,8 @@ span.menu.icon {
     margin: 0;
     font-size: 1.3rem;
     line-height: 1.7329rem;
-    font-weight: 300; }
+    font-weight: 300;
+    font-family: "Audimat3000-Leger", sans-serif; }
     @media screen and (max-width: 30em) {
       .gallery__single-half.gallery-caption p {
         font-size: 1.1rem;
@@ -1441,66 +1443,6 @@ span.menu.icon {
   .gallery__single:nth-child(even) .gallery__single-half.gallery-image img {
     padding-right: 0;
     padding-left: 0; }
-
-.cell {
-  height: 100%;
-  width: 100%; }
-  .cell:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    min-height: 100%;
-    z-index: 0;
-    overflow: hidden; }
-  .cell header {
-    max-width: 68.75em;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 1;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%); }
-    .cell header::after {
-      clear: both;
-      content: "";
-      display: table; }
-  .cell hgroup {
-    float: left;
-    display: block;
-    margin-right: 5.85151%;
-    width: 100%;
-    padding: 0 2em 0 2em; }
-    .cell hgroup:last-child {
-      margin-right: 0; }
-    @media screen and (min-width: 50em) {
-      .cell hgroup {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 57.35098%; }
-        .cell hgroup:last-child {
-          margin-right: 0; } }
-  .cell img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    z-index: 0; }
-
-.flickity-page-dots {
-  position: absolute;
-  width: 100%;
-  bottom: 20px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  line-height: 1; }
 
 /* General styles for all menus */
 .cbp-spmenu {
@@ -5324,41 +5266,65 @@ button.drop-down-cross {
       -webkit-transition: all 0.2s;
               transition: all 0.2s; }
 
-.project__testimonial blockquote {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-right: -70px;
-  border-left: 5px solid lightgrey;
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px; }
-  @media screen and (min-width: 30em) and (max-width: 50em) {
-    .project__testimonial blockquote {
-      margin-right: -10px; } }
-  @media screen and (max-width: 30em) {
-    .project__testimonial blockquote {
-      margin-top: 40px;
-      margin-bottom: 40px;
-      padding-left: 15px;
-      margin-left: 10px;
-      margin-right: 10px; } }
-.project__testimonial blockquote:before {
-  content: '“';
-  position: absolute;
-  margin-left: -.45em;
-  font-size: 4.26347rem; }
-  @media screen and (max-width: 30em) {
+.project__testimonial {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 50px 10%;
+  margin: 0 0 50px; }
+  .project__testimonial blockquote {
+    color: white; }
     .project__testimonial blockquote:before {
-      font-size: 2.66533rem;
-      margin-top: -10px; } }
-.project__testimonial blockquote:after {
-  content: '”';
-  font-size: 2.30996rem; }
-  @media screen and (max-width: 30em) {
+      content: '“';
+      position: absolute;
+      margin: 10px -0.5em;
+      font-size: 10.09842rem;
+      color: rgba(255, 255, 255, 0.3); }
+      @media screen and (max-width: 30em) {
+        .project__testimonial blockquote:before {
+          font-size: 8.41535rem;
+          margin-top: 15px 0 15px -1em; } }
     .project__testimonial blockquote:after {
-      font-size: 1.9995rem; } }
-.project__testimonial p {
-  text-align: right; }
+      content: '”';
+      font-size: 2.30996rem;
+      color: rgba(255, 255, 255, 0.3); }
+      @media screen and (max-width: 30em) {
+        .project__testimonial blockquote:after {
+          font-size: 1.9995rem; } }
+
+.testimonial__creds {
+  text-align: right;
+  padding-right: 50px; }
+
+.project__video {
+  margin: 0 0 50px; }
+
+.js-video {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  width: 100%; }
+  .js-video iframe {
+    width: 700px;
+    height: 393px; }
 
 .project-nav {
   margin-bottom: 50px;
@@ -5434,7 +5400,8 @@ button.drop-down-cross {
       width: 400px;
       height: 100px; } }
   .project-nav__arrow p {
-    margin: 0; }
+    margin: 0;
+    font-family: "Audimat3000-Regulier", sans-serif; }
 
 .project-nav__arrow--prev {
   margin: 0 10px 0 0; }

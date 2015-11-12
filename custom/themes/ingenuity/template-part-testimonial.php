@@ -1,33 +1,34 @@
-<?php
-
+<?php 
 /**
-* Template for Full-Width Testimonial Panel
+* Template for Videos
 * @author Emily Dela Cruz (Hypenotic)
 * @example <?php get_template_part( 'template-part-testimonial'); ?>
-* Original Project: BeneFACT (151005)
-* Dependency: custom-post-home.php, template-testimonial.scss
-* This template part is part of a custom homepage layout (custom-post-home.php)
-* Though it can be used in any custom-post.php file if the chunk of code is copied from custom-post-home.php (lines 78-113) and injected properly. 
+* Dependency: custom-post-testimonial.php
+* This template prints out a testimonial and its source.
+* Content is managed through a custom post type. 
+* Testimonials are added via Wordpress backend by a post select via the cuztom helper.
 */
-$quote_id = get_post_meta( $post->ID, '_testimonial_select', true ); ?>
+$test_id = get_post_meta($post->ID,'_test_select',true); ?>
 
 <?php 
     $args = array(
         'post_type' => 'testimonial',
-        'post__in'  => array($quote_id)
+        'post__in'  => array($test_id)
     );
-    $quote = new WP_Query( $args ); ?>
+    $tquote = new WP_Query( $args ); ?>
 
-  <?php if ( $quote->have_posts() ) : while ( $quote->have_posts() ) : $quote->the_post(); 
+<?php if ( $tquote->have_posts() ) : while ( $tquote->have_posts() ) : $tquote->the_post(); 
+    
+    $quotation      = get_post_meta( $post->ID, '_single_quotation', true );
+    $src            = get_post_meta( $post->ID, '_single_source', true );
+    $srctitle       = get_post_meta( $post->ID, '_single_title', true ); ?>  
 
-     //Get custom meta values 
-  	$quotation 	= get_post_meta( $post->ID, '_single_quotation', true );
-  	$src 		    = get_post_meta( $post->ID, '_single_source', true );
-  	$srctitle	   = get_post_meta( $post->ID, '_single_title', true );
-  ?>
+    <blockquote class="testimonial__quotation">
+        <?php echo $quotation; ?>
+    </blockquote>
+    <div class="testimonial__creds">
+      <h4><?php echo $src; ?></h4>
+      <h5><?php echo $srctitle; ?></h5>
+    </div>  
 
-		<blockquote><?php echo $quotation; ?></blockquote>
-		<p><?php echo $src; ?></p>
-		<p><?php echo $srctitle; ?></p>
-
-<?php endwhile; endif; ?>
+<?php endwhile; endif; wp_reset_postdata();?>

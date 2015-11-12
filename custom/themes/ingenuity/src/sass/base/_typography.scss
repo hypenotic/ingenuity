@@ -508,7 +508,6 @@ h2.team__hero-subheading {
 		padding-left: 20px;
 		font-size: modular-scale(1);
 		line-height: modular-scale(2);
-		
 	}
 	blockquote p {
 		font-size: modular-scale(1);
@@ -559,6 +558,7 @@ h2.team__hero-subheading {
 span.stats_label,
 span.bolded-text {
 	font-family: $bold-font;
+	font-weight: 800;
 }
 
 #left p {

@@ -36,12 +36,12 @@ $video_id = get_post_meta($post->ID,'_video_select',true); ?>
             </div>
             <?php endif ?>
         </div>
-        <div class="column2">
-            <h2><?php the_title(); ?></h2>
-            <?php if($description) : ?>
-                <?php echo $description; ?>
-            <?php endif ?>
-        </div>
+<!--         <div class="column2">
+            <h2><?php // the_title(); ?></h2>
+            <?php // if($description) : ?>
+                <?php // echo $description; ?>
+            <?php // endif ?>
+        </div> -->
     </section> 
 
 <?php endwhile; endif; wp_reset_postdata();?>

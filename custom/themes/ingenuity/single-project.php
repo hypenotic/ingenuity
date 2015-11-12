@@ -23,13 +23,13 @@
             $location   = get_post_meta( $post->ID, '_stats_location', true );
 
             // Video
-            // $video      = get_post_meta( $post->ID, '_video_select', true );
+            $video      = get_post_meta( $post->ID, '_video_select', true );
 
             // Testimonial
-            // $test       = get_post_meta( $post->ID, '_testimonial_select', true );
+            $test       = get_post_meta( $post->ID, '_testimonial_select', true );
 
             // Gallery
-            // $gallery    = get_post_meta( $post->ID, '_slide_select', true );
+            $gallery    = get_post_meta( $post->ID, '_slide_select', true );
 
         ?>
 
@@ -41,11 +41,11 @@
             </hgroup>
         </div>
 
-        <div class="diagonal-wrapper diagonal-svg__wrapper">
-            <!-- <div class="diagonal-line"></div> -->
-            <svg class="diagonal-svg">
-                <line id="the-line" x1="100%" y1="110%" x2="30%" y2="-10%"/>
-            </svg>
+    <div class="diagonal-wrapper diagonal-svg__wrapper">
+        <!-- <div class="diagonal-line"></div> -->
+        <svg class="diagonal-svg">
+            <line id="the-line" x1="100%" y1="110%" x2="30%" y2="-10%"/>
+        </svg>
         <div class="main-wrapper blog-wrapper">
             <aside id="left"> 
                 <?php if ($client) { ?>
@@ -68,30 +68,33 @@
 
                  <?php the_content(); ?>
 
-                <!-- <section class="project__dimension">
-                    <?php // the_content(); ?>
-                </section> -->
-
             </section>
+        </div>
+        
+        <?php if ($video) { ?>
+            <section class="project__video">
+                <?php get_template_part( 'template-part-video' ); ?> 
+            </section>
+        <?php } ?> 
 
-
-            <!-- <section class="project__video">
-                <?php // get_template_part( 'template-part-video' ); ?> 
-            </section> -->
-
+        <?php if ($test) { ?>
+        <section class="project__testimonial">
+            <?php get_template_part( 'template-part-testimonial' ); ?> 
+        </section>
+        <?php } ?>         
+        
+        <div class="main-wrapper">
+            
+            <?php if ($gallery) { ?>
             <section class="project__gallery clearfix">
                 <?php get_template_part( 'template-part-gallery' ); ?> 
             </section>
+            <?php } ?>  
             
-            <!-- THIS IS BREAKING!!!!!! -->
-            <!-- <section class="project__testimonial">
-                <?php // get_template_part( 'template-part-testimonial' ); ?> 
-            </section> -->
-
             <?php if( is_singular('project') ) { ?>
-
+            
             <div class="project-nav">
-
+            
                 <?php
                 $prev_post = get_previous_post();
                 if (!empty( $prev_post )): ?>
@@ -112,9 +115,8 @@
                 <?php endif; ?>
                 
             </div>
-
+            
             <?php } ?>
-
         </div>
 
     </div>

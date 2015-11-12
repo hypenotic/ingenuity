@@ -85,51 +85,65 @@
 	}
 }
 
-// Single PROJECT Page
+// =============== Single PROJECT Page
 
 .project__stats {
 
 }
 
+
+
+// Project Testomonial
+
 .project__testimonial {
+	background-color: rgba(0,0,0,0.9);
+	padding: 50px 10%;
+	margin: 0 0 50px;
 	blockquote {
-		margin-top: 40px;
-		margin-bottom: 40px;
-		margin-right: -70px;
-		border-left: 5px solid lightgrey;
-		padding-left: 30px;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		@include media($bp-med) {
-		    margin-right: -10px;
+		color: $white;
+		&:before {
+		    content: '“';
+		    position: absolute;
+		    margin: 10px -0.5em;
+		    font-size: modular-scale(6, 1.8rem);
+		    color: rgba(255,255,255,0.3);
+		    @include media($bp-small) {
+		    	font-size: modular-scale(6);
+		    	margin-top: 15px 0 15px -1em;
+		    }
 		}
-		@include media($bp-small) {
-		    margin-top: 40px;
-		    margin-bottom: 40px;
-		    padding-left: 15px;
-		    margin-left: 10px;
-		    margin-right: 10px;
+		&:after {
+		    content: '”';
+		    font-size: modular-scale(2, 1.3rem);
+		    color: rgba(255,255,255,0.3);
+		    @include media($bp-small) {
+		    	font-size: modular-scale(1);
+		    }
 		}
 	}
-	blockquote:before {
-	    content: '“';
-	    position: absolute;
-	    margin-left: -.45em;
-	    font-size: modular-scale(3, 1.8rem);
-	    @include media($bp-small) {
-	    	font-size: modular-scale(2);
-	    	margin-top: -10px;
-	    }
-	}
-	blockquote:after {
-	    content: '”';
-	    font-size: modular-scale(2, 1.3rem);
-	    @include media($bp-small) {
-	    	font-size: modular-scale(1);
-	    }
-	}
-	p {
-		text-align: right;
+}
+
+.testimonial__creds {
+	text-align: right;
+	padding-right: 50px;
+}
+
+// Project Video
+
+.project__video {
+	// background-color: rgba(0,0,0,0.8);
+	margin: 0 0 50px;
+}
+
+.js-video {
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	width: 100%;
+
+	iframe {
+		width: 700px;
+		height: 393px ;
 	}
 }
 
@@ -173,6 +187,7 @@
 	}
 	p {
 		margin: 0;
+		font-family: $main-headings;
 	}
 }
 
