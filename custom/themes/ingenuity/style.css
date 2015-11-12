@@ -540,6 +540,8 @@ span.black-highlight {
       line-height: 7.2933rem; } }
 .default-hero.blog-hero h2 {
   font-family: "Audimat3000-Leger", sans-serif; }
+  .default-hero.blog-hero h2 p {
+    font-family: "Audimat3000-Leger", sans-serif; }
 
 .navigation {
   font-family: "Audimat3000-Regulier", sans-serif; }
