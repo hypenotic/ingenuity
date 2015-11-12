@@ -82,6 +82,10 @@
 		background-image: url('dist/images/site.jpg');
 		// filter: grayscale(80%) brightness(0.6) opacity(1);
 	}
+	@include media($mobile-landscape) {
+		background-image: url('dist/images/site.jpg');
+		// filter: grayscale(80%) brightness(0.6) opacity(1);
+	}
 }
 
 .default-hero {

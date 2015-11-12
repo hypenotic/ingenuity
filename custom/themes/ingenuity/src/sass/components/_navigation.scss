@@ -46,6 +46,9 @@ nav {
   -webkit-animation: firstFadeInAndDrop .5s;
   -moz-animation: firstFadeInAndDrop .5s;
   animation: firstFadeInAndDrop .5s;
+  @include media($mobile-landscape) {
+    height: 60px;
+  }
 }
 
 /* on intial load fade in the menu */
@@ -91,6 +94,10 @@ nav:hover {
   @include media($bp-small) {
     font-size: modular-scale(2, 1.3rem); 
     line-height: modular-scale(2, 1.6rem); 
+  }
+  @include media($mobile-landscape) {
+    font-size: modular-scale(1); 
+    line-height: modular-scale(1); 
   }
 }
 
@@ -159,6 +166,12 @@ nav.expanded {
   text-align: left;
   list-style-type: none;
   padding: 0;
+  @include media($mobile-landscape) {
+    // @include display(flex);
+    // @include align-items(center);
+    // @include justify-content(space-between);
+    // @include flex-wrap(wrap);
+  }
   a {
     color: $black;
     // transition: all 0.5s;
@@ -184,6 +197,10 @@ nav.expanded {
       font-size: modular-scale(2,1rem);
       line-height: modular-scale(2,1rem);
       padding-bottom: 15px;
+    }
+    @include media($mobile-landscape) {
+      font-size: modular-scale(0,1rem);
+      line-height: modular-scale(0,1rem);
     }
     ul {
       li {
@@ -297,6 +314,9 @@ span.menu.icon {
   @include media($bp-small) {
     padding-top: 27px;
     padding-right: 15px;
+  }
+  @include media($mobile-landscape) {
+    padding-top: 30px;
   }
 }
 

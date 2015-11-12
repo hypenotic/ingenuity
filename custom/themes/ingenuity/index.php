@@ -18,12 +18,13 @@
 		</hgroup>
 	</div>	
 
+	<div class="main-wrapper"> 
+		<section class="main-content"> 
+
+
 	<?php // The loop starts here 
 		if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 	?>
-	
-	<div class="main-wrapper"> 
-		<section class="main-content"> 
 			
 			<div class="container blog__corp-new">
 			    <?php  
@@ -48,7 +49,7 @@
 
 					<div class="blog-single-post wow fadeIn">
 						<a href="<?php the_permalink(); ?>">
-							<h3 class="blog-single__title">?php the_title(); ?></h3>
+							<h3 class="blog-single__title"><?php the_title(); ?></h3>
 						</a>
 						<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
 						<img src="<?php echo $url[0] ?>" alt="<?php the_title(); ?>">
@@ -79,13 +80,11 @@
 			    <p class="pagination-links"><?php echo paginate_links( $args ); ?></p>
 			</div>
 
-			
-
-		</section> <!-- ARTICLE WRAP ends here -->
-	</div> <!-- contentWrapper ends here -->
-
 	<?php endwhile; else : ?>
 	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?>
+
+		</section> <!-- ARTICLE WRAP ends here -->
+	</div> <!-- contentWrapper ends here -->
 
 <?php get_footer(); ?>

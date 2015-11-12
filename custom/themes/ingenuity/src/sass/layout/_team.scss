@@ -87,6 +87,9 @@
 	@include media($bp-small) {
 		padding: 70px 10% 50px;
 	}
+	@include media($mobile-landscape) {
+		padding: 70px 10% 50px;
+	}
 	button {
 		color: $black;
 		background-color: $yellow;
@@ -115,6 +118,12 @@ button.drop-down-cross {
 	color: transparent;
 	outline: none;
 	@include media($bp-small) {
+		width: 30px;
+		height: 30px;
+		top: 0px;
+		right: 10px;
+	}
+	@include media($mobile-landscape) {
 		width: 30px;
 		height: 30px;
 		top: 0px;

@@ -13,6 +13,9 @@
 	overflow: hidden;
 	z-index: -100;
 	filter: grayscale(80%) brightness(0.8) opacity(1);
+	@include media($mobile-landscape) {
+		display: none;
+	}
 	@include media($bp-small) {
 		display: none;
 	}
@@ -94,6 +97,11 @@ h2.rw-sentence{
 	    font-size: modular-scale(5); 
 		line-height: modular-scale(5); 
 	}	
+	@include media($mobile-landscape) {
+		margin: 0 0 0 20px;
+		font-size: modular-scale(2, 1.3rem); 
+		line-height: modular-scale(2, 1.6rem); 
+	}
 }
 
 .rw-sentence span {
@@ -116,6 +124,11 @@ h2.rw-sentence{
 	}
 	@include media($bp-large) {
 		padding-left: 630px;
+	}
+	@include media($mobile-landscape) {
+		padding-left: 230px;
+		font-size: modular-scale(0, 1.3rem); 
+		line-height: modular-scale(0, 1.6rem); 
 	}
 }
 

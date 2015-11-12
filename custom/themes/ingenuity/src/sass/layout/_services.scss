@@ -7,6 +7,9 @@
 	@include media($bp-small) {
 		margin: 40px -5%;
 	}
+	@include media($mobile-landscape) {
+		margin: 40px -5%;
+	}
 	@include media($bp-large) {
 		@include flex-direction(row);
 	}
@@ -25,6 +28,9 @@
 .services-testimonial {
 	padding: 0 70px 25px 0;
 	@include media($bp-small) {
+		padding: 0 15px 25px;
+	}
+	@include media($mobile-landscape) {
 		padding: 0 15px 25px;
 	}
 	blockquote {
@@ -76,11 +82,18 @@
 	@include media($bp-small) {
 		padding: 30px;
 	}
+	@include media($mobile-landscape) {
+		padding: 30px;
+	}
 	p {
 		font-family: $main-headings;
 		font-size: modular-scale(2, 1.3rem);
 		line-height: modular-scale(2, 1.3rem);
 		@include media($bp-small) {
+			font-size: modular-scale(1, 1.3rem);
+			line-height: modular-scale(1, 1.3rem);
+		}
+		@include media($mobile-landscape) {
 			font-size: modular-scale(1, 1.3rem);
 			line-height: modular-scale(1, 1.3rem);
 		}
