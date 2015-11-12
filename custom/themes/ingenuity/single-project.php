@@ -89,10 +89,32 @@
             </section> -->
 
             <?php if( is_singular('project') ) { ?>
-            <div class="post-nav">
-                <div class="alignleft prev-next-post-nav"><?php previous_post_link( '%link', 'Previous' ) ?></div>
-                <div class="alignright prev-next-post-nav"><?php next_post_link( '%link', 'Next' ) ?></div>
-            </div><?php } ?>
+
+            <div class="project-nav">
+
+                <?php
+                $prev_post = get_previous_post();
+                if (!empty( $prev_post )): ?>
+                    <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
+                    <div class="project-nav__arrow project-nav__arrow--prev">
+                        <p><?php echo $prev_post->post_title; ?></p>
+                    </div>
+                    </a>
+                <?php endif; ?>
+                <?php
+                $next_post = get_next_post();
+                if (!empty( $next_post )): ?>
+                    <a href="<?php echo get_permalink( $next_post->ID ); ?>">
+                    <div class="project-nav__arrow project-nav__arrow--next">
+                        <p><?php echo $next_post->post_title; ?></p>
+                    </div>
+                    </a>
+                <?php endif; ?>
+                
+            </div>
+
+            <?php } ?>
+
         </div>
 
     </div>

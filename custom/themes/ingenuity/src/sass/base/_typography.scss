@@ -262,14 +262,12 @@ main {
 	}
 }
 
-.blog-entry {
-	p:first-child {
-		&:first-letter {
-		    float: left; 
-            font-size: modular-scale(6); 
-            line-height: modular-scale(5);
-            padding: 7px 10px 0px 0px;
-		}
+.blog-entry p:first-child {
+	&:first-letter {
+	    float: left; 
+        font-size: modular-scale(6); 
+        line-height: modular-scale(5);
+        padding: 7px 10px 0px 0px;
 	}
 }
 

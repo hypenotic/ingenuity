@@ -56,11 +56,27 @@
         <?php get_sidebar(); ?>
         <section class="blog-entry blog-page">
             <?php the_content(); ?>
-            <div class="prev-next-link">
-              <p><?php previous_post_link('%link', '&larr; Previous Post | '); ?>
-              <?php previous_post_link('%link', 'Next Post &rarr;'); ?></p>
-            </div>
         </section>
+        <div class="prev-next-links">
+          <?php
+          $prev_post = get_previous_post();
+          if (!empty( $prev_post )): ?>
+              <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
+              <div class="blog-nav__arrow blog-nav__arrow--prev">
+                  <p>previous</p>
+              </div>
+              </a>
+          <?php endif; ?>
+          <?php
+          $next_post = get_next_post();
+          if (!empty( $next_post )): ?>
+              <a href="<?php echo get_permalink( $next_post->ID ); ?>">
+              <div class="blog-nav__arrow blog-nav__arrow--next">
+                  <p>next &rarr;</p>
+              </div>
+              </a>
+          <?php endif; ?>
+        </div>
     </div>
 
   <?php endwhile; else : ?>

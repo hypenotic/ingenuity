@@ -42,4 +42,12 @@
 	}
 }
 
+.prev-next-links {
+	width: 100%;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(space-between);
+
+}
+
 

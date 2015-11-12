@@ -4931,6 +4931,32 @@ h3.mission {
         .diagonal-svg__wrapper .diagonal-svg #the-line {
           stroke-width: 150; } }
 
+.prev-next-links {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
+
 .team__container {
   position: relative;
   padding: 0;
@@ -5236,6 +5262,131 @@ button.drop-down-cross {
       font-size: 1.9995rem; } }
 .project__testimonial p {
   text-align: right; }
+
+.project-nav {
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .project-nav a:hover .project-nav__arrow {
+    color: black;
+    background-color: #fcd838; }
+
+.project-nav__arrow {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  color: #fcd838;
+  background-color: black;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+  @media screen and (min-width: 30em) {
+    .project-nav__arrow {
+      width: 200px;
+      height: 80px; } }
+  @media screen and (min-width: 50em) {
+    .project-nav__arrow {
+      width: 400px;
+      height: 100px; } }
+  .project-nav__arrow p {
+    margin: 0; }
+
+.project-nav__arrow--prev {
+  margin: 0 10px 0 0; }
+  @media screen and (min-width: 30em) {
+    .project-nav__arrow--prev {
+      margin-bottom: 0; } }
+  .project-nav__arrow--prev:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    border-top: 25px solid transparent;
+    border-right: 40px solid black;
+    border-bottom: 25px solid transparent; }
+    @media screen and (min-width: 30em) {
+      .project-nav__arrow--prev:before {
+        border-top: 40px solid transparent;
+        border-right: 60px solid black;
+        border-bottom: 40px solid transparent; } }
+    @media screen and (min-width: 50em) {
+      .project-nav__arrow--prev:before {
+        border-top: 50px solid transparent;
+        border-right: 70px solid black;
+        border-bottom: 50px solid transparent; } }
+
+.project-nav__arrow--next {
+  margin: 0 0 0 10px; }
+  .project-nav__arrow--next:after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    border-top: 25px solid transparent;
+    border-left: 40px solid black;
+    border-bottom: 25px solid transparent; }
+    @media screen and (min-width: 30em) {
+      .project-nav__arrow--next:after {
+        border-top: 40px solid transparent;
+        border-left: 60px solid black;
+        border-bottom: 40px solid transparent; } }
+    @media screen and (min-width: 50em) {
+      .project-nav__arrow--next:after {
+        border-top: 50px solid transparent;
+        border-left: 70px solid black;
+        border-bottom: 50px solid transparent; } }
 
 #contact-map {
   width: 100%;
