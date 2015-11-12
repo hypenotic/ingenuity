@@ -26,7 +26,7 @@
             $video      = get_post_meta( $post->ID, '_video_select', true );
 
             // Testimonial
-            $test       = get_post_meta( $post->ID, '_testimonial_select', true );
+            $test       = get_post_meta( $post->ID, '_test_select', true );
 
             // Gallery
             $gallery    = get_post_meta( $post->ID, '_slide_select', true );
