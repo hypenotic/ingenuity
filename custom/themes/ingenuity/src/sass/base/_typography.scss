@@ -245,8 +245,8 @@ main {
 		margin-bottom: 30px;
 		// letter-spacing: 1px;
 		@include media($bp-large) {
-		    font-size: modular-scale(0, 1.6rem);
-		    line-height: modular-scale(1, 1.6rem);
+		    font-size: modular-scale(0, 1.5rem);
+		    line-height: modular-scale(1, 1.7rem);
 		}
 	}
 	p.no-space {

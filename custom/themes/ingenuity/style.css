@@ -573,8 +573,8 @@ main p {
   margin-bottom: 30px; }
   @media screen and (min-width: 50em) {
     main p {
-      font-size: 1.6rem;
-      line-height: 2.1328rem; } }
+      font-size: 1.5rem;
+      line-height: 2.2661rem; } }
 main p.no-space {
   margin-bottom: 0; }
 
