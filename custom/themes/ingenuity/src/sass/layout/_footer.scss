@@ -1,11 +1,11 @@
 .main-footer {
-	min-height: 400px;
+	// min-height: 400px;
 	width: 100%;
 	background: $black;
 	color: $white;
 	padding: 25px;
 	@include display(flex);
-	@include align-items(center);
+	@include align-items(flex-start);
 	@include justify-content(center);
 	@include flex-direction(column);
 	@include media($bp-large) {
@@ -17,29 +17,204 @@
 	}
 }
 
-.footer__blog,
-.footer__news,
-.footer__map {
+.footer__third {
 	@include flex(1 0 auto);
 	@include media($bp-large) {
 		@include flex(0 0 30%);
 		margin: 0 1.5%;
 		// background: $white;
-		height: 350px;
+		// height: 350px;
 	}
-}
-
-.footer__blog {
 	h3 {
 		font-family: $lite-headings;
-		margin-bottom: 20px;
+		margin-bottom: 0px;
 		text-transform: uppercase;
 	}
 	p {
 		margin-bottom: 5px;
-		padding-left: 10px;
+		// padding-left: 10px;
 		font-size: modular-scale(0, 1.2rem);
+		font-family: $lite-headings;
 	}
+}
+
+.footer__blog {
+	
+}
+
+.footer__news {
+	
+}
+
+#mc-embedded-subscribe-form.footer-newsletter {
+	padding: 0;
+	h4 {
+		font-family: $lite-headings;
+		margin-bottom: 20px;
+	}
+}
+
+form.footer-newsletter {
+	background-color: $black;
+	input.footer__news__email {
+		background: $black;
+		border: 1px solid $yellow;
+		color: $yellow;
+	}
+	#mc-embedded-subscribe {
+		background-color: $yellow;
+		border-radius: 0;
+		color: $black;
+	}
+}
+
+/* Individual styles */
+
+.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	// margin: 1em;
+	max-width: 350px;
+	width: calc(100% - 2em);
+	vertical-align: top;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: $black;
+	font-weight: 400;
+	font-family: Helvetica, Arial, sans-serif;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: $white;
+	font-weight: bold;
+	font-size: 70.25%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+}
+
+/* Ingenuity */
+// http://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/
+.input--ingenuity {
+	overflow: hidden;
+}
+
+.input__field--ingenuity {
+	width: 100%;
+	background: transparent;
+	padding: 0.5em;
+	margin-bottom: 2em;
+	color: $black;
+	z-index: 100;
+	opacity: 0;
+}
+
+.input__label--ingenuity {
+	width: 100%;
+	position: absolute;
+	text-align: left;
+	padding: 0.5em 0;
+	pointer-events: none;
+	font-size: 1em;
+}
+
+.input__label--ingenuity::before,
+.input__label--ingenuity::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+
+.input__label--ingenuity::before {
+	height: 100%;
+	background: $yellow;
+	top: 0;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+.input__label--ingenuity::after {
+	height: 2px;
+	background: $yellow;
+	top: 100%;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.input__label-content--ingenuity {
+	padding: 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transition: -webkit-transform 0.2s, color 0.2s;
+	transition: transform 0.2s, color 0.2s;
+}
+
+.input__field--ingenuity:focus,
+.input--filled .input__field--ingenuity {
+	opacity: 1;
+	-webkit-transition: opacity 0s 0.2s;
+	transition: opacity 0s 0.2s;
+}
+
+.input__label--ingenuity::before,
+.input__label--ingenuity::after,
+.input__label-content--ingenuity,
+.input__field--ingenuity:focus,
+.input--filled .input__field--ingenuity {
+	-webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.input__field--ingenuity:focus + .input__label--ingenuity::before,
+.input--filled .input__label--ingenuity::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.input__field--ingenuity:focus + .input__label--ingenuity::after,
+.input--filled .input__label--ingenuity::after {
+	opacity: 0;
+}
+
+.input__field--ingenuity:focus + .input__label--ingenuity .input__label-content--ingenuity,
+.input--filled .input__label--ingenuity .input__label-content--ingenuity {
+	color: #cbc4c6;
+	-webkit-transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
+	transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
 }
 
 .footer__map {
