@@ -183,11 +183,17 @@ function init() {
  //     position: new google.maps.LatLng(43.5238744, -79.7086458),
  //     map: map
  // });
+var currentpage = window.location.href;
+if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
+  var theicon = '/ingenuity/custom/themes/ingenuity/dist/images/homemap.png';
+} else {
+  var theicon = '/custom/themes/ingenuity/dist/images/homemap.png'
+}
 
 var marker = new google.maps.Marker({
   position: new google.maps.LatLng(43.5238744, -79.7086458),
   map: mapC,
-  icon: '/custom/themes/ingenuity/dist/images/homemap.png'
+  icon: theicon
 });
 
   // Let's also add a marker while we're at it
