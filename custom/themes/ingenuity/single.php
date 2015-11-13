@@ -63,7 +63,7 @@
           if (!empty( $prev_post )): ?>
               <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
               <div class="blog-nav__arrow blog-nav__arrow--prev">
-                  <p>previous</p>
+                  <p>previous post</p>
               </div>
               </a>
           <?php endif; ?>
@@ -72,7 +72,7 @@
           if (!empty( $next_post )): ?>
               <a href="<?php echo get_permalink( $next_post->ID ); ?>">
               <div class="blog-nav__arrow blog-nav__arrow--next">
-                  <p>next &rarr;</p>
+                  <p>next post</p>
               </div>
               </a>
           <?php endif; ?>

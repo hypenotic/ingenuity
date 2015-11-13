@@ -5151,7 +5151,25 @@ h3.mission {
   -ms-justify-content: space-between;
   -o-justify-content: space-between;
   justify-content: space-between;
-  -ms-flex-pack: justify; }
+  -ms-flex-pack: justify;
+  background: #fcd838; }
+  .prev-next-links .blog-nav__arrow {
+    background-color: #fcd838;
+    padding: 10px 20px; }
+    .prev-next-links .blog-nav__arrow p {
+      margin-bottom: 0;
+      color: black; }
+
+.hint--left {
+  color: white;
+  background: #979797;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.2rem; }
+  .hint--left:hover {
+    cursor: pointer; }
 
 .team__container {
   position: relative;
