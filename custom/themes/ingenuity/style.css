@@ -858,9 +858,7 @@ body.no_scroll {
     /*margin-right: 23px;*/ }
 
   body.no_scroll .expanded {
-    /*padding-right: 7px;*/
-    background: rgba(0, 0, 0, 0.98);
-    /* because FF no blur, reduce bg transparency */ } }
+    /*padding-right: 7px;*/ } }
 /* === TOP MENU LAYOUT === */
 nav {
   color: #fcd838;
