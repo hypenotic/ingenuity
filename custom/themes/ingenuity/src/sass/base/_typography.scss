@@ -101,8 +101,8 @@ ol {
 	font-size: modular-scale(0, 1.3rem); 
 	line-height: modular-scale(1, 1.3rem); 
 	@include media($bp-small) {
-	    font-size: modular-scale(0, 1rem);
-	    line-height: modular-scale(1, 1rem);
+	    font-size: modular-scale(0, 1.1rem);
+	    line-height: modular-scale(1, 1.1rem);
 	}
 	@include media($mobile-landscape) {
 	    font-size: modular-scale(0, 1rem);
@@ -275,8 +275,8 @@ main {
 	p {
 		margin-bottom: 20px;
 		@include media($bp-small) {
-		    font-size: modular-scale(0, 1.4rem);
-		    line-height: modular-scale(1, 1.4rem);
+		    font-size: modular-scale(0, 1.3rem);
+		    line-height: modular-scale(1, 1.3rem);
 		}
 		@include media($bp-med) {
 		    font-size: modular-scale(0, 1.5rem);
@@ -295,6 +295,12 @@ main {
         font-size: modular-scale(6); 
         line-height: modular-scale(5);
         padding: 7px 10px 0px 0px;
+        @include media($bp-small) {
+            font-size: modular-scale(3);
+            line-height: modular-scale(3);
+            padding: 0;
+            float: none;
+        }
 	}
 }
 

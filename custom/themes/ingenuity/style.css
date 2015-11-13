@@ -453,8 +453,8 @@ ol {
   @media screen and (max-width: 30em) {
     ul,
     ol {
-      font-size: 1rem;
-      line-height: 1.333rem; } }
+      font-size: 1.1rem;
+      line-height: 1.4663rem; } }
   @media screen and (max-height: 35.5em) and (orientation: landscape) {
     ul,
     ol {
@@ -599,8 +599,8 @@ main p.no-space {
   @media screen and (max-width: 30em) {
     .main-content p,
     .blog-entry p {
-      font-size: 1.4rem;
-      line-height: 1.8662rem; } }
+      font-size: 1.3rem;
+      line-height: 1.7329rem; } }
   @media screen and (min-width: 30em) and (max-width: 50em) {
     .main-content p,
     .blog-entry p {
@@ -617,6 +617,12 @@ main p.no-space {
   font-size: 8.41535rem;
   line-height: 6.31309rem;
   padding: 7px 10px 0px 0px; }
+  @media screen and (max-width: 30em) {
+    .blog-entry p:first-child:first-letter {
+      font-size: 3.55289rem;
+      line-height: 3.55289rem;
+      padding: 0;
+      float: none; } }
 
 .blog-entry.blog-page blockquote,
 .main-content.about-page blockquote {
@@ -952,7 +958,8 @@ nav.expanded {
   height: 100%;
   position: fixed;
   cursor: default;
-  background: rgba(252, 216, 56, 0.95); }
+  background: rgba(252, 216, 56, 0.95);
+  overflow-y: scroll; }
   nav.expanded .site-width > a {
     color: black; }
 
@@ -4477,6 +4484,19 @@ body {
     position: relative;
     width: 100%;
     height: auto; }
+  .main-content blockquote,
+  .blog-entry blockquote {
+    margin: 0;
+    border-left: 0; }
+    @media screen and (max-width: 30em) {
+      .main-content blockquote,
+      .blog-entry blockquote {
+        font-size: 1.5rem;
+        line-height: 1.9995rem; }
+        .main-content blockquote p,
+        .blog-entry blockquote p {
+          font-size: 1.5rem;
+          line-height: 1.9995rem; } }
   .main-content ul,
   .blog-entry ul {
     margin: -15px 0 15px 0; }

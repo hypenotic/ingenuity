@@ -37,7 +37,7 @@ add_theme_support( 'post-thumbnails' );
 function js_async_attr($tag){
 
 # Add async to all remaining scripts
-return str_replace( ' src', ' defer src', $tag );
+return str_replace( ' src', ' defergit src', $tag );
 }
 add_filter( 'script_loader_tag', 'js_async_attr', 10 );
 

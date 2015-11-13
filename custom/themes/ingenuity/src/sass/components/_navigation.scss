@@ -136,6 +136,7 @@ nav.expanded {
   position: fixed;
   cursor: default;
   background: rgba(252, 216, 56,0.95);
+  overflow-y: scroll;
   .site-width>a {
     color: $black;
   }
