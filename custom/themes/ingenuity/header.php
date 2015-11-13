@@ -16,7 +16,7 @@
 	  })(document);
 	</script>
 	<?php wp_head(); ?> 
-	<script async src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
+	<script defer src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
 </head>
 
 
