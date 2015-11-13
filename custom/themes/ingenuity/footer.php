@@ -1,4 +1,4 @@
-	<?php if ( is_front_page() || is_home() ) { ?>
+	<?php if ( is_front_page() ) { ?>
 
 	<?php } else { ?>
 		<footer class="main-footer">
