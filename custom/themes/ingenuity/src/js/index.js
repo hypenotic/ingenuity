@@ -108,10 +108,6 @@ $(".close-push-panel").click(function() {
 
 });
 
-$('.gallery').flickity({
-
-});
-
 $(function() {
 	new WOW({
      mobile: false

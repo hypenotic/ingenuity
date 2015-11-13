@@ -770,9 +770,6 @@ h2.team__hero-subheading {
 .team__single h3,
 .team__single figcaption {
   margin-top: 20px; }
-.team__single figcaption {
-  font-family: "leitura-news", serif;
-  font-weight: 200; }
 
 .blog-entry blockquote {
   font-family: "Audimat3000-Regulier", sans-serif;

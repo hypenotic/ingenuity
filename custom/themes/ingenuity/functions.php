@@ -32,4 +32,13 @@ add_theme_support( 'post-thumbnails' );
 @ini_set( 'upload_max_size' , '300M' );
 @ini_set( 'post_max_size', '200M');
 
+// Async/Defer Scripts
+/*function to add async to all scripts*/
+function js_async_attr($tag){
+
+# Add async to all remaining scripts
+return str_replace( ' src', ' async src', $tag );
+}
+add_filter( 'script_loader_tag', 'js_async_attr', 10 );
+
 ?>
