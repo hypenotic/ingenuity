@@ -90,7 +90,10 @@ h5 {
 }
 
 h6 {
-
+	font-family: $lite-headings;
+	font-size: modular-scale(0, 0.9rem); 
+	line-height: modular-scale(0, 0.9rem); 
+	margin-top: 20px;
 }
 
 ul,
@@ -274,6 +277,12 @@ main {
 	h5 {
 		margin-top: 20px;
 		margin-bottom: 40px;
+	}
+	h6 {
+		font-family: $lite-headings;
+		font-size: modular-scale(0, 0.9rem); 
+		line-height: modular-scale(0, 0.9rem); 
+		margin-top: 20px;
 	}
 	p {
 		margin-bottom: 20px;

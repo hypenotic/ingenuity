@@ -444,6 +444,12 @@ h4 {
   font-size: 1.9995rem;
   line-height: 2.2661rem; }
 
+h6 {
+  font-family: "Audimat3000-Leger", sans-serif;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  margin-top: 20px; }
+
 ul,
 ol {
   font-family: "leitura-news", serif;
@@ -597,6 +603,12 @@ main p.no-space {
 .blog-entry h5 {
   margin-top: 20px;
   margin-bottom: 40px; }
+.main-content h6,
+.blog-entry h6 {
+  font-family: "Audimat3000-Leger", sans-serif;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  margin-top: 20px; }
 .main-content p,
 .blog-entry p {
   margin-bottom: 20px; }
@@ -5433,6 +5445,9 @@ button.drop-down-cross {
   background-color: rgba(0, 0, 0, 0.9);
   padding: 50px 10%;
   margin: 0 0 50px; }
+  @media screen and (max-width: 30em) {
+    .project__testimonial {
+      font-size: 2.66533rem; } }
   .project__testimonial blockquote {
     color: white; }
     .project__testimonial blockquote:before {
