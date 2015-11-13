@@ -19,6 +19,9 @@
 
 .footer__third {
 	@include flex(1 0 auto);
+	@include media($bp-small) {
+		margin-bottom: 25px;
+	}
 	@include media($bp-large) {
 		@include flex(0 0 30%);
 		margin: 0 1.5%;

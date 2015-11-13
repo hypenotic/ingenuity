@@ -4101,6 +4101,9 @@ Copyright (c) 2015 Daniel Eden
   -moz-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto; }
+  @media screen and (max-width: 30em) {
+    .footer__third {
+      margin-bottom: 25px; } }
   @media screen and (min-width: 50em) {
     .footer__third {
       -webkit-box-flex: 0;
