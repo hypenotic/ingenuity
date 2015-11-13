@@ -184,11 +184,10 @@ function init() {
  //     map: map
  // });
 
-var iconBase = 'http://www.ingenuity.dev/custom/themes/ingenuity/dist/';
 var marker = new google.maps.Marker({
   position: new google.maps.LatLng(43.5238744, -79.7086458),
   map: mapC,
-  icon: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Map_marker_icon_%E2%80%93_Nicolas_Mollet_%E2%80%93_Home_%E2%80%93_People_%E2%80%93_Default.png'
+  icon: '/custom/themes/ingenuity/dist/images/homemap.png'
 });
 
   // Let's also add a marker while we're at it

@@ -87,7 +87,6 @@ h4 {
 }
 
 h5 {
-
 }
 
 h6 {
@@ -271,6 +270,10 @@ main {
 		@include media($mobile-landscape) {
 		    margin-top: 20px;
 		}
+	}
+	h5 {
+		margin-top: 20px;
+		margin-bottom: 40px;
 	}
 	p {
 		margin-bottom: 20px;

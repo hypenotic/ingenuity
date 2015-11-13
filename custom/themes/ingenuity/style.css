@@ -593,6 +593,10 @@ main p.no-space {
   .main-content h3,
   .blog-entry h3 {
     margin-top: 20px; } }
+.main-content h5,
+.blog-entry h5 {
+  margin-top: 20px;
+  margin-bottom: 40px; }
 .main-content p,
 .blog-entry p {
   margin-bottom: 20px; }
@@ -1420,8 +1424,7 @@ span.menu.icon {
     margin: 0;
     font-size: 1.3rem;
     line-height: 1.7329rem;
-    font-weight: 300;
-    font-family: "Audimat3000-Leger", sans-serif; }
+    font-weight: 300; }
     @media screen and (max-width: 30em) {
       .gallery__single-half.gallery-caption p {
         font-size: 1.1rem;

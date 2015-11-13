@@ -78,7 +78,7 @@
         font-size: modular-scale(0, 1.3rem);
         line-height: modular-scale(1, 1.3rem);
         font-weight: 300;
-        font-family: $lite-headings;
+        // font-family: $lite-headings;
         @include media($bp-small) {
             font-size: modular-scale(0, 1.1rem);
             line-height: modular-scale(1, 1.1rem);
