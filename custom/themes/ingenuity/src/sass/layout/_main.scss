@@ -56,6 +56,13 @@ body {
     }
 }
 
+.main-content.standard-center {
+	@include media($bp-large) {
+		@include span-columns(8);
+		@include shift(2);
+    }
+}
+
 .main-content {
 	padding: 50px 25px;
 	@include media($bp-small) {

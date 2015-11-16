@@ -109,6 +109,18 @@
 	}
 }
 
+.default-hero.no-banner {
+	color: $black;
+	min-height: 50vh;
+	h1 {
+		color: $black;
+		font-size: modular-scale(4);
+		line-height: modular-scale(4, 1.3rem);
+		// font-family: $p-font;
+		font-family: $main-headings;
+	}
+}
+
 .default-hero.blog-hero {
 	hgroup {
 		margin-top: 50px;
