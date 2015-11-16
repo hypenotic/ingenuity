@@ -223,6 +223,10 @@ form.footer-newsletter {
 	transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
 }
 
+#mc-embedded-subscribe {
+	font-family: $lite-headings;
+}
+
 .footer__cta {
 	// background-color: $yellow;
 	height: 100%;
@@ -235,5 +239,16 @@ form.footer-newsletter {
 		position: relative;
 		max-width: 50%;
 		height: auto;
+	}
+	button {
+		color: $black;
+		background-color: $yellow;
+		padding: 10px 15px;
+		font-family: $lite-headings;
+		border: 0;
+		margin: 20px 0;
+		&:hover {
+			background-color: $d-grey;
+		}
 	}
 }

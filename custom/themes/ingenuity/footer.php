@@ -50,9 +50,9 @@
 				<!--End mc_embed_signup-->
 			</div>
 			<div class="footer__cta footer__third">
-				<h4>Come in and chat over an espresso!</h4>
-				<img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" height="322" width="500" alt="">
-				<button></button>
+				<h4>​Great buildings begin with a conversation.</h4>
+<!-- 				<img src="<?php // echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt=""> -->
+				<button>Let's talk over an espresso!</button>
 			</div>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w"></script>
 		</footer>

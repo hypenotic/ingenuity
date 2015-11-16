@@ -40,9 +40,9 @@
 		
 						 <div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s">
 						 	<?php if ($heading) { ?>
-						 		<h3>
+						 		<h4>
 						 			<?php echo $heading; ?>
-						 		</h3>
+						 		</h4>
 						 	<?php } ?>
 						 	<?php if ($text) { ?>
 						 		<div>

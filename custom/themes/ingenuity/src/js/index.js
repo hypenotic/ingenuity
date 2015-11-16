@@ -176,7 +176,7 @@ function init() {
  // Create the Google Map using our element and options defined above
  // var map = new google.maps.Map(mapElement, mapOptions);
  var mapC = new google.maps.Map(contactMap, mapOptions);
- mapC.panBy(0, -150);
+ mapC.panBy(0, -120);
 
  // Let's also add a marker while we're at it
  // var marker = new google.maps.Marker({

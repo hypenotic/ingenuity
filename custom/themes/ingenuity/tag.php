@@ -12,8 +12,6 @@
 
             <?php if ( have_posts() ) : ?>
                     
-                    <!-- <p><span class="text--bold">Results for</span>:  <?php //single_tag_title(); ?>  </p> -->
-
                     <?php
                     // Start the loop.
                     while ( have_posts() ) : the_post(); ?>

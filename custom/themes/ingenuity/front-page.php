@@ -17,7 +17,7 @@
 		</div>
 		<hgroup class="rw-wrapper">
 			<h2 class="rw-sentence">
-				Design Build and General Contracting that factors in
+				Design Build & General Contracting that factors in
 				<div class="rw-words rw-words-1">
 					<span class="rotator">happiness <span class="sq-ft">/sq ft.</span></span>
 					<span class="rotator">craft <span class="sq-ft">/sq ft.</span></span>
