@@ -13,17 +13,17 @@ get_header(); ?>
 	    	<h2>
 	    		We can offer you an espresso as our condolences!
 	    	</h2>
-	    	<button id="we-owe-you">We owe you one.</button>
+	    	<a href="tel:+1-905-569-2624"><button id="we-owe-you">We owe you one - call us.</button></a>
 	    	<h2>Try a search?</h2>
 	    	<div class="search-error-page">
-				<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+				<form role="search" method="get" class="search-form-error" action="<?php echo home_url( '/' ); ?>">
 					<label>
 						<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
 					</label>
 					<input type="submit" class="error-submit" value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
 				</form>
 	    	</div>
-	    	<h2>Or go back to our <a href="<?php echo site_url(); ?>">home page</a> and look around! </h2>
+	    	<h2>Or go back to our <a href="<?php echo home_url(); ?>">home page</a> and take another look around.</h2>
 	    </hgroup>
 	</div>
 

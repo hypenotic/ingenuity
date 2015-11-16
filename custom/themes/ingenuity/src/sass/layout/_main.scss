@@ -203,8 +203,8 @@ span.big-quotes {
 
 button#we-owe-you {
 	padding: 10px 15px;
-	max-width: 300px;
-	color: $d-grey;
+	max-width: 250px;
+	color: $black;
 	margin: 20px 10%;
 	background-color: $yellow;
 	// border: 1px solid $d-grey;
@@ -228,6 +228,14 @@ button#we-owe-you {
 	background-color: $yellow;
 	color: $black;
 	border: 0;
+	padding: 5px 10px;
+	margin-left: 10px;
+}
+
+.search-form-error {
+	@include display(flex);
+	@include align-items(center);
+	// @include justify-content(center);
 }
 
 
