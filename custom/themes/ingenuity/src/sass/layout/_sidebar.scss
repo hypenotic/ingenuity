@@ -15,7 +15,7 @@ aside {
     }
     @include media($bp-large) {
 		@include span-columns(2);
-		@include shift(1);
+		@include shift(0);
 		height: 100%;
 		margin-top: 50px;
 		padding-top: 5px;

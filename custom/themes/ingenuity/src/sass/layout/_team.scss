@@ -94,12 +94,13 @@
 		color: $black;
 		background-color: $yellow;
 		border: none;
-		padding: 10px 25px;
+		padding: 15px 35px;
 		// transition: all 0.5s;
 		margin-top: 25px;
 		font-family: $lite-headings;
+		font-size: modular-scale(1);
 		&:hover {
-			background-color: darken($yellow, 20%); 
+			background-color: darken($yellow, 10%); 
 		}
 	}
 }

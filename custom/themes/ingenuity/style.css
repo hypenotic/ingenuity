@@ -999,8 +999,8 @@ nav.expanded {
   #navigation ul li {
     padding: 2px 15%;
     padding-top: 10px;
-    font-size: 2.60545rem;
-    line-height: 2.60545rem;
+    font-size: 3.47307rem;
+    line-height: 3.47307rem;
     font-weight: 400;
     font-family: "Audimat3000-Regulier", sans-serif; }
     #navigation ul li:hover {
@@ -4505,7 +4505,7 @@ body {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 65.88078%;
+      width: 74.41059%;
       margin-left: 17.05961%; }
       .main-content:last-child,
       .blog-entry:last-child {
@@ -4548,8 +4548,7 @@ body {
     margin-right: 2.35765%;
     width: 65.88078%;
     margin-left: 0%;
-    padding: 50px 25px;
-    padding-right: 50px; }
+    padding: 50px 25px; }
     .blog-entry:last-child {
       margin-right: 0; } }
 
@@ -4779,7 +4778,7 @@ button#we-owe-you {
     display: block;
     margin-right: 2.35765%;
     width: 14.70196%;
-    margin-left: 8.5298%;
+    margin-left: 0%;
     height: 100%;
     margin-top: 50px;
     padding-top: 5px;
@@ -5358,11 +5357,12 @@ h3.mission {
     color: black;
     background-color: #fcd838;
     border: none;
-    padding: 10px 25px;
+    padding: 15px 35px;
     margin-top: 25px;
-    font-family: "Audimat3000-Leger", sans-serif; }
+    font-family: "Audimat3000-Leger", sans-serif;
+    font-size: 1.9995rem; }
     .drop-down-panel button:hover {
-      background-color: #cba603; }
+      background-color: #fbce06; }
 
 button.drop-down-cross {
   width: 80px;
@@ -5397,7 +5397,6 @@ button.drop-down-cross {
 
 .projects__panel-container {
   width: 100%;
-  margin-top: 50px;
   position: relative;
   display: -webkit-box;
   display: -moz-box;

@@ -28,7 +28,7 @@ body {
 	background-color: none;
 	padding: 50px 0;
 	@include media($bp-large) {
-		@include span-columns(8);
+		@include span-columns(9);
 		@include shift(2);
     }
     img {
@@ -68,7 +68,7 @@ body {
 		@include span-columns(8);
 		@include shift(0);
 		padding: 50px 25px;
-		padding-right: 50px;
+		// padding-right: 50px;
     }
 }
 
