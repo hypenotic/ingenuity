@@ -5,22 +5,26 @@
 
 get_header(); ?>
 
-	<div class="default-hero">
-	    <figure style="background-image: url('dist/images/site.jpg'); background-size: cover;"></figure>
-	    <hgroup class="animated fadeInDown">
-	        <h1><?php echo $heading; ?></h1>
-	        <h2><?php echo $subheading; ?></h2>
-	    </hgroup>
-	</div>
 
-	<div class="main-wrapper">
-		<hgroup id="fade-in-item" class="animated fadeInDown">
-			<h2>
-				Not found!
-			</h2>
-			<p class="search-text"><?php _e( 'Oops! It looks like nothing was found at this location. Maybe try a search?' ); ?></p>
-			<?php get_search_form(); ?>
-		</hgroup>
+	<div class="default-hero">
+	    <figure style="background-image: url('<?php echo get_template_directory_uri(); ?>/dist/images/site.jpg'); background-size: cover;"></figure>
+	    <hgroup id="fade-in-item" class="animated fadeInDown">
+	    	<h1>Oops! The page you've requested is not available.</h1>
+	    	<h2>
+	    		We can offer you an espresso as our condolences!
+	    	</h2>
+	    	<button id="we-owe-you">We owe you one.</button>
+	    	<h2>Try a search?</h2>
+	    	<div class="search-error-page">
+				<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+					<label>
+						<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+					</label>
+					<input type="submit" class="error-submit" value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
+				</form>
+	    	</div>
+	    	<h2>Or go back to our <a href="<?php echo site_url(); ?>">home page</a> and look around! </h2>
+	    </hgroup>
 	</div>
 
 <?php get_footer(); ?>

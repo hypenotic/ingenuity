@@ -199,5 +199,35 @@ span.big-quotes {
 	text-align: center;
 }
 
+// 404/Search
+
+button#we-owe-you {
+	padding: 10px 15px;
+	max-width: 300px;
+	color: $d-grey;
+	margin: 20px 10%;
+	background-color: $yellow;
+	// border: 1px solid $d-grey;
+	border: none;
+	text-transform: uppercase;
+	font-family: $lite-headings;
+	&:hover {
+		background-color: $black;
+		color: $yellow;
+		border: none;
+	}
+}
+
+.search-error-page {
+	margin: 15px 10%;
+}
+
+.error-submit {
+	text-transform: uppercase;
+	font-family: $lite-headings;
+	background-color: $yellow;
+	color: $black;
+	border: 0;
+}
 
 

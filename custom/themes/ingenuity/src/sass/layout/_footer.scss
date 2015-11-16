@@ -223,11 +223,17 @@ form.footer-newsletter {
 	transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
 }
 
-.footer__map {
+.footer__cta {
+	// background-color: $yellow;
+	height: 100%;
+	width: 100%;
 	position: relative;
-	iframe {
+	h4 {
+		font-family: $lite-headings;
+	}
+	img {
 		position: relative;
-		width: 100%;
-		height: 100%;
+		max-width: 50%;
+		height: auto;
 	}
 }
