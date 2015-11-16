@@ -461,7 +461,7 @@ ol {
     ol {
       font-size: 1.1rem;
       line-height: 1.4663rem; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     ul,
     ol {
       font-size: 1rem;
@@ -526,7 +526,7 @@ span.black-highlight {
     .default-hero h1 {
       font-size: 5.89222rem;
       line-height: 5.89222rem; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .default-hero h1 {
       font-size: 2.30996rem;
       line-height: 2.30996rem; } }
@@ -595,7 +595,7 @@ main p.no-space {
   line-height: 4.10453rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.9); }
-@media screen and (max-height: 28.125em) and (orientation: landscape) {
+@media screen and (max-height: 35.5em) and (orientation: landscape) {
   .main-content h3,
   .blog-entry h3 {
     margin-top: 20px; } }
@@ -622,7 +622,7 @@ main p.no-space {
     .blog-entry p {
       font-size: 1.5rem;
       line-height: 1.9995rem; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .main-content p,
     .blog-entry p {
       font-size: 1.3rem;
@@ -664,7 +664,7 @@ main p.no-space {
       .main-content.about-page blockquote p {
         font-size: 1.7329rem;
         line-height: 1.9995rem; } }
-    @media screen and (max-height: 28.125em) and (orientation: landscape) {
+    @media screen and (max-height: 35.5em) and (orientation: landscape) {
       .blog-entry.blog-page blockquote p,
       .main-content.about-page blockquote p {
         font-size: 1.7329rem;
@@ -761,7 +761,7 @@ h2.team__hero-subheading {
     .team__name {
       font-size: 6.31309rem;
       line-height: 4.736rem; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .team__name {
       font-size: 3.55289rem;
       line-height: 2.66533rem; } }
@@ -895,7 +895,7 @@ nav {
   transition: transform .4s, height .3s, background .4s;
   -webkit-animation: firstFadeInAndDrop .5s;
   animation: firstFadeInAndDrop .5s; }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     nav {
       height: 60px; } }
 
@@ -939,7 +939,7 @@ nav:hover {
     .site-width > a {
       font-size: 2.30996rem;
       line-height: 2.84302rem; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .site-width > a {
       font-size: 1.9995rem;
       line-height: 1.9995rem; } }
@@ -1015,7 +1015,7 @@ nav.expanded {
         font-size: 1.77689rem;
         line-height: 1.77689rem;
         padding-bottom: 15px; } }
-    @media screen and (max-height: 28.125em) and (orientation: landscape) {
+    @media screen and (max-height: 35.5em) and (orientation: landscape) {
       #navigation ul li {
         font-size: 1rem;
         line-height: 1rem; } }
@@ -1111,7 +1111,7 @@ span.menu.icon {
     span.menu.icon {
       padding-top: 27px;
       padding-right: 15px; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     span.menu.icon {
       padding-top: 30px; } }
 
@@ -4445,7 +4445,7 @@ form.footer-newsletter {
   @media screen and (max-width: 30em) {
     .home-hero {
       background-image: url("dist/images/site.jpg"); } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .home-hero {
       background-image: url("dist/images/site.jpg"); } }
 
@@ -4467,15 +4467,6 @@ form.footer-newsletter {
     position: relative;
     z-index: 51;
     margin-top: 100px; }
-
-.default-hero.no-banner {
-  color: black;
-  min-height: 50vh; }
-  .default-hero.no-banner h1 {
-    color: black;
-    font-size: 4.736rem;
-    line-height: 4.10453rem;
-    font-family: "Audimat3000-Regulier", sans-serif; }
 
 .default-hero.blog-hero hgroup {
   margin-top: 50px; }
@@ -4543,16 +4534,6 @@ body {
     .main-content ul li,
     .blog-entry ul li {
       padding: 7px 0; }
-
-@media screen and (min-width: 50em) {
-  .main-content.standard-center {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%;
-    margin-left: 17.05961%; }
-    .main-content.standard-center:last-child {
-      margin-right: 0; } }
 
 .main-content {
   padding: 50px 25px; }
@@ -4832,7 +4813,7 @@ aside ul.post-categories {
   z-index: -100;
   -webkit-filter: grayscale(80%) brightness(0.8) opacity(1);
           filter: grayscale(80%) brightness(0.8) opacity(1); }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .fullscreen-bg {
       display: none; } }
   @media screen and (max-width: 30em) {
@@ -4906,7 +4887,7 @@ h2.rw-sentence {
       text-align: left;
       font-size: 6.31309rem;
       line-height: 6.31309rem; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     h2.rw-sentence {
       margin: 0 0 0 20px;
       font-size: 2.30996rem;
@@ -4931,7 +4912,7 @@ h2.rw-sentence {
   @media screen and (min-width: 50em) {
     #move-over {
       padding-left: 630px; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     #move-over {
       padding-left: 230px;
       font-size: 1.3rem;
@@ -5089,7 +5070,7 @@ h3.mission {
   @media screen and (min-width: 30em) and (max-width: 50em) {
     .two-column {
       margin: 40px -5%; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .two-column {
       margin: 40px -5%; } }
   @media screen and (min-width: 50em) {
@@ -5120,7 +5101,7 @@ h3.mission {
   @media screen and (min-width: 30em) and (max-width: 50em) {
     .services-testimonial {
       padding: 25px; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .services-testimonial {
       padding: 0 15px 25px; } }
   .services-testimonial blockquote {
@@ -5164,7 +5145,7 @@ h3.mission {
   @media screen and (max-width: 30em) {
     .services-cta {
       padding: 30px; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .services-cta {
       padding: 30px; } }
   .services-cta p {
@@ -5175,7 +5156,7 @@ h3.mission {
       .services-cta p {
         font-size: 1.7329rem;
         line-height: 1.7329rem; } }
-    @media screen and (max-height: 28.125em) and (orientation: landscape) {
+    @media screen and (max-height: 35.5em) and (orientation: landscape) {
       .services-cta p {
         font-size: 1.7329rem;
         line-height: 1.7329rem; } }
@@ -5369,7 +5350,7 @@ h3.mission {
   @media screen and (max-width: 30em) {
     .drop-down-panel {
       padding: 70px 10% 50px; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     .drop-down-panel {
       padding: 70px 10% 50px; } }
   .drop-down-panel button {
@@ -5402,7 +5383,7 @@ button.drop-down-cross {
       height: 30px;
       top: 0px;
       right: 10px; } }
-  @media screen and (max-height: 28.125em) and (orientation: landscape) {
+  @media screen and (max-height: 35.5em) and (orientation: landscape) {
     button.drop-down-cross {
       width: 30px;
       height: 30px;
