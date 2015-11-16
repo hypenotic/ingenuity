@@ -756,9 +756,7 @@ h2.team__hero-subheading {
   font-size: 3.55289rem;
   line-height: 2.66533rem;
   position: relative;
-  color: rgba(0, 0, 0, 0.8);
-  -webkit-transition: all 0.5s;
-          transition: all 0.5s; }
+  color: rgba(0, 0, 0, 0.8); }
   @media screen and (min-width: 30em) and (max-width: 50em) {
     .team__name {
       font-size: 6.31309rem;
@@ -780,9 +778,7 @@ h2.team__hero-subheading {
   font-size: 1.9995rem;
   line-height: 1.9995rem;
   padding-left: 13px;
-  color: rgba(0, 0, 0, 0.8);
-  -webkit-transition: all 0.5s;
-          transition: all 0.5s; }
+  color: rgba(0, 0, 0, 0.8); }
 
 .team__creds {
   font-size: 1.5rem;

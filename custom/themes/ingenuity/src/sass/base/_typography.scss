@@ -470,7 +470,7 @@ h2.team__hero-subheading {
 	line-height:modular-scale(2);
 	position: relative;
 	color: rgba(0,0,0,0.8);
-	transition: all 0.5s;
+	// transition: all 0.5s;
 	@include media($bp-med) {
 		font-size: modular-scale(5);
 		line-height: modular-scale(4);
@@ -494,7 +494,7 @@ h2.team__hero-subheading {
 	line-height:modular-scale(1);
 	padding-left: 13px;
 	color: rgba(0,0,0,0.8);
-	transition: all 0.5s;
+	// transition: all 0.5s;
 }
 
 .team__creds {

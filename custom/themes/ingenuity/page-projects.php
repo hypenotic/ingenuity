@@ -24,12 +24,6 @@
 	        	<?php } ?>
 		    </hgroup>
 		</div>
-
-		<div class="main-content">
-
-			<?php the_content(); ?>
-			
-		</div>
 		
 		<div class="projects__panel-container"><?php
 			
