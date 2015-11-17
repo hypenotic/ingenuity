@@ -1,6 +1,18 @@
 <?php //Generic Modular Content Template for Posts
 $posts = new Cuztom_Post_Type('post');
 $posts->add_meta_box(
+    'authors',
+    'Authors',
+    array(
+        array(
+            'name'          => 'authorlist',
+            'label'         => 'Author List',
+            'description'   => 'In case of multiple authors.',
+            'type'          => 'wysiwyg',
+        )
+    )
+);
+$posts->add_meta_box(
     'blogadd',
     'Blog Extras', 
     array(

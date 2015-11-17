@@ -11,7 +11,7 @@
   	
   	?>
 
-	<div class="default-hero" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
+	<div class="default-hero blog-index" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
 		<hgroup>
 			<h1><?php echo $heading; ?></h1>
 			<h2><?php echo $subheading; ?></h2>
@@ -19,7 +19,7 @@
 	</div>	
 
 	<div class="main-wrapper"> 
-		<section class="main-content"> 
+		<section class="main-content standard-center"> 
 
 
 	<?php // The loop starts here 
