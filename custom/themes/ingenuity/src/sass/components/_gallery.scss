@@ -108,6 +108,9 @@
     @include media($bp-small) {
         @include order(-1);
     }
+    @include media($mobile-landscape) {
+        @include order(-1);
+    }
     img {
         padding-right: 0;
         padding-left: 0;
