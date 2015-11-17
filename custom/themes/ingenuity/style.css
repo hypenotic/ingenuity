@@ -5112,6 +5112,7 @@ span.sq-ft {
   animation: push 12.5s linear infinite 0s;
   -ms-animation: push 12.5s linear infinite 0s;
   -webkit-animation: push 12.5s linear infinite 0s;
+  -moz-animation: push 12.5s linear infinite 0s;
   color: #fcd838;
   opacity: 0;
   overflow: hidden;
