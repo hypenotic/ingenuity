@@ -152,8 +152,14 @@ $(function() {
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 
-var win = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-if ( win < 400 ) {
+// var win = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+// if ( win < 480 ) {
+//   var isDraggable = false;
+// } else {
+  
+// }
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   var isDraggable = false;
 } else {
   var isDraggable = true;
