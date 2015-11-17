@@ -360,7 +360,7 @@ span.sq-ft {
 @-webkit-keyframes push{
 	0% { opacity: 0; }
 	5% { opacity: 0; -webkit-transform:rotate(0deg) scale(2) skew(0deg) translate(0px);}
-		10% { opacity: 1; -webkit-transform: translateX(0px); }
+	10% { opacity: 1; -webkit-transform: translateX(0px); }
 	25% { opacity: 1; -webkit-transform: translateX(0px); }
 	30% { opacity: 0; -webkit-transform: translateX(0px); }
 	80% { opacity: 0; }

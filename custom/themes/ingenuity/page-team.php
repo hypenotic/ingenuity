@@ -29,9 +29,11 @@
 	    </hgroup>
 	</div>
 
-	<section class="team-page__intro">
+	<div class="main-wrapper"> 
+		<section class="main-content standard-center"> 
 		<?php the_content(); ?>
-	</section>
+		</section>
+	</div>
 
 		<div class="team__container">
 		<?php // bring in the team members!
