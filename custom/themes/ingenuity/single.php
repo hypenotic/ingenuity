@@ -6,8 +6,8 @@
     <?php // Grabbing meta variables
     $banner       = get_post_meta( $post->ID, '_blogadd_hero', true );
     $bannerurl    = wp_get_attachment_image_src( $banner,'blogadd', true );
-    $heading      = wpautop(get_post_meta($post->ID,'_blogadd_heroheading',true));
-    $subheading   = wpautop(get_post_meta($post->ID,'_blogadd_subheading',true));
+    $heading      = get_post_meta( $post->ID, '_blogadd_heroheading', true );
+    $subheading   = get_post_meta( $post->ID, '_blogadd_subheading', true );
     $pullquote    = wpautop(get_post_meta($post->ID,'_blogadd_pullquote',true));
 
     $url          = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
