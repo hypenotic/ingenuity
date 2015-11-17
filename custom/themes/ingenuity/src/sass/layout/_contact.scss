@@ -14,10 +14,6 @@
 	}
 	width: 100%;
 	padding: 25px;
-	@include media($bp-small) {
-		min-height: 100vh;
-		@include flex-direction(column);
-	}
 }
 
 .contact__single {
