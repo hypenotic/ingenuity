@@ -74,7 +74,7 @@
           if (!empty( $next_post )): ?>
               <a href="<?php echo get_permalink( $next_post->ID ); ?>">
               <div class="blog-nav__arrow blog-nav__arrow--next">
-                  <p>next post</p>
+                  <p>Next Post</p>
               </div>
               </a>
           <?php endif; ?>
