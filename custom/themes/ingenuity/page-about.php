@@ -20,7 +20,7 @@
       $ctalink 		= get_post_meta($post->ID,'_cta_blink',true);
   ?>
 
-	<div class="default-hero about-page">
+	<div class="default-hero about-header">
 	    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
 	    <hgroup class="animated fadeInDown">
 	        <h1><?php echo $heading; ?></h1>
