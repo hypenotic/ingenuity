@@ -1,6 +1,9 @@
 #contact-map {
 	width: 100%;
 	min-height: 80vh;
+	@include media($mobile-landscape) {
+		min-height: 90vh;
+	}
 }
 
 .contact-container {
@@ -24,6 +27,10 @@
 	margin: 1.5%;
 	@include flex(0 0 30%);
 	@include media($bp-small) {
+		padding: 0 10px 50px;
+		@include flex(1 0 auto);
+	}
+	@include media($mobile-landscape) {
 		padding: 0 10px 50px;
 		@include flex(1 0 auto);
 	}
