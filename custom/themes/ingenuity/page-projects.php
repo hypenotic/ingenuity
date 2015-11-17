@@ -15,7 +15,7 @@
 	    $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
 	?>
 
-		<div class="default-hero">
+		<div class="default-hero project-index">
 		    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
 		    <hgroup class="animated fadeInDown">
 		        <h1><?php echo $heading; ?></h1>
