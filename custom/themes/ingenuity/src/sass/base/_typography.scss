@@ -209,8 +209,8 @@ span.black-highlight {
 .default-hero.about-page {
 	h1 {
 		@include media($bp-small) {
-			font-size: modular-scale(2, 1rem);
-			line-height:modular-scale(2, 1rem);
+			font-size: modular-scale(1, 1rem);
+			line-height:modular-scale(1, 1rem);
 		}
 	}
 }
