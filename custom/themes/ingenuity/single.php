@@ -31,7 +31,7 @@
 
     <?php } else { ?>
     
-    <div class="default-hero no-banner">
+    <div class="default-hero">
         <figure style="background-size: cover; background-color: black;"></figure>
         <hgroup class="animated fadeInDown">
             <?php if ($heading) { ?>
