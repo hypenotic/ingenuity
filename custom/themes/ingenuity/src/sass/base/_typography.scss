@@ -327,6 +327,12 @@ main {
             padding: 0;
             float: none;
         }
+        @include media($mobile-landscape) {
+            font-size: modular-scale(3);
+            line-height: modular-scale(3);
+            padding: 0;
+            float: none;
+        }
 	}
 }
 

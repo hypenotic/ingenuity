@@ -102,6 +102,9 @@
 	@include media($bp-small) {
 		font-size: modular-scale(2);
 	}
+	@include media($mobile-landscape) {
+		font-size: modular-scale(2);
+	}
 	blockquote {
 		color: $white;
 		&:before {
