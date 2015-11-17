@@ -88,7 +88,7 @@
         <div class="main-wrapper">
             
             <?php if ($gallery) { ?>
-            <section class="project__gallery clearfix">
+            <section class="project__gallery">
                 <?php get_template_part( 'template-part-gallery' ); ?> 
             </section>
             <?php } ?>  
