@@ -21,6 +21,7 @@
 	@include flex(1 0 auto);
 	@include media($bp-small) {
 		margin-bottom: 25px;
+		@include flex(1 0 auto);
 	}
 	@include media($bp-med) {
 		margin-bottom: 25px;
@@ -229,9 +230,6 @@ form.footer-newsletter {
 }
 
 .footer__cta {
-	// background-color: $yellow;
-	height: 100%;
-	width: 100%;
 	position: relative;
 	h4 {
 		font-family: $lite-headings;
