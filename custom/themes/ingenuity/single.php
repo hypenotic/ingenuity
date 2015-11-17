@@ -4,19 +4,19 @@
 
     
     <?php // Grabbing meta variables
-    $banner      = wpautop(get_post_meta($post->ID,'_blogadd_banner',true));
-    $bannerurl  = wp_get_attachment_image_src( $banner,'blogadd', true );
+    $banner       = wpautop(get_post_meta($post->ID,'_blogadd_banner',true));
+    $bannerurl    = wp_get_attachment_image_src( $banner,'blogadd', true );
     $heading      = wpautop(get_post_meta($post->ID,'_blogadd_heroheading',true));
-    $subheading      = wpautop(get_post_meta($post->ID,'_blogadd_subheading',true));
-    $pullquote      = wpautop(get_post_meta($post->ID,'_blogadd_pullquote',true));
+    $subheading   = wpautop(get_post_meta($post->ID,'_blogadd_subheading',true));
+    $pullquote    = wpautop(get_post_meta($post->ID,'_blogadd_pullquote',true));
 
-    $url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+    $url          = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
     ?>
 
 
-    <?php if ( has_post_thumbnail( $post->ID ) ) { ?>
+    <?php if ( $banner ) { ?>
     <div class="default-hero blog-hero">
-        <figure style="background-image: url('<?php echo $url[0] ?>'); background-size: cover;"></figure>
+        <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
         <hgroup class="animated fadeInDown">
             <h1>
                 <?php if ($heading) { ?>
@@ -25,14 +25,12 @@
                     <?php single_post_title(); ?>
                 <?php } ?>
             </h1>
-            <?php if ($subheading) { ?>
-              <h2><?php echo $subheading; ?></h2>
-            <?php } ?>
+            <h2><?php echo $subheading; ?></h2>
         </hgroup>
     </div>
     <?php } else { ?>
     <div class="default-hero blog-hero">
-        <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
+        <figure style="background-size: cover; background-color: black;"></figure>
         <hgroup class="animated fadeInDown">
             <h1>
                 <?php if ($heading) { ?>
