@@ -24,7 +24,7 @@
 	margin: 1.5%;
 	@include flex(0 0 30%);
 	@include media($bp-small) {
-		padding: 0 25px 50px;
+		padding: 0 10px 50px;
 		@include flex(1 0 auto);
 	}
 	h3 {
