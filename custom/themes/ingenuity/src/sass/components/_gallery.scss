@@ -10,6 +10,10 @@
         @include flex-direction(row);
         @include flex-wrap(wrap);
     }
+    @include media($mobile-landscape) {
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
+    }
     @include media($bp-small) {
         @include flex-direction(column);
         @include flex-wrap(wrap);
@@ -28,23 +32,30 @@
     @include align-items(flex-start);
     @include justify-content(center);
     @include flex-direction(column);
-    @include media($bp-large) {
-        @include flex-direction(row);
-    }
     @include media($bp-small) {
         @include flex(1 0 auto);
         @include flex-direction(column);
+    }
+    @include media($mobile-landscape) {
+        @include flex(1 0 auto);
+        @include flex-direction(column);
+    }
+    @include media($bp-large) {
+        @include flex-direction(row);
     }
 }
 
 .gallery__single-half {
     position: relative;
+    @include media($bp-small) {
+        @include flex(1 0 auto);
+    }
+    @include media($mobile-landscape) {
+        @include flex(1 0 auto);
+    }
     @include media($bp-large) {
         @include flex(0 0 50%);
         // max-height: 450px;
-    }
-    @include media($bp-small) {
-        @include flex(1 0 auto);
     }
 }
 
