@@ -542,10 +542,19 @@ h2.team__hero-subheading {
 		padding-left: 20px;
 		font-size: modular-scale(1);
 		line-height: modular-scale(2);
+		@include media($bp-small) {
+			padding-left: 0;
+			font-size: modular-scale(1, 1.3rem);
+			line-height: modular-scale(2, 1.3rem);
+		}
 	}
 	blockquote p {
 		font-size: modular-scale(1);
 		line-height: modular-scale(2);
+		@include media($bp-small) {
+			font-size: modular-scale(1, 1rem);
+			line-height: modular-scale(2, 1rem);
+		}
 		@include media($mobile-landscape) {
 			font-size: modular-scale(0);
 			line-height: modular-scale(1);
