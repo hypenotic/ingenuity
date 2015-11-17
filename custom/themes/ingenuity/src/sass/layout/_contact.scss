@@ -12,6 +12,9 @@
 	@include justify-content(center);
 	@include flex-wrap(wrap);
 	@include flex-direction(column);
+	@include media($mobile-landscape) {
+		@include flex-direction(column);
+	}
 	@include media($bp-large) {
 		@include flex-direction(row);
 	}
