@@ -61,6 +61,7 @@
 	@include align-items(center);
 	@include justify-content(center);
 	hgroup {
+		width: 100%;
 		@include display(flex);
 		// @include align-items(center);
 		// @include justify-content(center);

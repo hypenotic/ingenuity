@@ -4420,6 +4420,7 @@ form.footer-newsletter {
   -ms-flex-pack: center; }
   .home-hero hgroup,
   .default-hero hgroup {
+    width: 100%;
     display: -webkit-box;
     display: -moz-box;
     display: box;
