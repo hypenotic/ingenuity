@@ -4,7 +4,7 @@
 
     
     <?php // Grabbing meta variables
-    $banner       = wpautop(get_post_meta($post->ID,'_blogadd_banner',true));
+    $banner       = get_post_meta( $post->ID, '_blogadd_hero', true );
     $bannerurl    = wp_get_attachment_image_src( $banner,'blogadd', true );
     $heading      = wpautop(get_post_meta($post->ID,'_blogadd_heroheading',true));
     $subheading   = wpautop(get_post_meta($post->ID,'_blogadd_subheading',true));
@@ -13,37 +13,39 @@
     $url          = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
     ?>
 
-
-    <?php if ( $banner ) { ?>
-    <div class="default-hero blog-hero">
+    <?php if ($banner) { ?>
+    
+    <div class="default-hero">
         <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
         <hgroup class="animated fadeInDown">
-            <h1>
-                <?php if ($heading) { ?>
-                    <h1><?php echo $heading; ?></h1>
-                <?php } else { ?>
-                    <?php single_post_title(); ?>
-                <?php } ?>
-            </h1>
+            <?php if ($heading) { ?>
+            <h1><?php echo $heading; ?></h1>
+            <?php } else { ?>
+            <h1><?php the_title(); ?></h1>
+            <?php } ?>
+            <?php if ($subheading) { ?>
             <h2><?php echo $subheading; ?></h2>
+            <?php } ?>
         </hgroup>
     </div>
+
     <?php } else { ?>
-    <div class="default-hero blog-hero">
+    
+    <div class="default-hero no-banner">
         <figure style="background-size: cover; background-color: black;"></figure>
         <hgroup class="animated fadeInDown">
-            <h1>
-                <?php if ($heading) { ?>
-                    <h1><?php echo $heading; ?></h1>
-                <?php } else { ?>
-                    <?php single_post_title(); ?>
-                <?php } ?>
-            </h1>
+            <?php if ($heading) { ?>
+            <h1><?php echo $heading; ?></h1>
+            <?php } else { ?>
+            <h1><?php the_title(); ?></h1>
+            <?php } ?>
+            <?php if ($subheading) { ?>
             <h2><?php echo $subheading; ?></h2>
+            <?php } ?>
         </hgroup>
     </div>
-    <?php } ?>
 
+    <?php } ?>
   
     <?php if ($pullquote) { ?>
     <section class="blog-single-intro">

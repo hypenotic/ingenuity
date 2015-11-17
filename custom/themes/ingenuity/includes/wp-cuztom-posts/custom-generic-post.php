@@ -17,7 +17,7 @@ $posts->add_meta_box(
     'Blog Extras', 
     array(
         array(
-            'name'          => 'banner',
+            'name'          => 'hero',
             'label'         => 'Banner Image',
             'description'   => 'Upload image here.',
             'type'          => 'image',
