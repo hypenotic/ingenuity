@@ -191,7 +191,8 @@ span.black-highlight {
 			line-height:modular-scale(2, 1.3rem);
 		}
 	}
-	h2 {
+	h2,
+	h2 p {
 		font-family: $lite-headings;
 		font-weight: 300;
 		font-size: modular-scale(2, 1rem);
