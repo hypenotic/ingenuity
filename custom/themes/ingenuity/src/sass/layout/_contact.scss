@@ -12,13 +12,17 @@
 	@include media($bp-large) {
 		@include flex-direction(row);
 	}
+	@include media($bp-small) {
+		@include flex-direction(column);
+	}
 	width: 100%;
+	min-height: 100%;
 	padding: 25px;
 }
 
 .contact__single {
 	width: 100%;
-	position: relative;
+	// position: relative;
 	// min-height: 400px;	
 	padding: 0 25px;
 	margin: 1.5%;
