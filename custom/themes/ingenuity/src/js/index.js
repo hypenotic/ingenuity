@@ -125,6 +125,7 @@ $(function() {
       player.api('seekTo',8);
   });
 });
+
 // Menu Toggle ============================================
 
 // var anchor = document.getElementById('toggle-button');

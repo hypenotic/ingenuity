@@ -9,6 +9,7 @@ var gulp          = require('gulp'),
     notify        = require('gulp-notify'),
     autoprefixer  = require('gulp-autoprefixer'),
     jshint        = require('gulp-jshint');
+    minifyCss     = require('gulp-minify-css');
 
 // Create custom variables to make life easier
 var outputDir = 'dist';
@@ -60,7 +61,8 @@ gulp.task('sass', function() {
     return sass('src/sass/style.scss', sassOptions) 
     .on('error', function (err) { console.error('Error!', err.message); })
     .pipe(autoprefixer('last 2 version', 'ie 9'))
-    .pipe(gulp.dest(''))
+    .pipe(minifyCss())
+    .pipe(gulp.dest(outputDir + '/css'))
     .pipe(livereload())
     .pipe(notify("sass task finished"));
 }); 
