@@ -46,6 +46,9 @@ nav {
   -webkit-animation: firstFadeInAndDrop .5s;
   -moz-animation: firstFadeInAndDrop .5s;
   animation: firstFadeInAndDrop .5s;
+  @include media($bp-small) {
+    height: 70px;
+  }
   @include media($mobile-landscape) {
     height: 60px;
   }
@@ -92,8 +95,8 @@ nav:hover {
   -o-user-select: none;
   user-select: none;
   @include media($bp-small) {
-    font-size: modular-scale(2, 1.3rem); 
-    line-height: modular-scale(2, 1.6rem); 
+    font-size: modular-scale(1); 
+    line-height: modular-scale(1); 
   }
   @include media($mobile-landscape) {
     font-size: modular-scale(1); 
