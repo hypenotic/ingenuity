@@ -152,6 +152,13 @@ $(function() {
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 
+var win = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+if ( win < 400 ) {
+  var isDraggable = false;
+} else {
+  var isDraggable = true;
+}
+
 function init() {
 
   // Basic options for a simple Google Map
@@ -161,6 +168,7 @@ function init() {
      zoom: 15,
 
      scrollwheel:  false,
+     draggable: isDraggable,
 
      // The latitude and longitude to center the map (always required)
      center: new google.maps.LatLng(43.5238744, -79.7086458), // New York
