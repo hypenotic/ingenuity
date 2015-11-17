@@ -324,14 +324,14 @@ main {
         @include media($bp-small) {
             font-size: modular-scale(3);
             line-height: modular-scale(3);
-            padding: 0;
-            float: none;
+            padding: 0 10px 0 5px;
+            float: left;
         }
         @include media($mobile-landscape) {
-            font-size: modular-scale(3);
-            line-height: modular-scale(3);
-            padding: 0;
-            float: none;
+            font-size: modular-scale(3, 1.6rem);
+            line-height: modular-scale(3, 1.6rem);
+            padding: 0 10px 0 5px;
+            float: left;
         }
 	}
 }
@@ -546,7 +546,12 @@ h2.team__hero-subheading {
 	blockquote p {
 		font-size: modular-scale(1);
 		line-height: modular-scale(2);
+		@include media($mobile-landscape) {
+			font-size: modular-scale(0);
+			line-height: modular-scale(1);
+		}
 	}
+
 }
 
 .blog-single-post {
