@@ -74,6 +74,7 @@ nav {
   }
   @include media($bp-small) {
     height: 70px;
+    background-color: $black;
   }
   @include media($mobile-landscape) {
     height: 60px;
@@ -239,6 +240,9 @@ nav.home-header.expanded {
 
 nav.logo-appear #navigation ul#menu-main-menu {
   margin-top: -70px;
+  @include media($bp-small) {
+    margin-top: 0;
+  }
 }
 
 #navigation ul {
