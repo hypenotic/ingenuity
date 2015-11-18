@@ -166,6 +166,7 @@ nav.home-header.expanded:hover {
   display: none;
   transition: all 0.5s;
   font-family: $main-headings;
+  font-weight: 800;
   @include media($bp-small) {
     display: block;
     font-size: modular-scale(1); 
