@@ -26,8 +26,9 @@
 		<?php if (is_front_page()) { ?>
 			<nav class="home-header">
 				<div class="site-width home-width">
-				  <a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo" id="home-logo"></a>
-				  <span class="menu icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
+					<p id="default-logo-text">INGENUITY</p>
+					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo - General Contracting" id="home-logo"></a>
+					<span class="menu icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
 				</div>
 		    	<?php 
 				    wp_nav_menu(array(
@@ -41,8 +42,8 @@
 			<nav class="default-home-header">
 				<div class="site-width default-width">
 					<p id="default-logo-text">INGENUITY</p>
-				  <a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo" id="default-logo" ></a>
-				  <span class="menu icon" id="default-menu-icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
+					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo - General Contacting" id="default-logo" ></a>
+					<span class="menu icon" id="default-menu-icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
 				</div>
 	    	<?php 
 			    wp_nav_menu(array(

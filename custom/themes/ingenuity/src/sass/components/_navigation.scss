@@ -3,6 +3,9 @@
     max-height: 170px;
     width: auto;
     padding-top: 25px;
+    @include media($bp-small) {
+      display: none;
+    }
   }
   img#default-logo {
     max-height: 170px;
@@ -216,7 +219,7 @@ nav.default-home-header.logo-appear.detached.expanded {
 }
 
 /* increases menu width & height */
-nav.home-header.expanded {
+nav.expanded {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -439,8 +442,8 @@ span.menu.icon {
 }
 
 #nav-menu-text {
-  font-family: $lite-headings;
-  font-weight: 300;
+  font-family: $main-headings;
+  // font-weight: 300;
   text-transform: uppercase;
   font-size: modular-scale(0, 0.9rem);
   // margin-top: 5px;
