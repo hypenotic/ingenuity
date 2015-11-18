@@ -49,8 +49,8 @@ h1 {
 .home-hero {
 	h1 {
 		@include media($bp-large) {
-		    font-size: modular-scale(7, 1.2rem); //32px
-		    line-height: modular-scale(7, 1.2rem);
+		    font-size: modular-scale(7, 1rem); //32px
+		    line-height: modular-scale(7, 1rem);
 		    margin: 20px 100px;
 		    text-shadow: 3px 3px 3px rgba(0,0,0,0.2);
 		}
