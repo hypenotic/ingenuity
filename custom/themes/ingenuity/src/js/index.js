@@ -31,7 +31,7 @@ var previousScroll = 0, // previous scroll position
         } else {
           // only remove “detached” class if user is at the top of document (menu jump fix)
           if (currentScroll <= 0){
-            $('nav').removeClass();
+            $('nav').removeClass('detached');
           }
         }
         // if user is at the bottom of document show menu
@@ -344,10 +344,12 @@ function headerinit() {
       if (distanceY > shrinkOn) {
           classie.add(header,"smaller");
           classie.add(headerh,"logo-appear");
+          classie.remove(headerh,"logo-appear-top");
       } else {
           if (classie.has(header,"smaller")) {
               classie.remove(header,"smaller");
               classie.remove(headerh,"logo-appear");
+              classie.add(headerh,"logo-appear-top");
           }
       }
   });
