@@ -9,17 +9,19 @@ $max-width: em(1100);
 
 // Major: Content centric breakpoints
 $mobile-landscape: em(450);
-$tab-landscape: em(1024);
+$tab-hmax: em(770);
+$tab-wmax: em(1030);
 
 // Portrait
-$bp-xlarge: new-breakpoint(min-width 80em 12);
+$bp-xxlarge: new-breakpoint(min-width 94em 12);
+$bp-xlarge: new-breakpoint(min-width 81em 12);
 $bp-large: new-breakpoint(min-width 50em 12);
 $bp-med: new-breakpoint(min-width 30em max-width 50em 12);
 $bp-small: new-breakpoint(max-width 30em 5);
 
 // Landscape
 $mobile-landscape: new-breakpoint(max-height $mobile-landscape orientation landscape 2);
-$tablet-landscape: new-breakpoint(max-width $tab-landscape orientation landscape 12);
+$tablet-landscape: new-breakpoint(max-height $tab-hmax max-width $tab-wmax orientation landscape 12);
 
 // Visual Grid view
 $visual-grid: false;

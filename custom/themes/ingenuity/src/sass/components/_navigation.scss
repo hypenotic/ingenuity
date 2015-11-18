@@ -357,6 +357,10 @@ nav.default-home-header.expanded #navigation ul {
       font-size: modular-scale(0,1rem);
       line-height: modular-scale(0,1rem);
     }
+    @include media($bp-xlarge) {
+      font-size: modular-scale(3);
+      line-height: modular-scale(3);
+    }
     ul {
       li {
         font-size: modular-scale(2,1rem);

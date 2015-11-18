@@ -186,6 +186,10 @@ span.black-highlight {
 			font-size: modular-scale(5, 1.2rem);
 			line-height:modular-scale(5, 1.2rem);
 		}
+		@include media($bp-xlarge) {
+			font-size: modular-scale(6, 1.2rem);
+			line-height:modular-scale(6, 1.2rem);
+		}
 		@include media($mobile-landscape) {
 			font-size: modular-scale(2, 1.3rem);
 			line-height:modular-scale(2, 1.3rem);
@@ -563,6 +567,10 @@ h2.team__hero-subheading {
 			font-size: modular-scale(0);
 			line-height: modular-scale(1);
 		}
+	    @include media($tablet-landscape) {
+			font-size: modular-scale(0);
+			line-height: modular-scale(1);
+	    }
 	}
 }
 

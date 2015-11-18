@@ -70,6 +70,12 @@ body {
     }
 }
 
+.main-wrapper.blog-wrapper {
+    @include media($tablet-landscape) {
+		padding: 0 50px;
+    }
+}
+
 .blog-entry {
 	@include media($bp-large) {
 		@include span-columns(8);
