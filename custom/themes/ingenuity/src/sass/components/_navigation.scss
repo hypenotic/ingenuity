@@ -5,7 +5,7 @@
     padding-top: 25px;
   }
   img#default-logo {
-    max-height: 120px;
+    max-height: 170px;
     width: auto;
     padding-top: 25px;
     transition: all 0.5s;
@@ -53,7 +53,7 @@ nav {
   box-shadow: 0px 0px 7px rgba(0,0,0, 0.0);
   top: 0;
   width: 100%;
-  height: 150px; /* smaller height because font is smaller */
+  height: 170px; /* smaller height because font is smaller */
   // padding-top: 25px;
   right: 0;
   z-index: 900;
@@ -100,6 +100,12 @@ nav {
 /* on navigation hover add slight white bg */
 nav.default-home-header:hover {
   background: rgba(0,0,0,.7);
+}
+
+nav.default-home-header.logo-appear.detached {
+  @include media($bp-small) {
+    height: 70px;
+  }
 }
 
 nav.home-header:hover {
@@ -200,6 +206,12 @@ nav.expanded {
   }
   .default-width #default-logo-text {
     color: $black;
+  }
+}
+
+nav.default-home-header.logo-appear.detached.expanded {
+  @include media($bp-small) {
+    background: rgba(252, 216, 56,0.95);
   }
 }
 
@@ -343,6 +355,12 @@ nav.expanded #navigation {
     float: right;
     margin: 0;
     margin-top: -40px;
+    @include media($bp-small) {
+      position: absolute;
+      top: 30px;
+      right: 25px;
+      margin: 0;
+    }
   }
 }
 

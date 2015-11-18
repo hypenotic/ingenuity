@@ -338,7 +338,7 @@ function IEcheck() {
 function headerinit() {
   window.addEventListener('scroll', function(e){
       var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-          shrinkOn = 10,
+          shrinkOn = 20,
           header = document.getElementById("default-logo");
           headerh = document.querySelector("nav");
       if (distanceY > shrinkOn) {
