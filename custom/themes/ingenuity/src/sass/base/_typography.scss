@@ -183,8 +183,8 @@ span.black-highlight {
 			line-height:modular-scale(4, 1.3rem);
 		}
 		@include media($bp-large) {
-			font-size: modular-scale(5, 1.4rem);
-			line-height:modular-scale(5, 1.4rem);
+			font-size: modular-scale(5, 1.2rem);
+			line-height:modular-scale(5, 1.2rem);
 		}
 		@include media($mobile-landscape) {
 			font-size: modular-scale(2, 1.3rem);
