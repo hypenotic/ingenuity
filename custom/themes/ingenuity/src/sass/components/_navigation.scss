@@ -147,6 +147,8 @@ nav.home-header:hover {
     display: block;
     font-size: modular-scale(1); 
     line-height: modular-scale(1);
+    margin: 0;
+    margin-top: 20px;
   }
   &.logo-appear {
     display: block;
@@ -331,6 +333,11 @@ nav.expanded #navigation {
 }
 
 #default-menu-icon {
+  @include media($bp-small) {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+  }
   &.logo-appear {
     padding: 0;
     float: right;
