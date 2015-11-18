@@ -41,7 +41,7 @@
 		margin: 0 auto;
 		// padding-top: 100px;
 		@include media($bp-small) {
-		    top: 50%;
+		    top: 40%;
 		}
 		@include media($bp-med) {
 		    font-size: modular-scale(3); 

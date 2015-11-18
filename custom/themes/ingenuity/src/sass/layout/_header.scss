@@ -73,6 +73,12 @@
 	min-height: 100vh;
 	hgroup {
 		margin-top: 150px; //newnav
+		@include media($bp-small) {
+			margin-top: 5%;
+		}
+		@include media($mobile-landscape) {
+			margin-top: 5%;
+		}
 		img {
 			width: 200px;
 			height: auto;
@@ -107,6 +113,7 @@
 		position: relative;
 		z-index: 51;
 		margin-top: 150px;
+		
 	}
 }
 
@@ -124,7 +131,10 @@
 
 .default-hero.blog-index,
 .default-hero.project-index {
-	min-height: 50vh;
+	min-height: 80vh;
+	@include media($bp-small) {
+		min-height: 50vh;
+	}
 }
 
 .default-hero.project-index {

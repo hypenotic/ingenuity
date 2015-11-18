@@ -6,6 +6,9 @@
     @include media($bp-small) {
       display: none;
     }
+    @include media($mobile-landscape) {
+      display: none;
+    }
   }
   img#default-logo {
     max-height: 170px;
@@ -14,6 +17,9 @@
     transition: all 0.5s;
     opacity: 1;
     @include media($bp-small) {
+      display: none;
+    }
+    @include media($mobile-landscape) {
       display: none;
     }
     &.smaller {
@@ -81,6 +87,7 @@ nav {
   }
   @include media($mobile-landscape) {
     height: 60px;
+    background-color: $black;
   }
 }
 
@@ -112,7 +119,7 @@ nav.default-home-header.logo-appear.detached {
 }
 
 nav.home-header:hover {
-  background: rgba(0,0,0,0.0);
+  background: rgba(0,0,0,1.0);
 }
 
 nav.home-header.expanded:hover {
@@ -163,12 +170,26 @@ nav.home-header.expanded:hover {
     margin: 0;
     margin-top: 20px;
   }
+  @include media($mobile-landscape) {
+    display: inline-block;
+    font-size: modular-scale(1); 
+    line-height: modular-scale(1);
+    margin: 0;
+    margin-top: 20px;
+  }
   &.logo-appear {
     display: block;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 20px;
     max-width: 50%;
+  }
+}
+
+.home-header #default-logo-text {
+  @include media($bp-small) {
+    margin: 0;
+    margin-top: 12px;
   }
 }
 
@@ -211,7 +232,8 @@ nav.expanded {
   .site-width>a {
     color: $black;
   }
-  .default-width #default-logo-text {
+  .default-width #default-logo-text,
+  .home-width #default-logo-text {
     color: $black;
   }
 }
@@ -269,10 +291,17 @@ nav.logo-appear #navigation ul#menu-main-menu {
   }
 }
 
-nav.logo-appear #navigation ul#menu-main-menu {
-  margin-top: -70px;
+nav.default-home-header.logo-appear-top.expanded #navigation ul {
+  margin-top: -50px;
   @include media($bp-small) {
-    margin-top: 0;
+    margin-top: 20px;
+  }
+}
+
+nav.home-header.expanded #navigation ul,
+nav.default-home-header.expanded #navigation ul {
+  @include media($bp-small) {
+    margin-top: 20px;
   }
 }
 
@@ -378,6 +407,14 @@ nav.expanded #navigation {
       right: 25px;
       margin: 0;
     }
+  }
+}
+
+.home-header #default-menu-icon{
+  @include media($bp-small) {
+    position: absolute;
+    top: 12px;
+    right: 25px;
   }
 }
 
