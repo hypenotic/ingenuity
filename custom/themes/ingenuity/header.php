@@ -22,20 +22,35 @@
 
 <body class="cbp-spmenu-push" data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
 
-	<nav>
-	    <div class="site-width">
-	      <a href="http://www.ingenuity.ca" target="_blank">INGENUITY</a>
-	      <span class="menu icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
-	    </div>
-
-
-    	<?php 
-		    wp_nav_menu(array(
-		      'menu' => 'Main Menu',  
-		      'container_id' => 'navigation',
-		      'walker' => new Main_Menu_Walker()
-		    )); 
-    	?> 
-  	</nav>
+	
+		<?php if (is_front_page()) { ?>
+			<nav class="home-header">
+				<div class="site-width home-width">
+				  <a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo" id="home-logo"></a>
+				  <span class="menu icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
+				</div>
+		    	<?php 
+				    wp_nav_menu(array(
+				      'menu' => 'Main Menu',  
+				      'container_id' => 'navigation',
+				      'walker' => new Main_Menu_Walker()
+				    )); 
+		    	?> 
+			</nav>
+		<?php } else { ?>
+			<nav class="default-home-header">
+				<div class="site-width">
+				  <a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo" id="default-logo" ></a>
+				  <span class="menu icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
+				</div>
+	    	<?php 
+			    wp_nav_menu(array(
+			      'menu' => 'Main Menu',  
+			      'container_id' => 'navigation',
+			      'walker' => new Main_Menu_Walker()
+			    )); 
+	    	?> 
+			</nav>
+		<?php } ?>
 	
 	<main> 

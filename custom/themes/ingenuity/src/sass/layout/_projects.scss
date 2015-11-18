@@ -142,11 +142,10 @@
 }
 
 .js-video {
+	width: 100%;
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
-	width: 100%;
-
 	iframe {
 		width: 700px;
 		height: 393px ;
