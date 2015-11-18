@@ -114,10 +114,10 @@
 		z-index: 51;
 		margin-top: 150px;
 		@include media($bp-small) {
-			margin-top: 5%;
+			margin-top: 8%;
 		}
 		@include media($mobile-landscape) {
-			margin-top: 5%;
+			margin-top: 8%;
 		}
 	}
 }
