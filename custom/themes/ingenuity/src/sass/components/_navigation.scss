@@ -80,6 +80,9 @@ nav {
   animation: firstFadeInAndDrop .5s;
   &.logo-appear {
     height: 80px;
+    @include media($mobile-landscape) {
+      height: 60px;
+    }
   }
   @include media($bp-small) {
     height: 70px;
@@ -290,6 +293,9 @@ nav.logo-appear #navigation ul#menu-main-menu {
   @include media($bp-small) {
     margin-top: 0;
   }
+  @include media($mobile-landscape) {
+    margin-top: 0;
+  }
 }
 
 nav.default-home-header.logo-appear-top.expanded #navigation ul {
@@ -408,6 +414,12 @@ nav.expanded #navigation {
     @include media($bp-small) {
       position: absolute;
       top: 30px;
+      right: 25px;
+      margin: 0;
+    }
+    @include media($mobile-landscape) {
+      position: absolute;
+      top: 23px;
       right: 25px;
       margin: 0;
     }
