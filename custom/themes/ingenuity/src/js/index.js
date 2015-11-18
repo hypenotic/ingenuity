@@ -336,22 +336,43 @@ function IEcheck() {
 
 // Header Logo Shrink
 function headerinit() {
-    window.addEventListener('scroll', function(e){
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 300,
-            header = document.getElementById("home-logo");
-        if (distanceY > shrinkOn) {
-            classie.add(header,"smaller");
-        } else {
-            if (classie.has(header,"smaller")) {
-                classie.remove(header,"smaller");
-            }
-        }
-    });
+  window.addEventListener('scroll', function(e){
+      var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+          shrinkOn = 10,
+          header = document.getElementById("default-logo");
+          headerh = document.querySelector("nav");
+      if (distanceY > shrinkOn) {
+          classie.add(header,"smaller");
+          classie.add(headerh,"logo-appear");
+      } else {
+          if (classie.has(header,"smaller")) {
+              classie.remove(header,"smaller");
+              classie.remove(headerh,"logo-appear");
+          }
+      }
+  });
 }
 window.onload = headerinit();
 
-
+// Header Text Appear
+function logotextinit() {
+  window.addEventListener('scroll', function(e){
+      var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+          appearOn = 100,
+          header = document.getElementById("default-logo-text");
+          icon = document.getElementById("default-menu-icon");
+      if (distanceY > appearOn) {
+          classie.add(header,"logo-appear");
+          classie.add(icon,"logo-appear");
+      } else {
+          if (classie.has(header,"logo-appear")) {
+              classie.remove(header,"logo-appear");
+              classie.remove(icon,"logo-appear");
+          }
+      }
+  });
+}
+window.onload = logotextinit();
 
 
 

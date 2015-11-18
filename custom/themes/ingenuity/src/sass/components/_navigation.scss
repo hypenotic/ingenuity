@@ -8,6 +8,12 @@
     max-height: 120px;
     width: auto;
     padding-top: 25px;
+    transition: all 0.5s;
+    opacity: 1;
+    &.smaller {
+      max-height:75px;
+      opacity: 0;
+    }
   }
 }
 
@@ -60,6 +66,9 @@ nav {
   -webkit-animation: firstFadeInAndDrop .5s;
   -moz-animation: firstFadeInAndDrop .5s;
   animation: firstFadeInAndDrop .5s;
+  &.logo-appear {
+    height: 80px;
+  }
   @include media($bp-small) {
     height: 70px;
   }
@@ -103,7 +112,7 @@ nav.home-header:hover {
   }
 }
 
-.default-home-header .site-width {
+.site-width.default-width {
   padding: 0 10%;
 }
 
@@ -123,6 +132,19 @@ nav.home-header:hover {
   @include media($mobile-landscape) {
     font-size: modular-scale(1); 
     line-height: modular-scale(1); 
+  }
+}
+
+#default-logo-text {
+  display: none;
+  transition: all 0.5s;
+  font-family: $main-headings;
+  &.logo-appear {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 20px;
+    max-width: 50%;
   }
 }
 
@@ -165,6 +187,9 @@ nav.expanded {
   .site-width>a {
     color: $black;
   }
+  .default-width #default-logo-text {
+    color: $black;
+  }
 }
 
 /* increases menu width & height */
@@ -202,6 +227,10 @@ nav.home-header.expanded {
     margin: 0;
     width: 100%;
   }
+}
+
+nav.logo-appear #navigation ul#menu-main-menu {
+  margin-top: -70px;
 }
 
 #navigation ul {
@@ -286,6 +315,15 @@ nav.expanded #navigation {
   font-size: modular-scale(0,1rem);
   @include media($bp-small) {
     padding: 15px 0 0;
+  }
+}
+
+#default-menu-icon {
+  &.logo-appear {
+    padding: 0;
+    float: right;
+    margin: 0;
+    margin-top: -40px;
   }
 }
 
