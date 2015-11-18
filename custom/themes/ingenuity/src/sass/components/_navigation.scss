@@ -241,6 +241,7 @@ nav.expanded {
 nav.default-home-header.logo-appear.detached.expanded {
   @include media($bp-small) {
     background: rgba(252, 216, 56,0.95);
+    height: 100%;
   }
 }
 
@@ -295,6 +296,9 @@ nav.default-home-header.logo-appear-top.expanded #navigation ul {
   margin-top: -50px;
   @include media($bp-small) {
     margin-top: 20px;
+  }
+  @include media($mobile-landscape) {
+    margin-top: 0px;
   }
 }
 
