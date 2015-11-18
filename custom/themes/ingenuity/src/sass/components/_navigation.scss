@@ -115,6 +115,10 @@ nav.home-header:hover {
   background: rgba(0,0,0,0.0);
 }
 
+nav.home-header.expanded:hover {
+  background-color: rgba(252, 216, 56, 1);
+}
+
 /* limits width of menu to site width */
 .site-width {
   max-width: 100%;
@@ -233,6 +237,9 @@ nav.expanded {
 
 .home-header #navigation ul {
   margin-top: -20px;
+  li {
+    padding: 10px 15% 2px;
+  }
 }
 
 /* positions navigation content */
@@ -262,6 +269,13 @@ nav.logo-appear #navigation ul#menu-main-menu {
   }
 }
 
+nav.logo-appear #navigation ul#menu-main-menu {
+  margin-top: -70px;
+  @include media($bp-small) {
+    margin-top: 0;
+  }
+}
+
 #navigation ul {
   text-transform: uppercase;
   text-align: left;
@@ -281,8 +295,8 @@ nav.logo-appear #navigation ul#menu-main-menu {
   li {
     padding: 2px 15%;
     padding-top: 10px;
-    font-size: modular-scale(4,0.9rem);
-    line-height: modular-scale(4,0.9rem);
+    font-size: modular-scale(4,0.8rem);
+    line-height: modular-scale(4,0.8rem);
     font-weight: 400;
     font-family: $main-headings;
     &:hover{
