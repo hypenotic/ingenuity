@@ -10,6 +10,9 @@
     padding-top: 25px;
     transition: all 0.5s;
     opacity: 1;
+    @include media($bp-small) {
+      display: none;
+    }
     &.smaller {
       max-height:75px;
       opacity: 0;
@@ -139,6 +142,11 @@ nav.home-header:hover {
   display: none;
   transition: all 0.5s;
   font-family: $main-headings;
+  @include media($bp-small) {
+    display: block
+    font-size: modular-scale(1); 
+    line-height: modular-scale(1);
+  }
   &.logo-appear {
     display: block;
     margin-top: 0;
