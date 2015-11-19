@@ -6,17 +6,20 @@
     @include justify-content(center);
     @include flex-direction(column);
     @include flex-wrap(wrap);
-    @include media($bp-large) {
-        @include flex-direction(row);
+    @include media($bp-small) {
+        @include flex-direction(column);
         @include flex-wrap(wrap);
     }
     @include media($mobile-landscape) {
         @include flex-direction(column);
         @include flex-wrap(wrap);
     }
-    @include media($bp-small) {
-        @include flex-direction(column);
+    @include media($bp-large) {
+        @include flex-direction(row);
         @include flex-wrap(wrap);
+    }
+    @include media($tablet-landscape) {
+        padding: 0 50px;
     }
 }
 
