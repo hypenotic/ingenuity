@@ -92,6 +92,7 @@
     color: $white;
     // min-height: 100vh;
     @include media($bp-small) {
+        padding: 30px;
     }
     p {
         margin: 0;
@@ -100,8 +101,8 @@
         font-weight: 300;
         // font-family: $lite-headings;
         @include media($bp-small) {
-            font-size: modular-scale(0, 1.1rem);
-            line-height: modular-scale(1, 1.1rem);
+            font-size: modular-scale(0, 1rem);
+            line-height: modular-scale(1, 1rem);
         }
     }
 }

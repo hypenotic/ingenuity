@@ -77,7 +77,6 @@ h3,
 	font-family: $main-headings;
 	font-size: modular-scale(2); 
 	line-height: modular-scale(2, 1.5rem); 
-
 }
 
 h3 {
@@ -663,4 +662,26 @@ span.bolded-text {
 	}
 }
 
+.project__testimonial {
+	.testimonial__quotation {
+		@include media($bp-small) {
+			margin: 0 0 0 15px;
+		    font-size: modular-scale(1, 1.1rem); 
+		    line-height: modular-scale(1, 1.1rem); 
+		}
+	}
+	.testimonial__creds {
+		@include media($bp-small) {
+			h4 {
+				margin-top: 20px;
+				font-size: modular-scale(1, 1rem); 
+				line-height: modular-scale(1, 1rem); 
+			}
+			h5 {
+				font-size: modular-scale(0, 1rem); 
+				line-height: modular-scale(0, 1rem);
+			}
+		}
+	}
+}
 

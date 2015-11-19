@@ -114,8 +114,8 @@
 		    font-size: modular-scale(6, 1.8rem);
 		    color: rgba(255,255,255,0.3);
 		    @include media($bp-small) {
-		    	font-size: modular-scale(6);
-		    	margin-top: 15px 0 15px -1em;
+		    	font-size: modular-scale(5);
+		    	margin: 10px -0.5em;
 		    }
 		}
 		&:after {
@@ -198,6 +198,12 @@
 
 .project-nav__arrow--prev {
 	margin: 0 10px 0 0;
+	@include media($bp-small) {
+		margin-right: 0px;
+	}
+	@include media($bp-small) {
+		margin-bottom: 10px;
+	}
 	@include media($bp-med) {
 		margin-bottom: 0;
 	}
@@ -226,6 +232,9 @@
 
 .project-nav__arrow--next {
 	margin: 0 0 0 10px;
+	@include media($bp-small) {
+		margin-left: 0px;
+	}
 	&:after {
 		content:"";
 		position: absolute;
