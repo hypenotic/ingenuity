@@ -113,9 +113,9 @@ function mobilehome() {
 
   var currentpage = window.location.href;
   if (currentpage == "http://hypelabs.ca/ingenuity/") {
-    var theurl = '/ingenuity/custom/themes/ingenuity/dist/images/site.jpg';
+    var theurl = '/ingenuity/custom/themes/ingenuity/dist/images/site-default.jpg';
   } else {
-    var theurl = '/custom/themes/ingenuity/dist/images/site.jpg'
+    var theurl = '/custom/themes/ingenuity/dist/images/site-default.jpg'
   }
 
   var vid = document.getElementById("vid-check");
