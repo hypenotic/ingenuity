@@ -80,6 +80,13 @@ h3,
 
 }
 
+h3 {
+	@include media($bp-small) {
+	    font-size: modular-scale(2, 1.2rem); 
+	    line-height: modular-scale(2, 1.2rem); 
+	}
+}
+
 h4 {
 	font-family: $main-headings;
 	font-size: modular-scale(1); 
