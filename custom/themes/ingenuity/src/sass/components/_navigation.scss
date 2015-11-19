@@ -465,6 +465,11 @@ nav.expanded #navigation {
   font-size: 1.4em;
   line-height: 1.4em;
   padding-right: .15em;
+  @include media($bp-small) {
+    position: relative;
+    top: -15px;
+    right: -20px;
+  }
 }
 
 
