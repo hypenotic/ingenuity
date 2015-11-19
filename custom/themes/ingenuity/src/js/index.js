@@ -110,11 +110,19 @@ $(".close-push-panel").click(function() {
 
   // Check if mobile
 function mobilehome() {
+
+  var currentpage = window.location.href;
+  if (currentpage == "http://hypelabs.ca/ingenuity/") {
+    var theurl = '/ingenuity/custom/themes/ingenuity/dist/images/site.jpg';
+  } else {
+    var theurl = '/custom/themes/ingenuity/dist/images/site.jpg'
+  }
+
   var vid = document.getElementById("vid-check");
   var header = document.getElementById("header-check");
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     vid.style.display = "none";
-    header.style.backgroundImage = "url('/custom/themes/ingenuity/dist/images/site.jpg')";  
+    header.style.backgroundImage = "url('" + theurl + "')";  
   } else {
     header.style.background = "black"; 
   }
