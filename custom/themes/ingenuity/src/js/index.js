@@ -376,5 +376,16 @@ function logotextinit() {
 }
 window.onload = logotextinit();
 
+// Check if mobile
+function mobilehome() {
+  var vid = document.querySelector("fullscreen-bg");
+  var header = document.querySelector("home-hero");
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    vid.style.display = "none";
+    header.style.backgroundImage = "url('../images/site.jpg')";  
+} else {
+  
+}
+}
 
-
+window.onload = mobilehome();
