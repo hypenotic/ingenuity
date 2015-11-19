@@ -124,7 +124,7 @@ function mobilehome() {
     vid.style.display = "none";
     header.style.backgroundImage = "url('" + theurl + "')";  
   } else {
-    header.style.background = "black"; 
+    //nothing
   }
 };
 
