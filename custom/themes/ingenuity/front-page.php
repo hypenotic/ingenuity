@@ -11,8 +11,8 @@
       $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
   ?>
 
-	<div class="home-hero">
-		<div class="fullscreen-bg">
+	<div class="home-hero" id="header-check">
+		<div class="fullscreen-bg" id="vid-check">
 		     <?php dynamic_sidebar( 'homepage-vid' ); ?>
 		</div>
  		<hgroup class="rw-wrapper">
