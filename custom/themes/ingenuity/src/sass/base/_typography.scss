@@ -179,6 +179,10 @@ span.black-highlight {
 		padding-bottom: 0;
 		color: $white;
 		text-align: left;
+		@include media($bp-small) {
+			font-size: modular-scale(2, 1.4rem);
+			line-height:modular-scale(2, 1.4rem);
+		}
 		@include media($bp-med) {
 			font-size: modular-scale(4, 1.3rem);
 			line-height:modular-scale(4, 1.3rem);
@@ -206,8 +210,8 @@ span.black-highlight {
 		text-align: left;
 		margin: 0 20% 0 10%;
 		@include media($bp-small) {
-			font-size: modular-scale(1, 1rem);
-			line-height:modular-scale(1, 1rem);
+			font-size: modular-scale(1, 0.9rem);
+			line-height:modular-scale(1, 0.9rem);
 	    }
 	}
 	h2 p {
