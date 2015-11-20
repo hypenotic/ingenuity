@@ -21,10 +21,8 @@
 .two-column__half {
 	@include media($bp-large) {
 		@include flex(0 0 50%);
-		// max-height: 450px;
 	}
 	@include media($bp-small) {
-		// min-height: 100vh;
 	}
 }
 
@@ -39,49 +37,6 @@
 	@include media($mobile-landscape) {
 		padding: 0 15px 25px;
 	}
-	blockquote {
-		margin: 0;
-		font-style: italic;
-		font-size: modular-scale(1, 1.5rem);
-		line-height: modular-scale(1, 1.6rem);
-		font-weight: 400;
-		font-family: $lite-headings;
-		@include media($bp-small) {
-			font-size: modular-scale(1, 1.1rem);
-			line-height: modular-scale(1, 1.1rem);
-		}
-		&:before {
-		    content: '“';
-		    position: absolute;
-		    margin-left: -.4em;
-		    font-size: modular-scale(3, 1.6rem);
-		    font-family: $main-headings;
-		}
-
-		&:after {
-		    content: '”';
-		    font-family: $main-headings;
-		}
-	}
-	h4 {
-		margin: 0;
-		margin-top: 25px;
-		text-align: right;
-		// color: $grey;
-	}
-	h5 {
-		text-align: right;
-		margin: 0;
-		// color: $grey;
-	}
-	p {
-		padding-top: 20px;
-		padding-right: 20px;
-		text-align: right;
-		text-transform: uppercase;
-		font-size: modular-scale(0, 1.2rem);
-		line-height: modular-scale(0, 1.2rem);
-	}
 }
 
 .services-cta {
@@ -92,36 +47,5 @@
 	}
 	@include media($mobile-landscape) {
 		padding: 30px;
-	}
-	p {
-		font-family: $main-headings;
-		font-size: modular-scale(2, 1.3rem);
-		line-height: modular-scale(2, 1.3rem);
-		@include media($bp-small) {
-			font-size: modular-scale(1, 1.3rem);
-			line-height: modular-scale(1, 1.3rem);
-		}
-		@include media($mobile-landscape) {
-			font-size: modular-scale(1, 1.3rem);
-			line-height: modular-scale(1, 1.3rem);
-		}
-	}
-}
-
-.services-cta__btn {
-	font-family: $lite-headings;
-	text-transform: uppercase;
-	background-color: $black;
-	color: $white;
-	border: none;
-	font-weight: 300;
-	padding: 15px 20px;
-	font-size: modular-scale(0, 1.1rem);
-	line-height: modular-scale(0, 1.1rem);
-	border: 1px solid $black;
-	transition: all 0.5s;
-	letter-spacing: 1px;
-	&:hover {
-		// font-family: $main-headings;
 	}
 }

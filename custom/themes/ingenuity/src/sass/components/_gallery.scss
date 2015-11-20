@@ -1,3 +1,6 @@
+// Keeping type styles in here
+//  part of 'template-part-gallery.php'
+
 .project__gallery {
     width: 100%;
     position: relative;
@@ -21,10 +24,6 @@
     @include media($tablet-landscape) {
         padding: 0 50px;
     }
-}
-
-.gallery {
-    // height: 500px;
 }
 
 .gallery__single {
@@ -58,20 +57,17 @@
     }
     @include media($bp-large) {
         @include flex(0 0 50%);
-        // max-height: 450px;
     }
 }
 
 .gallery__single-half.gallery-image {
     position: relative;
     @include media($bp-small) {
-        // min-height: 100vh;
         @include display(flex);
         @include align-items(center);
         @include justify-content(center);
     }
     @include media($mobile-landscape) {
-        // min-height: 100vh;
         @include display(flex);
         @include align-items(center);
         @include justify-content(center);
@@ -79,9 +75,7 @@
     img {
         position: relative;
         width: 100%;
-        max-height: auto;
-        // padding-right: 25px;
-        
+        max-height: auto;        
     }
 }
 
@@ -90,7 +84,6 @@
     background-color: rgba(0,0,0,0.9);
     padding: 40px;
     color: $white;
-    // min-height: 100vh;
     @include media($bp-small) {
         padding: 30px;
     }
@@ -99,7 +92,6 @@
         font-size: modular-scale(0, 1.3rem);
         line-height: modular-scale(1, 1.3rem);
         font-weight: 300;
-        // font-family: $lite-headings;
         @include media($bp-small) {
             font-size: modular-scale(0, 1rem);
             line-height: modular-scale(1, 1rem);
@@ -119,9 +111,5 @@
         padding-right: 0;
         padding-left: 0;
     }
-}
-
-.gallery__single:nth-child(even) .gallery__single-half.gallery-caption {
-    // border-right: 25px solid $white;
 }
 

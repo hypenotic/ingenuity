@@ -3,9 +3,6 @@ body {
 }
 
 .main-wrapper {
-	// max-width: 1024px;
-	// margin: auto;
-	// padding: 0 50px 50px;
 	overflow-x: hidden;
 	@include outer-container;
 	@include media($bp-small) {
@@ -24,7 +21,6 @@ body {
 .main-content,
 .blog-entry {
 	position: relative;
-	// background-color: $white;
 	background-color: none;
 	padding: 50px 0;
 	@include media($bp-large) {
@@ -35,24 +31,6 @@ body {
     	position: relative;
     	width: 100%;
 		height: auto;
-    }
-    blockquote {
-    	margin: 0;
-    	border-left: 0;
-		@include media($bp-small) {
-			font-size: modular-scale(0, 1.5rem);
-			line-height: modular-scale(1, 1.5rem);
-			p {
-				font-size: modular-scale(0, 1.1rem);
-				line-height: modular-scale(1, 1.1rem);
-			}
-	    }
-    }
-    ul {
-    	margin: -15px 0 15px 0;
-    	li {
-    		padding: 7px 0;
-    	}
     }
 }
 
@@ -115,7 +93,6 @@ nav.main-nav {
 	}
 	a {
 		padding-bottom: 2px;
-		// border-bottom: 2px solid rgba(255,255,255,0.4);
 	}
 	i {
 		margin-right: 10px;
@@ -177,42 +154,7 @@ nav.main-nav {
   }
 }
 
-.full-width.full-quote { 
-	overflow-x: hidden;
-	font-family: $p-font;
-	font-style: italic;
-	font-weight: 600;
-	font-size: modular-scale(2);
-	line-height: modular-scale(3);
-	text-align: center;
-	padding: 40px 0;
-	p {
-		color: $yellow;
-		font-family: $p-font;
-		font-style: italic;
-		font-weight: 600;
-		font-size: modular-scale(2);
-		line-height: modular-scale(3);
-		text-align: center;
-	}
-	@include media($bp-large) {
-		text-align:center;
-		margin-left: -10%;
-		margin-right: -10%;
-	}
-	@include media($bp-small) {
-		font-size: modular-scale(1);
-		line-height: modular-scale(2);
-	}
-}
-
-span.big-quotes {
-	font-size: modular-scale(3);
-	line-height: modular-scale(4);
-	text-align: center;
-}
-
-// 404/Search
+// =================== 404/Search
 
 button#we-owe-you {
 	padding: 10px 15px;
@@ -220,7 +162,6 @@ button#we-owe-you {
 	color: $black;
 	margin: 20px 10%;
 	background-color: $yellow;
-	// border: 1px solid $d-grey;
 	border: none;
 	text-transform: uppercase;
 	font-family: $lite-headings;
@@ -248,7 +189,6 @@ button#we-owe-you {
 .search-form-error {
 	@include display(flex);
 	@include align-items(center);
-	// @include justify-content(center);
 }
 
 

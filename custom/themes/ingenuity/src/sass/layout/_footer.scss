@@ -1,8 +1,6 @@
 .main-footer {
-	// min-height: 400px;
 	width: 100%;
 	background: $black;
-	color: $white;
 	padding: 25px;
 	@include display(flex);
 	@include align-items(flex-start);
@@ -11,9 +9,6 @@
 	@include media($bp-large) {
 		@include flex-direction(row);
 		padding: 50px;
-	}
-	a {
-		color: $yellow;
 	}
 }
 
@@ -29,36 +24,11 @@
 	@include media($bp-large) {
 		@include flex(0 0 30%);
 		margin: 0 1.5%;
-		// background: $white;
-		// height: 350px;
 	}
-	h3 {
-		font-family: $lite-headings;
-		margin-bottom: 10px;
-		text-transform: uppercase;
-	}
-	p {
-		margin-bottom: 5px;
-		// padding-left: 10px;
-		font-size: modular-scale(0, 1.2rem);
-		font-family: $lite-headings;
-	}
-}
-
-.footer__blog {
-	
-}
-
-.footer__news {
-	
 }
 
 #mc-embedded-subscribe-form.footer-newsletter {
 	padding: 0;
-	h4 {
-		font-family: $lite-headings;
-		margin-bottom: 20px;
-	}
 }
 
 form.footer-newsletter {
@@ -76,7 +46,8 @@ form.footer-newsletter {
 	}
 }
 
-/* Individual styles */
+// FOOTER EMAIL FIELD ==============================
+// 	keeping type-related code in here
 
 .input {
 	position: relative;
@@ -231,23 +202,9 @@ form.footer-newsletter {
 
 .footer__cta {
 	position: relative;
-	h4 {
-		font-family: $lite-headings;
-	}
 	img {
 		position: relative;
 		max-width: 50%;
 		height: auto;
-	}
-	button {
-		color: $black;
-		background-color: $yellow;
-		padding: 10px 15px;
-		font-family: $lite-headings;
-		border: 0;
-		margin: 20px 0;
-		&:hover {
-			background-color: $d-grey;
-		}
 	}
 }

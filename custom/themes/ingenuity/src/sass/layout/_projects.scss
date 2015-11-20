@@ -31,41 +31,16 @@
 	@include media($bp-large) {
 	    height: 300px;
 	}
-	h2 {
-		position: absolute;
-		top: 30%;
-		// bottom: 10%;
-		left: 5%;
-		right: 5%;
-		text-align: center;
-		margin: 0 auto;
-		// padding-top: 100px;
-		@include media($bp-small) {
-		    top: 40%;
-		}
-		@include media($bp-med) {
-		    font-size: modular-scale(3); 
-			line-height: modular-scale(3); 
-			top: 35%;
-		}
-		@include media($bp-large) {
-		    font-size: modular-scale(5); 
-			line-height: modular-scale(5); 
-		}
-	}
 	.projects__panel-img {
 		width: 100%;
 		height: 100%;
-		// height: 300px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
-		// margin-bottom: 40px;
 		position: absolute;
 		top: 0;
 		left: 0;
 		transition: all 0.2s;
-		// -webkit-transform: skew(16deg, 0);
 		padding: 25px;
 		filter: grayscale(0.0);
 		background-blend-mode: overlay;
@@ -91,42 +66,12 @@
 
 }
 
-
-
 // Project Testomonial
 
 .project__testimonial {
 	background-color: rgba(0,0,0,0.9);
 	padding: 50px 10%;
 	margin: 0 0 50px;
-	@include media($bp-small) {
-		font-size: modular-scale(2);
-	}
-	@include media($mobile-landscape) {
-		font-size: modular-scale(2);
-	}
-	blockquote {
-		color: $white;
-		&:before {
-		    content: '“';
-		    position: absolute;
-		    margin: 10px -0.5em;
-		    font-size: modular-scale(6, 1.8rem);
-		    color: rgba(255,255,255,0.3);
-		    @include media($bp-small) {
-		    	font-size: modular-scale(5);
-		    	margin: 10px -0.5em;
-		    }
-		}
-		&:after {
-		    content: '”';
-		    font-size: modular-scale(2, 1.3rem);
-		    color: rgba(255,255,255,0.3);
-		    @include media($bp-small) {
-		    	font-size: modular-scale(1);
-		    }
-		}
-	}
 }
 
 .testimonial__creds {
@@ -192,10 +137,6 @@
 	@include media($bp-large) {
 		width: 400px;
 		height: 100px;
-	}
-	p {
-		margin: 0;
-		font-family: $main-headings;
 	}
 }
 

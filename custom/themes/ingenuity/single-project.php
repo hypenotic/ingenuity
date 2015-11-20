@@ -68,7 +68,7 @@
                     <p><?php //echo $blurb; ?></p>
                 </section> -->
 
-                 <?php the_content(); ?>
+                <?php the_content(); ?>
 
             </section>
         </div>

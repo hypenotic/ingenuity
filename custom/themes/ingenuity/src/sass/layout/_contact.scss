@@ -18,14 +18,10 @@
 	@include media($bp-large) {
 		@include flex-direction(row);
 	}
-	// width: 100%;
 	padding: 25px;
 }
 
 .contact__single {
-	// width: 100%;
-	// position: relative;
-	// min-height: 400px;	
 	padding: 0 25px;
 	margin: 1.5%;
 	@include flex(0 0 30%);
@@ -36,27 +32,6 @@
 	@include media($mobile-landscape) {
 		padding: 0 10px 50px;
 		@include flex(1 0 auto);
-	}
-	h4 {
-		margin-bottom: 10px;
-	}
-	p {
-		margin-bottom: 15px;
-		font-size: modular-scale(0, 1.3rem);
-		line-height: modular-scale(1, 1.3rem);
-	}
-	button {
-		padding: 10px 15px;
-		color: $d-grey;
-		margin-top: 20px;
-		background-color: $yellow;
-		// border: 1px solid $d-grey;
-		border: none;
-		&:hover {
-			background-color: $black;
-			color: $yellow;
-			border: none;
-		}
 	}
 	button.contact__email {
 		margin-right: 20px;
