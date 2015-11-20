@@ -107,7 +107,7 @@ h2.rw-sentence{
 		margin: 0 8%;
 		text-align: left;
 	    font-size: modular-scale(4); 
-		line-height: modular-scale(4); 
+		line-height: modular-scale(4);
 	}
 	@include media($mobile-landscape) {
 		margin: 0 0 0 20px;
