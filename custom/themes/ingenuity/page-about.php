@@ -30,14 +30,19 @@
 	    </hgroup>
 	</div>
 	
-	<div class="main-wrapper">
-		<div class="main-content about-page"> 
-				
-			<?php the_content(); ?>
-		
+	<div class="diagonal-wrapper diagonal-svg__wrapper">
+	    <!-- <div class="diagonal-line"></div> -->
+	    <svg class="diagonal-svg">
+	        <line id="the-line" x1="100%" y1="110%" x2="30%" y2="-10%"/>
+	    </svg>
+		<div class="main-wrapper">
+			<div class="main-content standard-center about-page"> 
+					
+				<?php the_content(); ?>
+			
+			</div>
 		</div>
 	</div>
-	
 
 	<?php if ( $ctatitle ) { ?>
 	    <section class="industry-cta">

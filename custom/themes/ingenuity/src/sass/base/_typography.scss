@@ -363,7 +363,7 @@ main {
 		color: $black;
 		background: $yellow;
 		padding: 30px 25px 25px;
-		border-left: 4px solid rgba(0,0,0,0.8);
+		border-left: 5px solid rgba(0,0,0,0.8);
 		@include media($bp-small) {
 			padding: 30px 25px 25px;
 			margin: 10px;
@@ -383,12 +383,6 @@ main {
 		    }
 			&:last-child {
 				&:after {
-				    // content: '”';
-				    // font-size: modular-scale(2, 1.3rem);
-				    // // color: rgba(0,0,0,0.3);
-				    // @include media($bp-small) {
-				    // 	font-size: modular-scale(1);
-				    // }
 				}
 			}
 		}
@@ -403,13 +397,13 @@ main {
 		    	margin-top: 15px 0 15px -1em;
 		    }
 		}
-		// &:after {
-		//     content: '”';
-		//     font-size: modular-scale(2, 1.3rem);
-		//     @include media($bp-small) {
-		//     	font-size: modular-scale(1);
-		//     }
-		// }
+	}
+}
+
+.main-content.about-page {
+	blockquote {
+		// color: $white;
+		background-color: rgba(0,0,0,0.0);
 	}
 }
 
