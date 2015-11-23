@@ -39,10 +39,17 @@ form.footer-newsletter {
 		color: $yellow;
 	}
 	#mc-embedded-subscribe {
-		background-color: $yellow;
+		background-color: $black;
 		border-radius: 0;
-		color: $black;
+		border: 2px solid $white;
+		color: $white;
 		font-weight: normal;
+		width: 300px;
+		width: 35%;
+		min-width: 70%;
+		padding: 10px;
+		height: 50px;
+		text-transform: uppercase;
 	}
 }
 
@@ -206,5 +213,24 @@ form.footer-newsletter {
 		position: relative;
 		max-width: 50%;
 		height: auto;
+	}
+	button {
+
+	}
+}
+
+.footer__cta button {
+	background-color: $black;
+	border-radius: 0;
+	border: 2px solid $white;
+	color: $white;
+	font-weight: normal;
+	min-width: 70%;
+	padding: 10px;
+	min-height: 50px;
+	text-transform: uppercase;
+	&:hover {
+		color: $black;
+		background-color: $yellow;
 	}
 }

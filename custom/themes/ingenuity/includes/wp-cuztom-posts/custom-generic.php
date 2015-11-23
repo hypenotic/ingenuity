@@ -31,7 +31,7 @@ $pages->add_meta_box(
             'name'          => 'heading',
             'label'         => 'Banner Text',
             'description'   => 'Enter text',
-            'type'          => 'text',
+            'type'          => 'wysiwyg',
             
         ),
         array(

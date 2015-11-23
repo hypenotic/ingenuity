@@ -11,7 +11,7 @@
       // Hero Banner
       $banner     = get_post_meta( $post->ID, '_banner_image', true );
       $bannerurl  = wp_get_attachment_image_src( $banner,'banner', true );
-      $heading    = get_post_meta( $post->ID, '_banner_heading', true );
+      $heading    = wptexturize(get_post_meta( $post->ID, '_banner_heading', true ));
       $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
 
       // CTA
