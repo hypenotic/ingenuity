@@ -147,7 +147,7 @@ h2.rw-sentence{
 	font-size: modular-scale(3, 1.3rem); 
 	line-height: modular-scale(3, 1.6rem); 
 	@include media($bp-small) {
-		display: none
+		display: none;
 	}
 	@include media($bp-med) {
 		padding-left: 460px;
