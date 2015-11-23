@@ -77,6 +77,12 @@ $pages->add_meta_box(
             'label'         => 'Source Title',
             'description'   => '',
             'type'          => 'text',
+        ),
+        array(
+            'name'          => 'caption',
+            'label'         => 'Caption',
+            'description'   => '',
+            'type'          => 'text',
         )
     )
 );

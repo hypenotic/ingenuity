@@ -35,8 +35,12 @@ form.footer-newsletter {
 	background-color: $black;
 	input.footer__news__email {
 		background: $black;
-		border: 1px solid $yellow;
+		// border: 1px solid $yellow;
 		color: $yellow;
+	}
+	h4 {
+		font-weight: normal;
+		margin-bottom: 20px;
 	}
 	#mc-embedded-subscribe {
 		background-color: $black;
@@ -48,8 +52,14 @@ form.footer-newsletter {
 		width: 35%;
 		min-width: 70%;
 		padding: 10px;
-		height: 50px;
+		height: 60px;
 		text-transform: uppercase;
+		&:hover {
+			border: 0;
+			color: $black;
+			background-color: $yellow;
+			font-weight: 400;
+		}
 	}
 }
 
@@ -219,6 +229,10 @@ form.footer-newsletter {
 	}
 }
 
+.input__label-content.input__label-content--ingenuity {
+	color: rgba(255,255,255,0.2);
+}
+
 .footer__cta button {
 	background-color: $black;
 	border-radius: 0;
@@ -227,10 +241,12 @@ form.footer-newsletter {
 	font-weight: normal;
 	min-width: 70%;
 	padding: 10px;
-	min-height: 50px;
+	min-height: 60px;
 	text-transform: uppercase;
 	&:hover {
+		border: 0;
 		color: $black;
 		background-color: $yellow;
+		font-weight: 400;
 	}
 }

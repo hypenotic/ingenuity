@@ -658,7 +658,7 @@ h2.team__hero-subheading {
 		font-size: modular-scale(1, 1.5rem);
 		line-height: modular-scale(1, 1.6rem);
 		font-weight: 400;
-		font-family: $lite-headings;
+		font-family: $p-font;
 		@include media($bp-small) {
 			font-size: modular-scale(1, 1.1rem);
 			line-height: modular-scale(1, 1.1rem);
@@ -680,6 +680,7 @@ h2.team__hero-subheading {
 		margin: 0;
 		margin-top: 25px;
 		text-align: right;
+		text-transform: uppercase;
 	}
 	h5 {
 		text-align: right;
@@ -697,7 +698,7 @@ h2.team__hero-subheading {
 
 .services-cta {
 	p {
-		font-family: $main-headings;
+		font-family: $lite-headings;
 		font-size: modular-scale(2, 1.3rem);
 		line-height: modular-scale(2, 1.3rem);
 		@include media($bp-small) {

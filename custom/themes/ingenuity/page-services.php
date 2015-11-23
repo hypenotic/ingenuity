@@ -53,7 +53,6 @@
 
 	<div class="main-wrapper">
 		<div class="main-content standard-center"> <!-- contentwrapper begins here -->
-				
 			<?php the_content(); ?>
 
 			<div class="two-column">
@@ -61,6 +60,7 @@
 					<blockquote><?php echo $test; ?></blockquote>
 					<h4><?php echo $source; ?></h4>
 					<h5><?php echo $title; ?></h5>
+					<p></p>
 				</div>
 				<div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.5s">
 					<p><?php echo $ctatext; ?></p>
