@@ -118,8 +118,8 @@ h2.rw-sentence{
 	@include media($bp-xlarge) {
 		margin: 0 8%;
 		text-align: left;
-	    font-size: modular-scale(5); 
-		line-height: modular-scale(5);
+	    font-size: modular-scale(4); 
+		line-height: modular-scale(4);
 	}
 	@include media($bp-xxlarge) {
 		margin: 0 8%;
@@ -156,7 +156,7 @@ h2.rw-sentence{
 		padding-left: 470px;
 	}
 	@include media($bp-xlarge) {
-		padding-left: 610px;
+		padding-left: 480px;
 	}
 	@include media($bp-xxlarge) {
 		padding-left: 810px;
