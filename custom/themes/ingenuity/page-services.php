@@ -23,6 +23,7 @@
   	  $test 	  = get_post_meta( $post->ID, '_test_testimonial', true );
   	  $source 	  = get_post_meta( $post->ID, '_test_source', true );
   	  $title 	  = get_post_meta( $post->ID, '_test_title', true );
+  	  $caption 	  = get_post_meta( $post->ID, '_test_caption', true );
 
   	?>
 
@@ -60,7 +61,9 @@
 					<blockquote><?php echo $test; ?></blockquote>
 					<h4><?php echo $source; ?></h4>
 					<h5><?php echo $title; ?></h5>
-					<p></p>
+			        <?php if ($caption) { ?>
+						<p class="testimonial__caption"><?php echo $caption; ?></p>
+			        <?php } ?>
 				</div>
 				<div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="1.5s">
 					<p><?php echo $ctatext; ?></p>

@@ -667,13 +667,15 @@ h2.team__hero-subheading {
 		    content: '“';
 		    position: absolute;
 		    margin-left: -.4em;
-		    font-size: modular-scale(3, 1.6rem);
+		    font-size: modular-scale(4, 1.6rem);
 		    font-family: $main-headings;
+		    color: rgba(0,0,0,0.2);
 		}
 
 		&:after {
 		    content: '”';
 		    font-family: $main-headings;
+		    color: rgba(0,0,0,0.2);
 		}
 	}
 	h4 {
@@ -687,12 +689,13 @@ h2.team__hero-subheading {
 		margin: 0;
 	}
 	p {
-		padding-top: 20px;
-		padding-right: 20px;
+		font-family: $lite-headings;
+		padding-top: 5px;
+		padding-left: 100px;
 		text-align: right;
 		text-transform: uppercase;
-		font-size: modular-scale(0, 1.2rem);
-		line-height: modular-scale(0, 1.2rem);
+		font-size: modular-scale(0, 0.9rem);
+		line-height: modular-scale(0, 1rem);
 	}
 }
 
