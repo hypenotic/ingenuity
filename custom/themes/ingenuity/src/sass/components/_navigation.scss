@@ -6,7 +6,7 @@
     @include media($bp-small) {
       display: none;
     }
-    @include media($bp-xlarge) {
+    @include media($bp-xxlarge) {
       max-height: 250px; 
       width: auto;
     }
