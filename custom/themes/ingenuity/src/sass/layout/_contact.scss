@@ -33,6 +33,10 @@
 		padding: 0 10px 50px;
 		@include flex(1 0 auto);
 	}
+	button {
+		width: 90%;
+		height: 60px;
+	}
 	button.contact__email {
 		margin-right: 20px;
 	}

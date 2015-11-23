@@ -438,12 +438,6 @@ nav.expanded #navigation {
     top: 10px;
     right: 25px;
   }
-  @include media($bp-xxlarge) {
-    position: relative;
-    top: 10px;
-    right: 55px;
-    z-index: 1000 !important;
-  }
   &.logo-appear {
     padding: 0;
     float: right;
@@ -454,6 +448,12 @@ nav.expanded #navigation {
       top: 30px;
       right: 25px;
       margin: 0;
+    }
+    @include media($bp-xxlarge) {
+      position: relative;
+      // top: 10px;
+      // right: 55px;
+      z-index: 1000 !important;
     }
     @include media($mobile-landscape) {
       position: absolute;
