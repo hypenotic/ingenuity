@@ -542,11 +542,14 @@ aside {
     	list-style-type: none;
     	padding-left: 0;
     	padding-bottom: 0;
-    	text-transform: uppercase;
+    	// text-transform: uppercase;
     	font-size: modular-scale(0, 0.9rem);
     	line-height: modular-scale(0, 0.9rem);
     	li {
-
+			padding-bottom: 3px;
+			a {
+				border-bottom: 1px solid rgba(0,0,0,0.2);
+			}
     	}
     }
 }
