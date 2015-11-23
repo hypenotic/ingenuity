@@ -8,6 +8,7 @@
     }
     @include media($bp-xlarge) {
       max-height: 250px; 
+      width: auto;
     }
     @include media($mobile-landscape) {
       display: none;
@@ -331,6 +332,15 @@ nav.default-home-header.expanded #navigation ul {
   text-align: left;
   list-style-type: none;
   padding: 0;
+  @include media($bp-large) {
+    padding-top: 5%;
+  }
+  @include media($bp-xlarge) {
+    padding-top: 5%;
+  }
+  @include media($bp-xxlarge) {
+    padding-top: 10%;
+  }
   a {
     color: $black;
     width: 100%;
@@ -361,12 +371,12 @@ nav.default-home-header.expanded #navigation ul {
       line-height: modular-scale(0,1rem);
     }
     @include media($bp-xlarge) {
-      font-size: modular-scale(3);
-      line-height: modular-scale(3);
-    }
-    @include media($bp-xxlarge) {
       font-size: modular-scale(4);
       line-height: modular-scale(4);
+    }
+    @include media($bp-xxlarge) {
+      font-size: modular-scale(5);
+      line-height: modular-scale(5);
     }
     ul {
       li {
