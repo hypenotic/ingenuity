@@ -333,10 +333,10 @@ nav.default-home-header.expanded #navigation ul {
   list-style-type: none;
   padding: 0;
   @include media($bp-large) {
-    padding-top: 5%;
+    padding-top: 10%;
   }
   @include media($bp-xlarge) {
-    padding-top: 5%;
+    padding-top: 8%;
   }
   @include media($bp-xxlarge) {
     padding-top: 5%;
