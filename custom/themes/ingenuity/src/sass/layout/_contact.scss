@@ -6,6 +6,12 @@
 	}
 }
 
+#info-window-content {
+	@include media($bp-xxlarge) {
+		padding: 20px;
+	}
+}
+
 .contact-container {
 	@include display(flex);
 	@include align-items(flex-start);
