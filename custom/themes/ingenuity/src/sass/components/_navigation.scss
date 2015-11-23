@@ -6,6 +6,9 @@
     @include media($bp-small) {
       display: none;
     }
+    @include media($bp-xlarge) {
+      max-height: 250px; 
+    }
     @include media($mobile-landscape) {
       display: none;
     }
@@ -87,6 +90,9 @@ nav {
   @include media($bp-small) {
     height: 70px;
     background-color: $black;
+  }
+  @include media($bp-xxlarge) {
+    height: 270px;
   }
   @include media($mobile-landscape) {
     height: 60px;
@@ -260,6 +266,10 @@ nav.expanded {
   .site-width>a {
     color: $black;
   }
+  img#default-logo,
+  img#home-logo {
+    display: none;
+  }
 }
 
 .home-header #navigation ul {
@@ -354,6 +364,10 @@ nav.default-home-header.expanded #navigation ul {
       font-size: modular-scale(3);
       line-height: modular-scale(3);
     }
+    @include media($bp-xxlarge) {
+      font-size: modular-scale(4);
+      line-height: modular-scale(4);
+    }
     ul {
       li {
         font-size: modular-scale(2,1rem);
@@ -367,6 +381,10 @@ nav.default-home-header.expanded #navigation ul {
       }
     }
   }
+}
+
+.menu-item {
+  z-index: 390;
 }
 
 /* shows navigation */
@@ -399,10 +417,16 @@ nav.expanded #navigation {
 }
 
 #default-menu-icon {
+  z-index: 400;
   @include media($bp-small) {
     position: absolute;
     top: 10px;
     right: 25px;
+  }
+  @include media($bp-xxlarge) {
+    position: relative;
+    top: 50px;
+    right: 55px;
   }
   &.logo-appear {
     padding: 0;
