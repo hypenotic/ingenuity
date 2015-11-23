@@ -339,7 +339,7 @@ nav.default-home-header.expanded #navigation ul {
     padding-top: 5%;
   }
   @include media($bp-xxlarge) {
-    padding-top: 10%;
+    padding-top: 5%;
   }
   a {
     color: $black;
@@ -352,6 +352,7 @@ nav.default-home-header.expanded #navigation ul {
     line-height: modular-scale(4,0.8rem);
     font-weight: 400;
     font-family: $main-headings;
+    z-index: 390;
     &:hover{
       background-color: $black;
       color: $yellow;
@@ -371,12 +372,14 @@ nav.default-home-header.expanded #navigation ul {
       line-height: modular-scale(0,1rem);
     }
     @include media($bp-xlarge) {
-      font-size: modular-scale(4);
-      line-height: modular-scale(4);
+      font-size: modular-scale(4,1.2rem);
+      line-height: modular-scale(4, 1.2rem);
+      z-index: 390;
     }
     @include media($bp-xxlarge) {
       font-size: modular-scale(5);
       line-height: modular-scale(5);
+      z-index: 390;
     }
     ul {
       li {
@@ -393,7 +396,8 @@ nav.default-home-header.expanded #navigation ul {
   }
 }
 
-.menu-item {
+#menu-main-menu,
+.menu-item.menu-item-type-post_type.menu-item-object-page {
   z-index: 390;
 }
 
@@ -427,7 +431,8 @@ nav.expanded #navigation {
 }
 
 #default-menu-icon {
-  z-index: 400;
+  position: relative;
+  z-index: 1000 !important;
   @include media($bp-small) {
     position: absolute;
     top: 10px;
@@ -437,6 +442,7 @@ nav.expanded #navigation {
     position: relative;
     top: 50px;
     right: 55px;
+    z-index: 1000 !important;
   }
   &.logo-appear {
     padding: 0;
