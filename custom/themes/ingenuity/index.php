@@ -12,7 +12,7 @@
   	?>
 
 	<div class="default-hero project-index">
-		    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
+		    <figure style="background-image: url('<?php echo get_template_directory_uri(); ?>/dist/images/site-default.jpg'); background-size: cover;"></figure>
 		    <hgroup class="animated fadeInDown">
 		        <?php if ($heading) { ?>
 					<h1><?php echo $heading; ?></h1>
