@@ -145,8 +145,26 @@ ol {
 
 ol {
 	margin: -15px 0 15px;
+	padding-left: 55px;
 	li {
-		padding: 7px 0;	
+		padding: 7px 0;
+	}
+}
+
+// hanging quotation shortcode
+span.hanging-q {
+	display: block;
+	margin-left: 10px;
+	&:before {
+	    content: '“';
+	    position: absolute;
+	    margin-left: -0.6em;
+	    font-size: modular-scale(0, 1.6rem);
+	}
+
+	&:after {
+	    content: '”';
+	    margin-left: -0.2em;
 	}
 }
 
@@ -469,7 +487,6 @@ main {
     	}
     }
 }
-
 
 
 // CTAs =============================
