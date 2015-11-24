@@ -11,12 +11,19 @@
   	
   	?>
 
-	<div class="default-hero blog-index" style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;">
-		<hgroup>
-			<h1><?php echo $heading; ?></h1>
-			<h2><?php echo $subheading; ?></h2>
-		</hgroup>
-	</div>	
+	<div class="default-hero project-index">
+		    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
+		    <hgroup class="animated fadeInDown">
+		        <?php if ($heading) { ?>
+					<h1><?php echo $heading; ?></h1>
+	        	<?php } else { ?>
+	        		<h1><?php wp_title(''); ?></h1>
+	        	<?php } ?>
+		        <?php if ($subheading) { ?>
+					<h2><?php echo $subheading; ?></h2>
+	        	<?php } ?>
+		    </hgroup>
+		</div>
 
 	<div class="main-wrapper"> 
 		<section class="main-content standard-center"> 
