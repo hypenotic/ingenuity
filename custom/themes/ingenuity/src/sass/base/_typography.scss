@@ -123,19 +123,27 @@ h6 {
 
 ul,
 ol {
-	// font-family: $main-body-font;
-	// font-weight: 400;
-	// font-size: modular-scale(0, 1.3rem); 
-	// line-height: modular-scale(1, 1.3rem); 
-	// @include media($bp-small) {
-	//     font-size: modular-scale(0, 1rem);
-	//     line-height: modular-scale(1, 1rem);
-	//     padding-left: 25px;
-	// }
-	// @include media($mobile-landscape) {
-	//     font-size: modular-scale(0, 1rem);
-	//     line-height: modular-scale(1, 1rem);
-	// }
+	font-family: $main-body-font;
+	font-weight: 400;
+	@include media($bp-small) {
+	    font-size: modular-scale(0, 1.1rem);
+	    line-height: modular-scale(1, 1.1rem);
+	}
+	@include media($bp-med) {
+	    font-size: modular-scale(0, 1.5rem);
+	    line-height: modular-scale(1, 1.5rem);
+	}
+	@include media($bp-large) {
+		font-size: modular-scale(0, 1.5rem);
+		line-height: modular-scale(1, 1.7rem);
+	}
+	@include media($mobile-landscape) {
+		font-size: modular-scale(0, 1.3rem);
+		line-height:modular-scale(1, 1.3rem);
+	}
+	li {
+		
+	}
 }
 
 ul.post-categories {

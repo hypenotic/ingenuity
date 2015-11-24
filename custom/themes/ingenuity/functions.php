@@ -25,6 +25,7 @@ require_once('includes/functions/grabfirstimage.php');
 require_once('includes/shortcodes/full-width-image.php');
 require_once('includes/shortcodes/full-width-quote.php');
 require_once('includes/shortcodes/template-bullets.php');
+require_once('includes/shortcodes/hanging-punctuation.php');
 
 add_theme_support( 'post-thumbnails' ); 
 

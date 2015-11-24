@@ -28,17 +28,6 @@
 				<span id="move-over">/sq ft.</span>
 			</h2>
 		</hgroup>
-<!-- 		<h2 class="sentence">
-			Design Build & General Contracting that factors in
-			<div class="pushEffect">
-				<span>happiness <span class="sq-ft">/sq ft.</span></span>
-				<span>craft <span class="sq-ft">/sq ft.</span></span>
-				<span>productivity <span class="sq-ft">/sq ft.</span></span>
-				<span>detail <span class="sq-ft">/sq ft.</span></span>
-				<span>creativity <span class="sq-ft">/sq ft.</span></span>
-			</div>
-			<span id="move-over">/sq ft.</span>
-		</h2> -->
 	</div>
 
 	<?php endwhile; else : ?>
