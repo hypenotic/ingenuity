@@ -92,13 +92,15 @@ h2 {
 
 h3,
 .project__testimonial blockquote {
-
 	font-family: $main-headings;
 	font-size: modular-scale(2); 
 	line-height: modular-scale(2, 1.5rem); 
 }
 
 h3 {
+	font-family: $lite-headings;
+	font-size: modular-scale(2, 1.3rem); 
+	line-height: modular-scale(2, 1.3rem); 
 	@include media($bp-small) {
 	    font-size: modular-scale(2, 1.2rem); 
 	    line-height: modular-scale(2, 1.2rem); 
