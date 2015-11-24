@@ -141,8 +141,11 @@ ol {
 		font-size: modular-scale(0, 1.3rem);
 		line-height:modular-scale(1, 1.3rem);
 	}
+}
+
+ol {
 	li {
-		
+		padding: 7px 0;	
 	}
 }
 
