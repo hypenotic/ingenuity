@@ -737,13 +737,20 @@ h2.team__hero-subheading {
 	background-color: $black;
 	color: $white;
 	border: none;
-	font-weight: 300;
-	padding: 15px 20px;
+	font-weight: bold;
+	padding: 15px 30px;
+	height: 60px;
 	font-size: modular-scale(0, 1.1rem);
 	line-height: modular-scale(0, 1.1rem);
 	border: 1px solid $black;
-	transition: all 0.5s;
-	letter-spacing: 1px;
+	// transition: all 0.2s;
+	// letter-spacing: 1px;
+	&:hover {
+		border: 2px solid $black;
+		color: $black;
+		background-color: $white;
+		// font-weight: 400;
+	}
 }
 
 // BLOG ==============================
@@ -1019,8 +1026,9 @@ span.bolded-text {
 		text-transform: uppercase;
 	}
 	p {
-		margin-bottom: 5px;
+		margin-bottom: 15px;
 		font-size: modular-scale(0, 1.2rem);
+		line-height: modular-scale(0, 1.2rem);
 		font-family: $lite-headings;
 	}
 }
