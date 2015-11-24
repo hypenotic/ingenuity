@@ -40,10 +40,11 @@
 			
 				<a class="projects__panel-link" href="<?php the_permalink(); ?>">
 					<div class="projects__panel-wrap">
-						<figure class="projects__panel-img" style="background-color: rgba(252, 216, 56, 0.6); background-image: url('<?php echo $bannerurl[0] ?>');">
-							<div class="color-overlay"></div>
-						</figure>
 						<h2><?php the_title(); ?></h2>
+						<div class="color-overlay">
+						</div>
+						<figure class="projects__panel-img" style="background-color: rgba(252, 216, 56, 0.6); background-image: url('<?php echo $bannerurl[0] ?>');">
+						</figure>
 					</div>
 				</a>
 			
