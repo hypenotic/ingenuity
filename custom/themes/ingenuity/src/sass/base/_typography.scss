@@ -123,19 +123,19 @@ h6 {
 
 ul,
 ol {
-	font-family: $main-body-font;
-	font-weight: 400;
-	font-size: modular-scale(0, 1.3rem); 
-	line-height: modular-scale(1, 1.3rem); 
-	@include media($bp-small) {
-	    font-size: modular-scale(0, 1rem);
-	    line-height: modular-scale(1, 1rem);
-	    padding-left: 25px;
-	}
-	@include media($mobile-landscape) {
-	    font-size: modular-scale(0, 1rem);
-	    line-height: modular-scale(1, 1rem);
-	}
+	// font-family: $main-body-font;
+	// font-weight: 400;
+	// font-size: modular-scale(0, 1.3rem); 
+	// line-height: modular-scale(1, 1.3rem); 
+	// @include media($bp-small) {
+	//     font-size: modular-scale(0, 1rem);
+	//     line-height: modular-scale(1, 1rem);
+	//     padding-left: 25px;
+	// }
+	// @include media($mobile-landscape) {
+	//     font-size: modular-scale(0, 1rem);
+	//     line-height: modular-scale(1, 1rem);
+	// }
 }
 
 ul.post-categories {
@@ -906,6 +906,7 @@ span.bolded-text {
 		}
 	}
 	.testimonial__creds {
+		color: rgba(255,255,255,0.4);
 		@include media($bp-small) {
 			h4 {
 				margin-top: 20px;
