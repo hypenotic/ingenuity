@@ -1,3 +1,12 @@
+.blog-single-post.wow {
+	@include media($bp-large) {
+		padding-bottom: 50px;
+	}
+	@include media($bp-xlarge) {
+		padding-bottom: 50px;
+	}
+}
+
 .prev-next-links {
 	width: 100%;
 	@include display(flex);

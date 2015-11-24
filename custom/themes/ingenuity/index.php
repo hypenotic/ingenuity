@@ -25,64 +25,45 @@
 	<?php // The loop starts here 
 		if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 	?>
+	    <?php  
+	        $banner_id      = get_post_meta($post->ID, '_blogadd_hero', true);
+	        $banner_url     = wp_get_attachment_image_src($banner_id,'blogadd', true);
+	    ?>
 			
-			<div class="container blog__corp-new">
-			    <?php  
-			        $banner_id      = get_post_meta($post->ID, '_banner_image', true);
-			        $banner_url     = wp_get_attachment_image_src($banner_id,'banner', true);
-			        ?>
-					
-					<?php $url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
-			        <?php $category_classes = ''; ?>
+		<?php $url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+        <?php $category_classes = ''; ?>
 
-			        <?php $categories = get_the_terms($post->ID , 'category'); 
-			        ?>
+        <?php $categories = get_the_terms($post->ID , 'category'); 
+        ?>
 
-			        <?php if($categories){
-			            foreach($categories as $category){
-			                $category_classes .= ' '.$category->slug;
-			            };
-			        }; 
-			        ?>
-
-			        <?php if ($url) { ?>
-
-					<div class="blog-single-post wow fadeIn">
-						<a href="<?php the_permalink(); ?>">
-							<h3 class="blog-single__title"><?php the_title(); ?></h3>
-						</a>
-						<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
-						<img src="<?php echo $url[0] ?>" alt="<?php the_title(); ?>">
-						<p> <?php the_excerpt(); ?> </p>
-						<div class="blog-single__cats">
-							<p>Listed Under:</p> 
-							<?php echo get_the_category_list(); ?>
-						</div>
-					</div>
-
-			        <?php } else { ?>
-
-			        <div class="blog-single-post wow fadeIn">
-			        	<a href="<?php the_permalink(); ?>">
-			        		<h3 class="blog-single__title"><?php the_title(); ?></h3>
-			        	</a>
-			        	<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
-			        	<img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>">
-			        	<p> <?php the_excerpt(); ?> </p>
-			        	<div class="blog-single__cats">
-			        		<p>Listed Under:</p> 
-			        		<?php echo get_the_category_list(); ?>
-			        	</div>
-			        </div>
-			        
-			        <?php } ?>
+        <?php if($categories){
+            foreach($categories as $category){
+                $category_classes .= ' '.$category->slug;
+            };
+        }; ?>
 			
-			    <p class="pagination-links"><?php echo paginate_links( $args ); ?></p>
+
+		<div class="blog-single-post wow fadeIn">
+			<a href="<?php the_permalink(); ?>">
+				<h3 class="blog-single__title"><?php the_title(); ?></h3>
+			</a>
+			<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
+			<?php if ($banner_id) { ?>
+			<img src="<?php echo $banner_url[0]; ?>" alt="<?php the_title(); ?>">
+			<?php } else {} ?>
+			<p> <?php the_excerpt(); ?> </p>
+			<div class="blog-single__cats">
+				<p>Listed Under:</p> 
+				<?php echo get_the_category_list(); ?>
 			</div>
+		</div>
+
 
 	<?php endwhile; else : ?>
 	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?>
+
+		 <p class="pagination-links"><?php echo paginate_links( $args ); ?></p>
 
 		</section> <!-- ARTICLE WRAP ends here -->
 	</div> <!-- contentWrapper ends here -->
