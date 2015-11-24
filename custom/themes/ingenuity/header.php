@@ -27,7 +27,7 @@
 			<nav class="home-header">
 				<div class="site-width home-width">
 					<p id="default-logo-text">INGENUITY</p>
-					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo - General Contracting and Design Build" id="home-logo"></a>
+					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/yellow-logo.png" alt="Ingenuity Logo - General Contracting and Design Build" id="home-logo"></a>
 					<span class="menu icon" id="default-menu-icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
 				</div>
 		    	<?php 
@@ -42,7 +42,7 @@
 			<nav class="default-home-header">
 				<div class="site-width default-width">
 					<p id="default-logo-text">INGENUITY</p>
-					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/fillyellogo.png" alt="Ingenuity Logo - General Contacting and Design Build" id="default-logo" ></a>
+					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/yellow-logo.png" alt="Ingenuity Logo - General Contacting and Design Build" id="default-logo" ></a>
 					<span class="menu icon" id="default-menu-icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
 				</div>
 	    	<?php 
