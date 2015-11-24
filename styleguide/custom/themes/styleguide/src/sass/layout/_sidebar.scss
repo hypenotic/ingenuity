@@ -1,24 +1,23 @@
 aside {
 	@include media($bp-large) {
 		@include span-columns(3);
-		// float: left;
 		position: fixed;
 		max-width: 200px;
 		margin-top: 30px;
     }
-	// margin-top: 10px;
 	@include media($bp-small) {
 		display: none;
     }
+}
+
+.sidebar__nav {
+
 }
 
 .sidebar__nav ul {
 	list-style-type: none;
 	padding-left: 0;
 	padding-bottom: 0;
-	li {
-		// padding: 5px 0;
-	}
 }
 
 .get-in-touch {
@@ -27,30 +26,6 @@ aside {
 	margin-top: 20px;
 	a {
 		transition: all 0.5s;
-		&:hover {
-			button h3 {
-				// color: yellow;
-			}
-		}
 	}
 }
 
-#left {
-    // background: red;
-}
-#left.stick {
-    position:fixed;
-    top: 0;
-}
-#left.unstick {
-	position: relative;
-}
-
-
-#mainmenu li.selected { font-weight: 500; }
-
-
-#left .logo__holder img {
-	width: 90%;
-	margin-bottom: 20px;
-}

@@ -19,56 +19,59 @@
             $logos      = get_post_meta($post->ID,'_logos',true);
           ?>
 
-      <article id="logo">
-        <h2 class="sidebar-link">Logo</h2>
+        <article id="logo">
 
-      <div class="logo__content"><?php the_content(); ?></div>
+            <h2 class="sidebar-link">Logo</h2>
 
-      <figure class="logopackage">
-          <div class="logopackage__logocontainer">
-                <div class="logopackage__single">
-                    <img src="<?php echo $plogoUrl[0]; ?>" alt="">
+            <div class="logo__content">
+                <?php the_content(); ?>
+            </div>
+
+            <figure class="logopackage">
+                <div class="logopackage__logocontainer">
+                    <div class="logopackage__single">
+                        <img src="<?php echo $plogoUrl[0]; ?>" alt="">
+                    </div>
+                    <div class="logopackage__single">
+                        <img src="<?php echo $slogoUrl[0]; ?>" alt="">
+                    </div>
                 </div>
-                <div class="logopackage__single">
-                    <img src="<?php echo $slogoUrl[0]; ?>" alt="">
-                </div>
-          </div>
-      </figure>
+            </figure>
 
-      <figure class="logo-samples">
-                    <!-- For loop cycle through Array -->
-                    <?php if($logos) {
-                        foreach($logos as $logo) {
+            <figure class="logo-samples">
+                <!-- For loop cycle through Array -->
+                <?php if($logos) {
+                    foreach($logos as $logo) {
 
-                        // Get custom meta values    
-                        $singlelogo     = $logo['_logo'];
-                        $logourl        = wp_get_attachment_image_src($singlelogo,'banner', true);
-                        $descrip        = $logo['_descrip'];
-                    ?>
+                    // Get custom meta values    
+                    $singlelogo     = $logo['_logo'];
+                    $logourl        = wp_get_attachment_image_src($singlelogo,'banner', true);
+                    $descrip        = $logo['_descrip'];
+                ?>
 
-                        <figure class="logo-samples__single">
-                            <?php if ($singlelogo) {
-                                echo '<img src="' . $logourl[0] . '" alt="'. $name .'"/>'; 
-                            } else { } ?>
+                    <figure class="logo-samples__single">
+                        <?php if ($singlelogo) {
+                            echo '<img src="' . $logourl[0] . '" alt="'. $name .'"/>'; 
+                        } else { } ?>
+                        
+                        <figcaption>
+                            <p><?php echo $descrip; ?></p>
+                        </figcaption>
+                    </figure>
                             
-                            <figcaption>
-                                <p><?php echo $descrip; ?></p>
-                            </figcaption>
-                        </figure>
-                                
-                    <?php
-                            }
+                <?php
                         }
-                    ?> <!-- End foreach and if loop for cuztom bundle -->  
-      </figure>
+                    }
+                ?> <!-- End foreach and if loop for cuztom bundle -->  
+            </figure>
 
-        <figcaption class="logopack__download">
-          <a href="<?php echo $link; ?>">
-            <h3 class="logopackage__caption"><?php echo $label; ?></h3>
-          </a>
-      </figcaption>
+            <figcaption class="logopack__download">
+                <a href="<?php echo $link; ?>">
+                    <h3 class="logopackage__caption"><?php echo $label; ?></h3>
+                </a>
+            </figcaption>
 
-     </article>
+        </article>
 
       <?php endwhile;
 

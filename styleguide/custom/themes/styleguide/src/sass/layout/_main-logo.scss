@@ -3,22 +3,18 @@
 ul.logo__list {
 	li {
 		padding: 5px 0;
-		// text-indent: 20px;
 	}
 }
 
 .logopackage {
-	// width: 266px;
-	// height: 151px;
-	// border: 1px solid $logo-pack-color;
 	margin: 30px auto;
 	figcaption {
+		position: relative;
 		background-color: $button-color;
 		height: 42px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(space-between);
 		a {
 			text-decoration: none;
 		}
@@ -34,9 +30,9 @@ ul.logo__list {
 }
 
 .logopackage__logocontainer {
-	display: flex;
-	align-items: center;
 	position: relative;
+	@include display(flex);
+	@include align-items(center);
 	@include justify-content(space-between);
 	@include media($bp-small) {
 		@include flex-direction(column);
@@ -47,9 +43,7 @@ ul.logo__list {
     }
 	img {
 		position: relative;
-		// margin: 15px;
 		width: 100%;
-		// height: auto;
 		@include media($bp-small) {
 			@include flex-direction(column);
 			@include flex(0 0 auto);
@@ -67,7 +61,6 @@ ul.logo__list {
 		@include flex-direction(column);
     }
 	.logo-samples__single {
-		// margin: 0;
 		position: relative;
 		@include flex(0 0 30%);
 		img {
@@ -78,32 +71,23 @@ ul.logo__list {
 }
 
 figcaption.logopack__download {
+	position: relative;
 	background-color: white;
 	border: 1px solid black;
 	min-height: 42px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
 	width: 50%;
 	margin: 50px auto 0;
 	padding: 10px 0;
 	transition: all 0.5s;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
 	@include media($bp-small) {
 		width: 100%;
     }
-	&:hover {
-		background-color: yellow;
-		h3 {
-			// color: yellow;
-		}
-	}
 	a {
 		text-decoration: none;
 		border-bottom: none;
-		&:hover{
-			// background-color: yellow;
-		}
 	}
 	h3 {
 		font-weight: 400;

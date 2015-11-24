@@ -5,6 +5,8 @@
 var menuheadings = document.getElementsByClassName('sidebar-link');
 // specify ul or ol into which the <li>s will be appended
 var mainmenu = document.getElementById('mainmenu');
+var mobilemenu = document.getElementById('mobile-menu');
+var injections = document.getElementsByClassName('injection-menu');
 
 console.log(menuheadings);
 
@@ -35,7 +37,9 @@ for (var i = 0; i < menuheadings.length; i++) {
         listItem.appendChild(menuLink);
 
         // append 'listItem' (which is a <li>) into 'mainmenu' (which is an <ul>)
-        mainmenu.appendChild(listItem);
+        // mainmenu.appendChild(listItem);
+        // now that we have two items - used jQuery to append it to multiple containers
+        $('.injection-menu').append(listItem);
 }
 
 
@@ -90,8 +94,34 @@ $(document).ready(function(){
    }
   })
  })
-  
 })
+
+// FOR MOBILE MENU ===========================
+
+$('#menu-toggle').on('click', function() {
+  $('#nav-mobile').toggle(400);
+  $('#menu-toggle').toggleClass('toggle-select toggle-unselect');
+});
+
+$('#mobile-menu li a').on('click', function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top - 110
+            }, 500);
+             $('#nav-mobile').toggle(400);
+             $('#menu-toggle').removeClass('toggle-select');
+            return false;
+        }
+    }
+});
+
+
+
 
 
 

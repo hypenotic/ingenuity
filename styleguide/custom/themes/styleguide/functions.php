@@ -20,8 +20,4 @@ require_once('includes/functions/enqueue-script.php');
 //Load shortcodes
 require_once('includes/shortcodes/template-bullets.php');
 
-// Increase File Upload Size
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
 ?>

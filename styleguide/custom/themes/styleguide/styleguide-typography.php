@@ -5,11 +5,15 @@
 	if ( $query->have_posts() ) :
 
 	    while ( $query->have_posts() ) : $query->the_post(); ?>
-        <article id="typography">
-          <h2 class="sidebar-link">Typography</h2>
 
-      	 <div class="typography__content"><?php the_content(); ?></div>
-      		<h3>Examples</h3>
+        <article id="typography">
+            <h2 class="sidebar-link">Typography</h2>
+
+            <div class="typography__content">
+                <?php the_content(); ?>
+            </div>
+      		
+            <h3>Examples</h3>
 
   	  		<!-- Get custom meta values -->
   	  		<?php 
@@ -56,7 +60,7 @@
   	       	    $weight  = $type['_fweight'];
   	       	    $style   = $type['_fstyle'];
   	       	    $case    = $type['_case'];
-                $space    = $type['_spacing'];
+                $space   = $type['_spacing'];
 
   	       	?>
 
@@ -92,7 +96,10 @@
 					   echo '<p style="font-family: ' . $srcfont . ';' . 'font-size:' . $srcsize . ';' . 'font-weight:' . $srcweight . ';' . 'font-style:' . $srcstyle . ';' . 'text-transform:' . $srccase . '">' . $srcex . '</p>';  
 					endif ?>
 
-      </article>
-	  <?php endwhile;
-		endif;
-		?>
+        </article>
+
+        <?php endwhile;
+
+	endif;
+    
+?>

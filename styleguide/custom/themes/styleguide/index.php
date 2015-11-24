@@ -18,16 +18,15 @@
 			    while ( $query->have_posts() ) : $query->the_post(); ?>
 			  		<article id="about_our_brand">
 			  			<h2 class="sidebar-link">About Our Brand</h2>
-
-            	<div class="about__content"><?php the_content(); ?></div>
-            </article>
+            			<div class="about__content"><?php the_content(); ?></div>
+            		</article>
 
 			    <?php endwhile;
 
 			endif;
 
 			?>
-			<!-- END OVERVIEW -->
+			<!-- END ABOUT -->
 
 			<!-- IF OVERVIEW -->
 			<?php
@@ -39,9 +38,8 @@
 			    while ( $query->have_posts() ) : $query->the_post(); ?>
 			  		<article id="overview">
 			  			<h2 class="sidebar-link">Overview</h2>
-
-            	<div class="overview__content"><?php the_content(); ?></div>
-            </article>
+            			<div class="overview__content"><?php the_content(); ?></div>
+            		</article>
 
 			    <?php endwhile;
 
@@ -73,9 +71,8 @@
 
 			  		<article id="photography">
 			  			<h2 class="sidebar-link">Photography</h2>
-
-            	<div class="photography__content"><?php the_content(); ?></div>
-						</article> 
+            			<div class="photography__content"><?php the_content(); ?></div>
+					</article> 
 			    <?php endwhile;
 
 			endif;
@@ -94,10 +91,8 @@
 
 			  		<article id="tone">
 			  			<h2 class="sidebar-link">Tone</h2>
-
-            	<div class="tone__content"><?php the_content(); ?></div>
-
-            </article>
+            			<div class="tone__content"><?php the_content(); ?></div>
+            		</article>
 
 			    <?php endwhile;
 

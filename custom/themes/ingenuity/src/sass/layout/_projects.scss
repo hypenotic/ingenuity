@@ -13,7 +13,7 @@
 	width: 100%;
 	transition: all 0.2s;
 	&:hover .projects__panel-wrap .projects__panel-img { 
-		filter: grayscale(0.2);
+		filter: grayscale(0.8);
 		background-blend-mode: normal;
 		filter: brightness(0.3);
 	}

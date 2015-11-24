@@ -18,22 +18,21 @@
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 	<!-- CSS -->
-<!-- 	 <link rel='stylesheet' href='<?php bloginfo('template_directory'); ?>/style.css' async='async' type='text/css' media='all' /> -->
+<!-- 	 <link rel='stylesheet' href='<?php // bloginfo('template_directory'); ?>/style.css' async='async' type='text/css' media='all' /> -->
 	<?php wp_head(); ?> 
 </head>
 <body>
 
-	<!-- Loop starts -->
-	<?php
+	<?php // Loop starts
 
-			$query = new WP_Query( array( 'post_type' => 'styleguide', 'posts_per_page' => 1 ) );
+		$query = new WP_Query( array( 'post_type' => 'styleguide', 'posts_per_page' => 1 ) );
 
-			if ( $query->have_posts() ) :
+		if ( $query->have_posts() ) :
 
-			    while ( $query->have_posts() ) : $query->the_post(); ?>
+		    while ( $query->have_posts() ) : $query->the_post(); ?>
 
-	<!-- Get custom meta values -->
-	<?php 
+	
+	<?php // Get custom meta values
 		$maincolor 		= get_post_meta($post->ID,'_sgbasics_name_color',true);
 		$headercolor 	= get_post_meta($post->ID,'_sgbasics_headercol',true);
 	    $maintitle 		= get_post_meta($post->ID,'_sgheader_title',true);
@@ -43,51 +42,54 @@
 
 	<!-- These are all accent colors from cuztom post fields -->
 	<style>
+		/* The sidebar inview color accent */
 		.selected {
 			border-left: 2px solid <?php echo $headercolor; ?>;
 			padding-left: 8px;
 		}
-
+		
+		/* BAT PHONE hover colour */
 		.get-in-touch a:hover h3 {
 			color: <?php echo $headercolor; ?>;
 		}
 
+		/* Highlighted text colour */
 		::selection {
 		  background: <?php echo $headercolor; ?>;
 		}
-
+		
+		/* Body copy links */
 		article a:hover {
+			background-color: <?php echo $headercolor; ?>;
+		}
+		
+		/* Logo package download button hover */
+		figcaption.logopack__download:hover {
 			background-color: <?php echo $headercolor; ?>;
 		}
 	</style>
 
+	<nav id="nav-mobile">
+		<ul id="mobile-menu" class="injection-menu">
+			
+		</ul>
+	</nav>
+
+	<div id="menu-toggle">
+		<i class="fa fa-bars"></i>
+	</div>
+
 	<?php if ($headercolor) { ?> 
-         <header class="main-header" style="background-color:<?php echo $headercolor; ?>;"> 
+        <header class="main-header" style="background-color:<?php echo $headercolor; ?>;"> 
       <?php }  else { ?>
 		<header class="main-header">
       <?php }?>
-	<!-- <header class="main-header"> -->
 		<div class="main-wrapper">
 			<a href="<?php echo get_home_url(); ?>"><img class="main-logo" src="<?php echo $headerImageUrl[0]; ?>" alt="Main Logo"></a>
 			<h1><?php bloginfo('name'); ?></h1>
 		</div>
 	</header>
 	
-	
 	<main> <!-- mainWrapper begins here -->
-<!-- 		<header id="mainheader">
-			<h1 class="title">
-			
-				<?php //if ($maintitle) { ?>
-				    <?php //echo $maintitle; ?>
-				<?php //} else { ?>
-				    <p><?php //echo the_title(); ?></p>
-				<?php  //} ?> 
-				
-			</h1>
-			<div class="logo__holder">
-				<img class="logo" src="<?php //echo $headerImageUrl[0]; ?>" alt="Main Logo">
-			</div>
-		</header> -->
 
 	<?php endwhile; endif; ?>
