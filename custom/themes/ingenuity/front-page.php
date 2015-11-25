@@ -9,6 +9,10 @@
       $bannerurl  = wp_get_attachment_image_src( $banner,'banner', true );
       $heading    = get_post_meta( $post->ID, '_banner_heading', true );
       $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
+
+      // Badge
+      $badgetext    = get_post_meta( $post->ID, '_badge_text', true );
+      $badgelink 	= get_post_meta( $post->ID, '_badge_link', true );
   ?>
 
 	<div class="home-hero" id="header-check">
@@ -29,6 +33,32 @@
 			</h2>
 		</hgroup>
 	</div>
+
+	<?php if ($badgetext) { ?>
+		<a href="<?php echo $badgelink; ?>"><div id="banner-badge">
+			
+			  <div class="bk l">
+			    <div class="arrow top"></div> 
+			    <div class="arrow bottom"></div>
+			  </div>
+			
+			  <div class="skew l"></div>
+			
+			  <div class="main-badge">
+			    <div>
+			    	<?php echo $badgetext; ?>
+			    </div>   
+			  </div>
+			
+			  <div class="skew r"></div>
+			  
+			  <div class="bk r">
+			    <div class="arrow top"></div> 
+			    <div class="arrow bottom"></div>
+			  </div>
+			
+			</div></a>
+	<?php } ?>
 
 	<?php endwhile; else : ?>
 	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>

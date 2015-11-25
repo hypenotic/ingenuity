@@ -35,6 +35,25 @@ $projects->add_meta_box(
 );
 
 $projects->add_meta_box(
+    'badge',
+    'Hero Badge', 
+    array(
+        array(
+            'name'          => 'text',
+            'label'         => 'Badge Text',
+            'description'   => '',
+            'type'          => 'wysiwyg', 
+        ),
+        array(
+            'name'          => 'link',
+            'label'         => 'Badge Link',
+            'description'   => '',
+            'type'          => 'text', 
+        )
+    )
+);
+
+$projects->add_meta_box(
     'blurb',
     'Hero Blurb', 
     array(

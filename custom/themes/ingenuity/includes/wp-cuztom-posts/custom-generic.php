@@ -50,7 +50,7 @@ $pages->add_meta_box(
             'name'          => 'text',
             'label'         => 'Badge Text',
             'description'   => '',
-            'type'          => 'text', 
+            'type'          => 'wysiwyg', 
         ),
         array(
             'name'          => 'link',

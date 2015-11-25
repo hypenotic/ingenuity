@@ -3,3 +3,169 @@
 	padding: 10px 15px;
 	margin-top: 20px;
 }
+
+// Banner Badges
+
+#banner-badge {
+  width: 300px;
+  // max-width: 1000px;
+  height: 80px;
+  margin: 40px auto; 
+  position: absolute;
+  top: 50px;
+  right: 10%;
+  z-index: 901;
+}
+
+#banner-badge > div {
+  height: 50px;
+}
+
+.main-badge {
+  background: $yellow; 
+  position: relative;
+  display: block;
+  width: 90%;
+  left: 50%;
+  top: 0;
+  padding: 5px;
+  margin-left: -45%;
+  z-index: 10;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.main-badge > div {
+	width: 100%;
+  border: 1px dashed rgba(0, 0, 0, 0.5);
+  // border-color: rgba(0, 0, 0, 0.5);
+  height: 40px;
+  text-align: center;
+  font-family: $main-headings;
+  font-size: modular-scale(0, 1rem);
+  line-height: modular-scale(0, 1rem);
+  color: $black;
+  padding: 5px;
+  text-transform: uppercase;
+  p {
+	font-family: $main-headings;
+	font-size: modular-scale(0, 1rem);
+	line-height: modular-scale(0, 1rem);
+	color: $black;
+	margin-bottom: 0;
+	padding: 5px; 
+  }
+}
+
+.bk {
+ background: darken($yellow, 5%);
+ position: absolute;
+ width: 8%;
+ top: 12px;
+}
+
+.bk.l {
+ left: 0;
+}
+
+.bk.r {
+ right: 0;
+}
+
+.skew {
+  position: absolute;
+  background: darken($yellow, 20%);
+  width: 3%;
+  top: 6px;
+  z-index: 5;
+}
+
+.skew.l {
+  left: 5%;
+  transform: skew(00deg,45deg);
+}
+
+.skew.r {
+  right: 5%;
+  transform: skew(00deg,-45deg);
+}
+
+.bk.l > div {
+  left: -30px;
+}
+
+.bk.r > div {
+  right: -30px;
+}
+
+.arrow {
+  height: 25px !important;
+  position: absolute;
+  z-index: 2;
+	width: 0; 
+	height: 0; 
+}
+
+.arrow.top {
+  top: 0px;
+  border-top: 0px solid transparent;
+	border-bottom: 25px solid transparent; 	
+	border-right: 30px solid darken($yellow, 5%); 
+}
+
+.arrow.bottom {
+  top: 25px;
+  border-top: 25px solid transparent;
+	border-bottom:0px solid transparent; 	
+	border-right: 30px solid darken($yellow, 5%); 
+}
+
+.r .bottom {
+  border-top: 25px solid transparent;
+	border-bottom: 0px solid transparent; 	
+	border-left: 30px solid darken($yellow, 5%); 
+  border-right: none;
+}
+
+.r .top {
+  border-bottom: 25px solid transparent;
+	border-top: 0px solid transparent; 	
+	border-left: 30px solid darken($yellow, 5%); 
+  border-right: none;
+}
+
+@media all and (max-width: 1020px) {
+  .skew.l {
+    left: 5%;
+    transform: skew(00deg,25deg);
+  }
+
+  .skew.r {
+    right: 5%;
+    transform: skew(00deg,-25deg);
+  }
+}
+
+@media all and (max-width: 680px) {
+  .skew.l {
+    left: 5%;
+    transform: skew(00deg,30deg);
+  }
+
+  .skew.r {
+    right: 5%;
+    transform: skew(00deg,-30deg);
+  }
+}
+
+@media all and (max-width: 460px) {
+  .skew.l {
+    left: 5%;
+    transform: skew(00deg,40deg);
+  }
+  .skew.r {
+    right: 5%;
+    transform: skew(00deg,-40deg);
+  }
+}

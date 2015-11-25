@@ -12,6 +12,10 @@
             $heading    = get_post_meta( $post->ID, '_banner_heading', true );
             $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
 
+            // Badge
+            $badgetext    = get_post_meta( $post->ID, '_badge_text', true );
+            $badgelink  = get_post_meta( $post->ID, '_badge_link', true );
+
             // Hero Blurb
             $blurb      = get_post_meta( $post->ID, '_blurb_heroblurb', true );
 
@@ -42,6 +46,32 @@
                 <?php } ?>
             </hgroup>
         </div>
+
+        <?php if ($badgetext) { ?>
+            <a href="<?php echo $badgelink; ?>"><div id="banner-badge">
+                
+                  <div class="bk l">
+                    <div class="arrow top"></div> 
+                    <div class="arrow bottom"></div>
+                  </div>
+                
+                  <div class="skew l"></div>
+                
+                  <div class="main-badge">
+                    <div>
+                        <?php echo $badgetext; ?>
+                    </div>   
+                  </div>
+                
+                  <div class="skew r"></div>
+                  
+                  <div class="bk r">
+                    <div class="arrow top"></div> 
+                    <div class="arrow bottom"></div>
+                  </div>
+                
+                </div></a>
+        <?php } ?>
 
     <div class="diagonal-wrapper diagonal-svg__wrapper">
         <!-- <div class="diagonal-line"></div> -->
