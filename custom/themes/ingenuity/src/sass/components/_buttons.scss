@@ -24,8 +24,10 @@
     height: 90px
   }
   @include media($mobile-landscape) {
-    top: 70%;
+    top: 85%;
     left: 10%;
+    margin: 0 auto;
+    padding-bottom: 40px;
   }
 }
 
