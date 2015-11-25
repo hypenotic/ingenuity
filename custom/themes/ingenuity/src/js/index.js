@@ -172,86 +172,90 @@ $(function() {
 
 // GOOGLE MAPS ============================================
 
-// When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
+if ( $( "#contact-map" ).length ) {
+ 
+  // When the window has finished loading create our google map below
+  google.maps.event.addDomListener(window, 'load', init);
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  var isDraggable = false;
-} else {
-  var isDraggable = true;
-}
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    var isDraggable = false;
+  } else {
+    var isDraggable = true;
+  }
 
-function init() {
+  function init() {
 
-  // Basic options for a simple Google Map
- // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
- var mapOptions = {
-     // How zoomed in you want the map to start at (always required)
-     zoom: 15,
+    // Basic options for a simple Google Map
+   // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+   var mapOptions = {
+       // How zoomed in you want the map to start at (always required)
+       zoom: 15,
 
-     scrollwheel:  false,
-     draggable: isDraggable,
+       scrollwheel:  false,
+       draggable: isDraggable,
 
-     // The latitude and longitude to center the map (always required)
-     center: new google.maps.LatLng(43.5238744, -79.7086458), // New York
+       // The latitude and longitude to center the map (always required)
+       center: new google.maps.LatLng(43.5238744, -79.7086458), // New York
 
-     // How you would like to style the map. 
-     // This is where you would paste any style found on Snazzy Maps.
-     styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#a68d29"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#2d2d2d"},{"lightness":9},{"visibility":"simplified"}]},{"featureType":"transit.station","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"transit.station.airport","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"water","elementType":"geometry","stylers":[{"saturation":-83},{"lightness":-51}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]}]
- };
+       // How you would like to style the map. 
+       // This is where you would paste any style found on Snazzy Maps.
+       styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#a68d29"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#2d2d2d"},{"lightness":9},{"visibility":"simplified"}]},{"featureType":"transit.station","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"transit.station.airport","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"water","elementType":"geometry","stylers":[{"saturation":-83},{"lightness":-51}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]}]
+   };
 
- // Get the HTML DOM element that will contain your map 
- // We are using a div with id="map" seen below in the <body>
- // var mapElement = document.getElementById('footer-map');
- var contactMap = document.getElementById('contact-map');
+   // Get the HTML DOM element that will contain your map 
+   // We are using a div with id="map" seen below in the <body>
+   // var mapElement = document.getElementById('footer-map');
+   var contactMap = document.getElementById('contact-map');
 
- // Create the Google Map using our element and options defined above
- // var map = new google.maps.Map(mapElement, mapOptions);
- var mapC = new google.maps.Map(contactMap, mapOptions);
- mapC.panBy(0, -120);
+   // Create the Google Map using our element and options defined above
+   // var map = new google.maps.Map(mapElement, mapOptions);
+   var mapC = new google.maps.Map(contactMap, mapOptions);
+   mapC.panBy(0, -120);
 
- // Let's also add a marker while we're at it
- // var marker = new google.maps.Marker({
- //     position: new google.maps.LatLng(43.5238744, -79.7086458),
- //     map: map
- // });
+   // Let's also add a marker while we're at it
+   // var marker = new google.maps.Marker({
+   //     position: new google.maps.LatLng(43.5238744, -79.7086458),
+   //     map: map
+   // });
 
-var currentpage = window.location.href;
-if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
-  var theicon = '/ingenuity/custom/themes/ingenuity/dist/images/homemap.png';
-} else {
-  var theicon = '/custom/themes/ingenuity/dist/images/homemap.png'
-}
+  var currentpage = window.location.href;
+  if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
+    var theicon = '/ingenuity/custom/themes/ingenuity/dist/images/homemap.png';
+  } else {
+    var theicon = '/custom/themes/ingenuity/dist/images/homemap.png'
+  }
 
-var marker = new google.maps.Marker({
-  position: new google.maps.LatLng(43.5238744, -79.7086458),
-  map: mapC,
-  icon: theicon
-});
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(43.5238744, -79.7086458),
+    map: mapC,
+    icon: theicon
+  });
 
-  // Let's also add a marker while we're at it
- // var markerC = new google.maps.Marker({
- //     position: new google.maps.LatLng(43.5238744, -79.7086458),
- //     map: mapC
- // });
+    // Let's also add a marker while we're at it
+   // var markerC = new google.maps.Marker({
+   //     position: new google.maps.LatLng(43.5238744, -79.7086458),
+   //     map: mapC
+   // });
 
-var contentString = '<div id="info-window-content">'+
- '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
- '<a href="https://www.google.ca/maps/place/Ingenuity+Developments+Inc/@43.52352,-79.7077452,14.98z/data=!4m2!3m1!1s0x0:0x621fce01694efaaf" target="_blank"><p>3450 Ridgeway Dr. Unit • 3 </p>'+
- '<p>Mississauga, ON L5L 0A2</p></a>'+
- '<a href="tel:+1-905-569-2624" target="_blank"><p>(905) 569-2624</p></a>'+
- '</div>';
+  var contentString = '<div id="info-window-content">'+
+   '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
+   '<a href="https://www.google.ca/maps/place/Ingenuity+Developments+Inc/@43.52352,-79.7077452,14.98z/data=!4m2!3m1!1s0x0:0x621fce01694efaaf" target="_blank"><p>3450 Ridgeway Dr. Unit • 3 </p>'+
+   '<p>Mississauga, ON L5L 0A2</p></a>'+
+   '<a href="tel:+1-905-569-2624" target="_blank"><p>(905) 569-2624</p></a>'+
+   '</div>';
 
-var infowindow = new google.maps.InfoWindow({
-   content: contentString
-});
+  var infowindow = new google.maps.InfoWindow({
+     content: contentString
+  });
 
-google.maps.event.addListener(marker, 'click', function() {
-   infowindow.open(mapC,marker);
-});
+  google.maps.event.addListener(marker, 'click', function() {
+     infowindow.open(mapC,marker);
+  });
 
-infowindow.open(mapC,marker);
+  infowindow.open(mapC,marker);
 
+  }
+ 
 }
 
 // PUSH PANEL FOR TEAM PAGE ============================================
@@ -344,7 +348,7 @@ function IEcheck() {
   var vwidth = document.documentElement.clientWidth;
 
   if ( IEversion !== false ) {
-    console.log('You are using IE! ' + vwidth);
+    // console.log('You are using IE! ' + vwidth);
 
     var myElements = document.querySelectorAll(".default-hero");
      
@@ -353,7 +357,7 @@ function IEcheck() {
     }
 
   } else {
-    console.log('You are not using IE! ' + vwidth);
+    // console.log('You are not using IE! ' + vwidth);
   }
 }
 
