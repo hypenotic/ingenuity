@@ -55,13 +55,19 @@ var previousScroll = 0, // previous scroll position
     function showHideNav() {
       if ($('nav').hasClass('expanded')) {
         hideNav();
+        if ( $( "#home-badge" ).length ) {
+          $('#home-badge').css("display", "block");
+        }
         if ( $( "#banner-badge" ).length ) {
           $('#banner-badge').css("display", "block");
         }
       } else {
         showNav();
+        if ( $( "#home-badge" ).length ) {
+          $('#home-badge').css("display", "none");
+        }
         if ( $( "#banner-badge" ).length ) {
-          $('#banner-badge').css("display", "none");
+          $('#banner-badge').css("display", "block");
         }
       }
     }

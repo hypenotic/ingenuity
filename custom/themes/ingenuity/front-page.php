@@ -35,7 +35,8 @@
 	</div>
 
 	<?php if ($badgetext) { ?>
-		<a href="<?php echo $badgelink; ?>"><div id="banner-badge">
+		<a href="<?php echo $badgelink; ?>">
+			<div id="home-badge">
 			
 			  <div class="bk l">
 			    <div class="arrow top"></div> 
@@ -57,7 +58,8 @@
 			    <div class="arrow bottom"></div>
 			  </div>
 			
-			</div></a>
+			</div>
+		</a>
 	<?php } ?>
 
 	<?php endwhile; else : ?>

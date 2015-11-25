@@ -6,7 +6,8 @@
 
 // Banner Badges
 
-#banner-badge {
+#banner-badge,
+#home-badge {
   width: 300px;
   // max-width: 1000px;
   height: 80px;
@@ -22,7 +23,8 @@
   }
 }
 
-#banner-badge > div {
+#banner-badge > div,
+#home-badge > div {
   height: 50px;
 }
 
