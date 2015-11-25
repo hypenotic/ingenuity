@@ -38,21 +38,25 @@ $pages->add_meta_box(
             'name'          => 'subheading',
             'label'         => 'Banner Subheading',
             'description'   => 'Enter text',
-            'type'          => 'text'
-            
+            'type'          => 'text'  
         )
     )
 );
 $pages->add_meta_box(
-    'blurb',
-    'Hero Blurb', 
+    'badge',
+    'Hero Badge', 
     array(
         array(
-            'name'          => 'heroblurb',
-            'label'         => 'Banner Text',
-            'description'   => 'Enter text',
-            'type'          => 'text',
-            
+            'name'          => 'text',
+            'label'         => 'Badge Text',
+            'description'   => '',
+            'type'          => 'text', 
+        ),
+        array(
+            'name'          => 'link',
+            'label'         => 'Badge Link',
+            'description'   => '',
+            'type'          => 'text', 
         )
     )
 );

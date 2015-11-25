@@ -20,33 +20,13 @@ $white: 	rgba(255, 255, 255, 1);
 $black: 	rgba(0, 0, 0, 1);
 $grey: 		rgba(151, 151, 151, 1);
 $d-grey:	rgba(79, 79, 79, 1);
-$green: 	rgba(57, 148 , 107, 1);
-$orange: 	rgba(223, 110, 29, 1);
+
 $yellow:	rgba(252, 216, 56, 1);
 
-//Colours Column
-$color-column-one: $green;
-$color-column-two: $orange;
-$color-column-three: $yellow;
-
-// Background Color
-$body-bg-color: $white;
-
 // Buttons
-$button-color: $green;
-$button-hover-color: $green;
 
 // Font Colors
-$base-font-color: $black;
-$base-accent-color: $green;
-$light-font-color: $white;
-$header-font-color: $green;
-$headline-font-color: $white;
 
 // Link Colors
-$base-link-color: $base-font-color;
-$hover-link-color: darken($base-accent-color, 15);
-$hover-button-color: $hover-link-color;
 
 // Border color
-$logo-pack-color: $grey;
