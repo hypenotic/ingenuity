@@ -67,7 +67,7 @@ var previousScroll = 0, // previous scroll position
           $('#home-badge').css("display", "none");
         }
         if ( $( "#banner-badge" ).length ) {
-          $('#banner-badge').css("display", "block");
+          $('#banner-badge').css("display", "none");
         }
       }
     }
