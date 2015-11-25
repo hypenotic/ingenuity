@@ -23,6 +23,10 @@
     margin: 0 auto;
     height: 90px
   }
+  @include media($mobile-landscape) {
+    top: 70%;
+    left: 10%;
+  }
 }
 
 #banner-badge > div,
