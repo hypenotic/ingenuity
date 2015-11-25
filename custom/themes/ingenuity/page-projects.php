@@ -24,6 +24,12 @@
 	        	<?php } ?>
 		    </hgroup>
 		</div>
+
+		<div class="main-wrapper"> 
+			<section class="main-content standard-center"> 
+			<?php the_content(); ?>
+			</section>
+		</div>
 		
 		<div class="projects__panel-container"><?php
 			
