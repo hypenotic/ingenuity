@@ -36,7 +36,7 @@
 	hgroup {
 		margin-top: 150px; //newnav!
 		@include media($bp-small) {
-			margin-top: 50px;
+			margin-top: -30%;
 		}
 		@include media($mobile-landscape) {
 			margin-top: 5%;

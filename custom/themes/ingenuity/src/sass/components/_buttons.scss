@@ -19,7 +19,8 @@
   @include media($bp-small) {
     width: 200px;
     left: 10%;
-    margin: 50px auto;
+    top: 80%;
+    margin: 0 auto;
     height: 90px
   }
 }
