@@ -128,9 +128,9 @@ h2.rw-sentence{
 		line-height: modular-scale(6);
 	}
 	@include media($mobile-landscape) {
-		margin: 0 0 0 20px;
+		margin: 0 10%;
 		font-size: modular-scale(2, 1.3rem); 
-		line-height: modular-scale(2, 1.6rem); 
+		line-height: modular-scale(2, 1.4rem); 
 	}
 }
 
