@@ -39,7 +39,7 @@
 			margin-top: -30%; //edited for the badge
 		}
 		@include media($mobile-landscape) {
-			margin-top: 5%;
+			margin-top: 0;
 		}
 		img {
 			width: 200px;

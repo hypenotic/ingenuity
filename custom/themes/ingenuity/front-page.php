@@ -32,35 +32,36 @@
 				<span id="move-over">/sq ft.</span>
 			</h2>
 		</hgroup>
-	</div>
 
-	<?php if ($badgetext) { ?>
-		<a href="<?php echo $badgelink; ?>">
-			<div id="home-badge">
-			
-			  <div class="bk l">
-			    <div class="arrow top"></div> 
-			    <div class="arrow bottom"></div>
-			  </div>
-			
-			  <div class="skew l"></div>
-			
-			  <div id="main-badge">
-			    <div>
-			    	<?php echo $badgetext; ?>
-			    </div>   
-			  </div>
-			
-			  <div class="skew r"></div>
-			  
-			  <div class="bk r">
-			    <div class="arrow top"></div> 
-			    <div class="arrow bottom"></div>
-			  </div>
-			
-			</div>
-		</a>
-	<?php } ?>
+		<?php if ($badgetext) { ?>
+			<a href="<?php echo $badgelink; ?>">
+				<div id="home-badge">
+				
+				  <div class="bk l">
+				    <div class="arrow top"></div> 
+				    <div class="arrow bottom"></div>
+				  </div>
+				
+				  <div class="skew l"></div>
+				
+				  <div id="main-badge">
+				    <div>
+				    	<?php echo $badgetext; ?>
+				    </div>   
+				  </div>
+				
+				  <div class="skew r"></div>
+				  
+				  <div class="bk r">
+				    <div class="arrow top"></div> 
+				    <div class="arrow bottom"></div>
+				  </div>
+				
+				</div>
+			</a>
+		<?php } ?>
+
+	</div>
 
 	<?php endwhile; else : ?>
 	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
