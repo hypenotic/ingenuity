@@ -45,7 +45,7 @@
 			
 			  <div class="skew l"></div>
 			
-			  <div class="main-badge">
+			  <div id="main-badge">
 			    <div>
 			    	<?php echo $badgetext; ?>
 			    </div>   

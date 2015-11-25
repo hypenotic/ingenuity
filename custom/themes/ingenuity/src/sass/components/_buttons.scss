@@ -20,15 +20,19 @@
     width: 200px;
     left: 10%;
     margin: 50px auto;
+    height: 90px
   }
 }
 
 #banner-badge > div,
 #home-badge > div {
   height: 50px;
+  @include media($bp-small) {
+    height: 60px
+  }
 }
 
-.main-badge {
+#main-badge {
   background: $yellow; 
   position: relative;
   display: block;
@@ -41,9 +45,12 @@
   @include display(flex);
   @include align-items(center);
   @include justify-content(center);
+  @include media($bp-small) {
+    height: 60px
+  }
 }
 
-.main-badge > div {
+#main-badge > div {
 	width: 100%;
   border: 1px dashed rgba(0, 0, 0, 0.5);
   // border-color: rgba(0, 0, 0, 0.5);
@@ -58,7 +65,8 @@
   @include media($bp-small) {
     font-size: modular-scale(0, 0.8rem);
     line-height: modular-scale(0, 0.8rem);
-    padding-top: 10px;
+    padding-top: 8px;
+    height: 50px;
   }
   p {
 	font-family: $main-headings;
@@ -75,13 +83,16 @@
  position: absolute;
  width: 8%;
  top: 12px;
+ @include media($bp-small) {
+   top: 18px;
+ }
 }
 
-.bk.l {
+div.bk.l {
  left: 0;
 }
 
-.bk.r {
+div.bk.r {
  right: 0;
 }
 
@@ -117,6 +128,9 @@
   z-index: 2;
 	width: 0; 
 	height: 0; 
+  @include media($bp-small) {
+    height: 30px !important;
+  }
 }
 
 .arrow.top {
@@ -124,6 +138,9 @@
   border-top: 0px solid transparent;
 	border-bottom: 25px solid transparent; 	
 	border-right: 30px solid darken($yellow, 5%); 
+  @include media($bp-small) {
+    border-bottom: 30px solid transparent;  
+  }
 }
 
 .arrow.bottom {
@@ -131,6 +148,10 @@
   border-top: 25px solid transparent;
 	border-bottom:0px solid transparent; 	
 	border-right: 30px solid darken($yellow, 5%); 
+  @include media($bp-small) {
+    border-top: 30px solid transparent; 
+    top: 30px; 
+  }
 }
 
 .r .bottom {
@@ -138,6 +159,9 @@
 	border-bottom: 0px solid transparent; 	
 	border-left: 30px solid darken($yellow, 5%); 
   border-right: none;
+  @include media($bp-small) {
+    border-top: 30px solid transparent; 
+  }
 }
 
 .r .top {
@@ -145,6 +169,9 @@
 	border-top: 0px solid transparent; 	
 	border-left: 30px solid darken($yellow, 5%); 
   border-right: none;
+  @include media($bp-small) {
+    border-bottom: 30px solid transparent;  
+  }
 }
 
 @media all and (max-width: 1020px) {

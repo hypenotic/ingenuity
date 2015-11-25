@@ -566,6 +566,10 @@ main {
 // SIDEBARS =========================
 
 aside {
+	a {
+		color: $d-grey;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+	}
     p {
     	margin: 0;
     	font-size: modular-scale(0, 1rem);
@@ -580,6 +584,7 @@ aside {
     	li {
 			padding-bottom: 3px;
 			a {
+				color: $d-grey;
 				border-bottom: 1px solid rgba(0,0,0,0.2);
 			}
     	}
