@@ -55,8 +55,14 @@ var previousScroll = 0, // previous scroll position
     function showHideNav() {
       if ($('nav').hasClass('expanded')) {
         hideNav();
+        if ( $( "#banner-badge" ).length ) {
+          $('#banner-badge').css("display", "block");
+        }
       } else {
         showNav();
+        if ( $( "#banner-badge" ).length ) {
+          $('#banner-badge').css("display", "none");
+        }
       }
     }
     // shows the navigation’s popover
