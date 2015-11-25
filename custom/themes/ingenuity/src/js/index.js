@@ -154,7 +154,9 @@ $(function() {
       player.api('seekTo',8);
   });
 
-  $('.fadeInDown h1').widowFix();
+  $('.fadeInDown h1').widowFix({
+    letterLimit: 5
+  });
   $('.fadeInDown h2').widowFix();
 });
 
