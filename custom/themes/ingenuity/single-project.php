@@ -13,7 +13,7 @@
             $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
 
             // Badge
-            $badgetext    = get_post_meta( $post->ID, '_badge_text', true );
+            $badgetext  = get_post_meta( $post->ID, '_badge_text', true );
             $badgelink  = get_post_meta( $post->ID, '_badge_link', true );
 
             // Hero Blurb
