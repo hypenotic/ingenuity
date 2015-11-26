@@ -101,7 +101,7 @@
 							</hgroup>
 						</figure>
 						<hgroup class="drop-down-panel">
-							<button class="drop-down-cross close-push-panel"></button>
+<!-- 							<button class="drop-down-cross close-push-panel"></button> -->
 							<div class="push__longbio animated fadeIn">
 								<?php echo $longbio; ?>
 							</div>

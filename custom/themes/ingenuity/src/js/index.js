@@ -111,13 +111,8 @@ $(".team__single").click(function(){
   nextPanel.slideToggle(300);
 });
 
-$(".close-push-panel").click(function() {
-  $(this).parent(".drop-down-panel").slideToggle(300);
-
-  $('html, body').animate({
-    'scrollTop': $(this).parent(".drop-down-panel").offset().top - 400
-  }, 'fast');
-
+$(".drop-down-panel").click(function() {
+  $(this).slideToggle(300);
 });
 
   // Check if mobile

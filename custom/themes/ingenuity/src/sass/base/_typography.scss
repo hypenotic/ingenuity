@@ -678,11 +678,15 @@ h2.team__hero-subheading {
 	figcaption {
 		margin-top: 20px;
 	}
+	h3 {
+		font-family: $main-headings;
+	}
 }
 
 .drop-down-panel {
 	color: $white;
 	button {
+		display: none;
 		color: $black;
 		background-color: $yellow;
 		border: none;
@@ -692,6 +696,9 @@ h2.team__hero-subheading {
 		font-size: modular-scale(1);
 		&:hover {
 			background-color: darken($yellow, 10%); 
+		}
+		@include media($bp-small) {
+			display: block;
 		}
 	}
 }
