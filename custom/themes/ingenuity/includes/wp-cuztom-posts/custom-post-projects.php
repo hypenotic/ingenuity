@@ -18,18 +18,26 @@ $projects->add_meta_box(
             'type'          => 'image',
         ),
         array(
+            'name'          => 'herovid',
+            'label'         => 'Video Header',
+            'description'   => 'Select a video to appear in the header.',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'video',
+                'show_option_none' => "Select a video",
+                )
+        ),
+        array(
             'name'          => 'heading',
             'label'         => 'Banner Text',
             'description'   => 'Enter text',
             'type'          => 'text',
-            
         ),
         array(
             'name'          => 'subheading',
             'label'         => 'Banner Subheading',
             'description'   => 'Enter text',
-            'type'          => 'text'
-            
+            'type'          => 'text'  
         )
     )
 );
