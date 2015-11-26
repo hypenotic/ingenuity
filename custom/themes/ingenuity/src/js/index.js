@@ -159,6 +159,7 @@ $(function() {
     letterLimit: 5
   });
   $('.fadeInDown h2').widowFix();
+  $('.blog-entry p').widowFix();
 });
 
 // GOOGLE MAPS ============================================

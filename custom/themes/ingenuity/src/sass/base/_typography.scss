@@ -708,6 +708,8 @@ h2.team__hero-subheading {
 		}
 		@include media($bp-small) {
 			display: block;
+			padding: 10px 15px;
+			font-size: modular-scale(0);
 		}
 	}
 }
