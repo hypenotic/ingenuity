@@ -36,10 +36,10 @@
 	hgroup {
 		margin-top: 150px; //newnav!
 		@include media($bp-small) {
-			margin-top: -30%; //edited for the badge
+			margin-top: 5%;
 		}
 		@include media($mobile-landscape) {
-			margin-top: 0;
+			margin-top: 5%;
 		}
 		img {
 			width: 200px;
