@@ -38,6 +38,33 @@
         ?>
 
         <div class="default-hero">
+            <?php if ($badgetext) { ?>
+                <a href="<?php echo $badgelink; ?>">
+                    <div id="banner-badge">
+                    
+                      <div class="bk l">
+                        <div class="arrow top"></div> 
+                        <div class="arrow bottom"></div>
+                      </div>
+                    
+                      <div class="skew l"></div>
+                    
+                      <div id="main-badge">
+                        <div>
+                            <?php echo $badgetext; ?>
+                        </div>   
+                      </div>
+                    
+                      <div class="skew r"></div>
+                      
+                      <div class="bk r">
+                        <div class="arrow top"></div> 
+                        <div class="arrow bottom"></div>
+                      </div>
+                    
+                    </div>
+                </a>
+            <?php } ?>
             <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
             <hgroup class="animated fadeInDown">
                 <h1><?php echo $heading; ?></h1>
@@ -46,32 +73,6 @@
                 <?php } ?>
             </hgroup>
         </div>
-
-        <?php if ($badgetext) { ?>
-            <a href="<?php echo $badgelink; ?>"><div id="banner-badge">
-                
-                  <div class="bk l">
-                    <div class="arrow top"></div> 
-                    <div class="arrow bottom"></div>
-                  </div>
-                
-                  <div class="skew l"></div>
-                
-                  <div class="main-badge">
-                    <div>
-                        <?php echo $badgetext; ?>
-                    </div>   
-                  </div>
-                
-                  <div class="skew r"></div>
-                  
-                  <div class="bk r">
-                    <div class="arrow top"></div> 
-                    <div class="arrow bottom"></div>
-                  </div>
-                
-                </div></a>
-        <?php } ?>
 
     <div class="diagonal-wrapper diagonal-svg__wrapper">
         <!-- <div class="diagonal-line"></div> -->

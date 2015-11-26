@@ -15,11 +15,11 @@
   position: absolute;
   top: 50px;
   right: 10%;
-  z-index: 901;
+  z-index: 899;
   @include media($bp-small) {
     width: 200px;
     left: 10%;
-    top: 75%;
+    top: 80%;
     margin: 0 auto;
     height: 90px
   }
