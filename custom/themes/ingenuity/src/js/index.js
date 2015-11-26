@@ -250,49 +250,6 @@ if ( $( "#contact-map" ).length ) {
  
 }
 
-// PUSH PANEL FOR TEAM PAGE ============================================
-
-var menuRight = document.getElementById( 'push-panel' ),
-	// showRightPush = document.getElementById( 'showRightPush' ),
-	closepanel = document.getElementById( 'close-push-panel' ),
-	body = document.body;
-
-// showRightPush.onclick = function() {
-// 	classie.toggle( this, 'active' );
-// 	classie.toggle( body, 'cbp-spmenu-push-toleft' );
-// 	classie.toggle( menuRight, 'cbp-spmenu-open' );
-// };
-
-
-// Grab the data attribute info, and print them into the overlay
-function printTeamMemberInfo($single) {
-	$('#push__name').append($single.data('name'));
-	$('#push__longbio').html($single.data('longbio'));
-};
-
-
-$( ".trigger-push-panel" ).click(function() {
-	$('#push__name').empty();
-	$('#push__longbio').empty();
-
-	$('html, body').animate({
-		'scrollTop': $('#push-panel').offset().top - 20
-	}, 'fast');
-
-	printTeamMemberInfo($(this));
-
-	classie.toggle( this, 'active' );
-	classie.toggle( body, 'cbp-spmenu-push-toleft' );
-	classie.toggle( menuRight, 'cbp-spmenu-open' );
-});
-
-$( "#close-push-panel" ).click(function() {
-	$(body).removeClass("cbp-spmenu-push-toleft");
-	$(menuRight).removeClass("cbp-spmenu-open");
-});
-
-// =========================
-
 /**
  * detect IE
  * returns version of IE or false, if browser is not Internet Explorer
