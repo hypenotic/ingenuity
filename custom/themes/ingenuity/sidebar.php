@@ -10,7 +10,7 @@ $authors     = get_post_meta( $post->ID, '_authors_authorlist', true );
 
 		<span class="bolded-text">Author(s):</span> 
 		<?php if ($authors) { ?>
-			<?php echo $authors; ?>
+			<?php coauthors_posts_links(',',','); ?>, <?php echo $authors; ?>
 		<?php } else { ?>
 			<a href="<?php the_author_link(); ?>"><?php the_author(); ?></a>
 		<?php } ?>
