@@ -99,8 +99,8 @@ h3,
 
 h3 {
 	font-family: $lite-headings;
-	font-size: modular-scale(2, 1.3rem); 
-	line-height: modular-scale(2, 1.3rem); 
+	font-size: modular-scale(2, 1.4rem); 
+	line-height: modular-scale(2, 1.4rem); 
 	@include media($bp-small) {
 	    font-size: modular-scale(2, 1.2rem); 
 	    line-height: modular-scale(2, 1.2rem); 
@@ -354,12 +354,19 @@ main {
 		margin-bottom: 10px;
 		margin-top: 50px;
 	}
-	h2 {
+	h1 {
 		font-family: $main-headings;
 		font-size: modular-scale(4, 1.4rem);	
 		line-height: modular-scale(4, 1.3rem);
 		font-weight: 600;
-		color: rgba(0,0,0,0.90);
+		color: #444;
+	}
+	h2 {
+		font-family: $main-headings;
+		font-size: modular-scale(3, 1.4rem);	
+		line-height: modular-scale(3, 1.3rem);
+		font-weight: 600;
+		color: #444;
 	}
 	h3 {
 		text-transform: uppercase;
@@ -395,7 +402,7 @@ main {
 	}
 }
 
-.blog-entry p:first-child {
+.blog-entry > p:first-child {
 	&:first-letter {
 	    float: left; 
         font-size: modular-scale(7); 
@@ -431,7 +438,7 @@ main {
 			margin: 10px;
 	    }
 		p {
-			padding-left: 20px;
+			padding-left: 30px;
 			font-family: $lite-headings;
 			font-size: modular-scale(3, 1.2rem); 
 			line-height: modular-scale(3, 1.2rem); 
@@ -793,6 +800,10 @@ h2.team__hero-subheading {
 // BLOG ==============================
 
 .blog-entry {
+	h1 {
+		margin: 50px auto 10px;
+		text-align: initial;
+	}
 	blockquote {
 		font-family: $title-font;
 		// border-left: 4px solid $yellow;
@@ -824,10 +835,18 @@ h2.team__hero-subheading {
 }
 
 .blog-single-post {
-	.blog-single__title {
-		padding: 5px;
+	a {
+		border-bottom: 1px solid transparent;
 		&:hover {
-			background-color: $yellow;
+			border-bottom: 1px solid $yellow;
+		}
+	}
+	.blog-single__title {
+		padding: 0;
+		border-bottom: 1px solid transparent;
+		margin-bottom: 5px;
+		&:hover {
+			border-bottom: 1px solid $yellow;
 		}
 	}
 	ul.post-categories {

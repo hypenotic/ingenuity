@@ -12,7 +12,7 @@ $authors     = get_post_meta( $post->ID, '_authors_authorlist', true );
 		<?php if ($authors) { ?>
 			<?php coauthors_posts_links(', ',', '); ?>, <?php echo $authors; ?>
 		<?php } else { ?>
-			<?php coauthors_posts_links(', ',', '); ?>
+			<?php coauthors_posts_links(', '); ?>
 		<?php } ?>
 		
 	</p>
