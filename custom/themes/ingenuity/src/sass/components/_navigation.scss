@@ -333,6 +333,9 @@ nav.default-home-header.expanded #navigation ul {
   text-align: left;
   list-style-type: none;
   padding: 0;
+  @include media($bp-med) {
+    padding-top: 20%;
+  }
   @include media($bp-large) {
     padding-top: 10%;
   }
