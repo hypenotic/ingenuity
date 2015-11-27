@@ -111,7 +111,25 @@
 	@include justify-content(center);
 	iframe {
 		width: 100%;
-		height: 600px;
+		min-height: 600px;
+		@include media($bp-small) {
+			min-height: 400px;
+		}
+		@include media($bp-med) {
+			min-height: 500px;
+		}
+		@include media($mobile-landscape) {
+			min-height: 350px;
+		}
+		@include media($bp-large) {
+			min-height: 600px;
+		}
+		@include media($bp-xlarge) {
+			min-height: 700px;
+		}
+		@include media($bp-xxlarge) {
+			min-height: 750px;
+		}
 	}
 }
 
