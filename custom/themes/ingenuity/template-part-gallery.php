@@ -31,7 +31,7 @@ if($slide_id) : ?>
             
             <div class="gallery__single">
                 <div class="gallery__single-half gallery-image wow fadeInLeft">
-                    <img src="<?php echo $s_image_url[0]; ?>" alt="">
+                    <img src="<?php echo $s_image_url[0]; ?>" alt="<?php the_title(); ?> - Gallery Photo">
                 </div>
                 <div class="gallery__single-half gallery-caption wow fadeInRight">
                     <p><?php echo $s_text; ?></p>
