@@ -43,6 +43,10 @@
         @include flex(1 0 auto);
         @include flex-direction(column);
     }
+    @include media($bp-med) {
+        @include flex(1 0 auto);
+        @include flex-direction(column);
+    }
     @include media($mobile-landscape) {
         @include flex(1 0 auto);
         @include flex-direction(column);
