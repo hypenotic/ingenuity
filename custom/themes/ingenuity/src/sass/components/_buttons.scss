@@ -13,8 +13,8 @@
   height: 80px;
   margin: 40px auto; 
   position: absolute;
-  top: 50px;
-  right: 10%;
+  top: 80%;
+  right: 5%;
   z-index: 899;
   @include media($bp-small) {
     width: 200px;
@@ -40,7 +40,7 @@
 }
 
 #main-badge {
-  background: $yellow; 
+  background: lighten($black, 4%); 
   position: relative;
   display: block;
   width: 90%;
@@ -59,14 +59,14 @@
 
 #main-badge > div {
 	width: 100%;
-  border: 1px dashed rgba(0, 0, 0, 0.5);
+  border: 1px dashed rgba(252, 216, 56, 0.5);
   // border-color: rgba(0, 0, 0, 0.5);
   height: 40px;
   text-align: center;
   font-family: $main-headings;
   font-size: modular-scale(0, 1rem);
   line-height: modular-scale(0, 1rem);
-  color: $black;
+  color: $yellow;
   padding: 5px;
   text-transform: uppercase;
   @include media($bp-small) {
@@ -86,7 +86,7 @@
 }
 
 .bk {
- background: darken($yellow, 5%);
+ background: lighten($black, 5%);
  position: absolute;
  width: 8%;
  top: 12px;
@@ -105,7 +105,7 @@ div.bk.r {
 
 .skew {
   position: absolute;
-  background: darken($yellow, 20%);
+  background: lighten($black, 20%);
   width: 3%;
   top: 6px;
   z-index: 5;
@@ -144,7 +144,7 @@ div.bk.r {
   top: 0px;
   border-top: 0px solid transparent;
 	border-bottom: 25px solid transparent; 	
-	border-right: 30px solid darken($yellow, 5%); 
+	border-right: 30px solid lighten($black, 5%); 
   @include media($bp-small) {
     border-bottom: 30px solid transparent;  
   }
@@ -154,7 +154,7 @@ div.bk.r {
   top: 25px;
   border-top: 25px solid transparent;
 	border-bottom:0px solid transparent; 	
-	border-right: 30px solid darken($yellow, 5%); 
+	border-right: 30px solid lighten($black, 5%); 
   @include media($bp-small) {
     border-top: 30px solid transparent; 
     top: 30px; 
@@ -164,7 +164,7 @@ div.bk.r {
 .r .bottom {
   border-top: 25px solid transparent;
 	border-bottom: 0px solid transparent; 	
-	border-left: 30px solid darken($yellow, 5%); 
+	border-left: 30px solid lighten($black, 5%); 
   border-right: none;
   @include media($bp-small) {
     border-top: 30px solid transparent; 
@@ -174,7 +174,7 @@ div.bk.r {
 .r .top {
   border-bottom: 25px solid transparent;
 	border-top: 0px solid transparent; 	
-	border-left: 30px solid darken($yellow, 5%); 
+	border-left: 30px solid lighten($black, 5%); 
   border-right: none;
   @include media($bp-small) {
     border-bottom: 30px solid transparent;  
