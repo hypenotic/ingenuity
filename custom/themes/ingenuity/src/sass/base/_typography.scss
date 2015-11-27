@@ -434,6 +434,18 @@ main {
         font-size: modular-scale(7); 
         line-height: modular-scale(6);
         padding: 7px 25px 0px 0px;
+        @include media($bp-small) {
+            font-size: modular-scale(3);
+            line-height: modular-scale(3);
+            padding: 0 10px 0 5px;
+            float: left;
+        }
+        @include media($mobile-landscape) {
+            font-size: modular-scale(3, 1.6rem);
+            line-height: modular-scale(3, 1.6rem);
+            padding: 0 10px 0 5px;
+            float: left;
+        }
 	}
 }
 
