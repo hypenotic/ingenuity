@@ -13,7 +13,7 @@
             $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
 
             // Hero Vid
-            $vid_id   = get_post_meta($post->ID,'_banner_herovid',true);
+            $vid_id     = get_post_meta($post->ID,'_banner_herovid',true);
 
             // Badge
             $badgetext  = get_post_meta( $post->ID, '_badge_text', true );
@@ -58,7 +58,7 @@
         <div class="default-hero">
             <div class="fullscreen-bg default-vidheader" id="vid-check">
                  <?php if($vimeo): ?>
-                     <iframe class="fullscreen-bg__video" id="vimeo_player" src="https://player.vimeo.com/video/<?php echo $vimeo ?>?api=1&player_id=vimeo_player&autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                     <iframe class="fullscreen-bg__video" id="vimeo_player" src="https://player.vimeo.com/video/<?php echo $vimeo ?>?api=1&player_id=vimeo_player&autoplay=1&loop=1&title=0&byline=0&portrait=0" width="2560" height="1439" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                  <?php endif ?>
                  <?php if($youtube): ?>
                      <iframe src="https://www.youtube.com/embed/<?php echo $youtube ?>" width="420" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
