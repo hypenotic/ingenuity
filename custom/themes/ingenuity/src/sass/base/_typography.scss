@@ -428,7 +428,7 @@ main {
 }
 
 .blog-entry > blockquote:first-child,
-.blog-entry > blockquote:first-child p {
+.blog-entry > blockquote:first-child > p:first-child {
 	&::first-letter {
 	    float: left; 
         font-size: modular-scale(7); 
