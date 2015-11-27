@@ -12,6 +12,9 @@
             $heading    = get_post_meta( $post->ID, '_banner_heading', true );
             $subheading = get_post_meta( $post->ID, '_banner_subheading', true );
 
+            // Hero Vid
+            $vid_id   = get_post_meta($post->ID,'_banner_herovid',true);
+
             // Badge
             $badgetext  = get_post_meta( $post->ID, '_badge_text', true );
             $badgelink  = get_post_meta( $post->ID, '_badge_link', true );
@@ -36,6 +39,69 @@
             $gallery    = get_post_meta( $post->ID, '_slide_select', true );
 
         ?>
+
+        <?php if($vid_id) { ?>
+
+        <?php 
+            $args = array(
+                'post_type' => 'video',
+                'post__in'  => array($vid_id)
+            );
+            $video = new WP_Query( $args ); ?>
+
+        <?php if ( $video->have_posts() ) : while ( $video->have_posts() ) : $video->the_post(); 
+            
+            $description = wpautop(get_post_meta($post->ID,'_video_description',true));
+            $youtube     = get_post_meta($post->ID,'_video_youtube',true);
+            $vimeo       = get_post_meta($post->ID,'_video_vimeo',true); ?>    
+           
+        <div class="default-hero">
+            <div class="fullscreen-bg default-vidheader" id="vid-check">
+                 <?php if($vimeo): ?>
+                     <iframe class="fullscreen-bg__video" id="vimeo_player" src="https://player.vimeo.com/video/<?php echo $vimeo ?>?api=1&player_id=vimeo_player&autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                 <?php endif ?>
+                 <?php if($youtube): ?>
+                     <iframe src="https://www.youtube.com/embed/<?php echo $youtube ?>" width="420" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                 <?php endif ?>
+            </div>
+            <?php if ($badgetext) { ?>
+                <a href="<?php echo $badgelink; ?>">
+                    <div id="banner-badge">
+                    
+                      <div class="bk l">
+                        <div class="arrow top"></div> 
+                        <div class="arrow bottom"></div>
+                      </div>
+                    
+                      <div class="skew l"></div>
+                    
+                      <div id="main-badge">
+                        <div>
+                            <?php echo $badgetext; ?>
+                        </div>   
+                      </div>
+                    
+                      <div class="skew r"></div>
+                      
+                      <div class="bk r">
+                        <div class="arrow top"></div> 
+                        <div class="arrow bottom"></div>
+                      </div>
+                    
+                    </div>
+                </a>
+            <?php } ?>
+            <hgroup class="animated fadeInDown">
+                <h1><?php echo $heading; ?></h1>
+                <?php if ($subheading) { ?>
+                    <h2><?php echo $subheading; ?></h2>
+                <?php } ?>
+            </hgroup>
+        </div>
+
+        <?php endwhile; endif; wp_reset_postdata();?>
+
+        <?php } else { ?>
 
         <div class="default-hero">
             <?php if ($badgetext) { ?>
@@ -73,6 +139,8 @@
                 <?php } ?>
             </hgroup>
         </div>
+
+        <?php } ?>
 
     <div class="diagonal-wrapper diagonal-svg__wrapper">
         <!-- <div class="diagonal-line"></div> -->
