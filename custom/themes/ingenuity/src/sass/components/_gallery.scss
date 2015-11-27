@@ -53,6 +53,9 @@
     @include media($bp-small) {
         @include flex(1 0 auto);
     }
+    @include media($bp-med) {
+        @include flex(1 0 auto);
+    }
     @include media($mobile-landscape) {
         @include flex(1 0 auto);
     }
@@ -64,6 +67,11 @@
 .gallery__single-half.gallery-image {
     position: relative;
     @include media($bp-small) {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+    }
+    @include media($bp-med) {
         @include display(flex);
         @include align-items(center);
         @include justify-content(center);
