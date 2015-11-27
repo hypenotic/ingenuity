@@ -27,7 +27,7 @@ $video_id = get_post_meta($post->ID,'_video_select',true); ?>
         <div class="column2">
             <?php if($vimeo): ?>
             <div class="js-video [vimeo, widescreen]">
-                <iframe src="https://player.vimeo.com/video/<?php echo $vimeo ?>?portrait=0&title=0&byline=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/<?php echo $vimeo ?>?portrait=0&title=0&byline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
             <?php endif ?>
             <?php if($youtube): ?>
@@ -36,12 +36,6 @@ $video_id = get_post_meta($post->ID,'_video_select',true); ?>
             </div>
             <?php endif ?>
         </div>
-<!--         <div class="column2">
-            <h2><?php // the_title(); ?></h2>
-            <?php // if($description) : ?>
-                <?php // echo $description; ?>
-            <?php // endif ?>
-        </div> -->
     </section> 
 
 <?php endwhile; endif; wp_reset_postdata();?>
