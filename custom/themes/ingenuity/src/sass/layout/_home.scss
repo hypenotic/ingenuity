@@ -232,6 +232,9 @@ div.rw-words.rw-words-1 {
 		left: -20px; 
 		// padding-left: 420px;
 	}
+	@include media($bp-xlarge) {
+		left: 65px;
+	}
 }
 
 .rw-words a span.sq-ft {
