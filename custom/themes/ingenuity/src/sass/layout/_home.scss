@@ -96,6 +96,12 @@
 		margin-top: 50px;
 		position: relative;
 	}
+	a.sentence-link {
+		color: rgba(255,255,255, 0.5);
+	}
+	a.rotator-link {
+		color: $yellow;
+	}
 }
 
 h2.rw-sentence{
@@ -194,9 +200,9 @@ div.rw-words.rw-words-1 {
 	animation: rotateWord 18s linear infinite 0s;
 	padding-left: 20px;
 	@include media($bp-small) {
-		bottom: -50px;
+		// bottom: -50px;
 		left: 0;
-		padding-left: 0;
+		padding-left: 40px;
 	}
 	@include media($bp-med) {
 		// bottom: -100px;
@@ -207,7 +213,7 @@ div.rw-words.rw-words-1 {
 		// bottom: -100px;
 		bottom: 0;
 		left: -20px; 
-		// padding-left: 100px;
+		padding-left: 420px;
 	}
 }
 

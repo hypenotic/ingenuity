@@ -21,13 +21,13 @@
 		</div>
  		<hgroup class="rw-wrapper">
 			<h2 class="rw-sentence">
-				Design Build & General Contracting that factors in
+				A <a href="<?php home_url(); ?>services/design-build/" class="sentence-link">Design Build</a> & <a href="<?php home_url(); ?>services/general-contracting/" class="sentence-link">General Contracting</a> team that <a href="<?php home_url(); ?>about-us/" class="sentence-link">believes</a> in
 				<div class="rw-words rw-words-1">
-					<span class="rotator">happiness <span class="sq-ft">/sq ft.</span></span>
-					<span class="rotator">craft <span class="sq-ft">/sq ft.</span></span>
-					<span class="rotator">productivity <span class="sq-ft">/sq ft.</span></span>
-					<span class="rotator">detail <span class="sq-ft">/sq ft.</span></span>
-					<span class="rotator">creativity <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator"><a href="<?php home_url(); ?>projects/" class="rotator-link">happiness</a> <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator"><a href="<?php home_url(); ?>projects/" class="rotator-link">craft</a> <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator"><a href="<?php home_url(); ?>projects/" class="rotator-link">productivity</a> <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator"><a href="<?php home_url(); ?>projects/" class="rotator-link">detail</a> <span class="sq-ft">/sq ft.</span></span>
+					<span class="rotator"><a href="<?php home_url(); ?>projects/" class="rotator-link">creativity</a> <span class="sq-ft">/sq ft.</span></span>
 				</div>
 				<span id="move-over">/sq ft.</span>
 			</h2>
