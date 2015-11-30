@@ -163,10 +163,7 @@
                 <?php } ?>
             </aside>
             <section class="blog-entry">
-                <!-- <section class="project__hero-blurb">
-                    <p><?php //echo $blurb; ?></p>
-                </section> -->
-
+            
                 <?php the_content(); ?>
 
             </section>
