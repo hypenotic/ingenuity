@@ -97,7 +97,7 @@
 		position: relative;
 	}
 	a.sentence-link {
-		color: rgba(255,255,255, 0.5);
+		color: rgba(255,255,255, 0.6);
 	}
 	a.rotator-link {
 		color: $yellow;
@@ -110,6 +110,7 @@ h2.rw-sentence{
 	text-align: left;
 	// text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
 	z-index: 100;
+	font-weight: 600;
 	// width: 100%;
 	@include media($bp-small) {
 		margin: 0 0 0 20px;
@@ -150,7 +151,7 @@ h2.rw-sentence{
 .rw-sentence span {
 	// color: ;
 	font-size: 100%;
-	font-weight: normal;
+	font-weight: 600;
 	text-align: center;
 }
 
@@ -213,7 +214,7 @@ div.rw-words.rw-words-1 {
 		// bottom: -100px;
 		bottom: 0;
 		left: -20px; 
-		padding-left: 420px;
+		padding-left: 410px;
 	}
 }
 
