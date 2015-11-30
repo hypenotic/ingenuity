@@ -99,6 +99,10 @@
 	a.sentence-link {
 		color: rgba(255,255,255, 1);
 		border-bottom: 1px solid $white;
+		&:hover {
+			color: $black;
+			background-color: $yellow;
+		}
 	}
 	a.rotator-link {
 		color: $yellow;
@@ -148,7 +152,7 @@ h2.rw-sentence{
 	}
 }
 
-.rw-sentence span {
+.rw-sentence a span {
 	// color: ;
 	font-size: 100%;
 	font-weight: 600;
@@ -187,13 +191,21 @@ h2.rw-sentence{
 .rw-words{
 	display: inline;
 	// text-indent: 10px;
+	&:hover a.rotator-link {
+		color: $black;
+		span {
+			color: $black;
+			background-color: $yellow;
+		}
+
+	}
 }
 
 div.rw-words.rw-words-1 {
 	// border-bottom: 4px solid $white;
 }
 
-.rw-words-1 span.rotator {
+.rw-words-1 a span.rotator {
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
@@ -201,7 +213,8 @@ div.rw-words.rw-words-1 {
 	-webkit-animation: rotateWord 18s linear infinite 0s;
 	-ms-animation: rotateWord 18s linear infinite 0s;
 	animation: rotateWord 18s linear infinite 0s;
-	padding-left: 20px;
+	margin-left: 20px;
+	padding-right: 8px;
 	@include media($bp-small) {
 		// bottom: -50px;
 		left: 0;
@@ -233,35 +246,35 @@ span.sq-ft {
 	}
 }
 
-.rw-words-1 span:nth-child(2) { 
+.rw-words-1 a:nth-child(2) span { 
     -webkit-animation-delay: 3s; 
 	-ms-animation-delay: 3s; 
 	animation-delay: 3s; 
-	color: $yellow;
+	// color: $yellow;
 }
-.rw-words-1 span:nth-child(3) { 
+.rw-words-1 a:nth-child(3) span  { 
     -webkit-animation-delay: 6s; 
 	-ms-animation-delay: 6s; 
 	animation-delay: 6s; 
-	color: $yellow;	
+	// color: $yellow;	
 }
-.rw-words-1 span:nth-child(4) { 
+.rw-words-1 a:nth-child(4) span { 
     -webkit-animation-delay: 9s; 
 	-ms-animation-delay: 9s; 
 	animation-delay: 9s; 
-	color: $yellow;
+	// color: $yellow;
 }
-.rw-words-1 span:nth-child(5) { 
+.rw-words-1 a:nth-child(5) span { 
     -webkit-animation-delay: 12s;
 	-ms-animation-delay: 12s; 
 	animation-delay: 12s; 
-	color: $yellow;
+	// color: $yellow;
 }
-.rw-words-1 span:nth-child(6) { 
+.rw-words-1 a:nth-child(6) span { 
     -webkit-animation-delay: 15s; 
 	-ms-animation-delay: 15s; 
 	animation-delay: 15s; 
-	color: $yellow;
+	// color: $yellow;
 }
 @-webkit-keyframes rotateWord {
     0% { opacity: 0; }
