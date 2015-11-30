@@ -216,24 +216,24 @@ div.rw-words.rw-words-1 {
 	margin-left: 20px;
 	padding-right: 8px;
 	@include media($bp-small) {
-		// bottom: -50px;
 		left: 0;
 		padding-left: 40px;
 		margin: 0;
 	}
 	@include media($bp-med) {
-		// bottom: -100px;
-		// bottom: 0;
 		left: -20px;
 	}
 	@include media($bp-large) {
 		bottom: -100px;
 		bottom: 0;
 		left: -20px; 
-		// padding-left: 420px;
 	}
 	@include media($bp-xlarge) {
 		left: 65px;
+	}
+	@include media($bp-xxlarge) {
+		left: 0;
+		margin: 0;
 	}
 }
 
