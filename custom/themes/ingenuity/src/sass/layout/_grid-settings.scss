@@ -22,7 +22,7 @@ $mobile-landscape: new-breakpoint(max-height $mobile-landscape orientation lands
 $tablet-landscape: new-breakpoint(max-height $tab-hmax max-width $tab-wmax orientation landscape 12);
 
 // Home Page 
-
+$home-one: new-breakpoint(min-width 1367px max-width 94em 12);
 
 // Visual Grid view
 $visual-grid: false;
