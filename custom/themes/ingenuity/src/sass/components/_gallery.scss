@@ -138,15 +138,20 @@
 #in-content.gallery__single {
     margin: 0 -20%;
     @include media($bp-small) {
-
+        margin: 20px 0;
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
     }
     @include media($bp-med) {
         margin: 50px -20% 10px;
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
     }
     @include media($mobile-landscape) {
-
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
     }
     @include media($bp-large) {
-        margin: 50px -20% 10px;
+        margin: 50px -20%;
     }
 }
