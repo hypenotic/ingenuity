@@ -134,3 +134,19 @@
     }
 }
 
+// in-content pictures
+#in-content.gallery__single {
+    margin: 0 -20%;
+    @include media($bp-small) {
+
+    }
+    @include media($bp-med) {
+        margin: 50px -20% 10px;
+    }
+    @include media($mobile-landscape) {
+
+    }
+    @include media($bp-large) {
+        margin: 50px -20% 10px;
+    }
+}

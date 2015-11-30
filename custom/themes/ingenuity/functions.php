@@ -26,6 +26,8 @@ require_once('includes/shortcodes/full-width-image.php');
 require_once('includes/shortcodes/full-width-quote.php');
 require_once('includes/shortcodes/template-bullets.php');
 require_once('includes/shortcodes/hanging-punctuation.php');
+require_once('includes/shortcodes/incontent-picture.php');
+
 
 add_theme_support( 'post-thumbnails' ); 
 
