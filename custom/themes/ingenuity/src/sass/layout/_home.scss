@@ -102,7 +102,6 @@
 	}
 	a.rotator-link {
 		color: $yellow;
-		// border-bottom: 1px solid $white;
 	}
 }
 
@@ -110,7 +109,6 @@ h2.rw-sentence{
 	position: relative;
 	margin: 0;
 	text-align: left;
-	// text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
 	z-index: 100;
 	font-weight: 600;
 	// width: 100%;
@@ -121,9 +119,9 @@ h2.rw-sentence{
 	}
 	@include media($bp-med) {
 		text-align: left;
-		margin: 0 0 0 20px;
-		font-size: modular-scale(4); 
-		line-height: modular-scale(4); 
+		margin: 0 8%;
+		font-size: modular-scale(3); 
+		line-height: modular-scale(3, 1.75rem); 
 	}
 	@include media($bp-large) {
 		margin: 0 8%;
@@ -134,14 +132,14 @@ h2.rw-sentence{
 	@include media($bp-xlarge) {
 		margin: 0 8%;
 		text-align: left;
-	    font-size: modular-scale(4); 
-		line-height: modular-scale(4);
+	    font-size: modular-scale(5, 1.5rem); 
+		line-height: modular-scale(5, 1.75rem);
 	}
 	@include media($bp-xxlarge) {
 		margin: 0 8%;
 		text-align: left;
 	    font-size: modular-scale(6); 
-		line-height: modular-scale(6);
+		line-height: modular-scale(6, 1.75rem);
 	}
 	@include media($mobile-landscape) {
 		margin: 0 10%;
@@ -166,7 +164,9 @@ h2.rw-sentence{
 		display: none;
 	}
 	@include media($bp-med) {
-		padding-left: 460px;
+		padding-left: 360px;
+		font-size: modular-scale(2, 1.3rem); 
+		line-height: modular-scale(2, 1.6rem); 
 	}
 	@include media($bp-large) {
 		padding-left: 620px;
@@ -209,7 +209,7 @@ div.rw-words.rw-words-1 {
 	}
 	@include media($bp-med) {
 		// bottom: -100px;
-		bottom: 0;
+		// bottom: 0;
 		left: -20px;
 	}
 	@include media($bp-large) {

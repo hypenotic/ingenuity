@@ -21,6 +21,9 @@ $bp-small: new-breakpoint(max-width 30em 5);
 $mobile-landscape: new-breakpoint(max-height $mobile-landscape orientation landscape 2);
 $tablet-landscape: new-breakpoint(max-height $tab-hmax max-width $tab-wmax orientation landscape 12);
 
+// Home Page 
+
+
 // Visual Grid view
 $visual-grid: false;
 $visual-grid-color: #000;
