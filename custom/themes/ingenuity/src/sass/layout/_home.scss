@@ -97,10 +97,12 @@
 		position: relative;
 	}
 	a.sentence-link {
-		color: rgba(255,255,255, 0.6);
+		color: rgba(255,255,255, 1);
+		border-bottom: 1px solid $white;
 	}
 	a.rotator-link {
 		color: $yellow;
+		// border-bottom: 1px solid $white;
 	}
 }
 
@@ -126,8 +128,8 @@ h2.rw-sentence{
 	@include media($bp-large) {
 		margin: 0 8%;
 		text-align: left;
-	    font-size: modular-scale(4); 
-		line-height: modular-scale(4); 
+	    font-size: modular-scale(5, 1.5rem); 
+		line-height: modular-scale(5, 1.75rem); 
 	}	
 	@include media($bp-xlarge) {
 		margin: 0 8%;
@@ -167,7 +169,7 @@ h2.rw-sentence{
 		padding-left: 460px;
 	}
 	@include media($bp-large) {
-		padding-left: 470px;
+		padding-left: 620px;
 	}
 	@include media($bp-xlarge) {
 		padding-left: 480px;
@@ -214,7 +216,7 @@ div.rw-words.rw-words-1 {
 		// bottom: -100px;
 		bottom: 0;
 		left: -20px; 
-		padding-left: 410px;
+		// padding-left: 410px;
 	}
 }
 
