@@ -130,8 +130,8 @@ h2.rw-sentence{
 	@include media($bp-large) {
 		margin: 0 8%;
 		text-align: left;
-	    font-size: modular-scale(5, 1.2rem); 
-		line-height: modular-scale(5, 1.5rem); 
+	    font-size: modular-scale(5, 1.5rem); 
+		line-height: modular-scale(5, 1.7rem); 
 	}	
 	@include media($bp-xlarge) {
 		margin: 0 8%;
@@ -173,7 +173,7 @@ h2.rw-sentence{
 		line-height: modular-scale(2, 1.6rem); 
 	}
 	@include media($bp-large) {
-		padding-left: 620px;
+		padding-left: 610px;
 	}
 	@include media($bp-xlarge) {
 		padding-left: 480px;
@@ -227,10 +227,10 @@ div.rw-words.rw-words-1 {
 		left: -20px;
 	}
 	@include media($bp-large) {
-		// bottom: -100px;
+		bottom: -100px;
 		bottom: 0;
 		left: -20px; 
-		padding-left: 420px;
+		// padding-left: 420px;
 	}
 }
 
