@@ -136,8 +136,8 @@ h2.rw-sentence{
 	@include media($bp-xlarge) {
 		margin: 0 8%;
 		text-align: left;
-	    font-size: modular-scale(5, 1.5rem); 
-		line-height: modular-scale(5, 1.75rem);
+	    font-size: modular-scale(5, 1.45rem); 
+		line-height: modular-scale(5, 1.7rem);
 	}
 	@include media($bp-xxlarge) {
 		margin: 0 8%;
