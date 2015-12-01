@@ -562,6 +562,7 @@ span.menu.icon {
   font-size: modular-scale(0, 0.9rem);
   // margin-top: 5px;
   // margin-top: 20px;
+  font-weight: bold;
   padding-left: 10px;
   @include media($bp-small) {
     display: none;

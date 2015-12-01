@@ -326,6 +326,22 @@ span.black-highlight {
 	}
 }
 
+.default-hero.not-found {
+	h1 {
+		font-size: modular-scale(4);
+		line-height: modular-scale(4, 1.3rem);
+		font-family: $main-headings;
+		margin-bottom: 15px;
+	}
+	a.error-home {
+		border-bottom: 1px solid rgba(255,255,255,0.7);
+		&:hover {
+			color: $black;
+			background-color: $yellow;
+		}
+	}
+}
+
 // MAIN ============================
 
 .navigation {

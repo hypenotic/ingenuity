@@ -6,12 +6,12 @@
 get_header(); ?>
 
 
-	<div class="default-hero">
+	<div class="default-hero not-found">
 	    <figure style="background-image: url('<?php echo get_template_directory_uri(); ?>/dist/images/site.jpg'); background-size: cover;"></figure>
 	    <hgroup id="fade-in-item" class="animated fadeInDown">
 	    	<h1>Oops! The page you've requested is not available.</h1>
 	    	<h2>
-	    		We can offer you an espresso as our condolences!
+	    		We can offer you an espresso as consolation!
 	    	</h2>
 	    	<a href="tel:+1-905-569-2624"><button id="we-owe-you">We owe you one - call us.</button></a>
 	    	<h2>Try a search?</h2>
@@ -23,7 +23,7 @@ get_header(); ?>
 					<input type="submit" class="error-submit" value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
 				</form>
 	    	</div>
-	    	<h2>Or go back to our <a href="<?php echo home_url(); ?>">home page</a> and take another look around.</h2>
+			<p>Or take a look at our <span id="error-menu">menu</span>.</p>
 	    </hgroup>
 	</div>
 

@@ -47,6 +47,10 @@ var previousScroll = 0, // previous scroll position
       showHideNav();
       event.preventDefault();
     })
+    $('#error-menu').on('click touchstart', function(event) {
+      showHideNav();
+      event.preventDefault();
+    })
     // clicking anywhere inside navigation or heading won’t close navigation’s popover
     $('#navigation').on('click touchstart', function(event){
         event.stopPropagation();

@@ -55,3 +55,19 @@
 		padding: 30px;
 	}
 }
+
+// Specific Styles
+
+// General Contracting
+.general-cont {
+	.two-column__half:first-child blockquote {
+		padding-right: 40px;
+	}
+	.two-column__half:last-child {
+		padding-left: 40px;
+	}
+	blockquote {
+		font-size: modular-scale(1);
+		line-height: modular-scale(1);
+	}
+}

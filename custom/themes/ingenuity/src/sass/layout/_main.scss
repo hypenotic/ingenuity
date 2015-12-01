@@ -191,4 +191,26 @@ button#we-owe-you {
 	@include align-items(center);
 }
 
+#error-menu {
+	color: $grey;
+	border-bottom: 1px solid rgba(255,255,255,0.7);
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.default-hero.not-found {
+	p {
+		text-transform: uppercase;
+		color: $white;
+		font-family: $lite-headings;
+		font-weight: 300;
+		font-size: modular-scale(2, 1rem);
+		line-height:modular-scale(2, 1rem);
+		letter-spacing: 1px;
+		text-align: left;
+		margin: 0 20% 0 10%;
+	}
+}
+
 
