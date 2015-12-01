@@ -98,7 +98,7 @@
 	}
 	a.sentence-link {
 		color: rgba(255,255,255, 1);
-		border-bottom: 1px solid rgba(255,255,255, 0.7);
+		border-bottom: 1px solid rgba(255,255,255, 0.3);
 		&:hover {
 			color: $black;
 			background-color: $yellow;
@@ -216,6 +216,7 @@ div.rw-words.rw-words-1 {
 	animation: rotateWord 18s linear infinite 0s;
 	margin-left: 20px;
 	padding-right: 8px;
+	border-bottom: 1px solid rgba(252, 216, 56, 0.3);
 	@include media($bp-small) {
 		left: 0;
 		// padding-left: 40px;
@@ -229,9 +230,11 @@ div.rw-words.rw-words-1 {
 		bottom: -100px;
 		bottom: 0;
 		left: -20px; 
+		line-height: modular-scale(5, 1.5rem); 
 	}
 	@include media($bp-xlarge) {
 		// left: 65px;
+		line-height: modular-scale(5, 1.5rem); 
 	}
 	@include media($bp-xxlarge) {
 		left: 0;
