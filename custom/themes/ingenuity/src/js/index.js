@@ -101,7 +101,7 @@ var previousScroll = 0, // previous scroll position
         }
       }
       // if ESC show/hide menu
-      if (e.keyCode === 27 || e.keyCode === 77) {
+      if (e.keyCode === 27) {
         showHideNav();
         e.preventDefault();
       }
