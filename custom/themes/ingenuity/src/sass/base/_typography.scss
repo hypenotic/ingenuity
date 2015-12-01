@@ -944,17 +944,17 @@ span.big-quotes {
 }
 
 div.bigcopy {
-	font-size: modular-scale(0, 2rem);
-	line-height: modular-scale(1, 2rem);
-	margin: 0 -5%;
+	font-size: modular-scale(0, 2.2rem);
+	line-height: modular-scale(1, 2.2rem);
+	// margin: 0 -5% 40px;
 	p {
-		font-size: modular-scale(0, 2rem);
-		line-height: modular-scale(1, 2rem);
+		font-size: modular-scale(0, 2.2rem);
+		line-height: modular-scale(1, 2.2rem);
 	}
 	ol,
 	ul {
-		font-size: modular-scale(0, 2rem);
-		line-height: modular-scale(1, 2rem);
+		font-size: modular-scale(0, 2.2rem);
+		line-height: modular-scale(1, 2.2rem);
 	}
 }
 
