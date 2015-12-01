@@ -118,9 +118,9 @@ h2.rw-sentence{
 	font-weight: 600;
 	// width: 100%;
 	@include media($bp-small) {
-		margin: 0 0 0 20px;
-		font-size: modular-scale(2, 1.3rem); 
-		line-height: modular-scale(2, 1.6rem); 
+		margin: 0 0 0 5px;
+		font-size: modular-scale(2, 1.4rem); 
+		line-height: modular-scale(2, 1.7rem); 
 	}
 	@include media($bp-med) {
 		text-align: left;
@@ -221,7 +221,8 @@ div.rw-words.rw-words-1 {
 		left: 0;
 		// padding-left: 40px;
 		margin: 0;
-		bottom: -50px;
+		bottom: -55px;
+		padding: 0;
 	}
 	@include media($bp-med) {
 		left: -20px;
