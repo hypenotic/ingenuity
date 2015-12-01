@@ -943,6 +943,21 @@ span.big-quotes {
 	text-align: center;
 }
 
+div.bigcopy {
+	font-size: modular-scale(0, 2rem);
+	line-height: modular-scale(1, 2rem);
+	margin: 0 -5%;
+	p {
+		font-size: modular-scale(0, 2rem);
+		line-height: modular-scale(1, 2rem);
+	}
+	ol,
+	ul {
+		font-size: modular-scale(0, 2rem);
+		line-height: modular-scale(1, 2rem);
+	}
+}
+
 
 // PROJECTS ============================
 

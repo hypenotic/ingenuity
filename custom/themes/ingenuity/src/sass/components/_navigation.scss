@@ -559,11 +559,12 @@ span.menu.icon {
   font-family: $main-headings;
   // font-weight: 300;
   text-transform: uppercase;
-  font-size: modular-scale(0, 0.9rem);
+  font-size: modular-scale(0, 1.2rem);
   // margin-top: 5px;
   // margin-top: 20px;
   font-weight: bold;
   padding-left: 10px;
+  margin-top: 3px;
   @include media($bp-small) {
     display: none;
   }

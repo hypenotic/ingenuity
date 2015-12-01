@@ -54,7 +54,6 @@
 
 	<div class="main-wrapper">
 		<div class="main-content standard-center">
-			
 			<!-- contentwrapper begins here -->
 			<?php the_content(); ?>
 
