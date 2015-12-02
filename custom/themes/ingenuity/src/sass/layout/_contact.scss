@@ -19,6 +19,8 @@
 .contact-moving {
 	position: relative;
 	background-color: $yellow;
+	// border-top: 1px solid black;
+	// border-bottom: 1px solid black;
 	// padding: 0 10%;
 	@include display(flex);
 	@include align-items(center);
@@ -83,6 +85,15 @@
 		padding: 30px;
 		height: 200px;
 	}
+	p {
+		font-family: $lite-headings;
+	}
+	p:last-child {
+		// padding-left: 10px;
+		padding-top: 10px;
+		font-size: modular-scale(1);
+		line-height: modular-scale(1, 1.7rem);
+	}
 }
 
 .contact-moving__half#move-map {
@@ -92,11 +103,22 @@
 	background-color: $white;
 }
 
+.new-address {
+	font-family: $main-headings;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	&:hover {
+		background-color: $black;
+		color: $yellow;
+		cursor: pointer;
+	}
+}
+
 
 // Contact Columns
 
 .contact-container {
 	position: relative;
+	padding: 25px;
 	@include display(flex);
 	@include align-items(flex-start);
 	@include justify-content(center);
@@ -106,9 +128,9 @@
 		@include flex-direction(column);
 	}
 	@include media($bp-large) {
+		padding: 50px 25px;
 		@include flex-direction(row);
 	}
-	padding: 25px;
 }
 
 .contact__single {

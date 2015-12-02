@@ -12,8 +12,17 @@
 
 	<section class="contact-moving">
 		<div class="contact-moving__half move-arrow">
-			<h3>We're moving!</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, commodi. Totam corrupti quod ipsum rerum!</p>
+			<h3>Psst...we're moving!</h3>
+			<p>
+				Effective Feb 1st, 2016.</br>
+				Please mail and visit us at our new home:</p>
+			<p>
+				<span class="new-address">
+					3800A Laird Rd. </br>
+					Mississauga, ON </br>
+					L5L 0B2
+				</span>
+			</p>
 		</div>
 		<div class="contact-moving__half" id="move-map">
 		</div>		
