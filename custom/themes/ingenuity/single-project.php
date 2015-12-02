@@ -198,7 +198,7 @@
                 if (!empty( $prev_post )): ?>
                     <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
                     <div class="project-nav__arrow project-nav__arrow--prev">
-                        <p><?php echo $prev_post->post_title; ?></p>
+                        <p>&lt; <?php echo $prev_post->post_title; ?></p>
                     </div>
                     </a>
                 <?php endif; ?>
@@ -207,7 +207,7 @@
                 if (!empty( $next_post )): ?>
                     <a href="<?php echo get_permalink( $next_post->ID ); ?>">
                     <div class="project-nav__arrow project-nav__arrow--next">
-                        <p><?php echo $next_post->post_title; ?></p>
+                        <p><?php echo $next_post->post_title; ?> &gt;</p>
                     </div>
                     </a>
                 <?php endif; ?>
