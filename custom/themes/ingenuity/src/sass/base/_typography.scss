@@ -1168,6 +1168,7 @@ span.bolded-text {
 
 #mc-embedded-subscribe-form.footer-newsletter {
 	padding: 0;
+	font-size: modular-scale(0, 1rem);
 }
 
 .footer__cta {
@@ -1179,6 +1180,7 @@ span.bolded-text {
 		background-color: $yellow;
 		padding: 10px 15px;
 		font-family: $lite-headings;
+		font-size: modular-scale(0, 1rem);
 		border: 0;
 		margin: 20px 0;
 		&:hover {

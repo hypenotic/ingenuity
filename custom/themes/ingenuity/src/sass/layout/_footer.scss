@@ -44,10 +44,19 @@
 
 #mc-embedded-subscribe-form.footer-newsletter {
 	padding: 0;
+	min-height: 250px;
+	@include display(flex);
+	@include align-items(space-between);
+	@include justify-content(space-between);
+	@include flex-direction(column);
 }
 
 #mc_embed_signup {
 	background-color: $black;
+}
+
+#mc_embed_signup input.button {
+	margin: 0;
 }
 
 form.footer-newsletter {
@@ -244,7 +253,7 @@ form.footer-newsletter {
 		height: auto;
 	}
 	button {
-
+		margin: 0;
 	}
 }
 
