@@ -19,7 +19,7 @@
 .contact-moving {
 	position: relative;
 	background-color: $yellow;
-	padding: 0 10%;
+	// padding: 0 10%;
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
@@ -36,6 +36,27 @@
 	p {
 		margin-bottom: 0;
 	}
+	&:after {
+		content:"";
+		position: absolute;
+		left: 50%;
+		top: 0;
+		width: 0px;
+		height: 0px;
+		border-top:25px solid transparent;
+		border-left:40px solid $yellow;
+		border-bottom:25px solid transparent;
+		@include media($bp-med) {
+			border-top:40px solid transparent;
+			border-left:60px solid $yellow; // how far out the point goes
+			border-bottom:40px solid transparent;
+		}
+		@include media($bp-large) {
+			border-top:151px solid transparent;
+			border-left:100px solid $yellow; // how far out the point goes
+			border-bottom:151px solid transparent;
+		}
+	}
 }
 
 .contact-moving__half {
@@ -48,9 +69,15 @@
 	}
 }
 
+.contact-moving__half.move-arrow {
+	padding: 0 0 0 10%;
+}
+
 .contact-moving__half#move-map {
+	position: relative;
 	width: 100%;
-	height: 100%;
+	height: 300px;
+	background-color: $white;
 }
 
 
@@ -129,6 +156,9 @@
 		span {
 			padding-bottom: 10px;
 			border-bottom: 1px solid $grey;
+			&:hover {
+				border-bottom: 1px solid $yellow;
+			}
 		}
 	}
 }

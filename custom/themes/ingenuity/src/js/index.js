@@ -191,21 +191,39 @@ if ( $( "#contact-map" ).length ) {
        draggable: isDraggable,
 
        // The latitude and longitude to center the map (always required)
-       center: new google.maps.LatLng(43.5238744, -79.7086458), // New York
+       center: new google.maps.LatLng(43.5238744, -79.7086458), 
 
        // How you would like to style the map. 
        // This is where you would paste any style found on Snazzy Maps.
        styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#a68d29"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#2d2d2d"},{"lightness":9},{"visibility":"simplified"}]},{"featureType":"transit.station","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"transit.station.airport","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"water","elementType":"geometry","stylers":[{"saturation":-83},{"lightness":-51}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]}]
    };
 
+   var mapOptions2 = {
+       // How zoomed in you want the map to start at (always required)
+       zoom: 15,
+
+       scrollwheel:  false,
+       draggable: isDraggable,
+
+       // The latitude and longitude to center the map (always required)
+       center: new google.maps.LatLng(43.523855, -79.7147317), 
+
+       // How you would like to style the map. 
+       // This is where you would paste any style found on Snazzy Maps.
+       styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+   };
+
    // Get the HTML DOM element that will contain your map 
    // We are using a div with id="map" seen below in the <body>
    // var mapElement = document.getElementById('footer-map');
    var contactMap = document.getElementById('contact-map');
+   var moveMap = document.getElementById('move-map');
 
    // Create the Google Map using our element and options defined above
    // var map = new google.maps.Map(mapElement, mapOptions);
    var mapC = new google.maps.Map(contactMap, mapOptions);
+   var mapM = new google.maps.Map(moveMap, mapOptions2);
+   //move map down
    mapC.panBy(0, -120);
 
    // Let's also add a marker while we're at it
@@ -226,7 +244,11 @@ if ( $( "#contact-map" ).length ) {
     map: mapC,
     icon: theicon
   });
-
+  var newplace = new google.maps.Marker({
+    position: new google.maps.LatLng(43.523855, -79.7147317),
+    map: mapM,
+    icon: theicon
+  });
     // Let's also add a marker while we're at it
    // var markerC = new google.maps.Marker({
    //     position: new google.maps.LatLng(43.5238744, -79.7086458),

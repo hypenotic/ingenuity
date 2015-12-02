@@ -1131,13 +1131,13 @@ span.bolded-text {
 	}
 	button {
 		padding: 10px 15px;
-		color: $d-grey;
+		color: $yellow;
 		margin-top: 20px;
-		background-color: $yellow;
+		background-color: $black;
 		border: none;
 		&:hover {
-			background-color: $black;
-			color: $yellow;
+			background-color: $yellow;
+			color: $black;
 			border: none;
 		}
 	}
