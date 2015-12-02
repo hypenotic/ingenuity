@@ -46,6 +46,14 @@
 		border-top:25px solid transparent;
 		border-left:40px solid $yellow;
 		border-bottom:25px solid transparent;
+		@include media($bp-small) {
+			left: 42%;
+			top: 150px;
+			transform: rotate(90deg);
+			border-top:60px solid transparent;
+			border-left: 50px solid $yellow; // how far out the point goes
+			border-bottom:60px solid transparent;
+		}
 		@include media($bp-med) {
 			border-top:40px solid transparent;
 			border-left:60px solid $yellow; // how far out the point goes
@@ -71,6 +79,10 @@
 
 .contact-moving__half.move-arrow {
 	padding: 0 0 0 10%;
+	@include media($bp-small) {
+		padding: 30px;
+		height: 200px;
+	}
 }
 
 .contact-moving__half#move-map {
