@@ -47,7 +47,7 @@
 		
 						?>
 		
-						 <div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s">
+						 <div class="contact__single wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.5s">
 						 	<div class="contact__single__copy">
 						 		<?php if ($heading) { ?>
 						 			<h4>

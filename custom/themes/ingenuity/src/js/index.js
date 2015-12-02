@@ -206,7 +206,7 @@ if ( $( "#contact-map" ).length ) {
        draggable: isDraggable,
 
        // The latitude and longitude to center the map (always required)
-       center: new google.maps.LatLng(43.523855, -79.7147317), 
+       center: new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
 
        // How you would like to style the map. 
        // This is where you would paste any style found on Snazzy Maps.
@@ -245,7 +245,7 @@ if ( $( "#contact-map" ).length ) {
     icon: theicon
   });
   var newplace = new google.maps.Marker({
-    position: new google.maps.LatLng(43.523855, -79.7147317),
+    position: new google.maps.LatLng(43.52385109999999, -79.71254299999998),
     map: mapM,
     icon: theicon
   });
