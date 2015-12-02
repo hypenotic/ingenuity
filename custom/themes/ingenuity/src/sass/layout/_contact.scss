@@ -50,7 +50,7 @@
 		border-bottom:25px solid transparent;
 		@include media($bp-small) {
 			left: 42%;
-			top: 150px;
+			top: 190px;
 			transform: rotate(90deg);
 			border-top:60px solid transparent;
 			border-left: 50px solid $yellow; // how far out the point goes
@@ -83,7 +83,7 @@
 	padding: 0 0 0 10%;
 	@include media($bp-small) {
 		padding: 30px;
-		height: 200px;
+		height: 240px;
 	}
 	p {
 		font-family: $lite-headings;
@@ -93,6 +93,13 @@
 		padding-top: 10px;
 		font-size: modular-scale(1);
 		line-height: modular-scale(1, 1.7rem);
+		@include media($bp-small) {
+			font-size: modular-scale(0);
+			line-height: modular-scale(1);
+		}
+		a {
+			color: $d-grey;
+		}
 	}
 }
 

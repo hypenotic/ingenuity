@@ -14,14 +14,16 @@
 		<div class="contact-moving__half move-arrow">
 			<h3>Psst...we're moving!</h3>
 			<p>
-				Effective Feb 1st, 2016.</br>
+				Effective <span class="bolded-text">Feb 1st, 2016</span>.</br>
 				Please mail and visit us at our new home:</p>
 			<p>
-				<span class="new-address">
-					3800A Laird Rd. </br>
-					Mississauga, ON </br>
-					L5L 0B2
-				</span>
+				<a href="https://goo.gl/maps/m965bjKS6VA2">
+					<span class="new-address">
+						3800A Laird Rd. </br>
+						Mississauga, ON </br>
+						L5L 0B2
+					</span>
+				</a>
 			</p>
 		</div>
 		<div class="contact-moving__half" id="move-map">
