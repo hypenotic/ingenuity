@@ -39,26 +39,30 @@
 						?>
 		
 						 <div class="contact__single wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.5s">
-						 	<?php if ($heading) { ?>
-						 		<h4>
-						 			<?php echo $heading; ?>
-						 		</h4>
-						 	<?php } ?>
-						 	<?php if ($text) { ?>
-						 		<div>
-						 			<?php echo $text; ?>
-						 		</div>
-						 	<?php } ?>
-						 	<?php if ($email) { ?>
-						 		<a href="mailto:<?php echo $email; ?>"><button class="contact__email">
-						 				<?php echo $emailt; ?>
-						 			</button></a>
-						 	<?php } ?>
-						 	<?php if ($phone) { ?>
-						 		<a href="tel:<?php echo $phone; ?>"><button>
-						 				<?php echo $phoned; ?>
-						 			</button></a>
-						 	<?php } ?>
+						 	<div class="contact__single__copy">
+						 		<?php if ($heading) { ?>
+						 			<h4>
+						 				<?php echo $heading; ?>
+						 			</h4>
+						 		<?php } ?>
+						 		<?php if ($text) { ?>
+						 			<div>
+						 				<?php echo $text; ?>
+						 			</div>
+						 		<?php } ?>
+						 	</div>
+						 	<div class="contact__single__buttons">
+						 		<?php if ($email) { ?>
+						 			<a href="mailto:<?php echo $email; ?>"><button class="contact__email">
+						 					<?php echo $emailt; ?>
+						 				</button></a>
+						 		<?php } ?>
+						 		<?php if ($phone) { ?>
+						 			<a href="tel:<?php echo $phone; ?>"><button>
+						 					<?php echo $phoned; ?>
+						 				</button></a>
+						 		<?php } ?>
+						 	</div>
 						 </div>
 						
 						<?php

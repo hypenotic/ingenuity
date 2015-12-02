@@ -13,6 +13,7 @@
 }
 
 .contact-container {
+	position: relative;
 	@include display(flex);
 	@include align-items(flex-start);
 	@include justify-content(center);
@@ -30,6 +31,10 @@
 .contact__single {
 	padding: 0 25px;
 	margin: 1.5%;
+	@include display(flex);
+	@include align-content(space-between);
+	@include justify-content(space-between);
+	@include flex-direction(column);
 	@include flex(0 0 30%);
 	@include media($bp-small) {
 		padding: 0 10px 50px;
@@ -39,11 +44,22 @@
 		padding: 0 10px 50px;
 		@include flex(1 0 auto);
 	}
-	button {
-		width: 90%;
-		height: 60px;
+	@include media($bp-large) {
+		min-height: 430px;
 	}
-	button.contact__email {
-		margin-right: 20px;
+	@include media($bp-xlarge) {
+		min-height: 430px;
+	}
+	@include media($bp-xxlarge) {
+		min-height: 380px;
+	}
+	.contact__single__buttons {
+		button {
+			width: 90%;
+			height: 60px;
+		}
+		button.contact__email {
+			margin-right: 20px;
+		}
 	}
 }

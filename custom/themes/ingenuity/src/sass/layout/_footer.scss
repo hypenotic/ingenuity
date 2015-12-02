@@ -13,6 +13,7 @@
 }
 
 .footer__third {
+	position: relative;
 	@include flex(1 0 auto);
 	@include media($bp-small) {
 		margin: 20px 0;
@@ -24,11 +25,29 @@
 	@include media($bp-large) {
 		@include flex(0 0 30%);
 		margin: 0 1.5%;
+		min-height: 250px;
 	}
+	@include media($bp-xlarge) {
+		min-height: 250px;
+	}
+	@include media($bp-xxlarge) {
+		min-height: 250px;
+	}
+}
+
+.footer__third.footer__third--align {
+	@include display(flex);
+	@include align-items(space-between);
+	@include justify-content(space-between);
+	@include flex-direction(column);
 }
 
 #mc-embedded-subscribe-form.footer-newsletter {
 	padding: 0;
+}
+
+#mc_embed_signup {
+	background-color: $black;
 }
 
 form.footer-newsletter {
@@ -164,7 +183,7 @@ form.footer-newsletter {
 }
 
 .input__label--ingenuity::after {
-	height: 2px;
+	height: 1px;
 	background: $yellow;
 	top: 100%;
 	-webkit-transition: opacity 0.2s;
@@ -250,3 +269,9 @@ form.footer-newsletter {
 		font-weight: 400;
 	}
 }
+
+.footer__cta button.button-down {
+}
+
+
+

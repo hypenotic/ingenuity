@@ -856,7 +856,6 @@ h2.team__hero-subheading {
 	}
 	blockquote {
 		font-family: $title-font;
-		// border-left: 4px solid $yellow;
 		padding-left: 20px;
 		font-size: modular-scale(1);
 		line-height: modular-scale(2);
@@ -947,14 +946,26 @@ div.bigcopy {
 	font-size: modular-scale(0, 2.2rem);
 	line-height: modular-scale(1, 2.2rem);
 	// margin: 0 -5% 40px;
+	@include media($bp-small) {
+		font-size: modular-scale(0);
+		line-height: modular-scale(0);
+	}
 	p {
 		font-size: modular-scale(0, 2.2rem);
 		line-height: modular-scale(1, 2.2rem);
+		@include media($bp-small) {
+			font-size: modular-scale(0);
+			line-height: modular-scale(0);
+		}
 	}
 	ol,
 	ul {
 		font-size: modular-scale(0, 2.2rem);
 		line-height: modular-scale(1, 2.2rem);
+		@include media($bp-small) {
+			font-size: modular-scale(0);
+			line-height: modular-scale(0);
+		}
 	}
 }
 

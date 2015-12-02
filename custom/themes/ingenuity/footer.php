@@ -24,17 +24,17 @@
 				<?php endwhile; ?>
 				
 			</div>
-			<div class="footer__news footer__third">
+			<div class="footer__news footer__third footer__third--align">
 				<!-- Begin MailChimp Signup Form -->
 				<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 				<style type="text/css">
-					#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+					#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
 					/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
 					   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 				</style>
 				<div id="mc_embed_signup">
 				<form action="//ingenuity.us12.list-manage.com/subscribe/post?u=0b66a91bd0f3c7ec3d595d5e4&amp;id=fd499abc6d" method="post" class="footer-newsletter" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					<h4>Sign up for our newsletter!</h4>
+					<h4>Get Ingenuity in your mailbox!</h4>
 					<span class="input input--ingenuity">
 						<input class="input__field input__field--ingenuity" type="email" id="input-32" />
 						<label class="input__label input__label--ingenuity" for="input-32">
@@ -49,9 +49,9 @@
 
 				<!--End mc_embed_signup-->
 			</div>
-			<div class="footer__cta footer__third">
+			<div class="footer__cta footer__third footer__third--align">
 				<h4>​Great buildings begin with a conversation.</h4>
-				<a href="<?php echo get_home_url(); ?>/contact-us"><button>Let's talk over an espresso!</button></a>
+				<a href="<?php echo get_home_url(); ?>/contact-us"><button class="button-down">Let's talk over an espresso!</button></a>
 			</div>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w"></script>
 		</footer>

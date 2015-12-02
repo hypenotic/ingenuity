@@ -139,7 +139,7 @@
 	margin-bottom: 50px;
 	@include display(flex);
 	@include align-items(center);
-	@include justify-content(center);
+	@include justify-content(space-between);
 	@include flex-wrap(wrap);
 	a {
 		&:hover {
@@ -156,10 +156,11 @@
 	width: 150px;
 	height: 50px;
 	// margin-left: 40px;
-	color: $yellow;
-	background-color: $black;
+	color: $black;
+	background-color: transparent;
 	text-align:center;
 	// line-height:40px;
+	border: 2px solid $black;
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
@@ -184,27 +185,27 @@
 	@include media($bp-med) {
 		margin-bottom: 0;
 	}
-	&:before {
-		content:"";
-		position: absolute;
-		right: 100%;
-		top:0px;
-		width:0px;
-		height:0px;
-		border-top:25px solid transparent;
-		border-right:40px solid $black; // how far out the point goes
-		border-bottom:25px solid transparent;
-		@include media($bp-med) {
-			border-top:40px solid transparent;
-			border-right:60px solid $black; // how far out the point goes
-			border-bottom:40px solid transparent;
-		}
-		@include media($bp-large) {
-			border-top:50px solid transparent;
-			border-right:70px solid $black; // how far out the point goes
-			border-bottom:50px solid transparent;
-		}
-	}
+	// &:before {
+	// 	content:"";
+	// 	position: absolute;
+	// 	right: 100%;
+	// 	top:0px;
+	// 	width:0px;
+	// 	height:0px;
+	// 	border-top:25px solid transparent;
+	// 	border-right:40px solid $black; // how far out the point goes
+	// 	border-bottom:25px solid transparent;
+	// 	@include media($bp-med) {
+	// 		border-top:40px solid transparent;
+	// 		border-right:60px solid $black; // how far out the point goes
+	// 		border-bottom:40px solid transparent;
+	// 	}
+	// 	@include media($bp-large) {
+	// 		border-top:50px solid transparent;
+	// 		border-right:70px solid $black; // how far out the point goes
+	// 		border-bottom:50px solid transparent;
+	// 	}
+	// }
 }
 
 .project-nav__arrow--next {
@@ -212,27 +213,27 @@
 	@include media($bp-small) {
 		margin-left: 0px;
 	}
-	&:after {
-		content:"";
-		position: absolute;
-		left: 100%;
-		top:0px;
-		width:0px;
-		height:0px;
-		border-top:25px solid transparent;
-		border-left:40px solid $black;
-		border-bottom:25px solid transparent;
-		@include media($bp-med) {
-			border-top:40px solid transparent;
-			border-left:60px solid $black; // how far out the point goes
-			border-bottom:40px solid transparent;
-		}
-		@include media($bp-large) {
-			border-top:50px solid transparent;
-			border-left:70px solid $black; // how far out the point goes
-			border-bottom:50px solid transparent;
-		}
-	}
+	// &:after {
+	// 	content:"";
+	// 	position: absolute;
+	// 	left: 100%;
+	// 	top:0px;
+	// 	width:0px;
+	// 	height:0px;
+	// 	border-top:25px solid transparent;
+	// 	border-left:40px solid $black;
+	// 	border-bottom:25px solid transparent;
+	// 	@include media($bp-med) {
+	// 		border-top:40px solid transparent;
+	// 		border-left:60px solid $black; // how far out the point goes
+	// 		border-bottom:40px solid transparent;
+	// 	}
+	// 	@include media($bp-large) {
+	// 		border-top:50px solid transparent;
+	// 		border-left:70px solid $black; // how far out the point goes
+	// 		border-bottom:50px solid transparent;
+	// 	}
+	// }
 }
 
 
