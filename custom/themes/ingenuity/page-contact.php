@@ -10,6 +10,16 @@
 		
 	</section>
 
+	<section class="contact-moving">
+		<div class="contact-moving__half move-arrow">
+			<h3>We're moving!</h3>
+			<p>Lorem ipsum</p>
+		</div>
+		<div class="contact-moving__half">
+			
+		</div>		
+	</section>
+
 		<div class="contact-container">
 			<?php // bring in the team members!
 		

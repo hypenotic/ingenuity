@@ -28,6 +28,7 @@ require_once('includes/shortcodes/template-bullets.php');
 require_once('includes/shortcodes/hanging-punctuation.php');
 require_once('includes/shortcodes/incontent-picture.php');
 require_once('includes/shortcodes/bigcopy.php');
+require_once('includes/shortcodes/bigvid.php');
 
 
 add_theme_support( 'post-thumbnails' ); 

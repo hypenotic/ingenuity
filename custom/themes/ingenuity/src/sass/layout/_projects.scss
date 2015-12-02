@@ -95,7 +95,7 @@
 	}
 }
 
-// Project Video
+// Project Videos
 
 .project__video {
 	background-color: rgba(0,0,0,1);
@@ -130,6 +130,24 @@
 		@include media($bp-xxlarge) {
 			min-height: 750px;
 		}
+	}
+}
+
+.bigvid {
+	position: relative;
+	width: 120%;
+	height: 450px;
+	margin: 25px -10%;
+	@include media($bp-large) {
+		height: 500px;
+	}
+	@include media($bp-xlarge) {
+		height: 500px;
+	}
+	iframe {
+		position: relative;
+		width: 100%;
+		height: 100%;
 	}
 }
 
