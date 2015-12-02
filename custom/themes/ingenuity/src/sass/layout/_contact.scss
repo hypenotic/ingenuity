@@ -168,7 +168,7 @@
 	.contact__single__buttons {
 		button {
 			font-family: $main-headings;
-			font-size: modular-scale(0);
+			font-size: modular-scale(0, 1.3rem);
 			width: 90%;
 			height: 60px;
 			@include media($bp-large) {
