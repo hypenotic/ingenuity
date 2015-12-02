@@ -13,10 +13,9 @@
 	<section class="contact-moving">
 		<div class="contact-moving__half move-arrow">
 			<h3>We're moving!</h3>
-			<p>Lorem ipsum</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, commodi. Totam corrupti quod ipsum rerum!</p>
 		</div>
-		<div class="contact-moving__half">
-			
+		<div class="contact-moving__half" id="move-map">
 		</div>		
 	</section>
 
@@ -62,15 +61,15 @@
 						 		<?php } ?>
 						 	</div>
 						 	<div class="contact__single__buttons">
-						 		<?php if ($email) { ?>
-						 			<a href="mailto:<?php echo $email; ?>"><button class="contact__email">
-						 					<?php echo $emailt; ?>
-						 				</button></a>
-						 		<?php } ?>
 						 		<?php if ($phone) { ?>
 						 			<a href="tel:<?php echo $phone; ?>"><button>
 						 					<?php echo $phoned; ?>
 						 				</button></a>
+						 		<?php } ?>
+						 		<?php if ($email) { ?>
+						 			<a href="mailto:<?php echo $email; ?>">
+						 				<h3><span class="contact-border"><?php echo $emailt; ?></span></h3>
+						 			</a>
 						 		<?php } ?>
 						 	</div>
 						 </div>

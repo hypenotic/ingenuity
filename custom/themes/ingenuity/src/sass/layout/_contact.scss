@@ -16,6 +16,42 @@
 
 // Moving Section
 
+.contact-moving {
+	position: relative;
+	background-color: $yellow;
+	padding: 0 10%;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	@include media($bp-small) {
+		@include flex-direction(column);
+	}
+	@include media($bp-large) {
+		min-height: 300px;
+	}
+	h3 {
+		margin-bottom: 15px;
+		font-family: $main-headings;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.contact-moving__half {
+	position: relative;
+	height: 100%;
+	padding: 50px 0;
+	@include flex(0 0 50%);
+	@include media($bp-small) {
+		@include flex(1 0 auto);
+	}
+}
+
+.contact-moving__half#move-map {
+	width: 100%;
+	height: 100%;
+}
 
 
 // Contact Columns
@@ -53,21 +89,46 @@
 		@include flex(1 0 auto);
 	}
 	@include media($bp-large) {
-		min-height: 430px;
+		min-height: 400px;
 	}
 	@include media($bp-xlarge) {
-		min-height: 430px;
+		min-height: 400px;
 	}
 	@include media($bp-xxlarge) {
 		min-height: 380px;
 	}
 	.contact__single__buttons {
 		button {
+			font-family: $main-headings;
+			font-size: modular-scale(0);
 			width: 90%;
 			height: 60px;
+			@include media($bp-large) {
+				font-size: modular-scale(0);
+			}
+			@include media($bp-xlarge) {
+				font-size: modular-scale(1);
+			}
 		}
 		button.contact__email {
 			margin-right: 20px;
+		}
+	}
+	h3 {
+		margin-top: 25px;
+		font-size: modular-scale(0);
+		line-height: modular-scale(0);
+		@include media($bp-large) {
+			font-size: modular-scale(0);
+			line-height: modular-scale(0);
+		}
+		@include media($bp-xlarge) {
+			font-size: modular-scale(1);
+			line-height: modular-scale(1);
+		}
+		span {
+			padding-bottom: 10px;
+			border-bottom: 1px solid $grey;
 		}
 	}
 }

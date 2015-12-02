@@ -138,6 +138,13 @@
 	width: 120%;
 	height: 450px;
 	margin: 25px -10%;
+	@include media($bp-small) {
+		height: 350px;
+		margin: 15px 0;
+	}
+	@include media($bp-med) {
+		height: 400px;
+	}
 	@include media($bp-large) {
 		height: 500px;
 	}
