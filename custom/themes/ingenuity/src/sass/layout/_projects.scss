@@ -139,8 +139,8 @@
 	height: 450px;
 	margin: 25px -10%;
 	@include media($bp-small) {
-		height: 350px;
-		margin: 15px 0;
+		height: 300px;
+		margin: 25px -10%;
 	}
 	@include media($bp-med) {
 		height: 400px;
