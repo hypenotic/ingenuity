@@ -240,6 +240,8 @@ div.rw-words.rw-words-1 {
 	@include media($bp-xxlarge) {
 		left: 0;
 		margin: 0;
+		bottom: 30px;
+		overflow: initial;
 	}
 }
 
@@ -313,8 +315,6 @@ div.rw-words.rw-words-1 {
 	80% { opacity: 0; }
     100% { opacity: 0; }
 }
-
-
 
 
 
