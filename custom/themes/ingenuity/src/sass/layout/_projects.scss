@@ -138,14 +138,10 @@
 	width: 120%;
 	height: 450px;
 	margin: 25px -10%;
-	// to prevent video from scrolling on mobile
-	-webkit-overflow-scrolling: touch;
-	overflow-y: scroll;
 	@include media($bp-small) {
 		height: 300px;
 		margin: 25px -10%;
-		-webkit-overflow-scrolling: touch;
-		overflow-y: scroll;
+		overflow: auto;
 	}
 	@include media($bp-med) {
 		height: 400px;
