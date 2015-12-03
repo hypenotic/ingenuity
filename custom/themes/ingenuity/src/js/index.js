@@ -240,9 +240,9 @@ if ( $( "#contact-map" ).length ) {
   }
 
   if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
-    var theiconN = '/ingenuity/custom/themes/ingenuity/dist/images/home.png';
+    var theiconN = '/ingenuity/custom/themes/ingenuity/dist/images/homen.png';
   } else {
-    var theiconN = '/custom/themes/ingenuity/dist/images/home.png'
+    var theiconN = '/custom/themes/ingenuity/dist/images/homen.png'
   }  
 
   var marker = new google.maps.Marker({
