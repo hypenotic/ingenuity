@@ -94,7 +94,7 @@ nav {
     }
   }
   @include media($bp-small) {
-    height: 150px;
+    height: 70px
     background-color: $black;
   }
   @include media($bp-xxlarge) {
@@ -108,6 +108,7 @@ nav {
 
 nav.home-header {
   @include media($bp-small) {
+    height: 150px;
     background-color: transparent;
   }
 }
@@ -559,11 +560,18 @@ span.menu.icon {
   justify-content: center;
   padding-top: 50px;
   @include media($bp-small) {
-    padding-top: 10px;
+    padding-top: 15px;
     padding-right: 10px;
   }
   @include media($mobile-landscape) {
     padding-top: 30px;
+  }
+}
+
+.home-header span.menu.icon {
+  @include media($bp-small) {
+    padding-top: 10px;
+    padding-right: 10px;
   }
 }
 
