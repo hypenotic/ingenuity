@@ -94,7 +94,7 @@ nav {
     }
   }
   @include media($bp-small) {
-    height: 70px;
+    height: 68px;
     background-color: $black;
   }
   @include media($bp-xxlarge) {
@@ -560,7 +560,7 @@ span.menu.icon {
   justify-content: center;
   padding-top: 50px;
   @include media($bp-small) {
-    padding-top: 15px;
+    padding-top: 28px;
     padding-right: 10px;
   }
   @include media($mobile-landscape) {
