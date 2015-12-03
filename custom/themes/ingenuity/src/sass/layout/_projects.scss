@@ -138,10 +138,11 @@
 	width: 120%;
 	height: 450px;
 	margin: 25px -10%;
+	-webkit-overflow-scrolling: touch;
 	@include media($bp-small) {
 		height: 300px;
 		margin: 25px -10%;
-		overflow: auto;
+		overflow: visible;
 	}
 	@include media($bp-med) {
 		height: 400px;
