@@ -280,6 +280,9 @@ form.footer-newsletter {
 }
 
 .footer__cta button.button-down {
+	@include media($bp-small) {
+		margin-top: 40px;
+	}
 }
 
 
