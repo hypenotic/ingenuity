@@ -255,6 +255,9 @@ div.rw-words.rw-words-1 {
 		overflow: initial;
 		line-height: modular-scale(6, 1.5rem);
 	}
+	@include media($bmobile-landscape) {
+		left: 175px;
+	}
 }
 
 .rw-words a span.sq-ft {
