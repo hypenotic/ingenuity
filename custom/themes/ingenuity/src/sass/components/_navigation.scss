@@ -11,6 +11,11 @@
       top: 0;
       left: 15px;
     }
+    @include media($bp-xsmall) {
+      // display: none;
+      display: block;
+      max-height: 130px;
+    }
     @include media($bp-xxlarge) {
       max-height: 200px; 
       width: auto;
@@ -573,6 +578,10 @@ span.menu.icon {
     padding-top: 10px;
     padding-right: 10px;
   }
+  @include media($bp-xsmall) {
+    padding-top: 20px;
+    padding-right: 10px;
+  }
 }
 
 #nav-menu-text {
@@ -594,6 +603,10 @@ span.menu.icon {
   @include media($bp-small) {
     // display: none;
     display: initial;
+  }
+  @include media($bp-xsmall) {
+    // display: none;
+    display: none;
   }
 }
 

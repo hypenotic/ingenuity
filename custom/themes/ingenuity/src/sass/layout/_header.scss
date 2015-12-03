@@ -38,6 +38,9 @@
 		@include media($bp-small) {
 			margin-top: 5%;
 		}
+		@include media($bp-xsmall) {
+			margin-top: 10%;
+		}
 		@include media($mobile-landscape) {
 			margin-top: 5%;
 		}
