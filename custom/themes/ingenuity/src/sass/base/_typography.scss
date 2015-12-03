@@ -239,6 +239,10 @@ span.black-highlight {
 		color: $white;
 		text-align: left;
 		@include media($bp-small) {
+			font-size: modular-scale(3, 1.4rem);
+			line-height:modular-scale(3, 1.4rem);
+		}
+		@include media($bp-xsmall) {
 			font-size: modular-scale(2, 1.4rem);
 			line-height:modular-scale(2, 1.4rem);
 		}
