@@ -229,10 +229,12 @@ div.rw-words.rw-words-1 {
 		left: 0;
 		// padding-left: 40px;
 		margin: 0;
-		bottom: -55px;
+		bottom: -65px;
 		padding: 0;
-		line-height: modular-scale(2, 1.7rem); 
 		border-bottom: 1px solid rgba(252, 216, 56, 0.8);
+	}
+	@include media($bp-xsmall) {
+		bottom: -45px;
 	}
 	@include media($bp-med) {
 		left: -20px;
@@ -264,6 +266,7 @@ div.rw-words.rw-words-1 {
 	@include media($bp-small) {
 		display: inline;
 		font-size: modular-scale(0, 0.9rem);
+		line-height: modular-scale(0, 0.9rem);
 		z-index: 150;
 	}
 }
