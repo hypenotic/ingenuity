@@ -234,14 +234,14 @@ div.rw-words.rw-words-1 {
 		line-height: modular-scale(5, 1.5rem); 
 	}
 	@include media($bp-xlarge) {
-		// left: 65px;
 		line-height: modular-scale(5, 1.5rem); 
 	}
 	@include media($bp-xxlarge) {
 		left: 0;
 		margin: 0;
-		bottom: 30px;
+		bottom: 0;
 		overflow: initial;
+		line-height: modular-scale(6, 1.5rem);
 	}
 }
 
