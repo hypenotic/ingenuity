@@ -205,8 +205,8 @@ if ( $( "#contact-map" ).length ) {
     var zoomNum = 16;
     var panNum = 80;
    } else {
-    var zoomNum = 16;
-    var panNum = 90;
+    var zoomNum = 15;
+    var panNum = 20;
    }
    
 
