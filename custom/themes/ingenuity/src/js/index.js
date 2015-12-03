@@ -200,7 +200,7 @@ if ( $( "#contact-map" ).length ) {
 
    var mapOptions2 = {
        // How zoomed in you want the map to start at (always required)
-       zoom: 15,
+       zoom: 16,
 
        scrollwheel:  false,
        draggable: isDraggable,
@@ -260,6 +260,18 @@ if ( $( "#contact-map" ).length ) {
     map: mapM,
     icon: theicon
   });
+
+  var line = new google.maps.Polyline({
+      path: [
+          new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
+          new google.maps.LatLng(43.5238744, -79.7086458)
+      ],
+      strokeColor: "#FF0000",
+      strokeOpacity: 1.0,
+      strokeWeight: 4,
+      map: mapM
+  });
+
     // Let's also add a marker while we're at it
    // var markerC = new google.maps.Marker({
    //     position: new google.maps.LatLng(43.5238744, -79.7086458),
