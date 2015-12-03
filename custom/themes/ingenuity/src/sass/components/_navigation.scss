@@ -94,7 +94,7 @@ nav {
     }
   }
   @include media($bp-small) {
-    height: 70px
+    height: 70px;
     background-color: $black;
   }
   @include media($bp-xxlarge) {
