@@ -80,7 +80,6 @@
 
 .contact-moving__half {
 	position: relative;
-	height: 100%;
 	padding: 50px 0;
 	@include flex(0 0 50%);
 	@include media($bp-small) {
@@ -92,7 +91,7 @@
 	padding: 0 0 0 10%;
 	@include media($bp-small) {
 		padding: 30px;
-		min-height: 270px;
+		height: 270px;
 	}
 	p {
 		font-family: $lite-headings;
