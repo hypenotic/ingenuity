@@ -223,6 +223,7 @@ div.rw-words.rw-words-1 {
 		margin: 0;
 		bottom: -55px;
 		padding: 0;
+		line-height: modular-scale(2, 1.7rem); 
 	}
 	@include media($bp-med) {
 		left: -20px;
