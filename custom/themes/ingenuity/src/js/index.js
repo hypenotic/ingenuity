@@ -200,7 +200,7 @@ if ( $( "#contact-map" ).length ) {
 
    var mapOptions2 = {
        // How zoomed in you want the map to start at (always required)
-       zoom: 16,
+       zoom: 15,
 
        scrollwheel:  false,
        draggable: isDraggable,
@@ -245,6 +245,12 @@ if ( $( "#contact-map" ).length ) {
     var theiconN = '/custom/themes/ingenuity/dist/images/homen.png'
   }  
 
+  if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
+    var theiconO = '/ingenuity/custom/themes/ingenuity/dist/images/homeo.png';
+  } else {
+    var theiconO = '/custom/themes/ingenuity/dist/images/homeo.png'
+  }  
+
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(43.5238744, -79.7086458),
     map: mapC,
@@ -258,7 +264,7 @@ if ( $( "#contact-map" ).length ) {
   var oldplace = new google.maps.Marker({
     position: new google.maps.LatLng(43.5238744, -79.7086458),
     map: mapM,
-    icon: theicon
+    icon: theiconO
   });
 
   var line = new google.maps.Polyline({
