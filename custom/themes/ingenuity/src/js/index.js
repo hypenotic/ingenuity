@@ -206,7 +206,7 @@ if ( $( "#contact-map" ).length ) {
     var panNum = 80;
    } else {
     var zoomNum = 15;
-    var panNum = 20;
+    var panNum = 30;
    }
    
 
@@ -237,6 +237,7 @@ if ( $( "#contact-map" ).length ) {
    var mapM = new google.maps.Map(moveMap, mapOptions2);
    //move map down
    mapC.panBy(0, -120);
+   // for moving map
    mapM.panBy(panNum, 0);
 
   var currentpage = window.location.href;

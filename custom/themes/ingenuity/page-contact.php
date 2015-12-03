@@ -13,7 +13,7 @@
 	<section class="contact-moving">
 		<div class="contact-moving__half move-arrow">
 			<h3>Psst...we're moving!</h3>
-			<h6>(but not that far)</h6>
+			<h6>(but not <em>that</em> far)</h6>
 			<p>
 				Effective <span class="bolded-text">Feb 1st, 2016</span>.</br>
 				Please mail and visit us at our new home:</p>
