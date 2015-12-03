@@ -4,7 +4,12 @@
     width: auto;
     padding-top: 25px;
     @include media($bp-small) {
-      display: none;
+      // display: none;
+      display: block;
+      max-height: 140px;
+      position: absolute;
+      top: 0;
+      left: 15px;
     }
     @include media($bp-xxlarge) {
       max-height: 200px; 
@@ -89,8 +94,9 @@ nav {
     }
   }
   @include media($bp-small) {
-    height: 70px;
-    background-color: $black;
+    height: 150px;
+    // background-color: $black;
+    background-color: transparent;
   }
   @include media($bp-xxlarge) {
     height: 270px;
@@ -199,8 +205,9 @@ nav.home-header.expanded:hover {
 
 .home-header #default-logo-text {
   @include media($bp-small) {
-    margin: 0;
-    margin-top: 12px;
+    // margin: 0;
+    // margin-top: 12px;
+    display: none;
   }
 }
 
@@ -547,8 +554,8 @@ span.menu.icon {
   justify-content: center;
   padding-top: 50px;
   @include media($bp-small) {
-    padding-top: 27px;
-    padding-right: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
   }
   @include media($mobile-landscape) {
     padding-top: 30px;
@@ -566,7 +573,8 @@ span.menu.icon {
   padding-left: 10px;
   margin-top: 3px;
   @include media($bp-small) {
-    display: none;
+    // display: none;
+    display: initial;
   }
 }
 
