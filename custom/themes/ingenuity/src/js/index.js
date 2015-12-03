@@ -226,12 +226,6 @@ if ( $( "#contact-map" ).length ) {
    //move map down
    mapC.panBy(0, -120);
 
-   // Let's also add a marker while we're at it
-   // var marker = new google.maps.Marker({
-   //     position: new google.maps.LatLng(43.5238744, -79.7086458),
-   //     map: map
-   // });
-
   var currentpage = window.location.href;
   if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
     var theicon = '/ingenuity/custom/themes/ingenuity/dist/images/homemap.png';
@@ -277,12 +271,6 @@ if ( $( "#contact-map" ).length ) {
       strokeWeight: 4,
       map: mapM
   });
-
-    // Let's also add a marker while we're at it
-   // var markerC = new google.maps.Marker({
-   //     position: new google.maps.LatLng(43.5238744, -79.7086458),
-   //     map: mapC
-   // });
 
   var contentString = '<div id="info-window-content">'+
    '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
