@@ -95,8 +95,7 @@ nav {
   }
   @include media($bp-small) {
     height: 150px;
-    // background-color: $black;
-    background-color: transparent;
+    background-color: $black;
   }
   @include media($bp-xxlarge) {
     height: 270px;
@@ -104,6 +103,12 @@ nav {
   @include media($mobile-landscape) {
     height: 60px;
     background-color: $black;
+  }
+}
+
+nav.home-header {
+  @include media($bp-small) {
+    background-color: transparent;
   }
 }
 
@@ -572,6 +577,12 @@ span.menu.icon {
   font-weight: bold;
   padding-left: 10px;
   margin-top: 3px;
+  @include media($bp-small) {
+    display: none;
+  }
+}
+
+.home-header #nav-menu-text {
   @include media($bp-small) {
     // display: none;
     display: initial;
