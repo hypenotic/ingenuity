@@ -201,7 +201,7 @@ if ( $( "#contact-map" ).length ) {
    };
 
    // Determine zoon and pan amounts based on isDraggable (mobile)
-   if (isDraggable == false) {
+   if (isDraggable == true) {
     var zoomNum = 16;
     var panNum = 80;
    } else {
