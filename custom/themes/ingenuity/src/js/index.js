@@ -129,13 +129,15 @@ function mobilehome() {
     var theurl = '/custom/themes/ingenuity/dist/images/site-default.jpg'
   }
 
-  var vid = document.getElementById("vid-check");
-  var header = document.getElementById("header-check");
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    vid.style.display = "none";
-    header.style.backgroundImage = "url('" + theurl + "')";  
-  } else {
-    //nothing
+  if ( $( "#vid-check" ).length ) {
+    var vid = document.getElementById("vid-check");
+    var header = document.getElementById("header-check");
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      vid.style.display = "none";
+      header.style.backgroundImage = "url('" + theurl + "')";  
+    } else {
+      //nothing
+    }
   }
 };
 
