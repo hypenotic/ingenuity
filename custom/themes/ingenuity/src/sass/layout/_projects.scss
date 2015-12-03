@@ -142,7 +142,6 @@
 	@include media($bp-small) {
 		height: 300px;
 		margin: 25px -10%;
-		overflow: visible;
 	}
 	@include media($bp-med) {
 		height: 400px;
@@ -157,6 +156,8 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
+		overflow-x:hidden;
+		overflow-y:hidden;
 	}
 }
 
