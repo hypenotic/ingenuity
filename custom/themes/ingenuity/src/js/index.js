@@ -275,12 +275,23 @@ if ( $( "#contact-map" ).length ) {
     icon: theiconO
   });
 
+  // Define a symbol using a predefined path (an arrow)
+    // supplied by the Google Maps JavaScript API.
+    var lineSymbol = {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+    };
+
+
   var line = new google.maps.Polyline({
       path: [
-          new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
-          new google.maps.LatLng(43.5238744, -79.7086458)
+          new google.maps.LatLng(43.5238744, -79.7086458),
+          new google.maps.LatLng(43.52385109999999, -79.71254299999998)          
       ],
       strokeColor: "#FF0000",
+      icons: [{
+            icon: lineSymbol,
+            offset: '100%'
+          }],
       strokeOpacity: 1.0,
       strokeWeight: 4,
       map: mapM
