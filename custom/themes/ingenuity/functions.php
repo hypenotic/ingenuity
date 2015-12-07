@@ -29,6 +29,7 @@ require_once('includes/shortcodes/hanging-punctuation.php');
 require_once('includes/shortcodes/incontent-picture.php');
 require_once('includes/shortcodes/bigcopy.php');
 require_once('includes/shortcodes/bigvid.php');
+require_once('includes/shortcodes/tooltip.php');
 
 
 add_theme_support( 'post-thumbnails' ); 
