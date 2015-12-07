@@ -65,12 +65,13 @@
   .hint:after, [data-hint]:after {
     content: attr(data-hint);
     background: #383838;
-    width: 300px;
-    height: 300px;
+    min-width: 300px;
+    min-height: 300px;
     color: white;
     padding: 15px;
+    text-align: left;
     font-size: modular-scale(0, 1rem);
-    line-height: modular-scale(0, 1rem);
+    line-height: modular-scale(0, 1.1rem);
     }
 
 [data-hint='']:before, [data-hint='']:after {
