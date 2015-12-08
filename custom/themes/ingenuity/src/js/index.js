@@ -166,6 +166,7 @@ $(function() {
   });
   $('.fadeInDown h2').widowFix();
   $('.blog-entry p').widowFix();
+  $('.blog-single__title').widowFix();
 });
 
 // GOOGLE MAPS ============================================

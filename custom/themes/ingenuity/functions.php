@@ -7,7 +7,8 @@ include('includes/wp-cuztom-posts/custom-post-projects.php');
 include('includes/wp-cuztom-posts/custom-post-videos.php');
 include('includes/wp-cuztom-posts/custom-post-testimonials.php');
 include('includes/wp-cuztom-posts/custom-post-slider.php');
-include('includes/wp-cuztom-posts/custom-post-team.php');
+include('includes/wp-cuztom-posls -a
+	ts/custom-post-team.php');
 include('includes/wp-cuztom-posts/custom-post-contacts.php');
 
 
