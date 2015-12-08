@@ -59,7 +59,7 @@
 			if ( has_post_thumbnail() ) {
 				$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
 
-				echo '<img src="' . $large_image_url[0] . '" title="' . the_title() . '">';
+				echo '<img src="' . $large_image_url[0] . '">';
 			} else if ($banner_id) { ?>
 			<img src="<?php echo $banner_url[0]; ?>" alt="<?php the_title(); ?>">
 			<?php } else {} ?>
