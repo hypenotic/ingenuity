@@ -55,7 +55,12 @@
 				<h3 class="blog-single__title"><?php the_title(); ?></h3>
 			</a>
 			<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
-			<?php if ($banner_id) { ?>
+			<?php 
+			if ( has_post_thumbnail() ) {
+				$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+
+				echo '<img src="' . $large_image_url[0] . '" title="' . the_title() . '">';
+			} else if ($banner_id) { ?>
 			<img src="<?php echo $banner_url[0]; ?>" alt="<?php the_title(); ?>">
 			<?php } else {} ?>
 			<p> <?php the_excerpt(); ?> </p>
