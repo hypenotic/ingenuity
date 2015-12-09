@@ -21,7 +21,7 @@
 		</div>
  		<hgroup class="rw-wrapper">
 			<h2 class="rw-sentence">
-				A <a href="<?php home_url(); ?>services/design-build/" class="sentence-link">Design Build</a> & <a href="<?php home_url(); ?>services/general-contracting/" class="sentence-link">General Contracting</a> team that <a href="<?php home_url(); ?>about-us/" class="sentence-link">believes</a> in
+				A <a href="<?php home_url(); ?>services/design-build/" class="sentence-link">Design Build</a> & <a href="<?php home_url(); ?>services/general-contracting/" class="sentence-link">General Contracting</a> <a href="<?php home_url(); ?>about-us/the-team" class="sentence-link">team</a> that <a href="<?php home_url(); ?>about-us/" class="sentence-link">believes</a> in
 				<div class="rw-words rw-words-1">
 					<a href="<?php home_url(); ?>projects/" class="rotator-link"><span class="rotator">happiness <span class="sq-ft">/sq ft.</span></span></a>
 					<a href="<?php home_url(); ?>projects/" class="rotator-link"><span class="rotator">craft <span class="sq-ft">/sq ft.</span></span></a>
