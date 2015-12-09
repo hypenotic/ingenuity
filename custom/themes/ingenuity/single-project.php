@@ -65,7 +65,9 @@
                  <?php endif ?>
             </div>
             <?php if ($badgetext) { ?>
+                <?php if ($badgelink) { ?>
                 <a href="<?php echo $badgelink; ?>">
+                <?php } ?>
                     <div id="banner-badge">
                     
                       <div class="bk l">
@@ -89,7 +91,9 @@
                       </div>
                     
                     </div>
+                <?php if ($badgelink) { ?>
                 </a>
+                <?php } ?>
             <?php } ?>
             <hgroup class="animated fadeInDown">
                 <h1><?php echo $heading; ?></h1>
@@ -105,7 +109,9 @@
 
         <div class="default-hero">
             <?php if ($badgetext) { ?>
+                <?php if ($badgelink) { ?>
                 <a href="<?php echo $badgelink; ?>">
+                <?php } ?>
                     <div id="banner-badge">
                     
                       <div class="bk l">
@@ -129,7 +135,9 @@
                       </div>
                     
                     </div>
+                <?php if ($badgelink) { ?>
                 </a>
+                <?php } ?>
             <?php } ?>
             <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
             <hgroup class="animated fadeInDown">
