@@ -75,19 +75,13 @@
 .gallery__single-half.gallery-image {
     position: relative;
     @include media($bp-small) {
-        @include display(flex);
-        @include align-items(center);
-        @include justify-content(center);
+        @include flexboxcenter;
     }
     @include media($bp-med) {
-        @include display(flex);
-        @include align-items(center);
-        @include justify-content(center);
+        @include flexboxcenter;
     }
     @include media($mobile-landscape) {
-        @include display(flex);
-        @include align-items(center);
-        @include justify-content(center);
+        @include flexboxcenter;
     }
     img {
         position: relative;

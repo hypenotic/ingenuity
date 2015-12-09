@@ -21,9 +21,7 @@
 	width: 100%;
 	background-position: center center;
 	background-size: cover;
-	@include display(flex);
-	@include align-items(center);
-	@include justify-content(center);
+	@include flexboxcenter;
 	hgroup {
 		width: 100%;
 		@include display(flex);

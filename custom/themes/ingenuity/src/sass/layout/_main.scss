@@ -85,9 +85,7 @@ nav.main-nav {
 .industry-cta {
 	min-height: 400px;
 	background-color: $yellow;
-	@include display(flex);
-	@include align-items(center);
-	@include justify-content(center);
+	@include flexboxcenter;
 	@include media($bp-small) {
 		min-height: 80vh;
 	}
@@ -114,9 +112,7 @@ nav.main-nav {
 .cta-contact {
 	@include flex-direction(column);
 	@include media($bp-large) {
-		@include display(flex);
-		@include align-items(center);
-		@include justify-content(center);
+		@include flexboxcenter;
 		@include flex-direction(row);
 	}
 	@include media($bp-med) {
