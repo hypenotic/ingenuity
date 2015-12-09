@@ -64,10 +64,10 @@
 			<img src="<?php echo $banner_url[0]; ?>" alt="<?php the_title(); ?>">
 			<?php } else {} ?>
 			<p> <?php the_excerpt(); ?> </p>
-			<div class="blog-single__cats">
+			<!-- <div class="blog-single__cats">
 				<p>Listed Under:</p> 
-				<?php echo get_the_category_list(); ?>
-			</div>
+				<?php // echo get_the_category_list(); ?>
+			</div> -->
 		</div>
 
 
