@@ -4,9 +4,7 @@
 .project__gallery {
     width: 100%;
     position: relative;
-    @include display(flex);
-    @include align-items(flex-start);
-    @include justify-content(center);
+    @include flexalignstart;
     @include flex-direction(column);
     @include flex-wrap(wrap);
     @include media($bp-small) {
@@ -35,9 +33,7 @@
     margin: 0 0 30px;
     position: relative;
     @include flex(0 0 100%);
-    @include display(flex);
-    @include align-items(flex-start);
-    @include justify-content(center);
+    @include flexalignstart;
     @include flex-direction(column);
     @include media($bp-small) {
         @include flex(1 0 auto);

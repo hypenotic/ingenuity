@@ -2,9 +2,7 @@
 	width: 100%;
 	background: $black;
 	padding: 25px;
-	@include display(flex);
-	@include align-items(flex-start);
-	@include justify-content(center);
+	@include flexalignstart;
 	@include flex-direction(column);
 	@include media($bp-large) {
 		@include flex-direction(row);

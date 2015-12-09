@@ -132,9 +132,7 @@
 .contact-container {
 	position: relative;
 	padding: 25px;
-	@include display(flex);
-	@include align-items(flex-start);
-	@include justify-content(center);
+	@include flexalignstart;
 	@include flex-wrap(wrap);
 	@include flex-direction(column);
 	@include media($mobile-landscape) {
