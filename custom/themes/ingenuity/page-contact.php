@@ -20,7 +20,7 @@
 			<p>
 				<a href="https://goo.gl/maps/m965bjKS6VA2">
 					<span class="new-address">
-						3800A Laird Rd. </br>
+						3800A Laird Rd. - Unit 1 </br>
 						Mississauga, ON </br>
 						L5L 0B2
 					</span>
