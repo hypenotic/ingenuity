@@ -13,14 +13,14 @@
 
 	<div class="default-hero project-index">
 		    <figure style="background-image: url('<?php echo get_template_directory_uri(); ?>/dist/images/site-default.jpg'); background-size: cover;"></figure>
-		    <hgroup class="animated fadeInDown">
+		    <div class="hgroup animated fadeInDown">
 		    	<h2>Author:</h2>
 		        <?php if ($heading) { ?>
 					<h1><?php echo $heading; ?></h1>
 	        	<?php } else { ?>
 	        		<h1><?php wp_title(''); ?></h1>
 	        	<?php } ?>
-		    </hgroup>
+		    </div>
 		</div>
 
 	<div class="main-wrapper"> 

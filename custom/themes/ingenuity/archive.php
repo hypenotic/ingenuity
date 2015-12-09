@@ -1,10 +1,10 @@
 <?php get_header(); ?>
     <div class="default-hero">
         <figure style="background-image: url('dist/images/site.jpg'); background-size: cover;"></figure>
-        <hgroup class="animated fadeInDown">
+        <div class="hgroup animated fadeInDown">
             <h2>Results for:</h2>
             <h1><?php single_month_title(' '); ?></h1>
-        </hgroup>
+        </div>
     </div>
 
     <div class="archive-default">

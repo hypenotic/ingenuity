@@ -1,10 +1,10 @@
 <?php get_header(); ?>
     <div class="default-hero">
         <figure style="background-image: url('<?php echo get_template_directory_uri(); ?>/dist/images/site.jpg'); background-size: cover;"></figure>
-        <hgroup class="animated fadeInDown">
+        <div class="hgroup animated fadeInDown">
             <h2>You searched for:</h2>
             <h1><?php echo get_search_query(); ?></h1>
-        </hgroup>
+        </div>
     </div>
 
     <div class="main-wrapper">

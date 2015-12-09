@@ -13,7 +13,7 @@
 
 	<div class="default-hero project-index">
 		    <figure style="background-image: url('<?php echo get_template_directory_uri(); ?>/dist/images/site-default.jpg'); background-size: cover;"></figure>
-		    <hgroup class="animated fadeInDown">
+		    <div class="hgroup animated fadeInDown">
 		        <?php if ($heading) { ?>
 					<h1><?php echo $heading; ?></h1>
 	        	<?php } else { ?>
@@ -22,7 +22,7 @@
 		        <?php if ($subheading) { ?>
 					<h2><?php echo $subheading; ?></h2>
 	        	<?php } ?>
-		    </hgroup>
+		    </div>
 		</div>
 
 	<div class="main-wrapper"> 

@@ -19,7 +19,7 @@
 		<div class="fullscreen-bg" id="vid-check">
 		     <?php dynamic_sidebar( 'homepage-vid' ); ?>
 		</div>
- 		<hgroup class="rw-wrapper">
+ 		<div class="hgroup rw-wrapper">
 			<h2 class="rw-sentence">
 				A <a href="<?php home_url(); ?>services/design-build/" class="sentence-link">Design Build</a> & <a href="<?php home_url(); ?>services/general-contracting/" class="sentence-link">General Contracting</a> <a href="<?php home_url(); ?>about-us/the-team" class="sentence-link">team</a> that <a href="<?php home_url(); ?>about-us/" class="sentence-link">believes</a> in
 				<div class="rw-words rw-words-1">
@@ -31,7 +31,7 @@
 				</div>
 				<span id="move-over">/sq ft.</span>
 			</h2>
-		</hgroup>
+		</div>
 	</div>
 
 	<?php endwhile; else : ?>

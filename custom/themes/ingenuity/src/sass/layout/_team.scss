@@ -20,15 +20,15 @@
 		&:hover {
 			cursor: pointer;
 			background-color: $black;
-			hgroup h3,
-			hgroup h4,
+			.hgroup h3,
+			.hgroup h4,
 			.team__creds {
 				color: $yellow;
 			}
 			@include media($bp-small) {
 				background-color: $yellow;
-				hgroup h3,
-				hgroup h4,
+				.hgroup h3,
+				.hgroup h4,
 				.team__creds {
 					color: $black;
 				}
@@ -45,7 +45,7 @@
 			filter: grayscale(100%) brightness(0.9);
 			z-index: 3;
 		}
-		hgroup {
+		.hgroup {
 			position: relative;
 			padding: 0 25px;
 			z-index: 4;
