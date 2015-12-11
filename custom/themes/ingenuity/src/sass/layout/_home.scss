@@ -159,6 +159,10 @@ h2.rw-sentence{
 		font-size: modular-scale(2, 1.2rem); 
 		line-height: modular-scale(2, 1.5rem); 
 	}
+	@media screen and (min-width: 1900px) {
+	    font-size: modular-scale(6, 1.4rem); 
+	    line-height: modular-scale(6, 1.6rem); 
+	}
 }
 
 .rw-sentence a span {
@@ -194,6 +198,11 @@ h2.rw-sentence{
 		padding-left: 230px;
 		font-size: modular-scale(0, 1.3rem); 
 		line-height: modular-scale(0, 1.6rem); 
+	}
+	@media screen and (min-width: 1900px) {
+	    font-size: modular-scale(2, 1.2rem); 
+	    line-height: modular-scale(2, 1.2rem); 
+	    padding-left: 770px;
 	}
 }
 
@@ -256,6 +265,10 @@ div.rw-words.rw-words-1 {
 	}
 	@include media($bmobile-landscape) {
 		left: 175px;
+	}
+	@media screen and (min-width: 1900px) {
+	    bottom: 3px;
+	    left: 650px;
 	}
 }
 
