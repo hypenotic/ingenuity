@@ -142,6 +142,11 @@ nav.main-nav {
   // max-height: 50vh;
   overflow: hidden;
   height: 500px;
+  @include media($bp-small) {
+  	height: 300px;
+  	margin-left:-20%;
+  	margin-right:-20%;
+  }
   img {
   	width: 100%;
   	height: auto;
