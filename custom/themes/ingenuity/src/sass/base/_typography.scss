@@ -392,7 +392,8 @@ main {
 	}
 	h3 {
 		text-transform: uppercase;
-		margin-bottom: 5px;
+		margin-bottom: 8px;
+		font-family: $main-headings;
 		@include media($mobile-landscape) {
 		    margin-top: 20px;
 		}
