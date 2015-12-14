@@ -11,7 +11,7 @@ function vidpic_shortcode( $atts ) {
         'pic' => 'Insert caption here.',
     ), $atts );
  
-    $output .= '<div id="vidpic-content" class="gallery__single">';
+    $output .= '<div class="vidpic-content gallery__single">';
         $output .= '<div class="gallery__single-half gallery-image vidpic-vid wow fadeInLeft">';
             $output .= '<iframe src="https://player.vimeo.com/video/' . wp_kses_post( $pic_atts[ 'vid' ] ) . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
         $output .= '</div>';
