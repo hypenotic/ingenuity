@@ -13,7 +13,7 @@ function vidpic_shortcode( $atts ) {
  
     $output .= '<div class="vidpic-content gallery__single">';
         $output .= '<div class="gallery__single-half gallery-image vidpic-vid wow fadeInLeft">';
-            $output .= '<iframe src="https://player.vimeo.com/video/' . wp_kses_post( $pic_atts[ 'vid' ] ) . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            $output .= '<iframe src="https://player.vimeo.com/video/' . wp_kses_post( $pic_atts[ 'vid' ] ) . '?portrait=0&title=0&byline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
         $output .= '</div>';
         $output .= '<div class="gallery__single-half gallery-caption vidpic-pic wow fadeInRight">';
             $output .= '<img src="' . wp_kses_post( $pic_atts[ 'pic' ] ) . '">' ;
