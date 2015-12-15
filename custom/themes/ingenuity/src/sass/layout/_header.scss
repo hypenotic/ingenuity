@@ -21,10 +21,8 @@
 	width: 100%;
 	background-position: center center;
 	background-size: cover;
-	@include display(flex);
-	@include align-items(center);
-	@include justify-content(center);
-	hgroup {
+	@include flexboxcenter;
+	.hgroup {
 		width: 100%;
 		@include display(flex);
 		@include flex-direction(column);
@@ -33,10 +31,13 @@
 
 .home-hero {
 	min-height: 100vh;
-	hgroup {
+	.hgroup {
 		margin-top: 150px; //newnav!
 		@include media($bp-small) {
 			margin-top: 5%;
+		}
+		@include media($bp-xsmall) {
+			margin-top: 20%;
 		}
 		@include media($mobile-landscape) {
 			margin-top: 5%;
@@ -72,7 +73,7 @@
 		filter: grayscale(80%) brightness(0.6) opacity(1);
 		z-index: 50;
 	}
-	hgroup {
+	.hgroup {
 		position: relative;
 		z-index: 51;
 		margin-top: 150px;
@@ -98,7 +99,7 @@
 }
 
 .default-hero.project-index {
-	hgroup {
+	.hgroup {
 		margin: 50px auto 0;
 		h1,
 		h2 {

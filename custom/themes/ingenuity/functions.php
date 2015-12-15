@@ -29,6 +29,8 @@ require_once('includes/shortcodes/hanging-punctuation.php');
 require_once('includes/shortcodes/incontent-picture.php');
 require_once('includes/shortcodes/bigcopy.php');
 require_once('includes/shortcodes/bigvid.php');
+require_once('includes/shortcodes/tooltip.php');
+require_once('includes/shortcodes/vid-picture.php');
 
 
 add_theme_support( 'post-thumbnails' ); 
@@ -45,5 +47,14 @@ function js_async_attr($tag){
 return str_replace( ' src', ' defer src', $tag );
 }
 add_filter( 'script_loader_tag', 'js_async_attr', 10 );
+
+/*** Remove Query String from Static Resources ***/
+function remove_cssjs_ver( $src ) {
+ if( strpos( $src, '?ver=' ) )
+ $src = remove_query_arg( 'ver', $src );
+ return $src;
+}
+add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
+add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
 
 ?>

@@ -129,13 +129,15 @@ function mobilehome() {
     var theurl = '/custom/themes/ingenuity/dist/images/site-default.jpg'
   }
 
-  var vid = document.getElementById("vid-check");
-  var header = document.getElementById("header-check");
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    vid.style.display = "none";
-    header.style.backgroundImage = "url('" + theurl + "')";  
-  } else {
-    //nothing
+  if ( $( "#vid-check" ).length ) {
+    var vid = document.getElementById("vid-check");
+    var header = document.getElementById("header-check");
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      vid.style.display = "none";
+      header.style.backgroundImage = "url('" + theurl + "')";  
+    } else {
+      //nothing
+    }
   }
 };
 
@@ -164,6 +166,7 @@ $(function() {
   });
   $('.fadeInDown h2').widowFix();
   $('.blog-entry p').widowFix();
+  $('.blog-single__title').widowFix();
 });
 
 // GOOGLE MAPS ============================================
@@ -198,9 +201,19 @@ if ( $( "#contact-map" ).length ) {
        styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#2d2d2d"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#a68d29"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#a68d29"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#2d2d2d"},{"lightness":9},{"visibility":"simplified"}]},{"featureType":"transit.station","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"transit.station.airport","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]},{"featureType":"water","elementType":"geometry","stylers":[{"saturation":-83},{"lightness":-51}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#2d2d2d"}]}]
    };
 
+   // Determine zoon and pan amounts based on isDraggable (mobile)
+   if (isDraggable == true) {
+    var zoomNum = 16;
+    var panNum = 80;
+   } else {
+    var zoomNum = 15;
+    var panNum = 30;
+   }
+   
+
    var mapOptions2 = {
        // How zoomed in you want the map to start at (always required)
-       zoom: 15,
+       zoom: zoomNum,
 
        scrollwheel:  false,
        draggable: isDraggable,
@@ -225,12 +238,8 @@ if ( $( "#contact-map" ).length ) {
    var mapM = new google.maps.Map(moveMap, mapOptions2);
    //move map down
    mapC.panBy(0, -120);
-
-   // Let's also add a marker while we're at it
-   // var marker = new google.maps.Marker({
-   //     position: new google.maps.LatLng(43.5238744, -79.7086458),
-   //     map: map
-   // });
+   // for moving map
+   mapM.panBy(panNum, 0);
 
   var currentpage = window.location.href;
   if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
@@ -267,22 +276,27 @@ if ( $( "#contact-map" ).length ) {
     icon: theiconO
   });
 
+  // Define a symbol using a predefined path (an arrow)
+    // supplied by the Google Maps JavaScript API.
+    var lineSymbol = {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+    };
+
+
   var line = new google.maps.Polyline({
       path: [
-          new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
-          new google.maps.LatLng(43.5238744, -79.7086458)
+          new google.maps.LatLng(43.5238744, -79.7086458),
+          new google.maps.LatLng(43.52385109999999, -79.71254299999998)          
       ],
       strokeColor: "#FF0000",
+      icons: [{
+            icon: lineSymbol,
+            offset: '100%'
+          }],
       strokeOpacity: 1.0,
       strokeWeight: 4,
       map: mapM
   });
-
-    // Let's also add a marker while we're at it
-   // var markerC = new google.maps.Marker({
-   //     position: new google.maps.LatLng(43.5238744, -79.7086458),
-   //     map: mapC
-   // });
 
   var contentString = '<div id="info-window-content">'+
    '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+

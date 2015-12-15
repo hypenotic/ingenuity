@@ -13,14 +13,14 @@
 	<section class="contact-moving">
 		<div class="contact-moving__half move-arrow">
 			<h3>Psst...we're moving!</h3>
-			<h6>(but not that far)</h6>
+			<!-- <h6>(but not <em>that</em> far away)</h6> -->
 			<p>
 				Effective <span class="bolded-text">Feb 1st, 2016</span>.</br>
 				Please mail and visit us at our new home:</p>
 			<p>
 				<a href="https://goo.gl/maps/m965bjKS6VA2">
 					<span class="new-address">
-						3800A Laird Rd. </br>
+						3800A Laird Rd. - Unit 1 </br>
 						Mississauga, ON </br>
 						L5L 0B2
 					</span>

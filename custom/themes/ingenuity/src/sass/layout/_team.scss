@@ -1,9 +1,7 @@
 .team__container {
 	position: relative;
 	padding: 0;
-	@include display(flex);
-	@include align-items(flex-start);
-	@include justify-content(center);
+	@include flexalignstart;
 	@include flex-direction(column);
 	.team__single {
 		background-color: $yellow;
@@ -13,9 +11,7 @@
 		// margin-bottom: 25px;
 		// transition: all 0.5s;
 		border-bottom: 2px solid $black;
-		@include display(flex);
-		@include align-items(flex-start);
-		@include justify-content(center);
+		@include flexalignstart;
 		@include flex-direction(column);
 		@include media($bp-large) {
 			min-height: 300px;
@@ -24,15 +20,15 @@
 		&:hover {
 			cursor: pointer;
 			background-color: $black;
-			hgroup h3,
-			hgroup h4,
+			.hgroup h3,
+			.hgroup h4,
 			.team__creds {
 				color: $yellow;
 			}
 			@include media($bp-small) {
 				background-color: $yellow;
-				hgroup h3,
-				hgroup h4,
+				.hgroup h3,
+				.hgroup h4,
 				.team__creds {
 					color: $black;
 				}
@@ -49,7 +45,7 @@
 			filter: grayscale(100%) brightness(0.9);
 			z-index: 3;
 		}
-		hgroup {
+		.hgroup {
 			position: relative;
 			padding: 0 25px;
 			z-index: 4;

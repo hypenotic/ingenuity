@@ -4,9 +4,7 @@
 .project__gallery {
     width: 100%;
     position: relative;
-    @include display(flex);
-    @include align-items(flex-start);
-    @include justify-content(center);
+    @include flexalignstart;
     @include flex-direction(column);
     @include flex-wrap(wrap);
     @include media($bp-small) {
@@ -35,9 +33,7 @@
     margin: 0 0 30px;
     position: relative;
     @include flex(0 0 100%);
-    @include display(flex);
-    @include align-items(flex-start);
-    @include justify-content(center);
+    @include flexalignstart;
     @include flex-direction(column);
     @include media($bp-small) {
         @include flex(1 0 auto);
@@ -75,19 +71,13 @@
 .gallery__single-half.gallery-image {
     position: relative;
     @include media($bp-small) {
-        @include display(flex);
-        @include align-items(center);
-        @include justify-content(center);
+        @include flexboxcenter;
     }
     @include media($bp-med) {
-        @include display(flex);
-        @include align-items(center);
-        @include justify-content(center);
+        @include flexboxcenter;
     }
     @include media($mobile-landscape) {
-        @include display(flex);
-        @include align-items(center);
-        @include justify-content(center);
+        @include flexboxcenter;
     }
     img {
         position: relative;
@@ -153,5 +143,103 @@
     }
     @include media($bp-large) {
         margin: 50px -20%;
+    }
+}
+
+// vidpic shortcode
+
+.vidpic-content.gallery__single {
+    margin: 0 -30%;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    @include media($bp-small) {
+        margin: 0;
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
+    }
+    @include media($bp-med) {
+        margin: 25px 0;
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
+    }
+    @include media($mobile-landscape) {
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
+    }
+    @include media($bp-large) {
+        margin: 40px -25%;
+    }
+}
+
+.vidpic-content.gallery__single {
+    .gallery__single-half.gallery-image.vidpic-vid {
+        position: relative;
+        width: 120%;
+        height: 450px;
+        -webkit-overflow-scrolling: touch;
+        @include flex(0 0 500px);
+        @include media($bp-small) {
+            height: 300px;
+            width: 100%;
+            margin: 0 0 25px;
+            @include flex(0 0 300px);
+        }
+        @include media($bp-med) {
+            height: 400px;
+            width: 100%;
+        }
+        @include media($bp-large) {
+            height: 290px;
+        }
+        @include media($bp-xlarge) {
+            height: 300px;
+        }
+        iframe {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow-x:hidden;
+            overflow-y:hidden;
+        }
+    }
+}
+
+.vidpic-content.gallery__single {
+    .gallery__single-half.gallery-caption.vidpic-pic {
+        background-color: transparent;
+        padding: 0 0 0 20px;
+        @include flex(0 1 auto);
+        @include media($bp-small) {
+            margin: 0 0 25px;
+            padding: 0;
+        }
+        img {
+            width: auto;
+            max-height: 280px;
+        }
+    }
+}
+
+.blog-entry {
+    .gallery__single:nth-child(even) .gallery__single-half.gallery-image {
+        @include order(2);
+        @include media($bp-small) {
+            @include order(-1);
+        }
+        @include media($bp-med) {
+            @include order(-1);
+        }
+        @include media($mobile-landscape) {
+            @include order(-1);
+        }
+        img {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    .gallery__single:nth-child(even) .gallery__single-half.gallery-caption {
+        padding-left: 0;
+        padding-right: 20px;
     }
 }

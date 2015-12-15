@@ -239,6 +239,10 @@ span.black-highlight {
 		color: $white;
 		text-align: left;
 		@include media($bp-small) {
+			font-size: modular-scale(3, 1.4rem);
+			line-height:modular-scale(3, 1.4rem);
+		}
+		@include media($bp-xsmall) {
 			font-size: modular-scale(2, 1.4rem);
 			line-height:modular-scale(2, 1.4rem);
 		}
@@ -388,7 +392,8 @@ main {
 	}
 	h3 {
 		text-transform: uppercase;
-		margin-bottom: 5px;
+		margin-bottom: 8px;
+		font-family: $main-headings;
 		@include media($mobile-landscape) {
 		    margin-top: 20px;
 		}
@@ -537,6 +542,11 @@ main {
     		padding: 7px 0;
     	}
     }
+}
+
+//category label
+#left p.sidebar-cats {
+	margin-bottom: 0;
 }
 
 

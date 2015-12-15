@@ -21,12 +21,12 @@
 
 	<div class="default-hero">
 	    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
-	    <hgroup class="animated fadeInDown">
+	    <div class="hgroup animated fadeInDown">
 	        <h1><?php echo $heading; ?></h1>
             <?php if ($subheading) { ?>
     			<h2><?php echo $subheading; ?></h2>
             <?php } ?>
-	    </hgroup>
+	    </div>
 	</div>
 
 	<div class="main-wrapper"> 
@@ -69,7 +69,7 @@
 						<?php if ( wp_attachment_is_image($photoid) == true ) { ?>
 							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
 						<?php } ?>
-							<hgroup>
+							<div class="hgroup">
 								<h3 class="team__name"><?php echo $name; ?>
 									<?php if ($creds) { ?>
 										<span class="team__creds">
@@ -79,7 +79,7 @@
 								</h3>
 								<h4 class="team__title"><?php echo $title; ?></h4>
 								<!-- <figcaption><?php echo $profile; ?></figcaption> -->
-							</hgroup>
+							</div>
 						</figure>
 
 					<?php } else { ?>
@@ -88,7 +88,7 @@
 						<?php if (wp_attachment_is_image($photoid) == true) { ?>
 							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
 						<?php } ?>
-							<hgroup>
+							<div class="hgroup">
 								<h3 class="team__name"><?php echo $name; ?>
 									<?php if ($creds) { ?>
 										<span class="team__creds">
@@ -98,15 +98,15 @@
 								</h3>
 								<h4 class="team__title"><?php echo $title; ?></h4>
 								<!-- <figcaption><?php echo $profile; ?></figcaption> -->
-							</hgroup>
+							</div>
 						</figure>
-						<hgroup class="drop-down-panel">
+						<div class="drop-down-panel">
 <!-- 							<button class="drop-down-cross close-push-panel"></button> -->
 							<div class="push__longbio animated fadeIn">
 								<?php echo $longbio; ?>
 							</div>
 							<button class="close-push-panel">CLOSE</button>
-						</hgroup>
+						</div>
 
 					<?php } ?> 
 					

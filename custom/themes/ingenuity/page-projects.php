@@ -17,12 +17,12 @@
 
 		<div class="default-hero project-index">
 		    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
-		    <hgroup class="animated fadeInDown">
+		    <div class="hgroup animated fadeInDown">
 		        <h1><?php echo $heading; ?></h1>
 		        <?php if ($subheading) { ?>
 					<h2><?php echo $subheading; ?></h2>
 	        	<?php } ?>
-		    </hgroup>
+		    </div>
 		</div>
 
 <!-- 		<div class="main-wrapper"> 
@@ -31,9 +31,8 @@
 			</section>
 		</div> -->
 		
-		<div class="projects__panel-container"><?php
-			
-				$query = new WP_Query( array( 'post_type' => 'project' ) );
+		<div class="projects__panel-container">
+			<?php $query = new WP_Query( array( 'post_type' => 'project' ) );
 			
 				if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 			

@@ -20,12 +20,12 @@
 
 	<div class="default-hero">
 	    <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
-	    <hgroup class="animated fadeInDown">
+	    <div class="hgroup animated fadeInDown">
 	        <h1><?php echo $heading; ?></h1>
             <?php if ($subheading) { ?>
     			<h2><?php echo $subheading; ?></h2>
             <?php } ?>
-	    </hgroup>
+	    </div>
 	</div>
 	
 	<div class="main-wrapper">

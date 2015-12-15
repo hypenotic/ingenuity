@@ -65,7 +65,9 @@
                  <?php endif ?>
             </div>
             <?php if ($badgetext) { ?>
+                <?php if ($badgelink) { ?>
                 <a href="<?php echo $badgelink; ?>">
+                <?php } ?>
                     <div id="banner-badge">
                     
                       <div class="bk l">
@@ -89,14 +91,16 @@
                       </div>
                     
                     </div>
+                <?php if ($badgelink) { ?>
                 </a>
+                <?php } ?>
             <?php } ?>
-            <hgroup class="animated fadeInDown">
+            <div class="hgroup animated fadeInDown">
                 <h1><?php echo $heading; ?></h1>
                 <?php if ($subheading) { ?>
                     <h2><?php echo $subheading; ?></h2>
                 <?php } ?>
-            </hgroup>
+            </div>
         </div>
 
         <?php endwhile; endif; wp_reset_postdata();?>
@@ -105,7 +109,9 @@
 
         <div class="default-hero">
             <?php if ($badgetext) { ?>
+                <?php if ($badgelink) { ?>
                 <a href="<?php echo $badgelink; ?>">
+                <?php } ?>
                     <div id="banner-badge">
                     
                       <div class="bk l">
@@ -129,15 +135,17 @@
                       </div>
                     
                     </div>
+                <?php if ($badgelink) { ?>
                 </a>
+                <?php } ?>
             <?php } ?>
             <figure style="background-image: url('<?php echo $bannerurl[0] ?>'); background-size: cover;"></figure>
-            <hgroup class="animated fadeInDown">
+            <div class="hgroup animated fadeInDown">
                 <h1><?php echo $heading; ?></h1>
                 <?php if ($subheading) { ?>
                     <h2><?php echo $subheading; ?></h2>
                 <?php } ?>
-            </hgroup>
+            </div>
         </div>
 
         <?php } ?>
@@ -150,16 +158,16 @@
         <div class="main-wrapper blog-wrapper">
             <aside id="left"> 
                 <?php if ($client) { ?>
-                    <p><span class="stats_label">Client</span>:</br><?php echo $client; ?></p>
+                    <p><span class="stats_label">Client</span>:<br><?php echo $client; ?></p>
                 <?php } ?>
                 <?php if ($sqft) { ?>
-                    <p><span class="stats_label">SF</span>:</br><?php echo $sqft; ?></p>
+                    <p><span class="stats_label">SF</span>:<br><?php echo $sqft; ?></p>
                 <?php } ?>
                 <?php if ($duration) { ?>
-                    <p><span class="stats_label">Duration</span>:</br><?php echo $duration; ?></p>
+                    <p><span class="stats_label">Duration</span>:<br><?php echo $duration; ?></p>
                 <?php } ?>
                 <?php if ($location) { ?>
-                    <p><span class="stats_label">Location</span>:</br><?php echo $location; ?></p>
+                    <p><span class="stats_label">Location</span>:<br><?php echo $location; ?></p>
                 <?php } ?>
             </aside>
             <section class="blog-entry">

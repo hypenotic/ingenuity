@@ -27,11 +27,12 @@ if($slide_id) : ?>
             $s_text      = $slides['_text'];
             $s_url       = $slides['_url'];
             $s_image_id  = $slides['_image'];
-            $s_image_url = wp_get_attachment_image_src($s_image_id,'banner', true); ?>    
+            $s_image_url = wp_get_attachment_image_src($s_image_id,'banner', true);
+            $s_image_alt = get_post_meta($s_image_id, '_wp_attachment_image_alt', true); ?>    
             
             <div class="gallery__single">
                 <div class="gallery__single-half gallery-image wow fadeInLeft">
-                    <img src="<?php echo $s_image_url[0]; ?>" alt="<?php the_title(); ?> - Gallery Photo">
+                    <img src="<?php echo $s_image_url[0]; ?>" alt="<?php echo $s_image_alt; ?> - <?php the_title(); ?> - Gallery Photo">
                 </div>
                 <div class="gallery__single-half gallery-caption wow fadeInRight">
                     <p><?php echo $s_text; ?></p>

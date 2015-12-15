@@ -13,7 +13,7 @@
 
 	<div class="default-hero project-index">
 		    <figure style="background-image: url('<?php echo get_template_directory_uri(); ?>/dist/images/site-default.jpg'); background-size: cover;"></figure>
-		    <hgroup class="animated fadeInDown">
+		    <div class="hgroup animated fadeInDown">
 		        <?php if ($heading) { ?>
 					<h1><?php echo $heading; ?></h1>
 	        	<?php } else { ?>
@@ -22,7 +22,7 @@
 		        <?php if ($subheading) { ?>
 					<h2><?php echo $subheading; ?></h2>
 	        	<?php } ?>
-		    </hgroup>
+		    </div>
 		</div>
 
 	<div class="main-wrapper"> 
@@ -55,14 +55,19 @@
 				<h3 class="blog-single__title"><?php the_title(); ?></h3>
 			</a>
 			<p class="blog-single__date"> <?php the_time('F j, Y'); ?> </p>
-			<?php if ($banner_id) { ?>
+			<?php 
+			if ( has_post_thumbnail() ) {
+				$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+
+				echo '<img src="' . $large_image_url[0] . '">';
+			} else if ($banner_id) { ?>
 			<img src="<?php echo $banner_url[0]; ?>" alt="<?php the_title(); ?>">
 			<?php } else {} ?>
 			<p> <?php the_excerpt(); ?> </p>
-			<div class="blog-single__cats">
+			<!-- <div class="blog-single__cats">
 				<p>Listed Under:</p> 
-				<?php echo get_the_category_list(); ?>
-			</div>
+				<?php // echo get_the_category_list(); ?>
+			</div> -->
 		</div>
 
 
