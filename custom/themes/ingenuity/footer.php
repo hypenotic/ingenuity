@@ -55,6 +55,9 @@
 			</div>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w"></script>
 		</footer>
+		<div id="hypenotic-creds">
+			Made with &hearts; by <a href="http://hypenotic.com/">Hypenotic</a>
+		</div>
 	<?php } ?>
 	
 

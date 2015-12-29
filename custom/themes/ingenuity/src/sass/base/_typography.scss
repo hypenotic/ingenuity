@@ -1199,6 +1199,19 @@ span.bolded-text {
 	}
 }
 
+#hypenotic-creds {
+	font-size: modular-scale(0, 1rem);
+	line-height: modular-scale(0, 1rem);
+	font-family: $lite-headings;
+	color: $white;
+	a {
+		padding-bottom: 3px;
+		&:hover {
+			border-bottom: 1px solid $white;
+		}
+	}
+}
+
 
 
 
