@@ -1181,6 +1181,19 @@ span.bolded-text {
 	font-size: modular-scale(0, 1rem);
 }
 
+.footer__blog {
+	a {
+		&:hover {
+			border-bottom: 1px solid $yellow;
+		}
+	}
+	.footer__blog__posts {
+		font-family: $lite-headings;
+		font-size: modular-scale(0, 1.2rem);
+		line-height: modular-scale(1, 1.2rem);
+	}
+}
+
 .footer__cta {
 	h4 {
 		font-family: $lite-headings;
@@ -1212,15 +1225,12 @@ span.bolded-text {
 	}
 }
 
-
-
-
-
-
-
-
-
-
+#error-menu {
+	&:hover {
+		color: $white;
+		border-bottom: 1px solid $yellow;
+	}
+}
 
 
 

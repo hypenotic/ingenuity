@@ -18,9 +18,9 @@
 
 				?>
 				<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-					<a href="<?php the_permalink(); ?>">
-						<p><?php the_title(); ?></p>
-					</a>
+					<p><a href="<?php the_permalink(); ?>" class="footer__blog__posts">
+						<?php the_title(); ?>
+					</a></p>
 				<?php endwhile; ?>
 				
 			</div>
