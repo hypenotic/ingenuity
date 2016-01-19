@@ -122,7 +122,7 @@ h2.rw-sentence{
 	// width: 100%;
 	@include media($bp-small) {
 		margin: 0 0 0 5px;
-		font-size: modular-scale(3, 1.3rem); 
+		font-size: modular-scale(3, 1.1rem); 
 		line-height: modular-scale(3, 1.6rem); 
 	}
 	@include media($bp-med) {
