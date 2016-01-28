@@ -79,6 +79,7 @@ ul.logo__list {
 		@include flex(0 0 79%);
 	}
 	.logo-descrip__download {
+		text-align: right;
 		@include flex(0 0 20%);
 		a {
 			border-bottom: none;
