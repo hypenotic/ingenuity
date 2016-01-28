@@ -54,6 +54,12 @@ $guide->add_meta_box(
                     'type'          => 'image',
                 ),
                 array(
+                    'name'          => 'upload',
+                    'label'         => 'Logo Download File',
+                    'description'   => 'Upload logo package (.zip)',
+                    'type'          => 'file',
+                ),
+                array(
                     'name'          => 'descrip',
                     'label'         => 'Description',
                     'description'   => '',

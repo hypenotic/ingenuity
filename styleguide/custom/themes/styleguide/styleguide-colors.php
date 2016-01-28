@@ -65,13 +65,13 @@
 				<h3>Secondary Colours</h3>
 
 				<div class="secondary-colors">
-				
-		  		<?php // Get custom meta values 
+				<!-- Get custom meta values -->
+		  		<?php 
 		  			$scolors = get_post_meta($post->ID,'_secondary',true);
 		  		?>
 
-		       	<?php // For loop cycle through array 
-		       		if($scolors) {
+		       	<!-- For loop cycle through Array -->
+		       	<?php if($scolors) {
 		       	    foreach($scolors as $scolor) {
 
 		       	    // Get custom meta values    

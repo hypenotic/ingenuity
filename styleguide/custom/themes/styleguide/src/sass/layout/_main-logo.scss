@@ -56,16 +56,40 @@ ul.logo__list {
 	margin: 0;
 	@include display(flex);
 	@include justify-content(space-between);
+	@include align-items(center);
 	@include flex-wrap(wrap);
 	@include media($bp-small) {
 		@include flex-direction(column);
     }
 	.logo-samples__single {
 		position: relative;
-		@include flex(0 0 30%);
+		margin: 20px;
+		@include flex(0 0 40%);
 		img {
 			max-width: 100%;
 			height: auto;
+		}
+	}
+}
+
+.logo-descrip {
+	@include display(flex); 
+	@include justify-content(space-between);
+	.logo-descrip__text {
+		@include flex(0 0 79%);
+	}
+	.logo-descrip__download {
+		@include flex(0 0 20%);
+		a {
+			border-bottom: none;
+			&:hover{
+				background-color: transparent;
+				color: $grey;
+			}
+		}
+		i {
+			font-size: modular-scale(0, 2rem);
+			margin: 0 auto;
 		}
 	}
 }
@@ -76,7 +100,7 @@ figcaption.logopack__download {
 	border: 1px solid black;
 	min-height: 42px;
 	width: 50%;
-	margin: 50px auto 0;
+	margin: 10px auto 0;
 	padding: 10px 0;
 	transition: all 0.5s;
 	@include display(flex);

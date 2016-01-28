@@ -19,7 +19,7 @@
                     </div>
 
                     <!-- check if we actually have templates -->
-                    <?php if($temps) { ?>
+                    <?php if($temps[0]['_label'] !== '') { ?>
                   
                     <h3>Templates for download:</h3>
 
@@ -50,7 +50,10 @@
         			
         				</ul>
 
-                    <?php } ?> 
+                    <?php }  else { ?>
+                        <h3>Templates for download:</h3>
+                        <p>Coming soon.</p> 
+                    <?php } ?>
                     <!-- end of if statement that checks if any templates are uploaded -->
                     
 				</article>

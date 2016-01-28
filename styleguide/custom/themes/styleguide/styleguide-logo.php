@@ -27,16 +27,17 @@
                 <?php the_content(); ?>
             </div>
 
-            <figure class="logopackage">
+<!--             <figure class="logopackage">
                 <div class="logopackage__logocontainer">
                     <div class="logopackage__single">
-                        <img src="<?php echo $plogoUrl[0]; ?>" alt="">
+                        <img src="<?php // echo $plogoUrl[0]; ?>" alt="">
+
                     </div>
                     <div class="logopackage__single">
-                        <img src="<?php echo $slogoUrl[0]; ?>" alt="">
+                        <img src="<?php // echo $slogoUrl[0]; ?>" alt="">
                     </div>
                 </div>
-            </figure>
+            </figure> -->
 
             <figure class="logo-samples">
                 <!-- For loop cycle through Array -->
@@ -45,8 +46,9 @@
 
                     // Get custom meta values    
                     $singlelogo     = $logo['_logo'];
-                    $logourl        = wp_get_attachment_image_src($singlelogo,'banner', true);
+                    $logourl        = wp_get_attachment_image_src($singlelogo,'logos', true);
                     $descrip        = $logo['_descrip'];
+                    $slink          = $logo['_upload'];
                 ?>
 
                     <figure class="logo-samples__single">
@@ -54,8 +56,11 @@
                             echo '<img src="' . $logourl[0] . '" alt="'. $name .'"/>'; 
                         } else { } ?>
                         
-                        <figcaption>
-                            <p><?php echo $descrip; ?></p>
+                        <figcaption class="logo-descrip">
+                            <p class="logo-descrip__text"><?php echo $descrip; ?></p>
+                            <p class="logo-descrip__download">
+                                <a href="<?php echo $slink; ?>"><i class="fa fa-download"></i></a>
+                            </p>
                         </figcaption>
                     </figure>
                             
