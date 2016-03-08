@@ -12,7 +12,7 @@
 
 	<section class="contact-moving">
 		<div class="contact-moving__half move-arrow">
-			<h3>Psst...we're moving!</h3>
+			<h3>We've moved!</h3>
 			<!-- <h6>(but not <em>that</em> far away)</h6> -->
 			<p>
 				Effective <span class="bolded-text">Feb 22nd, 2016</span>.</br>

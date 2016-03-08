@@ -194,7 +194,7 @@ if ( $( "#contact-map" ).length ) {
        draggable: isDraggable,
 
        // The latitude and longitude to center the map (always required)
-       center: new google.maps.LatLng(43.5238744, -79.7086458), 
+       center: new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
 
        // How you would like to style the map. 
        // This is where you would paste any style found on Snazzy Maps.
@@ -261,7 +261,7 @@ if ( $( "#contact-map" ).length ) {
   }  
 
   var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(43.5238744, -79.7086458),
+    position: new google.maps.LatLng(43.52385109999999, -79.71254299999998),
     map: mapC,
     icon: theicon
   });
@@ -300,8 +300,8 @@ if ( $( "#contact-map" ).length ) {
 
   var contentString = '<div id="info-window-content">'+
    '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
-   '<a href="https://www.google.ca/maps/place/Ingenuity+Developments+Inc/@43.52352,-79.7077452,14.98z/data=!4m2!3m1!1s0x0:0x621fce01694efaaf" target="_blank"><p>3450 Ridgeway Dr. Unit • 3 </p>'+
-   '<p>Mississauga, ON L5L 0A2</p></a>'+
+   '<a href="https://www.google.ca/maps/place/Ingenuity+Developments+Inc/@43.52352,-79.7077452,14.98z/data=!4m2!3m1!1s0x0:0x621fce01694efaaf" target="_blank"><p>3800A Laird Rd. - Unit 1 </p>'+
+   '<p>Mississauga, ON L5L 0B2</p></a>'+
    '<a href="tel:+1-905-569-2624" target="_blank"><p>(905) 569-2624</p></a>'+
    '</div>';
 
