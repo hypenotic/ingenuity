@@ -242,20 +242,20 @@ if ( $( "#contact-map" ).length ) {
    mapM.panBy(panNum, 0);
 
   var currentpage = window.location.href;
-  if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
-    var theicon = '/ingenuity/custom/themes/ingenuity/dist/images/homemap.png';
+  if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
+    var theicon = '/dev/ingenuity/custom/themes/ingenuity/dist/images/homemap.png';
   } else {
     var theicon = '/custom/themes/ingenuity/dist/images/homemap.png'
   }
 
-  if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
-    var theiconN = '/ingenuity/custom/themes/ingenuity/dist/images/homen.png';
+  if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
+    var theiconN = '/dev/ingenuity/custom/themes/ingenuity/dist/images/homen.png';
   } else {
     var theiconN = '/custom/themes/ingenuity/dist/images/homen.png'
   }  
 
-  if (currentpage == "http://hypelabs.ca/ingenuity/contact-us/") {
-    var theiconO = '/ingenuity/custom/themes/ingenuity/dist/images/homeo.png';
+  if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
+    var theiconO = '/dev/ingenuity/custom/themes/ingenuity/dist/images/homeo.png';
   } else {
     var theiconO = '/custom/themes/ingenuity/dist/images/homeo.png'
   }  
