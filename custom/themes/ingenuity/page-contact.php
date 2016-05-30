@@ -18,7 +18,7 @@
 				Effective <span class="bolded-text">Feb 22nd, 2016</span>.</br>
 				Please mail and visit us at our new home:</p>
 			<p>
-				<a href="https://goo.gl/maps/m965bjKS6VA2">
+				<a href="https://www.google.com/maps/place/Ingenuity/@43.523322,-79.7135727,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x390b5b52408b8c40!8m2!3d43.523322!4d-79.711384?hl=en" target="_blank">
 					<span class="new-address">
 						3800A Laird Rd. - Unit 1 </br>
 						Mississauga, ON </br>

@@ -41,12 +41,12 @@ add_theme_support( 'post-thumbnails' );
 
 // Async/Defer Scripts
 /*function to add async to all scripts*/
-// function js_async_attr($tag){
+function js_async_attr($tag){
 
-// # Add async to all remaining scripts
-// return str_replace( ' src', ' defer src', $tag );
-// }
-// add_filter( 'script_loader_tag', 'js_async_attr', 10 );
+# Add async to all remaining scripts
+return str_replace( ' src', ' defer src', $tag );
+}
+add_filter( 'script_loader_tag', 'js_async_attr', 10 );
 
 /*** Remove Query String from Static Resources ***/
 function remove_cssjs_ver( $src ) {

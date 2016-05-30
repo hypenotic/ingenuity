@@ -300,7 +300,7 @@ if ( $( "#contact-map" ).length ) {
 
   var contentString = '<div id="info-window-content">'+
    '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+
-   '<a href="https://www.google.ca/maps/place/Ingenuity+Developments+Inc/@43.52352,-79.7077452,14.98z/data=!4m2!3m1!1s0x0:0x621fce01694efaaf" target="_blank"><p>3800A Laird Rd. - Unit 1 </p>'+
+   '<a href="https://www.google.com/maps/place/Ingenuity/@43.523322,-79.7135727,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x390b5b52408b8c40!8m2!3d43.523322!4d-79.711384?hl=en" target="_blank"><p>3800A Laird Rd. - Unit 1 </p>'+
    '<p>Mississauga, ON L5L 0B2</p></a>'+
    '<a href="tel:+1-905-569-2624" target="_blank"><p>(905) 569-2624</p></a>'+
    '</div>';
