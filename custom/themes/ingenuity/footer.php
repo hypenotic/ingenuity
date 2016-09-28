@@ -53,7 +53,6 @@
 				<h4>​Great buildings begin with a conversation.</h4>
 				<a href="<?php echo get_home_url(); ?>/contact-us"><button class="button-down">Let's talk over an espresso!</button></a>
 			</div>
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w"></script>
 		</footer>
 		<!-- <div id="hypenotic-creds">
 			Made with &hearts; by <a href="http://hypenotic.com/" target="_blank">Hypenotic</a>
@@ -62,6 +61,9 @@
 	
 
 	</main> <!-- mainWrapper ends here -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w"></script>
+<!-- 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbNDqQAMhOV5VxheEI1BBSu-InEaJ0zHQ&callback=initMap">
+    </script> -->
 	<?php wp_footer(); ?>
 </body>
 </html>
