@@ -1,5 +1,8 @@
 # Ingenuity Changelog
 
+##February 14th, 2017
+* Updated Wordpress to 4.7.2
+
 ##January 24th, 2017
 * Updated Wordpress to 4.7.1
 
