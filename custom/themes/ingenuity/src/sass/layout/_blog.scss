@@ -23,6 +23,25 @@
 	}
 }
 
+a.negative-margins {
+	display: block;
+	margin-bottom: 15px;
+	@include media($bp-large) {
+		margin: 0 -15%;
+		margin-bottom: 20px;
+	}
+	h3 {
+		@include media($bp-large) {
+			font-size: 50px;
+			line-height: 55px;
+		}
+		@include media($bp-xlarge) {
+			font-size: 50px;
+			line-height: 55px;
+		}
+	}
+}
+
 .hint--left,
 .hint--top {
 	color: $white;

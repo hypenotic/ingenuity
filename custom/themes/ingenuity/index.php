@@ -51,7 +51,7 @@
 			
 
 		<div class="blog-single-post wow fadeIn">
-			<a href="<?php the_permalink(); ?>">
+			<a class="negative-margins" href="<?php the_permalink(); ?>">
 				<h3 class="blog-single__title"><?php the_title(); ?></h3>
 			</a>
 			<!-- <p class="blog-single__date"> <?php //the_time('F j, Y'); ?> </p> -->
