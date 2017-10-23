@@ -366,15 +366,18 @@ nav.default-home-header.expanded #navigation ul {
   a {
     color: $black;
     width: 100%;
+    display: block;
+    padding: 2px 15%;
   }
   li {
-    padding: 2px 15%;
+    // padding: 2px 15%;
     padding-top: 10px;
     font-size: modular-scale(4,0.8rem);
     line-height: modular-scale(4,0.8rem);
     font-weight: 400;
     font-family: $main-headings;
     z-index: 390;
+    width: 100%;
     &:hover{
       background-color: $black;
       color: $yellow;
@@ -382,6 +385,7 @@ nav.default-home-header.expanded #navigation ul {
       a {
         color: $yellow;
         width: 100%;
+        display: block;
       }
     }
     @include media($bp-small) {
