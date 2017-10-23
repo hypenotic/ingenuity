@@ -211,35 +211,35 @@ if ( $( "#contact-map" ).length ) {
    }
    
 
-   var mapOptions2 = {
-       // How zoomed in you want the map to start at (always required)
-       zoom: zoomNum,
+  //  var mapOptions2 = {
+  //      // How zoomed in you want the map to start at (always required)
+  //      zoom: zoomNum,
 
-       scrollwheel:  false,
-       draggable: isDraggable,
+  //      scrollwheel:  false,
+  //      draggable: isDraggable,
 
-       // The latitude and longitude to center the map (always required)
-       center: new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
+  //      // The latitude and longitude to center the map (always required)
+  //      center: new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
 
-       // How you would like to style the map. 
-       // This is where you would paste any style found on Snazzy Maps.
-       styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
-   };
+  //      // How you would like to style the map. 
+  //      // This is where you would paste any style found on Snazzy Maps.
+  //      styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+  //  };
 
    // Get the HTML DOM element that will contain your map 
    // We are using a div with id="map" seen below in the <body>
    // var mapElement = document.getElementById('footer-map');
    var contactMap = document.getElementById('contact-map');
-   var moveMap = document.getElementById('move-map');
+  //  var moveMap = document.getElementById('move-map');
 
    // Create the Google Map using our element and options defined above
    // var map = new google.maps.Map(mapElement, mapOptions);
    var mapC = new google.maps.Map(contactMap, mapOptions);
-   var mapM = new google.maps.Map(moveMap, mapOptions2);
+  //  var mapM = new google.maps.Map(moveMap, mapOptions2);
    //move map down
    mapC.panBy(0, -120);
    // for moving map
-   mapM.panBy(panNum, 0);
+  //  mapM.panBy(panNum, 0);
 
   var currentpage = window.location.href;
   if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
@@ -248,55 +248,55 @@ if ( $( "#contact-map" ).length ) {
     var theicon = '/custom/themes/ingenuity/dist/images/homemap.png'
   }
 
-  if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
-    var theiconN = '/dev/ingenuity/custom/themes/ingenuity/dist/images/homen.png';
-  } else {
-    var theiconN = '/custom/themes/ingenuity/dist/images/homen.png'
-  }  
+  // if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
+  //   var theiconN = '/dev/ingenuity/custom/themes/ingenuity/dist/images/homen.png';
+  // } else {
+  //   var theiconN = '/custom/themes/ingenuity/dist/images/homen.png'
+  // }  
 
-  if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
-    var theiconO = '/dev/ingenuity/custom/themes/ingenuity/dist/images/homeo.png';
-  } else {
-    var theiconO = '/custom/themes/ingenuity/dist/images/homeo.png'
-  }  
+  // if (currentpage == "http://hypelabs.ca/dev/ingenuity/contact-us/") {
+  //   var theiconO = '/dev/ingenuity/custom/themes/ingenuity/dist/images/homeo.png';
+  // } else {
+  //   var theiconO = '/custom/themes/ingenuity/dist/images/homeo.png'
+  // }  
 
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(43.52385109999999, -79.71254299999998),
     map: mapC,
     icon: theicon
   });
-  var newplace = new google.maps.Marker({
-    position: new google.maps.LatLng(43.52385109999999, -79.71254299999998),
-    map: mapM,
-    icon: theiconN
-  });
-  var oldplace = new google.maps.Marker({
-    position: new google.maps.LatLng(43.5238744, -79.7086458),
-    map: mapM,
-    icon: theiconO
-  });
+  // var newplace = new google.maps.Marker({
+  //   position: new google.maps.LatLng(43.52385109999999, -79.71254299999998),
+  //   map: mapM,
+  //   icon: theiconN
+  // });
+  // var oldplace = new google.maps.Marker({
+  //   position: new google.maps.LatLng(43.5238744, -79.7086458),
+  //   map: mapM,
+  //   icon: theiconO
+  // });
 
   // Define a symbol using a predefined path (an arrow)
     // supplied by the Google Maps JavaScript API.
-    var lineSymbol = {
-      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
-    };
+    // var lineSymbol = {
+    //   path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+    // };
 
 
-  var line = new google.maps.Polyline({
-      path: [
-          new google.maps.LatLng(43.5238744, -79.7086458),
-          new google.maps.LatLng(43.52385109999999, -79.71254299999998)          
-      ],
-      strokeColor: "#FF0000",
-      icons: [{
-            icon: lineSymbol,
-            offset: '100%'
-          }],
-      strokeOpacity: 1.0,
-      strokeWeight: 4,
-      map: mapM
-  });
+  // var line = new google.maps.Polyline({
+  //     path: [
+  //         new google.maps.LatLng(43.5238744, -79.7086458),
+  //         new google.maps.LatLng(43.52385109999999, -79.71254299999998)          
+  //     ],
+  //     strokeColor: "#FF0000",
+  //     icons: [{
+  //           icon: lineSymbol,
+  //           offset: '100%'
+  //         }],
+  //     strokeOpacity: 1.0,
+  //     strokeWeight: 4,
+  //     map: mapM
+  // });
 
   var contentString = '<div id="info-window-content">'+
    '<h3 id="firstHeading" class="firstHeading">Drop by for an espresso!</h3>'+

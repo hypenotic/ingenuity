@@ -10,27 +10,6 @@
 		
 	</section>
 
-	<section class="contact-moving">
-		<div class="contact-moving__half move-arrow">
-			<h3>We've moved!</h3>
-			<!-- <h6>(but not <em>that</em> far away)</h6> -->
-			<p>
-				Effective <span class="bolded-text">Feb 22nd, 2016</span>.</br>
-				Please mail and visit us at our new home:</p>
-			<p>
-				<a href="https://www.google.com/maps/place/Ingenuity/@43.523322,-79.7135727,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x390b5b52408b8c40!8m2!3d43.523322!4d-79.711384?hl=en" target="_blank">
-					<span class="new-address">
-						3800A Laird Rd. - Unit 1 </br>
-						Mississauga, ON </br>
-						L5L 0B2
-					</span>
-				</a>
-			</p>
-		</div>
-		<div class="contact-moving__half" id="move-map">
-		</div>		
-	</section>
-
 		<div class="contact-container">
 			<?php // bring in the team members!
 		
