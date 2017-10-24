@@ -207,7 +207,7 @@ h2.rw-sentence{
 }
 
 .rw-words{
-	display: inline;
+	display: inline-block;
 	// text-indent: 10px;
 	&:hover a.rotator-link {
 		color: $black;
