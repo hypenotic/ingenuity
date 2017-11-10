@@ -701,12 +701,14 @@ h2.team__hero-subheading {
 		line-height: modular-scale(2);
 	}
 	@include media($bp-large) {
-		font-size: modular-scale(7);
+		// font-size: modular-scale(6);
+		// line-height: modular-scale(5);
+		font-size: modular-scale(6);
 		line-height: modular-scale(6);
 	}
 	@include media($bp-xlarge) {
-		font-size: modular-scale(8);
-		line-height: modular-scale(7);
+		font-size: modular-scale(7);
+		line-height: modular-scale(6);
 	}
 }
 

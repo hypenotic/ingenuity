@@ -38,82 +38,38 @@
 		<div class="team__container">
 		<?php // bring in the team members!
 
-			$query = new WP_Query( array( 'post_type' => 'team' ) );
+			$query = new WP_Query(
+				array( 
+					'post_type' => 'team',
+					'order' => 'ASC' 
+				)
+			);
 
 			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<?php // Get custom meta values 
-					$members = get_post_meta($post->ID,'_teammember',true);
+					$creds = get_post_meta($post->ID,'_team_creds',true);
+					$title = get_post_meta($post->ID,'_team_job_title',true);
 				?>
 				
-					<?php // For loop -  cycle through array
-
-						if($members) {
-					    foreach($members as $member) {
-
-					    // Get custom meta values    
-					    $photoid  	= $member['_photo'];
-					    $photourl	= wp_get_attachment_image_src($photoid,'services', true);
-					    $name 		= $member['_name'];
-					    $creds 		= $member['_creds'];
-					    $title 		= $member['_jobtitle'];
-					    $profile 	= $member['_profile'];
-					    $longbio 	= $member['_longbio'];
-					    $flag		= $member['_flag'];
-
-					?>
-
-					<?php if ($flag == 'value3') { ?>
-
-						<figure class="team__single trigger-push-panel wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>" data-wow-duration="0.5s" data-wow-delay="0.2s">
-						<?php if ( wp_attachment_is_image($photoid) == true ) { ?>
-							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
-						<?php } ?>
-							<div class="hgroup">
-								<h3 class="team__name"><?php echo $name; ?>
-									<?php if ($creds) { ?>
-										<span class="team__creds">
-											<?php echo $creds; ?>
-										</span>
-									<?php } ?>
-								</h3>
-								<h4 class="team__title"><?php echo $title; ?></h4>
-								<!-- <figcaption><?php echo $profile; ?></figcaption> -->
-							</div>
-						</figure>
-
-					<?php } else { ?>
-
-						<figure class="team__single wow fadeIn" data-name="<?php echo $name; ?>" data-longbio="<?php echo $longbio; ?>" data-wow-duration="0.5s" data-wow-delay="0.2s">
-						<?php if (wp_attachment_is_image($photoid) == true) { ?>
-							<figure style="background-image: url('<?php echo $photourl[0]; ?>');"></figure>
-						<?php } ?>
-							<div class="hgroup">
-								<h3 class="team__name"><?php echo $name; ?>
-									<?php if ($creds) { ?>
-										<span class="team__creds">
-											<?php echo $creds; ?>
-										</span>
-									<?php } ?>
-								</h3>
-								<h4 class="team__title"><?php echo $title; ?></h4>
-								<!-- <figcaption><?php echo $profile; ?></figcaption> -->
-							</div>
-						</figure>
-						<div class="drop-down-panel">
-<!-- 							<button class="drop-down-cross close-push-panel"></button> -->
-							<div class="push__longbio animated fadeIn">
-								<?php echo $longbio; ?>
-							</div>
-							<button class="close-push-panel">CLOSE</button>
-						</div>
-
-					<?php } ?> 
-					
-					<?php
-					        }
-					    }
-					?>
+				<figure class="team__single wow fadeIn" data-name="<?php the_title(); ?>" data-wow-duration="0.5s" data-wow-delay="0.2s">
+					<div class="hgroup">
+						<h3 class="team__name"><?php the_title(); ?>
+							<?php if ($creds) { ?>
+								<span class="team__creds">
+									<?php echo $creds; ?>
+								</span>
+							<?php } ?>
+						</h3>
+						<h4 class="team__title"><?php echo $title; ?></h4>
+					</div>
+				</figure>
+				<div class="drop-down-panel">
+					<div class="push__longbio animated fadeIn">
+						<?php the_content(); ?>
+					</div>
+					<button class="close-push-panel">CLOSE</button>
+				</div>
 
 		<?php endwhile; endif; ?>	
 		</div>
