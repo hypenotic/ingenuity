@@ -11,66 +11,46 @@
 	</section>
 
 		<div class="contact-container">
-			<?php // bring in the team members!
-		
-				$query = new WP_Query( array( 'post_type' => 'contact' ) );
-		
+			<?php // bring in the contacts!
+				$query = new WP_Query(
+					array( 
+						'post_type' => 'contact',
+						'order' => 'ASC' 
+					)
+				);
 				if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-		
+
 					<?php // Get custom meta values 
-						$contacts = get_post_meta($post->ID,'_contact',true);
+						$phone 		= get_post_meta($post->ID,'_contact_phone',true);
+						$email 		= get_post_meta($post->ID,'_contact_email',true);
+						$phone_btn 	= get_post_meta($post->ID,'_contact_phone_btn',true);
+						$email_btn 	= get_post_meta($post->ID,'_contact_email_btn',true);
 					?>
-					
-						<?php // For loop -  cycle through array
+
+					<div class="contact__single wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.5s">
+						<div class="contact__single__copy">
+							<h4>
+								<?php the_title(); ?>
+							</h4>
+							<div>
+								<?php the_content(); ?>
+							</div>
+						</div>
+						<div class="contact__single__buttons">
+							<?php if ($phone) { ?>
+								<a href="tel:<?php echo $phone; ?>"><button>
+										<?php echo $phone_btn; ?>
+									</button></a>
+							<?php } ?>
+							<?php if ($email) { ?>
+								<a href="mailto:<?php echo $email; ?>">
+									<h3><span class="contact-border"><?php echo $email_btn; ?></span></h3>
+								</a>
+							<?php } ?>
+						</div>
+					</div>
 		
-							if($contacts) {
-						    foreach($contacts as $contact) {
-		
-						    // Get custom meta values    
-						    $photoid  	= $contact['_photo'];
-						    $photourl	= wp_get_attachment_image_src($photoid,'contact', true);
-						    $heading 	= $contact['_heading'];
-						    $text 		= $contact['_text'];
-						    $email 		= $contact['_email'];
-						    $emailt 	= $contact['_emailtext'];
-						    $phone 		= $contact['_phone'];
-						    $phoned		= $contact['_displayphone'];
-		
-						?>
-		
-						 <div class="contact__single wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.5s">
-						 	<div class="contact__single__copy">
-						 		<?php if ($heading) { ?>
-						 			<h4>
-						 				<?php echo $heading; ?>
-						 			</h4>
-						 		<?php } ?>
-						 		<?php if ($text) { ?>
-						 			<div>
-						 				<?php echo $text; ?>
-						 			</div>
-						 		<?php } ?>
-						 	</div>
-						 	<div class="contact__single__buttons">
-						 		<?php if ($phone) { ?>
-						 			<a href="tel:<?php echo $phone; ?>"><button>
-						 					<?php echo $phoned; ?>
-						 				</button></a>
-						 		<?php } ?>
-						 		<?php if ($email) { ?>
-						 			<a href="mailto:<?php echo $email; ?>">
-						 				<h3><span class="contact-border"><?php echo $emailt; ?></span></h3>
-						 			</a>
-						 		<?php } ?>
-						 	</div>
-						 </div>
-						
-						<?php
-						        }
-						    }
-						?>
-		
-			<?php endwhile; endif; ?>	
+			<?php endwhile; wp_reset_postdata(); endif; ?>	
 		</div>
 
 	<?php endwhile; else : ?>
