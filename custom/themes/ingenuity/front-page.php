@@ -21,7 +21,7 @@
 		</div> -->
 		<div class="video-overlay">
 		</div>
-		<video playsinline autoplay muted loop poster="" id="bgvid">
+		<video playsinline autoplay muted loop poster="<?php echo get_template_directory_uri();?>/src/video/poster.jpg"  id="bgvid">
 			<!-- <source src="polina.webm" type="video/webm"> -->
 			<source media="(max-width: 450px)" src="<?php echo get_template_directory_uri();?>/src/video/ingenuity_home.mp4" type="video/mp4">
 			<source media="(min-width: 450px)" src="<?php echo get_template_directory_uri();?>/src/video/ingenuity_fast.mp4" type="video/mp4">			

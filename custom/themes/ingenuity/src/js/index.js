@@ -1,5 +1,7 @@
 $ = jQuery;
 
+// location.reload(true);
+
 var previousScroll = 0, // previous scroll position
         menuOffset = 54, // height of menu (once scroll passed it, menu is hidden)
         detachPoint = 650, // point of detach (after scroll passed it, menu is fixed)
