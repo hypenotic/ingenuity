@@ -41,7 +41,7 @@ var scriptList = [
 
 gulp.task('js', function() {
   return gulp.src(scriptList)
-    .pipe(jshint('.jshintrc'))
+    // .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('app.js'))
     //.pipe(gulp.dest('dist/js'))

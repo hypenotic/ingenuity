@@ -85,7 +85,7 @@ var previousScroll = 0, // previous scroll position
     // hides the navigation’s popover
     function hideNav() {
       $('#container').removeClass('blurred');
-      window.setTimeout(function(){$('body').removeClass();}, 10); // allow animations to start before removing class (Firefox)
+      window.setTimeout(function(){$('body').removeClass('no-scroll');}, 10); // allow animations to start before removing class (Firefox)
       $('nav').removeClass('expanded');
       $('#navigation a').attr('tabindex', '-1'); // links inside hidden navigation should not be TAB selectable
       $('.icon').blur(); // deselect icon when navigation is hidden

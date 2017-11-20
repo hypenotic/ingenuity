@@ -60,6 +60,10 @@
 	}
 }
 
+body.no-scroll-home {
+	overflow: hidden !important;
+}
+
 .video-overlay {
 	&:before {
 		content:"";
@@ -75,6 +79,7 @@
 }
 
 video#bgvid { 
+	overflow: hidden;
     position: absolute;
     top: -120%;
     left: -50%;

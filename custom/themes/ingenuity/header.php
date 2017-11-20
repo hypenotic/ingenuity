@@ -33,7 +33,7 @@
 </head>
 
 
-<body class="cbp-spmenu-push" data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
+<body class="cbp-spmenu-push <?php if (is_front_page()) { echo 'no-scroll-home'; }?>" data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
 	
 		<?php if (is_front_page()) { ?>
 			<nav class="home-header">
