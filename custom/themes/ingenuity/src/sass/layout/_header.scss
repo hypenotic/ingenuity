@@ -48,12 +48,12 @@
 			margin-bottom: 25px;
 		}
 	}
-	@include media($bp-small) {
-		background-image: url('../images/site-default.jpg');
-	}
-	@include media($mobile-landscape) {
-		background-image: url('../images/site-default.jpg');
-	}
+	// @include media($bp-small) {
+	// 	background-image: url('../images/site-default.jpg');
+	// }
+	// @include media($mobile-landscape) {
+	// 	background-image: url('../images/site-default.jpg');
+	// }
 }
 
 .default-hero {
