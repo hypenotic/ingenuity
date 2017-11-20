@@ -16,9 +16,16 @@
   ?>
 
 	<div class="home-hero" id="header-check">
-		<div class="fullscreen-bg" id="vid-check">
-		     <?php dynamic_sidebar( 'homepage-vid' ); ?>
+		<!-- <div class="fullscreen-bg" id="vid-check">
+		     <?php //dynamic_sidebar( 'homepage-vid' ); ?>
+		</div> -->
+		<div class="video-overlay">
 		</div>
+		<video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+			<!-- <source src="polina.webm" type="video/webm"> -->
+			<source media="(max-width: 450px)" src="<?php echo get_template_directory_uri();?>/src/video/ingenuity_home.mp4" type="video/mp4">
+			<source media="(min-width: 450px)" src="<?php echo get_template_directory_uri();?>/src/video/ingenuity_fast.mp4" type="video/mp4">			
+		</video>
  		<div class="hgroup rw-wrapper">
 			<h2 class="rw-sentence">
 				A <a href="<?php home_url(); ?>services/design-build/" class="sentence-link">Design Build</a> & <a href="<?php home_url(); ?>services/general-contracting/" class="sentence-link">General Contracting</a> <a href="<?php home_url(); ?>about-us/the-team" class="sentence-link">team</a> that <a href="<?php home_url(); ?>about-us/" class="sentence-link">believes</a> in
