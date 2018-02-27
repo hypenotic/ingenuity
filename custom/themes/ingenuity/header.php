@@ -33,38 +33,5 @@
 </head>
 
 
-<body class="cbp-spmenu-push <?php if (is_front_page()) { echo 'no-scroll-home'; }?>" data-theid="<?php echo get_the_ID(); ?>" data-type="<?php echo get_post_type(); ?>" data-archive="<?php if (is_archive( 'project' )) { echo 'true'; } else { echo 'false'; }?>">
-	
-		<?php if (is_front_page()) { ?>
-			<nav class="home-header">
-				<div class="site-width home-width">
-					<p id="default-logo-text">INGENUITY</p>
-					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/yellow-logo.png" alt="Ingenuity Logo - General Contracting and Design Build" id="home-logo"></a>
-					<span class="menu icon" id="default-menu-icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
-				</div>
-		    	<?php 
-				    wp_nav_menu(array(
-				      'menu' => 'Main Menu',  
-				      'container_id' => 'navigation',
-				      'walker' => new Main_Menu_Walker()
-				    )); 
-		    	?> 
-			</nav>
-		<?php } else { ?>
-			<nav class="default-home-header">
-				<div class="site-width default-width">
-					<p id="default-logo-text">INGENUITY</p>
-					<a href="http://www.ingenuity.ca" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/dist/images/yellow-logo.png" alt="Ingenuity Logo - General Contacting and Design Build" id="default-logo" ></a>
-					<span class="menu icon" id="default-menu-icon" title="Menu (Esc)" tabindex="0"><span class="lines"></span><span id="nav-menu-text">Menu</span></span>
-				</div>
-	    	<?php 
-			    wp_nav_menu(array(
-			      'menu' => 'Main Menu',  
-			      'container_id' => 'navigation',
-			      'walker' => new Main_Menu_Walker()
-			    )); 
-	    	?> 
-			</nav>
-		<?php } ?>
-	
-	<main> 
+<body style="background: yellow;width: 100%;height: 100vh;">	
+<main> 
