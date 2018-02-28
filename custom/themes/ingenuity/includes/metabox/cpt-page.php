@@ -12,17 +12,17 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Image', 'textdomain' ),
-                'id'    => '_hero_image',
+                'id'    => $prefix . '_hero_image',
                 'type'  => 'file_input',
             ),
             array(
                 'name'  => __( 'Heading', 'textdomain' ),
-                'id'    => '_hero_heading',
+                'id'    => $prefix . '_hero_heading',
                 'type'  => 'text',
             ),
             array(
                 'name'  => __( 'Sub Heading', 'textdomain' ),
-                'id'    => '_hero_subheading',
+                'id'    => $prefix . '_hero_subheading',
                 'type'  => 'wysiwyg',
             ),
         )
@@ -36,12 +36,12 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Text', 'textdomain' ),
-                'id'    => '_badge_text',
+                'id'    => $prefix . '_badge_text',
                 'type'  => 'text',
             ),
             array(
                 'name'  => __( 'Link', 'textdomain' ),
-                'id'    => '_badge_link',
+                'id'    => $prefix . '_badge_link',
                 'type'  => 'text',
             ),
         )
@@ -55,7 +55,7 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Quote', 'textdomain' ),
-                'id'    => '_quote_text',
+                'id'    => $prefix . '_quote_text',
                 'type'  => 'wysiwyg',
             ),
             array(
@@ -74,17 +74,17 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Copy', 'textdomain' ),
-                'id'    => '_cta_text',
+                'id'    => $prefix . '_cta_text',
                 'type'  => 'wysiwyg',
             ),
             array(
                 'name'  => __( 'Button Text', 'textdomain' ),
-                'id'    => '_cta_text',
+                'id'    => $prefix . '_cta_text',
                 'type'  => 'text',
             ),
             array(
                 'name'  => __( 'Button Link', 'textdomain' ),
-                'id'    => '_cta_link',
+                'id'    => $prefix . '_cta_link',
                 'type'  => 'text',
             ),
         )
