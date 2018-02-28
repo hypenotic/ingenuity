@@ -63,6 +63,16 @@ function default_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'quote_source',
                 'type'  => 'text',
             ),
+            array(
+                'name'  => __( 'Source Title', 'textdomain' ),
+                'id'    => $prefix . 'quote_source_title',
+                'type'  => 'text',
+            ),
+            array(
+                'name'  => __( 'Caption', 'textdomain' ),
+                'id'    => $prefix . 'quote_caption',
+                'type'  => 'text',
+            ),
         )
     );
 
