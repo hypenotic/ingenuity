@@ -5,24 +5,24 @@ function default_register_meta_boxes( $meta_boxes ) {
     $prefix = '_page_';
 
     $meta_boxes[] = array(
-        'title'      => __( 'Banner/Header Area', 'textdomain' ),
+        'title'      => __( 'Banner Content', 'textdomain' ),
         'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
             array(
                 'name'  => __( 'Image', 'textdomain' ),
-                'id'    => $prefix . '_hero_image',
+                'id'    => $prefix . 'hero_image',
                 'type'  => 'file_input',
             ),
             array(
                 'name'  => __( 'Heading', 'textdomain' ),
-                'id'    => $prefix . '_hero_heading',
+                'id'    => $prefix . 'hero_heading',
                 'type'  => 'text',
             ),
             array(
                 'name'  => __( 'Sub Heading', 'textdomain' ),
-                'id'    => $prefix . '_hero_subheading',
+                'id'    => $prefix . 'hero_subheading',
                 'type'  => 'wysiwyg',
             ),
         )
@@ -36,12 +36,12 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Text', 'textdomain' ),
-                'id'    => $prefix . '_badge_text',
+                'id'    => $prefix . 'badge_text',
                 'type'  => 'text',
             ),
             array(
                 'name'  => __( 'Link', 'textdomain' ),
-                'id'    => $prefix . '_badge_link',
+                'id'    => $prefix . 'badge_link',
                 'type'  => 'text',
             ),
         )
@@ -55,12 +55,12 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Quote', 'textdomain' ),
-                'id'    => $prefix . '_quote_text',
+                'id'    => $prefix . 'quote_text',
                 'type'  => 'wysiwyg',
             ),
             array(
                 'name'  => __( 'Source', 'textdomain' ),
-                'id'    => '_quote_source',
+                'id'    => $prefix . 'quote_source',
                 'type'  => 'text',
             ),
         )
@@ -74,17 +74,17 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Copy', 'textdomain' ),
-                'id'    => $prefix . '_cta_text',
+                'id'    => $prefix . 'cta_text',
                 'type'  => 'wysiwyg',
             ),
             array(
                 'name'  => __( 'Button Text', 'textdomain' ),
-                'id'    => $prefix . '_cta_text',
+                'id'    => $prefix . 'cta_text',
                 'type'  => 'text',
             ),
             array(
                 'name'  => __( 'Button Link', 'textdomain' ),
-                'id'    => $prefix . '_cta_link',
+                'id'    => $prefix . 'cta_link',
                 'type'  => 'text',
             ),
         )
