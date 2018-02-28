@@ -84,7 +84,7 @@ function default_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => __( 'Copy', 'textdomain' ),
-                'id'    => $prefix . 'cta_text',
+                'id'    => $prefix . 'cta_copy',
                 'type'  => 'wysiwyg',
             ),
             array(
