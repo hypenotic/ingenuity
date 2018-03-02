@@ -80,6 +80,30 @@ function project_register_meta_boxes( $meta_boxes ) {
     );
 
     $meta_boxes[] = array(
+        'title'      => __( 'Project Testimonial', 'textdomain' ),
+        'post_types' => array( 'project'),
+        'context'    => 'normal',
+        'priority'   => '',
+        'fields' => array(
+            array(
+                'name'  => __( 'Quotation', 'textdomain' ),
+                'id'    => $prefix . '_quote',
+                'type'  => 'textarea',
+            ),
+            array(
+                'name'  => __( 'Source', 'textdomain' ),
+                'id'    => $prefix . '_quote_name',
+                'type'  => 'text',
+            ),
+            array(
+                'name'  => __( 'Source Title', 'textdomain' ),
+                'id'    => $prefix . '_quote_title',
+                'type'  => 'text',
+            )
+        )
+    );
+
+    $meta_boxes[] = array(
         'title'      => __( 'Accent Assets', 'textdomain' ),
         'post_types' => array( 'project'),
         'context'    => 'normal',
