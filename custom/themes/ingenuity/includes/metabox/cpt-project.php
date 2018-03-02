@@ -104,6 +104,36 @@ function project_register_meta_boxes( $meta_boxes ) {
     );
 
     $meta_boxes[] = array(
+        'title'      => __( 'Project Gallery', 'textdomain' ),
+        'post_types' => array( 'project'),
+        'context'    => 'normal',
+        'priority'   => '',
+        'fields' => array(
+            array(
+                'name'   => 'Group', // Optional
+                'id'     => $prefix . 'gallery',
+                'type'   => 'group',
+                'collapsible' => true,
+                'group_title' => 'Image {#}',
+                // List of sub-fields
+                'fields' => array(
+                    array(
+                        'name' => 'Image',
+                        'id'   => $prefix . 'gallery_s_image',
+                        'type' => 'file_input',
+                    ),
+                    array(
+                        'name' => 'Caption',
+                        'id'   => $prefix . 'gallery_s_caption',
+                        'type' => 'textarea',
+                    ),
+                    // Other sub-fields here
+                ),
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
         'title'      => __( 'Accent Assets', 'textdomain' ),
         'post_types' => array( 'project'),
         'context'    => 'normal',
