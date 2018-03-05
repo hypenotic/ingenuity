@@ -12,6 +12,7 @@ include('includes/wp-cuztom-posts/custom-post-slider.php');
 
 // MetaBox
 include('includes/metabox/cpt-page.php');
+include('includes/metabox/cpt-post.php');
 include('includes/metabox/cpt-team.php');
 include('includes/metabox/cpt-contact.php');
 include('includes/metabox/cpt-project.php');
