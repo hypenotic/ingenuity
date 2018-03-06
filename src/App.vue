@@ -130,8 +130,11 @@ html, body {
     }
 }
 
+html.no-scroll-html, 
 body.no-scroll-body {
     overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 h1,h2,h3,h4,h5,h6 {

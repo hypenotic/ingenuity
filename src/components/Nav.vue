@@ -231,10 +231,13 @@ nav {
 		text-decoration: none;
 		display: block;
 		font-family: $main-headings;
-		font-size: 40px;
+		font-size: 20px;
 		text-transform:uppercase;
 		letter-spacing: 3px;
 		padding: 8px 0;
+		@media #{$bp-large} {
+			font-size: 40px;
+		}
 	}
 }
 

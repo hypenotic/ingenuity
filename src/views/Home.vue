@@ -80,11 +80,15 @@
             // },
             noScrollBody() {
                 var className = 'no-scroll-body';
-                document.body.classList.add(className);
+				document.body.classList.add(className);
+				var root = document.getElementsByTagName( 'html' )[0];
+				root.setAttribute( 'class', 'no-scroll-html' );
             },
             scrollBody() {
                 var className = 'no-scroll-body';
-                document.body.classList.remove(className);
+				document.body.classList.remove(className);
+				var root = document.getElementsByTagName( 'html' )[0];
+				root.removeAttribute( 'class', 'no-scroll-html' );
             }
         },
         computed: {
@@ -506,9 +510,9 @@ div.rw-words.rw-words-1 {
 		overflow: initial;
 		line-height: modular-scale(6, 1.5rem);
 	}
-	@media #{$bmobile-landscape} {
-		left: 175px;
-	}
+	// @media #{$bmobile-landscape} {
+	// 	left: 175px;
+	// }
 	@media screen and (min-width: 1900px) {
 	    bottom: 3px;
 	    left: 650px;
