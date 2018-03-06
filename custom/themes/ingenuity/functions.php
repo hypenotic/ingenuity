@@ -1,7 +1,7 @@
 <?php
 include('includes/wp-cuztom-helper/cuztom.php');
 //Include post custom posts type. Dependent on /wp-cuztom-helper classes.
-include('includes/wp-cuztom-posts/custom-generic.php');
+// include('includes/wp-cuztom-posts/custom-generic.php');
 include('includes/wp-cuztom-posts/custom-generic-post.php');
 // include('includes/wp-cuztom-posts/custom-post-projects.php');
 include('includes/wp-cuztom-posts/custom-post-videos.php');
