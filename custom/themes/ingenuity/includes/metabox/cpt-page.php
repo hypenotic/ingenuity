@@ -56,7 +56,7 @@ function default_register_meta_boxes( $meta_boxes ) {
             array(
                 'name'  => __( 'Quote', 'textdomain' ),
                 'id'    => $prefix . 'quote_text',
-                'type'  => 'wysiwyg',
+                'type'  => 'textarea',
             ),
             array(
                 'name'  => __( 'Source', 'textdomain' ),
