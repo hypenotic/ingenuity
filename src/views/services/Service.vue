@@ -99,6 +99,7 @@ export default {
 	}
 	@media #{$bp-large} {
 		flex-direction: row;
+		margin: 60px -25% 60px -20%;
 	}
 }
 
@@ -117,6 +118,9 @@ export default {
 	}
 	@media #{$bp-med} {
 		padding: 25px;
+	}
+	@media #{$bp-large} {
+		padding: 0 70px 25px 0;
 	}
 	@media #{$mobile-landscape} {
 		padding: 0 15px 25px;
@@ -149,6 +153,8 @@ export default {
 		line-height: modular-scale(1, 1.6rem);
 		font-weight: 400;
 		font-family: $p-font;
+		font-size: 32px;
+		line-height: 34px;
 		p {
 			font-style: italic;
 			font-size: modular-scale(1, 1.5rem);
@@ -165,7 +171,7 @@ export default {
 		    content: '“';
 		    position: absolute;
 		    margin-left: -.4em;
-		    font-size: modular-scale(4, 1.6rem);
+		    font-size: 90px;
 		    font-family: $main-headings;
 		    color: rgba(0,0,0,0.2);
 		}
@@ -181,10 +187,14 @@ export default {
 		margin-top: 25px;
 		text-align: right;
 		text-transform: uppercase;
+		font-size: 32px;
+		line-height: 36px;
 	}
 	h5 {
 		text-align: right;
 		margin: 0;
+		font-size: 13px;
+		line-height: 13px;
 	}
 	p.testimonial__caption {
 		font-family: $lite-headings;
@@ -194,6 +204,9 @@ export default {
 		text-transform: uppercase;
 		font-size: modular-scale(0, 0.9rem);
 		line-height: modular-scale(0, 1rem);
+		font-size: 14px;
+		line-height: 16px;
+		margin: 0;
 	}
 }
 

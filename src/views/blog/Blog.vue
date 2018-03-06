@@ -1,11 +1,18 @@
 <template>		
 	<div v-if="pageInfo != null">
         <app-banner :page="pageInfo"></app-banner>
-        <router-link :to="'/news/' + post.id + '/' + post.slug" v-for="post in this.$store.state.blogList" :key="post.id">
-        <div>
-            <h1 v-html="post.title.rendered"></h1>
-        </div>
-        </router-link>
+		<div class="main-wrapper"> 
+			<section class="main-content standard-center"> 
+				<div class="blog-single-post wow fadeIn" v-for="post in this.$store.state.blogList" :key="post.id">
+					<router-link :to="'/news/' + post.id + '/' + post.slug" >
+						<h3 class="blog-single__title" v-html="post.title.rendered"></h3>
+					</router-link>
+					<img :src="post.meta_box._post_hero_image" :alt="post.title.rendered">
+					<p v-html="post.excerpt.rendered"></p>
+				</div>
+				<!-- <p class="pagination-links">pagination links</p> -->
+			</section> <!-- ARTICLE WRAP ends here -->
+		</div> <!-- contentWrapper ends here -->
     </div>
     <div v-else></div>
 </template>

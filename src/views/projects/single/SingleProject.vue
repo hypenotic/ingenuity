@@ -152,6 +152,16 @@ aside {
 }
 
 .main-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+aside p {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.main-wrapper {
     aside { 
         width: 15%;
         display: inline-block;

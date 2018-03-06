@@ -51,7 +51,6 @@
 				<router-link v-else :to="'/'"  class="" v-html="page.title">
 				</router-link>
 			</li>
-			
 		</ul>
 	</div>
 	<div class="nav-container">
@@ -223,7 +222,10 @@ nav {
 	}
 	li.menu-item-has-children {
 		&:hover {
-			background: rgba(0,0,0,0.8);
+			background: rgba(0,0,0,0.6);
+		}
+		> a:hover {
+			background: $black;
 		}
 	}
 	a {
@@ -235,6 +237,7 @@ nav {
 		text-transform:uppercase;
 		letter-spacing: 3px;
 		padding: 8px 0;
+		padding-left: 16px;
 		@media #{$bp-large} {
 			font-size: 40px;
 		}

@@ -111,6 +111,7 @@
 <style lang="scss">
 // ===== GLOBAL
 @import './sass/variables.scss';
+@import './sass/typography.scss';
 
 *, :after, :before {
     box-sizing: border-box;
@@ -120,10 +121,12 @@ html, body {
     height: 100%;
     // font-family: serif;
     font-family: $body-type;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
+    color: rgba(0,0,0,0.8);
     // line-height: 1.5rem;
     overflow-x: hidden; //for the menu
+    font-family: $main-body-font;
     @media #{$medium-and-up} {
         font-size: 24px;
         line-height: 1.5rem;
@@ -528,6 +531,38 @@ figure {
 			margin: 0 auto;
 		}
 	}
+}
+
+// LINE
+.diagonal-svg__wrapper {
+	position: relative;
+	.diagonal-svg {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		@media #{$bp-small} {
+			// 
+		}
+		#the-line {
+			stroke: rgba(252, 216, 56, 1);
+			stroke-width: 350;
+			@media #{$bp-small} {
+				stroke-width: 200;
+				transform: rotate(-20deg);
+			}
+		}
+	}
+}
+
+.blog-entry {
+    p:first-child {
+        margin-top: 0;
+    }
+	@media #{$bp-large} {
+		padding: 50px 25px;
+		// padding-right: 50px;
+    }
 }
 
 </style>

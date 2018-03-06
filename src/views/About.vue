@@ -166,6 +166,8 @@ export default {
 		text-transform: uppercase;
 		font-size: modular-scale(0, 0.9rem);
 		line-height: modular-scale(0, 1rem);
+		font-size: 14px;
+		line-height: 16px;
 	}
 }
 
