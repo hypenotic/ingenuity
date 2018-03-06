@@ -1,0 +1,7 @@
+export const SET_PAGE_LIST = 'SET_PAGE_LIST'
+export const SET_ACTIVE_PAGE = 'SET_ACTIVE_PAGE'
+export const SET_PROJECT_LIST = 'SET_PROJECT_LIST'
+export const SET_BLOG_LIST = 'SET_BLOG_LIST'
+export const SET_MENU_ITEMS = 'SET_MENU_ITEMS'
+export const SET_MENU_STATE = 'SET_MENU_STATE'
+

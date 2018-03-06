@@ -1,10 +1,34 @@
 <template>
-    <footer id="contact-info" class="">
-        <div class="footer-outer-container">
-            
+    <footer class="main-footer">
+        <div class="footer__blog footer__third">
+            <h3><a href="<?php echo get_home_url(); ?>/news">Recent Posts</a></h3>
+            <p v-for="post in this.$store.state.blogList" :key="post.id">
+                    <router-link :to="'/news/' + post.id + '/' + post.slug"  v-html="post.title.rendered">
+                </router-link>
+            </p>
         </div>
-        <div class="footer-credits">
-           <div class="footer-credits-wrapper"> <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="http://hypenotic.com" target="_blank">Hypenotic</a></p></div>
+        <div class="footer__news footer__third footer__third--align">
+            <div id="mc_embed_signup">
+            <form action="//ingenuity.us12.list-manage.com/subscribe/post?u=0b66a91bd0f3c7ec3d595d5e4&amp;id=fd499abc6d" method="post" class="footer-newsletter validate" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                <h4>Get Ingenuity in your mailbox!</h4>
+                
+                <span class="input input--ingenuity">
+                    <input type="email" value="" name="EMAIL" class="email input__field input__field--ingenuity" id="mce-EMAIL" placeholder="email address" required>
+                    <label class="input__label input__label--ingenuity" for="mce-EMAIL">
+                        <span class="input__label-content input__label-content--ingenuity">Email</span>
+                    </label>
+                </span>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_0b66a91bd0f3c7ec3d595d5e4_fd499abc6d" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </form>
+            </div>
+
+            <!--End mc_embed_signup-->
+        </div>
+        <div class="footer__cta footer__third footer__third--align">
+            <h4>​Great buildings begin with a conversation.</h4>
+            <a href="<?php echo get_home_url(); ?>/contact-us"><button class="button-down">Let's talk over an espresso!</button></a>
         </div>
     </footer>
 </template>
@@ -19,132 +43,320 @@
         data: function () {
             return {
                 footerContent: [],
-                twitterClick: 'Twitter',
-                fbClick: 'FB',
-                liClick: 'LinkedIn'
             }
         },
         created: function() {
             console.log('FOOTER LOADED');
         },
         methods: {
-            getFooter() {
-                var app = this;
-                if (app.footerContent.length > 0) {
-                    // setTimeout(function(){ app.blogLoad = false }, 1000);
-                } else {
-                    console.log('footer - loading');
-                    axios.get('')
-                    .then(function (response) {
-                        console.log(response.data);
-                        app.footerContent = response.data;
-                        // setTimeout(function(){ app.blogLoad = false }, 1000);
-                    })
-                    .catch(function (error) {
-                    console.log(error)
-                    })
-                } 
-            },
-            gaSocialClick(clickName) {
-                this.$ga.event('Social Link', 'click', clickName, 1);
-                console.log(clickName);
-            }
+            
         },
         beforeMount() {
-            this.getFooter();
         },
         computed: {
         }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../sass/variables.scss';
 
-footer {
-    background: $black !important;
-    color: $white;
-    padding: 50px 0 0;
-    a {
-        // font-size: 1rem !important;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        color: $white;
-    }
-    h5 {
-        font-size: 1.5rem;
-        text-transform: uppercase;
-    }
-    h6 {
-        font-size: 1.1rem;
-    }
-    p,a {
-        font-size: 0.8rem !important;
-        line-height: 1.2rem !important;
-    }
+.main-footer {
+	width: 100%;
+	background: $black;
+	padding: 25px;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+	@media #{$bp-large} {
+		flex-direction: row;
+		padding: 50px;
+	}
 }
 
-.contact-block {
-    h6 {
-        margin-bottom: 5px;
-    }
-    p {
-        margin-top: 0;
-    }
+.footer__third {
+	position: relative;
+    // display: flex;
+    // flex: 1 0 auto;
+	@media #{$bp-small} {
+		margin: 20px 0;
+		// display: flex;
+        // flex: 1 0 auto;
+	}
+	@media #{$bp-med} {
+		margin-bottom: 25px;
+	}
+	@media #{$bp-large} {
+		// display: flex;
+        // flex: 1 0 30%;
+		margin: 0 1.5%;
+		min-height: 250px;
+	}
+	@media #{$bp-xlarge} {
+		min-height: 250px;
+	}
+	@media #{$bp-xxlarge} {
+		min-height: 250px;
+	}
 }
 
-.footer-outer-container {
-    max-width: 1150px;
-    margin: 0 auto;
-    @media #{$small-and-down} {
-        padding: 0 30px;
-    }
+.footer__third.footer__third--align {
+	display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.footer-container {
-    @media #{$large-and-up} {
-        display: flex;
-        justify-content: space-between;
-        >div {
-            width: 28%;
-        }
-    }
+#mc-embedded-subscribe-form.footer-newsletter {
+	padding: 0;
+    min-height: 250px;
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.footer-social-share {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    li {
-        i {
-            margin-right: 10px;
-        }
-        a {
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
+#mc_embed_signup {
+	background-color: $black;
 }
 
-.footer-credits {
-    background: $black !important;
-    p {
-        color: $white;
-        text-align: right;
-        margin: 0;
-        font-family: $heading-type;
-        opacity: 0.5;
-        font-size: 0.6rem !important;
-        text-transform: uppercase;
-    }
-    a {
-        font-size: 0.6rem !important;
-    }
-    .footer-credits-wrapper {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 32px 0 16px;
-    }
+#mc_embed_signup input.button {
+	margin: 0;
 }
+
+form.footer-newsletter {
+	background-color: $black;
+	input.footer__news__email {
+		background: $black;
+		// border: 1px solid $yellow;
+		color: $yellow;
+	}
+	h4 {
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+	#mc-embedded-subscribe {
+		background-color: $black;
+		border-radius: 0;
+		border: 2px solid $white;
+		color: $white;
+		font-weight: bold;
+		width: 300px;
+		width: 35%;
+		min-width: 70%;
+		padding: 10px;
+		height: 60px;
+		text-transform: uppercase;
+		&:hover {
+			border: 0;
+			color: $black;
+			background-color: $yellow;
+			font-weight: 400;
+		}
+	}
+}
+
+// FOOTER EMAIL FIELD ==============================
+// 	keeping type-related code in here
+
+.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	// margin: 1em;
+	max-width: 350px;
+	width: calc(100% - 2em);
+	vertical-align: top;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: $black;
+	font-weight: 400;
+	font-family: Helvetica, Arial, sans-serif;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: $white;
+	font-weight: bold;
+	font-size: 70.25%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+}
+
+/* Ingenuity */
+// http://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/
+.input--ingenuity {
+	overflow: hidden;
+}
+
+.input__field--ingenuity {
+	width: 100%;
+	background: transparent;
+	padding: 0.5em;
+	margin-bottom: 2em;
+	color: $black;
+	z-index: 100;
+	opacity: 0;
+}
+
+.input__label--ingenuity {
+	width: 100%;
+	position: absolute;
+	text-align: left;
+	padding: 0.5em 0;
+	pointer-events: none;
+	font-size: 1em;
+}
+
+.input__label--ingenuity::before,
+.input__label--ingenuity::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+
+.input__label--ingenuity::before {
+	height: 100%;
+	background: $yellow;
+	top: 0;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+.input__label--ingenuity::after {
+	height: 1px;
+	background: $yellow;
+	top: 100%;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.input__label-content--ingenuity {
+	padding: 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transition: -webkit-transform 0.2s, color 0.2s;
+	transition: transform 0.2s, color 0.2s;
+}
+
+.input__field--ingenuity:focus,
+.input--filled .input__field--ingenuity {
+	opacity: 1;
+	-webkit-transition: opacity 0s 0.2s;
+	transition: opacity 0s 0.2s;
+}
+
+.input__label--ingenuity::before,
+.input__label--ingenuity::after,
+.input__label-content--ingenuity,
+.input__field--ingenuity:focus,
+.input--filled .input__field--ingenuity {
+	-webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.input__field--ingenuity:focus + .input__label--ingenuity::before,
+.input--filled .input__label--ingenuity::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.input__field--ingenuity:focus + .input__label--ingenuity::after,
+.input--filled .input__label--ingenuity::after {
+	opacity: 0;
+}
+
+.input__field--ingenuity:focus + .input__label--ingenuity .input__label-content--ingenuity,
+.input--filled .input__label--ingenuity .input__label-content--ingenuity {
+	color: #cbc4c6;
+	-webkit-transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
+	transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
+}
+
+#mc-embedded-subscribe {
+	font-family: $lite-headings;
+}
+
+.footer__cta {
+	position: relative;
+	img {
+		position: relative;
+		max-width: 50%;
+		height: auto;
+	}
+	button {
+		margin: 0;
+	}
+}
+
+.input__label-content.input__label-content--ingenuity {
+	color: rgba(255,255,255,0.2);
+}
+
+.footer__cta button {
+	background-color: $black;
+	border-radius: 0;
+	border: 2px solid $white;
+	color: $white;
+	font-weight: bold;
+	min-width: 70%;
+	padding: 10px;
+	min-height: 60px;
+	text-transform: uppercase;
+	&:hover {
+		border: 0;
+		color: $black;
+		background-color: $yellow;
+		font-weight: 400;
+	}
+}
+
+.footer__cta button.button-down {
+	@media #{$bp-small} {
+		margin-top: 40px;
+	}
+}
+
+// Hype Creds
+#hypenotic-creds {
+	text-align: right;
+	background-color: $black;
+	padding: 0px 30px 10px;
+}
+
+
 </style>

@@ -1,157 +1,130 @@
-<template>
-<div class="view view--blog view--padding-top">
-    <div>
-        <div v-if="blogLoad==false">
-            <transition name="fade">
-                <div>
-                    <div class="post-container" v-if="posts && posts.length > 0">
-                        
-                    </div>
-                </div>
-            </transition> 
+<template>		
+	<div v-if="pageInfo != null">
+        <app-banner :page="pageInfo"></app-banner>
+        <router-link :to="'/news/' + post.id + '/' + post.slug" v-for="post in this.$store.state.blogList" :key="post.id">
+        <div>
+            <h1 v-html="post.title.rendered"></h1>
         </div>
-        <div v-else>
-            <transition name="fade">
-                <div class="uk-container uk-container-expand loading-animation loading-animation--page">
-                      <svg width="80" height="60" viewBox="5 0 80 60"><path class="wave" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" />
-                        </svg>
-                </div>
-            </transition>  
-        </div>
+        </router-link>
     </div>
-    <app-footer></app-footer>
-</div>
+    <div v-else></div>
 </template>
 
 <script>
-    import es6Promise from 'es6-promise';
-    es6Promise.polyfill();
-    import 'es6-promise/auto'
-    import axios from 'axios';
-    import Footer from '../../components/Footer.vue';
-    export default {
-        components: {
-            // theContent: Content,
-            appFooter: Footer,
-        },
-        props: ['pageList'],
-        data: function () {
-            return {
-                selected: [],
-                posts: [],
-                errors: [],
-                blogLoad: true
-            }
-        },
-        watch: {
-            blogLoad: function (newStatus) {
-                this.blogLoad = newStatus;
-            }
-        },
-        beforeMount() {
-            this.getPosts();
-        },
-        methods: {
-            getPage(pages) {
-                for (let page of pages) {
-                    console.log(page.slug);
+import axios from 'axios';
+import { mapState } from 'vuex'
+import Banner from '../../components/Banner.vue';
+export default {
+    components: {
+        appBanner: Banner
+    },
+	data() {
+		return {
+			errors: [],
+			fullPath: this.$route.fullPath,
+			slug: this.$route.path
+		}
+	},
+	filters: {
+    },
+    computed: {
+        pageInfo: function(){
+            if (this.$store.state.pageList != null) {
+                for (let page of this.$store.state.pageList ) {
                     if (page.slug == 'news') {
-                        console.log('found it');
                         console.log(page);
-                        this.selected = page;
+                        return page;
                         break;
                     }
                 }
-            },
-            getPosts() {
-                var app = this;
-                if (app.posts.length > 0) {
-                    // setTimeout(function(){ app.blogLoad = false }, 1000);
-                } else {
-                    console.log('news - loading');
-                    this.getPage(this.pageList);
-                    axios.get('http://ingenuity.ca/wp-json/wp/v2/posts?_embed')
-                    .then(function (response) {
-                        console.log(response.data);
-                        app.posts = response.data;
-                        app.blogLoad = false;
-                        // setTimeout(function(){ app.blogLoad = false }, 1000);
-                    })
-                    .catch(function (error) {
-                    console.log(error)
-                    })
-                } 
+            } else {
+                return null;
             }
-        },
-        computed: {
         }
-    }
+    },
+	methods: {
+	},
+	created() {
+	},
+};
 </script>
 
 <style lang="scss" scoped>
+
 @import '../../sass/variables.scss';
 
-.single-post {
-    background: $main-accent;
-    position:relative;
-    &:hover {
-        background: darken($main-accent,10);
-    }
-    h3 {
-        margin-bottom: 0;
-        font-size: 1.1rem;
-        line-height: 1.5rem;
-    }
-    a span:nth-child(2) {
-        font-size: 1.1rem;
-        line-height: 1.1rem;
-        color: $white;
-        // display: block;
-    }
-    a span:nth-child(1) {
-        display: block;
-        color: rgba(255,255,255,0.5);
-        margin-bottom: 16px;
-        letter-spacing: 0.7px;
-    }
-    a {
-        display: block;
-        padding: 40px;
-        &:hover {
-            text-decoration: none;
-        }
-    }
+
+// PROJECTs Landing Page
+.projects__panel-container {
+	width: 100%;
+	// margin-top: 50px;
+	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column;	
 }
 
-.single-post:nth-child(even) {
-    background: darken($main-accent, 5);
-    &:hover {
-        background: darken($main-accent,10);
-    }
+.projects__panel-link {
+	width: 100%;
+	// transition: all 0.2s;
+	&:hover .projects__panel-wrap {
+		.color-overlay {
+			opacity: 0;		
+		}
+		.projects__panel-img { 
+			filter: grayscale(0.8);
+			background-blend-mode: normal;
+			filter: brightness(0.7);
+		}
+	}
 }
 
-.post-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    @media #{$large-and-up} {
-        margin-top: 32px;
-        display: flex;
-        flex-wrap: wrap;
-        .single-post {
-            width: 33.33%;
-            >div {
-                
-            }
-        }
-    }
-    @media #{$xlarge-and-up} {
-        .single-post {
-            width: 25%;
-        }
-    }
-    .post-type {
-        font-size: 0.8rem;
-    }
+.projects__panel-wrap {
+	h2 {
+		z-index: 35;
+	}
+	position: relative;
+	height: 300px;
+	@media #{$bp-small} {
+	    height: 150px;
+	}
+	@media #{$bp-med} {
+	    height: 200px;
+	}
+	@media #{$bp-large} {
+	    height: 300px;
+	}
+	.color-overlay {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(252, 216, 56, 0.7);
+		filter: brightness(70%);
+		position: relative;
+		top: 0;
+		left: 0;
+		// transition: all 0.2s;
+		z-index: 30;
+	}
+	.projects__panel-img {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	// transition: all 0.2s;
+	padding: 25px;
+	filter: brightness(80%);
+	filter: grayscale(80%);
+	background-blend-mode: hard-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	z-index: 29;
+	}
 }
 
 </style>

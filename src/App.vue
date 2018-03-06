@@ -1,10 +1,11 @@
 <template>
     <div>
-        <div v-if="loading==false">
+        <div v-if="this.$store.state.pageList != null">
             <app-nav v-bind:menu-links="menuLinks"></app-nav>
             <transition name="fade">
-                <router-view :page-list="pages" :load-check="loading"></router-view>
+                <router-view :load-check="loading"></router-view>
             </transition> 
+            <app-footer v-if="this.$route.path != '/'"></app-footer>
         </div> 
         <div v-else>
             <transition name="fade">
@@ -22,10 +23,13 @@
     es6Promise.polyfill();
     import 'es6-promise/auto'
     import axios from 'axios';
-	import Nav from './components/Nav.vue';
+    import Nav from './components/Nav.vue';
+    import Footer from './components/Footer.vue';
+    import { mapState } from 'vuex';
     export default {
         components: {
-            appNav: Nav
+            appNav: Nav,
+            appFooter: Footer
         },
         data: function () {
             return {
@@ -40,10 +44,16 @@
         beforeMount() {
             // this.getBrowser();
             // this.getMenu();
-            this.getPages();
+            // this.getPages();
         },
         mounted: function() {
             // this.isLoaded();
+        },
+        created: function() {
+            this.$store.dispatch("getMenu", {'type': 'initial-load'});
+            this.$store.dispatch("getPages", {'type': 'initial-load'});
+            this.$store.dispatch("getProjects", {'type': 'initial-load'});
+            this.$store.dispatch("getBlogPosts", {'type': 'initial-load'});
         },
         watch: {
             loading: function (newLoading) {
@@ -62,38 +72,38 @@
             }
         },
         methods: {
-            getMenu: function() {
-              var app = this
-            axios.get('http://ingenuity.ca/wp-json/wp-api-menus/v2/menus/2')
-              .then(function (response) {
-                app.menuLinks = response.data.items;
-                // console.log(response.data);
-              })
-              .catch(function (error) {
-                console.log(error)
-              })
-            },
-            getPages: function() {
-              var app = this
-            axios.get('http://ingenuity.ca/wp-json/wp/v2/pages?_embed')
-              .then(function (response) {
-                app.pages = response.data;
-                for (let page of response.data) {
-                    // console.log(page.slug);
-                    if (page.slug == 'home') {
-                        // console.log('found it');
-                        app.homePage = page;
-                        break;
-                    }
-                };
-                setTimeout(function(){ app.loading = false }, 1000);
+            // getMenu: function() {
+            //   var app = this
+            // axios.get('http://ingenuity.ca/wp-json/wp-api-menus/v2/menus/2')
+            //   .then(function (response) {
+            //     app.menuLinks = response.data.items;
+            //     // console.log(response.data);
+            //   })
+            //   .catch(function (error) {
+            //     console.log(error)
+            //   })
+            // },
+            // getPages: function() {
+            //   var app = this
+            // axios.get('http://ingenuity.ca/wp-json/wp/v2/pages?_embed')
+            //   .then(function (response) {
+            //     app.pages = response.data;
+            //     for (let page of response.data) {
+            //         // console.log(page.slug);
+            //         if (page.slug == 'home') {
+            //             // console.log('found it');
+            //             app.homePage = page;
+            //             break;
+            //         }
+            //     };
+            //     setTimeout(function(){ app.loading = false }, 1000);
                 
-                // this.isLoaded();
-              })
-              .catch(function (error) {
-                console.log(error)
-              })
-            }
+            //     // this.isLoaded();
+            //   })
+            //   .catch(function (error) {
+            //     console.log(error)
+            //   })
+            // }
         }
     }
 </script>
@@ -113,10 +123,15 @@ html, body {
     font-size: 18px;
     font-weight: 300;
     // line-height: 1.5rem;
+    overflow-x: hidden; //for the menu
     @media #{$medium-and-up} {
         font-size: 24px;
         line-height: 1.5rem;
     }
+}
+
+body.no-scroll-body {
+    overflow: hidden !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -152,11 +167,43 @@ body.noscroll {
     overflow: none;
 }
 
-blockquote {
-    padding-left: 24px;
-    margin-left: 24px;
-    border-left: 1px solid #e3e3e3;
-    color: #666;
+// blockquote {
+//     padding-left: 24px;
+//     margin-left: 24px;
+//     border-left: 1px solid #e3e3e3;
+//     color: #666;
+// }
+
+.main-wrapper {
+	// overflow-x: hidden;
+	// @include outer-container;
+	@media #{$bp-small} {
+		padding: 0 30px;
+    }
+    @media #{$bp-med} {
+		padding: 0 40px;
+    }
+}
+
+.content-wrapper {
+	padding-top: 120px;
+	z-index: 998;
+}
+
+.main-content,
+.blog-entry {
+	position: relative;
+	background-color: none;
+    padding: 50px 0;
+    margin: 0 auto;
+	@media #{$bp-large} {
+		max-width: 675px;
+    }
+    img {
+    	position: relative;
+    	width: 100%;
+		height: auto;
+    }
 }
 
 // TYPE
@@ -303,7 +350,7 @@ em {
     background: $yellow;
     text-align: center;
     padding-top: 45vh; 
-    min-height: 60vh;
+    min-height: 100vh;
 }
 
 .loading-animation.loading-animation--page {
@@ -347,6 +394,137 @@ em {
             cursor: pointer;
         }
     }
+}
+
+// Header
+
+figure {
+    margin: 0;
+}
+
+.default-hero {
+	h1 {
+		font-size: modular-scale(3, 1.3rem);
+		line-height:modular-scale(3, 1.3rem);
+		margin: 0 10%;
+        padding-bottom: 0;
+        text-transform: uppercase;
+		color: $white;
+		text-align: left;
+		@media #{$bp-small} {
+			font-size: modular-scale(3, 1rem);
+			line-height:modular-scale(3, 1.2rem);
+		}
+		@media #{$bp-xsmall} {
+			font-size: modular-scale(2, 1.4rem);
+			line-height:modular-scale(2, 1.4rem);
+		}
+		@media #{$bp-med} {
+			font-size: modular-scale(4, 1.3rem);
+			line-height:modular-scale(4, 1.3rem);
+		}
+		@media #{$mobile-landscape} {
+			font-size: modular-scale(2, 1.3rem);
+			line-height:modular-scale(2, 1.3rem);
+		}
+		@media #{$bp-large} {
+			font-size: modular-scale(5, 1.2rem);
+            line-height:modular-scale(5, 1.2rem);
+            font-size: 81px;
+            line-height: 81px;
+		}
+		@media #{$bp-xlarge} {
+			font-size: modular-scale(6, 1.2rem);
+			line-height:modular-scale(6, 1.2rem);
+		}
+	}
+	h2,
+	h2 p {
+		font-family: $lite-headings;
+		font-weight: 300;
+		font-size: modular-scale(2, 1rem);
+		line-height:modular-scale(2, 1rem);
+		letter-spacing: 1px;
+		text-align: left;
+		margin: 0 20% 0 10%;
+		@media #{$bp-small} {
+			font-size: modular-scale(1, 0.9rem);
+			line-height:modular-scale(1, 0.9rem);
+	    }
+	}
+	h2 p {
+		margin: 0;
+	}
+}
+
+.home-hero,
+.default-hero {
+	width: 100%;
+	background-position: center center;
+	background-size: cover;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	.hgroup {
+		// width: 90vw;
+        // display: flex;
+        // flex-direction: column;
+	}
+}
+
+.default-hero {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	@media #{$bp-xxlarge} {
+		min-height: 80vh;
+	}
+	figure {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-position: center center;
+		width: 100%;
+		height: 100%; // or 100%?
+		filter: grayscale(80%) brightness(0.6) opacity(1);
+		z-index: 50;
+	}
+	.hgroup {
+		position: relative;
+		z-index: 51;
+		margin-top: 150px;
+		@media #{$bp-small} {
+			margin-top: 10%;
+		}
+		@media #{$mobile-landscape} {
+			margin-top: 10%;
+		}
+	}
+}
+
+.default-hero.no-banner {
+	min-height: 50vh;
+}
+
+.default-hero.blog-index,
+.default-hero.project-index {
+	min-height: 80vh;
+	@media #{$bp-small} {
+		min-height: 50vh;
+	}
+}
+
+.default-hero.project-index {
+	.hgroup {
+		margin: 50px auto 0;
+		h1,
+		h2 {
+			text-align: center;
+		}
+		h2 {
+			margin: 0 auto;
+		}
+	}
 }
 
 </style>

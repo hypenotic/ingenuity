@@ -1,106 +1,29 @@
 <template>
-<!-- Why don't I just do a check for home... -->
 <div v-if="scrolled == true" id="scrolling" class="nav-background" v-bind:class="{ 'menu-open': showMobileMenu }">
 	<div id="mobile-menu-trigger" v-on:click="showMobileMenu = !showMobileMenu">
 		<i class="fa fa-bars" aria-hidden="true"></i>
+	</div> 
+	<div class="menu-overlay" v-bind:class="{ 'menu-open': showMobileMenu }">
+		<button id="close-menu-overlay" v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-times"></i> Close</button>
 	</div>
 	<div class="nav-container">
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 			<nav class="uk-navbar light-nav" v-if="$route.path == '/'">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 				</div>
 				<div class="uk-navbar-right">
-					<ul class="uk-navbar-nav" v-if="$route.path == '/'">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` !== 'home'" :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else to="/">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<a :href="link.url" target="_blank" class="external-link external-link--hide">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-
-					</ul>
-					<ul v-else class="uk-navbar-nav">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'">
-							{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` == 'home'" to="/">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<a :href="link.url" target="_blank" class="external-link">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-					</ul>
+					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
 				</div>
 			</nav>
 			<nav v-else class="uk-navbar light-nav">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 				</div>
 				<div class="uk-navbar-right">
-					<ul class="uk-navbar-nav" v-if="$route.path == '/'">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` !== 'home'" :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else to="/">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<a :href="link.url" target="_blank" class="external-link external-link--hide">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-					</ul>
-					<ul v-else class="uk-navbar-nav">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'">
-							{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` == 'home'" to="/">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<a :href="link.url" target="_blank" class="external-link">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-					</ul>
+					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
 				</div>
 			</nav>
 		</div>
@@ -110,102 +33,45 @@
 	<div id="mobile-menu-trigger" v-on:click="showMobileMenu = !showMobileMenu">
 		<i class="fa fa-bars" aria-hidden="true"></i>
 	</div>
+	<div class="menu-overlay" v-bind:class="{ 'menu-open': showMobileMenu }">
+		<button id="close-menu-overlay" v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-times"></i> Close</button>
+		<ul>
+			<li v-for="page in this.$store.state.menuList.items" :key="page.id"  v-if="page.hasOwnProperty('children')" class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
+				<router-link :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</router-link>
+				<ul>
+					<li v-for="child in page.children " :key="child.id" v-on:click="showMobileMenu = !showMobileMenu">
+						<router-link :to="'/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+					</li>
+				</ul>
+			</li>
+			<li v-else class="menu-item-no-children" v-on:click="showMobileMenu = !showMobileMenu">
+				<router-link v-if="page.object_slug != 'home'" :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</router-link>
+				<router-link v-else :to="'/'"  class="" v-html="page.title">
+				</router-link>
+			</li>
+			
+		</ul>
+	</div>
 	<div class="nav-container">
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 			<nav class="uk-navbar dark-nav" v-if="$route.path == '/news'">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/news'" to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/news'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 				</div>
 				<div class="uk-navbar-right">
-					<ul class="uk-navbar-nav" v-if="$route.path == '/'">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'" v-on:click.native="gaContactClick('CONTACT')">
-							{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` == 'home'" to="/">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<a :href="link.url" target="_blank" class="external-link external-link--hide">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-					</ul>
-					<ul v-else class="uk-navbar-nav">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'home'" to="/" >
-							{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'" v-on:click.native="gaContactClick('CONTACT')">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<a :href="link.url" target="_blank" class="external-link">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-					</ul>
+					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
 				</div>
 			</nav>
 			<nav v-else class="uk-navbar light-nav">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 				</div>
 				<div class="uk-navbar-right">
-					<ul class="uk-navbar-nav" v-if="$route.path == '/'">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'" v-on:click.native="gaContactClick('CONTACT')">
-							{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` == 'home'" to="/">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<a :href="link.url" target="_blank" class="external-link external-link--hide">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-					</ul>
-					<ul v-else class="uk-navbar-nav">
-						<li v-for="link in menuLinks" v-if="`${link.object_slug}` !== 'cta'" :key="`menu-item-${link.object_slug}`" v-on:click="showMobileMenu = !showMobileMenu">
-							<router-link v-if="`${link.object_slug}` == 'home'" to="/" >
-							{{ link.title }}
-							</router-link>
-							<router-link v-else-if="`${link.object_slug}` == 'contact'" :to="'#contact-info'" v-on:click.native="gaContactClick('CONTACT')">
-								{{ link.title }}
-							</router-link>
-							<router-link v-else :to="`/${link.object_slug}`">
-								{{ link.title }}
-							</router-link>
-							<span></span>
-						</li>
-						<li v-else :key="`menu-item-${link.object_slug}`">
-							<a :href="link.url" target="_blank" class="external-link">
-								{{ link.title }}
-							</a>
-							<span></span>
-						</li>
-					</ul>
+					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
 				</div>
 			</nav>
 		</div>
@@ -222,21 +88,19 @@
             return {
 				// menuLinks: [] 
 				scrolled: false,
-				showMobileMenu: false
+				showMobileMenu: false,
+				menuCheck: false
             }
 		},
         methods: {
 			handleScroll: function (event) {
 				if (window.addEventListener){
-					// console.log('A');
-					// console.log(pageYOffset);
 					if (window.pageYOffset > 20) {
 						this.scrolled = true;
 					} else {
 						this.scrolled = false;	
 					}
 				} else if (window.attachEvent){
-					// console.log('B');
 					if (window.scrollY > 20) {
 						this.scrolled = true;
 					} else {
@@ -244,7 +108,6 @@
 					}
 				} else {
 					if (window.pageYOffset > 20) {
-						// console.log('C');
 						this.scrolled = true;
 					} else {
 						this.scrolled = false;	
@@ -254,7 +117,10 @@
 			gaContactClick(clickName) {
                 this.$ga.event('Contact Button', 'click', clickName, 1);
                 // console.log(clickName);
-            }
+			},
+			menuStatus() {
+
+			}
 		},
 		created: function () {
 			// window.addEventListener('scroll', this.handleScroll);
@@ -304,6 +170,110 @@ nav {
 			color: lighten($main-accent, 5);
 		}
 	}
+}
+
+.menu-overlay {	
+	width: 0;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	top: -100px;
+	right: -100px;
+	transition: all 0.3s ease;
+	background: $yellow;
+	z-index: 900000000;
+
+	// width: 100vw;
+	// height: 100vh;
+	// top: 0;
+	// right: 0;
+	// opacity: 1;
+}
+
+.menu-overlay.menu-open {
+	opacity: 1;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// .menu-overlay >ul {
+// 	position: absolute;
+// 	width: 0;
+// 	height: 0;
+// }
+
+.menu-overlay.menu-open ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	li {
+		&:hover {
+			background: $black;
+			a {
+				color: $yellow;
+			}
+		}
+	}
+	li.menu-item-has-children {
+		&:hover {
+			background: rgba(0,0,0,0.8);
+		}
+	}
+	a {
+		color: $black;
+		text-decoration: none;
+		display: block;
+		font-family: $main-headings;
+		font-size: 40px;
+		text-transform:uppercase;
+		letter-spacing: 3px;
+		padding: 8px 0;
+	}
+}
+
+.menu-overlay.menu-open > ul {
+	width: 100%;
+}
+
+.menu-overlay.menu-open > ul {
+	> li {
+		padding-left: 16%;
+	}
+	li {
+		ul {
+			padding-left: 40px;
+		}
+		
+	}
+}
+
+#close-menu-overlay {
+	border: none;
+	background: transparent;
+	position: absolute;
+	top: 60px;
+	right: 50px;
+	color: $black;
+	font-family: $main-headings;
+    text-transform: uppercase;
+    font-size: 19px;
+	font-weight: bold;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.uk-navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .uk-navbar {
@@ -382,15 +352,21 @@ nav {
 
 .uk-navbar-left .nav-logo {
 	transition: all 0.3s ease;
-	max-height: 80px;
+	max-height: 120px;
 	width: auto;
-	display: block;
+	// display: block;
 	margin-top: 20px;
 	// opacity: 0.7;
 	@media #{$small-and-down} {
 		max-height: 50px;
 		margin-left: 5px;
     }
+}
+
+.uk-navbar-left {
+	a {
+		display:inline-block;
+	}
 }
 
 .uk-navbar-nav>li>a {
@@ -559,4 +535,72 @@ a.external-link {
 	}
 }
 
+#default-menu-icon {
+  position: relative;
+  z-index: 1000 !important;
+  @media #{$bp-small} {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+  }
+  &.logo-appear {
+    padding: 0;
+    float: right;
+    margin: 0;
+    margin-top: -40px;
+    @media #{$bp-small} {
+      position: absolute;
+      top: 30px;
+      right: 25px;
+      margin: 0;
+    }
+    @media #{$bp-xxlarge} {
+      position: relative;
+      // top: 10px;
+      // right: 55px;
+      z-index: 1000 !important;
+    }
+    @media #{$mobile-landscape} {
+      position: absolute;
+      top: 23px;
+      right: 25px;
+      margin: 0;
+    }
+  }
+}
+
+#default-menu-icon {
+	color: $yellow;
+	font-family: "Audimat3000-Regulier",sans-serif;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: bold;
+    padding-left: 10px;
+    margin-top: 3px;
+}
+
+.uk-navbar-right {
+	font-size: 19px;
+	line-height: 19px;
+	button {
+		color: $yellow;
+		font-family: "Audimat3000-Regulier",sans-serif;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 19px;
+		line-height: 19px;
+		border: none;
+		background: transparent;
+		margin: 0;
+		padding: 0;
+		&:hover {
+			cursor: pointer;
+		}
+		span {
+			display: inline-block;
+			margin-left: 8px;
+		}
+	}
+	
+}
 </style>

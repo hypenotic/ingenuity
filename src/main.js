@@ -1,6 +1,8 @@
 // import es6Promise from 'es6-promise';
 // es6Promise.polyfill();
 // import 'es6-promise/auto'
+import store from './store'
+import App from './App.vue'
 var Promise = require('es6-promise').Promise;
 require('es6-promise').polyfill();
 import Vue from 'vue';
@@ -46,11 +48,9 @@ Vue.use(VueAnalytics, {
 	router
 });
 
-import App from './App.vue';
-Vue.component( 'App', App );
-
 new Vue({
 	el: '#app',
-  	router,
+	router,
+	store,
   	render: h => h(App)
 })

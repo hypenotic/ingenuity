@@ -17,19 +17,128 @@ $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
+// OLD MQs
+$bp-small: $small-and-down;
+$bp-med: $medium-and-up;
+$bp-large: $large-and-up;
+$bp-xlarge: $xlarge-and-up;
+$bp-xxlarge: $xxlarge-and-up;
+$mobile-landscape: $small-and-down;
+$bp-xsmall: $small-and-down;
+$bmobile-landscape: $small-and-down;
+
 // COLORS
-$white: rgba(255,255,255,1);
-$black: rgba(0,0,0,1);
-$green: #4cad77;
-$blue: #2292c1;
-$yellow: rgba(254, 217, 74, 1);
+$white: 	rgba(255, 255, 255, 1);
+$black: 	rgba(0, 0, 0, 1);
+$grey: 		rgba(151, 151, 151, 1);
+$d-grey:	rgba(79, 79, 79, 1);
+$yellow:	rgba(252, 216, 56, 1);
 
 $main-accent: $yellow;
 
 // TYPE
 // $body-type: "europa", sans-serif;
 // $heading-type: "europa", sans-serif;
-$body-type: 'Neuton', serif;
-$heading-type: 'Barlow Condensed', sans-serif;
+// $body-type: 'Neuton', serif;
+// $heading-type: 'Barlow Condensed', sans-serif;
 // font-family: 'Barlow Condensed', sans-serif;
 // font-family: 'Neuton', serif;
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3092107, 2015-09-15T19:11:20-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Audimat3000-Gras by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/gras/
+ * 
+ * Webfont: Audimat3000-GrasItalique by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/gras-italic/
+ * 
+ * Webfont: Audimat3000-Mi-gras by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/mi-gras/
+ * 
+ * Webfont: Audimat3000-Leger by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/leger/
+ * 
+ * Webfont: Audimat3000-LegerItalique by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/leger-italic/
+ * 
+ * Webfont: Audimat3000-Mi-grasItalique by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/mi-gras-italic/
+ * 
+ * Webfont: Audimat3000-Regulier by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/regulier/
+ * 
+ * Webfont: Audimat3000-RegulierItalique by SMeltery
+ * URL: http://www.myfonts.com/fonts/smeltery/audimat-3000/regulier-italique/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3092107
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright &#x00A9; 2014 Jack Usine/SMeltery. All rights reserved.
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2f2e8b");
+// @font-face {
+// 	font-family: 'Audimat3000-Mi-gras';
+// 	src: url('../webfonts/2F2E8B_2_0.eot');
+// 	src: url('../webfonts/2F2E8B_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2F2E8B_2_0.woff2') format('woff2'),url('../webfonts/2F2E8B_2_0.woff') format('woff'),url('../webfonts/2F2E8B_2_0.ttf') format('truetype');
+// }
+  
+// @font-face {
+// 	font-family: 'Audimat3000-Leger';
+// 	src: url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_3_0.eot');
+// 	src: url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_3_0.eot?#iefix') format('embedded-opentype'),url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_3_0.woff2') format('woff2'),url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_3_0.woff') format('woff'),url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_3_0.ttf') format('truetype');
+// }
+
+ 
+// @font-face {
+// 	font-family: 'Audimat3000-Regulier';
+// 	src: url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_6_0.eot');
+// 	src: url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_6_0.eot?#iefix') format('embedded-opentype'),url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_6_0.woff2') format('woff2'),url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_6_0.woff') format('woff'),url('//localhost:8080/src/assets/fonts/webfonts/2F2E8B_6_0.ttf') format('truetype');
+// }
+
+@font-face {
+	font-family: 'Audimat3000-Leger';
+	src: url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_3_0.eot');
+	src: url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_3_0.eot?#iefix') format('embedded-opentype'),url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_3_0.woff2') format('woff2'),url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_3_0.woff') format('woff'),url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_3_0.ttf') format('truetype');
+}
+
+ 
+@font-face {
+	font-family: 'Audimat3000-Regulier';
+	src: url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_6_0.eot');
+	src: url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_6_0.eot?#iefix') format('embedded-opentype'),url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_6_0.woff2') format('woff2'),url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_6_0.woff') format('woff'),url('http://ingenuity.hypenotic.com/src/assets/fonts/webfonts/2F2E8B_6_0.ttf') format('truetype');
+}
+ 
+// @font-face {
+// 	font-family: 'Archer-Light-Pro';
+// 	src: url('../webfonts/Archer-Light-Pro.otf');
+// }
+
+// @font-face {
+// 	font-family: 'Archer-Medium-Pro';
+// 	src: url('../webfonts/Archer-Medium-Pro.otf');
+// }
+
+
+$title-font: "Audimat3000-Regulier",sans-serif;
+$p-font: "leitura-news", serif;
+$main-headings: "Audimat3000-Regulier",sans-serif;
+$lite-headings: "Audimat3000-Leger", sans-serif;
+
+$body-type: 'Neuton', serif;
+$heading-type: 'Barlow Condensed', sans-serif;
+$heading-type: $main-headings;
+
+// $bold-font: "Audimat3000-Regulier", sans-serif;
+// $main-body-font: $p-font;
