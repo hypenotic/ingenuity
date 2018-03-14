@@ -5,16 +5,16 @@
             <div class="main-content standard-center">
                 <div v-html="pageInfo.content.rendered"></div>
                 <div class="two-column">
-                    <div class="two-column__half services-testimonial wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.3s">
-                        <blockquote v-html="pageInfo.meta_box._page_quote_text"></blockquote>
-                        <h4 v-html="pageInfo.meta_box._page_quote_source"></h4>
-                        <h5 v-html="pageInfo.meta_box._page_quote_source_title"></h5>
-                        <p v-if="pageInfo.meta_box._page_quote_caption != ''" v-html="pageInfo.meta_box._page_quote_caption" class="testimonial__caption"></p>
+                    <div class="two-column__half services-testimonial">
+                        <blockquote v-html="pageInfo.meta_box._service_quote_text"></blockquote>
+                        <h4 v-html="pageInfo.meta_box._service_quote_source"></h4>
+                        <h5 v-html="pageInfo.meta_box._service_quote_source_title"></h5>
+                        <p v-if="pageInfo.meta_box._service_quote_caption != ''" v-html="pageInfo.meta_box._service_quote_caption" class="testimonial__caption"></p>
                     </div>
-                    <div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.7s">
-                        <div v-html="pageInfo.meta_box._page_cta_copy"></div>
-                        <a :href="pageInfo.meta_box._page_cta_link">
-                            <button class="services-cta__btn" v-html="pageInfo.meta_box._page_cta_text"></button>
+                    <div class="two-column__half services-cta">
+                        <div v-html="pageInfo.meta_box._service_cta_copy"></div>
+                        <a :href="pageInfo.meta_box._service_cta_link">
+                            <button class="services-cta__btn" v-html="pageInfo.meta_box._service_cta_text"></button>
                         </a>
                     </div>
                 </div>
@@ -53,13 +53,16 @@ export default {
             if (this.slug == 'design-build') {
                 console.log('DB');
                 pageSlug = 'design-build';
-            } else {
+            } else if (this.slug == 'general-contracting') {
                 console.log('GC');
                 pageSlug = 'general-contracting';
-            }
+            } else {
+				console.log('Maintenance');
+                pageSlug = 'maintenance';
+			}
 
-            if (this.$store.state.pageList != null) {
-                for (let page of this.$store.state.pageList ) {
+            if (this.$store.state.serviceList != null) {
+                for (let page of this.$store.state.serviceList ) {
                     console.log('X:', pageSlug);
                     if (page.slug == pageSlug) {
                         console.log(page);

@@ -369,8 +369,8 @@ h2.rw-sentence{
 		margin: 0 0 0 5px;
 		font-size: modular-scale(3, 1.1rem); 
         line-height: modular-scale(3, 1.6rem); 
-        font-size: 42px;
-		line-height: 61px;
+        font-size: 38px;
+		line-height: 57px;
 	}
 	@media #{$bp-med} {
 		text-align: left;

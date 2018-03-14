@@ -14,6 +14,13 @@
             <h2 v-if="page.meta_box._banner_subheading != ''" v-html="page.meta_box._banner_subheading"></h2>
         </div>
 
+        <figure v-if="page.type == 'service'" :style="'background-image: url('+page.meta_box._service__banner_image+'); background-size: cover;'"></figure>
+        <div v-if="page.type == 'service'" class="hgroup animated fadeInDown">
+            <h1 v-if="page.meta_box._service__banner_heading != ''" v-html="page.meta_box._service__banner_heading"></h1>
+            <h1 v-else v-html="pageInfo.title.rendered"></h1>
+            <h2 v-if="page.meta_box._service__banner_subheading != ''" v-html="page.meta_box._service__banner_subheading"></h2>
+        </div>
+
         <figure v-if="page.type == 'post'" :style="'background-image: url('+page.meta_box._post_hero_image+'); background-size: cover;'"></figure>
         <div v-if="page.type == 'post'" class="hgroup animated fadeInDown">
             <h1 v-if="page.meta_box._post_hero_heading != ''" v-html="page.meta_box._post_hero_heading"></h1>

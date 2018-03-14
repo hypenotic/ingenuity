@@ -2,7 +2,7 @@
 	<div v-if="pageInfo != null">
         <app-banner :page="pageInfo"></app-banner>
         <div class="projects__panel-container">
-                <router-link :to="'/project/' + project.slug" v-for="project in this.$store.state.projectList" :key="project.id" class="projects__panel-link">
+                <router-link :to="'/projects/' + project.slug" v-for="project in this.$store.state.projectList" :key="project.id" class="projects__panel-link">
 					<div class="projects__panel-wrap">
 						<h2 v-html="project.title.rendered"></h2>
 						<div class="color-overlay">

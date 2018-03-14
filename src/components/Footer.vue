@@ -28,7 +28,10 @@
         </div>
         <div class="footer__cta footer__third footer__third--align">
             <h4>​Great buildings begin with a conversation.</h4>
-            <a href="<?php echo get_home_url(); ?>/contact-us"><button class="button-down">Let's talk over an espresso!</button></a>
+			<router-link to="contact-us">
+				<a><button class="button-down">Let's talk over an espresso!</button></a>
+			</router-link>
+            
         </div>
     </footer>
 </template>
@@ -59,6 +62,7 @@
 </script>
 
 <style lang="scss" scoped>
+
 @import '../sass/variables.scss';
 
 .main-footer {
@@ -72,6 +76,16 @@
 	@media #{$bp-large} {
 		flex-direction: row;
 		padding: 50px;
+	}
+	a {
+		text-decoration: none;
+	}
+	h4 {
+		margin: 0;
+		color: $white;
+		font-family: 'Audimat3000-Leger',sans-serif;
+		font-size: 32px;
+		font-weight: bold;
 	}
 }
 
@@ -133,7 +147,7 @@ form.footer-newsletter {
 		color: $yellow;
 	}
 	h4 {
-		font-weight: normal;
+		// font-weight: normal;
 		margin-bottom: 20px;
 	}
 	#mc-embedded-subscribe {
@@ -148,12 +162,23 @@ form.footer-newsletter {
 		padding: 10px;
 		height: 60px;
 		text-transform: uppercase;
+		font-family: 'Audimat3000-Leger',sans-serif;
+		font-size: 16px;
 		&:hover {
 			border: 0;
 			color: $black;
 			background-color: $yellow;
 			font-weight: 400;
 		}
+	}
+}
+
+.footer__blog {
+	h3 {
+		text-transform: uppercase;
+		font-size: 40px;
+		font-family: 'Audimat3000-Leger',sans-serif;
+		margin: 0;
 	}
 }
 
@@ -183,6 +208,10 @@ form.footer-newsletter {
 	font-weight: 400;
 	font-family: Helvetica, Arial, sans-serif;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__label-content {
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 .input__field:focus {
@@ -337,6 +366,8 @@ form.footer-newsletter {
 	padding: 10px;
 	min-height: 60px;
 	text-transform: uppercase;
+	font-family: 'Audimat3000-Leger',sans-serif;
+	font-size: 16px;
 	&:hover {
 		border: 0;
 		color: $black;

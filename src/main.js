@@ -15,7 +15,8 @@ var SocialSharing = require('vue-social-sharing');
 Vue.use(SocialSharing);
 Vue.use(VueRouter, VueAxios, axios);
 
-// Vue.axios.defaults.headers.common['X-WP-Nonce'] = wp_api_vuejs_poc.nonce;
+import inViewportDirective from 'vue-in-viewport-directive';
+Vue.directive('in-viewport', inViewportDirective);
 
 const router = new VueRouter({
 	routes,
@@ -31,6 +32,13 @@ const router = new VueRouter({
 			return { x: 0, y: 0 }
 		}
 	}
+});
+
+router.beforeEach(function (to, from, next) { 
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 500);
+    next();
 });
 
 Vue.use(VueAnalytics, {

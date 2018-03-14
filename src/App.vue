@@ -3,7 +3,7 @@
         <div v-if="this.$store.state.pageList != null">
             <app-nav v-bind:menu-links="menuLinks"></app-nav>
             <transition name="fade">
-                <router-view :load-check="loading"></router-view>
+                <router-view :load-check="loading" :key="$route.fullPath"></router-view>
             </transition> 
             <app-footer v-if="this.$route.path != '/'"></app-footer>
         </div> 
@@ -25,6 +25,7 @@
     import axios from 'axios';
     import Nav from './components/Nav.vue';
     import Footer from './components/Footer.vue';
+    // import WOW from 'wow.js';    
     import { mapState } from 'vuex';
     export default {
         components: {
@@ -54,6 +55,9 @@
             this.$store.dispatch("getPages", {'type': 'initial-load'});
             this.$store.dispatch("getProjects", {'type': 'initial-load'});
             this.$store.dispatch("getBlogPosts", {'type': 'initial-load'});
+            this.$store.dispatch("getContacts", {'type': 'initial-load'});
+            this.$store.dispatch("getServices", {'type': 'initial-load'});
+            this.$store.dispatch("getTeam", {'type': 'initial-load'});
         },
         watch: {
             loading: function (newLoading) {
@@ -125,7 +129,8 @@ html, body {
     font-weight: 300;
     color: rgba(0,0,0,0.8);
     // line-height: 1.5rem;
-    overflow-x: hidden; //for the menu
+    // overflow-x: hidden; //for the menu
+    // overflow-y: auto; //for the menu
     font-family: $main-body-font;
     @media #{$medium-and-up} {
         font-size: 24px;
@@ -136,8 +141,6 @@ html, body {
 html.no-scroll-html, 
 body.no-scroll-body {
     overflow: hidden !important;
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -349,10 +352,6 @@ em {
 
 // LOADING ANIMATION
 .loading-animation {
-    // width: 100vw;
-    // height: 100vh;
-    // position: absolute;
-    // background: white;
     background: $yellow;
     text-align: center;
     padding-top: 45vh; 
@@ -480,8 +479,11 @@ figure {
 
 .default-hero {
 	width: 100%;
-	min-height: 100vh;
-	position: relative;
+	min-height: 50vh;
+    position: relative;
+    @media #{$bp-med} {
+		min-height: 100vh;
+	}
 	@media #{$bp-xxlarge} {
 		min-height: 80vh;
 	}
@@ -564,5 +566,47 @@ figure {
 		// padding-right: 50px;
     }
 }
+
+// CONTACT
+#info-window-content {
+	@media #{$bp-xxlarge} {
+		padding: 20px;
+	}
+}
+
+#info-window-content {
+	// background-color: $yellow;
+	h3 {
+		color: $black;
+        font-size: 28px;
+        font-weight: normal;
+		margin: 0;
+		@media #{$bp-small} {
+			font-size: modular-scale(1, 1rem);
+			line-height: modular-scale(1, 1rem);
+		}
+	}
+	p,a {
+		font-family: $main-headings;
+		font-size: 21px;
+		line-height: 1.3;
+        margin-bottom: 0;
+        font-weight: normal;
+		@media #{$bp-small} {
+			font-size: modular-scale(0, 1rem);
+			line-height: modular-scale(0, 1.3rem);
+		}
+    }
+    p {
+        margin: 0;
+    }
+    a {
+        color: #979797;
+        text-decoration: none;
+    }
+}
+
+// FORM
+
 
 </style>

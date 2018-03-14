@@ -29,8 +29,17 @@
 <body>
 <div id="app">
 </div>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGPGQX8oq7dF3OTm4OV-UiAKX_nr4_2w"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> -->
-<script src="/dist/build.js"></script>
+<script src="dist/build.js"></script>
+<script src="src/assets/js/wow.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    new WOW({
+      mobile: false
+    }).init();
+  });
+</script>
 <!-- <script src="http://ingenuity.hypenotic.com/dist/build.js"></script> -->
 </body></html>

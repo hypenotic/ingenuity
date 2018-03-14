@@ -2,15 +2,41 @@
 <div v-if="scrolled == true" id="scrolling" class="nav-background" v-bind:class="{ 'menu-open': showMobileMenu }">
 	<div id="mobile-menu-trigger" v-on:click="showMobileMenu = !showMobileMenu">
 		<i class="fa fa-bars" aria-hidden="true"></i>
-	</div> 
+	</div>
 	<div class="menu-overlay" v-bind:class="{ 'menu-open': showMobileMenu }">
 		<button id="close-menu-overlay" v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-times"></i> Close</button>
+		<ul>
+			<li v-if="page.hasOwnProperty('children') && page.title=='Services'" v-for="page in this.$store.state.menuList.items" :key="page.id"  class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
+				<span class="dead-link" v-html="page.title">
+				</span>
+				<ul>
+					<li v-for="child in page.children " :key="child.id" >
+						<router-link :to="'/services/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+					</li>
+				</ul>
+			</li>
+			<li v-else-if="page.hasOwnProperty('children')" :key="page.id" class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
+				<router-link :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</router-link>
+				<ul>
+					<li v-for="child in page.children " :key="child.id" >
+						<router-link :to="'/about-us/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+					</li>
+				</ul>
+			</li>
+			<li v-else class="menu-item-no-children" v-on:click="showMobileMenu = !showMobileMenu">
+				<router-link v-if="page.object_slug != 'home'" :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</router-link>
+				<router-link v-else :to="'/'"  class="" v-html="page.title">
+				</router-link>
+			</li>
+		</ul>
 	</div>
 	<div class="nav-container">
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-			<nav class="uk-navbar light-nav" v-if="$route.path == '/'">
+			<nav class="uk-navbar dark-nav" v-if="$route.path == '/news'">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/news'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 				</div>
 				<div class="uk-navbar-right">
@@ -36,12 +62,21 @@
 	<div class="menu-overlay" v-bind:class="{ 'menu-open': showMobileMenu }">
 		<button id="close-menu-overlay" v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-times"></i> Close</button>
 		<ul>
-			<li v-for="page in this.$store.state.menuList.items" :key="page.id"  v-if="page.hasOwnProperty('children')" class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
+			<li v-if="page.hasOwnProperty('children') && page.title=='Services'" v-for="page in this.$store.state.menuList.items" :key="page.id"  class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
+				<span class="dead-link" v-html="page.title">
+				</span>
+				<ul>
+					<li v-for="child in page.children " :key="child.id" >
+						<router-link :to="'/services/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+					</li>
+				</ul>
+			</li>
+			<li v-else-if="page.hasOwnProperty('children')" :key="page.id" class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
 				<router-link :to="'/' + page.object_slug"  class="" v-html="page.title">
 				</router-link>
 				<ul>
-					<li v-for="child in page.children " :key="child.id" v-on:click="showMobileMenu = !showMobileMenu">
-						<router-link :to="'/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+					<li v-for="child in page.children " :key="child.id" >
+						<router-link :to="'/about-us/' + child.object_slug"  class="" v-html="child.title"> </router-link>
 					</li>
 				</ul>
 			</li>
@@ -93,6 +128,7 @@
 		},
         methods: {
 			handleScroll: function (event) {
+				console.log(window.pageYOffset);
 				if (window.addEventListener){
 					if (window.pageYOffset > 20) {
 						this.scrolled = true;
@@ -122,21 +158,21 @@
 			}
 		},
 		created: function () {
-			// window.addEventListener('scroll', this.handleScroll);
+			window.addEventListener('scroll', this.handleScroll);
 			if (window.addEventListener){
-				// console.log('Option 1');
+				console.log('Option 1');
 				window.addEventListener('scroll', this.handleScroll);
 			} else if (window.attachEvent){
-				// console.log('Option 2');
+				console.log('Option 2');
 				window.attachEvent('scroll', this.handleScroll);
 			} else {
-				// console.log('Option 3');
+				console.log('Option 3');
 				jQuery(window).on('scroll', this.handleScroll);
 				// console.log('IE');
 			}
 		},
 		destroyed: function () {
-			// window.removeEventListener('scroll', this.handleScroll);
+			window.removeEventListener('scroll', this.handleScroll);
 			if (window.addEventListener){
 				window.removeEventListener('scroll', this.handleScroll);
 			} else if (window.attachEvent){
@@ -176,8 +212,8 @@ nav {
 	height: 0;
 	opacity: 0;
 	position: absolute;
-	top: -100px;
-	right: -100px;
+	// top: -100px;
+	right: 0;
 	transition: all 0.3s ease;
 	background: $yellow;
 	z-index: 900000000;
@@ -187,6 +223,16 @@ nav {
 	// top: 0;
 	// right: 0;
 	// opacity: 1;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: none;
+	}
+
+	a,span {
+		color: $yellow;
+	}
 }
 
 .menu-overlay.menu-open {
@@ -212,10 +258,11 @@ nav {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	display: block;
 	li {
 		&:hover {
 			background: $black;
-			a {
+			a,span {
 				color: $yellow;
 			}
 		}
@@ -228,7 +275,7 @@ nav {
 			background: $black;
 		}
 	}
-	a {
+	a,span {
 		color: $black;
 		text-decoration: none;
 		display: block;
@@ -250,7 +297,10 @@ nav {
 
 .menu-overlay.menu-open > ul {
 	> li {
-		padding-left: 16%;
+		padding-left: 5%;
+		@media #{$bp-med} {
+			padding-left: 16%;
+		}
 	}
 	li {
 		ul {
@@ -264,13 +314,19 @@ nav {
 	border: none;
 	background: transparent;
 	position: absolute;
-	top: 60px;
-	right: 50px;
+	top: 30px;
+	right: 30px;
 	color: $black;
 	font-family: $main-headings;
     text-transform: uppercase;
     font-size: 19px;
 	font-weight: bold;
+	opacity: 0.4;
+	@media #{$bp-med} {
+		top: 60px;
+		right: 50px;
+		opacity: 1;
+	}
 	&:hover {
 		cursor: pointer;
 	}
