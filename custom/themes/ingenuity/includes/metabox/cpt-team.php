@@ -5,7 +5,7 @@ function team_register_meta_boxes( $meta_boxes ) {
     $prefix = '_team_';
 
     $meta_boxes[] = array(
-        'title'      => __( 'Details', 'textdomain' ),
+        'title'      => __( 'Member Details', 'textdomain' ),
         'post_types' => array( 'team'),
         'context'    => 'normal',
         'priority'   => '',
@@ -24,6 +24,17 @@ function team_register_meta_boxes( $meta_boxes ) {
                 'name'  => __( 'Job Title', 'textdomain' ),
                 'id'    => $prefix . 'job_title',
                 'type'  => 'text',
+            ),
+            array(
+                'id'   => $prefix . 'section',
+                'name' => __( 'Section', 'textdomain' ),
+                'type' => 'radio',
+                'options' => array(
+                    'leadership' => 'Leadership',
+                    'foundation' => 'Foundation',
+                ),
+                // Show choices in the same line?
+                'inline' => false,
             ),
 
         )
