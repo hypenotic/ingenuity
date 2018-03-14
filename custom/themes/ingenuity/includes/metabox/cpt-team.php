@@ -36,7 +36,16 @@ function team_register_meta_boxes( $meta_boxes ) {
                 // Show choices in the same line?
                 'inline' => false,
             ),
-
+            array(
+                'name'  => __( 'Movie', 'textdomain' ),
+                'id'    => $prefix . 'movie',
+                'type'  => 'file_input',
+            ),
+            array(
+                'name'  => __( 'Extra Image', 'textdomain' ),
+                'id'    => $prefix . 'extra_image',
+                'type'  => 'file_input',
+            ),
         )
     );
 
