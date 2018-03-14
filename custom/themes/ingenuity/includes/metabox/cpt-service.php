@@ -61,29 +61,51 @@ function service_register_meta_boxes( $meta_boxes ) {
         'priority'   => '',
         'fields' => array(
             array(
-                'name'        => 'Testimonial',
-                'id'          => $prefix . 'testimonial',
-                'type'        => 'post',
-            
-                // Post type.
-                'post_type'   => 'testimonial',
-            
-                // Field type.
-                'field_type'  => 'select_advanced',
-            
-                // Placeholder, inherited from `select_advanced` field.
-                'placeholder' => 'Select a testimonial',
-            
-                // Query arguments. See https://codex.wordpress.org/Class_Reference/WP_Query
-                'query_args'  => array(
-                    'post_status'    => 'publish',
-                    'posts_per_page' => - 1,
-                ),
+                'name'  => __( 'Quote', 'textdomain' ),
+                'id'    => $prefix . 'quote_text',
+                'type'  => 'textarea',
+            ),
+            array(
+                'name'  => __( 'Source', 'textdomain' ),
+                'id'    => $prefix . 'quote_source',
+                'type'  => 'text',
+            ),
+            array(
+                'name'  => __( 'Source Title', 'textdomain' ),
+                'id'    => $prefix . 'quote_source_title',
+                'type'  => 'text',
+            ),
+            array(
+                'name'  => __( 'Caption', 'textdomain' ),
+                'id'    => $prefix . 'quote_caption',
+                'type'  => 'text',
             ),
         )
     );
 
-    
+    $meta_boxes[] = array(
+        'title'      => __( 'Service – Call to Action', 'textdomain' ),
+        'post_types' => array( 'service'),
+        'context'    => 'normal',
+        'priority'   => '',
+        'fields' => array(
+            array(
+                'name'  => __( 'Copy', 'textdomain' ),
+                'id'    => $prefix . 'cta_copy',
+                'type'  => 'wysiwyg',
+            ),
+            array(
+                'name'  => __( 'Button Text', 'textdomain' ),
+                'id'    => $prefix . 'cta_text',
+                'type'  => 'text',
+            ),
+            array(
+                'name'  => __( 'Button Link', 'textdomain' ),
+                'id'    => $prefix . 'cta_link',
+                'type'  => 'text',
+            ),
+        )
+    );
 
     return $meta_boxes;
 }
