@@ -61,6 +61,11 @@ function service_register_meta_boxes( $meta_boxes ) {
         'priority'   => '',
         'fields' => array(
             array(
+                'name'  => __( 'Heading', 'textdomain' ),
+                'id'    => $prefix . '_components_heading',
+                'type'  => 'text',
+            ),
+            array(
                 'id'     => $prefix . 'components_deats',
                 // Group field
                 'type'   => 'group',
