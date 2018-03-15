@@ -125,58 +125,6 @@
 <style lang="scss" scoped>
 
 @import '../sass/variables.scss';
-
-.contact-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 0;
-    @media #{$bp-large} {
-		display: flex;
-        justify-content: space-between;
-        >div {
-            width: 30%;
-        }
-	}
-}
-
-#contact-map {
-	width: 100%;
-	min-height: 80vh;
-	@media #{$mobile-landscape} {
-		min-height: 90vh;
-	}
-}
-
-.contact__single__copy {
-    font-size: 21px;
-    line-height: 1.3;
-    h4 {
-        font-size: 32px;
-        margin: 0;
-        color: #444;
-    }
-}
-
-.contact__single__buttons {
-    button {
-        font-family: "Audimat3000-Regulier",sans-serif;
-        font-size: 24px;
-        width: 90%;
-        height: 60px;
-        padding: 10px 15px;
-        color: #fcd838;
-        margin-top: 20px;
-        background-color: #000;
-        border: none;
-    }
-    a, h3 {
-        text-decoration: none;
-        font-family: 'Audimat3000-Leger',sans-serif;
-    }
-    h3 span {
-        border-bottom: 1px solid grey;
-    }
-}
-
+@import '../sass/views/contact.scss';
 
 </style>

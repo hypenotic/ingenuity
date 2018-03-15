@@ -34,19 +34,10 @@
 	</div>
 	<div class="nav-container">
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-			<nav class="uk-navbar dark-nav" v-if="$route.path == '/news'">
+			<nav class="uk-navbar light-nav">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/news'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
-				</div>
-				<div class="uk-navbar-right">
-					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
-				</div>
-			</nav>
-			<nav v-else class="uk-navbar light-nav">
-				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
+					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
 				</div>
 				<div class="uk-navbar-right">
 					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
@@ -332,6 +323,27 @@ nav {
 	}
 }
 
+.nav-container {
+    z-index: 500;
+    position: fixed;
+    width: 95%;
+    margin: 0 2.5%;
+    @media #{$large-and-up} {
+        position: absolute;
+        width: 92%;
+        margin: 0 4%;
+    }
+    @media #{$xlarge-and-up} {
+        width: 100%;
+        // display: flex;
+        // justify-content: space-between;
+        // position: absolute;
+        // width: 70% !important;
+        margin: 0;
+        // position: relative;
+    }
+}
+
 .uk-navbar {
 	display: flex;
 	justify-content: space-between;
@@ -342,7 +354,7 @@ nav {
 	@media #{$xlarge-and-up} {
 		// width: 60% !important;
 		// width: 960px !important;
-		width: 888px !important;
+		width: 90% !important;
 		// margin: 0% !important;
 		// padding-left: 50px;
 		margin: 0 auto;
@@ -389,8 +401,8 @@ nav {
 }
 
 .nav-background#scrolling {
-	background: $white;
-	background: $main-accent;
+	// background: $white;
+	background: $black;
 	// display: fixed;
 	width: 100%;
 	height: 60px;
@@ -437,12 +449,23 @@ nav {
 
 #scrolling {
 	.uk-navbar-left .nav-logo {
-		max-height: 30px;
+		max-height: 0px;
 		margin-top: 5px;
+		opacity: 0;
 		@media #{$small-and-down} {
 			max-height: 30px;
 			margin-top: 12px;
 		}
+	}
+	.logo-text {
+		color: $yellow;
+		transition: all 0.5s;
+		font-family: "Audimat3000-Regulier",sans-serif;
+		// font-weight: 800;
+		font-size: 44px;
+		line-height: 44px;
+		display: inline-block;
+		padding-top: 10px;
 	}
 	.uk-navbar.light-nav {
 		a {
