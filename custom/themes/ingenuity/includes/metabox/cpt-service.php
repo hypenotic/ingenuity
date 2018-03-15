@@ -55,6 +55,37 @@ function service_register_meta_boxes( $meta_boxes ) {
     );
 
     $meta_boxes[] = array(
+        'title'      => __( 'Service – Components Details', 'textdomain' ),
+        'post_types' => array( 'service'),
+        'context'    => 'normal',
+        'priority'   => '',
+        'fields' => array(
+            array(
+                'id'     => $prefix . 'components_deats',
+                // Group field
+                'type'   => 'group',
+                // Clone whole group?
+                'clone'  => true,
+                // Drag and drop clones to reorder them?
+                'sort_clone' => true,
+                // Sub-fields
+                'fields' => array(
+                    array(
+                        'name' => 'Component Name',
+                        'id'   => 'text',
+                        'type' => 'text',
+                    ),
+                    array(
+                        'name'  => __( 'Description', 'textdomain' ),
+                        'id'    => 'description',
+                        'type'  => 'textarea',
+                    )
+                ),
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
         'title'      => __( 'Service – Testimonial', 'textdomain' ),
         'post_types' => array( 'service'),
         'context'    => 'normal',
