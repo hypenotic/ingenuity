@@ -43,6 +43,8 @@ require_once('includes/shortcodes/vid-picture.php');
 
 add_theme_support( 'post-thumbnails' ); 
 
+add_post_type_support( 'page', 'excerpt' );
+
 // Increase File Upload Size
 @ini_set( 'upload_max_size' , '300M' );
 @ini_set( 'post_max_size', '200M');
