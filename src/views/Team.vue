@@ -96,7 +96,7 @@ export default {
 			fullPath: this.$route.fullPath,
             slug: this.$route.path,
             pageData: null,
-            vid: 'http://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4'
+            mario: 'http://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4'
 		}
 	},
 	filters: {

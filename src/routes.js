@@ -9,8 +9,8 @@ import Blog 		from './views/blog/Blog.vue';
 import BlogSingle 	from './views/blog/single/Single.vue';
 
 export const routes = [
-	{ path: '/about-us', component: About, props: true },
 	{ path: '/about-us/the-team', component: Team, props: true },
+	{ path: '/about-us', component: About, props: true },
 	{ path: '/services/:slug', component: Service, props: true },
 	{ path: '/projects/:slug', component: Project, props: true },
 	{ path: '/projects', component: Projects, props: true },
