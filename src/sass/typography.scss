@@ -324,8 +324,8 @@ span.bolded-text {
 	&::first-letter {
 	    float: left;
         font-size: 11.21766rem; 
-        line-height: modular-scale(6);
-        padding: 7px 25px 0px 0px;
+        line-height: 0.8;
+        padding: 22px 25px 0px 0px;
         @media #{$bp-small} {
             font-size: modular-scale(3);
             line-height: modular-scale(3);

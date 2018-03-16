@@ -41,7 +41,8 @@
     }
     .two-column__half {
         @media #{$bp-large} {
-            width: 45%;
+			width: 45%;
+			margin-bottom: 24px;
         }
         @media #{$bp-small} {
         }
@@ -187,5 +188,17 @@
 		color: $black;
 		background-color: $white;
 		// font-weight: 400;
+	}
+}
+
+.other-services {
+	text-align: center;
+	padding: 50px 0;
+	a {
+		text-decoration: none;
+		display: inline-block;
+		margin: 0 8px;
+		height: auto;
+		border: 2px solid black;
 	}
 }

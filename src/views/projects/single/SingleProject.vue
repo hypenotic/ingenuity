@@ -32,43 +32,32 @@
                 
             </section>
 
-            <section class="project__testimonial">
-                <blockquote class="testimonial__quotation">
-                    <?php echo $quotation; ?>
-                </blockquote>
+            <section v-if="projectInfo.meta_box._project__quote != ''" class="project__testimonial" v-on:click="">
+                <blockquote class="testimonial__quotation" v-html="projectInfo.meta_box._project__quote"></blockquote>
                 <div class="testimonial__creds">
-                <h4><?php echo $src; ?></h4>
-                <h5><?php echo $srctitle; ?></h5>
+                <h4 v-html="projectInfo.meta_box._project__quote_name"></h4>
+                <h5 v-html="projectInfo.meta_box._project__quote_title"></h5>
                 </div>  
             </section>
-      
             
             <div class="main-wrapper">
                 
                 <section class="project__gallery">
                 </section> 
                 
-                
                 <div class="project-nav">
-                
-                    <?php
-                    $prev_post = get_previous_post();
-                    if (!empty( $prev_post )): ?>
-                        <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
+                    
+                        <router-link :to="previousProject" v-if="previousProject != null">
                         <div class="project-nav__arrow project-nav__arrow--prev">
-                            <p>&lt; <?php echo $prev_post->post_title; ?></p>
+                            <p v-html="'&lt; ' + this.prev"></p>
                         </div>
-                        </a>
-                    <?php endif; ?>
-                    <?php
-                    $next_post = get_next_post();
-                    if (!empty( $next_post )): ?>
-                        <a href="<?php echo get_permalink( $next_post->ID ); ?>">
+                        </router-link>
+                   
+                        <router-link :to="nextProject" v-if="nextProject != null">
                         <div class="project-nav__arrow project-nav__arrow--next">
-                            <p><?php echo $next_post->post_title; ?> &gt;</p>
+                             <p v-html="this.next+' &gt;'"></p>
                         </div>
-                        </a>
-                    <?php endif; ?>
+                        </router-link>
                     
                 </div>
                 
@@ -84,7 +73,21 @@ import axios from 'axios';
 // import moment from 'moment';
 import { mapState } from 'vuex'
 import Banner from '../../../components/Banner.vue';
+function html2text(html) {
+    var tag = document.createElement('div');
+    tag.innerHTML = html;
+    
+    return tag.innerText;
+}
 export default {
+    metaInfo () {
+      return {
+        title: 'Projects | ' + this.pageData.title.rendered,
+        meta: [
+            { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+        ]
+      }
+    },
     components: {
         appBanner: Banner
     },
@@ -92,7 +95,12 @@ export default {
 		return {
 			errors: [],
 			fullPath: this.$route.fullPath,
-			slug: this.$route.params.slug
+            slug: this.$route.params.slug,
+            data: null,
+            projectNum: null,
+            prev: '',
+            next: '',
+            pageData: null
 		}
 	},
 	filters: {
@@ -100,9 +108,14 @@ export default {
     computed: {
         projectInfo: function(){
             if (this.$store.state.projectList != null) {
+                let counter = 0;
                 for (let page of this.$store.state.projectList ) {
+                    counter++;
+                    this.projectNum = counter;
                     if (page.slug == this.slug) {
                         console.log(page);
+                        // this.data = page;
+                        this.pageData = page;
                         return page;
                         break;
                     }
@@ -110,7 +123,47 @@ export default {
             } else {
                 return null;
             }
-        }
+        },
+        previousProject: function() {
+            const current = this.projectNum;
+            const max = this.$store.state.projectList.length;
+            if (current == 1) {
+                let list = this.$store.state.projectList;
+                // console.log(list, max);
+                let item = list[max-1];
+                // console.log('hey', item)
+                this.prev = item.title.rendered;
+                return item.slug;
+            } else {
+                let previous = current - 1;
+                let indexNum = previous - 1;
+                let list = this.$store.state.projectList;
+                let item = list[indexNum];
+                // console.log(item);
+                this.prev = item.title.rendered;
+                return item.slug;
+            }
+        },
+        nextProject: function() {
+            const current = this.projectNum;
+            const max = this.$store.state.projectList.length;
+            if (current == max) {
+                let list = this.$store.state.projectList;
+                // console.log(list, max);
+                let item = list[0];
+                this.next = item.title.rendered;
+                return item.slug;
+                // return null;
+            } else {
+                let next = current + 1;
+                let indexNum = next - 1;
+                let list = this.$store.state.projectList;
+                let item = list[indexNum];
+                // console.log(item);
+                this.next = item.title.rendered;
+                return item.slug;
+            }
+        },
     },
 	methods: {
 	},
@@ -120,57 +173,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@import '../../../sass/variables.scss';
-
-aside {
-	@media #{$bp-small} {
-		padding-top: 50px;
-		padding-bottom: 25px;
-		display: block;
-		border-right: none;
-		border-bottom: 4px solid rgba(0, 0, 0, 0.9);
-    }
-	@media #{$bp-med} {
-		padding-top: 50px;
-		padding-bottom: 25px;
-		display: block;
-		border-right: none;
-		border-bottom: 4px solid rgba(0, 0, 0, 0.9);
-    }
-    @media #{$bp-large} {
-		// @include span-columns(2);
-		// @include shift(0);
-		height: 100%;
-		margin-top: 50px;
-		padding-top: 5px;
-		padding-right: 30px;
-		text-align: right;
-		border-right: 4px solid rgba(0, 0, 0, 0.8);
-		border-bottom: none;
-    }
-}
-
-.main-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-aside p {
-    font-size: 16px;
-    line-height: 16px;
-}
-
-.main-wrapper {
-    aside { 
-        width: 15%;
-        display: inline-block;
-    }
-    .blog-entry {
-        display: inline-block;
-        width: 80%;
-        vertical-align: top;
-    }
-}
-
+    @import '../../../sass/variables.scss';
+    @import '../../../sass/views/projects.scss';
 </style>

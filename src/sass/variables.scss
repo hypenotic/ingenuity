@@ -19,7 +19,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 
 // OLD MQs
 $bp-small: $small-and-down;
-$bp-med: $medium-and-up;
+$bp-med: $medium-and-down;
 $bp-large: $large-and-up;
 $bp-xlarge: $xlarge-and-up;
 $bp-xxlarge: $xxlarge-and-up;

@@ -76,7 +76,23 @@ import axios from 'axios';
 // import moment from 'moment';
 import { mapState } from 'vuex';
 import Banner from '../components/Banner.vue';
+
+function html2text(html) {
+    var tag = document.createElement('div');
+    tag.innerHTML = html;
+    
+    return tag.innerText;
+}
+
 export default {
+    metaInfo () {
+      return {
+        title: this.pageData.title.rendered,
+        meta: [
+            { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+        ]
+      }
+    },
     components: {
         appBanner: Banner
     },
@@ -84,7 +100,8 @@ export default {
 		return {
 			errors: [],
 			fullPath: this.$route.fullPath,
-			slug: this.$route.path
+            slug: this.$route.path,
+            pageData: null
 		}
 	},
 	filters: {
@@ -95,6 +112,7 @@ export default {
                 for (let page of this.$store.state.pageList ) {
                     if (page.slug == 'the-team') {
                         console.log(page);
+                        this.pageData = page;
                         return page;
                         break;
                     }
@@ -112,94 +130,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@import '../sass/variables.scss';
-
-.leadership-banner,
-.foundation-banner {
-	background: $yellow;
-	text-align: center;
-	padding: 24px 0;
-	position: relative;
-	margin-bottom: 30px;
-	&:after {
-		content:'';
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		margin-left: -30px;
-		width: 0;
-		height: 0;
-		border-top: solid 30px $yellow;
-		border-left: solid 30px transparent;
-		border-right: solid 30px transparent;
-    }
-    h3 {
-        margin: 0;
-    }
-}
-
-.team__container--leadership {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    >div {
-        width: 33.33%;
-        .knolling-image {
-            width: 100%;
-            height: 300px;
-        }
-    }
-    h3,h4 {
-        margin: 0;
-    }
-    h3 {
-        font-size: 40px;
-    }
-}
-
-.team__container--foundation {
-    h3,h4 {
-        margin: 0;
-    }
-    >div {
-        width: 25%;
-        display: inline-block;
-    }
-}
-
-.portrait {
-    img {
-        width: 80%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-.team__name,
-.team__creds {
-    display: inline-block;
-    margin: 0;
-}
-
-.team__creds {
-    font-size: 12px;
-    font-family: $main-headings;
-    line-height: 1;
-}
-
-.knolling-- {
-    img {
-        width: 80%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-.team__single {
-    text-align: center;
-}
-
+    @import '../sass/variables.scss';
+    @import '../sass/views/team.scss';
 </style>

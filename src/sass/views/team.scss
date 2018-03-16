@@ -1,0 +1,150 @@
+
+.leadership-banner,
+.foundation-banner {
+	background: $yellow;
+	text-align: center;
+	padding: 24px 0;
+	position: relative;
+	margin-bottom: 30px;
+	&:after {
+		content:'';
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -30px;
+		width: 0;
+		height: 0;
+		border-top: solid 30px $yellow;
+		border-left: solid 30px transparent;
+		border-right: solid 30px transparent;
+    }
+    h3 {
+        margin: 0;
+    }
+}
+
+.team__container--leadership {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    >div {
+        width: 33.33%;
+        .knolling-image {
+            width: 100%;
+            height: 300px;
+        }
+    }
+    h3,h4 {
+        margin: 0;
+    }
+    h3 {
+        font-size: 40px;
+    }
+}
+
+.team__container--foundation {
+    h3,h4 {
+        margin: 0;
+    }
+    >div {
+        width: 25%;
+        display: inline-block;
+    }
+}
+
+.portrait {
+    img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.team__name,
+.team__creds {
+    display: inline-block;
+    margin: 0;
+}
+
+.team__creds {
+    font-size: 12px;
+    font-family: $main-headings;
+    line-height: 1;
+}
+
+.knolling-- {
+    img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+// .team-overlay {
+//     position: absolute;
+//     top: 0;
+//     opacity: 0;
+//     z-index: 10000;
+//     width: 0;
+//     height: 0;
+//     transition: all 0.5s ease;
+// }
+
+#video1 {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: auto;
+    height: 340px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.team__container--leadership {
+    max-width: 1024px;
+    margin: 0 auto 100px;
+}
+
+.team__container--foundation {
+    // max-width: 1024px;
+    margin: 0 auto 100px;
+}
+
+.team__single {
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+    &:hover {
+        cursor: pointer;
+        background: rgba(252, 216, 56, 0.3);
+        // .team-overlay {
+        //     position: absolute;
+        //     background: $yellow;
+        //     opacity: 0.5;
+        //     z-index: 10000;
+        //     width: 100%;
+        //     height: 100%;
+        // }
+        #video1 {
+            opacity: 1;
+        }
+    }
+}
+
+.team__container--foundation {
+    .team__single {
+        &:hover {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+.portrait {
+    position: relative;
+}
+
+
+

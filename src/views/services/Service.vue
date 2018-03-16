@@ -27,6 +27,13 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="other-services">
+                    <h3>Check out our other services:</h3>
+                    <router-link :to="'/services/' + service.slug" v-if="slug != service.slug" v-for="service in this.$store.state.serviceList" :key="service.id" class="other-service-btn services-cta__btn">
+                        <span v-html="service.title.rendered"></span>
+                    </router-link>
+                </div>
             
             </div>
         </div>
@@ -36,10 +43,25 @@
 
 <script>
 import axios from 'axios';
-// import moment from 'moment';
 import { mapState } from 'vuex';
 import Banner from '../../components/Banner.vue';
+
+function html2text(html) {
+    var tag = document.createElement('div');
+    tag.innerHTML = html;
+    
+    return tag.innerText;
+}
+
 export default {
+    metaInfo () {
+      return {
+        title: 'Services | ' +this.pageData.title.rendered,
+        meta: [
+            { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+        ]
+      }
+    },
     components: {
         appBanner: Banner
     },
@@ -47,7 +69,7 @@ export default {
 		return {
 			errors: [],
 			fullPath: this.$route.fullPath,
-			post: null,
+			pageData: null,
 			slug: this.$route.params.slug
 		}
 	},
@@ -75,6 +97,7 @@ export default {
                     console.log('X:', pageSlug);
                     if (page.slug == pageSlug) {
                         console.log(page);
+                        this.pageData = page;
                         return page;
                         break;
                     }
