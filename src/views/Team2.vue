@@ -32,7 +32,13 @@
                                 <video id="video1" autoplay loop v-if="member.slug =='mario-viti'">
                                     <source src="http://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4" type="video/mp4" />
                                 </video>
-                                <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
+                                <div class="base-image">
+                                    <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
+                                    <span class="pulse">
+                                        <i class="fas fa-play"></i>
+                                    </span>
+                                </div>
+                                
                             </div>
                         </div>
                         
