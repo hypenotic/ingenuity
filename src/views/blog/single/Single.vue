@@ -1,5 +1,5 @@
 <template>		
-	<div v-if="postInfo != null">
+	<div v-if="postInfo != null" class="single-blog-view">
         <app-banner :page="postInfo"></app-banner>
         
         <section class="blog-single-intro">
@@ -8,48 +8,25 @@
 
         <div class="main-wrapper blog-wrapper">
             <aside id="left"> 
-                <p>
-
-                    <span class="bolded-text">Author(s):</span><br>
-                    <?php if ($authors) { ?>
-                        <?php coauthors_posts_links(', ',', '); ?>, <?php echo $authors; ?>
-                    <?php } else { ?>
-                        <?php coauthors_posts_links(', '); ?>
-                    <?php } ?>
-                    
-                </p>
-                <!-- <p><span class="bolded-text">Date:</span><br><?php //the_time( 'M j, Y' ); ?> </p> -->
-                <p class="sidebar-cats"><span class="bolded-text">Category:</span><?php echo get_the_category_list(); ?></p>
-                <?php if (has_tag()) { ?>
-                    <p class="sidebar-tags"><span class="bolded-text">Tags:</span><br><?php the_tags(); ?> </p>
-                <?php }  else {} ?>
+                    <span class="bolded-text">Author(s):</span><br><span v-html="postInfo.meta_box._post_authors" class="post-authors"></span><br>
             </aside>
 
-
-            <section class="blog-entry blog-page">
-                <?php the_content(); ?>
+            <section class="blog-entry blog-page" v-html="postInfo.content.rendered">
             </section>
             
-            <div class="prev-next-links">
-            <?php
-            $prev_post = get_previous_post();
-            if (!empty( $prev_post )): ?>
-                <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
-                <div class="blog-nav__arrow blog-nav__arrow--prev">
-                    <p>Previous Post</p>
-                </div>
-                </a>
-            <?php endif; ?>
-            <?php
-            $next_post = get_next_post();
-            if (!empty( $next_post )): ?>
-                <a href="<?php echo get_permalink( $next_post->ID ); ?>">
-                <div class="blog-nav__arrow blog-nav__arrow--next">
-                    <p>Next Post</p>
-                </div>
-                </a>
-            <?php endif; ?>
+        </div>
+
+        <div class="prev-next-links">
+            <router-link :to="'/news/'+ prev + '/' + previousPost" v-if="previousPost != null && prev != next">
+            <div class="blog-nav__arrow blog-nav__arrow--prev">
+                <p>&lt; Previous Post</p>
             </div>
+            </router-link>
+            <router-link :to="'/news/'+ next + '/' + nextPost" v-if="nextPost != null">
+            <div class="blog-nav__arrow blog-nav__arrow--next">
+                <p>Next Post &gt;</p>
+            </div>
+            </router-link>
         </div>
     </div>
     <div v-else></div>
@@ -69,7 +46,11 @@ export default {
 			errors: [],
 			fullPath: this.$route.fullPath,
             slug: this.$route.path,
-            postID: this.$route.params.id
+            postID: this.$route.params.id,
+            blogNum: null,
+            pageData: null,
+            prev: null,
+            next: null
 		}
 	},
 	filters: {
@@ -77,9 +58,13 @@ export default {
     computed: {
         postInfo: function(){
             if (this.$store.state.blogList != null) {
+                let counter = 0;
                 for (let post of this.$store.state.blogList ) {
+                    counter++;
+                    this.blogNum = counter;
                     if (post.id == this.postID) {
                         console.log(post);
+                        this.pageData = post;
                         return post;
                         break;
                     }
@@ -87,7 +72,47 @@ export default {
             } else {
                 return null;
             }
-        }
+        },
+        previousPost: function() {
+            const current = this.blogNum;
+            const max = this.$store.state.blogList.length;
+            if (current == 1) {
+                let list = this.$store.state.blogList;
+                console.log(list, max);
+                let item = list[max-1];
+                console.log('hey', item);
+                this.prev = item.id;
+                return item.slug;
+            } else {
+                let previous = current - 1;
+                let indexNum = previous - 1;
+                let list = this.$store.state.blogList;
+                let item = list[indexNum];
+                console.log('hiya', item);
+                this.prev = item.id;
+                return item.slug;
+            }
+        },
+        nextPost: function() {
+            const current = this.blogNum;
+            const max = this.$store.state.blogList.length;
+            if (current == max) {
+                let list = this.$store.state.blogList;
+                // console.log(list, max);
+                let item = list[0];
+                this.next = item.id;
+                return item.slug;
+                // return null;
+            } else {
+                let next = current + 1;
+                let indexNum = next - 1;
+                let list = this.$store.state.blogList;
+                let item = list[indexNum];
+                // console.log(item);
+                this.next = item.id;
+                return item.slug;
+            }
+        },
     },
 	methods: {
 	},
@@ -97,7 +122,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@import '../../../sass/variables.scss';
-
+    @import '../../../sass/variables.scss';
+    @import '../../../sass/views/news.scss';
 </style>

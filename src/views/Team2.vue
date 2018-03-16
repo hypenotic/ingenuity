@@ -1,5 +1,5 @@
 <template>
-    <div v-if="pageInfo != null">
+    <div v-if="pageInfo != null" class="team-panels">
         <app-banner :page="pageInfo"></app-banner>
 
 		<div class="leadership-banner">
@@ -11,28 +11,35 @@
             </section>
         </div>
 
-        <div class="team__container--leadership">
+        <div class="team__container--leadership team__container">
             <div v-for="member in this.$store.state.teamList" :key="member.id" v-if="member.meta_box._team_section == 'leadership'">
-                <figure class="team__single team__single--leadership" style="background-image: url('');background-size: cover;background-position: center center;">
+                <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image+');background-size: cover;background-position: center center;'" v-on:click="dropDownLeader(member.id)">
                     <div class="team-overlay"></div>
-                    <div class="portrait">
-                        <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="portrait">
-                    </div>
                     <div class="hgroup">
                         <h3 class="team__name" v-html="member.title.rendered">
                         </h3>
                         <span class="team__creds" v-html="member.meta_box._team_creds"></span>
                         <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
                     </div>
-                    <div class="knolling--">
-                        <img :src="member.meta_box._team_extra_image" alt="portrait">
-                    </div>
-                    <!-- <div :style="'background-image: url('+member.meta_box._team_extra_image+');background-size: cover;background-position: center center;'" class="knolling-image"></div> -->
+                    <!-- member.meta_box._team_extra_image -->
+                    <!-- member._embedded['wp:featuredmedia'][0].source_url -->
                 </figure>
-                <div class="drop-down-panel">
+                <div class="drop-down-panel drop-down-panel--leader" :id="member.id">
                     <div class="push__longbio animated fadeIn">
+                        <div class="split">
+                            <div class="split--content" v-html="member.content.rendered"></div>
+                            <div class="split--image">
+                                <video id="video1" autoplay loop v-if="member.slug =='mario-viti'">
+                                    <source src="http://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4" type="video/mp4" />
+                                </video>
+                                <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
+                            </div>
+                        </div>
+                        
+                        <p style="text-align:center;font-weight: bold;">At the desk:</p>
+                        <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
                     </div>
-                    <button class="close-push-panel">CLOSE</button>
+                    <div class="button__container"><button class="close-push-panel" v-on:click="closeAll(member.id)">CLOSE</button></div>
                 </div>
             </div>
         </div>
@@ -41,30 +48,30 @@
             <h3>Meet the foundation</h3>
         </div>
 
-        <div class="main-wrapper"> 
+        <!-- <div class="main-wrapper"> 
             <section class="main-content standard-center"> 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem alias sequi error voluptatum iure possimus facere impedit. Explicabo provident dicta consequuntur tenetur repellat voluptate libero, tempore officia doloremque accusantium error.</p>
+            <p></p>
             </section>
-        </div>
+        </div> -->
 
         <div class="team__container--foundation">
             <div v-for="member in this.$store.state.teamList" :key="member.id" v-if="member.meta_box._team_section == 'foundation'">
-                <figure class="team__single team__single--leadership" style="background-image: url('');background-size: cover;background-position: center center;">
+                <figure class="team__single team__single--foundation" :style="'background-image: url('+member._embedded['wp:featuredmedia'][0].source_url+');background-size: cover;background-position: center center;'">
                     <div class="team-overlay"></div>
-                    <div class="portrait">
-                        <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="portrait">
+                    <div class="portrait" :style="'background-image: url('+member._embedded['wp:featuredmedia'][0].source_url+');background-size: cover;background-position: center center;'">
+                        <!-- <img :src="" alt="portrait"> -->
                     </div>
-                    <div class="hgroup">
+                    <!-- <div class="hgroup">
                         <h3 class="team__name" v-html="member.title.rendered">
                         </h3>
                         <p class="team__creds" v-html="member.meta_box._team_creds"></p>
                         <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
-                    </div>
+                    </div> -->
                 </figure>
                 <div class="drop-down-panel">
                     <div class="push__longbio animated fadeIn">
                     </div>
-                    <button class="close-push-panel">CLOSE</button>
+                    <div class="button__container"><button class="close-push-panel">CLOSE</button></div>
                 </div>
             </div>
         </div>
@@ -123,6 +130,80 @@ export default {
         }
     },
 	methods: {
+        closeAll: function(ID) {
+            function scrollTo(element, to, duration) {
+                var start = element.scrollTop,
+                    change = to - start,
+                    currentTime = 0,
+                    increment = 20;
+                    
+                var animateScroll = function(){        
+                    currentTime += increment;
+                    var val = Math.easeInOutQuad(currentTime, start, change, duration);
+                    element.scrollTop = val;
+                    if(currentTime < duration) {
+                        setTimeout(animateScroll, increment);
+                    }
+                };
+                animateScroll();
+            }
+
+            //t = current time
+            //b = start value
+            //c = change in value
+            //d = duration
+            Math.easeInOutQuad = function (t, b, c, d) {
+            t /= d/2;
+                if (t < 1) return c/2*t*t + b;
+                t--;
+                return -c/2 * (t*(t-2) - 1) + b;
+            };
+
+            var slides = document.getElementsByClassName("drop-down-panel--leader");
+            for(var i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("open-dropdown");
+            }
+            let select = document.getElementById(ID);
+            scrollTo(document.documentElement, select.offsetTop+300, 500)
+        },
+        dropDownLeader: function(ID) {
+            
+            function scrollTo(element, to, duration) {
+                var start = element.scrollTop,
+                    change = to - start,
+                    currentTime = 0,
+                    increment = 20;
+                    
+                var animateScroll = function(){        
+                    currentTime += increment;
+                    var val = Math.easeInOutQuad(currentTime, start, change, duration);
+                    element.scrollTop = val;
+                    if(currentTime < duration) {
+                        setTimeout(animateScroll, increment);
+                    }
+                };
+                animateScroll();
+            }
+
+            //t = current time
+            //b = start value
+            //c = change in value
+            //d = duration
+            Math.easeInOutQuad = function (t, b, c, d) {
+            t /= d/2;
+                if (t < 1) return c/2*t*t + b;
+                t--;
+                return -c/2 * (t*(t-2) - 1) + b;
+            };
+
+            var slides = document.getElementsByClassName("drop-down-panel--leader");
+            for(var i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("open-dropdown");
+            }
+            let select = document.getElementById(ID);
+            select.classList.add("open-dropdown");
+            scrollTo(document.documentElement, select.offsetTop+(document.documentElement.clientHeight), 500)
+        }
 	},
 	created() {
 	},
@@ -131,5 +212,5 @@ export default {
 
 <style lang="scss" scoped>
     @import '../sass/variables.scss';
-    @import '../sass/views/team.scss';
+    @import '../sass/views/team2.scss';
 </style>

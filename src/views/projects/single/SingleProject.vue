@@ -32,7 +32,7 @@
                 
             </section>
 
-            <section v-if="projectInfo.meta_box._project__quote != ''" class="project__testimonial" v-on:click="">
+            <section v-if="projectInfo.meta_box._project__quote != ''" class="project__testimonial">
                 <blockquote class="testimonial__quotation" v-html="projectInfo.meta_box._project__quote"></blockquote>
                 <div class="testimonial__creds">
                 <h4 v-html="projectInfo.meta_box._project__quote_name"></h4>

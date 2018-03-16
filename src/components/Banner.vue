@@ -24,9 +24,9 @@
 
         <figure v-if="page.type == 'post'" :style="'background-image: url('+page.meta_box._post_hero_image+'); background-size: cover;'"></figure>
         <div v-if="page.type == 'post'" class="hgroup animated fadeInDown">
-            <h1 v-if="page.meta_box._post_hero_heading != ''" v-html="page.meta_box._post_hero_heading"></h1>
+            <h1 v-if="page.title.rendered != ''" v-html="page.title.rendered"></h1>
             <h1 v-else v-html="pageInfo.title.rendered"></h1>
-            <h2 v-if="page.meta_box._post_hero_subheading != ''" v-html="page.meta_box._post_hero_subheading"></h2>
+            <h2 v-if="page.meta_box._post_hero_heading != ''" v-html="page.meta_box._post_hero_heading"></h2>
         </div>
     </div>
 </template>
