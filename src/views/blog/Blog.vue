@@ -22,7 +22,21 @@
 import axios from 'axios';
 import { mapState } from 'vuex'
 import Banner from '../../components/Banner.vue';
+function html2text(html) {
+    var tag = document.createElement('div');
+    tag.innerHTML = html;
+    
+    return tag.innerText;
+}
 export default {
+	metaInfo () {
+      return {
+        title: 'Ingenuity | News',
+        meta: [
+            { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+        ]
+      }
+    },
     components: {
         appBanner: Banner
     },
@@ -30,7 +44,8 @@ export default {
 		return {
 			errors: [],
 			fullPath: this.$route.fullPath,
-			slug: this.$route.path
+			slug: this.$route.path,
+			pageData: null
 		}
 	},
 	filters: {
@@ -40,7 +55,8 @@ export default {
             if (this.$store.state.pageList != null) {
                 for (let page of this.$store.state.pageList ) {
                     if (page.slug == 'news') {
-                        console.log(page);
+						console.log(page);
+						this.pageData = page;
                         return page;
                         break;
                     }

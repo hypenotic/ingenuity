@@ -81,7 +81,7 @@ function html2text(html) {
 export default {
     metaInfo () {
       return {
-        title: this.pageData.title.rendered,
+        title: 'Ingenuity | The Team',
         meta: [
             { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
         ]

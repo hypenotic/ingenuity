@@ -27,7 +27,7 @@
     export default {
         metaInfo: {
             // title will be injected into parent titleTemplate
-            title: 'Contact Us',
+            title: 'Ingenuity | Contact Us',
             meta: [
             { name: 'description', content: "Great buildings begin with a conversation. Let's get in touch!" }
             ]

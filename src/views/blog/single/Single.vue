@@ -37,7 +37,21 @@ import axios from 'axios';
 // import moment from 'moment';
 import { mapState } from 'vuex'
 import Banner from '../../../components/Banner.vue';
+function html2text(html) {
+    var tag = document.createElement('div');
+    tag.innerHTML = html;
+    
+    return tag.innerText;
+}
 export default {
+    metaInfo () {
+      return {
+        title: 'News | ' + this.pageData.title.rendered,
+        meta: [
+            { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+        ]
+      }
+    },
     components: {
         appBanner: Banner
     },

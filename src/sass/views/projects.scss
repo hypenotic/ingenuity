@@ -38,13 +38,19 @@ aside p {
 
 .main-wrapper {
     aside { 
-        width: 15%;
-        display: inline-block;
+        @media #{$medium-and-up} {
+			width: 15%;
+            display: inline-block;
+		}
     }
     .blog-entry {
-        display: inline-block;
-        width: 80%;
-        vertical-align: top;
+        margin-top: 40px;
+        @media #{$medium-and-up} {
+			display: inline-block;
+            width: 80%;
+            vertical-align: top;
+            margin-top: 0px;
+		}
     }
 }
 

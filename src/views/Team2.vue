@@ -29,8 +29,8 @@
                         <div class="split">
                             <div class="split--content" v-html="member.content.rendered"></div>
                             <div class="split--image">
-                                <video id="video1" autoplay loop v-if="member.slug =='mario-viti'">
-                                    <source src="http://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4" type="video/mp4" />
+                                <video id="video1" autoplay loop>
+                                    <source :src="member.meta_box._team_movie" type="video/mp4" />
                                 </video>
                                 <div class="base-image">
                                     <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
@@ -100,7 +100,7 @@ function html2text(html) {
 export default {
     metaInfo () {
       return {
-        title: this.pageData.title.rendered,
+        title: 'Ingenuity | The Team',
         meta: [
             { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
         ]

@@ -59,7 +59,7 @@
 	min-height: 100vh;
 	.hgroup {
 		margin-top: 150px; //newnav!
-		@media #{$bp-small} {
+		@media #{$small-and-down} {
 			margin-top: 5%;
 		}
 		@media #{$bp-xsmall} {
@@ -162,24 +162,17 @@ video#bgvid {
     position: absolute;
     top: -120%;
     left: -50%;
-    // min-width: 100%;
-    // min-height: 100%;
     width: 350%;
     height: 350%;
     z-index: -100;
-    // -ms-transform: translateX(-50%) translateY(-50%);
-    // -moz-transform: translateX(-50%) translateY(-50%);
-    // -webkit-transform: translateX(-50%) translateY(-50%);
-    // transform: translateX(-50%) translateY(-50%);
-    // background: url('../../src/video/poster.jpg') no-repeat;
 	background-size: cover; 
-	@media #{$bp-med} {
+	@media #{$medium-and-up} {
 		top: -300px;
 		left: -300px;
 		width: 200%;
 		height: 200%;
 	}
-	@media #{$bp-large} {
+	@media #{$large-and-up} {
 		top: -160px;
 		left: -160px;
 		width: 150%;
@@ -267,8 +260,8 @@ h2.rw-sentence{
 		margin: 0 0 0 5px;
 		font-size: modular-scale(3, 1.1rem); 
         line-height: modular-scale(3, 1.6rem); 
-        font-size: 38px;
-		line-height: 57px;
+        font-size: 30px;
+		line-height: 50px;
 	}
 	@media #{$bp-med} {
 		text-align: left;
@@ -389,7 +382,7 @@ div.rw-words.rw-words-1 {
 	@media #{$bp-xsmall} {
 		bottom: -45px;
 	}
-	@media #{$bp-med} {
+	@media #{$medium-and-up} {
 		left: -20px;
 	}
 	@media #{$bp-large} {

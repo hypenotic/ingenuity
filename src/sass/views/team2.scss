@@ -23,6 +23,15 @@
     }
 }
 
+.foundation-banner {
+    background: $white;
+    &:after {
+		border-top: solid 30px $white;
+		border-left: solid 30px transparent;
+		border-right: solid 30px transparent;
+    }
+}
+
 .leadership-banner {
     margin-bottom: 30px;
     &:after {
@@ -85,7 +94,7 @@
 
 .team__container--foundation {
     // max-width: 1024px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
 }
 
 .team__single {
@@ -265,9 +274,6 @@
         }
         .split--content {
             width: 60%;
-            >p:first-child {
-                margin-top: 0;
-            }
         }
     }
     .button__container {
@@ -299,8 +305,8 @@
 #video1 {
     position: absolute;
     top: 0;
-    left: 10%;
-    width: 91%;
+    left: 0%;
+    width: 100%;
     height: auto;
     opacity: 0;
     z-index: 1000000000;
@@ -344,8 +350,8 @@
 .pulse {
     // margin:100px;
     position: absolute;
-    right: 10px;
-    bottom: 20px;
+    right: 15px;
+    top: 20px;
     z-index: 10000;
     display: block;
     width: 22px;
@@ -354,7 +360,7 @@
     background: #ffd200;;
     cursor: pointer;
     box-shadow: 0 0 0 #ffd200;
-    animation: pulse 2s infinite;
+    animation: pulse 1.5s infinite;
     i {
         font-size: 12px;
     }
