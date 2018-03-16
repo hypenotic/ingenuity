@@ -27,7 +27,7 @@
                         </video>
                         <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="portrait">
                     </div>
-                    <p style="margin-bottom: 0;">On the desk:</p>
+                    <p style="margin-bottom: 0;">At the desk:</p>
                     <div class="knolling--">
                         <img :src="member.meta_box._team_extra_image" alt="portrait">
                     </div>
