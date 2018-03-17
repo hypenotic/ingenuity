@@ -34,7 +34,7 @@
                                 </video>
                                 <div class="base-image">
                                     <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
-                                    <span class="pulse">
+                                    <span class="pulse" v-if="member.meta_box._team_movie !=''">
                                         <i class="fas fa-play"></i>
                                     </span>
                                 </div>
@@ -62,7 +62,7 @@
 
         <div class="team__container team__container--foundation">
             <div v-for="member in this.$store.state.teamList" :key="member.id" v-if="member.meta_box._team_section == 'foundation'">
-                <figure class="team__single team__single--foundation" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;background-size: 40%;'" v-on:click="dropDownFoundation(member.id)" :id="'member-'+member.id">
+                <figure class="team__single team__single--foundation" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'" v-on:click="dropDownFoundation(member.id)" :id="'member-'+member.id">
                     <div class="team-overlay"></div>
                     <div class="hgroup">
                         <h3 class="team__name" v-html="member.title.rendered">
@@ -83,7 +83,7 @@
                                 </video>
                                 <div class="base-image">
                                     <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
-                                    <span class="pulse">
+                                    <span class="pulse" v-if="member.meta_box._team_movie !=''">
                                         <i class="fas fa-play"></i>
                                     </span>
                                 </div>

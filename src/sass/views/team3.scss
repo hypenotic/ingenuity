@@ -450,4 +450,14 @@
     }
   }
 
+  .team__single--foundation {
+    background-size: 60%;
+    @media #{$medium-and-up} {
+		background-size: 40%;
+    }
+    @media #{$xlarge-and-up} {
+		background-size: 20%;
+	}
+}
+
 
