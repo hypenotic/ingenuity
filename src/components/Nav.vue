@@ -36,8 +36,8 @@
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 			<nav class="uk-navbar light-nav">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
-					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
+					<router-link v-if="$route.path !== '/'" to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
+					<router-link v-else to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
 				</div>
 				<div class="uk-navbar-right">
 					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
@@ -83,8 +83,8 @@
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 			<nav class="uk-navbar dark-nav" v-if="$route.path == '/news'">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/news'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/news'" to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-else to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 				</div>
 				<div class="uk-navbar-right">
 					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
@@ -92,8 +92,8 @@
 			</nav>
 			<nav v-else class="uk-navbar light-nav">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="http://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-if="$route.path !== '/'" to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<router-link v-else to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
 				</div>
 				<div class="uk-navbar-right">
 					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
