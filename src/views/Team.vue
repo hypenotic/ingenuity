@@ -23,7 +23,7 @@
                     </div>
                     <div class="portrait">
                         <video id="video1" autoplay loop v-if="member.slug =='mario-viti'">
-                            <source src="http://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4" type="video/mp4" />
+                            <source src="https://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4" type="video/mp4" />
                         </video>
                         <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="portrait">
                     </div>
@@ -96,7 +96,7 @@ export default {
 			fullPath: this.$route.fullPath,
             slug: this.$route.path,
             pageData: null,
-            mario: 'http://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4'
+            mario: 'https://data.ingenuity.ca/custom/uploads/2018/03/Sequence-01_1.mp4'
 		}
 	},
 	filters: {

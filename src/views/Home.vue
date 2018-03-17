@@ -2,7 +2,7 @@
     <div class="home-hero" id="header-check">
 		<div class="video-overlay">
 		</div>
-		<video playsinline autoplay muted loop poster="http://data.ingenuity.ca/custom/uploads/2018/02/poster.jpg"  id="bgvid">
+		<video playsinline autoplay muted loop poster="https://data.ingenuity.ca/custom/uploads/2018/02/poster.jpg"  id="bgvid">
 			<source media="(max-width: 450px)" src="src/assets/video/ingenuity_home.mp4" type="video/mp4">
 			<source media="(min-width: 450px)" src="src/assets/video/ingenuity_fast.mp4" type="video/mp4">			
 		</video>
