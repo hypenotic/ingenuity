@@ -78,7 +78,7 @@
             this.map = new google.maps.Map(element, options);
             this.markerCoordinates.forEach((coord) => {
                 const position  = new google.maps.LatLng(coord.latitude, coord.longitude);
-                const theicon = 'http://ingenuity.ca/custom/themes/ingenuity/dist/images/homemap.png'
+                const theicon = 'https://ingenuity.ca/custom/themes/ingenuity/dist/images/homemap.png'
                 const marker = new google.maps.Marker({
                     position: new google.maps.LatLng(43.52385109999999, -79.71254299999998),
                     map: this.map,
