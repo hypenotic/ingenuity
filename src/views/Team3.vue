@@ -92,7 +92,7 @@
                         </div>
                         
                     </div>
-                    <div class="button__container"><button class="close-push-panel" v-on:click="closeAllFoundation(member.id)">CLOSE</button></div>
+                    <div class="button__container"><button class="close-push-panel" v-on:click="closeAll(member.id)">CLOSE</button></div>
                 </div>
             </div>
         </div>
@@ -180,7 +180,7 @@ export default {
                 return -c/2 * (t*(t-2) - 1) + b;
             };
 
-            var slides = document.getElementsByClassName("drop-down-panel--leader");
+            var slides = document.getElementsByClassName("drop-down-panel");
             for(var i = 0; i < slides.length; i++) {
                 slides[i].classList.remove("open-dropdown");
             }
