@@ -13,7 +13,7 @@
 
         <div class="team__container--leadership team__container">
             <div v-for="member in this.$store.state.teamList" :key="member.id" v-if="member.meta_box._team_section == 'leadership'">
-                <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image+');background-size: cover;background-position: center center;'" v-on:click="dropDownLeader(member.id)">
+                <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'"  v-on:click="dropDownLeader(member.id)">
                     <div class="team-overlay"></div>
                     <div class="hgroup">
                         <h3 class="team__name" v-html="member.title.rendered">
@@ -25,6 +25,7 @@
                     <!-- member._embedded['wp:featuredmedia'][0].source_url -->
                 </figure>
                 <div class="drop-down-panel drop-down-panel--leader" :id="member.id">
+                    <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
                     <div class="push__longbio animated fadeIn">
                         <div class="split">
                             <div class="split--content" v-html="member.content.rendered"></div>
@@ -41,9 +42,8 @@
                                 
                             </div>
                         </div>
+                    
                         
-                        <p style="text-align:center;font-weight: bold;">At the desk:</p>
-                        <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
                     </div>
                     <div class="button__container"><button class="close-push-panel" v-on:click="closeAll(member.id)">CLOSE</button></div>
                 </div>
@@ -92,7 +92,7 @@
                         </div>
                         
                     </div>
-                    <div class="button__container"><button class="close-push-panel" v-on:click="closeAll(member.id)">CLOSE</button></div>
+                    <div class="button__container"><button class="close-push-panel" v-on:click="closeAllFoundation(member.id)">CLOSE</button></div>
                 </div>
             </div>
         </div>
@@ -216,7 +216,7 @@ export default {
                 return -c/2 * (t*(t-2) - 1) + b;
             };
 
-            var slides = document.getElementsByClassName("drop-down-panel--foundation");
+            var slides = document.getElementsByClassName("drop-down-panel");
             for(var i = 0; i < slides.length; i++) {
                 slides[i].classList.remove("open-dropdown");
             }
@@ -253,13 +253,23 @@ export default {
                 return -c/2 * (t*(t-2) - 1) + b;
             };
 
-            var slides = document.getElementsByClassName("drop-down-panel--leader");
-            for(var i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("open-dropdown");
-            }
             let select = document.getElementById(ID);
-            select.classList.add("open-dropdown");
-            scrollTo(document.documentElement, select.offsetTop+(document.documentElement.clientHeight), 500)
+            if (select.classList.contains('open-dropdown')) {
+                console.log('already open');
+                this.closeAll(ID);
+            } else {
+                var slides = document.getElementsByClassName("drop-down-panel--leader");
+                for(var i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("open-dropdown");
+                }
+                
+                console.log('not open');
+                select.classList.add("open-dropdown");   
+                
+                scrollTo(document.documentElement, select.offsetTop+(document.documentElement.clientHeight), 500)
+            }
+            
+            
         },
         dropDownFoundation: function(ID) {
             
@@ -291,13 +301,21 @@ export default {
                 return -c/2 * (t*(t-2) - 1) + b;
             };
 
-            var slides = document.getElementsByClassName("drop-down-panel--foundation");
-            for(var i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("open-dropdown");
-            }
+            
             let select = document.getElementById(ID);
-            select.classList.add("open-dropdown");
-            scrollTo(document.documentElement, select.offsetTop+(document.documentElement.clientHeight*2.5), 500)
+            if (select.classList.contains('open-dropdown')) {
+                console.log('already open');
+                this.closeAllFoundation(ID);
+            } else {
+                var slides = document.getElementsByClassName("drop-down-panel");
+                for(var i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("open-dropdown");
+                }
+                select.classList.add("open-dropdown");
+                scrollTo(document.documentElement, select.offsetTop+(document.documentElement.clientHeight*2.5), 500)
+            }
+            
+            
         }
 	},
 	created() {
