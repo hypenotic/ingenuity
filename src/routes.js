@@ -17,6 +17,7 @@ export const routes = [
 	{ path: '/projects/:slug', component: Project, props: true },
 	{ path: '/projects', component: Projects, props: true },
 	{ path: '/contact-us', component: Contact, props: true },
+	{ path: '/contact', component: Contact, props: true },
 	{ path: '/news/:id/:slug', component: BlogSingle, props: true },
 	{ path: '/news', component: Blog, props: true },
 	{ path: '/', component: Home, props: true },

@@ -85,6 +85,10 @@ nav {
 		padding: 8px 0;
 		padding-left: 16px;
 		@media #{$bp-large} {
+			font-size: 35px;
+			line-height: 35px;
+		}
+		@media #{$xlarge-and-up} {
 			font-size: 40px;
 			line-height: 40px;
 		}

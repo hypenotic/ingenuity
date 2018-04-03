@@ -87,10 +87,13 @@ export default {
             } else if (this.slug == 'general-contracting') {
                 console.log('GC');
                 pageSlug = 'general-contracting';
-            } else {
+            } else if (this.slug == 'maintenance'){
 				console.log('Maintenance');
                 pageSlug = 'maintenance';
-			}
+			} else {
+                console.log('Pro Services');
+                pageSlug = 'professional-services';
+            }
 
             if (this.$store.state.serviceList != null) {
                 for (let page of this.$store.state.serviceList ) {
