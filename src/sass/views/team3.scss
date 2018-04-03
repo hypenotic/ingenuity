@@ -25,6 +25,8 @@
 
 .foundation-banner {
     background: $white;
+    position: relative;
+    z-index: 30;
     &:after {
 		border-top: solid 30px $white;
 		border-left: solid 30px transparent;
@@ -273,6 +275,22 @@
     }
 }
 
+#member-367 h3 {
+    font-size: 40px;
+    line-height: 40px;
+    margin: 0;
+    @media #{$medium-and-up} {
+        font-size: 120px;
+        line-height: 120px;
+        margin: 0;
+    }
+    @media #{$xlarge-and-up} {
+        font-size: 190px;
+        line-height: 190px;
+        margin: 0;
+    }
+}
+
 .team__single--foundation {
     .team-overlay {
         background: transparent;
@@ -349,6 +367,32 @@
 	}
 }
 
+.drop-down-panel.open-dropdown {
+    button {
+		// display: none;
+		color: $yellow;
+		background-color: $black;
+        border: none;
+        position: fixed;
+        top: 50%;
+        right: 0;
+		padding: 16px;
+		margin-top: 0px;
+		font-family: $lite-headings;
+        font-size: 18px;
+		&:hover {
+            background-color: darken($yellow, 10%); 
+            color: $black;
+            cursor: pointer;
+		}
+		@media #{$bp-small} {
+			display: block;
+			padding: 10px 15px;
+			font-size: modular-scale(0);
+		}
+	}
+}
+
 
 
 #video1 {
@@ -358,6 +402,7 @@
     width: 100%;
     height: auto;
     opacity: 0;
+    opacity: 1;
     z-index: 1000000000;
     transition: all 0.5s ease;
 }

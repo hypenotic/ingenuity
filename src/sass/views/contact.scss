@@ -1,8 +1,9 @@
 .contact-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 50px 30px;
     @media #{$bp-large} {
+        padding: 50px 0;
 		display: flex;
         justify-content: space-between;
         >div {

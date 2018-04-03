@@ -13,7 +13,7 @@
 
         <div class="team__container--leadership team__container">
             <div v-for="member in this.$store.state.teamList" :key="member.id" v-if="member.meta_box._team_section == 'leadership'">
-                <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'"  v-on:click="dropDownLeader(member.id)">
+                <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'"  v-on:click="dropDownLeader(member.id)" :id="'member-'+member.id">
                     <div class="team-overlay"></div>
                     <div class="hgroup">
                         <h3 class="team__name" v-html="member.title.rendered">
@@ -33,12 +33,12 @@
                                 <video id="video1" autoplay loop>
                                     <source :src="member.meta_box._team_movie" type="video/mp4" />
                                 </video>
-                                <div class="base-image">
+                                <!-- <div class="base-image">
                                     <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
                                     <span class="pulse" v-if="member.meta_box._team_movie !=''">
                                         <i class="fas fa-play"></i>
                                     </span>
-                                </div>
+                                </div> -->
                                 
                             </div>
                         </div>
