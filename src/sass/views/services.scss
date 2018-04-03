@@ -211,7 +211,7 @@
 	a {
 		text-decoration: none;
 		display: inline-block;
-		margin: 0 8px;
+		margin: 8px;
 		height: auto;
 		border: 2px solid black;
 		@media #{$small-and-down} {
