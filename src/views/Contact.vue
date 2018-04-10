@@ -63,13 +63,13 @@
             const mapCentre = this.markerCoordinates[0]
             const options   = {
                 // How zoomed in you want the map to start at (always required)
-                zoom: 15,
+                zoom: 16,
 
                 scrollwheel:  false,
                 draggable: isDraggable,
 
                 // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(43.52385109999999, -79.71254299999998), 
+                center: new google.maps.LatLng(43.523291, -79.711384), 
 
                 // How you would like to style the map. 
                 // This is where you would paste any style found on Snazzy Maps.
@@ -78,9 +78,9 @@
             this.map = new google.maps.Map(element, options);
             this.markerCoordinates.forEach((coord) => {
                 const position  = new google.maps.LatLng(coord.latitude, coord.longitude);
-                const theicon = 'https://ingenuity.ca/custom/themes/ingenuity/dist/images/homemap.png'
+                const theicon = 'https://data.ingenuity.ca/custom/uploads/2018/04/homemap.png'
                 const marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(43.52385109999999, -79.71254299999998),
+                    position: new google.maps.LatLng(43.523291, -79.711384),
                     map: this.map,
                     icon: theicon
                 });
