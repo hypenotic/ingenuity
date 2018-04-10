@@ -131,7 +131,7 @@
         background-color: $yellow;
         background-color: #ffd200;
 		position: relative;
-		min-height: 200px;
+		min-height: 150px;
 		width: 100%;
 		// margin-bottom: 25px;
 		// transition: all 0.5s;
@@ -140,7 +140,11 @@
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-		@media #{$bp-large} {
+        @media #{$medium-and-up} {
+			min-height: 250px;
+			border-bottom: 0;
+		}
+		@media #{$large-and-up} {
 			min-height: 300px;
 			border-bottom: 0;
 		}
@@ -207,13 +211,16 @@
         color: $black;
     }
     h3 {
-        font-size: 40px;
-        line-height: 40px;
+        font-size: 20px;
+        line-height: 20px;
         margin: 0;
         @media #{$medium-and-up} {
+			font-size: 70px;
+            line-height: 70px;
+        }
+        @media #{$large-and-up} {
 			font-size: 135px;
             line-height: 135px;
-            margin: 0;
         }
         @media #{$xlarge-and-up} {
 			font-size: 190px;
@@ -222,9 +229,12 @@
 		}
     }
     h4 {
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 16px;
         margin: 0;
+        @media #{$small-and-down} {
+            font-family: 'Audimat3000-Leger';
+        }
         @media #{$medium-and-up} {
 			font-size: 32px;
             line-height: 32px;
@@ -234,6 +244,13 @@
     .team__creds {
         font-size: 14px;
         line-height: 14px; 
+        @media #{$small-and-down} {
+            margin-bottom: 4px;
+        }
+        @media #{$medium-and-down} {
+            display: block;
+            // margin-bottom: 10px;
+        }
         @media #{$medium-and-up} {
 			font-size: 24px;
             line-height: 24px; 
@@ -244,10 +261,14 @@
 
 #member-373 h3,
 #member-377 h3 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 20px;
     margin: 0;
     @media #{$medium-and-up} {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    @media #{$large-and-up} {
         font-size: 120px;
         line-height: 120px;
         margin: 0;
@@ -260,10 +281,14 @@
 }
 
 #member-376 h3 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 20px;
     margin: 0;
     @media #{$medium-and-up} {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    @media #{$large-and-up} {
         font-size: 100px;
         line-height: 100px;
         margin: 0;
@@ -276,10 +301,14 @@
 }
 
 #member-367 h3 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 20px;
     margin: 0;
     @media #{$medium-and-up} {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    @media #{$large-and-up} {
         font-size: 120px;
         line-height: 120px;
         margin: 0;
