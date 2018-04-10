@@ -9,7 +9,7 @@
         </div>
         <div class="footer__news footer__third footer__third--align">
             <div id="mc_embed_signup">
-            <form action="//ingenuity.us12.list-manage.com/subscribe/post?u=0b66a91bd0f3c7ec3d595d5e4&amp;id=fd499abc6d" method="post" class="footer-newsletter validate" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+            <form action="https://ingenuity.us18.list-manage.com/subscribe/post?u=b6b1849cf5d43546d8e96bcc9&amp;id=a3ff15cdbd" method="post" class="footer-newsletter validate" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
                 <h4>Get Ingenuity in your mailbox!</h4>
                 
                 <span class="input input--ingenuity">
@@ -19,7 +19,7 @@
                     </label>
                 </span>
                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;"><input type="text" name="b_0b66a91bd0f3c7ec3d595d5e4_fd499abc6d" tabindex="-1" value=""></div>
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_b6b1849cf5d43546d8e96bcc9_a3ff15cdbd" tabindex="-1" value=""></div>
                 <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
             </form>
             </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="footer__cta footer__third footer__third--align">
             <h4>​Great buildings begin with a conversation.</h4>
-			<router-link to="contact-us">
+			<router-link to="/contact-us">
 				<a><button class="button-down">Let's talk over an espresso!</button></a>
 			</router-link>
             
