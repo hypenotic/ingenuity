@@ -17,7 +17,7 @@
 					<router-link :to="'projects/'" class="rotator-link"><span class="rotator">creativity <span class="sq-ft">/sq ft.</span></span></router-link>
 				</div>
 				<span id="move-over">/sq ft.</span>
-			</h2>
+			</h2>.
 		</div>
 	</div>
 </template>
