@@ -48,7 +48,7 @@ export const actions = {
     },
     getTeam({commit, dispatch, context, state}, info) {
         console.log('getTeam dispatched');
-        axios.get('https://data.ingenuity.ca/wp-json/wp/v2/team?per_page=15&_embed')
+        axios.get('https://data.ingenuity.ca/wp-json/wp/v2/team?per_page=20&_embed')
         .then(function (response) {
             commit(types.SET_TEAM_LIST, response.data);
         })
