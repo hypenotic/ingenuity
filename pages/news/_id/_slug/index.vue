@@ -55,8 +55,10 @@
         head () {
             console.log(this.postInfo.meta_box._post_hero_image);
             return {
+                title: this.postInfo.title.rendered,
                 meta: [
                     { hid: 'og:image', property: 'og:image', content: this.postInfo.meta_box._post_hero_image },
+                    { hid: 'og:title', property: 'og:title', content: this.postInfo.title.rendered },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
                 ]
             }  

@@ -65,8 +65,10 @@
         head () {
             console.log(this.pageInfo.meta_box._service__banner_image);
             return {
+                title: this.pageInfo.title.rendered,
                 meta: [
                     { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._service__banner_image },
+                    { hid: 'og:title', property: 'og:title', content: this.pageInfo.title.rendered },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
                 ]
             }  

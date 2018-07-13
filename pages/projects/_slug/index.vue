@@ -77,8 +77,10 @@ export default {
     head () {
         console.log(this.projectInfo.meta_box._banner_image[0].full_url);
         return {
+            title: this.projectInfo.title.rendered,
             meta: [
                 { hid: 'og:image', property: 'og:image', content: this.projectInfo.meta_box._banner_image[0].full_url },
+                { hid: 'og:title', property: 'og:title', content: this.projectInfo.title.rendered },
                 { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
             ]
         }  
