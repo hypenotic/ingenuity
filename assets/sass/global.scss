@@ -220,7 +220,7 @@ em {
   100% { opacity: 0; }
 }
 .loading-animation {
-    position: absolute;
+    position: fixed;
     background: $yellow;
     text-align: center;
     padding-top: 45vh; 

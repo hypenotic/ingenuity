@@ -58,117 +58,120 @@
 </template>
 
 <script>
-import axios from 'axios';
-// import moment from 'moment';
-import { mapState } from 'vuex'
-import Banner from '~/components/Banner.vue';
-import Nav from '~/components/Nav.vue';
-import Footer from '~/components/Footer.vue';
-function html2text(html) {
-    var tag = document.createElement('div');
-    tag.innerHTML = html;
-    
-    return tag.innerText;
-}
-export default {
-    fetch ({store}){
-        return store.dispatch('dummy');
-    },
-    head () {
-        console.log(this.projectInfo.meta_box._banner_image[0].full_url);
-        return {
-            title: this.projectInfo.title.rendered,
-            meta: [
-                { hid: 'og:image', property: 'og:image', content: this.projectInfo.meta_box._banner_image[0].full_url },
-                { hid: 'og:title', property: 'og:title', content: this.projectInfo.title.rendered },
-                { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
-            ]
-        }  
-    },
-    components: {
-        appBanner: Banner,
-        appNav: Nav,
-        appFooter: Footer,
-    },
-    data() {
-        return {
-            errors: [],
-            fullPath: this.$route.fullPath,
-            slug: this.$route.params.slug,
-            data: null,
-            projectNum: null,
-            prev: '',
-            next: '',
-            pageData: null
-        }
-    },
-    filters: {
-    },
-    computed: {
-        projectInfo: function(){
-            if (this.$store.state.projectList != null) {
-                let counter = 0;
-                for (let page of this.$store.state.projectList ) {
-                    counter++;
-                    this.projectNum = counter;
-                    if (page.slug == this.slug) {
-                        console.log(page);
-                        // this.data = page;
-                        this.pageData = page;
-                        return page;
-                        break;
+    import { helper } from '~/plugins/helper.js';
+    import axios from 'axios';
+    // import moment from 'moment';
+    import { mapState } from 'vuex'
+    import Banner from '~/components/Banner.vue';
+    import Nav from '~/components/Nav.vue';
+    import Footer from '~/components/Footer.vue';
+    function html2text(html) {
+        var tag = document.createElement('div');
+        tag.innerHTML = html;
+
+        return tag.innerText;
+    }
+    export default {
+        fetch ({store}){
+            return store.dispatch('dummy');
+        },
+        head () {
+            console.log(this.projectInfo.meta_box._banner_image[0].full_url);
+            return {
+                title: helper.decodeHtmlEntity(this.projectInfo.title.rendered),
+                meta: [
+                    { hid: 'og:image', property: 'og:image', content: this.projectInfo.meta_box._banner_image[0].full_url },
+                    { hid: 'og:title', property: 'og:title', content: helper.decodeHtmlEntity(this.projectInfo.title.rendered) },
+                    { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
+                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.projectInfo.excerpt.rendered))},
+                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.projectInfo.excerpt.rendered)) }
+                ]
+            }  
+        },
+        components: {
+            appBanner: Banner,
+            appNav: Nav,
+            appFooter: Footer,
+        },
+        data() {
+            return {
+                errors: [],
+                fullPath: this.$route.fullPath,
+                slug: this.$route.params.slug,
+                data: null,
+                projectNum: null,
+                prev: '',
+                next: '',
+                pageData: null
+            }
+        },
+        filters: {
+        },
+        computed: {
+            projectInfo: function(){
+                if (this.$store.state.projectList != null) {
+                    let counter = 0;
+                    for (let page of this.$store.state.projectList ) {
+                        counter++;
+                        this.projectNum = counter;
+                        if (page.slug == this.slug) {
+                            console.log(page);
+                            // this.data = page;
+                            this.pageData = page;
+                            return page;
+                            break;
+                        }
                     }
+                } else {
+                    return null;
                 }
-            } else {
-                return null;
-            }
+            },
+            previousProject: function() {
+                const current = this.projectNum;
+                const max = this.$store.state.projectList.length;
+                if (current == 1) {
+                    let list = this.$store.state.projectList;
+                    // console.log(list, max);
+                    let item = list[max-1];
+                    // console.log('hey', item)
+                    this.prev = item.title.rendered;
+                    return item.slug;
+                } else {
+                    let previous = current - 1;
+                    let indexNum = previous - 1;
+                    let list = this.$store.state.projectList;
+                    let item = list[indexNum];
+                    // console.log(item);
+                    this.prev = item.title.rendered;
+                    return item.slug;
+                }
+            },
+            nextProject: function() {
+                const current = this.projectNum;
+                const max = this.$store.state.projectList.length;
+                if (current == max) {
+                    let list = this.$store.state.projectList;
+                    // console.log(list, max);
+                    let item = list[0];
+                    this.next = item.title.rendered;
+                    return item.slug;
+                    // return null;
+                } else {
+                    let next = current + 1;
+                    let indexNum = next - 1;
+                    let list = this.$store.state.projectList;
+                    let item = list[indexNum];
+                    // console.log(item);
+                    this.next = item.title.rendered;
+                    return item.slug;
+                }
+            },
         },
-        previousProject: function() {
-            const current = this.projectNum;
-            const max = this.$store.state.projectList.length;
-            if (current == 1) {
-                let list = this.$store.state.projectList;
-                // console.log(list, max);
-                let item = list[max-1];
-                // console.log('hey', item)
-                this.prev = item.title.rendered;
-                return item.slug;
-            } else {
-                let previous = current - 1;
-                let indexNum = previous - 1;
-                let list = this.$store.state.projectList;
-                let item = list[indexNum];
-                // console.log(item);
-                this.prev = item.title.rendered;
-                return item.slug;
-            }
+        methods: {
         },
-        nextProject: function() {
-            const current = this.projectNum;
-            const max = this.$store.state.projectList.length;
-            if (current == max) {
-                let list = this.$store.state.projectList;
-                // console.log(list, max);
-                let item = list[0];
-                this.next = item.title.rendered;
-                return item.slug;
-                // return null;
-            } else {
-                let next = current + 1;
-                let indexNum = next - 1;
-                let list = this.$store.state.projectList;
-                let item = list[indexNum];
-                // console.log(item);
-                this.next = item.title.rendered;
-                return item.slug;
-            }
+        created() {
         },
-    },
-	methods: {
-	},
-	created() {
-	},
-};
+    };
 </script>
 
 <style lang="scss">

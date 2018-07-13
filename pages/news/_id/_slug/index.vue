@@ -36,8 +36,8 @@
 </template>
 
 <script>
+    import { helper } from '~/plugins/helper.js';
     import axios from 'axios';
-    // import moment from 'moment';
     import { mapState } from 'vuex'
     import Banner from '~/components/Banner.vue';
     import Nav from '~/components/Nav.vue';
@@ -55,11 +55,13 @@
         head () {
             console.log(this.postInfo.meta_box._post_hero_image);
             return {
-                title: this.postInfo.title.rendered,
+                title: helper.decodeHtmlEntity(this.postInfo.title.rendered),
                 meta: [
                     { hid: 'og:image', property: 'og:image', content: this.postInfo.meta_box._post_hero_image },
-                    { hid: 'og:title', property: 'og:title', content: this.postInfo.title.rendered },
+                    { hid: 'og:title', property: 'og:title', content: helper.decodeHtmlEntity(this.postInfo.title.rendered) },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
+                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.postInfo.excerpt.rendered))},
+                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.postInfo.excerpt.rendered)) }
                 ]
             }  
         },

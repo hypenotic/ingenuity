@@ -21,6 +21,7 @@
 </template>
 
 <script>
+    import { helper } from '~/plugins/helper.js';
     import Nav from '~/components/Nav.vue';
     import { mapState } from 'vuex';
     export default {

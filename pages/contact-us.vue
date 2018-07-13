@@ -22,6 +22,7 @@
 </template>
 
 <script>
+    import { helper } from '~/plugins/helper.js';
     import Footer from '~/components/Footer.vue';
     import Nav from '~/components/Nav.vue';
     export default {

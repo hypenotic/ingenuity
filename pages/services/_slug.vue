@@ -45,6 +45,7 @@
 </template>
 
 <script>
+    import { helper } from '~/plugins/helper.js';
     import axios from 'axios';
     import { mapState } from 'vuex';
     import Nav from '~/components/Nav';
@@ -65,11 +66,13 @@
         head () {
             console.log(this.pageInfo.meta_box._service__banner_image);
             return {
-                title: this.pageInfo.title.rendered,
+                title: helper.decodeHtmlEntity(this.pageInfo.title.rendered),
                 meta: [
                     { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._service__banner_image },
-                    { hid: 'og:title', property: 'og:title', content: this.pageInfo.title.rendered },
+                    { hid: 'og:title', property: 'og:title', content: helper.decodeHtmlEntity(this.pageInfo.title.rendered) },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
+                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered))},
+                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered)) }
                 ]
             }  
         },
