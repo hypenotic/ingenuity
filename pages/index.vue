@@ -37,7 +37,7 @@
                     { hid: 'og:title', property: 'og:title', content: "Ingenuity" },
                     { hid: 'og:type', property: 'og:type', content: 'website' },
                     { hid: 'og:url', property: 'og:url', content: 'http://172.104.208.23/' },
-                    { hid: 'og:image', property: 'og:image', content: '/logo.png' },
+                    { hid: 'og:image', property: 'og:image', content: 'http://172.104.208.23/logo.png' },
                     { hid: 'description', name: 'description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' }
                 ],
             }
