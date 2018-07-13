@@ -3,18 +3,15 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _16739a5e = () => import('..\\pages\\projects\\index.vue' /* webpackChunkName: "pages_projects_index" */).then(m => m.default || m)
-const _0fb8aaef = () => import('..\\pages\\team3.vue' /* webpackChunkName: "pages_team3" */).then(m => m.default || m)
-const _1b505ba6 = () => import('..\\pages\\page.vue' /* webpackChunkName: "pages_page" */).then(m => m.default || m)
+const _f995e17c = () => import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages_contact-us" */).then(m => m.default || m)
+const _44f2d026 = () => import('..\\pages\\about-us\\index.vue' /* webpackChunkName: "pages_about-us_index" */).then(m => m.default || m)
 const _41fc0b29 = () => import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages_blog_index" */).then(m => m.default || m)
-const _69c97414 = () => import('..\\pages\\home.vue' /* webpackChunkName: "pages_home" */).then(m => m.default || m)
-const _54f1246d = () => import('..\\pages\\services\\index.vue' /* webpackChunkName: "pages_services_index" */).then(m => m.default || m)
-const _33c5274e = () => import('..\\pages\\contact.vue' /* webpackChunkName: "pages_contact" */).then(m => m.default || m)
-const _0faa936e = () => import('..\\pages\\team2.vue' /* webpackChunkName: "pages_team2" */).then(m => m.default || m)
-const _64e45f88 = () => import('..\\pages\\about\\index.vue' /* webpackChunkName: "pages_about_index" */).then(m => m.default || m)
-const _f6bcb718 = () => import('..\\pages\\team.vue' /* webpackChunkName: "pages_team" */).then(m => m.default || m)
-const _21ca3d48 = () => import('..\\pages\\projects\\single\\SingleProject.vue' /* webpackChunkName: "pages_projects_single_SingleProject" */).then(m => m.default || m)
-const _7ee99e2e = () => import('..\\pages\\blog\\single\\Single.vue' /* webpackChunkName: "pages_blog_single_Single" */).then(m => m.default || m)
+const _1ba07758 = () => import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages_news_index" */).then(m => m.default || m)
+const _16739a5e = () => import('..\\pages\\projects\\index.vue' /* webpackChunkName: "pages_projects_index" */).then(m => m.default || m)
+const _27f527ee = () => import('..\\pages\\about-us\\the-team.vue' /* webpackChunkName: "pages_about-us_the-team" */).then(m => m.default || m)
+const _533a8325 = () => import('..\\pages\\services\\_slug.vue' /* webpackChunkName: "pages_services__slug" */).then(m => m.default || m)
+const _724ea6d9 = () => import('..\\pages\\projects\\_slug\\index.vue' /* webpackChunkName: "pages_projects__slug_index" */).then(m => m.default || m)
+const _1c714bc8 = () => import('..\\pages\\news\\_id\\_slug\\index.vue' /* webpackChunkName: "pages_news__id__slug_index" */).then(m => m.default || m)
 const _26ea876a = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 
@@ -76,19 +73,14 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/projects",
-			component: _16739a5e,
-			name: "projects"
+			path: "/contact-us",
+			component: _f995e17c,
+			name: "contact-us"
 		},
 		{
-			path: "/team3",
-			component: _0fb8aaef,
-			name: "team3"
-		},
-		{
-			path: "/page",
-			component: _1b505ba6,
-			name: "page"
+			path: "/about-us",
+			component: _44f2d026,
+			name: "about-us"
 		},
 		{
 			path: "/blog",
@@ -96,44 +88,34 @@ export function createRouter () {
 			name: "blog"
 		},
 		{
-			path: "/home",
-			component: _69c97414,
-			name: "home"
+			path: "/news",
+			component: _1ba07758,
+			name: "news"
 		},
 		{
-			path: "/services",
-			component: _54f1246d,
-			name: "services"
+			path: "/projects",
+			component: _16739a5e,
+			name: "projects"
 		},
 		{
-			path: "/contact",
-			component: _33c5274e,
-			name: "contact"
+			path: "/about-us/the-team",
+			component: _27f527ee,
+			name: "about-us-the-team"
 		},
 		{
-			path: "/team2",
-			component: _0faa936e,
-			name: "team2"
+			path: "/services/:slug?",
+			component: _533a8325,
+			name: "services-slug"
 		},
 		{
-			path: "/about",
-			component: _64e45f88,
-			name: "about"
+			path: "/projects/:slug",
+			component: _724ea6d9,
+			name: "projects-slug"
 		},
 		{
-			path: "/team",
-			component: _f6bcb718,
-			name: "team"
-		},
-		{
-			path: "/projects/single/SingleProject",
-			component: _21ca3d48,
-			name: "projects-single-SingleProject"
-		},
-		{
-			path: "/blog/single/Single",
-			component: _7ee99e2e,
-			name: "blog-single-Single"
+			path: "/news/:id/:slug?",
+			component: _1c714bc8,
+			name: "news-id-slug"
 		},
 		{
 			path: "/",

@@ -1,27 +1,29 @@
 <template>		
-	<div v-if="pageInfo != null">
+    <div>
         <app-banner :page="pageInfo"></app-banner>
-		<div class="main-wrapper"> 
-			<section class="main-content standard-center"> 
-				<div class="blog-single-post wow fadeIn" v-for="post in this.$store.state.blogList" :key="post.id">
-					<router-link :to="'/news/' + post.id + '/' + post.slug" >
-						<h3 class="blog-single__title" v-html="post.title.rendered"></h3>
-					</router-link>
-					<img :src="post.meta_box._post_hero_image" :alt="post.title.rendered">
-					<p v-html="post.excerpt.rendered"></p>
-					<router-link :to="'/news/' + post.id + '/' + post.slug" class="single-post__read-more">Read more...</router-link>
-				</div>
-				<!-- <p class="pagination-links">pagination links</p> -->
-			</section> <!-- ARTICLE WRAP ends here -->
-		</div> <!-- contentWrapper ends here -->
+        <div class="main-wrapper"> 
+            <section class="main-content standard-center"> 
+                <div class="blog-single-post wow fadeIn" v-for="post in this.$store.state.blogList" :key="post.id">
+                    <router-link :to="'/news/' + post.id + '/' + post.slug" >
+                        <h3 class="blog-single__title" v-html="post.title.rendered"></h3>
+                    </router-link>
+                    <img :src="post.meta_box._post_hero_image" :alt="post.title.rendered">
+                    <p v-html="post.excerpt.rendered"></p>
+                    <router-link :to="'/news/' + post.id + '/' + post.slug" class="single-post__read-more">Read more...</router-link>
+                </div>
+                <!-- <p class="pagination-links">pagination links</p> -->
+            </section> <!-- ARTICLE WRAP ends here -->
+        </div> <!-- contentWrapper ends here -->
+        <app-footer></app-footer>
     </div>
-    <div v-else></div>
 </template>
 
 <script>
 import axios from 'axios';
 import { mapState } from 'vuex'
-import Banner from '../../components/Banner.vue';
+import Banner from '~/components/Banner.vue';
+import Footer from '~/components/Footer.vue';
+import Nav from '~/components/Nav.vue';
 function html2text(html) {
     var tag = document.createElement('div');
     tag.innerHTML = html;
@@ -29,16 +31,21 @@ function html2text(html) {
     return tag.innerText;
 }
 export default {
-	metaInfo () {
-      return {
-        title: 'Ingenuity | News',
-        meta: [
-            { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
-        ]
-      }
+    fetch ({store}){
+        return store.dispatch('dummy');
+    },
+    metaInfo () {
+        return {
+            title: 'Ingenuity | News',
+            meta: [
+                { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+            ]
+        }
     },
     components: {
-        appBanner: Banner
+        appBanner: Banner,
+        appFooter: Footer,
+        appNav: Nav,
     },
 	data() {
 		return {
@@ -73,10 +80,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-@import '../../sass/variables.scss';
-@import '../../sass/views/news.scss';
+@import '~/assets/sass/variables.scss';
+@import '~/assets/sass/views/news.scss';
 
 
 </style>

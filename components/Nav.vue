@@ -11,24 +11,24 @@
 				</span>
 				<ul>
 					<li v-for="child in page.children " :key="child.id" >
-						<router-link :to="'/services/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+						<nuxt-link :to="'/services/' + child.object_slug"  class="" v-html="child.title"> </nuxt-link>
 					</li>
 				</ul>
 			</li>
 			<li v-else-if="page.hasOwnProperty('children')" :key="page.id" class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
-				<router-link :to="'/' + page.object_slug"  class="" v-html="page.title">
-				</router-link>
+				<nuxt-link :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</nuxt-link>
 				<ul>
 					<li v-for="child in page.children " :key="child.id" >
-						<router-link :to="'/about/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+						<nuxt-link :to="'/about-us/' + child.object_slug"  class="" v-html="child.title"> </nuxt-link>
 					</li>
 				</ul>
 			</li>
 			<li v-else class="menu-item-no-children" v-on:click="showMobileMenu = !showMobileMenu">
-				<router-link v-if="page.object_slug != 'home'" :to="'/' + page.object_slug"  class="" v-html="page.title">
-				</router-link>
-				<router-link v-else :to="'/'"  class="" v-html="page.title">
-				</router-link>
+				<nuxt-link v-if="page.object_slug != 'home'" :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</nuxt-link>
+				<nuxt-link v-else :to="'/'"  class="" v-html="page.title">
+				</nuxt-link>
 			</li>
 		</ul>
 	</div>
@@ -36,8 +36,7 @@
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 			<nav class="uk-navbar light-nav">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
-					<router-link v-else to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></router-link>
+                                    <nuxt-link to="/"><img src="~/assets/images/logo.svg" alt="Ingenuity" class="nav-logo"><span class="logo-text">INGENUITY</span></nuxt-link>
 				</div>
 				<div class="uk-navbar-right">
 					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
@@ -58,24 +57,24 @@
 				</span>
 				<ul>
 					<li v-for="child in page.children " :key="child.id" >
-						<router-link :to="'/services/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+						<nuxt-link :to="'/services/' + child.object_slug"  class="" v-html="child.title"> </nuxt-link>
 					</li>
 				</ul>
 			</li>
 			<li v-else-if="page.hasOwnProperty('children')" :key="page.id" class="menu-item-has-children" v-on:click="showMobileMenu = !showMobileMenu">
-				<router-link :to="'/' + page.object_slug"  class="" v-html="page.title">
-				</router-link>
+				<nuxt-link :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</nuxt-link>
 				<ul>
 					<li v-for="child in page.children " :key="child.id" >
-						<router-link :to="'/about/' + child.object_slug"  class="" v-html="child.title"> </router-link>
+						<nuxt-link :to="'/about-us/' + child.object_slug"  class="" v-html="child.title"> </nuxt-link>
 					</li>
 				</ul>
 			</li>
 			<li v-else class="menu-item-no-children" v-on:click="showMobileMenu = !showMobileMenu">
-				<router-link v-if="page.object_slug != 'home'" :to="'/' + page.object_slug"  class="" v-html="page.title">
-				</router-link>
-				<router-link v-else :to="'/'"  class="" v-html="page.title">
-				</router-link>
+				<nuxt-link v-if="page.object_slug != 'home'" :to="'/' + page.object_slug"  class="" v-html="page.title">
+				</nuxt-link>
+				<nuxt-link v-else :to="'/'"  class="" v-html="page.title">
+				</nuxt-link>
 			</li>
 		</ul>
 	</div>
@@ -83,8 +82,7 @@
 		<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 			<nav class="uk-navbar dark-nav" v-if="$route.path == '/news'">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/news'" to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+					<nuxt-link to="/"><img src="~/assets/images/logo.svg" alt="Ingenuity" class="nav-logo"></nuxt-link>
 				</div>
 				<div class="uk-navbar-right">
 					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
@@ -92,8 +90,7 @@
 			</nav>
 			<nav v-else class="uk-navbar light-nav">
 				<div class="uk-navbar-left">
-					<router-link v-if="$route.path !== '/'" to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
-					<router-link v-else to="/"><img src="https://data.ingenuity.ca/custom/themes/ingenuity/dist/images/yellow-logo.png" alt="Ingenuity" class="nav-logo"></router-link>
+                                    <nuxt-link to="/"><img src="~/assets/images/logo.svg" alt="Ingenuity" class="nav-logo"></nuxt-link>
 				</div>
 				<div class="uk-navbar-right">
 					<button v-on:click="showMobileMenu = !showMobileMenu"><i class="fas fa-bars"></i><span id="nav-menu-text">Menu</span></button>
@@ -109,78 +106,78 @@
     	props: ['menuLinks','menuColor'],
         data: function () {
             return {
-				// menuLinks: [] 
-				scrolled: false,
-				showMobileMenu: false,
-				menuCheck: false
+                scrolled: false,
+                showMobileMenu: false,
+                menuCheck: false,
             }
-		},
+        },
         methods: {
-			handleScroll: function (event) {
-				console.log(window.pageYOffset);
-				if (window.addEventListener){
-					if (window.pageYOffset > 20) {
-						this.scrolled = true;
-					} else {
-						this.scrolled = false;	
-					}
-				} else if (window.attachEvent){
-					if (window.scrollY > 20) {
-						this.scrolled = true;
-					} else {
-						this.scrolled = false;	
-					}
-				} else {
-					if (window.pageYOffset > 20) {
-						this.scrolled = true;
-					} else {
-						this.scrolled = false;	
-					}
-				}
-			},
-			gaContactClick(clickName) {
+            handleScroll: function (event) {
+                if(process.browser){
+                    console.log(window.pageYOffset);
+                    if (window.addEventListener){
+                        if (window.pageYOffset > 20) {
+                            this.scrolled = true;
+                        } else {
+                            this.scrolled = false;	
+                        }
+                    } else if (window.attachEvent){
+                        if (window.scrollY > 20) {
+                            this.scrolled = true;
+                        } else {
+                            this.scrolled = false;	
+                        }
+                    } else {
+                        if (window.pageYOffset > 20) {
+                            this.scrolled = true;
+                        } else {
+                            this.scrolled = false;	
+                        }
+                    }
+                }
+            },
+            gaContactClick(clickName) {
                 this.$ga.event('Contact Button', 'click', clickName, 1);
                 // console.log(clickName);
-			},
-			menuStatus() {
-
-			}
-		},
-		created: function () {
-			window.addEventListener('scroll', this.handleScroll);
-			if (window.addEventListener){
-				console.log('Option 1');
-				window.addEventListener('scroll', this.handleScroll);
-			} else if (window.attachEvent){
-				console.log('Option 2');
-				window.attachEvent('scroll', this.handleScroll);
-			} else {
-				console.log('Option 3');
-				jQuery(window).on('scroll', this.handleScroll);
-				// console.log('IE');
-			}
-		},
-		destroyed: function () {
-			window.removeEventListener('scroll', this.handleScroll);
-			if (window.addEventListener){
-				window.removeEventListener('scroll', this.handleScroll);
-			} else if (window.attachEvent){
-				window.detachEvent('scroll', this.handleScroll);
-			} else {
-				window.removeEventListener('scroll', this.handleScroll);
-			}
-		},
-		computed: {
-			contactCheck: function (slug) {
-				if (slug !== 'home' || slug == 'contact') {
-					return true;
-				}
-			}
-		}
+            },
+        },
+        created: function () {
+            if(process.browser){
+                window.addEventListener('scroll', this.handleScroll);
+                if (window.addEventListener){
+                    console.log('Option 1');
+                    window.addEventListener('scroll', this.handleScroll);
+                } else if (window.attachEvent){
+                    console.log('Option 2');
+                    window.attachEvent('scroll', this.handleScroll);
+                } else {
+                    console.log('Option 3');
+                    jQuery(window).on('scroll', this.handleScroll);
+                    // console.log('IE');
+                }
+            }
+        },
+        destroyed: function () {
+            window.removeEventListener('scroll', this.handleScroll);
+            if (window.addEventListener){
+                window.removeEventListener('scroll', this.handleScroll);
+            } else if (window.attachEvent){
+                window.detachEvent('scroll', this.handleScroll);
+            } else {
+                window.removeEventListener('scroll', this.handleScroll);
+            }
+        },
+        computed: {
+            contactCheck: function (slug) {
+                if (slug !== 'home' || slug == 'contact') {
+                    return true;
+                }
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
-	@import '../sass/variables.scss';
-	@import '../sass/components/nav.scss';
+	@import '~/assets/sass/variables.scss';
+	@import '~/assets/sass/components/nav.scss';
 </style>

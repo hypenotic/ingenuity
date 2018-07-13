@@ -1,82 +1,73 @@
 <template>
     <div>
-        <app-loader></app-loader>
-        <div v-if="this.$store.state.pageList != null">
-            <app-nav v-bind:menu-links="menuLinks"></app-nav>
-            <div class="home-hero" id="header-check">
-                <div class="video-overlay">
-                </div>
-                <video playsinline autoplay muted loop poster="https://data.ingenuity.ca/custom/uploads/2018/02/poster.jpg"  id="bgvid">
-                    <source media="(max-width: 450px)" src="src/assets/video/ingenuity_home.mp4" type="video/mp4">
-                    <source media="(min-width: 450px)" src="src/assets/video/ingenuity_fast.mp4" type="video/mp4">			
-                </video>
-                <div class="hgroup rw-wrapper">
-                    <h2 class="rw-sentence">
-                        A <router-link :to="'services'+'/'+'design-build'" class="sentence-link">Design Build</router-link> & <router-link :to="'services/general-contracting/'" class="sentence-link">General Contracting</router-link> <router-link :to="'about-us/the-team'" class="sentence-link">team</router-link> that <router-link :to="'about-us/'" class="sentence-link">believes</router-link> in
-                        <div class="rw-words rw-words-1">
-                            <router-link :to="'projects/'" class="rotator-link"><span class="rotator">happiness <span class="sq-ft">/sq ft.</span></span></router-link>
-                            <router-link :to="'projects/'" class="rotator-link"><span class="rotator">craft <span class="sq-ft">/sq ft.</span></span></router-link>
-                            <router-link :to="'projects/'" class="rotator-link"><span class="rotator">productivity <span class="sq-ft">/sq ft.</span></span></router-link>
-                            <router-link :to="'projects/'" class="rotator-link"><span class="rotator">detail <span class="sq-ft">/sq ft.</span></span></router-link>
-                            <router-link :to="'projects/'" class="rotator-link"><span class="rotator">creativity <span class="sq-ft">/sq ft.</span></span></router-link>
-                        </div>
-                        <span id="move-over">/sq ft.</span>
-                    </h2>.
-                </div>
+        <app-nav v-if="this.$store.state.pageList != null" v-bind:menu-links="menuLinks"></app-nav>
+        <div class="home-hero" id="header-check">
+            <div class="video-overlay">
             </div>
-            <app-footer v-if="this.$route.path != '/'"></app-footer>
-        </div> 
-        <div v-else>
-            <transition name="fade">
-                <div class="uk-container uk-container-expand loading-animation">
-                    <div class="ldr">
-                        <div class="ldr-blk"></div>
-                        <div class="ldr-blk an_delay"></div>
-                        <div class="ldr-blk an_delay"></div>
-                        <div class="ldr-blk"></div>
-                    </div>
-                </div>
-            </transition>  
+            <div class="video">
+                <video playsinline autoplay muted loop poster="https://data.ingenuity.ca/custom/uploads/2018/02/poster.jpg" id="bgvid">
+<!--                    <source media="(max-width: 450px)" src="src/assets/video/ingenuity_home.mp4" type="video/mp4">-->
+                    <source media="(min-width: 450px)" src="~/assets/videos/ingenuity_fast.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hgroup rw-wrapper">
+                <h2 class="rw-sentence">
+                    A <nuxt-link :to="'services'+'/'+'design-build'" class="sentence-link">Design Build</nuxt-link> &amp; <nuxt-link :to="'services/general-contracting/'" class="sentence-link">General Contracting</nuxt-link>&nbsp;<nuxt-link :to="'about-us/the-team'" class="sentence-link">team</nuxt-link> that <nuxt-link :to="'about-us/'" class="sentence-link">believes</nuxt-link> in <nuxt-link :to="'projects/'" class="rotator-link"><span class="replace-me"> happiness, craft, productivity, detail, creativity</span></nuxt-link><span class="sq-ft">&nbsp;/sq&nbsp;ft.</span>
+                    
+                </h2>.
+            </div>
         </div>
     </div>
-    
 </template>
 
 <script>
-    import es6Promise from 'es6-promise';
-    es6Promise.polyfill();
-    import 'es6-promise/auto'
-    import axios from 'axios';
-    import Nav from '../components/Nav.vue';
-    import Footer from '../components/Footer.vue'; 
-    import Loader from '../components/Loader.vue'; 
+    import Nav from '~/components/Nav.vue';
     import { mapState } from 'vuex';
     export default {
+        fetch ({store}){
+            return store.dispatch('dummy');
+        },
         components: {
             appNav: Nav,
-            appFooter: Footer,
-            appLoader: Loader
+        },
+        head () {
+            return {
+                title: "Ingenuity",
+                meta: [
+                    { hid: 'og:title', property: 'og:title', content: "Ingenuity" },
+                    { hid: 'og:type', property: 'og:type', content: 'website' },
+                    { hid: 'og:url', property: 'og:url', content: 'http://172.104.208.23/' },
+                    { hid: 'og:image', property: 'og:image', content: '/logo.svg' },
+                    { hid: 'description', name: 'description', content: 'Hello World Index Page!!!' }
+                ],
+            }
         },
         data: function () {
             return {
-                loading: true,
                 menuLinks: [],
                 menuColor: "",
                 pages: [],
                 homePage: [],
-                aboutPage: []    
+                aboutPage: [],
             }
         },
-        created: function() {
-           
+        mounted: function(){
+            var replace = new ReplaceMe(document.querySelector('.replace-me'), {
+                animation: 'animated fadeInDown',                       // Animation class or classes
+                speed: 5000,                                        // Delay between each phrase in miliseconds
+                separator: ',',                                     // Phrases separator
+                hoverStop: false,                                   // Stop rotator on phrase hover
+                clickChange: false,                                 // Chnage phrase on click
+                loopCount: 'infinite',                              // Loop Count - 'infinite' or number
+                autoRun: true,                                      // Run rotator automatically
+                onInit: false,                                      // Function
+                onChange: false,                                    // Function
+                onComplete: false                                   // Function
+            });
         }
     }
 </script>
 
 <style lang="scss">
-    @import '../sass/variables.scss';
-    @import '../sass/animate.scss';
-    @import '../sass/typography.scss';
-    @import '../sass/global.scss';
-    @import '../sass/views/home.scss';
+    @import '~/assets/sass/views/home.scss';
 </style>

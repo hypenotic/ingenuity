@@ -48,10 +48,10 @@
 
 <style lang="scss" scoped>
 
-/*Import Variables*/
-@import '../sass/variables.scss';
-    
-    h1 { color:red;}
+    @import '~/assets/sass/variables.scss';
+    @import '~/assets/sass/animate.scss';
+    @import '~/assets/sass/typography.scss';
+    @import '~/assets/sass/global.scss';
     
 
 

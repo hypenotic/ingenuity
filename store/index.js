@@ -76,10 +76,15 @@ const store = () => {
             }
         },
         actions:{
+            async nuxtServerInit({dispatch}){
+                console.log('nuxtServerInit');
+                await dispatch("checkMenuState");
+            },
             getPages({commit, dispatch, context, state}, info) {
                 console.log('getPages dispatched');
                 axios.get('https://data.ingenuity.ca/wp-json/wp/v2/pages?_embed')
                     .then(function (response) {
+                    //console.log(response);
                     commit(SET_PAGE_LIST, response.data);
                 })
                     .catch(function (error) {
@@ -151,15 +156,27 @@ const store = () => {
                 })
             },
             checkMenuState({commit, dispatch, context, state}, info) {
-                console.log('checkMenuState dispatched');
-                dispatch("getMenu", {'type': 'initial-load'});
-                dispatch("getPages", {'type': 'initial-load'});
-                dispatch("getProjects", {'type': 'initial-load'});
-                dispatch("getBlogPosts", {'type': 'initial-load'});
-                dispatch("getContacts", {'type': 'initial-load'});
-                dispatch("getServices", {'type': 'initial-load'});
-                dispatch("getTeam", {'type': 'initial-load'});
-                commit("SET_LOADED");
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        dispatch("getMenu", {'type': 'initial-load'});
+                        dispatch("getPages", {'type': 'initial-load'});
+                        dispatch("getProjects", {'type': 'initial-load'});
+                        dispatch("getBlogPosts", {'type': 'initial-load'});
+                        dispatch("getContacts", {'type': 'initial-load'});
+                        dispatch("getServices", {'type': 'initial-load'});
+                        dispatch("getTeam", {'type': 'initial-load'});
+                        commit("SET_LOADED");
+                        resolve()
+                    }, 1000)
+                })
+            },
+            dummy({commit, dispatch, context, state}, info) {
+                console.log("dummy");
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve()
+                    }, 1000)
+                })
             },
         }
     })

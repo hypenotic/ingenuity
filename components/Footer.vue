@@ -3,8 +3,8 @@
         <div class="footer__blog footer__third">
             <h3><a href="<?php echo get_home_url(); ?>/news">Recent Posts</a></h3>
             <p v-for="post in this.$store.state.blogList" :key="post.id">
-                    <router-link :to="'/news/' + post.id + '/' + post.slug"  v-html="post.title.rendered">
-                </router-link>
+                    <nuxt-link :to="'/news/' + post.id + '/' + post.slug"  v-html="post.title.rendered">
+                </nuxt-link>
             </p>
         </div>
         <div class="footer__news footer__third footer__third--align">
@@ -28,9 +28,9 @@
         </div>
         <div class="footer__cta footer__third footer__third--align">
             <h4>​Great buildings begin with a conversation.</h4>
-			<router-link to="/contact-us">
+			<nuxt-link to="/contact-us">
 				<a><button class="button-down">Let's talk over an espresso!</button></a>
-			</router-link>
+			</nuxt-link>
             
         </div>
     </footer>
@@ -63,7 +63,7 @@
 
 <style lang="scss" scoped>
 
-@import '../sass/variables.scss';
-@import '../sass/components/footer.scss';
+@import '~/assets/sass/variables.scss';
+@import '~/assets/sass/components/footer.scss';
 
 </style>
