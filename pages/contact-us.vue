@@ -28,12 +28,13 @@
         fetch ({store}){
             return store.dispatch('dummy');
         },
-        metaInfo: {
-            // title will be injected into parent titleTemplate
-            title: 'Ingenuity | Contact Us',
-            meta: [
-            { name: 'description', content: "Great buildings begin with a conversation. Let's get in touch!" }
-            ]
+        head () {
+            console.log(this.pageInfo.meta_box._page_hero_image);
+            return {
+                meta: [
+                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image },
+                ]
+            }  
         },
         components: {
             // theContent: Content,

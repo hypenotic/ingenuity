@@ -37,6 +37,13 @@
         fetch ({store}){
             return store.dispatch('dummy');
         },
+        head () {
+            return {
+                meta: [
+                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image  },
+                ]
+            }  
+        },
         components: {
             appBanner: Banner,
             appNav: Nav,
@@ -56,7 +63,7 @@
                 if (this.$store.state.pageList != null) {
                     for (let page of this.$store.state.pageList ) {
                         if (page.slug == 'projects') {
-                            console.log(page);
+                            //console.log(page);
                             this.pageData = page;
                             return page;
                             break;

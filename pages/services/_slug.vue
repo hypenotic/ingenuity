@@ -62,6 +62,14 @@
         fetch ({store}){
             return store.dispatch('dummy');
         },
+        head () {
+            console.log(this.pageInfo.meta_box._service__banner_image);
+            return {
+                meta: [
+                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._service__banner_image },
+                ]
+            }  
+        },
         components: {
             appBanner: Banner,
             appNav: Nav,
@@ -69,6 +77,7 @@
         },
         data() {
             return {
+                menuLinks: [],
                 errors: [],
                 fullPath: this.$route.fullPath,
                 pageData: null,

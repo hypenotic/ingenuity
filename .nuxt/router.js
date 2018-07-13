@@ -5,7 +5,6 @@ Vue.use(Router)
 
 const _f995e17c = () => import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages_contact-us" */).then(m => m.default || m)
 const _44f2d026 = () => import('..\\pages\\about-us\\index.vue' /* webpackChunkName: "pages_about-us_index" */).then(m => m.default || m)
-const _41fc0b29 = () => import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages_blog_index" */).then(m => m.default || m)
 const _1ba07758 = () => import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages_news_index" */).then(m => m.default || m)
 const _16739a5e = () => import('..\\pages\\projects\\index.vue' /* webpackChunkName: "pages_projects_index" */).then(m => m.default || m)
 const _27f527ee = () => import('..\\pages\\about-us\\the-team.vue' /* webpackChunkName: "pages_about-us_the-team" */).then(m => m.default || m)
@@ -81,11 +80,6 @@ export function createRouter () {
 			path: "/about-us",
 			component: _44f2d026,
 			name: "about-us"
-		},
-		{
-			path: "/blog",
-			component: _41fc0b29,
-			name: "blog"
 		},
 		{
 			path: "/news",

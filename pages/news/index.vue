@@ -37,13 +37,13 @@
         fetch ({store}){
             return store.dispatch('dummy');
         },
-        metaInfo () {
+        head () {
+            console.log(this.pageInfo.meta_box._page_hero_image);
             return {
-                title: 'Ingenuity | News',
                 meta: [
-                    { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image },
                 ]
-            }
+            }  
         },
         components: {
             appBanner: Banner,

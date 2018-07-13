@@ -74,6 +74,14 @@ export default {
     fetch ({store}){
         return store.dispatch('dummy');
     },
+    head () {
+        console.log(this.projectInfo.meta_box._banner_image[0].full_url);
+        return {
+            meta: [
+                { hid: 'og:image', property: 'og:image', content: this.projectInfo.meta_box._banner_image[0].full_url },
+            ]
+        }  
+    },
     components: {
         appBanner: Banner,
         appNav: Nav,

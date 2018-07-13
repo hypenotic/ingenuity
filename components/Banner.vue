@@ -36,6 +36,7 @@
         props: ['page'],
         data() {
             return {
+                theData: this.page
             };
         },
         components: {

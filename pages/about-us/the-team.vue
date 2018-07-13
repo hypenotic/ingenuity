@@ -102,6 +102,14 @@
         fetch ({store}){
             return store.dispatch('dummy');
         },
+        head () {
+            console.log(this.pageInfo.meta_box._page_hero_image);
+            return {
+                meta: [
+                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image },
+                ]
+            }  
+        },
         components: {
             appBanner: Banner,
             appFooter: Footer,
@@ -109,6 +117,7 @@
         },
         data() {
             return {
+                menuLinks: [],
                 errors: [],
                 fullPath: this.$route.fullPath,
                 slug: this.$route.path,

@@ -19,16 +19,16 @@
             </div>
 
             <div class="prev-next-links">
-                <router-link :to="'/news/'+ prev + '/' + previousPost" v-if="previousPost != null && prev != next">
+                <nuxt-link :to="'/news/'+ prev + '/' + previousPost" v-if="previousPost != null && prev != next">
                     <div class="blog-nav__arrow blog-nav__arrow--prev">
                         <p>&lt; Previous Post</p>
                     </div>
-                </router-link>
-                <router-link :to="'/news/'+ next + '/' + nextPost" v-if="nextPost != null">
+                </nuxt-link>
+                <nuxt-link :to="'/news/'+ next + '/' + nextPost" v-if="nextPost != null">
                     <div class="blog-nav__arrow blog-nav__arrow--next">
                         <p>Next Post &gt;</p>
                     </div>
-                </router-link>
+                </nuxt-link>
             </div>
         </div>
         <app-footer></app-footer>
@@ -52,13 +52,13 @@
         fetch ({store}){
             return store.dispatch('dummy');
         },
-        metaInfo () {
+        head () {
+            console.log(this.postInfo.meta_box._post_hero_image);
             return {
-                title: 'News | ' + this.pageData.title.rendered,
                 meta: [
-                    { name: 'description', content: html2text(this.pageData.excerpt.rendered) }
+                    { hid: 'og:image', property: 'og:image', content: this.postInfo.meta_box._post_hero_image },
                 ]
-            }
+            }  
         },
         components: {
             appBanner: Banner,
@@ -67,6 +67,7 @@
         },
         data() {
             return {
+                menuLinks: [],
                 errors: [],
                 fullPath: this.$route.fullPath,
                 slug: this.$route.path,
