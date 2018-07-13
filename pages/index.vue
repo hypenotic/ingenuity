@@ -31,13 +31,13 @@
             appNav: Nav,
         },
         head () {
+            console.log(this.$route.path);
             return {
                 title: "Ingenuity",
                 meta: [
                     { hid: 'og:title', property: 'og:title', content: "Ingenuity" },
                     { hid: 'og:type', property: 'og:type', content: 'website' },
-                    
-                    
+                    { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
                     { hid: 'og:description', property: 'og:description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' },
                     { hid: 'description', name: 'description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' }
                 ],

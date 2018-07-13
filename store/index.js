@@ -23,6 +23,7 @@ Vue.use(Vuex)
 const store = () => {
     return new Vuex.Store({
         state:{
+            siteUrl: "http://172.104.208.23",
             blogList: null,
             contactList: null,
             menuCheck: false,

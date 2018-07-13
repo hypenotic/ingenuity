@@ -57,6 +57,7 @@
             return {
                 meta: [
                     { hid: 'og:image', property: 'og:image', content: this.postInfo.meta_box._post_hero_image },
+                    { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
                 ]
             }  
         },

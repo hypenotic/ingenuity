@@ -25,10 +25,11 @@
             return store.dispatch('dummy');
         },
         head () {
-            console.log(this.pageInfo.meta_box._page_hero_image);
+            console.log(this.$store.state.siteUrl + "" + this.$route.path);
             return {
                 meta: [
                     { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image },
+                    { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
                 ]
             }  
         },

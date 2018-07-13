@@ -79,6 +79,7 @@ export default {
         return {
             meta: [
                 { hid: 'og:image', property: 'og:image', content: this.projectInfo.meta_box._banner_image[0].full_url },
+                { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
             ]
         }  
     },

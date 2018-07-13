@@ -5,7 +5,6 @@ module.exports = {
     loading: '~/components/loading.vue',
     head:{
         meta: [
-            { hid: 'og:url', property: 'og:url', content: 'http://172.104.208.23/' },
             { hid: 'og:image', property: 'og:image', content: 'http://172.104.208.23/splash.png' },
             { hid: 'og:image:alt', property: 'og:image:alt', content: 'Ingenuity - Established This Century - Design Build General Contracting' },
         ],
