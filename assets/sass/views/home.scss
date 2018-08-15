@@ -150,6 +150,7 @@ body.no-scroll-home {
 
 .video-overlay {
 	&:before {
+                z-index: -1;
 		content:"";
 		display: block;
 		height: 100%;

@@ -99,8 +99,10 @@
     }
 
     export default {
-        fetch ({store}){
-            return store.dispatch('dummy');
+        async fetch ({store}) {
+            await store.dispatch('apiPages')
+            await store.dispatch('apiTeam')
+            await store.dispatch('apiMenu')
         },
         head () {
             console.log(this.pageInfo.meta_box._page_hero_image);

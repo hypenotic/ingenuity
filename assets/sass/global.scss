@@ -213,6 +213,16 @@ em {
   opacity: 0
 }
 
+.expand-enter-active, .expand-leave-active {
+    transition-property: all;
+    transition-duration: .25s;
+}
+
+.expand-enter, .expand-leave-active {
+    transform: scale(0);
+    opacity: 0;
+}
+
 // LOADING ANIMATION
 // https://codepen.io/tinystride/pen/BNQMWM
 @keyframes pulse {

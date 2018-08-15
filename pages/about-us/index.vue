@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <app-nav v-bind:menu-links="menuLinks"></app-nav>
-        <div v-if="pageInfo != null">
-            <app-banner :page="pageInfo"></app-banner>
+    <div v-if="page">
+        <app-nav></app-nav>
+        <div>
+            <app-banner :page="page"></app-banner>
             <div class="main-wrapper">
                 <div class="main-content standard-center">
-                    <div v-html="pageInfo.content.rendered"></div>
+                    <div v-html="page.content.rendered"></div>
                 </div>
             </div>
         </div>
@@ -17,23 +17,24 @@
     import { helper } from '~/plugins/helper.js';
     import axios from 'axios';
     import { mapState } from 'vuex';
+    import { mapGetters } from 'vuex';
     import Nav from '~/components/Nav.vue';
     import Banner from '~/components/Banner.vue';
     import Footer from '~/components/Footer.vue';
     export default {
-        fetch ({store}){
-            return store.dispatch('dummy');
+        async fetch ({store}) {
+            await store.dispatch('apiPages')
+            await store.dispatch('apiMenu')
         },
         head () {
-            console.log(this.$store.state.siteUrl + "" + this.$route.path);
             return {
                 title: "About Us",
                 meta: [
-                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image },
+                    { hid: 'og:image', property: 'og:image', content: this.page.meta_box._page_hero_image },
                     { hid: 'og:title', property: 'og:title', content: "About Us" },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
-                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered))},
-                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered)) }
+                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.page.excerpt.rendered))},
+                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.page.excerpt.rendered)) }
                 ]
             }  
         },
@@ -51,19 +52,9 @@
             }
         },
         computed: {
-            pageInfo: function(){
-                if (this.$store.state.pageList != null) {
-                    for (let page of this.$store.state.pageList ) {
-                        if (page.slug == 'about-us') {
-                            console.log(page);
-                            return page;
-                            break;
-                        }
-                    }
-                } else {
-                    return null;
-                }
-            }
+            page () {
+                return this.$store.getters.getPages.filter(el => el.slug === 'about-us' )[0]
+            },
         },
     };
 </script>

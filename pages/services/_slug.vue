@@ -48,6 +48,7 @@
     import { helper } from '~/plugins/helper.js';
     import axios from 'axios';
     import { mapState } from 'vuex';
+    import { mapGetters } from 'vuex';
     import Nav from '~/components/Nav';
     import Banner from '~/components/Banner.vue';
     import Footer from '~/components/Footer.vue';
@@ -90,11 +91,19 @@
                 slug: this.$route.params.slug
             }
         },
-        filters: {
-        },
-        methods: {
+        computed: {
+            ...mapGetters([
+                'pages',
+                'menu',
+                'blogs',
+                'projects',
+                'services',
+                'team',
+                'contacts'
+            ])
         },
         computed: {
+            
             pageInfo: function(){
 
                 let pageSlug = '';

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-nav v-if="this.$store.state.pageList != null" v-bind:menu-links="menuLinks"></app-nav>
+        <app-nav></app-nav>
         <div class="home-hero" id="header-check">
             <div class="video-overlay">
             </div>
@@ -24,9 +24,10 @@
     import { helper } from '~/plugins/helper.js';
     import Nav from '~/components/Nav.vue';
     import { mapState } from 'vuex';
+    import {mapGetters} from 'vuex';
     export default {
-        fetch ({store}){
-            return store.dispatch('dummy');
+        async fetch ({store}) {
+            await store.dispatch('apiMenu')
         },
         components: {
             appNav: Nav,
@@ -48,7 +49,6 @@
             return {
                 menuLinks: [],
                 menuColor: "",
-                pages: [],
                 homePage: [],
                 aboutPage: [],
             }

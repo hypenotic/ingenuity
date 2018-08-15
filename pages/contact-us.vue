@@ -25,6 +25,7 @@
     import { helper } from '~/plugins/helper.js';
     import Footer from '~/components/Footer.vue';
     import Nav from '~/components/Nav.vue';
+    import {mapGetters} from 'vuex';
     export default {
         fetch ({store}){
             return store.dispatch('dummy');
@@ -37,6 +38,8 @@
                     { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image },
                     { hid: 'og:title', property: 'og:title', content: "Contact Us"},
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
+                    { hid: 'og:description', property: 'og:description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' },
+                    { hid: 'description', name: 'description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' }
                 ]
             }  
         },
@@ -46,6 +49,17 @@
             appNav: Nav,
         },
         props: ['name'],
+        computed: {
+            ...mapGetters([
+                'pages',
+                'menu',
+                'blogs',
+                'projects',
+                'services',
+                'team',
+                'contacts'
+            ])
+        },
         data() {
             return {
                 mapName: "contact-map",

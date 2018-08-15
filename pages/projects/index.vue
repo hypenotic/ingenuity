@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="">
         <app-nav v-bind:menu-links="menuLinks"></app-nav>
         <div v-if="pageInfo != null">
             <app-banner :page="pageInfo"></app-banner>
@@ -36,7 +36,7 @@
 
     export default {
         fetch ({store}){
-            return store.dispatch('dummy');
+           // return store.dispatch('dummy');
         },
         head () {
             return {
