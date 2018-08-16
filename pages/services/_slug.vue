@@ -32,8 +32,8 @@
 
                     <div class="other-services">
                         <h3>Check out our other services:</h3>
-                        <router-link :to="'/services/' + service.slug" v-if="slug != service.slug" v-for="service in this.$store.state.serviceList" :key="service.id" class="other-service-btn services-cta__btn">
-                            <span v-if="service.title.rendered" v-html="service.title.rendered"></span>
+                        <router-link :to="'/services/' + s.slug" v-if="service.slug != s.slug" v-for="s in services" :key="s.id" class="other-service-btn services-cta__btn">
+                            <span v-if="s.title.rendered" v-html="s.title.rendered"></span>
                         </router-link>
                     </div>
 
@@ -74,6 +74,9 @@
             appFooter: Footer,
         },
         computed: {
+            services () {
+                return this.$store.getters.getServices
+            },
             service () {
                 return this.$store.getters.getServices.filter(p => p.slug == this.$route.params.slug)[0];
             },
