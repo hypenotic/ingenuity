@@ -10,100 +10,115 @@ const store = () => {
     return new Vuex.Store({
         state:{
             siteUrl: "http://172.104.208.23",
-            pageList: null,
-            menuList: null,
-            projectList: null,
-            serviceList: null,
-            teamList: null,
-            blogList: null,
+            pages: null,
+            menus: null,
+            projects: null,
+            services: null,
+            team: null,
+            blogs: null,
+            contacts: null,
         },
         mutations:{
-            setPageList(state, list) {
-                console.log('Mutation: setPageList');
-                state.pageList = list;
+            setPages(state, payload) {
+                console.log('Mutation: setPages');
+                state.pages = payload;
             },
             
-            setMenuList(state, list) {
-                console.log('Mutation: setMenuList');
-                state.menuList = list;
+            setMenus(state, payload) {
+                console.log('Mutation: setMenus');
+                state.menus = payload;
             },
             
-            setProjectList(state, list) {
-                console.log('Mutation: setProjectList');
-                state.projectList = list;
+            setProjects(state, payload) {
+                console.log('Mutation: setProjects');
+                state.projects = payload;
             },
             
-            setServiceList(state, list) {
-                console.log('Mutation: setServiceList');
-                state.serviceList = list;
+            setServices(state, payload) {
+                console.log('Mutation: setServices');
+                state.services = payload;
             },
             
-            setTeamList(state, list) {
-                console.log('Mutation: setTeamList');
-                state.teamList = list;
+            setTeam(state, payload) {
+                console.log('Mutation: setTeam');
+                state.team = payload;
             },
             
-            setBlogList(state, list) {
-                console.log('Mutation: setBlogList');
-                state.blogList = list;
+            setBlogs(state, payload) {
+                console.log('Mutation: setBlogs');
+                state.blogs = payload;
+            },
+            
+            setContacts(state, payload) {
+                console.log('Mutation: setContacts');
+                state.contacts = payload;
             },
         },
         actions:{
             async apiPages({commit}) {
                 console.log('apiPages dispatched');
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/pages?_embed')
-                commit('setPageList', data)
+                commit('setPages', data)
             },
             
             async apiMenu({commit}) {
                 console.log('apiMenu dispatched');
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp-api-menus/v2/menus/2')
-                commit('setMenuList', data)
+                commit('setMenus', data)
             },
             
             async apiProjects({commit}) {
                 console.log('apiProjects dispatched');
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/project?per_page=20&_embed')
-                commit('setProjectList', data)
+                commit('setProjects', data)
             },
             
             async apiServices({commit}) {
                 console.log('apiServices dispatched');
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/service?_embed')
-                commit('setServiceList', data)
+                commit('setServices', data)
             },
             
             async apiTeam({commit}) {
-                console.log('apiTeams dispatched');
+                console.log('apiTeam dispatched');
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/team?per_page=20&_embed')
-                commit('setTeamList', data)
+                commit('setTeam', data)
             },
             
             async apiBlogs({commit}) {
                 console.log('apiBlogs dispatched');
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/posts?_embed')
-                commit('setBlogList', data)
+                commit('setBlogs', data)
+            },
+            
+            async apiContacts({commit}) {
+                console.log('apiContacts dispatched');
+                let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/contact?_embed')
+                commit('setContacts', data)
             },
             
         },
         getters:{
             getPages: state => {
-                return state.pageList
+                return state.pages
             },
             getMenu: state => {
-                return state.menuList
+                return state.menus
             },
             getProjects: state => {
-                return state.projectList
+                return state.projects
             },
             getServices: state => {
-                return state.serviceList
+                return state.services
             },
             getTeam: state => {
-                return state.teamList
+                return state.team
             },
             getBlogs: state => {
-                return state.blogList
+                return state.blogs
+            },
+            getContacts: state => {
+                return state.contacts
             },
         }
     })

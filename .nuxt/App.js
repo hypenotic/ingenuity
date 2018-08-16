@@ -11,7 +11,7 @@ let layouts = {
 let resolvedLayouts = {}
 
 export default {
-  head: {"meta":[{"hid":"og:image","property":"og:image","content":"http:\u002F\u002F172.104.208.23\u002Fsplash.png"},{"hid":"og:image:alt","property":"og:image:alt","content":"Ingenuity - Established This Century - Design Build General Contracting"}],"link":[{"rel":"icon","type":"image\u002Fpng","sizes":"16x16","href":"\u002Ffavicon-16x16.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"32x32","href":"\u002Ffavicon-32x32.png"},{"rel":"apple-touch-icon","sizes":"180x180","href":"\u002Fapple-touch-icon.png"}],"style":[],"script":[]},
+  head: {"script":[{"src":"https:\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs?key=AIzaSyD6SyhFeGyRXakUOo6WbZsRrFMaOgaOgYM","body":true}],"meta":[{"hid":"og:image","property":"og:image","content":"http:\u002F\u002F172.104.208.23\u002Fsplash.png"},{"hid":"og:image:alt","property":"og:image:alt","content":"Ingenuity - Established This Century - Design Build General Contracting"}],"link":[{"rel":"icon","type":"image\u002Fpng","sizes":"16x16","href":"\u002Ffavicon-16x16.png"},{"rel":"icon","type":"image\u002Fpng","sizes":"32x32","href":"\u002Ffavicon-32x32.png"},{"rel":"apple-touch-icon","sizes":"180x180","href":"\u002Fapple-touch-icon.png"}],"style":[]},
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })
     const layoutEl = h(this.layout || 'nuxt')

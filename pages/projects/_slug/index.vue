@@ -1,7 +1,7 @@
 <template>
     <div>  
         <app-nav></app-nav>
-        <app-banner :page="projectInfo"></app-banner>
+        <app-banner :page="project"></app-banner>
         <div class="diagonal-wrapper diagonal-svg__wrapper">
             <svg class="diagonal-svg">
                 <line id="the-line" x1="100%" y1="110%" x2="30%" y2="-10%"/>
@@ -10,46 +10,46 @@
                 <aside id="left"> 
                     <p>
                         <span class="stats_label">Client</span>:<br>
-                        <span v-html="projectInfo.meta_box._stats_client"></span>
+                        <span v-html="project.meta_box._stats_client"></span>
                     </p>
                     <p>
                         <span class="stats_label">SF</span>:<br>
-                        <span v-html="projectInfo.meta_box._stats_sf"></span>
+                        <span v-html="project.meta_box._stats_sf"></span>
                     </p>
                     <p>
                         <span class="stats_label">Duration</span>:<br>
-                        <span v-html="projectInfo.meta_box._stats_duration"></span>
+                        <span v-html="project.meta_box._stats_duration"></span>
                     </p>
                     <p>
                         <span class="stats_label">Location</span>:<br>
-                        <span v-html="projectInfo.meta_box._stats_location"></span>
+                        <span v-html="project.meta_box._stats_location"></span>
                     </p>
                 </aside>
-                <section v-html="projectInfo.content.rendered" class="blog-entry"> </section>
+                <section v-html="project.content.rendered" class="blog-entry"> </section>
             </div>
             <section class="project__video">
             </section>
-            <section v-if="projectInfo.meta_box._project__quote != ''" class="project__testimonial">
-                <blockquote class="testimonial__quotation" v-html="projectInfo.meta_box._project__quote"></blockquote>
+            <section v-if="project.meta_box._project__quote != ''" class="project__testimonial">
+                <blockquote class="testimonial__quotation" v-html="project.meta_box._project__quote"></blockquote>
                 <div class="testimonial__creds">
-                    <h4 v-html="projectInfo.meta_box._project__quote_name"></h4>
-                    <h5 v-html="projectInfo.meta_box._project__quote_title"></h5>
+                    <h4 v-html="project.meta_box._project__quote_name"></h4>
+                    <h5 v-html="project.meta_box._project__quote_title"></h5>
                 </div>  
             </section>
             <div class="main-wrapper">
                 <section class="project__gallery">
                 </section> 
                 <div class="project-nav">
-                    <router-link :to="previousProject" v-if="previousProject != null">
+                    <nuxt-link :to="prev.slug" v-if="prev.slug != null">
                         <div class="project-nav__arrow project-nav__arrow--prev">
-                            <p v-html="'&lt; ' + this.prev"></p>
+                            <p v-html="'&lt; ' + prev.title.rendered"></p>
                         </div>
-                    </router-link>
-                    <router-link :to="nextProject" v-if="nextProject != null">
+                    </nuxt-link>
+                    <nuxt-link :to="next.slug" v-if="next.slug != null">
                         <div class="project-nav__arrow project-nav__arrow--next">
-                            <p v-html="this.next+' &gt;'"></p>
+                            <p v-html="next.title.rendered+' &gt;'"></p>
                         </div>
-                    </router-link>
+                    </nuxt-link>
                 </div>
             </div>
         </div>
@@ -59,32 +59,27 @@
 
 <script>
     import { helper } from '~/plugins/helper.js';
-    import axios from 'axios';
-    // import moment from 'moment';
-    import { mapState } from 'vuex'
+    
     import Banner from '~/components/Banner.vue';
     import Nav from '~/components/Nav.vue';
     import Footer from '~/components/Footer.vue';
-    function html2text(html) {
-        var tag = document.createElement('div');
-        tag.innerHTML = html;
 
-        return tag.innerText;
-    }
     export default {
-        fetch ({store}){
-            return store.dispatch('dummy');
+        async fetch ({store}) {
+            await store.dispatch('apiPages')
+            await store.dispatch('apiProjects')
+            await store.dispatch('apiMenu')
         },
         head () {
-            console.log(this.projectInfo.meta_box._banner_image[0].full_url);
+            console.log(this.project.meta_box._banner_image[0].full_url);
             return {
-                title: helper.decodeHtmlEntity(this.projectInfo.title.rendered),
+                title: helper.decodeHtmlEntity(this.project.title.rendered),
                 meta: [
-                    { hid: 'og:image', property: 'og:image', content: this.projectInfo.meta_box._banner_image[0].full_url },
-                    { hid: 'og:title', property: 'og:title', content: helper.decodeHtmlEntity(this.projectInfo.title.rendered) },
+                    { hid: 'og:image', property: 'og:image', content: this.project.meta_box._banner_image[0].full_url },
+                    { hid: 'og:title', property: 'og:title', content: helper.decodeHtmlEntity(this.project.title.rendered) },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
-                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.projectInfo.excerpt.rendered))},
-                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.projectInfo.excerpt.rendered)) }
+                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.project.excerpt.rendered))},
+                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.project.excerpt.rendered)) }
                 ]
             }  
         },
@@ -93,83 +88,30 @@
             appNav: Nav,
             appFooter: Footer,
         },
-        data() {
-            return {
-                errors: [],
-                fullPath: this.$route.fullPath,
-                slug: this.$route.params.slug,
-                data: null,
-                projectNum: null,
-                prev: '',
-                next: '',
-                pageData: null
-            }
-        },
-        filters: {
-        },
         computed: {
-            projectInfo: function(){
-                if (this.$store.state.projectList != null) {
-                    let counter = 0;
-                    for (let page of this.$store.state.projectList ) {
-                        counter++;
-                        this.projectNum = counter;
-                        if (page.slug == this.slug) {
-                            console.log(page);
-                            // this.data = page;
-                            this.pageData = page;
-                            return page;
-                            break;
-                        }
-                    }
-                } else {
-                    return null;
+            projects(){
+                return this.$store.getters.getProjects
+            },
+            id(){
+                return this.projects.findIndex(p => p.slug == this.$route.params.slug)
+            },
+            project(){
+                return this.projects[this.id]
+            },
+            prev() {
+                if(this.id == 0){
+                    return this.projects[this.projects.length - 1]
+                }else{
+                    return this.projects[this.id - 1]
                 }
             },
-            previousProject: function() {
-                const current = this.projectNum;
-                const max = this.$store.state.projectList.length;
-                if (current == 1) {
-                    let list = this.$store.state.projectList;
-                    // console.log(list, max);
-                    let item = list[max-1];
-                    // console.log('hey', item)
-                    this.prev = item.title.rendered;
-                    return item.slug;
-                } else {
-                    let previous = current - 1;
-                    let indexNum = previous - 1;
-                    let list = this.$store.state.projectList;
-                    let item = list[indexNum];
-                    // console.log(item);
-                    this.prev = item.title.rendered;
-                    return item.slug;
+            next() {
+                if(this.id == this.projects.length - 1){
+                    return this.projects[0]
+                }else{
+                    return this.projects[this.id + 1]
                 }
             },
-            nextProject: function() {
-                const current = this.projectNum;
-                const max = this.$store.state.projectList.length;
-                if (current == max) {
-                    let list = this.$store.state.projectList;
-                    // console.log(list, max);
-                    let item = list[0];
-                    this.next = item.title.rendered;
-                    return item.slug;
-                    // return null;
-                } else {
-                    let next = current + 1;
-                    let indexNum = next - 1;
-                    let list = this.$store.state.projectList;
-                    let item = list[indexNum];
-                    // console.log(item);
-                    this.next = item.title.rendered;
-                    return item.slug;
-                }
-            },
-        },
-        methods: {
-        },
-        created() {
         },
     };
 </script>

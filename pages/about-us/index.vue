@@ -15,12 +15,11 @@
 
 <script>
     import { helper } from '~/plugins/helper.js';
-    import axios from 'axios';
-    import { mapState } from 'vuex';
-    import { mapGetters } from 'vuex';
+
     import Nav from '~/components/Nav.vue';
     import Banner from '~/components/Banner.vue';
     import Footer from '~/components/Footer.vue';
+    
     export default {
         async fetch ({store}) {
             await store.dispatch('apiPages')
@@ -43,17 +42,9 @@
             appFooter: Footer,
             appNav: Nav,
         },
-        data() {
-            return {
-                errors: [],
-                menuLinks: [],
-                fullPath: this.$route.fullPath,
-                slug: this.$route.path
-            }
-        },
         computed: {
             page () {
-                return this.$store.getters.getPages.filter(el => el.slug === 'about-us' )[0]
+                return this.$store.getters.getPages.filter(el => el.slug == 'about-us' )[0]
             },
         },
     };

@@ -22,9 +22,9 @@
 
 <script>
     import { helper } from '~/plugins/helper.js';
+    
     import Nav from '~/components/Nav.vue';
-    import { mapState } from 'vuex';
-    import {mapGetters} from 'vuex';
+
     export default {
         async fetch ({store}) {
             await store.dispatch('apiMenu')
@@ -43,14 +43,6 @@
                     { hid: 'og:description', property: 'og:description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' },
                     { hid: 'description', name: 'description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' }
                 ],
-            }
-        },
-        data: function () {
-            return {
-                menuLinks: [],
-                menuColor: "",
-                homePage: [],
-                aboutPage: [],
             }
         },
         mounted: function(){

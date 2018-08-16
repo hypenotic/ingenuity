@@ -1,15 +1,15 @@
 <template>
     <div>
-        <app-nav v-if="this.$store.state.pageList != null" v-bind:menu-links="menuLinks"></app-nav>
-        <div v-if="pageInfo != null">
-            <app-banner :page="pageInfo"></app-banner>
+        <app-nav></app-nav>
+        <div v-if="service != null">
+            <app-banner :page="service"></app-banner>
             <div class="main-wrapper">
                 <div class="main-content standard-center">
-                    <div v-html="pageInfo.content.rendered"></div>
-                    <div class="services-approach"  v-if="pageInfo.meta_box._service_components_deats.length > 0">
-                        <h3 v-html="pageInfo.meta_box._service__components_heading"></h3>
+                    <div v-if="service.content.rendered" v-html="service.content.rendered"></div>
+                    <div class="services-approach"  v-if="service.meta_box._service_components_deats.length > 0">
+                        <h3 v-html="service.meta_box._service__components_heading"></h3>
                         <div class="two-column">
-                            <div class="two-column__half" v-for="comp in pageInfo.meta_box._service_components_deats" :key="comp.text">
+                            <div class="two-column__half" v-for="comp in service.meta_box._service_components_deats" :key="comp.text">
                                 <h4 v-html="comp.text"></h4>
                                 <p v-html="comp.description"></p>
                             </div>
@@ -17,15 +17,15 @@
                     </div>
                     <div class="two-column">
                         <div class="two-column__half services-testimonial wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.3s">
-                            <blockquote v-html="pageInfo.meta_box._service_quote_text"></blockquote>
-                            <h4 v-html="pageInfo.meta_box._service_quote_source"></h4>
-                            <h5 v-html="pageInfo.meta_box._service_quote_source_title"></h5>
-                            <p v-if="pageInfo.meta_box._service_quote_caption != ''" v-html="pageInfo.meta_box._service_quote_caption" class="testimonial__caption"></p>
+                            <blockquote v-html="service.meta_box._service_quote_text"></blockquote>
+                            <h4 v-html="service.meta_box._service_quote_source"></h4>
+                            <h5 v-html="service.meta_box._service_quote_source_title"></h5>
+                            <p v-if="service.meta_box._service_quote_caption != ''" v-html="service.meta_box._service_quote_caption" class="testimonial__caption"></p>
                         </div>
                         <div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.7s">
-                            <div v-html="pageInfo.meta_box._service_cta_copy"></div>
-                            <a :href="pageInfo.meta_box._service_cta_link">
-                                <button class="services-cta__btn" v-html="pageInfo.meta_box._service_cta_text"></button>
+                            <div v-html="service.meta_box._service_cta_copy"></div>
+                            <a :href="service.meta_box._service_cta_link">
+                                <button class="services-cta__btn" v-html="service.meta_box._service_cta_text"></button>
                             </a>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                     <div class="other-services">
                         <h3>Check out our other services:</h3>
                         <router-link :to="'/services/' + service.slug" v-if="slug != service.slug" v-for="service in this.$store.state.serviceList" :key="service.id" class="other-service-btn services-cta__btn">
-                            <span v-html="service.title.rendered"></span>
+                            <span v-if="service.title.rendered" v-html="service.title.rendered"></span>
                         </router-link>
                     </div>
 
@@ -46,34 +46,25 @@
 
 <script>
     import { helper } from '~/plugins/helper.js';
-    import axios from 'axios';
-    import { mapState } from 'vuex';
-    import { mapGetters } from 'vuex';
+
     import Nav from '~/components/Nav';
     import Banner from '~/components/Banner.vue';
     import Footer from '~/components/Footer.vue';
 
-    function html2text(html) {
-        var tag = document.createElement('div');
-        tag.innerHTML = html;
-
-        return tag.innerText;
-    }
-
     export default {
-        fetch ({store}){
-            return store.dispatch('dummy');
+        async fetch ({store}){
+            await store.dispatch('apiMenu')
+            await store.dispatch('apiServices')
         },
         head () {
-            console.log(this.pageInfo.meta_box._service__banner_image);
             return {
-                title: helper.decodeHtmlEntity(this.pageInfo.title.rendered),
+                title: helper.decodeHtmlEntity(this.service.title.rendered),
                 meta: [
-                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._service__banner_image },
-                    { hid: 'og:title', property: 'og:title', content: helper.decodeHtmlEntity(this.pageInfo.title.rendered) },
+                    { hid: 'og:image', property: 'og:image', content: this.service.meta_box._service__banner_image },
+                    { hid: 'og:title', property: 'og:title', content: helper.decodeHtmlEntity(this.service.title.rendered) },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
-                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered))},
-                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered)) }
+                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.service.excerpt.rendered))},
+                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.service.excerpt.rendered)) }
                 ]
             }  
         },
@@ -82,62 +73,10 @@
             appNav: Nav,
             appFooter: Footer,
         },
-        data() {
-            return {
-                menuLinks: [],
-                errors: [],
-                fullPath: this.$route.fullPath,
-                pageData: null,
-                slug: this.$route.params.slug
-            }
-        },
         computed: {
-            ...mapGetters([
-                'pages',
-                'menu',
-                'blogs',
-                'projects',
-                'services',
-                'team',
-                'contacts'
-            ])
-        },
-        computed: {
-            
-            pageInfo: function(){
-
-                let pageSlug = '';
-                if (this.slug == 'design-build') {
-                    console.log('DB');
-                    pageSlug = 'design-build';
-                } else if (this.slug == 'general-contracting') {
-                    console.log('GC');
-                    pageSlug = 'general-contracting';
-                } else if (this.slug == 'maintenance'){
-                    console.log('Maintenance');
-                    pageSlug = 'maintenance';
-                } else {
-                    console.log('Pro Services');
-                    pageSlug = 'professional-services';
-                }
-
-                if (this.$store.state.serviceList != null) {
-                    for (let page of this.$store.state.serviceList ) {
-                        console.log('X:', pageSlug);
-                        if (page.slug == pageSlug) {
-                            console.log(page);
-                            this.pageData = page;
-                            return page;
-                            break;
-                        }
-                    }
-                } else {
-                    return null;
-                }
-            }
-        },
-        created() {
-
+            service () {
+                return this.$store.getters.getServices.filter(p => p.slug == this.$route.params.slug)[0];
+            },
         },
     };
 </script>

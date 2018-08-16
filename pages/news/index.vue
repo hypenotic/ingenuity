@@ -1,11 +1,11 @@
 <template>
     <div>
-        <app-nav v-bind:menu-links="menuLinks"></app-nav>
-        <div v-if="pageInfo != null">
-            <app-banner :page="pageInfo"></app-banner>
+        <app-nav></app-nav>
+        <div v-if="page != null">
+            <app-banner :page="page"></app-banner>
             <div class="main-wrapper"> 
                 <section class="main-content standard-center"> 
-                    <div class="blog-single-post wow fadeIn" v-for="post in this.$store.state.blogList" :key="post.id">
+                    <div class="blog-single-post wow fadeIn" v-for="post in blogs" :key="post.id">
                         <router-link :to="'/news/' + post.id + '/' + post.slug" >
                             <h3 class="blog-single__title" v-html="post.title.rendered"></h3>
                         </router-link>
@@ -13,9 +13,8 @@
                         <div v-html="post.excerpt.rendered"></div>
                         <nuxt-link :to="'/news/' + post.id + '/' + post.slug" class="single-post__read-more">Read more...</nuxt-link>
                     </div>
-                    <!-- <p class="pagination-links">pagination links</p> -->
-                </section> <!-- ARTICLE WRAP ends here -->
-            </div> <!-- contentWrapper ends here -->
+                </section>
+            </div>
         </div>
         <app-footer></app-footer>
     </div>
@@ -23,31 +22,27 @@
 
 <script>
     import { helper } from '~/plugins/helper.js';
-    import axios from 'axios';
-    import { mapState } from 'vuex';
+
     import Nav from '~/components/Nav.vue';
     import Banner from '~/components/Banner.vue';
     import Footer from '~/components/Footer.vue';
-    function html2text(html) {
-        var tag = document.createElement('div');
-        tag.innerHTML = html;
 
-        return tag.innerText;
-    }
     export default {
-        fetch ({store}){
-            return store.dispatch('dummy');
+        async fetch ({store}) {
+            await store.dispatch('apiPages')
+            await store.dispatch('apiBlogs')
+            await store.dispatch('apiMenu')
         },
         head () {
-            console.log(this.pageInfo.meta_box._page_hero_image);
+            console.log(this.page.meta_box._page_hero_image);
             return {
                 title:"News",
                 meta: [
-                    { hid: 'og:image', property: 'og:image', content: this.pageInfo.meta_box._page_hero_image },
+                    { hid: 'og:image', property: 'og:image', content: this.page.meta_box._page_hero_image },
                     { hid: 'og:title', property: 'og:title', content: "News" },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
-                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered))},
-                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.pageInfo.excerpt.rendered)) }
+                    { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.page.excerpt.rendered))},
+                    { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.page.excerpt.rendered)) }
                 ]
             }  
         },
@@ -65,27 +60,13 @@
                 pageData: null
             }
         },
-        filters: {
-        },
         computed: {
-            pageInfo: function(){
-                if (this.$store.state.pageList != null) {
-                    for (let page of this.$store.state.pageList ) {
-                        if (page.slug == 'news') {
-                            console.log(page);
-                            this.pageData = page;
-                            return page;
-                            break;
-                        }
-                    }
-                } else {
-                    return null;
-                }
+            page () {
+                return this.$store.getters.getPages.filter(el => el.slug == 'news' )[0]
+            },
+            blogs (){
+                return this.$store.getters.getBlogs
             }
-        },
-        methods: {
-        },
-        created() {
         },
     };
 </script>

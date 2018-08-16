@@ -39,12 +39,28 @@ nav{
     
     z-index: 500;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     padding: 1rem 4rem;
     transition: padding 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    &.small{
+        position: sticky;
+        top: 0px;
+        background: black;
+        padding: 0rem 4rem;
+        img{
+            max-height: 0;
+        }
+    }
+    
+    .logo{
+        display: flex;
+        align-items: center;
+    }
+    
     img{
         max-height: 120px;
         transition: all 0.25s ease;

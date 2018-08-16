@@ -4,6 +4,9 @@ module.exports = {
     },
     loading: '~/components/loading.vue',
     head:{
+        script: [
+            {src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyD6SyhFeGyRXakUOo6WbZsRrFMaOgaOgYM", body: true}
+        ],
         meta: [
             { hid: 'og:image', property: 'og:image', content: 'http://172.104.208.23/splash.png' },
             { hid: 'og:image:alt', property: 'og:image:alt', content: 'Ingenuity - Established This Century - Design Build General Contracting' },

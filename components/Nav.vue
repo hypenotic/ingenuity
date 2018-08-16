@@ -1,31 +1,29 @@
 <template>
-    <div>
-        <nav :class="{scrolled: scrolled}">
-            <div :class="{open: open}">
-                <nuxt-link to="/">
-                    <img src="~/assets/images/logo.svg" alt="Ingenuity">
-                    <span v-if="scrolled" class="logo-text">Ingenuity</span>
-                </nuxt-link>
+    <nav :class="{scrolled: scrolled, small: small}">
+        <div :class="{open: open}">
+            <nuxt-link to="/" class="logo">
+                <img src="~/assets/images/logo.svg" alt="Ingenuity">
+                <span v-if="scrolled || small" class="logo-text">Ingenuity</span>
+            </nuxt-link>
+        </div>
+        <transition name="expand">
+            <app-menu v-if="menu && open"></app-menu>
+        </transition>
+        <div :class="{open: open, button: true}" @click="open = !open" type="button">
+            <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
             </div>
-            <transition name="expand">
-                <app-menu v-if="menu && open"></app-menu>
-            </transition>
-            <div :class="{open: open, button: true}" @click="open = !open" type="button">
-                <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </div>
-                {{(open) ? 'Close' : 'Menu'}}
-            </div>
-        </nav>
-    </div>
+            {{(open) ? 'Close' : 'Menu'}}
+        </div>
+    </nav>
 </template>
 
 <script>
     import Menu from '~/components/Menu.vue'
     export default {
-    	props: ['menuLinks','menuColor'],
+    	props: ['menuLinks','menuColor', 'small'],
         data: function () {
             return {
                 scrolled: false,
