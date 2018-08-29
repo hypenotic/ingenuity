@@ -282,25 +282,25 @@ h2.rw-sentence{
         text-decoration: none;
     }
 	// width: 100%;
-	@media #{$small-and-down} {
+	@media #{$medium-and-down} {
 		margin: 0 0 0 5px;
-		font-size: modular-scale(3, 1.1rem); 
-        line-height: modular-scale(3, 1.6rem); 
-        font-size: 30px;
+		//font-size: modular-scale(3, 1.1rem); 
+                line-height: modular-scale(3, 1.6rem); 
+                font-size: 30px;
 		line-height: 1.25;
 	}
 	@media #{$medium-and-up} {
 		text-align: left;
 		margin: 0 8%;
-		font-size: modular-scale(3); 
+		//font-size: modular-scale(3); 
 		line-height: modular-scale(3, 1.75rem); 
-		font-size: 101px; //32px
+		font-size: 40px; //32px
 		line-height: 1.25;
 	}
 	@media #{$large-and-up} {
 		margin: 0 8%;
 		text-align: left;
-	    font-size: 101px; //32px
+	       font-size: 90px; //32px
 		line-height: 1.25;
 	}	
 	@media #{$xlarge-and-up} {
