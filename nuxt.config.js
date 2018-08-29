@@ -10,6 +10,7 @@ module.exports = {
         meta: [
             { hid: 'og:image', property: 'og:image', content: 'http://172.104.208.23/splash.png' },
             { hid: 'og:image:alt', property: 'og:image:alt', content: 'Ingenuity - Established This Century - Design Build General Contracting' },
+            { hid: 'viewport', property: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0'}
         ],
         link: [
             {
