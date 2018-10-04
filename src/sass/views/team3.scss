@@ -467,7 +467,8 @@
 
 
 
-#video1 {
+#video1,
+.team-vid {
     position: absolute;
     top: 0;
     left: 0%;
@@ -482,7 +483,8 @@
 .split--image {
     position: relative;
     &:hover {
-        #video1 {
+        #video1,
+        .team-vid {
             opacity: 1;
         }
     }
@@ -512,6 +514,9 @@
 
 .base-image {
     position: relative;
+    img {
+        max-height: 470px;
+    }
 }
 
 .pulse {
