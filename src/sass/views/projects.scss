@@ -173,7 +173,7 @@ aside p {
 	text-align:center;
 	// line-height:40px;
 	border: 2px solid $black;
-    // @include flexboxcenter;
+    // display: flex;align-items:center;justify-content: center;
     display: flex;
     align-items: center;
     justify-content: center;

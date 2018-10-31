@@ -28,9 +28,9 @@
                 <section v-html="projectInfo.content.rendered" class="blog-entry"> </section>
             </div>
             
-            <section class="project__video">
+            <!-- <section class="project__video">
                 
-            </section>
+            </section> -->
 
             <section v-if="projectInfo.meta_box._project__quote != ''" class="project__testimonial">
                 <blockquote class="testimonial__quotation" v-html="projectInfo.meta_box._project__quote"></blockquote>
@@ -42,8 +42,8 @@
             
             <div class="main-wrapper">
                 
-                <section class="project__gallery">
-                </section> 
+                <!-- <section class="project__gallery">
+                </section>  -->
                 
                 <div class="project-nav">
                     
