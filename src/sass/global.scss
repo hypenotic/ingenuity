@@ -797,6 +797,12 @@ figure {
     }
 }
 
+#in-content.gallery__single {
+    &:nth-child(even) {
+        background: red;
+    }
+}
+
 .gallery__single:nth-child(even) .gallery__single-half.gallery-image {
     order: 2;
     @media #{$bp-small}  {
@@ -805,7 +811,7 @@ figure {
     @media #{$bp-med}  {
         order: -1;
     }
-    @media #{$bp-med}  {
+    @media #{$bp-large}  {
         order: -1;
     }
     img {
