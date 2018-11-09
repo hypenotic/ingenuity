@@ -8,7 +8,7 @@ add_filter( 'rwmb_meta_boxes', 'pc_register_default' );
 function pc_register_default( $meta_boxes ) {
 
     include('mb-about-competency.php');
-    //include('mb-about-culture.php');
+    include('mb-about-culture.php');
 
     return $meta_boxes;
 }
