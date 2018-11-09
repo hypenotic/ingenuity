@@ -1,7 +1,5 @@
 <?php
 
-//$prefix = '_culture_';
-
 $meta_boxes[] = array(
     'title'      => 'Methodology',
     'post_types' => array( 'page'),
