@@ -1,5 +1,5 @@
 <?php
-add_filter( 'rwmb_meta_boxes', 'team_register_meta_boxes' );
+add_filter( 'rwmb_meta_boxes', 'default_register_meta_boxes' );
 function team_register_meta_boxes( $meta_boxes ) {
 
     //$prefix = '_culture_';
