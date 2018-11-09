@@ -1,7 +1,7 @@
 <?php
 
 $meta_boxes[] = array(
-    'title'      => 'Methodology',
+    'title'      => 'Competency - Methodology',
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
@@ -34,7 +34,7 @@ $meta_boxes[] = array(
 );
 
 $meta_boxes[] = array(
-    'title'      => 'Mission/Approach',
+    'title'      => 'Competency - Mission/Approach',
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
@@ -59,7 +59,7 @@ $meta_boxes[] = array(
 );
 
 $meta_boxes[] = array(
-    'title'      => 'Skills/People',
+    'title'      => 'Competency - Skills/People',
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
@@ -89,7 +89,7 @@ $meta_boxes[] = array(
 );
 
 $meta_boxes[] = array(
-    'title'      => 'Experience',
+    'title'      => 'Competency - Experience',
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',

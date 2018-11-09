@@ -1,7 +1,7 @@
 <?php
 
 $meta_boxes[] = array(
-    'title'      => 'Overview/Approach',
+    'title'      => 'Culture - Overview/Approach',
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
@@ -26,7 +26,7 @@ $meta_boxes[] = array(
 );
 
 $meta_boxes[] = array(
-    'title'      => __( 'Day to Day', 'textdomain' ),
+    'title'      => __( 'Culture - Day to Day', 'textdomain' ),
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
@@ -64,7 +64,7 @@ $meta_boxes[] = array(
 );
 
 $meta_boxes[] = array(
-    'title'      => 'Team Ad',
+    'title'      => 'Culture - Team Ad',
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
@@ -89,7 +89,7 @@ $meta_boxes[] = array(
 );
 
 $meta_boxes[] = array(
-    'title'      => 'Careers',
+    'title'      => 'Culture - Careers',
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
