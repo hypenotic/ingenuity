@@ -343,7 +343,8 @@
     color: $black;
     // transition: all 0.5s ease;
     .knolling-pic {
-        max-width: 1300px;
+        //max-width: 1300px;
+        width: 100%;
         margin: 0 auto 0px;
         display: block;
     }

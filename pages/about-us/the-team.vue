@@ -1,27 +1,24 @@
 <template>
     <div>
-        <app-nav v-bind:menu-links="menuLinks"></app-nav>
+        <app-nav :menu-links="menuLinks"></app-nav>
         <div v-if="page != null" class="team-panels">
             <app-banner :page="page"></app-banner>
-            <div class="leadership-banner">
-                <h3>Meet the leadership</h3>
-            </div>
             <div class="main-wrapper"> 
                 <section class="main-content standard-center" v-html="page.content.rendered"> 
                 </section>
             </div>
+            <div class="leadership-banner">
+                <h3>Meet the leadership</h3>
+            </div>
             <div class="team__container--leadership team__container">
                 <div v-for="member in team" :key="member.id" v-if="member.meta_box._team_section == 'leadership'">
-                    <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'"  v-on:click="dropDownLeader(member.id)" :id="'member-'+member.id">
+                    <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'" v-on:click="dropDownLeader(member.id)" :id="'member-'+member.id">
                         <div class="team-overlay"></div>
                         <div class="hgroup">
-                            <h3 class="team__name" v-html="member.title.rendered">
-                            </h3>
+                            <h3 class="team__name" v-html="member.title.rendered"></h3>
                             <span class="team__creds" v-html="member.meta_box._team_creds"></span>
                             <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
                         </div>
-                        <!-- member.meta_box._team_extra_image -->
-                        <!-- member._embedded['wp:featuredmedia'][0].source_url -->
                     </figure>
                     <div class="drop-down-panel drop-down-panel--leader" :id="member.id">
                         <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
@@ -307,5 +304,5 @@
     @import '~/assets/sass/animate.scss';
     @import '~/assets/sass/typography.scss';
     @import '~/assets/sass/global.scss';
-    @import '~/assets/sass/views/team3.scss';
+    @import '~/assets/sass/views/team.scss';
 </style>

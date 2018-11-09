@@ -4,9 +4,14 @@
         <div>
             <app-banner :page="page"></app-banner>
             <div class="main-wrapper">
+                <div v-for="box in page.tabs">
+<!--                    <my-component v-if="box.type == something"></my-component>-->
+                </div>
+<!--
                 <div class="main-content standard-center">
                     <div v-html="page.content.rendered"></div>
                 </div>
+-->
             </div>
         </div>
         <app-footer></app-footer>
@@ -19,7 +24,7 @@
     import Nav from '~/components/Nav.vue';
     import Banner from '~/components/Banner.vue';
     import Footer from '~/components/Footer.vue';
-    
+
     export default {
         async fetch ({store}) {
             await store.dispatch('apiPages')
@@ -43,6 +48,9 @@
             appNav: Nav,
         },
         computed: {
+            
+            //expects children pages of about-us
+            
             page () {
                 return this.$store.getters.getPages.filter(el => el.slug == 'about-us' )[0]
             },
@@ -51,7 +59,7 @@
 </script>
 
 <style lang="scss">
-    
+
     @import '~/assets/sass/variables.scss';
     @import '~/assets/sass/animate.scss';
     @import '~/assets/sass/typography.scss';
