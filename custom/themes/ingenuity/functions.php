@@ -17,8 +17,7 @@ include('includes/metabox/cpt-team.php');
 include('includes/metabox/cpt-contact.php');
 include('includes/metabox/cpt-project.php');
 include('includes/metabox/cpt-service.php');
-include('includes/metabox/cpt-about-competency.php');
-include('includes/metabox/cpt-about-culture.php');
+include('includes/metabox/cpt-about-tab.php');
 
 
 //Load custom functions
