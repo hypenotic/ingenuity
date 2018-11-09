@@ -9,6 +9,7 @@ function team_register_meta_boxes( $meta_boxes ) {
         'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
+        'visible' => array( 'parent_id', '!=', '' ),
         'fields' => array(
             array(
                 'name'  => 'Heading',
@@ -41,6 +42,7 @@ function team_register_meta_boxes( $meta_boxes ) {
         'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
+        'visible' => array( 'parent_id', '!=', '' ),
         'fields' => array(
             array(
                 'name'  => 'Heading',
@@ -65,6 +67,7 @@ function team_register_meta_boxes( $meta_boxes ) {
         'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
+        'visible' => array( 'parent_id', '!=', '' ),
         'fields' => array(
             array(
                 'name'  => 'Heading',
@@ -94,6 +97,7 @@ function team_register_meta_boxes( $meta_boxes ) {
         'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
+        'visible' => array( 'parent_id', '!=', '' ),
         'fields' => array(
             array(
                 'name'  => 'Heading',
