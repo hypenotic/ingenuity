@@ -6,7 +6,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => 'Overview/Approach',
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
@@ -30,7 +30,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => __( 'Day to Day', 'textdomain' ),
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
@@ -67,7 +67,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => 'Team Ad',
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
@@ -91,7 +91,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => 'Careers',
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(

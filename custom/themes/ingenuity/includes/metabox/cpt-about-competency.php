@@ -6,7 +6,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => 'Methodology',
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
@@ -38,7 +38,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => 'Mission/Approach',
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
@@ -62,7 +62,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => 'Skills/People',
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
@@ -91,7 +91,7 @@ function team_register_meta_boxes( $meta_boxes ) {
 
     $meta_boxes[] = array(
         'title'      => 'Experience',
-        'post_types' => array( 'abouttab'),
+        'post_types' => array( 'page'),
         'context'    => 'normal',
         'priority'   => '',
         'fields' => array(
