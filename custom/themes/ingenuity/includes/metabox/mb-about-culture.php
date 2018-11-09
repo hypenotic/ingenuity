@@ -5,6 +5,7 @@ $meta_boxes[] = array(
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
+    'visible' => array( 'parent_id', '!=', '' ),
     'fields' => array(
         array(
             'name'  => 'Heading',
@@ -29,6 +30,7 @@ $meta_boxes[] = array(
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
+    'visible' => array( 'parent_id', '!=', '' ),
     'fields' => array(
         array(
             'id'     => 'daytoday',
@@ -66,6 +68,7 @@ $meta_boxes[] = array(
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
+    'visible' => array( 'parent_id', '!=', '' ),
     'fields' => array(
         array(
             'name'  => 'Heading',
@@ -90,6 +93,7 @@ $meta_boxes[] = array(
     'post_types' => array( 'page'),
     'context'    => 'normal',
     'priority'   => '',
+    'visible' => array( 'parent_id', '!=', '' ),
     'fields' => array(
         array(
             'name'  => 'Heading',
