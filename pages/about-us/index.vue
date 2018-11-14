@@ -4,14 +4,12 @@
         <div>
             <app-banner :page="page"></app-banner>
             <div class="main-wrapper">
-                <div v-for="box in page.tabs">
-<!--                    <my-component v-if="box.type == something"></my-component>-->
+                <div v-for="(tab, i) in tabs" @click="currentTab = i">
+                    {{tab.title.rendered}}
                 </div>
-<!--
-                <div class="main-content standard-center">
-                    <div v-html="page.content.rendered"></div>
+                <div>
+                    {{tabs[currentTab].title.rendered}}
                 </div>
--->
             </div>
         </div>
         <app-footer></app-footer>
@@ -30,6 +28,11 @@
             await store.dispatch('apiPages')
             await store.dispatch('apiMenu')
         },
+        data () {
+            return{
+                currentTab: 0,
+            }
+        },
         head () {
             return {
                 title: "About Us",
@@ -47,12 +50,12 @@
             appFooter: Footer,
             appNav: Nav,
         },
-        computed: {
-            
-            //expects children pages of about-us
-            
+        computed: {            
             page () {
                 return this.$store.getters.getPages.filter(el => el.slug == 'about-us' )[0]
+            },
+            tabs () {
+                return this.$store.getters.getPages.filter(el => el.parent == '88' )
             },
         },
     };
