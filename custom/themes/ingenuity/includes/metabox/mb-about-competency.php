@@ -51,8 +51,13 @@ $meta_boxes[] = array(
             'type'  => 'text',
         ),
         array(
-            'name'  => 'CTA Link',
-            'id'    => 'mission_link',
+            'name'  => 'CTA Link Text',
+            'id'    => 'mission_link_text',
+            'type'  => 'text',
+        ),
+        array(
+            'name'  => 'CTA Link URL',
+            'id'    => 'mission_link_url',
             'type'  => 'text',
         ),
     )
@@ -81,8 +86,13 @@ $meta_boxes[] = array(
             'type'  => 'text',
         ),
         array(
-            'name'  => 'CTA Link',
-            'id'    => 'skills_link',
+            'name'  => 'CTA Link Text',
+            'id'    => 'skills_link_text',
+            'type'  => 'text',
+        ),
+        array(
+            'name'  => 'CTA Link URL',
+            'id'    => 'skills_link_url',
             'type'  => 'text',
         ),
     )
@@ -111,8 +121,13 @@ $meta_boxes[] = array(
             'type'  => 'text',
         ),
         array(
-            'name'  => 'CTA Link',
-            'id'    => 'experience_link',
+            'name'  => 'CTA Link Text',
+            'id'    => 'experience_link_text',
+            'type'  => 'text',
+        ),
+        array(
+            'name'  => 'CTA Link URL',
+            'id'    => 'experience_link_url',
             'type'  => 'text',
         ),
     )

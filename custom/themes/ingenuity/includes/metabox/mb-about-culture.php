@@ -81,8 +81,13 @@ $meta_boxes[] = array(
             'type'  => 'image',
         ),
         array(
-            'name'  => 'CTA Link',
-            'id'    => 'ad_link',
+            'name'  => 'CTA Link Text',
+            'id'    => 'ad_link_text',
+            'type'  => 'text',
+        ),
+        array(
+            'name'  => 'CTA Link URL',
+            'id'    => 'ad_link_text',
             'type'  => 'text',
         ),
     )
@@ -98,7 +103,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'careers_heading',
-            'type'  => 'textarea',
+            'type'  => 'textarea`',
         ),
         array(
             'name'  => 'Sub Heading',
@@ -106,8 +111,13 @@ $meta_boxes[] = array(
             'type'  => 'text',
         ),
         array(
-            'name'  => 'CTA Link',
-            'id'    => 'careers_link',
+            'name'  => 'CTA Link Text',
+            'id'    => 'careers_link_text',
+            'type'  => 'text',
+        ),
+        array(
+            'name'  => 'CTA Link URL',
+            'id'    => 'careers_link_url',
             'type'  => 'text',
         ),
     )
