@@ -121,15 +121,24 @@ $meta_boxes[] = array(
             'type'  => 'text',
         ),
         array(
-            'name'  => 'CTA Link Text',
-            'id'    => 'experience_link_text',
-            'type'  => 'text',
+            'id'     => 'experience_links',
+            'type'   => 'group',
+            'clone'  => true,
+            'sort_clone' => true,
+            'fields' => array(
+                array(
+                    'name'  => 'CTA Link Text',
+                    'id'    => 'experience_link_text',
+                    'type'  => 'text',
+                ),
+                array(
+                    'name'  => 'CTA Link URL',
+                    'id'    => 'experience_link_url',
+                    'type'  => 'text',
+                ),
+            ),
         ),
-        array(
-            'name'  => 'CTA Link URL',
-            'id'    => 'experience_link_url',
-            'type'  => 'text',
-        ),
+        
     )
 );
 ?>
