@@ -10,7 +10,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'overview_heading',
-            'type'  => 'text',
+            'type'  => 'textarea',
         ),
         array(
             'name'  => 'Image',
@@ -73,7 +73,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'ad_heading',
-            'type'  => 'text',
+            'type'  => 'textarea',
         ),
         array(
             'name'  => 'Image',
@@ -98,7 +98,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'careers_heading',
-            'type'  => 'text',
+            'type'  => 'textarea',
         ),
         array(
             'name'  => 'Sub Heading',

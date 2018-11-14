@@ -10,7 +10,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'methodology_heading',
-            'type'  => 'text',
+            'type'  => 'textarea',
         ),
         array(
             'name'  => 'Sub Heading',
@@ -43,7 +43,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'mission_heading',
-            'type'  => 'text',
+            'type'  => 'textarea',
         ),
         array(
             'name'  => 'Sub Heading',
@@ -68,7 +68,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'skills_heading',
-            'type'  => 'text',
+            'type'  => 'textarea',
         ),
         array(
             'name'  => 'Image',
@@ -98,7 +98,7 @@ $meta_boxes[] = array(
         array(
             'name'  => 'Heading',
             'id'    => 'experience_heading',
-            'type'  => 'text',
+            'type'  => 'textarea',
         ),
         array(
             'name'  => 'Image',
