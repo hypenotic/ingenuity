@@ -26,7 +26,7 @@
                             <div class="split">
                                 <div class="split--content" v-html="member.content.rendered"></div>
                                 <div class="split--image">
-                                    <video id="video1" autoplay loop>
+                                    <video class="team-vid" :id="'member-vid-'+member.id" loop muted autoplay>
                                         <source :src="member.meta_box._team_movie" type="video/mp4" />
                                     </video>
                                 </div>
@@ -57,7 +57,7 @@
                             <div class="split">
                                 <div class="split--content" v-html="member.content.rendered"></div>
                                 <div class="split--image">
-                                    <video id="video1" autoplay loop>
+                                    <video id="video1" autoplay loop muted>
                                         <source :src="member.meta_box._team_movie" type="video/mp4" />
                                     </video>
                                     <div class="base-image">

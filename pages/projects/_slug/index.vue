@@ -27,8 +27,8 @@
                 </aside>
                 <section v-html="project.content.rendered" class="blog-entry"> </section>
             </div>
-            <section class="project__video">
-            </section>
+            <!-- <section class="project__video">
+            </section> -->
             <section v-if="project.meta_box._project__quote != ''" class="project__testimonial">
                 <blockquote class="testimonial__quotation" v-html="project.meta_box._project__quote"></blockquote>
                 <div class="testimonial__creds">

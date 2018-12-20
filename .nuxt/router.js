@@ -3,16 +3,16 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _78c31f7c = () => import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages_contact-us" */).then(m => m.default || m)
-const _3d88c81a = () => import('..\\pages\\about-us\\index.vue' /* webpackChunkName: "pages_about-us_index" */).then(m => m.default || m)
-const _50572344 = () => import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages_news_index" */).then(m => m.default || m)
-const _0f099252 = () => import('..\\pages\\projects\\index.vue' /* webpackChunkName: "pages_projects_index" */).then(m => m.default || m)
-const _62583d08 = () => import('..\\pages\\about-us\\old.vue' /* webpackChunkName: "pages_about-us_old" */).then(m => m.default || m)
-const _e41743b0 = () => import('..\\pages\\about-us\\the-team.vue' /* webpackChunkName: "pages_about-us_the-team" */).then(m => m.default || m)
-const _56ef872b = () => import('..\\pages\\services\\_slug.vue' /* webpackChunkName: "pages_services__slug" */).then(m => m.default || m)
-const _86179fda = () => import('..\\pages\\projects\\_slug\\index.vue' /* webpackChunkName: "pages_projects__slug_index" */).then(m => m.default || m)
-const _267ce9ce = () => import('..\\pages\\news\\_id\\_slug\\index.vue' /* webpackChunkName: "pages_news__id__slug_index" */).then(m => m.default || m)
-const _00adefd1 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
+const _0cd9cd03 = () => import('../pages/contact-us.vue' /* webpackChunkName: "pages/contact-us" */).then(m => m.default || m)
+const _c78ac20e = () => import('../pages/about-us/index.vue' /* webpackChunkName: "pages/about-us/index" */).then(m => m.default || m)
+const _91ef22a4 = () => import('../pages/news/index.vue' /* webpackChunkName: "pages/news/index" */).then(m => m.default || m)
+const _5aea1795 = () => import('../pages/projects/index.vue' /* webpackChunkName: "pages/projects/index" */).then(m => m.default || m)
+const _ddaf6ce4 = () => import('../pages/about-us/old.vue' /* webpackChunkName: "pages/about-us/old" */).then(m => m.default || m)
+const _7ff53562 = () => import('../pages/about-us/the-team.vue' /* webpackChunkName: "pages/about-us/the-team" */).then(m => m.default || m)
+const _7d55e131 = () => import('../pages/services/_slug.vue' /* webpackChunkName: "pages/services/_slug" */).then(m => m.default || m)
+const _f96161e0 = () => import('../pages/projects/_slug/index.vue' /* webpackChunkName: "pages/projects/_slug/index" */).then(m => m.default || m)
+const _2d506714 = () => import('../pages/news/_id/_slug/index.vue' /* webpackChunkName: "pages/news/_id/_slug/index" */).then(m => m.default || m)
+const _1e64a9ea = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
 
@@ -74,52 +74,52 @@ export function createRouter () {
     routes: [
 		{
 			path: "/contact-us",
-			component: _78c31f7c,
+			component: _0cd9cd03,
 			name: "contact-us"
 		},
 		{
 			path: "/about-us",
-			component: _3d88c81a,
+			component: _c78ac20e,
 			name: "about-us"
 		},
 		{
 			path: "/news",
-			component: _50572344,
+			component: _91ef22a4,
 			name: "news"
 		},
 		{
 			path: "/projects",
-			component: _0f099252,
+			component: _5aea1795,
 			name: "projects"
 		},
 		{
 			path: "/about-us/old",
-			component: _62583d08,
+			component: _ddaf6ce4,
 			name: "about-us-old"
 		},
 		{
 			path: "/about-us/the-team",
-			component: _e41743b0,
+			component: _7ff53562,
 			name: "about-us-the-team"
 		},
 		{
 			path: "/services/:slug?",
-			component: _56ef872b,
+			component: _7d55e131,
 			name: "services-slug"
 		},
 		{
 			path: "/projects/:slug",
-			component: _86179fda,
+			component: _f96161e0,
 			name: "projects-slug"
 		},
 		{
 			path: "/news/:id/:slug?",
-			component: _267ce9ce,
+			component: _2d506714,
 			name: "news-id-slug"
 		},
 		{
 			path: "/",
-			component: _00adefd1,
+			component: _1e64a9ea,
 			name: "index"
 		}
     ],

@@ -1,4 +1,5 @@
 <template>
+    <no-ssr>
     <footer class="main-footer">
         <div class="footer__blog footer__third">
             <h3><a href="<?php echo get_home_url(); ?>/news">Recent Posts</a></h3>
@@ -34,6 +35,7 @@
             
         </div>
     </footer>
+    </no-ssr>
 </template>
 
 <script>

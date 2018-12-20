@@ -4,6 +4,7 @@
 @import '~/assets/sass/global.scss';
 
 
+
 .leadership-banner,
 .foundation-banner {
     background: $yellow;
@@ -305,6 +306,49 @@
     }
 }
 
+#member-496 {
+    h3 {
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0;
+        @media #{$medium-and-up} {
+            font-size: 60px;
+            line-height: 60px;
+        }
+        @media #{$large-and-up} {
+            font-size: 95px;
+            line-height: 95px;
+            margin: 0;
+        }
+        @media #{$xlarge-and-up} {
+            font-size: 110px;
+            line-height: 110px;
+            margin: 0;
+        }
+    }
+    .team__creds {
+        @media #{$medium-and-up} {
+			font-size: 22px;
+            line-height: 22px; 
+            margin: 0;
+        }
+    }
+}
+
+#member-477,
+#member-370 {
+    h4 {
+        font-size: 11px;
+        line-height: 11px;
+        margin: 0;
+        @media #{$medium-and-up} {
+			font-size: 32px;
+            line-height: 32px;
+            margin: 0;
+        }
+    }
+}
+
 #member-367 h3 {
     font-size: 20px;
     line-height: 20px;
@@ -343,8 +387,7 @@
     color: $black;
     // transition: all 0.5s ease;
     .knolling-pic {
-        //max-width: 1300px;
-        width: 100%;
+        max-width: 1300px;
         margin: 0 auto 0px;
         display: block;
     }
@@ -543,5 +586,4 @@
 		background-size: auto 500px;
 	}
 }
-
 

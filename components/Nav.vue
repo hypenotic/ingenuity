@@ -41,7 +41,7 @@
         methods: {
             handleScroll: function (event) {
                 if(process.browser){
-                    console.log(window.pageYOffset);
+                    // console.log(window.pageYOffset);
                     if (window.addEventListener){
                         if (window.pageYOffset > 20) {
                             this.scrolled = true;

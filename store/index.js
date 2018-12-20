@@ -96,6 +96,10 @@ const store = () => {
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/contact?_embed')
                 commit('setContacts', data)
             },
+
+            // changeActiveTab: ({commit, state}, info) => {
+            //     commit('SET_ACTIVE_TAB', state.services[info]);
+            // }
             
         },
         getters:{
