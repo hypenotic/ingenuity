@@ -3,6 +3,7 @@
         max-width: 720px;
         margin: 0 auto;
         padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     .tabs-wrapper {
         max-width: 1500px;
@@ -25,15 +26,15 @@
             // border-top: 1px solid lightgrey;
             &.active:nth-child(1) {
                 & ~ * {
-                    &:nth-child(2) {
-                        border-right: 1px solid lighten(darkgrey,15);
+                    &:nth-child(2),&:nth-child(3) {
+                        border-right: 1px solid lighten(darkgrey,10);
                     }
                 }
             }
             &:not(.active):first-child ~ *:not(.active):nth-child(2) {
-                border-left: 1px solid lighten(darkgrey,15);
+                border-left: 1px solid lighten(darkgrey,10);
             }
-            a {
+            span {
                 display: block;
                 width: 100%;
                 color: grey;
@@ -49,9 +50,10 @@
                 &:hover, &:focus {
                     background: lighten(darkgrey,10);
                     color: $black;
+                    cursor: pointer;
                 }
             }
-            &.active a {
+            &.active span {
                 opacity: 1;
                 background: $yellow;
                 // background: #f8f8f8;

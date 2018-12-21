@@ -4,12 +4,31 @@
         <div>
             <app-banner :page="page"></app-banner>
             <section class="intro content-wrapper">
-                <div v-html="page.content.rendered"></div>
+                <!-- <div v-html="page.content.rendered"></div> -->
+                <p>Imagine you could start a Design Build & General Contracting business from scratch. In THIS era.</p>
+
+                <p>You’d marry experience, bleeding-edge standards, and passion for the craft with today’s service experience expectations. You’d factor in society’s growing awareness of how built and natural environments influence individuals, enterprise, and communities.</p>
+
+                <p>We did.</p>
+
+                <p>We built Ingenuity from the ground up to:</p>
+
+                <ul>
+                    <li>Afford attention to detail.</li>
+                    <li>Celebrate care for craft.</li>
+                    <li>
+                        Rely on process to drive quality outcomes.
+                    </li>
+                    <li>Offer personalized, lean service with no bureaucracy.</li>
+                    <li>Put people first (Clients, Communities, Tenants and Trades).</li>
+                </ul>
+
+                <p>Twelve years in, we’ve got an experienced, dedicated, and passionate team equally comfortable helping you envision a new room, building, or business park.</p>
             </section>
             <div class="tabs-wrapper">
                 <ul role="tablist" class="_tabs tablist">
-                    <li :role="tab.title.rendered" v-for="(tab, i) in tabs" @click="currentTab = i" :key="'about-tab-'+i" @keyup.enter="currentTab = i" :class="{ active: checkActive(i)}">
-                        <a :id="tab.slug+'-tab'" :href="'#'+tab.slug" role="tab" :aria-controls="tab.slug" aria-selected="true" v-html="tab.title.rendered"></a>
+                    <li :role="tab.title.rendered" v-for="(tab, i) in tabs" @click="currentTab = i" :key="'about-tab-'+i" @keyup.enter="currentTab = i" :class="{ active: checkActive(i)}" tab-index="0">
+                        <span :id="tab.slug+'-tab'" :href="'#'+tab.slug" role="tab" :aria-controls="tab.slug" aria-selected="true" v-html="tab.title.rendered"></span>
                     </li>
                 </ul>
                 <transition name="fade">
@@ -48,14 +67,14 @@
             return {
                 title: "About Us",
                 meta: [
-                    { hid: 'og:image', property: 'og:image', content: this.page.meta_box._page_hero_image },
+                    // { hid: 'og:image', property: 'og:image', content: this.page.meta_box._page_hero_image },
                     { hid: 'og:title', property: 'og:title', content: "About Us" },
                     { hid: 'og:url', property: 'og:url', content: this.$store.state.siteUrl + "" + this.$route.path},
                     { hid: 'og:description', property: 'og:description', content: helper.stripTags(helper.decodeHtmlEntity(this.page.excerpt.rendered))},
                     { hid: 'description', name: 'description', content: helper.stripTags(helper.decodeHtmlEntity(this.page.excerpt.rendered)) }
                 ],
                 script: [
-                    {src:'~assets/js/tabs.js', type: 'text/javascript', body: true}
+
                 ]
             }  
         },

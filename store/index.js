@@ -57,7 +57,7 @@ const store = () => {
         actions:{
             async apiPages({commit}) {
                 console.log('apiPages dispatched');
-                let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/pages?_embed')
+                let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/pages?per_page=20&_embed')
                 commit('setPages', data)
             },
             
