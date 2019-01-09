@@ -4,7 +4,7 @@ import axios from 'axios';
 export const actions = {
     getPages({commit, dispatch, context, state}, info) {
         console.log('getPages dispatched');
-        axios.get('https://data.ingenuity.ca/wp-json/wp/v2/pages?_embed')
+        axios.get('https://data.ingenuity.ca/wp-json/wp/v2/pages?per_page=20&_embed')
         .then(function (response) {
             commit(types.SET_PAGE_LIST, response.data);
         })
