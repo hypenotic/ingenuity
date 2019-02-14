@@ -67,4 +67,44 @@ function remove_cssjs_ver( $src ) {
 add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
 add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
 
+// Edit REST response for Gallery cpt
+add_action( 'rest_api_init', 'slug_register_starship' );
+function slug_register_starship() {
+    register_rest_field( 'gallery',
+        '_slide',
+        array(
+            'get_callback'    => 'slug_get_gallery',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
+
+/**
+ * Get the value of the "_slide" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
+ */
+function slug_get_gallery( $object, $field_name, $request ) {
+    $slides = get_post_meta( $object[ 'id' ], $field_name, true );
+
+    $new = array();
+
+    foreach ($slides as $slide => $obj) { 
+        $img = wp_get_attachment_image_src( $obj['_image'], 'large', false );
+        $url = $img[0];
+        $theObject = new stdClass();   
+        $theObject->image = $url;
+        $theObject->heading = $obj['_headline'];
+        $theObject->caption = $obj['_text'];
+        array_push($new,$theObject); 
+    } 
+
+    return $new;
+}
+
 ?>

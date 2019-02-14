@@ -5,6 +5,7 @@ $args = array(
     'show_in_nav_menus' => true,
     'menu_icon'     => 'dashicons-format-gallery', //http://melchoyce.github.io/dashicons/
     'supports'      => array( 'title'),
+    'show_in_rest' => true
     );
 $slide = register_cuztom_post_type('Gallery', $args);
 $slide->add_meta_box(
