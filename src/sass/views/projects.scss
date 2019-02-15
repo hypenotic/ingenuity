@@ -215,3 +215,33 @@ aside p {
         font-style: italic; 
 	}
 }
+
+.gallery__single {
+    margin: 0 0 30px;
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    @media #{$medium-and-down} {
+        flex-direction: column;
+    }
+    @media #{$medium-and-up} {
+        flex-direction: column;
+    }
+    @media #{$large-and-up} {
+        flex-direction: row;
+    }
+}
+
+.gallery__single:nth-child(even) .gallery__single-half.gallery-image {
+    order: 2;
+    @media #{$medium-and-down} {
+        order: 2;
+    }
+	@media #{$medium-and-up} {
+        order: 2;
+    }
+    img {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

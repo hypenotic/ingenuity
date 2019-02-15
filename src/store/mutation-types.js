@@ -7,4 +7,6 @@ export const SET_TEAM_LIST = 'SET_TEAM_LIST'
 export const SET_BLOG_LIST = 'SET_BLOG_LIST'
 export const SET_MENU_ITEMS = 'SET_MENU_ITEMS'
 export const SET_MENU_STATE = 'SET_MENU_STATE'
+export const SET_GALLERY_LIST = 'SET_GALLERY_LIST'
+export const SET_GALLERY_SINGLE = 'SET_GALLERY_SINGLE'
 

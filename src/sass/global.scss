@@ -779,6 +779,9 @@ figure {
     background-color: rgba(0,0,0,0.9);
     padding: 40px;
     color: $white;
+    &.gallery-caption-clear {
+        background-color: transparent;
+    }
     @media #{$bp-small}  {
         padding: 30px;
     }

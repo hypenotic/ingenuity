@@ -6,7 +6,8 @@ import {
     SET_PROJECT_LIST,
     SET_BLOG_LIST,
     SET_MENU_ITEMS,
-    SET_MENU_STATE
+    SET_MENU_STATE,
+    SET_GALLERY_LIST
 } from './mutation-types'
 
 export const mutations = {
@@ -21,6 +22,14 @@ export const mutations = {
     SET_PROJECT_LIST(state, list) {
         console.log('Mutation: SET_PROJECT_LIST');
         state.projectList = list;
+    },
+    SET_GALLERY_LIST(state, list) {
+        console.log('Mutation: SET_GALLERY_LIST');
+        state.galleryList = list;
+    },
+    SET_GALLERY_SINGLE(state, list) {
+        console.log('Mutation: SET_GALLERY_SINGLE');
+        state.gallerySingle = list;
     },
     SET_CONTACT_LIST(state, list) {
         console.log('Mutation: SET_CONTACT_LIST');

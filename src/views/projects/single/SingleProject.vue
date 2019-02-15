@@ -1,4 +1,4 @@
-<template>
+<template v-if="this.$store.state.projectList != null">
     <div>  
         <app-banner :page="projectInfo"></app-banner>
 
@@ -42,8 +42,19 @@
             
             <div class="main-wrapper">
                 
-                <!-- <section class="project__gallery">
-                </section>  -->
+                <section class="project__gallery" v-if="singleGal">
+                    <div class="gallery__single" v-for="(single, i) in singleGal['_slide']" :key="'single'+singleGal.id+i">
+                        <div class="gallery__single-half gallery-image wow fadeInLeft">
+                            <img :src="single.image" :alt="single.caption">
+                        </div>
+                        <div v-if="single.caption != ''" class="gallery__single-half gallery-caption wow fadeInRight">
+                            <p v-html="single.caption"></p>
+                        </div>
+                        <div v-else class="gallery__single-half gallery-caption gallery-caption-clear wow fadeInRight">
+                           
+                        </div>
+                    </div>
+                </section>
                 
                 <div class="project-nav">
                     
@@ -60,11 +71,8 @@
                         </router-link>
                     
                 </div>
-                
             </div>
-
         </div>
-
     </div>
 </template>
 
@@ -100,7 +108,8 @@ export default {
             projectNum: null,
             prev: '',
             next: '',
-            pageData: null
+            pageData: null,
+            images: null
 		}
 	},
 	filters: {
@@ -115,6 +124,9 @@ export default {
                     if (page.slug == this.slug) {
                         console.log(page);
                         // this.data = page;
+                        if (page.meta_box._slide_select != '') {
+                            this.$store.dispatch("getGallerySingle", page.meta_box._slide_select);
+                        }
                         this.pageData = page;
                         return page;
                         break;
@@ -129,9 +141,7 @@ export default {
             const max = this.$store.state.projectList.length;
             if (current == 1) {
                 let list = this.$store.state.projectList;
-                // console.log(list, max);
                 let item = list[max-1];
-                // console.log('hey', item)
                 this.prev = item.title.rendered;
                 return item.slug;
             } else {
@@ -139,7 +149,6 @@ export default {
                 let indexNum = previous - 1;
                 let list = this.$store.state.projectList;
                 let item = list[indexNum];
-                // console.log(item);
                 this.prev = item.title.rendered;
                 return item.slug;
             }
@@ -164,6 +173,9 @@ export default {
                 return item.slug;
             }
         },
+        singleGal() {
+            return this.$store.getters.singleGallery;
+        }
     },
 	methods: {
 	},

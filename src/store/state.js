@@ -5,6 +5,8 @@ export const state = {
     menuList: null,
     pageList: null,
     projectList: null,
+    galleryList: null,
+    gallerySingle : null,
     serviceList: null,
     teamList: null
 }

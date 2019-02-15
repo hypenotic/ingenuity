@@ -36,6 +36,26 @@ export const actions = {
             console.log(error)
         })
     },
+    getGalleries({commit, dispatch, context, state}, info) {
+        console.log('getGalleries dispatched');
+        axios.get('https://data.ingenuity.ca/wp-json/wp/v2/gallery?per_page=20&_embed')
+        .then(function (response) {
+            commit(types.SET_GALLERY_LIST, response.data);
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    },
+    getGallerySingle({commit}, info) {
+        console.log('getGalleries dispatched');
+        axios.get('https://data.ingenuity.ca/wp-json/wp/v2/gallery/'+info)
+        .then(function (response) {
+            commit(types.SET_GALLERY_SINGLE, response.data);
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    },
     getServices({commit, dispatch, context, state}, info) {
         console.log('getServices dispatched');
         axios.get('https://data.ingenuity.ca/wp-json/wp/v2/service?_embed')
