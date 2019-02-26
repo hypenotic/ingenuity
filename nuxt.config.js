@@ -1,6 +1,8 @@
 module.exports = {
     build: {
-        vendor: ['~/assets/js/replaceme.js'],
+        vendor: [
+            '~/assets/js/replaceme.js'
+        ],
     },
     loading: '~/components/loading.vue',
     head:{
@@ -10,7 +12,7 @@ module.exports = {
         meta: [
             { hid: 'og:image', property: 'og:image', content: 'http://172.104.208.23/splash.png' },
             { hid: 'og:image:alt', property: 'og:image:alt', content: 'Ingenuity - Established This Century - Design Build General Contracting' },
-            { hid: 'viewport', property: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0'}
+            { hid: 'viewport', name:'viewport',  property: 'viewport', content: 'width=device-width, initial-scale=1'}
         ],
         link: [
             {
@@ -30,8 +32,14 @@ module.exports = {
                 sizes: '180x180',
                 href: '/apple-touch-icon.png',
             },
+            {
+                rel: 'stylesheet',
+                href: 'https://use.typekit.net/omn8cmb.css',
+            },
         ],
-    }
-    
+    },
+    plugins: [
+        {src: '~/plugins/aos', ssr: false}
+    ],
 }
 

@@ -13,6 +13,8 @@ const store = () => {
             pages: null,
             menus: null,
             projects: null,
+            gallery: null,
+            galleries: null,
             services: null,
             team: null,
             blogs: null,
@@ -32,6 +34,16 @@ const store = () => {
             setProjects(state, payload) {
                 console.log('Mutation: setProjects');
                 state.projects = payload;
+            },
+
+            setGallery(state, payload) {
+                console.log('Mutation: setGallery');
+                state.gallery = payload;
+            },
+
+            setGalleries(state, payload) {
+                console.log('Mutation: setGalleries');
+                state.galleries = payload;
             },
             
             setServices(state, payload) {
@@ -72,6 +84,18 @@ const store = () => {
                 let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/project?per_page=20&_embed')
                 commit('setProjects', data)
             },
+
+            async apiSingleGallery({commit}, info) {
+                console.log('apiSingleGallery dispatched');
+                let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/gallery/'+info)
+                commit('setGallery', data)
+            },
+
+            async apiGalleries({commit}) {
+                console.log('apiGalleries dispatched');
+                let {data} = await axios.get('https://data.ingenuity.ca/wp-json/wp/v2/gallery?per_page=20')
+                commit('setGalleries', data)
+            },
             
             async apiServices({commit}) {
                 console.log('apiServices dispatched');
@@ -111,6 +135,12 @@ const store = () => {
             },
             getProjects: state => {
                 return state.projects
+            },
+            getGallery: state => {
+                return state.gallery
+            },
+            getGalleries: state => {
+                return state.galleries
             },
             getServices: state => {
                 return state.services

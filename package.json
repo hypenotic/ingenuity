@@ -4,6 +4,7 @@
         "dev": "nuxt"
     },
     "dependencies": {
+        "aos": "^2.3.4",
         "axios": "^0.18.0",
         "hamburgers": "^0.9.3",
         "nuxt": "^1.4.1",

@@ -3,13 +3,15 @@
         <app-nav :menu-links="menuLinks"></app-nav>
         <div v-if="page != null" class="team-panels">
             <app-banner :page="page"></app-banner>
+            <div class="leadership-banner">
+                <h3>Meet the leadership</h3>
+            </div>
+            
             <div class="main-wrapper"> 
                 <section class="main-content standard-center" v-html="page.content.rendered"> 
                 </section>
             </div>
-            <div class="leadership-banner">
-                <h3>Meet the leadership</h3>
-            </div>
+            
             <div class="team__container--leadership team__container">
                 <div v-for="member in team" :key="member.id" v-if="member.meta_box._team_section == 'leadership'">
                     <figure class="team__single team__single--leadership" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'" v-on:click="dropDownLeader(member.id)" :id="'member-'+member.id">

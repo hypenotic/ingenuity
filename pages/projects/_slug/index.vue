@@ -37,8 +37,21 @@
                 </div>  
             </section>
             <div class="main-wrapper">
-                <section class="project__gallery">
-                </section> 
+                
+                <section class="project__gallery" v-if="gallery">
+                    <div class="gallery__single" v-for="(single, i) in gallery['_slide']" :key="'single'+gallery.id+i">
+                        <div class="gallery__single-half gallery-image" data-aos="zoom-out" data-aos-delay="200">
+                            <img :src="single.image" :alt="single.caption">
+                        </div>
+                        <div v-if="single.caption != ''" class="gallery__single-half gallery-caption">
+                            <p v-html="single.caption"></p>
+                        </div>
+                        <div v-else class="gallery__single-half gallery-caption gallery-caption-clear">
+                           
+                        </div>
+                    </div>
+                </section>
+
                 <div class="project-nav">
                     <nuxt-link :to="prev.slug" v-if="prev.slug != null">
                         <div class="project-nav__arrow project-nav__arrow--prev">
@@ -68,7 +81,8 @@
         async fetch ({store}) {
             await store.dispatch('apiPages')
             await store.dispatch('apiProjects')
-            await store.dispatch('apiMenu')
+            await store.dispatch('apiGalleries')  
+            await store.dispatch('apiMenu')    
         },
         head () {
             console.log(this.project.meta_box._banner_image[0].full_url);
@@ -94,6 +108,16 @@
             },
             id(){
                 return this.projects.findIndex(p => p.slug == this.$route.params.slug)
+            },
+            gallery(){
+                let g = this.project.meta_box._slide_select;
+                let selected = this.galleries.filter(gal => gal.id == g);
+                if (selected && selected.length > 0) {
+                    return selected[0]
+                } else { return false }
+            },
+            galleries(){
+                return this.$store.getters.getGalleries
             },
             project(){
                 return this.projects[this.id]

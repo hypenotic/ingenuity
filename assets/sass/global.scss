@@ -88,7 +88,7 @@ body.noscroll {
 	background-color: none;
     padding: 0;
     margin: 0 auto;
-	@media #{$medium-and-up} {
+	@media #{$large-and-up} {
         max-width: 675px;
         padding: 50px 0;
     }
@@ -382,9 +382,9 @@ figure {
 
 .default-hero {
 	width: 100%;
-	min-height: 80vh;
+	min-height: 50vh;
     position: relative;
-    @media #{$medium-and-up} {
+    @media #{$large-and-up} {
 		min-height: 90vh;
 	}
 	@media #{$bp-xxlarge} {

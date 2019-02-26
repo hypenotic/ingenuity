@@ -1,4 +1,15 @@
 nav{
+    z-index: 500;
+    position: fixed;
+    width: 100%;
+    transition: padding 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    @media #{$bp-large} {
+        padding: 1rem 4rem;
+    }
     .button{
         cursor: pointer;
         display: flex;
@@ -36,21 +47,14 @@ nav{
             }
         }
     }
-    
-    z-index: 500;
-    position: fixed;
-    width: 100%;
-    padding: 1rem 4rem;
-    transition: padding 0.25s ease;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
     &.small{
         position: sticky;
         top: 0px;
         background: black;
-        padding: 0rem 4rem;
+        padding: 0rem 1rem;
+        @media #{$bp-large} {
+            padding: 0rem 4rem;
+        }
         img{
             max-height: 0;
         }
@@ -62,8 +66,11 @@ nav{
     }
     
     img{
-        max-height: 120px;
+        max-height: 80px;
         transition: all 0.25s ease;
+        @media #{$bp-large} {
+            max-height: 120px;
+        }
     }
     &.scrolled{
         background: black;
