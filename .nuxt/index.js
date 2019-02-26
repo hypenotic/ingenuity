@@ -12,6 +12,7 @@ import { setContext, getLocation, getRouteData } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
+import nuxt_plugin_googleanalytics_e525599c from 'nuxt_plugin_googleanalytics_e525599c' // Source: ./google-analytics.js (ssr: false)
 import nuxt_plugin_aos_5e4622cf from 'nuxt_plugin_aos_5e4622cf' // Source: ../plugins/aos (ssr: false)
 
 
@@ -153,6 +154,7 @@ async function createApp (ssrContext) {
   
   
   if (process.browser) { 
+    if (typeof nuxt_plugin_googleanalytics_e525599c === 'function') await nuxt_plugin_googleanalytics_e525599c(app.context, inject)
     if (typeof nuxt_plugin_aos_5e4622cf === 'function') await nuxt_plugin_aos_5e4622cf(app.context, inject)
   }
 

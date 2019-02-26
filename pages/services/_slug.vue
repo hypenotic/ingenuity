@@ -16,13 +16,13 @@
                         </div>
                     </div>
                     <div class="two-column">
-                        <div class="two-column__half services-testimonial wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.3s">
+                        <div class="two-column__half services-testimonial" data-aos="fade-left" data-aos-delay="200">
                             <blockquote v-html="service.meta_box._service_quote_text"></blockquote>
                             <h4 v-html="service.meta_box._service_quote_source"></h4>
                             <h5 v-html="service.meta_box._service_quote_source_title"></h5>
                             <p v-if="service.meta_box._service_quote_caption != ''" v-html="service.meta_box._service_quote_caption" class="testimonial__caption"></p>
                         </div>
-                        <div class="two-column__half services-cta wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.7s">
+                        <div class="two-column__half services-cta" data-aos="fade-right" data-aos-delay="200">
                             <div v-html="service.meta_box._service_cta_copy"></div>
                             <a :href="service.meta_box._service_cta_link">
                                 <button class="services-cta__btn" v-html="service.meta_box._service_cta_text"></button>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
 
-                    <div class="other-services">
+                    <div class="other-services" data-aos="fade-up" data-aos-delay="200">
                         <h3>Check out our other services:</h3>
                         <router-link :to="'/services/' + s.slug" v-if="service.slug != s.slug" v-for="s in services" :key="s.id" class="other-service-btn services-cta__btn">
                             <span v-if="s.title.rendered" v-html="s.title.rendered"></span>

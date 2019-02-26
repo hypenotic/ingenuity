@@ -452,6 +452,7 @@
 		margin-top: 0px;
 		font-family: $lite-headings;
         font-size: 18px;
+        z-index: 1000000001;
 		&:hover {
             background-color: darken($yellow, 10%); 
             color: $black;

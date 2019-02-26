@@ -4,15 +4,22 @@ module.exports = {
             '~/assets/js/replaceme.js'
         ],
     },
+    modules: [
+        ['@nuxtjs/google-analytics', { ua: 'UA-72042036-1' }]
+    ],
     loading: '~/components/loading.vue',
     head:{
         script: [
-            {src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyD6SyhFeGyRXakUOo6WbZsRrFMaOgaOgYM", body: true}
+            {src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyD6SyhFeGyRXakUOo6WbZsRrFMaOgaOgYM", body: true},
+            { src: '//cdn.trackduck.com/toolbar/prod/td.js', "data-trackduck-id": '59930bc28fc753830a14d52d', async: true, body: true },
         ],
         meta: [
-            { hid: 'og:image', property: 'og:image', content: 'http://172.104.208.23/splash.png' },
+            { hid: 'og:image', property: 'og:image', content: 'https://data.ingenuity.ca/custom/uploads/2018/03/ingenuity_card.jpg' },
+            { hid: 'twitter:image', property: 'twitter:image', content: 'https://data.ingenuity.ca/custom/uploads/2018/03/ingenuity_card.jpg' },
             { hid: 'og:image:alt', property: 'og:image:alt', content: 'Ingenuity - Established This Century - Design Build General Contracting' },
-            { hid: 'viewport', name:'viewport',  property: 'viewport', content: 'width=device-width, initial-scale=1'}
+            { hid: 'viewport', name:'viewport',  property: 'viewport', content: 'width=device-width, initial-scale=1'},
+            { hid: 'og:description', property: 'og:description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' },
+            { hid: 'description', name: 'description', content: 'A Design Build & General Contracting team that believes in happiness, craft, productivity, detail, and creativity in each square foot.' }
         ],
         link: [
             {
