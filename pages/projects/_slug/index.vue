@@ -39,8 +39,8 @@
             <div class="main-wrapper">
                 
                 <section class="project__gallery" v-if="gallery">
-                    <div class="gallery__single" v-for="(single, i) in gallery['_slide']" :key="'single'+gallery.id+i">
-                        <div class="gallery__single-half gallery-image" data-aos="zoom-out" data-aos-delay="200">
+                    <div class="gallery__single" v-for="(single, i) in gallery['_slide']" :key="'single'+gallery.id+i" data-aos="fade" data-aos-delay="200">
+                        <div class="gallery__single-half gallery-image" >
                             <img :src="single.image" :alt="single.caption">
                         </div>
                         <div v-if="single.caption != ''" class="gallery__single-half gallery-caption">

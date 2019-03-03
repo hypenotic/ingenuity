@@ -263,6 +263,7 @@ video#bgvid {
 	}
 	a.rotator-link {
 		color: $yellow;
+		border-bottom: 1px solid rgba(252, 216, 56, 0.3);
             &:hover {
                 color: $black;
                 background-color: $yellow;

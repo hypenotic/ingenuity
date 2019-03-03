@@ -403,7 +403,7 @@ figure {
 	.hgroup {
 		position: relative;
 		z-index: 51;
-		margin-top: 150px;
+        margin-top: 150px;
 		@media #{$small-and-down} {
 			margin: 10%;
         }
@@ -414,7 +414,13 @@ figure {
 		@media #{$mobile-landscape} {
 			margin-top: 10%;
 		}
-	}
+    }
+    .hgroup.center-hgroup {
+        text-align: center;
+        h1 {
+            text-align: center;
+        }
+    }
 }
 
 .default-hero .hgroup.service-hgroup {

@@ -1,7 +1,7 @@
 <template>
     <div class="default-hero">
         <figure v-if="page.type == 'page'" :style="'background-image: url('+page.meta_box._page_hero_image+'); background-size: cover;'"></figure>
-        <div v-if="page.type == 'page'" class="hgroup" data-aos="fade-down" data-aos-delay="500">
+        <div v-if="page.type == 'page'" class="hgroup center-hgroup" data-aos="fade-down" data-aos-delay="500">
             <h1 v-if="page.meta_box._page_hero_heading != ''" v-html="page.meta_box._page_hero_heading"></h1>
             <h1 v-else v-html="pageInfo.title.rendered"></h1>
             <h2 v-if="page.meta_box._page_hero_subheading != ''" v-html="page.meta_box._page_hero_subheading"></h2>
@@ -53,8 +53,6 @@
     @import '~/assets/sass/animate.scss';
     @import '~/assets/sass/typography.scss';
     @import '~/assets/sass/global.scss';
-
-
     
     h2 {
         color: $white;

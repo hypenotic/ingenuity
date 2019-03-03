@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-nav v-bind:menu-links="menuLinks"></app-nav>
+        <app-nav></app-nav>
         <div v-if="post != null" class="single-blog-view">
             <app-banner :page="post"></app-banner>
 
@@ -66,6 +66,7 @@
             appNav: Nav,
             appFooter: Footer,
         },
+        
         computed: {
             blogs(){
                 return this.$store.getters.getBlogs
