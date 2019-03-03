@@ -405,14 +405,16 @@ figure {
 		z-index: 51;
         margin-top: 150px;
 		@media #{$small-and-down} {
-			margin: 10%;
+            margin: 10%;
+            margin-top: 50px;
         }
         @media #{$medium-and-up} {
             margin-top: 50px;
             margin: 50px 10% 0;
         }
 		@media #{$mobile-landscape} {
-			margin-top: 10%;
+            margin-top: 90px;
+			// margin-top: 10%;
 		}
     }
     .hgroup.center-hgroup {
@@ -695,7 +697,9 @@ figure {
 }
 
 .split--content {
-    width: 70%;
+    @media #{$medium-and-up} {
+        width: 70%;
+    }
     >p:first-child {
         margin-top: 0;
     }

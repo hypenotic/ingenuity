@@ -71,10 +71,14 @@ nav{
         @media #{$bp-large} {
             max-height: 120px;
         }
+        
     }
     &.scrolled{
         background: black;
-        padding: 0rem 4rem;
+        padding: 0rem 1rem;
+        @media #{$bp-large} {
+            padding: 0rem 4rem;
+        }
         img{
             max-height: 0;
         }

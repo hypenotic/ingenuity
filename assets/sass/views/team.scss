@@ -381,9 +381,13 @@
     color: $black;
     // transition: all 0.5s ease;
     .knolling-pic {
-        max-width: 1300px;
-        margin: 0 auto 0px;
-        display: block;
+        max-width: 100%;
+        height: auto;
+        @media #{$large-and-up} {
+			max-width: 1300px;
+            margin: 0 auto 0px;
+            display: block;
+        }
     }
     .push__longbio {
         padding: 24px 40px;
@@ -401,19 +405,21 @@
         }
     }
     .split {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        .split--image {
-            width: 35%;
-            img {
-                // width: 
+        @media #{$medium-and-up} {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+			.split--image {
+                width: 35%;
+                img {
+                    // width: 
+                }
             }
-        }
-        .split--content {
-            width: 60%;
-        }
+            .split--content {
+                width: 60%;
+            }
+		}
     }
     .button__container {
         text-align: right;

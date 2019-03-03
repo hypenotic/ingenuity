@@ -4,26 +4,7 @@
         <div>
             <app-banner :page="page"></app-banner>
             <section class="intro content-wrapper">
-                <!-- <div v-html="page.content.rendered"></div> -->
-                <p>Imagine you could start a Design Build & General Contracting business from scratch. In THIS era.</p>
-
-                <p>You’d marry experience, bleeding-edge standards, and passion for the craft with today’s service experience expectations. You’d factor in society’s growing awareness of how built and natural environments influence individuals, enterprise, and communities.</p>
-
-                <p>We did.</p>
-
-                <p>We built Ingenuity from the ground up to:</p>
-
-                <ul>
-                    <li>Afford attention to detail.</li>
-                    <li>Celebrate care for craft.</li>
-                    <li>
-                        Rely on process to drive quality outcomes.
-                    </li>
-                    <li>Offer personalized, lean service with no bureaucracy.</li>
-                    <li>Put people first (Clients, Communities, Tenants and Trades).</li>
-                </ul>
-
-                <p>Twelve years in, we’ve got an experienced, dedicated, and passionate team equally comfortable helping you envision a new room, building, or business park.</p>
+                <div v-html="page.content.rendered"></div>
             </section>
             <div class="tabs-wrapper" id="tablist-anchor">
                 <ul role="tablist" class="_tabs tablist">
