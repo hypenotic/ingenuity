@@ -1,7 +1,10 @@
 {
     "name": "my-app",
     "scripts": {
-        "dev": "nuxt"
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
     },
     "dependencies": {
         "@nuxtjs/google-analytics": "^2.1.0",
