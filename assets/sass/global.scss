@@ -382,7 +382,7 @@ figure {
 
 .default-hero {
 	width: 100%;
-	min-height: 70vh;
+	min-height: 80vh;
     position: relative;
     @media #{$large-and-up} {
 		min-height: 90vh;
@@ -406,7 +406,7 @@ figure {
         margin-top: 150px;
 		@media #{$small-and-down} {
             margin: 10%;
-            margin-top: 50px;
+            margin-top: 90px;
         }
         @media #{$medium-and-up} {
             margin-top: 50px;
