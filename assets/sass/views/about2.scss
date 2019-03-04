@@ -52,10 +52,13 @@
                 background: lighten(darkgrey,20);
                 // color: grey;
                 // opacity: 0.4;
-                padding: 1rem 2rem;
+                padding: 0.5rem 1rem;
                 // border-bottom: 1px solid lightgrey;
                 font-family: $main-headings;
                 font-weight: bold;
+                @media #{$bp-large} {
+                    padding: 1rem 2rem;
+                }
                 &:hover, &:focus {
                     background: lighten(darkgrey,10);
                     color: $black;
@@ -69,8 +72,10 @@
                 // background: #f8f8f8;
                 // border-bottom: 1px solid #f8f8f8;
                 margin-top: -10px;
-                font-size: 35px;
                 color: $black;
+                @media #{$bp-large} {
+                    font-size: 35px;
+                }
                 &:hover {
                     background: $yellow;
                 }
