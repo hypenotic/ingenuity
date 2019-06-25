@@ -8,7 +8,7 @@
     margin: 0 auto;
     padding: 50px 30px;
     @media #{$bp-large} {
-        padding: 50px 0;
+        padding: 50px 10px;
 		display: flex;
         justify-content: space-between;
         >div {
@@ -51,10 +51,22 @@
         margin-top: 20px;
         background-color: #000;
         border: none;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover {
+            color: #000;
+            background: #fcd838;
+        }
     }
     a, h3 {
         text-decoration: none;
         font-family: 'Audimat3000-Leger',sans-serif;
+        color: $grey;
+        transition: color .2s;
+        &:hover {
+            color: $d-grey;
+        }
     }
     h3 span {
         border-bottom: 1px solid grey;
