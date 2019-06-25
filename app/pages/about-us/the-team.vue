@@ -203,6 +203,7 @@
                 let select = document.getElementById(ID);
                 scrollTo(document.documentElement, select.offsetTop+(document.documentElement.clientHeight*2.5), 500)
             },
+            
             dropDownLeader: function(ID) {
 
                 function scrollTo(element, to, duration) {
@@ -302,9 +303,6 @@
 </script>
 
 <style lang="scss">
-    @import 'assets/sass/variables.scss';
-    @import 'assets/sass/animate.scss';
-    @import 'assets/sass/typography.scss';
-    @import 'assets/sass/global.scss';
-    @import 'assets/sass/views/team.scss';
+    @import '~/assets/sass/base.scss';
+    @import '~/assets/sass/views/team.scss';
 </style>

@@ -6,7 +6,6 @@ const _029515a8 = () => interopDefault(import('../pages/about-us/index.vue' /* w
 const _d6be199c = () => interopDefault(import('../pages/contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
 const _3ecf94dd = () => interopDefault(import('../pages/news/index.vue' /* webpackChunkName: "pages/news/index" */))
 const _7d76e378 = () => interopDefault(import('../pages/projects/index.vue' /* webpackChunkName: "pages/projects/index" */))
-const _43be9ffd = () => interopDefault(import('../pages/about-us/old.vue' /* webpackChunkName: "pages/about-us/old" */))
 const _794e8c53 = () => interopDefault(import('../pages/about-us/the-team.vue' /* webpackChunkName: "pages/about-us/the-team" */))
 const _f2487302 = () => interopDefault(import('../pages/projects/_slug/index.vue' /* webpackChunkName: "pages/projects/_slug/index" */))
 const _389f5040 = () => interopDefault(import('../pages/services/_slug.vue' /* webpackChunkName: "pages/services/_slug" */))
@@ -43,10 +42,6 @@ export function createRouter() {
       path: "/projects",
       component: _7d76e378,
       name: "projects"
-    }, {
-      path: "/about-us/old",
-      component: _43be9ffd,
-      name: "about-us-old"
     }, {
       path: "/about-us/the-team",
       component: _794e8c53,

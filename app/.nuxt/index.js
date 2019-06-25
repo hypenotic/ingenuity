@@ -12,7 +12,8 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_googleanalytics_1b3c9b3a from 'nuxt_plugin_googleanalytics_1b3c9b3a' // Source: ./google-analytics.js (mode: 'client')
-import nuxt_plugin_aos_5e4622cf from 'nuxt_plugin_aos_5e4622cf' // Source: ../plugins/aos (mode: 'client')
+import nuxt_plugin_aos_78651e70 from 'nuxt_plugin_aos_78651e70' // Source: ../plugins/aos.js (mode: 'client')
+import nuxt_plugin_replaceme_7ea51da1 from 'nuxt_plugin_replaceme_7ea51da1' // Source: ../plugins/replaceme.js (mode: 'client')
 
 // Component: <NoSsr>
 Vue.component(NoSsr.name, NoSsr)
@@ -156,8 +157,12 @@ async function createApp(ssrContext) {
     await nuxt_plugin_googleanalytics_1b3c9b3a(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_aos_5e4622cf === 'function') {
-    await nuxt_plugin_aos_5e4622cf(app.context, inject)
+  if (process.client && typeof nuxt_plugin_aos_78651e70 === 'function') {
+    await nuxt_plugin_aos_78651e70(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_replaceme_7ea51da1 === 'function') {
+    await nuxt_plugin_replaceme_7ea51da1(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

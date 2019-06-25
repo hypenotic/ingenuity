@@ -70,9 +70,9 @@
 </script>
 
 <style lang="scss">
-    @import 'assets/sass/variables.scss';
-    @import 'assets/sass/animate.scss';
-    @import 'assets/sass/typography.scss';
-    @import 'assets/sass/global.scss';
-    @import 'assets/sass/views/projects.scss';
+    @import '~/assets/sass/variables.scss';
+    @import '~/assets/sass/animate.scss';
+    @import '~/assets/sass/typography.scss';
+    @import '~/assets/sass/global.scss';
+    @import '~/assets/sass/views/projects.scss';
 </style>

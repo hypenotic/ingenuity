@@ -95,7 +95,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '~/assets/sass/variables.scss';
-    @import '~/assets/sass/components/nav.scss';
+    // @import '~/assets/sass/variables.scss';
+    // @import '~/assets/sass/components/nav.scss';
     @import '~/node_modules/hamburgers/_sass/hamburgers/hamburgers.scss'
 </style>

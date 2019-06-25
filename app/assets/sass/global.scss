@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     
     // font-family: serif;
-    font-family: $body-type;
+    font-family: $main-body-font;
     font-size: 18px;
     line-height:1.5;
     font-weight: 300;
@@ -145,7 +145,7 @@ body.noscroll {
         width: 80%;
         font-weight: 300;
         line-height: 130%;
-        font-family: $body-type;
+        font-family: $main-body-font;
         font-weight: 200;
         @media #{$small-and-down} {
             width: 95%;
@@ -157,7 +157,7 @@ body.noscroll {
         margin-top: 10px;
         font-weight: 300;
         line-height: 130%;
-        font-family: $body-type;
+        font-family: $main-body-font;
         font-weight: 200;
         @media #{$small-and-down} {
             width: 95%;

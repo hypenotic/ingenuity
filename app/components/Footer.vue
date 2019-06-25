@@ -65,7 +65,7 @@
 
 <style lang="scss" scoped>
 
-@import '~/assets/sass/variables.scss';
-@import '~/assets/sass/components/footer.scss';
+// @import '~/assets/sass/variables.scss';
+// @import '~/assets/sass/components/footer.scss';
 
 </style>

@@ -91,15 +91,15 @@ $main-accent: $yellow;
 
 @font-face {
 	font-family: 'Audimat3000-Leger';
-	src: url('~/assets/fonts/2F2E8B_3_0.eot');
-    src: url('~/assets/fonts/2F2E8B_3_0.eot?#iefix') format('embedded-opentype'),url('~/assets/fonts/2F2E8B_3_0.woff2') format('woff2'),url('~/assets/fonts/2F2E8B_3_0.woff') format('woff'),url('~/assets/fonts/2F2E8B_3_0.ttf') format('truetype');
+	src: url('~assets/fonts/2F2E8B_3_0.eot');
+    src: url('~assets/fonts/2F2E8B_3_0.eot?#iefix') format('embedded-opentype'),url('~assets/fonts/2F2E8B_3_0.woff2') format('woff2'),url('~assets/fonts/2F2E8B_3_0.woff') format('woff'),url('/assets/fonts/2F2E8B_3_0.ttf') format('truetype');
 }
 
  
 @font-face {
 	font-family: 'Audimat3000-Regulier';
-        src: url('~/assets/fonts/2F2E8B_6_0.eot');
-    src: url('~/assets/fonts/2F2E8B_6_0.eot?#iefix') format('embedded-opentype'),url('~/assets/fonts/2F2E8B_6_0.woff2') format('woff2'),url('~/assets/fonts/2F2E8B_6_0.woff') format('woff'),url('~/assets/fonts/2F2E8B_6_0.ttf') format('truetype');
+        src: url('~assets/fonts/2F2E8B_6_0.eot');
+    src: url('~assets/fonts/2F2E8B_6_0.eot?#iefix') format('embedded-opentype'),url('~assets/fonts/2F2E8B_6_0.woff2') format('woff2'),url('~assets/fonts/2F2E8B_6_0.woff') format('woff'),url('/assets/fonts/2F2E8B_6_0.ttf') format('truetype');
 }
 
 $title-font: "Audimat3000-Regulier",sans-serif;

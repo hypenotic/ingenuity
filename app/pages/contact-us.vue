@@ -60,7 +60,7 @@
 
 <style lang="scss">
 
-    @import '~/assets/sass/variables.scss';
-    @import '~/assets/sass/views/contact.scss';
+    // @import '~/assets/sass/variables.scss';
+    // @import '~/assets/sass/views/contact.scss';
 
 </style>

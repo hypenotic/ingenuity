@@ -68,14 +68,13 @@ export default {
     /*
     ** Global CSS
     */
-    css: [
-        '@/assets/sass/base.scss',
-    ],
+    css: [],
     /*
     ** Plugins to load before mounting the App
     */
     plugins: [
-        { src: "~/plugins/aos", ssr: false },
+        { src: "~/plugins/aos.js", ssr: false },
+        { src: "~/plugins/replaceme.js", ssr: false }
     ],
     /*
     ** Nuxt.js modules

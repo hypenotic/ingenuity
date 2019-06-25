@@ -1,7 +1,7 @@
-@import '~/assets/sass/variables.scss';
-@import '~/assets/sass/animate.scss';
-@import '~/assets/sass/typography.scss';
-@import '~/assets/sass/global.scss';
+// @import '~/assets/sass/variables.scss';
+// @import '~/assets/sass/animate.scss';
+// @import '~/assets/sass/typography.scss';
+// @import '~/assets/sass/global.scss';
 
 .home-hero {
 	h1 {
@@ -162,7 +162,7 @@ body.no-scroll-home {
 		top: 0;
 		left: 0;
 		width: 100%;
-		background-image: url(~/assets/images/dotscreen.png);
+		// background-image: url(~/assets/images/dotscreen.png);
             background-color: rgba(0,0,0,0.5);
 	}
 	

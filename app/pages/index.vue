@@ -63,5 +63,6 @@
 </script>
 
 <style lang="scss">
+    @import '~/assets/sass/variables.scss';
     @import '~/assets/sass/views/home.scss';
 </style>

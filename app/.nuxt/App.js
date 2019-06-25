@@ -2,9 +2,7 @@ import Vue from 'vue'
 import NuxtLoading from '~/components/loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '../assets/sass/base.scss'
-
-import _6f6c098b from './layouts/default.vue'
+import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_default": _6f6c098b }
 

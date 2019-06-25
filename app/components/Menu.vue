@@ -29,6 +29,6 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '~/assets/sass/variables.scss';
-    @import '~/assets/sass/components/menu.scss';
+    // @import '~/assets/sass/variables.scss';
+    // @import '~/assets/sass/components/menu.scss';
 </style>
