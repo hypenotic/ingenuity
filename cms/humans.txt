@@ -1,0 +1,13 @@
+/* TEAM */
+
+	HYPENOTIC, Persuasion by Design
+	t. 416-363-5215 | twitter. @hypenotic
+	www.hypenotic.com | Proud to be B Corporation Certified
+
+/* SITE */
+
+	Launch: 2015/12/10
+	Last Major Update: 2015/12/10
+	Language: English
+	Doctype: HTML5
+	IDE: Sublime Text, Gulp, Photoshop
