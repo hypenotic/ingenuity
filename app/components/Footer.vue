@@ -29,10 +29,8 @@
         </div>
         <div class="footer__cta footer__third footer__third--align">
             <h4>​Great buildings begin with a conversation.</h4>
-			<nuxt-link to="/contact-us">
-				<a><button class="button-down">Let's talk over an espresso!</button></a>
-			</nuxt-link>
-            
+			<nuxt-link to="/contact-us" class="button button-down">
+            Let's talk over an espresso!</nuxt-link> 
         </div>
     </footer>
     </no-ssr>

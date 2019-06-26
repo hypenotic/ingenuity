@@ -97,11 +97,11 @@ form.footer-newsletter {
 		text-transform: uppercase;
 		font-family: 'Audimat3000-Leger',sans-serif;
 		font-size: 16px;
-		&:hover {
+		&:hover, :active, :focus  {
 			border: 0;
 			color: $black;
 			background-color: $yellow;
-			font-weight: 400;
+			// font-weight: 400;
 		}
 	}
 }
@@ -289,23 +289,23 @@ form.footer-newsletter {
 	color: rgba(255,255,255,0.2);
 }
 
-.footer__cta button {
+.footer__cta .button {
 	background-color: $black;
 	border-radius: 0;
 	border: 2px solid $white;
 	color: $white;
+	display: inline-block;
 	font-weight: bold;
-	min-width: 70%;
+	max-width: 250px;
 	padding: 10px;
 	min-height: 60px;
 	text-transform: uppercase;
 	font-family: 'Audimat3000-Leger',sans-serif;
 	font-size: 16px;
-	&:hover {
-		border: 0;
+	&:hover, :active, :focus  {
+		border: 2px solid $yellow;
 		color: $black;
 		background-color: $yellow;
-		font-weight: 400;
 	}
 }
 

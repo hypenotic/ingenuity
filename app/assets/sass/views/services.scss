@@ -196,11 +196,17 @@
 	border: 1px solid $black;
 	// transition: all 0.2s;
 	// letter-spacing: 1px;
-	&:hover {
+	&:hover  {
 		border: 2px solid $black;
 		color: $black;
 		background-color: $white;
 		// font-weight: 400;
+	}
+	&:focus {
+		border: 2px solid $black;
+		color: $black;
+		background-color: $white;
+
 	}
 }
 
