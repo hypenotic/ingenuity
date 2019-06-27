@@ -83,27 +83,6 @@ form.footer-newsletter {
 		// font-weight: normal;
 		margin-bottom: 20px;
 	}
-	#mc-embedded-subscribe {
-		background-color: $black;
-		border-radius: 0;
-		border: 2px solid $white;
-		color: $white;
-		font-weight: bold;
-		width: 300px;
-		width: 35%;
-		min-width: 70%;
-		padding: 10px;
-		height: 60px;
-		text-transform: uppercase;
-		font-family: 'Audimat3000-Leger',sans-serif;
-		font-size: 16px;
-		&:hover, :active, :focus  {
-			border: 0;
-			color: $black;
-			background-color: $yellow;
-			// font-weight: 400;
-		}
-	}
 }
 
 .footer__blog {
@@ -289,19 +268,22 @@ form.footer-newsletter {
 	color: rgba(255,255,255,0.2);
 }
 
-.footer__cta .button {
+.footer__cta .button, form.footer-newsletter #mc-embedded-subscribe  {
 	background-color: $black;
 	border-radius: 0;
 	border: 2px solid $white;
 	color: $white;
 	display: inline-block;
 	font-weight: bold;
-	max-width: 250px;
+	width: 250px;
 	padding: 10px;
 	min-height: 60px;
 	text-transform: uppercase;
 	font-family: 'Audimat3000-Leger',sans-serif;
 	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 	&:hover, :active, :focus  {
 		border: 2px solid $yellow;
 		color: $black;

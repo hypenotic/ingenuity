@@ -49,8 +49,8 @@ a {
     }
 }
 
-a, button {
-    transition: color .2s, background .2s;
+a, button, .button {
+    transition: color .2s, background .2s, border .2s;
 }
 
 

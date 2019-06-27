@@ -1,6 +1,6 @@
 <template>
     <div v-if="page" class="about-page">
-        <app-nav></app-nav>
+        <app-nav :small="true"></app-nav>
         <div>
             <app-banner :page="page"></app-banner>
             <section class="intro content-wrapper">

@@ -54,12 +54,12 @@ export default {
     /*
     ** Used to go to top of page for pagaination
     */
-    // router: {
-    //     base: process.env.BASE_ROUTER,
-    //     scrollBehavior: function (to, from, savedPosition) {
-    //         return { x: 0, y: 0 }
-    //     }
-    // },
+    router: {
+        base: process.env.BASE_ROUTER,
+        scrollBehavior: function (to, from, savedPosition) {
+            return { x: 0, y: 0 }
+        }
+    },
     /*
     ** Customize the progress-bar color
     */

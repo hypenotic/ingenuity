@@ -216,6 +216,9 @@ aside p {
     p {
         margin: 0;
         font-family: $main-headings;
+        @media #{$medium-and-down} {
+            font-size: 14px;
+        }
     }
 }
 
@@ -227,6 +230,9 @@ aside p {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media #{$small-and-down} {
+       justify-content: center;
+    }
     a {
         &:hover {
             .project-nav__arrow {
@@ -243,7 +249,7 @@ aside p {
     height: 50px;
     // margin-left: 40px;
     color: $black;
-    background-color: transparent;
+    background-color: white;
     text-align:center;
     // line-height:40px;
     border: 2px solid $black;
@@ -251,6 +257,7 @@ aside p {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background .2s;
     @media #{$bp-med} {
         width: 200px;
         height: 80px;
