@@ -91,6 +91,23 @@ form.footer-newsletter {
 		font-size: 40px;
 		font-family: 'Audimat3000-Leger',sans-serif;
 		margin: 0;
+		margin-bottom: 25px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			padding-bottom: 5px;
+			font-family: $lite-headings;
+		}
+		a{
+			text-decoration: underline;
+
+			&:hover {
+				color: $white;
+			}
+		}
 	}
 }
 
@@ -254,6 +271,9 @@ form.footer-newsletter {
 
 .footer__cta {
 	position: relative;
+	h4 {
+		margin-bottom: 40px;
+	}
 	img {
 		position: relative;
 		max-width: 50%;

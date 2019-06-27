@@ -25,7 +25,8 @@
                         <span v-html="project.meta_box._stats_location"></span>
                     </p>
                 </aside>
-                <section v-html="project.content.rendered" class="blog-entry"> </section>
+                <section v-html="project.content.rendered" class="blog-entry">
+                </section>
             </div>
             <!-- <section class="project__video">
             </section> -->

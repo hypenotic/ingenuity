@@ -85,7 +85,6 @@
             },
             checkNextPrev(i) {
                 var count = this.tabs.length;
-
             }
         }
         

@@ -125,6 +125,30 @@ aside p {
             vertical-align: top;
             margin-top: 0px;
         }
+        a {
+            color: #444;
+            text-decoration: none;
+            position: relative;
+            &:hover {
+
+                &::after {
+                   height: 5px; 
+                }
+                // background: #444;
+                // color: $white;
+            }
+            &::after {
+                content: "";
+                transition: all .2s;
+                position: absolute;
+                height: 2px;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                background: $black;
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -540,6 +564,7 @@ aside p {
             padding-right: 0;
             padding-left: 0;
         }
+        
     }
     .gallery__single:nth-child(even) .gallery__single-half.gallery-caption {
         padding-left: 0;
