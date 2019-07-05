@@ -55,6 +55,7 @@
         async fetch ({store}){
             await store.dispatch('apiMenu')
             await store.dispatch('apiServices')
+            await store.dispatch('apiBlogs')
         },
         head () {
             return {

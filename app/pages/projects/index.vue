@@ -31,6 +31,7 @@
             await store.dispatch('apiPages')
             await store.dispatch('apiProjects')
             await store.dispatch('apiMenu')
+            await store.dispatch('apiBlogs')
         },
         head () {
             return {

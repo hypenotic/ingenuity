@@ -12,11 +12,6 @@ export default {
    components:{
       appnav
    },
-   async fetch ({store}) {
-      await store.dispatch('apiPages')
-      await store.dispatch('apiMenu')
-      await store.dispatch('apiBlogs')
-   },
 }
 </script>
 
