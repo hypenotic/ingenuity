@@ -72,3 +72,26 @@
         border-bottom: 1px solid grey;
     }
 }
+
+
+.infowindow {
+    margin: 20px 10px;
+}
+a.info {
+    font-family: $main-body-font;
+    font-size: 16px;
+    transition: color .2s;
+}
+a.info:hover {
+    color: $black;
+}
+p.info {
+    color: $black;
+    font-size: 22px;
+    font-family: $heading-type;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.gm-ui-hover-effect {
+    opacity: 0;
+}
