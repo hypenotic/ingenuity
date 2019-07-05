@@ -10,6 +10,13 @@
  */
 class RWMB_Text_List_Field extends RWMB_Multiple_Values_Field {
 	/**
+	 * Enqueue scripts and styles.
+	 */
+	public static function admin_enqueue_scripts() {
+		wp_enqueue_style( 'rwmb-text-list', RWMB_CSS_URL . 'text-list.css', '', RWMB_VER );
+	}
+
+	/**
 	 * Get field HTML.
 	 *
 	 * @param mixed $meta  Meta value.
@@ -18,22 +25,56 @@ class RWMB_Text_List_Field extends RWMB_Multiple_Values_Field {
 	 * @return string
 	 */
 	public static function html( $meta, $field ) {
+		if ( empty( $field['options'] ) ) {
+			return '';
+		}
 		$html  = array();
-		$input = '<label><input type="text" class="rwmb-text-list" name="%s" value="%s" placeholder="%s"> %s</label>';
+		$input = '<label><span class="rwmb-text-list-label">%s</span> <input type="text" class="rwmb-text-list" name="%s" value="%s" placeholder="%s"></label>';
 
 		$count = 0;
 		foreach ( $field['options'] as $placeholder => $label ) {
 			$html[] = sprintf(
 				$input,
+				$label,
 				$field['field_name'],
 				isset( $meta[ $count ] ) ? esc_attr( $meta[ $count ] ) : '',
-				$placeholder,
-				$label
+				esc_attr( $placeholder )
 			);
 			$count ++;
 		}
 
 		return implode( ' ', $html );
+	}
+
+	/**
+	 * Normalize parameters for field.
+	 *
+	 * @param array $field Field parameters.
+	 *
+	 * @return array
+	 */
+	public static function normalize( $field ) {
+		$field = parent::normalize( $field );
+		if ( ! $field['clone'] ) {
+			$field['class'] .= ' rwmb-text_list-non-cloneable';
+		}
+		return $field;
+	}
+
+	/**
+	 * Set value of meta before saving into database.
+	 * Do not save if all inputs has no value.
+	 *
+	 * @param mixed $new     The submitted meta value.
+	 * @param mixed $old     The existing meta value.
+	 * @param int   $post_id The post ID.
+	 * @param array $field   The field parameters.
+	 *
+	 * @return mixed
+	 */
+	public static function value( $new, $old, $post_id, $field ) {
+		$filtered = array_filter( $new );
+		return count( $filtered ) ? $new : array();
 	}
 
 	/**
@@ -51,7 +92,7 @@ class RWMB_Text_List_Field extends RWMB_Multiple_Values_Field {
 		foreach ( $field['options'] as $label ) {
 			$output .= "<th>$label</th>";
 		}
-		$output .= '<tr>';
+		$output .= '</tr></thead><tbody>';
 
 		if ( ! $field['clone'] ) {
 			$output .= self::format_single_value( $field, $value, $args, $post_id );
@@ -81,19 +122,5 @@ class RWMB_Text_List_Field extends RWMB_Multiple_Values_Field {
 		}
 		$output .= '</tr>';
 		return $output;
-	}
-
-	/**
-	 * Save meta value.
-	 *
-	 * @param mixed $new     The submitted meta value.
-	 * @param mixed $old     The existing meta value.
-	 * @param int   $post_id The post ID.
-	 * @param array $field   The field parameters.
-	 */
-	public static function save( $new, $old, $post_id, $field ) {
-		$storage = $field['storage'];
-		$storage->delete( $post_id, $field['id'] );
-		parent::save( $new, array(), $post_id, $field );
 	}
 }

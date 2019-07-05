@@ -30,8 +30,13 @@ class RWMB_Image_Field extends RWMB_File_Field {
 	protected static function file_html( $file, $index, $field ) {
 		$attributes = self::get_attributes( $field, $file );
 
+		$edit_link = get_edit_post_link( $file );
+		if ( $edit_link ) {
+			$edit_link = sprintf( '<a href="%s" class="rwmb-image-edit" target="_blank"><span class="dashicons dashicons-edit"></span></a>', $edit_link );
+		}
+
 		return sprintf(
-			'<li class="rwmb-image-item attachment thumbnail">
+			'<li class="rwmb-image-item attachment %s">
 				<input type="hidden" name="%s[%s]" value="%s">
 				<div class="attachment-preview">
 					<div class="thumbnail">
@@ -42,15 +47,37 @@ class RWMB_Image_Field extends RWMB_File_Field {
 				</div>
 				<div class="rwmb-image-overlay"></div>
 				<div class="rwmb-image-actions">
-					<a href="%s" class="rwmb-image-edit" target="_blank"><span class="dashicons dashicons-edit"></span></a>
+					%s
 					<a href="#" class="rwmb-image-delete rwmb-file-delete" data-attachment_id="%s"><span class="dashicons dashicons-no-alt"></span></a>
 				</div>
 			</li>',
-			$attributes['name'], $index, $file,
-			wp_get_attachment_image( $file, 'thumbnail' ),
-			get_edit_post_link( $file ),
+			esc_attr( $field['image_size'] ),
+			$attributes['name'],
+			$index,
+			$file,
+			wp_get_attachment_image( $file, $field['image_size'] ),
+			$edit_link,
 			$file
 		);
+	}
+
+	/**
+	 * Normalize field settings.
+	 *
+	 * @param array $field Field settings.
+	 *
+	 * @return array
+	 */
+	public static function normalize( $field ) {
+		$field = parent::normalize( $field );
+		$field = wp_parse_args(
+			$field,
+			array(
+				'image_size' => 'thumbnail',
+			)
+		);
+
+		return $field;
 	}
 
 	/**
@@ -76,20 +103,24 @@ class RWMB_Image_Field extends RWMB_File_Field {
 	/**
 	 * Get uploaded file information.
 	 *
-	 * @param int   $file Attachment image ID (post ID). Required.
-	 * @param array $args Array of arguments (for size).
+	 * @param int   $file  Attachment image ID (post ID). Required.
+	 * @param array $args  Array of arguments (for size).
+	 * @param array $field Field settings.
 	 *
 	 * @return array|bool False if file not found. Array of image info on success.
 	 */
-	public static function file_info( $file, $args = array() ) {
+	public static function file_info( $file, $args = array(), $field = array() ) {
 		$path = get_attached_file( $file );
 		if ( ! $path ) {
 			return false;
 		}
 
-		$args       = wp_parse_args( $args, array(
-			'size' => 'thumbnail',
-		) );
+		$args       = wp_parse_args(
+			$args,
+			array(
+				'size' => 'thumbnail',
+			)
+		);
 		$image      = wp_get_attachment_image_src( $file, $args['size'] );
 		$attachment = get_post( $file );
 		$info       = array(
@@ -104,7 +135,7 @@ class RWMB_Image_Field extends RWMB_File_Field {
 			'alt'         => get_post_meta( $file, '_wp_attachment_image_alt', true ),
 		);
 		if ( function_exists( 'wp_get_attachment_image_srcset' ) ) {
-			$info['srcset'] = wp_get_attachment_image_srcset( $file );
+			$info['srcset'] = wp_get_attachment_image_srcset( $file, $args['size'] );
 		}
 
 		$info = wp_parse_args( $info, wp_get_attachment_metadata( $file ) );
