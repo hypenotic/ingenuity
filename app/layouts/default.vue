@@ -11,7 +11,7 @@ import appnav from '~/components/Nav.vue';
 export default {
    components:{
       appnav
-   }   
+   },
 }
 </script>
 

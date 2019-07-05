@@ -27,6 +27,7 @@
 }
 
 .projects__panel-wrap {
+    
     h2 {
         z-index: 35;
     }
@@ -49,7 +50,6 @@
         position: relative;
         top: 0;
         left: 0;
-        // transition: all 0.2s;
         z-index: 30;
     }
     .projects__panel-img {

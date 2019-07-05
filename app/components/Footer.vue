@@ -2,7 +2,7 @@
     <no-ssr>
     <footer class="main-footer">
         <div class="footer__blog footer__third">
-            <h3><a href="<?php echo get_home_url(); ?>/news">Recent Posts</a></h3>
+            <h3><nuxt-link to="/news">Recent Posts</nuxt-link></h3>
             <ul>
                 <li v-for="post in recentPosts" :key="post.id">
                     <nuxt-link :to="'/news/' + post.id + '/' + post.slug"  v-html="post.title.rendered"></nuxt-link>

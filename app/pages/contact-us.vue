@@ -33,6 +33,7 @@
         async fetch ({store}) {
             await store.dispatch('apiMenu')
             await store.dispatch('apiContacts')
+            await store.dispatch('apiBlogs')
         },
         head () {
             return {

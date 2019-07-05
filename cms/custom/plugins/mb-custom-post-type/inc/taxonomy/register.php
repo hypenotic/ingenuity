@@ -39,7 +39,7 @@ class MB_CPT_Taxonomy_Register extends MB_CPT_Base_Register {
 			'supports'     => false,
 			'public'       => false,
 			'show_ui'      => true,
-			'show_in_menu' => 'edit.php?post_type=mb-post-type',
+			'show_in_menu' => 'meta-box',
 			'menu_icon'    => 'dashicons-exerpt-view',
 			'can_export'   => true,
 			'rewrite'      => false,
@@ -67,13 +67,15 @@ class MB_CPT_Taxonomy_Register extends MB_CPT_Base_Register {
 		$taxonomies = array();
 
 		// Get all post where where post_type = mb-taxonomy.
-		$taxonomy_ids = get_posts( array(
-			'posts_per_page' => - 1,
-			'post_status'    => 'publish',
-			'post_type'      => 'mb-taxonomy',
-			'no_found_rows'  => true,
-			'fields'         => 'ids',
-		) );
+		$taxonomy_ids = get_posts(
+			array(
+				'posts_per_page' => - 1,
+				'post_status'    => 'publish',
+				'post_type'      => 'mb-taxonomy',
+				'no_found_rows'  => true,
+				'fields'         => 'ids',
+			)
+		);
 
 		foreach ( $taxonomy_ids as $taxonomy_id ) {
 			list( $labels, $args ) = $this->get_taxonomy_data( $taxonomy_id );
@@ -127,42 +129,67 @@ class MB_CPT_Taxonomy_Register extends MB_CPT_Base_Register {
 	 * @return array
 	 */
 	public function set_up_taxonomy( $labels = array(), $args = array() ) {
-		$labels = wp_parse_args( $labels, array(
-			'menu_name'                  => $labels['name'],
-			// translators: %s: Name of the taxonomy in plural form.
-			'all_items'                  => sprintf( __( 'All %s', 'mb-custom-taxonomy' ), $labels['name'] ),
-			// translators: %s: Name of the taxonomy in singular form.
-			'edit_item'                  => sprintf( __( 'Edit %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
-			// translators: %s: Name of the taxonomy in singular form.
-			'view_item'                  => sprintf( __( 'View %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
-			// translators: %s: Name of the taxonomy in singular form.
-			'update_item'                => sprintf( __( 'Update %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
-			// translators: %s: Name of the taxonomy in singular form.
-			'add_new_item'               => sprintf( __( 'Add new %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
-			// translators: %s: Name of the taxonomy in singular form.
-			'new_item_name'              => sprintf( __( 'New %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
-			// translators: %s: Name of the taxonomy in singular form.
-			'parent_item'                => sprintf( __( 'Parent %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
-			// translators: %s: Name of the taxonomy in singular form.
-			'parent_item_colon'          => sprintf( __( 'Parent %s:', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
-			// translators: %s: Name of the taxonomy in plural form.
-			'search_items'               => sprintf( __( 'Search %s', 'mb-custom-taxonomy' ), $labels['name'] ),
-			// translators: %s: Name of the taxonomy in plural form.
-			'popular_items'              => sprintf( __( 'Popular %s', 'mb-custom-taxonomy' ), $labels['name'] ),
-			// translators: %s: Name of the taxonomy in plural form.
-			'separate_items_with_commas' => sprintf( __( 'Separate %s with commas', 'mb-custom-taxonomy' ), $labels['name'] ),
-			// translators: %s: Name of the taxonomy in plural form.
-			'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'mb-custom-taxonomy' ), $labels['name'] ),
-			// translators: %s: Name of the taxonomy in plural form.
-			'choose_from_most_used'      => sprintf( __( 'Choose most used %s', 'mb-custom-taxonomy' ), $labels['name'] ),
-			// translators: %s: Name of the taxonomy in plural form.
-			'not_found'                  => sprintf( __( 'No %s found', 'mb-custom-taxonomy' ), $labels['name'] ),
-		) );
-		$args   = wp_parse_args( $args, array(
-			'label'  => $labels['name'],
-			'labels' => $labels,
-			'public' => true,
-		) );
+		$labels = wp_parse_args(
+			$labels,
+			array(
+				'menu_name'                  => $labels['name'],
+				// translators: %s: Name of the taxonomy in plural form.
+				'all_items'                  => sprintf( __( 'All %s', 'mb-custom-taxonomy' ), $labels['name'] ),
+				// translators: %s: Name of the taxonomy in singular form.
+				'edit_item'                  => sprintf( __( 'Edit %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
+				// translators: %s: Name of the taxonomy in singular form.
+				'view_item'                  => sprintf( __( 'View %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
+				// translators: %s: Name of the taxonomy in singular form.
+				'update_item'                => sprintf( __( 'Update %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
+				// translators: %s: Name of the taxonomy in singular form.
+				'add_new_item'               => sprintf( __( 'Add new %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
+				// translators: %s: Name of the taxonomy in singular form.
+				'new_item_name'              => sprintf( __( 'New %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
+				// translators: %s: Name of the taxonomy in singular form.
+				'parent_item'                => sprintf( __( 'Parent %s', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
+				// translators: %s: Name of the taxonomy in singular form.
+				'parent_item_colon'          => sprintf( __( 'Parent %s:', 'mb-custom-taxonomy' ), $labels['singular_name'] ),
+				// translators: %s: Name of the taxonomy in plural form.
+				'search_items'               => sprintf( __( 'Search %s', 'mb-custom-taxonomy' ), $labels['name'] ),
+				// translators: %s: Name of the taxonomy in plural form.
+				'popular_items'              => sprintf( __( 'Popular %s', 'mb-custom-taxonomy' ), $labels['name'] ),
+				// translators: %s: Name of the taxonomy in plural form.
+				'separate_items_with_commas' => sprintf( __( 'Separate %s with commas', 'mb-custom-taxonomy' ), $labels['name'] ),
+				// translators: %s: Name of the taxonomy in plural form.
+				'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'mb-custom-taxonomy' ), $labels['name'] ),
+				// translators: %s: Name of the taxonomy in plural form.
+				'choose_from_most_used'      => sprintf( __( 'Choose most used %s', 'mb-custom-taxonomy' ), $labels['name'] ),
+				// translators: %s: Name of the taxonomy in plural form.
+				'not_found'                  => sprintf( __( 'No %s found', 'mb-custom-taxonomy' ), $labels['name'] ),
+			)
+		);
+		$args   = wp_parse_args(
+			$args,
+			array(
+				'label'  => $labels['name'],
+				'labels' => $labels,
+				'public' => true,
+			)
+		);
+
+		if ( empty( $args['rewrite_slug'] ) && empty( $args['rewrite_no_front'] ) ) {
+			$args['rewrite'] = true;
+		} else {
+			$rewrite = array();
+			if ( ! empty( $args['rewrite_slug'] ) ) {
+				$rewrite['slug'] = $args['rewrite_slug'];
+			}
+			if ( ! empty( $args['rewrite_no_front'] ) ) {
+				$rewrite['with_front'] = false;
+			}
+			if ( ! empty( $args['rewrite_hierarchical'] ) ) {
+				$rewrite['hierarchical'] = true;
+			}
+			$args['rewrite'] = $rewrite;
+			unset( $args['rewrite_slug'] );
+			unset( $args['rewrite_no_front'] );
+			unset( $args['rewrite_hierarchical'] );
+		}
 		unset( $args['taxonomy'] );
 		return $args;
 	}

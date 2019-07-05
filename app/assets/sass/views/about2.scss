@@ -28,8 +28,10 @@
             display: flex;
         }
         li {
+            border-bottom: 1px solid $d-grey;
             @media #{$bp-large} {
-				width: calc(33.33%);
+                width: calc(33.33%);
+                border-bottom: none;
 			}
             // flex: 1 0 auto;
             // border-top: 1px solid lightgrey;
@@ -50,6 +52,7 @@
                 text-decoration: none;
                 background: white;
                 background: lighten(darkgrey,20);
+                transition: all .2s;
                 // color: grey;
                 // opacity: 0.4;
                 padding: 0.5rem 1rem;
@@ -87,7 +90,7 @@
 .content {
     background: #f8f8f8;
     background: $yellow;
-    padding: 2rem;
+    padding: 4rem 2rem;
     .content-inner {
         max-width: 720px;
         margin: 0 auto;
