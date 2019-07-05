@@ -15,7 +15,6 @@
                 markers: [],
                 infoWindows: [],
                 contentString: "",
-
             }
         },
         mounted() {
@@ -34,26 +33,20 @@
                     {
                         position: new google.maps.LatLng(43.523291, -79.711384),
                         map: this.map,
-                        title: 'Hello World!'
+                        title: 'Hello World!',
+                        icon: "homemap.png"
                     }
                 ),
             ),
-            this.contentString = '<a class="fuck" href="https://www.google.com/maps/place/Ingenuity/@43.52439,-79.7128884,17.15z/data=!4m5!3m4!1s0x882b425bf05c7f17:0x390b5b52408b8c40!8m2!3d43.5232912!4d-79.7113842" target="_blank" @click="open">3800-A Laird Rd Unit 1, Mississauga, ON L5L 0B2</a>'
+            this.contentString = "<div class='infowindow'><p class='info'>Let's talk over an espresso!</p><a class='info' href='https://www.google.com/maps/place/Ingenuity/@43.52439,-79.7128884,17.15z/data=!4m5!3m4!1s0x882b425bf05c7f17:0x390b5b52408b8c40!8m2!3d43.5232912!4d-79.7113842' target='_blank' @click='open'>3800-A Laird Rd Unit 1, Mississauga, ON L5L 0B2</a></div>"
             this.infoWindows.push(
                 new google.maps.InfoWindow({
                     content: this.contentString
                 })
             )
             this.infoWindows[0].open(this.map, this.markers[0])
-            // this.markers.addListener('click', function() {
-            //    this.infoWindows[0].open(this.map, this.markers[0]);
-            // });
         },
         methods: {
-            open(){
-                console.log("WHAT")
-                // this.infoWindows[0].open(this.map, this.markers[0]);
-            }
         }
     }
     
@@ -62,8 +55,5 @@
 <style lang="scss" scoped>
     #map {
         height: 70vh;
-    }
-    .fuck {
-        color: red;
     }
 </style>
