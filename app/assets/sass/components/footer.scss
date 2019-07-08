@@ -179,6 +179,7 @@ form.footer-newsletter {
 // http://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/
 .input--ingenuity {
 	overflow: hidden;
+	border-bottom: 1px solid $yellow;
 }
 
 .input__field--ingenuity {
@@ -219,14 +220,14 @@ form.footer-newsletter {
 }
 
 .input__label--ingenuity::after {
-	height: 1px;
-	background: $yellow;
-	top: 100%;
-	-webkit-transition: opacity 0.2s;
-	transition: opacity 0.2s;
-	@media #{$bp-med} {
-		top: 85%;
-	}
+	// height: 1px;
+	// background: $yellow;
+	// top: 100%;
+	// -webkit-transition: opacity 0.2s;
+	// transition: opacity 0.2s;
+	// @media #{$bp-med} {
+	// 	top: 85%;
+	// }
 
 }
 

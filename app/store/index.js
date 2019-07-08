@@ -1,6 +1,6 @@
 
 export const state = () => ({
-    siteUrl: "http://172.104.208.23",
+    siteUrl: process.env.DB_URL,
     pages: null,
     menus: null,
     projects: null,
@@ -65,58 +65,58 @@ export const mutations = {
 }
 
 export const actions = {
-    async apiPages({commit}) {
+    async apiPages({state, commit}) {
         console.log('apiPages dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/pages?per_page=20&_embed')
+        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/pages?per_page=20&_embed')
         commit('setPages', data)
     },
 
-    async apiMenu({commit}) {
+    async apiMenu({state, commit}) {
         console.log('apiMenu dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp-api-menus/v2/menus/2')
+        let {data} = await this.$axios.get( state.siteUrl + '/wp-api-menus/v2/menus/2')
         commit('setMenus', data)
     },
 
-    async apiProjects({commit}) {
+    async apiProjects({state, commit}) {
         console.log('apiProjects dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/project?per_page=20&_embed')
+        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/project?per_page=20&_embed')
         commit('setProjects', data)
     },
 
     async apiSingleGallery({commit}, info) {
         console.log('apiSingleGallery dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/gallery/'+info)
+        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/gallery/'+info)
         commit('setGallery', data)
     },
 
     async apiGalleries({commit}) {
         console.log('apiGalleries dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/gallery?per_page=20')
+        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/gallery?per_page=20')
         commit('setGalleries', data)
     },
 
     async apiServices({commit}) {
         console.log('apiServices dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/service?_embed')
+        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/service?_embed')
         commit('setServices', data)
     },
 
     async apiTeam({commit}) {
         console.log('apiTeam dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/team?per_page=20&_embed')
+        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/team?per_page=20&_embed')
         commit('setTeam', data)
     },
 
-    async apiBlogs({commit}) {
+    async apiBlogs({state, commit}) {
         console.log('apiBlogs dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/posts?_embed')
+        let {data} = await this.$axios.get(state.siteUrl + '/wp/v2/posts?_embed')
         commit('setBlogs', data)
         commit('setRecentPosts', data)
     },
 
     async apiContacts({commit}) {
         console.log('apiContacts dispatched');
-        let {data} = await this.$axios.get('https://data.ingenuity.ca/wp-json/wp/v2/contact?_embed')
+        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/contact?_embed')
         commit('setContacts', data)
     },
 
