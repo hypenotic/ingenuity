@@ -83,25 +83,25 @@ export const actions = {
         commit('setProjects', data)
     },
 
-    async apiSingleGallery({commit}, info) {
+    async apiSingleGallery({state, commit}, info) {
         console.log('apiSingleGallery dispatched');
         let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/gallery/'+info)
         commit('setGallery', data)
     },
 
-    async apiGalleries({commit}) {
+    async apiGalleries({state, commit}) {
         console.log('apiGalleries dispatched');
         let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/gallery?per_page=20')
         commit('setGalleries', data)
     },
 
-    async apiServices({commit}) {
+    async apiServices({state, commit}) {
         console.log('apiServices dispatched');
         let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/service?_embed')
         commit('setServices', data)
     },
 
-    async apiTeam({commit}) {
+    async apiTeam({state, commit}) {
         console.log('apiTeam dispatched');
         let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/team?per_page=20&_embed')
         commit('setTeam', data)
@@ -114,7 +114,7 @@ export const actions = {
         commit('setRecentPosts', data)
     },
 
-    async apiContacts({commit}) {
+    async apiContacts({state, commit}) {
         console.log('apiContacts dispatched');
         let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/contact?_embed')
         commit('setContacts', data)
