@@ -56,7 +56,6 @@ export default {
     */
     router: {
         base: process.env.BASE_ROUTER,
-        dbUrl: process.env.DB_URL,
         scrollBehavior: function (to, from, savedPosition) {
             return { x: 0, y: 0 }
         }
