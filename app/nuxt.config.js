@@ -80,9 +80,17 @@ export default {
     ** Nuxt.js modules
     */
     modules: [
+        '@nuxtjs/axios',
+        '@nuxtjs/dotenv',
         ['@nuxtjs/google-analytics', { ua: 'UA-72042036-1' }]
         // ['@nuxtjs/google-tag-manager', { id: 'GTM-PTWZM2' }]
     ],
+  /*
+  ** Server configuration
+  */
+  server: {
+    port: 9000, // default: 3000
+  },
     /*
   ** Build configuration
   */

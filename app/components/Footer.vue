@@ -2,11 +2,12 @@
     <no-ssr>
     <footer class="main-footer">
         <div class="footer__blog footer__third">
-            <h3><a href="<?php echo get_home_url(); ?>/news">Recent Posts</a></h3>
-            <p v-for="post in this.$store.state.blogList" :key="post.id">
-                    <nuxt-link :to="'/news/' + post.id + '/' + post.slug"  v-html="post.title.rendered">
-                </nuxt-link>
-            </p>
+            <h3><nuxt-link to="/news">Recent Posts</nuxt-link></h3>
+            <ul>
+                <li v-for="post in recentPosts" :key="post.id">
+                    <nuxt-link :to="'/news/' + post.id + '/' + post.slug"  v-html="post.title.rendered"></nuxt-link>
+                </li>
+            </ul>
         </div>
         <div class="footer__news footer__third footer__third--align">
             <div id="mc_embed_signup">
@@ -57,6 +58,12 @@
         beforeMount() {
         },
         computed: {
+            recentPosts (){
+                return this.$store.getters.getRecentPosts
+            },
+            blogs(){
+                return this.$store.getters.getBlogs
+            }
         }
     }
 </script>

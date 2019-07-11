@@ -139,15 +139,15 @@ jQuery( function ( $ ) {
 			inputSelectors = 'input[class*="rwmb"], textarea[class*="rwmb"], select[class*="rwmb"], button[class*="rwmb"]',
 			nextIndex = cloneIndex.nextIndex( $container );
 
+		// Reset value for fields
+		var $inputs = $clone.find( inputSelectors );
+		$inputs.each( cloneValue.reset );
+
 		// Insert Clone
 		$clone.insertAfter( $last );
 
 		// Trigger custom event for the clone instance. Required for Group extension to update sub fields.
 		$clone.trigger( 'clone_instance', nextIndex );
-
-		// Reset value for fields
-		var $inputs = $clone.find( inputSelectors );
-		$inputs.each( cloneValue.reset );
 
 		// Set fields index. Must run before trigger clone event.
 		cloneIndex.set( $inputs, nextIndex );
@@ -254,6 +254,17 @@ jQuery( function ( $ ) {
 				start: function ( event, ui ) {
 					// Make the placeholder has the same height as dragged item
 					ui.placeholder.height( ui.item.outerHeight() );
+
+					// Fixed WYSIWYG field blank when inside a sortable, cloneable group.
+					// https://stackoverflow.com/a/25667486/371240
+					$( ui.item ).find( '.rwmb-wysiwyg' ).each( function () {
+						tinymce.execCommand( 'mceRemoveEditor', false, this.id );
+					} );
+				},
+				stop: function(e,ui) {
+					$( ui.item ).find( '.rwmb-wysiwyg' ).each( function () {
+						tinymce.execCommand( 'mceAddEditor', true, this.id );
+					} );
 				}
 			} );
 	} );

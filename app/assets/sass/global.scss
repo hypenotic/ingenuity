@@ -10,7 +10,7 @@ html, body {
     font-size: 18px;
     line-height:1.5;
     font-weight: 300;
-    color: rgba(0,0,0,0.8);
+    color: $black;
     // line-height: 1.5rem;
     // overflow-x: hidden; //for the menu
     // overflow-y: auto; //for the menu
@@ -49,8 +49,8 @@ a {
     }
 }
 
-a, button {
-    transition: color .2s, background .2s;
+a, button, .button {
+    transition: color .2s, background .2s, border .2s;
 }
 
 

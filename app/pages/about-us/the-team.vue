@@ -94,6 +94,7 @@
             await store.dispatch('apiPages')
             await store.dispatch('apiTeam')
             await store.dispatch('apiMenu')
+            await store.dispatch('apiBlogs')
         },
         head () {
             console.log(this.page.meta_box._page_hero_image);

@@ -27,6 +27,7 @@
 }
 
 .projects__panel-wrap {
+    
     h2 {
         z-index: 35;
     }
@@ -49,7 +50,6 @@
         position: relative;
         top: 0;
         left: 0;
-        // transition: all 0.2s;
         z-index: 30;
     }
     .projects__panel-img {
@@ -124,6 +124,30 @@ aside p {
             width: 80%;
             vertical-align: top;
             margin-top: 0px;
+        }
+        a {
+            color: $black;
+            text-decoration: none;
+            position: relative;
+            &:hover {
+
+                &::after {
+                   height: 5px; 
+                }
+                // background: #444;
+                // color: $white;
+            }
+            &::after {
+                content: "";
+                transition: all .2s;
+                position: absolute;
+                height: 2px;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                background: $black;
+                width: 100%;
+            }
         }
     }
 }
@@ -216,6 +240,9 @@ aside p {
     p {
         margin: 0;
         font-family: $main-headings;
+        @media #{$medium-and-down} {
+            font-size: 14px;
+        }
     }
 }
 
@@ -227,6 +254,9 @@ aside p {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media #{$small-and-down} {
+       justify-content: center;
+    }
     a {
         &:hover {
             .project-nav__arrow {
@@ -243,7 +273,7 @@ aside p {
     height: 50px;
     // margin-left: 40px;
     color: $black;
-    background-color: transparent;
+    background-color: white;
     text-align:center;
     // line-height:40px;
     border: 2px solid $black;
@@ -251,6 +281,7 @@ aside p {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background .2s;
     @media #{$bp-med} {
         width: 200px;
         height: 80px;
@@ -533,6 +564,7 @@ aside p {
             padding-right: 0;
             padding-left: 0;
         }
+        
     }
     .gallery__single:nth-child(even) .gallery__single-half.gallery-caption {
         padding-left: 0;
