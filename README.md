@@ -1,1 +1,1 @@
-# nuxt-starter
+# ingenuity
