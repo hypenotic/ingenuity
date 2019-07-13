@@ -1,7 +1,12 @@
+# Common
+
 .htaccess
 .DS_Store
 .sass-cache/
 robots.txt
 node_modules/
-data/
-data/*
+public_html
+
+.nuxt/
+.nuxt/*
+.nuxt

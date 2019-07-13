@@ -1,0 +1,94 @@
+.menu-overlay {	
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    transform-origin: top right;
+    position: absolute;
+    transition: all 0.3s ease;
+    background: $yellow;
+
+    ul{
+        list-style-type: none;
+    }
+    >ul {
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        > li {
+            padding-left: 5%;
+            @media #{$medium-and-up} {
+                padding-left: 16%;
+            }
+        }
+        li {
+            &:hover {
+                background: $black;
+                a,span {
+                    color: $yellow;
+                }
+            }
+            ul {
+                padding-left: 40px;
+            }
+        }
+        li.menu-item-has-children {
+            &:hover {
+                background: rgba(0,0,0,0.6);
+            }
+            > a:hover {
+                background: $black;
+            }
+        }
+        a,span {
+            color: $black;
+            text-decoration: none;
+            display: block;
+            font-family: $main-headings;
+            font-size: 20px;
+            line-height: 20px;
+            text-transform:uppercase;
+            letter-spacing: 3px;
+            padding: 8px 0;
+            padding-left: 16px;
+            @media #{$bp-large} {
+                font-size: 35px;
+                line-height: 35px;
+            }
+            @media #{$xlarge-and-up} {
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+    }
+
+    a,span {
+        color: $yellow;
+    }
+}
+
+#close-menu-overlay {
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: $black;
+    font-family: $main-headings;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: bold;
+    opacity: 0.4;
+    @media #{$bp-med} {
+        top: 60px;
+        right: 50px;
+        opacity: 1;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

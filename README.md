@@ -1,1 +1,1 @@
-# ingenuity-vue
+# nuxt-starter
