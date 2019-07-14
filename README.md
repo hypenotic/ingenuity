@@ -82,7 +82,7 @@ Link to docs coming soon.
 
 ## Credits
 
-Badges in this read me provided by [shields.io](https://shields.io/#your-badge).
+Badges in this README.md provided by [shields.io](https://shields.io/#your-badge).
 
 
 
