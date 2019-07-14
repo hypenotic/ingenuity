@@ -27,6 +27,7 @@
 
 <p align="center">
   <a href="#installation">Installation</a> |
+  <a href="#local-setup">Local Setup</a> |
   <a href="#server-setup">Server Setup</a> |
   <a href="#credits">Credits</a> 
 </p>
@@ -39,6 +40,8 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/hypenotic/ingenuity.git
 ```
+
+## Local Setup
 
 ### WordPress
 
@@ -70,7 +73,7 @@ $ touch .env
 # Ask the squad for the values
 
 # Run the app
-$ npm start
+$ npm run dev
 ```
 
 ## Server Setup
