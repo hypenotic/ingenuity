@@ -5,7 +5,7 @@ function defaultpost_register_meta_boxes( $meta_boxes ) {
     $prefix = '_post_';
 
     $meta_boxes[] = array(
-        'title'      => __( 'Post Details', 'textdomain' ),
+        'title'      => __( 'Blog Details', 'textdomain' ),
         'post_types' => array( 'post'),
         'context'    => 'normal',
         'priority'   => '',
