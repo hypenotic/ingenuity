@@ -36,12 +36,18 @@
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. 
 
+## Local Setup
+
 ```bash
 # Clone this repository
+# You can use the repo name as the dir name
 $ git clone https://github.com/hypenotic/ingenuity.git
+# OR
+# Use whatever dir name
+$ mkdir [insert dir name here]
+$ cd [insert dir name here]
+$ git clone https://github.com/hypenotic/ingenuity.git .
 ```
-
-## Local Setup
 
 ### WordPress
 
@@ -49,11 +55,14 @@ $ git clone https://github.com/hypenotic/ingenuity.git
 # Go into the repository and the cms dir
 $ cd ingenuity/cms
 
-# Go into the custom dir. Clone WP. Create a working branch from the right release.
+# Go into the custom dir
 $ cd custom
+# Make a wordpress dir
 $ mkdir wordpress
+# Clone WP in wordpress dir
 $ cd wordpress
 $ git clone https://github.com/WordPress/WordPress .
+# Create a working branch from the right release
 $ git checkout tags/5.2.2
 $ git checkout -b stable-5.2.2
 ```
@@ -70,7 +79,7 @@ $ npm install
 # create an .env file
 $ touch .env
 # There should be variables BASE_ROUTER and DB_URL
-# Ask the squad for the values
+# Ask THE SQUAD (♥︎) for the values
 
 # Run the app
 $ npm run dev
