@@ -97,5 +97,15 @@
 <style lang="scss" scoped>
     // @import '~/assets/sass/variables.scss';
     // @import '~/assets/sass/components/nav.scss';
-    @import '~/node_modules/hamburgers/_sass/hamburgers/hamburgers.scss'
+    @import '~/node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
+
+    .button{
+        user-select: none;
+    }
+
+    .hamburger{
+        &:hover{
+            opacity: 1;
+        }
+    }
 </style>

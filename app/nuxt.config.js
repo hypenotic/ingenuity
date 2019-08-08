@@ -55,10 +55,10 @@ export default {
     ** Used to go to top of page for pagaination
     */
     router: {
-        base: process.env.BASE_ROUTER,
-        scrollBehavior: function (to, from, savedPosition) {
-            return { x: 0, y: 0 }
-        }
+        // base: process.env.BASE_ROUTER,
+        // scrollBehavior: function (to, from, savedPosition) {
+        //     return { x: 0, y: 0 }
+        // }
     },
     /*
     ** Customize the progress-bar color
@@ -73,6 +73,7 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
+        { src: '~/plugins/vue-smooth' },
         { src: "~/plugins/aos.js", ssr: false },
         { src: "~/plugins/replaceme.js", ssr: false }
     ],
