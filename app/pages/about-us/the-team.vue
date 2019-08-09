@@ -16,11 +16,12 @@
                 <div v-for="member in team.filter(m=>m.meta_box._team_section=='leadership')" :key="member.id">
                     <!-- <tm-banner :tm="member" @click="dropDown(member.id)"></tm-banner>
                     <tm-section :tm="member"></tm-section> -->
-                    <a :href="'#'+member.id"
+                    <a
+                    :href="'#member-'+member.id"
                     class="team__single team__single--leadership"
-                    :class="{closeDropdown: openMembers.includes(member.id) ? false : true}"
+                    :class="{'team__single--open': openMember == member.id}"
                     :style="'background-image: url('+member.meta_box._team_styled_image +');'"
-                    @click="dropDown(member.id)"
+                    @click="toggleOpenMember(member.id)"
                     :id="'member-'+member.id">
                         <div class="team-overlay"></div>
                         <div class="hgroup">
@@ -29,13 +30,13 @@
                             <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
                         </div>
                     </a>
-                    <!-- <a :href="'#member-'+member.id" class="closebar" :class="{openDropdown: openMembers.includes(member.id) ? true : false}">
+                    <!-- <a v-if="openMember == member.id" :href="'#member-'+member.id" class="closebar" @click="openMember = null">
                         <div class="hgroup">
                             <h3 class="team__name" v-html="member.title.rendered"></h3>
                             <span class="team__creds" v-html="member.meta_box._team_creds"></span>
                         </div>
                     </a> -->
-                    <div class="drop-down-panel drop-down-panel--leader" :class="{openDropdown: openMembers.includes(member.id) ? true : false}" :id="member.id">
+                    <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--leader" :id="member.id">
                         <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
                         <div class="push__longbio animated fadeIn">
                             <div class="split">
@@ -47,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="button__container"><button class="close-push-panel" v-on:click="closeAll(member.id)">CLOSE</button></div>
+                        <div class="button__container"><a :href="'#member-'+member.id" class="close-push-panel" @click="openMember = null">CLOSE</a></div>
                     </div>
                 </div>
             </div>
@@ -57,39 +58,35 @@
             </div>
             <div class="team__container team__container--foundation">
                 <div v-for="member in team.filter(m=>m.meta_box._team_section=='foundation')" :key="member.id">
-                    <figure class="team__single team__single--foundation" :style="'background-image: url('+member.meta_box._team_styled_image +');background-position: top right;background-repeat:no-repeat;'" v-on:click="dropDown(member.id)" :id="'member-'+member.id">
-                        <div class="team-overlay"></div>
-                        <div class="hgroup">
-                            <h3 class="team__name" v-html="member.title.rendered">
-                            </h3>
-                            <span class="team__creds" v-html="member.meta_box._team_creds"></span>
-                            <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
-                        </div>
-                        <!-- member.meta_box._team_extra_image -->
-                        <!-- member._embedded['wp:featuredmedia'][0].source_url -->
-                    </figure>
-                    <div class="drop-down-panel drop-down-panel--foundation" :id="member.id">
-                        <div class="push__longbio animated fadeIn">
-                            <div class="split">
-                                <div class="split--content" v-html="member.content.rendered"></div>
-                                <div class="split--image">
-                                    <video id="video1" autoplay loop muted>
-                                        <source :src="member.meta_box._team_movie" type="video/mp4" />
-                                    </video>
-                                    <div class="base-image">
-                                        <img :src="member._embedded['wp:featuredmedia'][0].source_url" alt="">
-                                        <span class="pulse" v-if="member.meta_box._team_movie !=''">
-                                            <i class="fas fa-play"></i>
-                                        </span>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="button__container"><button class="close-push-panel" v-on:click="closeAll(member.id)">CLOSE</button></div>
+                <a
+                :href="'#member-'+member.id"
+                class="team__single team__single--foundation"
+                :class="{'team__single--open': openMember == member.id}"
+                :style="'background-image: url('+member.meta_box._team_styled_image +');'"
+                @click="toggleOpenMember(member.id)"
+                :id="'member-'+member.id">
+                    <div class="team-overlay"></div>
+                    <div class="hgroup">
+                        <h3 class="team__name" v-html="member.title.rendered"></h3>
+                        <span class="team__creds" v-html="member.meta_box._team_creds"></span>
+                        <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
                     </div>
+                </a>
+                <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--foundation" :id="member.id">
+                    <!-- <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic"> -->
+                    <div class="push__longbio animated fadeIn">
+                        <div class="split">
+                            <div class="split--content" v-html="member.content.rendered"></div>
+                            <div class="split--image">
+                                <video class="team-vid" :id="'member-vid-'+member.id" loop muted autoplay>
+                                    <source :src="member.meta_box._team_movie" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button__container"><a :href="'#member-'+member.id" class="close-push-panel" @click="openMember = null">CLOSE</a></div>
                 </div>
+            </div>
             </div>
         </div>
         <app-footer></app-footer>
@@ -135,7 +132,7 @@
         data() {
             return {
                 menuLinks: [],
-                openMembers: [],
+                openMember: null,
                 errors: [],
                 fullPath: this.$route.fullPath,
                 slug: this.$route.path,
@@ -151,8 +148,13 @@
             }
         },
         methods: {
-
-            
+            toggleOpenMember: function(id){
+                if(this.openMember == id){
+                    this.openMember = null;
+                }else{
+                    this.openMember = id;
+                }
+            },
             scrollTo: function(element, to, duration) {
                 var start = element.getBoundingClientRect().top,
                     change = to - start,
