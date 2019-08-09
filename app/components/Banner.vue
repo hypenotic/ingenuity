@@ -49,15 +49,5 @@
 
 <style lang="scss" scoped>
 
-    // @import '~/assets/sass/variables.scss';
-    // @import '~/assets/sass/animate.scss';
-    // @import '~/assets/sass/typography.scss';
-    // @import '~/assets/sass/global.scss';
-    
-    // h2 {
-    //     color: $white;
-    //     text-transform: uppercase;
-    //     font-family: $lite-headings;
-    //     font-weight: 300;
-    // }
+
 </style>

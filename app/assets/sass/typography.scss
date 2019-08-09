@@ -298,23 +298,23 @@ span.bolded-text {
 .blog-entry > p:first-child,
 .blog-entry > blockquote:first-child {
 	&::first-letter {
-	    float: left; 
-        font-size: 200px; 
-        line-height: 180px;
-        padding: 7px 25px 0px 0px;
-        // font-family: $main-headings;
-        @media #{$small-and-down} {
-            font-size: 80px; 
+		float: left; 
+		font-size: 200px; 
+		line-height: 165px;
+		padding: 7px 25px 0px 0px;
+		// font-family: $main-headings;
+		@media #{$small-and-down} {
+			font-size: 80px; 
 			line-height: 80px;
-            padding: 0 10px 0 5px;
-            float: left;
-        }
-        @media #{$mobile-landscape} {
-            font-size: modular-scale(3, 1.6rem);
-            line-height: modular-scale(3, 1.6rem);
-            padding: 0 10px 0 5px;
-            float: left;
-        }
+			padding: 0 10px 0 5px;
+			float: left;
+		}
+		@media #{$mobile-landscape} {
+			font-size: modular-scale(3, 1.6rem);
+			line-height: modular-scale(3, 1.6rem);
+			padding: 0 10px 0 5px;
+			float: left;
+		}
 	}
 }
 

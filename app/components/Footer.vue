@@ -38,10 +38,6 @@
 </template>
 
 <script>
-    import es6Promise from 'es6-promise';
-    es6Promise.polyfill();
-    import 'es6-promise/auto';
-    import axios from 'axios';
     export default {
         props: ['pageList', 'loadCheck'],
         data: function () {
