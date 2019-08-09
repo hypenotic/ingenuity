@@ -9,19 +9,19 @@
             <div class="main-wrapper blog-wrapper">
                 <aside id="left"> 
                     <p>
-                        <span class="stats_label">Client</span>:<br>
+                        <span class="stats_label">Client</span><br>
                         <span v-html="project.meta_box._stats_client"></span>
                     </p>
                     <p>
-                        <span class="stats_label">SF</span>:<br>
+                        <span class="stats_label">SQ FT.</span><br>
                         <span v-html="project.meta_box._stats_sf"></span>
                     </p>
                     <p>
-                        <span class="stats_label">Duration</span>:<br>
+                        <span class="stats_label">Duration</span><br>
                         <span v-html="project.meta_box._stats_duration"></span>
                     </p>
                     <p>
-                        <span class="stats_label">Location</span>:<br>
+                        <span class="stats_label">Location</span><br>
                         <span v-html="project.meta_box._stats_location"></span>
                     </p>
                 </aside>
