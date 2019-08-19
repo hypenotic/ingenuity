@@ -1,6 +1,5 @@
 
 export const state = () => ({
-    siteUrl: process.env.DB_URL,
     pages: null,
     menus: null,
     projects: null,
@@ -14,110 +13,96 @@ export const state = () => ({
 })
 
 export const mutations = {
-    setPages(state, payload) {
-        console.log('Mutation: setPages');
-        state.pages = payload;
-    },
-    
-    setMenus(state, payload) {
-        console.log('Mutation: setMenus');
-        state.menus = payload;
-    },
-    
-    setProjects(state, payload) {
-        console.log('Mutation: setProjects');
-        state.projects = payload;
-    },
-
-    setGallery(state, payload) {
-        console.log('Mutation: setGallery');
-        state.gallery = payload;
-    },
-
-    setGalleries(state, payload) {
-        console.log('Mutation: setGalleries');
-        state.galleries = payload;
-    },
-    
-    setServices(state, payload) {
-        console.log('Mutation: setServices');
-        state.services = payload;
-    },
-    
-    setTeam(state, payload) {
-        console.log('Mutation: setTeam');
-        state.team = payload;
-    },
-    
-    setBlogs(state, payload) {
-        console.log('Mutation: setBlogs');
-        state.blogs = payload;
-    },
-
-    setRecentPosts(state, payload) {
-        state.recentPosts = payload.slice(0, 3)
-    },
-    
-    setContacts(state, payload) {
-        console.log('Mutation: setContacts');
-        state.contacts = payload;
-    },
+    setPages: (state, payload) => state.pages = payload,
+    setMenus: (state, payload) => state.menus = payload,
+    setProjects: (state, payload) => state.projects = payload,
+    setGallery: (state, payload) => state.gallery = payload,
+    setGalleries: (state, payload) => state.galleries = payload,
+    setServices: (state, payload) => state.services = payload,
+    setTeam: (state, payload) => state.team = payload,
+    setBlogs: (state, payload) => state.blogs = payload,
+    setContacts: (state, payload) => state.contacts = payload,
 }
 
 export const actions = {
-    async apiPages({state, commit}) {
+    async apiPages({commit}) {
         console.log('apiPages dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/pages?per_page=20&_embed')
-        commit('setPages', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/pages?per_page=100&_embed')
+            commit('setPages', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    async apiMenu({state, commit}) {
+    async apiMenu({commit}) {
         console.log('apiMenu dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp-api-menus/v2/menus/2')
-        commit('setMenus', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp-api-menus/v2/menus/2')
+            commit('setMenus', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    async apiProjects({state, commit}) {
+    async apiProjects({commit}) {
         console.log('apiProjects dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/project?per_page=20&_embed')
-        commit('setProjects', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/project?per_page=20&_embed')
+            commit('setProjects', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    async apiSingleGallery({state, commit}, info) {
-        console.log('apiSingleGallery dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/gallery/'+info)
-        commit('setGallery', data)
-    },
-
-    async apiGalleries({state, commit}) {
+    async apiGalleries({commit}) {
         console.log('apiGalleries dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/gallery?per_page=20')
-        commit('setGalleries', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/gallery?per_page=100')
+            commit('setGalleries', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    async apiServices({state, commit}) {
+    async apiServices({commit}) {
         console.log('apiServices dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/service?_embed')
-        commit('setServices', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/service?_embed')
+            commit('setServices', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    async apiTeam({state, commit}) {
+    async apiTeam({commit}) {
         console.log('apiTeam dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/team?per_page=20&_embed')
-        commit('setTeam', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/team?per_page=100&_embed')
+            commit('setTeam', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    async apiBlogs({state, commit}) {
+    async apiBlogs({commit}) {
         console.log('apiBlogs dispatched');
-        let {data} = await this.$axios.get(state.siteUrl + '/wp/v2/posts?_embed')
-        commit('setBlogs', data)
-        commit('setRecentPosts', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/posts?per_page=100&_embed')
+            commit('setBlogs', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    async apiContacts({state, commit}) {
+    async apiContacts({commit}) {
         console.log('apiContacts dispatched');
-        let {data} = await this.$axios.get( state.siteUrl + '/wp/v2/contact?_embed')
-        commit('setContacts', data)
+        try {
+            const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/contact?_embed')
+            commit('setContacts', response)
+        } catch (error) {
+            console.error(error);
+        }
     },
 
     changeActiveTab: ({commit, state}, info) => {
@@ -126,35 +111,16 @@ export const actions = {
 }
 
 export const getters = {
-    getPages: state => {
-        return state.pages
-    },
-    getMenu: state => {
-        return state.menus
-    },
-    getProjects: state => {
-        return state.projects
-    },
-    getGallery: state => {
-        return state.gallery
-    },
-    getGalleries: state => {
-        return state.galleries
-    },
-    getServices: state => {
-        return state.services
-    },
-    getTeam: state => {
-        return state.team
-    },
-    getBlogs: state => {
-        return state.blogs
-    },
-    getRecentPosts: state => {
-        return state.recentPosts
-    },
-    getContacts: state => {
-        return state.contacts
-    },
+    getPages: state => state.pages,
+    getPage: state => slug => state.pages.filter(p=>p.slug == slug)[0],
+    getMenu: state => state.menus,
+    getProjects: state => state.projects,
+    getGallery: state => slug => state.gallery.filter(g=>g.slug == slug)[0],
+    getGalleries: state => state.galleries,
+    getServices: state => state.services,
+    getTeam: state => state.team,
+    getBlogs: state => state.blogs,
+    getRecentPosts: state => state.blogs.slice(0, 3),
+    getContacts: state => state.contacts,
 }
 
