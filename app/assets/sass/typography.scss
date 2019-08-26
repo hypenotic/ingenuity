@@ -183,24 +183,24 @@ span.bolded-text {
 .services-cta__btn {
 	font-family: $lite-headings;
 	text-transform: uppercase;
-	background-color: $black;
-	color: $white;
-	border: none;
+	// background-color: $black;
+	// color: $white;
+	// border: none;
 	font-weight: bold;
-	padding: 15px 30px;
-	height: 60px;
+	// padding: 15px 30px;
+	// height: 60px;
 	font-size: modular-scale(0, 1.1rem);
-    line-height: modular-scale(0, 1.1rem);
-    font-size: 18px;
-    line-height: 18px;
-    border: 1px solid $black;
-    margin-top: 16px;
+	line-height: modular-scale(0, 1.1rem);
+	font-size: 18px;
+	line-height: 18px;
+	// border: 1px solid $black;
+	// margin-top: 16px;
 	// transition: all 0.2s;
 	// letter-spacing: 1px;
 	&:hover {
-		border: 2px solid $black;
-		color: $black;
-		background-color: $white;
+		// border: 2px solid $black;
+		// color: $black;
+		// background-color: $white;
 		// font-weight: 400;
 	}
 }

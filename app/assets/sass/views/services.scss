@@ -182,6 +182,9 @@
 }
 
 .services-cta__btn {
+	display: inline-block;
+	text-decoration: none;
+	margin-top: 10px;
 	font-family: $lite-headings;
 	text-transform: uppercase;
 	background-color: $black;
@@ -206,6 +209,11 @@
 		color: $black;
 		background-color: $white;
 
+	}
+	span{
+		height: 100%;
+		display: flex;
+		align-items: center;
 	}
 }
 
