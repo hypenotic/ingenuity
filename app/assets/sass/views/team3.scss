@@ -431,7 +431,7 @@
 		padding: 20px 40px;
 		margin-top: 25px;
 		font-family: $lite-headings;
-        font-size: modular-scale(1);
+
         font-size: 24px;
 		&:hover {
 			background-color: darken($yellow, 10%); 
@@ -439,7 +439,7 @@
 		@media #{$bp-small} {
 			display: block;
 			padding: 10px 15px;
-			font-size: modular-scale(0);
+
 		}
 	}
 }
@@ -465,7 +465,7 @@
 		@media #{$bp-small} {
 			display: block;
 			padding: 10px 15px;
-			font-size: modular-scale(0);
+
 		}
 	}
 }

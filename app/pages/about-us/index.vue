@@ -1,18 +1,16 @@
 <template>
-    <div v-if="page" class="about-page">
-        <app-nav :small="true"></app-nav>
-        <div>
-            <app-banner :page="page"></app-banner>
-            <section class="intro content-wrapper">
-                <div v-html="page.content.rendered"></div>
-            </section>
-            <div class="tabs-wrapper" id="tablist-anchor">
-                <ul role="tablist" class="_tabs tablist">
-                    <li :role="tab.title.rendered" v-for="(tab, i) in tabs" @click="currentTab = i" :key="'about-tab-'+i" @keyup.enter="currentTab = i" :class="{ active: checkActive(i)}" tab-index="0">
-                        <a :id="tab.slug+'-tab'" href="about-us/#tablist-anchor" role="tab" :aria-controls="tab.slug" aria-selected="true" v-html="tab.title.rendered"></a>
-                    </li>
-                </ul>
-                <transition name="fade">
+    <div>
+        <app-banner :page="page"></app-banner>
+        <section class="intro content-wrapper">
+            <div v-html="page.content.rendered"></div>
+        </section>
+        <div class="tabs-wrapper" id="tablist-anchor">
+            <ul role="tablist" class="_tabs tablist">
+                <li :role="tab.title.rendered" v-for="(tab, i) in tabs" @click="currentTab = i" :key="'about-tab-'+i" @keyup.enter="currentTab = i" :class="{ active: checkActive(i)}" tab-index="0">
+                    <a :id="tab.slug+'-tab'" href="about-us/#tablist-anchor" role="tab" :aria-controls="tab.slug" aria-selected="true" v-html="tab.title.rendered"></a>
+                </li>
+            </ul>
+            <transition name="fade">
                 <div class="_tabs content">
                     <div class="content-inner">
                         <!-- <h2 v-html="tabs[currentTab].title.rendered"></h2> -->
@@ -20,10 +18,8 @@
                         </div>
                     </div>
                 </div>
-                </transition>
-            </div>
+            </transition>
         </div>
-        <app-footer></app-footer>    
     </div>
 </template>
 
@@ -40,6 +36,7 @@
             await store.dispatch('apiMenu')
             await store.dispatch('apiBlogs')
         },
+        layout: 'small-nav',
         data () {
             return{
                 currentTab: 0

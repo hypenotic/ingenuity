@@ -1,6 +1,5 @@
 <template>
     <div>
-        <app-nav></app-nav>
         <div v-if="service != null">
             <app-banner :page="service"></app-banner>
             <div class="main-wrapper">
@@ -39,7 +38,6 @@
 
                 </div>
             </div>
-            <app-footer v-if="this.$route.path != '/'"></app-footer>
         </div>
     </div>
 </template>

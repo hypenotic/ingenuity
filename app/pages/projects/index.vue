@@ -1,21 +1,17 @@
 <template>
     <div>
-        <app-nav></app-nav>
-        <div v-if="page != null">
-            <app-banner :page="page"></app-banner>
-            <div class="projects__panel-container">
-                <router-link :to="'/projects/' + project.slug" v-for="project in projects" :key="project.id" class="projects__panel-link">
-                    <div class="projects__panel-wrap">
-                        <h2 v-html="project.title.rendered"></h2>
-                        <div class="color-overlay">
-                        </div>
-                        <figure class="projects__panel-img" :style="'background-color: rgba(252, 216, 56, 0.6); background-image: url(' + project.meta_box._banner_image[0].full_url + ');'">
-                        </figure>
+        <app-banner :page="page"></app-banner>
+        <div class="projects__panel-container">
+            <nuxt-link :to="'/projects/' + project.slug" v-for="project in projects" :key="project.id" class="projects__panel-link">
+                <div class="projects__panel-wrap">
+                    <h2 v-html="project.title.rendered"></h2>
+                    <div class="color-overlay">
                     </div>
-                </router-link>
-            </div>
+                    <figure class="projects__panel-img" :style="'background-color: rgba(252, 216, 56, 0.6); background-image: url(' + project.meta_box._banner_image[0].full_url + ');'">
+                    </figure>
+                </div>
+            </nuxt-link>
         </div>
-        <app-footer></app-footer>
     </div>
 </template>
 
