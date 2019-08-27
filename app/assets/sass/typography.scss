@@ -195,12 +195,6 @@ span.bolded-text {
 	// margin-top: 16px;
 	// transition: all 0.2s;
 	// letter-spacing: 1px;
-	&:hover {
-		// border: 2px solid $black;
-		// color: $black;
-		// background-color: $white;
-		// font-weight: 400;
-	}
 }
 
 // PROJECTS ============================
@@ -280,12 +274,6 @@ span.bolded-text {
 		@media #{$bp-small} {
 			h4 {
 				margin-top: 20px;
- 
- 
-			}
-			h5 {
- 
-
 			}
 		}
 	}
