@@ -1,20 +1,16 @@
 <template>
-    <div>
-        <app-nav></app-nav>
-        <div class="home-hero" id="header-check">
-            <div class="video-overlay">
-            </div>
-            <div class="video">
-                <video playsinline autoplay muted loop poster="https://data.ingenuity.ca/custom/uploads/2018/02/poster.jpg" id="bgvid">
-                    <source media="(max-width: 450px)" src="~/assets/videos/ingenuity_fast.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="hgroup rw-wrapper">
-                <h2 class="rw-sentence">
-                    A <nuxt-link to="services/design-build" class="sentence-link">Design Build</nuxt-link> &amp; <nuxt-link to="services/general-contracting/" class="sentence-link">General Contracting</nuxt-link>&nbsp;<nuxt-link to="about-us/the-team" class="sentence-link">team</nuxt-link> that <nuxt-link to="about-us/" class="sentence-link">believes</nuxt-link> in <nuxt-link to="projects/" class="rotator-link"><span class="replace-me"> happiness, <span style="display: none">craft, productivity, detail, creativity</span></span></nuxt-link><span class="sq-ft">&nbsp;/sq&nbsp;ft.</span>
-                    
-                </h2>.
-            </div>
+    <div class="home-hero" id="header-check">
+        <div class="video-overlay">
+        </div>
+        <div class="video">
+            <video playsinline autoplay muted loop poster="https://data.ingenuity.ca/custom/uploads/2018/02/poster.jpg" id="bgvid">
+                <source media="(max-width: 450px)" src="~/assets/videos/ingenuity_fast.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hgroup rw-wrapper">
+            <h2 class="rw-sentence">
+                A <nuxt-link to="services/design-build" class="sentence-link">Design Build</nuxt-link> &amp; <nuxt-link to="services/general-contracting/" class="sentence-link">General Contracting</nuxt-link>&nbsp;<nuxt-link to="about-us/the-team" class="sentence-link">team</nuxt-link> that <nuxt-link to="about-us/" class="sentence-link">believes</nuxt-link> in <nuxt-link to="projects/" class="rotator-link"><span class="replace-me"> happiness, <span style="display: none">craft, productivity, detail, creativity</span></span></nuxt-link><span class="sq-ft">&nbsp;/sq&nbsp;ft.</span>
+            </h2>.
         </div>
     </div>
 </template>
@@ -28,6 +24,7 @@
         async fetch ({store}) {
             await store.dispatch('apiMenu')
         },
+        layout: 'no-footer',
         components: {
             appNav: Nav,
         },
@@ -44,7 +41,7 @@
                 ],
             }
         },
-        mounted: function(){
+        mounted(){
             var replace = new ReplaceMe(document.querySelector('.replace-me'), {
                 animation: 'animated fadeIn',                       // Animation class or classes
                 speed: 2500,                                        // Delay between each phrase in miliseconds

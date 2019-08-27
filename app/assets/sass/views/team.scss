@@ -50,10 +50,6 @@
     }
 }
 
-.team__container--leadership {
-    
-}
-
 // .team__container--foundation {
 //     h3,h4 {
 //         margin: 0;
@@ -98,10 +94,6 @@
 //     // max-width: 1024px;
 //     margin: 0 auto;
 // }
-
-.team__single {
-
-}
 
 // .team__container--foundation {
 //     .team__single {
@@ -444,9 +436,6 @@
             justify-content: space-between;
 			.split--image {
                 width: 35%;
-                img {
-                    // width: 
-                }
             }
             .split--content {
                 width: 60%;
@@ -478,7 +467,7 @@
 		@media #{$bp-small} {
 			display: block;
 			padding: 10px 15px;
-			font-size: modular-scale(0);
+
 		}
 	}
 }
@@ -504,7 +493,7 @@
 // 		@media #{$bp-small} {
 // 			display: block;
 // 			padding: 10px 15px;
-// 			font-size: modular-scale(0);
+
 // 		}
 // 	}
 // }

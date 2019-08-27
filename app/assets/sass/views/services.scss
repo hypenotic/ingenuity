@@ -102,15 +102,15 @@
 		}
 		p {
 			font-style: italic;
-			font-size: modular-scale(1, 1.5rem);
-			line-height: modular-scale(1, 1.6rem);
+
+
 			font-weight: 400;
 			font-family: $p-font;
 			text-transform: none;
 		}
 		@media #{$bp-small} {
-			font-size: modular-scale(1, 1.1rem);
-			line-height: modular-scale(1, 1.1rem);
+
+
 		}
 		&:before {
 		    content: '“';
@@ -152,8 +152,8 @@
 		padding-left: 100px;
 		text-align: right;
 		text-transform: uppercase;
-		font-size: modular-scale(0, 0.9rem);
-		line-height: modular-scale(0, 1rem);
+
+
 		font-size: 14px;
 		line-height: 16px;
 		margin: 0;
@@ -168,20 +168,23 @@
 .services-cta {
 	p {
 		font-family: $lite-headings;
-		font-size: modular-scale(2, 1.3rem);
-		line-height: modular-scale(2, 1.3rem);
+
+
 		@media #{$bp-small} {
-			font-size: modular-scale(1, 1.3rem);
-			line-height: modular-scale(1, 1.3rem);
+
+
 		}
 		@media #{$mobile-landscape} {
-			font-size: modular-scale(1, 1.3rem);
-			line-height: modular-scale(1, 1.3rem);
+
+
 		}
 	}
 }
 
 .services-cta__btn {
+	display: inline-block;
+	text-decoration: none;
+	margin-top: 10px;
 	font-family: $lite-headings;
 	text-transform: uppercase;
 	background-color: $black;
@@ -190,8 +193,8 @@
 	font-weight: bold;
 	padding: 15px 30px;
 	height: 60px;
-	font-size: modular-scale(0, 1.1rem);
-	line-height: modular-scale(0, 1.1rem);
+
+
 	border: 1px solid $black;
 	// transition: all 0.2s;
 	// letter-spacing: 1px;
@@ -206,6 +209,11 @@
 		color: $black;
 		background-color: $white;
 
+	}
+	span{
+		height: 100%;
+		display: flex;
+		align-items: center;
 	}
 }
 

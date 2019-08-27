@@ -9,14 +9,14 @@
         <transition name="expand">
             <app-menu v-if="menu && open"></app-menu>
         </transition>
-        <div :class="{open: open, button: true}" @click="open = !open" type="button">
+        <button :class="{open: open, button: true}" @click="open = !open">
             <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
             </div>
             {{(open) ? 'Close' : 'Menu'}}
-        </div>
+        </button>
     </nav>
 </template>
 

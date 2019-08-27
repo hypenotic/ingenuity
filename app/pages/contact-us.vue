@@ -1,6 +1,5 @@
 <template>
     <div>
-        <app-nav :small="true"></app-nav>
         <app-map></app-map>
         <div class="contact-container">
             <div class="contact__single wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.5s" v-for="contact in contacts" :key="contact.id">

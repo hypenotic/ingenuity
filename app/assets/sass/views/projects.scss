@@ -13,14 +13,16 @@
 
 .projects__panel-link {
     width: 100%;
-    &:hover .projects__panel-wrap {
-        .color-overlay {
-            opacity: 0;		
-        }
-        .projects__panel-img { 
-            filter: grayscale(0.8);
-            background-blend-mode: normal;
-            filter: brightness(0.7);
+    &:hover, &:focus{
+        .projects__panel-wrap {
+            .color-overlay {
+                opacity: 0;		
+            }
+            .projects__panel-img { 
+                filter: grayscale(0.8);
+                background-blend-mode: normal;
+                filter: brightness(0.7);
+            }
         }
     }
 }
@@ -169,8 +171,8 @@ aside p {
     .testimonial__quotation {
         @media #{$bp-small} {
             margin: 0 0 0 15px;
-            font-size: modular-scale(1, 1.1rem); 
-            line-height: modular-scale(1, 1.1rem); 
+ 
+ 
         }
     }
     .testimonial__creds {
@@ -178,12 +180,6 @@ aside p {
         @media #{$bp-small} {
             h4 {
                 margin-top: 20px;
-                font-size: modular-scale(1, 1rem); 
-                line-height: modular-scale(1, 1rem); 
-            }
-            h5 {
-                font-size: modular-scale(0, 1rem); 
-                line-height: modular-scale(0, 1rem);
             }
         }
     }
@@ -195,10 +191,10 @@ aside p {
 
 .project__testimonial {
     @media #{$bp-small} {
-        font-size: modular-scale(2);
+
     }
     @media #{$mobile-landscape} {
-        font-size: modular-scale(2);
+
     }
     blockquote {
         color: $white;
@@ -209,16 +205,16 @@ aside p {
             font-size: 200px;
             color: rgba(255,255,255,0.3);
             @media #{$bp-small} {
-                font-size: modular-scale(5);
+
                 margin: 10px -0.5em;
             }
         }
         &:after {
             content: '”';
-            font-size: modular-scale(2, 1.3rem);
+
             color: rgba(255,255,255,0.3);
             @media #{$bp-small} {
-                font-size: modular-scale(1);
+
             }
         }
     }
@@ -420,15 +416,15 @@ aside p {
     }
     p {
         margin: 0;
-        // font-size: modular-scale(0, 1rem);
-        // line-height: modular-scale(1, 1rem);
+
+
         font-weight: 300;
         font-family: $lite-headings;
         font-size: 0.8rem;
         font-style: italic;
         @media #{$bp-small}  {
-            // font-size: modular-scale(0, 1rem);
-            // line-height: modular-scale(1, 1rem);
+
+
         }
     }
 }

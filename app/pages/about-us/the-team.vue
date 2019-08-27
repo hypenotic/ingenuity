@@ -1,63 +1,61 @@
 <template>
-    <div>
-        <app-nav :menu-links="menuLinks"></app-nav>
-        <div v-if="page != null" class="team-panels">
-            <app-banner :page="page"></app-banner>
-            <div class="leadership-banner">
-                <h3>Meet the leadership</h3>
-            </div>
-            
-            <div class="main-wrapper"> 
-                <section class="main-content standard-center" v-html="page.content.rendered"> 
-                </section>
-            </div>
-            
-            <div class="team__container--leadership team__container">
-                <div v-for="member in team.filter(m=>m.meta_box._team_section=='leadership')" :key="member.id">
-                    <!-- <tm-banner :tm="member" @click="dropDown(member.id)"></tm-banner>
-                    <tm-section :tm="member"></tm-section> -->
-                    <a
-                    :href="'#member-'+member.id"
-                    class="team__single team__single--leadership"
-                    :class="{'team__single--open': openMember == member.id}"
-                    :style="'background-image: url('+member.meta_box._team_styled_image +');'"
-                    @click="toggleOpenMember(member.id)"
-                    :id="'member-'+member.id">
-                        <div class="team-overlay"></div>
-                        <div class="hgroup">
-                            <h3 class="team__name" v-html="member.title.rendered"></h3>
-                            <span class="team__creds" v-html="member.meta_box._team_creds"></span>
-                            <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
-                        </div>
-                    </a>
-                    <!-- <a v-if="openMember == member.id" :href="'#member-'+member.id" class="closebar" @click="openMember = null">
-                        <div class="hgroup">
-                            <h3 class="team__name" v-html="member.title.rendered"></h3>
-                            <span class="team__creds" v-html="member.meta_box._team_creds"></span>
-                        </div>
-                    </a> -->
-                    <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--leader" :id="member.id">
-                        <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
-                        <div class="push__longbio animated fadeIn">
-                            <div class="split">
-                                <div class="split--content" v-html="member.content.rendered"></div>
-                                <div class="split--image">
-                                    <video class="team-vid" :id="'member-vid-'+member.id" loop muted autoplay>
-                                        <source :src="member.meta_box._team_movie" type="video/mp4" />
-                                    </video>
-                                </div>
+    <div class="team-panels">
+        <app-banner :page="page"></app-banner>
+        <div class="leadership-banner">
+            <h3>Meet the leadership</h3>
+        </div>
+        
+        <div class="main-wrapper"> 
+            <section class="main-content standard-center" v-html="page.content.rendered"> 
+            </section>
+        </div>
+        
+        <div class="team__container--leadership team__container">
+            <div v-for="member in team.filter(m=>m.meta_box._team_section=='leadership')" :key="member.id">
+                <!-- <tm-banner :tm="member" @click="dropDown(member.id)"></tm-banner>
+                <tm-section :tm="member"></tm-section> -->
+                <a
+                :href="'#member-'+member.id"
+                class="team__single team__single--leadership"
+                :class="{'team__single--open': openMember == member.id}"
+                :style="'background-image: url('+member.meta_box._team_styled_image +');'"
+                @click="toggleOpenMember(member.id)"
+                :id="'member-'+member.id">
+                    <div class="team-overlay"></div>
+                    <div class="hgroup">
+                        <h3 class="team__name" v-html="member.title.rendered"></h3>
+                        <span class="team__creds" v-html="member.meta_box._team_creds"></span>
+                        <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
+                    </div>
+                </a>
+                <!-- <a v-if="openMember == member.id" :href="'#member-'+member.id" class="closebar" @click="openMember = null">
+                    <div class="hgroup">
+                        <h3 class="team__name" v-html="member.title.rendered"></h3>
+                        <span class="team__creds" v-html="member.meta_box._team_creds"></span>
+                    </div>
+                </a> -->
+                <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--leader" :id="member.id">
+                    <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
+                    <div class="push__longbio animated fadeIn">
+                        <div class="split">
+                            <div class="split--content" v-html="member.content.rendered"></div>
+                            <div class="split--image">
+                                <video class="team-vid" :id="'member-vid-'+member.id" loop muted autoplay>
+                                    <source :src="member.meta_box._team_movie" type="video/mp4" />
+                                </video>
                             </div>
                         </div>
-                        <div class="button__container"><a :href="'#member-'+member.id" class="close-push-panel" @click="openMember = null">CLOSE</a></div>
                     </div>
+                    <div class="button__container"><a :href="'#member-'+member.id" class="close-push-panel" @click="openMember = null">CLOSE</a></div>
                 </div>
             </div>
-            
-            <div class="foundation-banner">
-                <h3>Meet the foundation</h3>
-            </div>
-            <div class="team__container team__container--foundation">
-                <div v-for="member in team.filter(m=>m.meta_box._team_section=='foundation')" :key="member.id">
+        </div>
+        
+        <div class="foundation-banner">
+            <h3>Meet the foundation</h3>
+        </div>
+        <div class="team__container team__container--foundation">
+            <div v-for="member in team.filter(m=>m.meta_box._team_section=='foundation')" :key="member.id">
                 <a
                 :href="'#member-'+member.id"
                 class="team__single team__single--foundation"
@@ -87,9 +85,7 @@
                     <div class="button__container"><a :href="'#member-'+member.id" class="close-push-panel" @click="openMember = null">CLOSE</a></div>
                 </div>
             </div>
-            </div>
         </div>
-        <app-footer></app-footer>
     </div>
 </template>
 

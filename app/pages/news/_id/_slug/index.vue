@@ -1,37 +1,27 @@
 <template>
-    <div>
-        <app-nav></app-nav>
-        <div v-if="post != null" class="single-blog-view">
-            <app-banner :page="post"></app-banner>
-
-            <section class="blog-single-intro">
-
+    <div class="single-blog-view">
+        <app-banner :page="post"></app-banner>
+        <!-- <section class="blog-single-intro">
+        </section> -->
+        <div class="main-wrapper blog-wrapper">
+            <aside id="left"> 
+                <span class="bolded-text">Author(s):</span><br><span v-html="post.meta_box._post_authors" class="post-authors"></span><br>
+            </aside>
+            <section class="blog-entry blog-page" v-html="post.content.rendered">
             </section>
-
-            <div class="main-wrapper blog-wrapper">
-                <aside id="left"> 
-                    <span class="bolded-text">Author(s):</span><br><span v-html="post.meta_box._post_authors" class="post-authors"></span><br>
-                </aside>
-
-                <section class="blog-entry blog-page" v-html="post.content.rendered">
-                </section>
-
-            </div>
-
-            <div class="prev-next-links">
-                <nuxt-link :to="'/news/'+ prev.id + '/' + prev.slug" v-if="prev != null && prev != next">
-                    <div class="blog-nav__arrow blog-nav__arrow--prev">
-                        <p>&lt; Previous Post</p>
-                    </div>
-                </nuxt-link>
-                <nuxt-link :to="'/news/'+ next.id + '/' + next.slug" v-if="next != null">
-                    <div class="blog-nav__arrow blog-nav__arrow--next">
-                        <p>Next Post &gt;</p>
-                    </div>
-                </nuxt-link>
-            </div>
         </div>
-        <app-footer></app-footer>
+        <div class="prev-next-links">
+            <nuxt-link :to="'/news/'+ prev.id + '/' + prev.slug" v-if="prev != null && prev != next">
+                <div class="blog-nav__arrow blog-nav__arrow--prev">
+                    <p>&lt; Previous Post</p>
+                </div>
+            </nuxt-link>
+            <nuxt-link :to="'/news/'+ next.id + '/' + next.slug" v-if="next != null">
+                <div class="blog-nav__arrow blog-nav__arrow--next">
+                    <p>Next Post &gt;</p>
+                </div>
+            </nuxt-link>
+        </div>
     </div>
 </template>
 

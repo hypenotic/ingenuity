@@ -1,6 +1,5 @@
 <template>
     <div>
-        <app-nav></app-nav>
         <div v-if="service != null">
             <app-banner :page="service"></app-banner>
             <div class="main-wrapper">
@@ -24,22 +23,21 @@
                         </div>
                         <div class="two-column__half services-cta" data-aos="fade-right" data-aos-delay="200">
                             <div v-html="service.meta_box._service_cta_copy"></div>
-                            <a :href="service.meta_box._service_cta_link">
-                                <button class="services-cta__btn" v-html="service.meta_box._service_cta_text"></button>
+                            <a class="services-cta__btn" :href="service.meta_box._service_cta_link">
+                                <span v-html="service.meta_box._service_cta_text"></span>
                             </a>
                         </div>
                     </div>
 
                     <div class="other-services" data-aos="fade-up" data-aos-delay="200">
                         <h3>Check out our other services:</h3>
-                        <router-link :to="'/services/' + s.slug" v-if="service.slug != s.slug" v-for="s in services" :key="s.id" class="other-service-btn services-cta__btn">
+                        <router-link :to="'/services/' + s.slug" v-for="s in services.filter(s=>s.slug != service.slug)" :key="s.id" class="other-service-btn services-cta__btn">
                             <span v-if="s.title.rendered" v-html="s.title.rendered"></span>
                         </router-link>
                     </div>
 
                 </div>
             </div>
-            <app-footer v-if="this.$route.path != '/'"></app-footer>
         </div>
     </div>
 </template>

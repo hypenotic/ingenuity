@@ -1,17 +1,28 @@
 <template>
    <div>
+      <navigation></navigation>
       <nuxt/>
+      <app-footer></app-footer>
    </div>
 </template>
 
 <script>
 
-import appnav from '~/components/Nav.vue';
+import navigation from '~/components/Nav.vue';
+import appFooter from '~/components/Footer.vue';
 
 export default {
    components:{
-      appnav
+      navigation,
+      appFooter
    },
+   head(){
+      return{
+         htmlAttrs: {
+            lang: 'en'
+         },
+      }
+  },
 }
 </script>
 

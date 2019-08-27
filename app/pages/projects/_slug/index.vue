@@ -1,6 +1,5 @@
 <template>
     <div>  
-        <app-nav></app-nav>
         <app-banner :page="project"></app-banner>
         <div class="diagonal-wrapper diagonal-svg__wrapper">
             <svg class="diagonal-svg">
@@ -67,7 +66,6 @@
                 </div>
             </div>
         </div>
-        <app-footer></app-footer>
     </div>
 </template>
 
