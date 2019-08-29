@@ -14,6 +14,8 @@ function project_register_meta_boxes( $meta_boxes ) {
                 'name'  => __( 'Image', 'textdomain' ),
                 'id'    => '_banner_image',
                 'type'  => 'image_advanced',
+                'max_file_uploads' => 1,
+                'image_size'       => 'full',
             ),
             array(
                 'name'  => __( 'Heading', 'textdomain' ),
