@@ -13,7 +13,7 @@ function project_register_meta_boxes( $meta_boxes ) {
             array(
                 'name'  => __( 'Image', 'textdomain' ),
                 'id'    => '_banner_image',
-                'type'  => 'image',
+                'type'  => 'image_advanced',
             ),
             array(
                 'name'  => __( 'Heading', 'textdomain' ),

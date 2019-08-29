@@ -22,7 +22,6 @@
     <a href="https://hypenotic.com">
         <img src="https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%EF%B8%8E%20by-hypenotic-red.svg" alt="hypenotic badge">
     </a>
-    
 </p>
 
 <p align="center">
