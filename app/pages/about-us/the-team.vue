@@ -11,7 +11,7 @@
         </div>
         
         <div class="team__container--leadership team__container">
-            <div v-for="member in team.filter(m=>m.meta_box._team_section=='leadership')" :key="member.id">
+            <div v-for="member in team.filter(m=>m.meta_box._team_section=='leadership').sort((a,b)=>a.menu_order - b.menu_order)" :key="member.id">
                 <!-- <tm-banner :tm="member" @click="dropDown(member.id)"></tm-banner>
                 <tm-section :tm="member"></tm-section> -->
                 <a
@@ -55,7 +55,7 @@
             <h3>Meet the foundation</h3>
         </div>
         <div class="team__container team__container--foundation">
-            <div v-for="member in team.filter(m=>m.meta_box._team_section=='foundation')" :key="member.id">
+            <div v-for="member in team.filter(m=>m.meta_box._team_section=='foundation').sort((a,b)=>a.menu_order - b.menu_order)" :key="member.id">
                 <a
                 :href="'#member-'+member.id"
                 class="team__single team__single--foundation"
