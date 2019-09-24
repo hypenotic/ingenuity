@@ -66,10 +66,12 @@
 
 .prev-next-links {
 	width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-	background: $yellow;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: $yellow;
+    a{
+        text-decoration: none;
+    }
 	.blog-nav__arrow {
 		background-color: $yellow;
         padding: 20px;
@@ -79,7 +81,11 @@
                 color: $yellow;
             }
         }
+        .top{
+            font-size: 90%;
+        }
 		p {
+            text-align: center;
 			margin: 0;
 			color: $black;
 		}
