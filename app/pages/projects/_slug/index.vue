@@ -85,7 +85,6 @@
             await store.dispatch('apiBlogs')
         },
         head () {
-            console.log(this.project.meta_box._banner_image[0].full_url);
             return {
                 title: helper.decodeHtmlEntity(this.project.title.rendered),
                 meta: [

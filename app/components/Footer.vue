@@ -46,7 +46,7 @@
             }
         },
         created: function() {
-            console.log('FOOTER LOADED');
+            
         },
         methods: {
             

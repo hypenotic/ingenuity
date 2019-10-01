@@ -106,7 +106,6 @@
             await store.dispatch('apiBlogs')
         },
         head () {
-            console.log(this.page.meta_box._page_hero_image);
             return {
                 title: "The Team",
                 meta: [
