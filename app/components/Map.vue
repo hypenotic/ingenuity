@@ -18,7 +18,6 @@
             }
         },
         mounted() {
-            console.log("hello");
             this.map = new google.maps.Map(document.getElementById('map'), {
                 center: new google.maps.LatLng(43.526, -79.711384),
                 zoom: 15,

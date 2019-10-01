@@ -24,7 +24,7 @@
             menu () {
                 return this.$store.getters.getMenu;
             }
-        }
+        },
     }
 </script>
 

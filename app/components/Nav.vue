@@ -41,7 +41,6 @@
         methods: {
             handleScroll: function (event) {
                 if(process.browser){
-                    // console.log(window.pageYOffset);
                     if (window.addEventListener){
                         if (window.pageYOffset > 20) {
                             this.scrolled = true;
@@ -68,13 +67,10 @@
             if(process.browser){
                 window.addEventListener('scroll', this.handleScroll);
                 if (window.addEventListener){
-                    console.log('Option 1');
                     window.addEventListener('scroll', this.handleScroll);
                 } else if (window.attachEvent){
-                    console.log('Option 2');
                     window.attachEvent('scroll', this.handleScroll);
                 } else {
-                    console.log('Option 3');
                     jQuery(window).on('scroll', this.handleScroll);
                     // console.log('IE');
                 }
@@ -91,6 +87,11 @@
                 window.removeEventListener('scroll', this.handleScroll);
             }
         },
+        watch: {
+            '$route' () {
+                this.open = false
+            }
+        }
     }
 </script>
 

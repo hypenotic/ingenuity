@@ -11,14 +11,16 @@
             </section>
         </div>
         <div class="prev-next-links">
-            <nuxt-link :to="'/news/'+ prev.id + '/' + prev.slug" v-if="prev != null && prev != next">
-                <div class="blog-nav__arrow blog-nav__arrow--prev">
-                    <p>&lt; Previous Post</p>
+            <nuxt-link :to="'/news/'+ next.id + '/' + next.slug" v-if="next != null" class="prev">
+                <div class="blog-nav__arrow blog-nav__arrow--next">
+                    <p class="top">&larr; Previous Post</p>
+                    <p v-html="next.title.rendered"></p>
                 </div>
             </nuxt-link>
-            <nuxt-link :to="'/news/'+ next.id + '/' + next.slug" v-if="next != null">
-                <div class="blog-nav__arrow blog-nav__arrow--next">
-                    <p>Next Post &gt;</p>
+            <nuxt-link :to="'/news/'+ prev.id + '/' + prev.slug" v-if="prev != null && prev != next" class="next">
+                <div class="blog-nav__arrow blog-nav__arrow--prev">
+                    <p class="top">Next Post &rarr;</p>
+                    <p v-html="prev.title.rendered"></p>
                 </div>
             </nuxt-link>
         </div>
@@ -39,7 +41,6 @@
             await store.dispatch('apiMenu')
         },
         head () {
-            console.log(this.post.meta_box._post_hero_image);
             return {
                 title: helper.decodeHtmlEntity(this.post.title.rendered),
                 meta: [

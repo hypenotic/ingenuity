@@ -132,13 +132,13 @@ aside p {
             position: relative;
             &:hover {
 
-                &::after {
+                &:after {
                    height: 5px; 
                 }
                 // background: #444;
                 // color: $white;
             }
-            &::after {
+            &:after {
                 content: "";
                 transition: all .2s;
                 position: absolute;

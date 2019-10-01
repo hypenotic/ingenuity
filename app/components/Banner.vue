@@ -42,7 +42,7 @@
         components: {
         },
         created() {
-            console.log('Banner');
+            
         }
     }
 </script>

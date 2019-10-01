@@ -7,7 +7,7 @@
             </svg>
             <div class="main-wrapper blog-wrapper">
                 <aside id="left"> 
-                    <p>
+                    <p v-if="project.meta_box._stats_client">
                         <span class="stats_label">Client</span><br>
                         <span v-html="project.meta_box._stats_client"></span>
                     </p>
@@ -85,7 +85,6 @@
             await store.dispatch('apiBlogs')
         },
         head () {
-            console.log(this.project.meta_box._banner_image[0].full_url);
             return {
                 title: helper.decodeHtmlEntity(this.project.title.rendered),
                 meta: [
