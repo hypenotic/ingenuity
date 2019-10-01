@@ -25,11 +25,6 @@
                 return this.$store.getters.getMenu;
             }
         },
-        methods: {
-            onClickButton (event) {
-                this.$emit('clicked', 'someValue')
-            }
-        }
     }
 </script>
 
