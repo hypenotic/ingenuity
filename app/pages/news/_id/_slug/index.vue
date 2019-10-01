@@ -41,7 +41,6 @@
             await store.dispatch('apiMenu')
         },
         head () {
-            console.log(this.post.meta_box._post_hero_image);
             return {
                 title: helper.decodeHtmlEntity(this.post.title.rendered),
                 meta: [

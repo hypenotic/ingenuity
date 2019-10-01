@@ -29,7 +29,6 @@
             appNav: Nav,
         },
         head () {
-            console.log(this.$route.path);
             return {
                 title: "Ingenuity",
                 meta: [
