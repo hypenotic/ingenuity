@@ -7,7 +7,7 @@
             </svg>
             <div class="main-wrapper blog-wrapper">
                 <aside id="left"> 
-                    <p>
+                    <p v-if="project.meta_box._stats_client">
                         <span class="stats_label">Client</span><br>
                         <span v-html="project.meta_box._stats_client"></span>
                     </p>
