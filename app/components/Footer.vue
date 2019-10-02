@@ -45,14 +45,6 @@
                 footerContent: [],
             }
         },
-        created: function() {
-            
-        },
-        methods: {
-            
-        },
-        beforeMount() {
-        },
         computed: {
             recentPosts (){
                 return this.$store.getters.getRecentPosts

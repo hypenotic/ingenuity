@@ -16,6 +16,7 @@
 }
 
 ._tabs {
+
     &.tablist {
         list-style-type: none;
         margin: 0;
@@ -26,6 +27,12 @@
         top: 57px;
         @media #{$bp-large} {
             display: flex;
+        }
+        @media #{$bp-xlarge}{
+            // max-width: 840px;
+            // margin: 0 auto;
+            // background: red;
+
         }
         li {
             border-bottom: 1px solid $d-grey;
@@ -60,7 +67,7 @@
                 font-family: $main-headings;
                 font-weight: bold;
                 @media #{$bp-large} {
-                    padding: 1rem 2rem;
+                    padding: .75rem 2rem;
                 }
                 &:hover, &:focus {
                     background: lighten(darkgrey,10);
@@ -75,9 +82,10 @@
                 // background: #f8f8f8;
                 // border-bottom: 1px solid #f8f8f8;
                 margin-top: -10px;
+                font-weight: normal;
                 color: $black;
                 @media #{$bp-large} {
-                    font-size: 35px;
+                    font-size: 30px;
                 }
                 &:hover {
                     background: $yellow;

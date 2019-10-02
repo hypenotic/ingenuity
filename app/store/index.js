@@ -26,7 +26,7 @@ export const mutations = {
 
 export const actions = {
     async apiPages({commit}) {
-        console.log('apiPages dispatched');
+        // console.log('apiPages dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/pages?per_page=100&_embed')
             commit('setPages', response)
@@ -36,7 +36,7 @@ export const actions = {
     },
 
     async apiMenu({commit}) {
-        console.log('apiMenu dispatched');
+        // console.log('apiMenu dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp-api-menus/v2/menus/2')
             commit('setMenus', response)
@@ -46,7 +46,7 @@ export const actions = {
     },
 
     async apiProjects({commit}) {
-        console.log('apiProjects dispatched');
+        // console.log('apiProjects dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/project?per_page=20&_embed')
             commit('setProjects', response)
@@ -56,7 +56,7 @@ export const actions = {
     },
 
     async apiGalleries({commit}) {
-        console.log('apiGalleries dispatched');
+        // console.log('apiGalleries dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/gallery?per_page=100')
             commit('setGalleries', response)
@@ -66,7 +66,7 @@ export const actions = {
     },
 
     async apiServices({commit}) {
-        console.log('apiServices dispatched');
+        // console.log('apiServices dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/service?_embed')
             commit('setServices', response)
@@ -76,7 +76,7 @@ export const actions = {
     },
 
     async apiTeam({commit}) {
-        console.log('apiTeam dispatched');
+        // console.log('apiTeam dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/team?per_page=100&_embed')
             commit('setTeam', response)
@@ -86,7 +86,7 @@ export const actions = {
     },
 
     async apiBlogs({commit}) {
-        console.log('apiBlogs dispatched');
+        // console.log('apiBlogs dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/posts?per_page=100&_embed')
             commit('setBlogs', response)
@@ -96,7 +96,7 @@ export const actions = {
     },
 
     async apiContacts({commit}) {
-        console.log('apiContacts dispatched');
+        // console.log('apiContacts dispatched');
         try {
             const response = await this.$axios.$get(process.env.DB_URL + '/wp/v2/contact?_embed')
             commit('setContacts', response)
