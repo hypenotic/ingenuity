@@ -15,7 +15,7 @@
                 <!-- <tm-banner :tm="member" @click="dropDown(member.id)"></tm-banner>
                 <tm-section :tm="member"></tm-section> -->
                 <a
-                :href="'/' + route + '#member-'+member.id"
+                :href="route + '#member-'+member.id"
                 class="team__single team__single--leadership"
                 :class="{'team__single--open': openMember == member.id}"
                 :style="'background-image: url('+member.meta_box._team_styled_image +');'"
@@ -57,7 +57,7 @@
         <div class="team__container team__container--foundation">
             <div v-for="member in team.filter(m=>m.meta_box._team_section=='foundation').sort((a,b)=>a.menu_order - b.menu_order)" :key="member.id">
                 <a
-                :href="'/' + route + '#member-'+member.id"
+                :href="route + '#member-'+member.id"
                 class="team__single team__single--foundation"
                 :class="{'team__single--open': openMember == member.id}"
                 :style="'background-image: url('+member.meta_box._team_styled_image +');'"
