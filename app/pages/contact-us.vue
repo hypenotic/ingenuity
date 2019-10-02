@@ -17,7 +17,6 @@
                 </div>
             </div>
         </div>
-        <app-footer></app-footer>
     </div>
 </template>
 

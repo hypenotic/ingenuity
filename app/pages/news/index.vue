@@ -34,7 +34,7 @@
             await store.dispatch('apiMenu')
         },
         head () {
-            console.log(this.page.meta_box._page_hero_image);
+            // console.log(this.page.meta_box._page_hero_image);
             return {
                 title:"News",
                 meta: [

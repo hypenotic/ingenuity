@@ -33,22 +33,26 @@
 
 .single-blog-view {
     .blog-entry {
-        padding-top: 0;
+        // padding-top: 0;
     }
     .blog-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 50px;
+        // display: flex;
+        // justify-content: center;
+        // align-items: flex-start;
+        // padding-top: 50px;
         .blog-entry {
-            margin: 0;
+            // margin: 0;
         }
         aside {
-            margin-right: 40px;
-            max-width: 150px;
-            text-align: right;
-            font-size: 14px;
-            line-height: 1.3;
+            // margin-right: 40px;
+            // max-width: 150px;
+            // text-align: right;
+            // font-size: 14px;
+            // line-height: 1.3;
+            @media #{$large-and-up} {
+                width: 15%;
+                display: inline-block;
+            }
             p {
                 margin: 0;
             }
