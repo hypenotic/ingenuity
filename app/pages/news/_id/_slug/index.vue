@@ -4,7 +4,7 @@
         <!-- <section class="blog-single-intro">
         </section> -->
         <div class="main-wrapper blog-wrapper">
-            <aside id="left"> 
+            <aside id="left" v-if="post.meta_box._post_authors"> 
                 <span class="bolded-text">Author(s):</span><br><span v-html="post.meta_box._post_authors" class="post-authors"></span><br>
             </aside>
             <section class="blog-entry blog-page" v-html="post.content.rendered">

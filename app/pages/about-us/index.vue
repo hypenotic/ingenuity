@@ -1,8 +1,8 @@
 <template>
     <div>
         <app-banner :page="page"></app-banner>
-        <section class="intro content-wrapper">
-            <div v-html="page.content.rendered"></div>
+        <section class="intro main-wrapper">
+            <div class="main-content standard-center" v-html="page.content.rendered"></div>
         </section>
         <div class="tabs-wrapper" id="tablist-anchor">
             <ul role="tablist" class="_tabs tablist">
