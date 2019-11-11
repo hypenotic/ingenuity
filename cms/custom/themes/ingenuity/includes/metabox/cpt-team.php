@@ -42,6 +42,11 @@ function team_register_meta_boxes( $meta_boxes ) {
                 'type'  => 'file_input',
             ),
             array(
+                'name'  => __( 'Still', 'textdomain' ),
+                'id'    => $prefix . 'still',
+                'type'  => 'file_input',
+            ),
+            array(
                 'name'  => __( 'Extra Image', 'textdomain' ),
                 'id'    => $prefix . 'extra_image',
                 'type'  => 'file_input',
