@@ -39,7 +39,7 @@
             <div class="split">
               <div class="split--content" v-html="member.content.rendered"></div>
               <div class="split--image">
-                <video v-if="!member.meta_box._team_still" class="team-vid" :id="'member-vid-'+member.id" loop muted autoplay>
+                <video v-if="member.meta_box._team_movie" class="team-vid" :id="'member-vid-'+member.id" loop muted autoplay>
                   <source :src="member.meta_box._team_movie" type="video/mp4" />
                 </video>
                 <img v-else :src="member.meta_box._team_still" class="team-vid" :id="'member-still-'+member.id">
