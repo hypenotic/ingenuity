@@ -82,7 +82,7 @@
               </div>
             </div>
           </div>
-          <div class="button__container"><a :href="'#member-'+member.id" class="close-push-panel"
+          <div class="button__container"><a :href="'./#member-'+member.id" class="close-push-panel"
               @click="openMember = null">CLOSE</a></div>
         </div>
       </div>
