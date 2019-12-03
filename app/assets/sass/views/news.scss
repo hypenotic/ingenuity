@@ -85,13 +85,15 @@
                 color: $yellow;
             }
         }
-        .top{
-            font-size: 90%;
-        }
 		p {
             text-align: center;
 			margin: 0;
-			color: $black;
+            color: $black;
+            font-weight: 600;
 		}
+        .top{
+            font-size: 80%;
+            font-weight: 300;
+        }
 	}
 }

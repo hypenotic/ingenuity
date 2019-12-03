@@ -92,6 +92,7 @@ form.footer-newsletter {
 		font-family: 'Audimat3000-Leger',sans-serif;
 		margin: 0;
 		margin-bottom: 25px;
+		color: $main-accent;
 	}
 	ul {
 		margin: 0;
@@ -104,9 +105,11 @@ form.footer-newsletter {
 		}
 		a{
 			text-decoration: underline;
-
+			color: $main-accent;
+			
 			&:hover {
-				color: $white;
+				color: white;
+				// color: $white;
 			}
 		}
 	}
@@ -296,7 +299,7 @@ form.footer-newsletter {
 	// color: rgba(255,255,255,0.2);
 	color: $yellow;
 	font-family: $lite-headings;
-	font-size: 22px;;
+	font-size: 22px;
 }
 
 .footer__cta .button, form.footer-newsletter #mc-embedded-subscribe  {
