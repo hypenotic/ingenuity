@@ -1,6 +1,6 @@
 <template>
    <div>
-      <a :href="`#content-start/`" class="skip-to-content">Skip to content</a>
+      <a :href="`#content-start`" class="skip-to-content">Skip to content</a>
       <navigation></navigation>
       <nuxt/>
       <app-footer></app-footer>

@@ -2,10 +2,10 @@
     <no-ssr>
     <footer class="main-footer">
         <div class="footer__blog footer__third">
-            <h3><nuxt-link to="/news">Recent Posts</nuxt-link></h3>
+            <h3><nuxt-link to="/news/">Recent Posts</nuxt-link></h3>
             <ul>
                 <li v-for="post in recentPosts" :key="post.id">
-                    <nuxt-link :to="'/news/' + post.id + '/' + post.slug"  v-html="post.title.rendered"></nuxt-link>
+                    <nuxt-link :to="'/news/' + post.id + '/' + post.slug + '/'"  v-html="post.title.rendered"></nuxt-link>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="footer__cta footer__third footer__third--align">
             <h4>​Great buildings begin with a conversation.</h4>
-			<nuxt-link to="/contact-us" class="button button-down">
+			<nuxt-link to="/contact-us/" class="button button-down">
             Let's talk over an espresso!</nuxt-link> 
         </div>
     </footer>

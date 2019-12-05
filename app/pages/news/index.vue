@@ -6,12 +6,12 @@
             <div class="main-wrapper"> 
                 <section class="main-content standard-center"> 
                     <div class="blog-single-post wow fadeIn" v-for="post in blogs" :key="post.id">
-                        <nuxt-link :to="'/news/' + post.id + '/' + post.slug" >
+                        <nuxt-link :to="'/news/' + post.id + '/' + post.slug + '/'" >
                             <h3 class="blog-single__title" v-html="post.title.rendered"></h3>
                             <img :src="post.meta_box._post_hero_image" :alt="post.title.rendered">
                         </nuxt-link>
                         <div v-html="post.excerpt.rendered"></div>
-                        <nuxt-link :to="'/news/' + post.id + '/' + post.slug" class="single-post__read-more">Read more...</nuxt-link>
+                        <nuxt-link :to="'/news/' + post.id + '/' + post.slug + '/'" class="single-post__read-more">Read more...</nuxt-link>
                     </div>
                 </section>
             </div>

@@ -2,7 +2,7 @@
     <div>
         <app-banner :page="page" id="content-start"></app-banner>
         <div class="projects__panel-container">
-            <nuxt-link :to="'/projects/' + project.slug" v-for="project in projects" :key="project.id" class="projects__panel-link">
+            <nuxt-link :to="'/projects/' + project.slug + '/'" v-for="project in projects" :key="project.id" class="projects__panel-link">
                 <div class="projects__panel-wrap">
                     <h2 v-html="project.title.rendered"></h2>
                     <div class="color-overlay">
