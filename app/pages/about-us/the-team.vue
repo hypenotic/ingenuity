@@ -14,25 +14,18 @@
       <div
         v-for="member in team.filter(m=>m.meta_box._team_section=='leadership').sort((a,b)=>a.menu_order - b.menu_order)"
         :key="member.id">
-        <!-- <tm-banner :tm="member" @click="dropDown(member.id)"></tm-banner>
-                <tm-section :tm="member"></tm-section> -->
-        <a :href="route + '#member-'+member.id" class="team__single team__single--leadership"
-          :class="{'team__single--open': openMember == member.id}"
-          :style="'background-image: url('+member.meta_box._team_styled_image +');'"
-          @click="toggleOpenMember(member.id)" :id="'member-'+member.id">
-          <div class="team-overlay"></div>
-          <div class="hgroup">
-            <h3 class="team__name" v-html="member.title.rendered"></h3>
-            <span class="team__creds" v-html="member.meta_box._team_creds"></span>
-            <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
-          </div>
-        </a>
-        <!-- <a v-if="openMember == member.id" :href="'#member-'+member.id" class="closebar" @click="openMember = null">
-                    <div class="hgroup">
-                        <h3 class="team__name" v-html="member.title.rendered"></h3>
-                        <span class="team__creds" v-html="member.meta_box._team_creds"></span>
-                    </div>
-                </a> -->
+        <div @click="toggleOpenMember(member.id)" :id="'member-'+member.id">
+          <nuxt-link :to="{route: route, hash: '#member-'+member.id}" class="team__single team__single--leadership"
+            :class="{'team__single--open': openMember == member.id}"
+            :style="'background-image: url('+member.meta_box._team_styled_image +');'">
+            <div class="team-overlay"></div>
+            <div class="hgroup">
+              <h3 class="team__name" v-html="member.title.rendered"></h3>
+              <span class="team__creds" v-html="member.meta_box._team_creds"></span>
+              <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
+            </div>
+          </nuxt-link>
+        </div>
         <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--leader" :id="member.id">
           <img :src="member.meta_box._team_extra_image" alt="Knolling picture" class="knolling-pic">
           <div class="push__longbio animated fadeIn">
@@ -46,8 +39,9 @@
               </div>
             </div>
           </div>
-          <div class="button__container"><a :href="'#member-'+member.id" class="close-push-panel"
-              @click="openMember = null">CLOSE</a></div>
+          <div class="button__container" @click="openMember = null">
+            <nuxt-link :to="{hash: '#member-'+member.id}" class="close-push-panel">CLOSE</nuxt-link>
+          </div>
         </div>
       </div>
     </div>
@@ -59,17 +53,18 @@
       <div
         v-for="member in team.filter(m=>m.meta_box._team_section=='foundation').sort((a,b)=>a.menu_order - b.menu_order)"
         :key="member.id">
-        <a :href="route + '#member-'+member.id" class="team__single team__single--foundation"
-          :class="{'team__single--open': openMember == member.id}"
-          :style="'background-image: url('+member.meta_box._team_styled_image +');'"
-          @click="toggleOpenMember(member.id)" :id="'member-'+member.id">
-          <div class="team-overlay"></div>
-          <div class="hgroup">
-            <h3 class="team__name" v-html="member.title.rendered"></h3>
-            <span class="team__creds" v-html="member.meta_box._team_creds"></span>
-            <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
-          </div>
-        </a>
+        <div @click="toggleOpenMember(member.id)" :id="'member-'+member.id">
+          <nuxt-link :to="{route: route, hash: '#member-'+member.id}" class="team__single team__single--foundation"
+            :class="{'team__single--open': openMember == member.id}"
+            :style="'background-image: url('+member.meta_box._team_styled_image +');'">
+            <div class="team-overlay"></div>
+            <div class="hgroup">
+              <h3 class="team__name" v-html="member.title.rendered"></h3>
+              <span class="team__creds" v-html="member.meta_box._team_creds"></span>
+              <h4 class="team__title" v-html="member.meta_box._team_job_title"></h4>
+            </div>
+          </nuxt-link>
+        </div>
         <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--foundation" :id="member.id">
           <!-- <img :src="member.meta_box._team_extra_image" alt="Knolling picture" class="knolling-pic"> -->
           <div class="push__longbio animated fadeIn">
@@ -82,8 +77,9 @@
               </div>
             </div>
           </div>
-          <div class="button__container"><a :href="'./#member-'+member.id" class="close-push-panel"
-              @click="openMember = null">CLOSE</a></div>
+          <div class="button__container" @click="openMember = null">
+            <nuxt-link :to="{hash: '#member-'+member.id}" class="close-push-panel">CLOSE</nuxt-link>
+          </div>
         </div>
       </div>
     </div>
