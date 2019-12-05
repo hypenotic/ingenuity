@@ -37,7 +37,7 @@ h4,
 h5,
 h6 {
     font-family: $heading-type;
-    color: #666;
+    color: #888;
 }
 
 h2 {
@@ -46,14 +46,16 @@ h2 {
 }
 
 a {
-    color: $main-accent;
-
+    
+    color: inherit;
+    // opacity: 0.8;
     // font-size: 0.6rem !important;
     // line-height: 0.8rem !important;
     &:hover,
     :active,
     :focus {
-        color: lighten($main-accent, 5);
+        color: $main-accent;
+        opacity: 1;
     }
 }
 

@@ -211,11 +211,11 @@ span.bolded-text {
 }
 
 .projects__panel-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	h2 {
 		position: absolute;
-		top: 30%;
-		left: 5%;
-		right: 5%;
 		text-align: center;
 		margin: 0 auto;
 		color: $white;

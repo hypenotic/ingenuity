@@ -74,6 +74,11 @@
     }
 }
 aside {
+    padding-top: 50px;
+    padding-bottom: 25px;
+    display: block;
+    border-right: none;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.9);
     @media #{$bp-small} {
         padding-top: 50px;
         padding-bottom: 25px;
