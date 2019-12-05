@@ -1,6 +1,6 @@
 <template>
     <div class="single-blog-view">
-        <app-banner :page="post"></app-banner>
+        <app-banner :page="post" id="content-start"></app-banner>
         <!-- <section class="blog-single-intro">
         </section> -->
         <div class="main-wrapper blog-wrapper">

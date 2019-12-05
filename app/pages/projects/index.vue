@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-banner :page="page"></app-banner>
+        <app-banner :page="page" id="content-start"></app-banner>
         <div class="projects__panel-container">
             <nuxt-link :to="'/projects/' + project.slug" v-for="project in projects" :key="project.id" class="projects__panel-link">
                 <div class="projects__panel-wrap">

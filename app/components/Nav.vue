@@ -7,16 +7,16 @@
             </nuxt-link>
         </div>
         <transition name="expand">
-            <app-menu v-if="menu && open"></app-menu>
+            <app-menu v-if="menu && open" id="menu"></app-menu>
         </transition>
-        <button :class="{open: open, button: true}" @click="open = !open">
+        <a :class="{open: open, button: true}" @click="open = !open" href="./#menu">
             <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
             </div>
             {{(open) ? 'Close' : 'Menu'}}
-        </button>
+        </a>
     </nav>
 </template>
 

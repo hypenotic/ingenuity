@@ -1,6 +1,6 @@
 <template>
   <div class="team-panels">
-    <app-banner :page="page"></app-banner>
+    <app-banner :page="page" id="content-start"></app-banner>
     <div class="leadership-banner">
       <h3>Meet the leadership</h3>
     </div>
@@ -34,7 +34,7 @@
                     </div>
                 </a> -->
         <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--leader" :id="member.id">
-          <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic">
+          <img :src="member.meta_box._team_extra_image" alt="Knolling picture" class="knolling-pic">
           <div class="push__longbio animated fadeIn">
             <div class="split">
               <div class="split--content" v-html="member.content.rendered"></div>
@@ -42,7 +42,7 @@
                 <video v-if="member.meta_box._team_movie" class="team-vid" :id="'member-vid-'+member.id" loop muted autoplay>
                   <source :src="member.meta_box._team_movie" type="video/mp4" />
                 </video>
-                <img v-else :src="member.meta_box._team_still" class="team-vid" :id="'member-still-'+member.id">
+                <img v-else :src="member.meta_box._team_still" :alt="`Picture of ${member.title.rendered}`" class="team-vid" :id="'member-still-'+member.id">
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@
           </div>
         </a>
         <div v-if="openMember == member.id" class="drop-down-panel drop-down-panel--foundation" :id="member.id">
-          <!-- <img :src="member.meta_box._team_extra_image" alt="" class="knolling-pic"> -->
+          <!-- <img :src="member.meta_box._team_extra_image" alt="Knolling picture" class="knolling-pic"> -->
           <div class="push__longbio animated fadeIn">
             <div class="split">
               <div class="split--content" v-html="member.content.rendered"></div>

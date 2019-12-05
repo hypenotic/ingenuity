@@ -2,7 +2,7 @@
     <div>
         <app-nav></app-nav>
         <div v-if="page != null">
-            <app-banner :page="page"></app-banner>
+            <app-banner :page="page" id="content-start"></app-banner>
             <div class="main-wrapper"> 
                 <section class="main-content standard-center"> 
                     <div class="blog-single-post wow fadeIn" v-for="post in blogs" :key="post.id">

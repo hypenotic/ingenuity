@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-banner :page="page"></app-banner>
+        <app-banner :page="page" id="content-start"></app-banner>
         <section class="intro main-wrapper">
             <div class="main-content standard-center" v-html="page.content.rendered"></div>
         </section>

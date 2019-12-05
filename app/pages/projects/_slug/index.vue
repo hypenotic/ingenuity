@@ -1,6 +1,6 @@
 <template>
     <div>  
-        <app-banner :page="project"></app-banner>
+        <app-banner :page="project" id="content-start"></app-banner>
         <div class="diagonal-wrapper diagonal-svg__wrapper">
             <svg class="diagonal-svg">
                 <line id="the-line" x1="100%" y1="110%" x2="30%" y2="-10%"/>
