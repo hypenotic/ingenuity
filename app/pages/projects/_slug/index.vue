@@ -1,6 +1,6 @@
 <template>
     <div>  
-        <app-banner :page="project"></app-banner>
+        <app-banner :page="project" id="content-start"></app-banner>
         <div class="diagonal-wrapper diagonal-svg__wrapper">
             <svg class="diagonal-svg">
                 <line id="the-line" x1="100%" y1="110%" x2="30%" y2="-10%"/>
@@ -53,12 +53,12 @@
                 </section>
 
                 <div class="project-nav">
-                    <nuxt-link :to="prev.slug" v-if="prev.slug != null">
+                    <nuxt-link :to="prev.slug + '/'" v-if="prev.slug != null">
                         <div class="project-nav__arrow project-nav__arrow--prev">
                             <p v-html="'&lt; ' + prev.title.rendered"></p>
                         </div>
                     </nuxt-link>
-                    <nuxt-link :to="next.slug" v-if="next.slug != null">
+                    <nuxt-link :to="next.slug + '/'" v-if="next.slug != null">
                         <div class="project-nav__arrow project-nav__arrow--next">
                             <p v-html="next.title.rendered+' &gt;'"></p>
                         </div>

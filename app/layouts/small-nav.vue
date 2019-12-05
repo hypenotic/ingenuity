@@ -1,6 +1,7 @@
 <template>
    <div>
-     <navigation :small="true"></navigation>
+      <a href="./#content-start" class="skip-to-content">Skip to content</a>
+      <navigation :small="true"></navigation>
       <nuxt/>
       <app-footer></app-footer>
    </div>
@@ -35,6 +36,7 @@ export default {
    @import '~/assets/sass/components/nav.scss';
    @import '~/assets/sass/components/menu.scss';
    @import '~/assets/sass/components/footer.scss';
-   
+   @import '~/assets/sass/components/skip-to-content.scss';
+
 </style>
 

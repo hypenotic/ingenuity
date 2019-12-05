@@ -59,6 +59,7 @@ export default {
         // scrollBehavior: function (to, from, savedPosition) {
         //     return { x: 0, y: 0 }
         // }
+        pathToRegexpOptions: { strict: true }
     },
     /*
     ** Customize the progress-bar color

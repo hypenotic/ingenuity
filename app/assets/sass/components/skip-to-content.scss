@@ -1,0 +1,17 @@
+
+
+.skip-to-content{
+  background: black;
+  padding: 20px;
+  color: $yellow;
+  font-family: $bold-font;
+  text-decoration: none;
+  position: fixed;
+  z-index: 10000000;
+  left:-100%;
+  top:-100%;
+  &:focus{
+     left:0;
+     top:0;
+  }
+}

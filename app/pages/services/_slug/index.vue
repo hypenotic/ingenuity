@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="service != null">
-            <app-banner :page="service"></app-banner>
+            <app-banner :page="service" id="content-start"></app-banner>
             <div class="main-wrapper">
                 <div class="main-content standard-center">
                     <div v-if="service.content.rendered" v-html="service.content.rendered"></div>

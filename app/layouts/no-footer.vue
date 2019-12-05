@@ -1,6 +1,7 @@
 <template>
    <div>
-     <navigation></navigation>
+      <a href="./#content-start" class="skip-to-content">Skip to content</a>
+      <navigation></navigation>
       <nuxt/>
    </div>
 </template>
@@ -34,6 +35,7 @@ export default {
    @import '~/assets/sass/components/nav.scss';
    @import '~/assets/sass/components/menu.scss';
    @import '~/assets/sass/components/footer.scss';
+   @import '~/assets/sass/components/skip-to-content.scss';
    
 </style>
 

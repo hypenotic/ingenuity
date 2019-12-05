@@ -1,6 +1,6 @@
 <template>
   <div class="drop-down-panel" :id="tm.id">
-    <img :src="tm.meta_box._team_extra_image" alt="" class="knolling-pic" v-if="tm.meta_box._team_section == 'leadership'">
+    <img :src="tm.meta_box._team_extra_image" alt="Knolling picture" class="knolling-pic" v-if="tm.meta_box._team_section == 'leadership'">
     <div class="push__longbio animated fadeIn">
       <div class="split">
         <div class="split--content" v-html="tm.content.rendered"></div>

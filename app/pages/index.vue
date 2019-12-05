@@ -7,9 +7,9 @@
                 <source media="(max-width: 450px)" src="~/assets/videos/ingenuity_fast.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="hgroup rw-wrapper">
+        <div class="hgroup rw-wrapper" id="content-start">
             <h2 class="rw-sentence">
-                A <nuxt-link to="services/design-build" class="sentence-link">Design Build</nuxt-link> &amp; <nuxt-link to="services/general-contracting/" class="sentence-link">General Contracting</nuxt-link>&nbsp;<nuxt-link to="about-us/the-team" class="sentence-link">team</nuxt-link> that <nuxt-link to="about-us/" class="sentence-link">believes</nuxt-link> in <nuxt-link to="projects/" class="rotator-link"><span class="replace-me"> happiness, <span style="display: none">craft, productivity, detail, creativity</span></span></nuxt-link><span class="sq-ft">&nbsp;/sq&nbsp;ft.</span>
+                A <nuxt-link to="services/design-build/" class="sentence-link">Design Build</nuxt-link> &amp; <nuxt-link to="services/general-contracting/" class="sentence-link">General Contracting</nuxt-link>&nbsp;<nuxt-link to="about-us/the-team/" class="sentence-link">team</nuxt-link> that <nuxt-link to="about-us/" class="sentence-link">believes</nuxt-link> in <nuxt-link to="projects/" class="rotator-link"><span class="replace-me"> happiness, <span style="display: none">craft, productivity, detail, creativity</span></span></nuxt-link><span class="sq-ft">&nbsp;/sq&nbsp;ft.</span>
             </h2>.
         </div>
     </div>
