@@ -68,6 +68,10 @@
 
     a,span {
         color: $yellow;
+        &:focus{
+            color: $yellow;
+            background: rgba(0,0,0,0.6);;
+        }
     }
 }
 

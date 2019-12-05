@@ -7,7 +7,7 @@
         <div class="tabs-wrapper" id="tablist-anchor">
             <ul role="tablist" class="_tabs tablist">
                 <li :role="tab.title.rendered" v-for="(tab, i) in tabs" @click="currentTab = i" :key="'about-tab-'+i" @keyup.enter="currentTab = i" :class="{ active: checkActive(i)}" tab-index="0">
-                    <a :id="tab.slug+'-tab'" href="about-us/#tablist-anchor" role="tab" :aria-controls="tab.slug" aria-selected="true" v-html="tab.title.rendered"></a>
+                    <a :id="tab.slug+'-tab'" href="#tablist-anchor" role="tab" :aria-controls="tab.slug" aria-selected="true" v-html="tab.title.rendered"></a>
                 </li>
             </ul>
             <transition name="fade">
