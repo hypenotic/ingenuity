@@ -83,7 +83,7 @@ blockquote {
 }
 
 .main-wrapper {
-
+    overflow: hidden;
     // overflow-x: hidden;
     // @include outer-container;
     @media #{$small-and-down} {

@@ -55,7 +55,7 @@ export default {
     ** Used to go to top of page for pagaination
     */
     router: {
-        base: process.env.BASE_ROUTER,
+        // base: process.env.BASE_ROUTER,
         // scrollBehavior: function (to, from, savedPosition) {
         //     return { x: 0, y: 0 }
         // }
