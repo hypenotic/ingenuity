@@ -1,6 +1,6 @@
 <template>
    <div>
-      <a :href="`#content-start`" class="skip-to-content">Skip to content</a>
+      <nuxt-link :to="{hash: '#content-start'}" class="skip-to-content">Skip to content</nuxt-link>
       <navigation></navigation>
       <nuxt/>
       <app-footer></app-footer>
