@@ -8,7 +8,7 @@
                     <div v-html="contact.content.rendered"></div>
                 </div>
                 <div class="contact__single__image">
-                    <img :src="contact.image">
+                    <img :src="contact.meta_box._contact_image">
                 </div>
                 <div class="contact__single__buttons">
                     <a :href="'tel:'+contact.meta_box._contact_phone">
