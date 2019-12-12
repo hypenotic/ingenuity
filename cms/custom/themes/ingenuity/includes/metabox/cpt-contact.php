@@ -11,6 +11,11 @@ function contact_register_meta_boxes( $meta_boxes ) {
         'priority'   => '',
         'fields' => array(
             array(
+                'name'  => __( 'Image', 'textdomain' ),
+                'id'    => $prefix . 'image',
+                'type'  => 'file_upload',
+            ),
+            array(
                 'name'  => __( 'Email', 'textdomain' ),
                 'id'    => $prefix . 'email',
                 'type'  => 'text',
