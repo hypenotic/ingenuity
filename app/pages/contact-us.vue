@@ -7,6 +7,9 @@
                     <h4 v-html="contact.title.rendered"></h4>
                     <div v-html="contact.content.rendered"></div>
                 </div>
+                <div class="contact__single__image">
+                    <img :src="contact.image">
+                </div>
                 <div class="contact__single__buttons">
                     <a :href="'tel:'+contact.meta_box._contact_phone">
                         <button v-html="contact.meta_box._contact_phone_btn"></button>

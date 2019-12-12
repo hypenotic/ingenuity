@@ -31,14 +31,16 @@
                 </div>
             </transition>
         </div>
-        <a :class="{open: open, button: true}" @click="open = !open" href="#menu">
-            <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </div>
-            {{(open) ? 'Close' : 'Menu'}}
-        </a>
+        <div @click="open = !open">
+            <nuxt-link :class="{open: open, button: true}" :to="{hash:'#menu'}">
+                <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </div>
+                {{(open) ? 'Close' : 'Menu'}}
+            </nuxt-link>
+        </div>
     </nav>
 </template>
 
