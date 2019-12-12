@@ -13,7 +13,7 @@ function contact_register_meta_boxes( $meta_boxes ) {
             array(
                 'name'  => __( 'Image', 'textdomain' ),
                 'id'    => $prefix . 'image',
-                'type'  => 'file_upload',
+                'type'  => 'file_input',
             ),
             array(
                 'name'  => __( 'Email', 'textdomain' ),
