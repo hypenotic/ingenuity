@@ -36,6 +36,7 @@
             await store.dispatch('apiContacts')
             await store.dispatch('apiBlogs')
         },
+        layout: 'small-nav',
         head () {
             return {
                 title: "Contact Us",
