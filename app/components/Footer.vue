@@ -1,5 +1,5 @@
 <template>
-    <no-ssr>
+    <client-only>
     <footer class="main-footer">
         <div class="footer__blog footer__third">
             <h3><nuxt-link to="/news/">Recent Posts</nuxt-link></h3>
@@ -34,7 +34,7 @@
             Let's talk over an espresso!</nuxt-link> 
         </div>
     </footer>
-    </no-ssr>
+    </client-only>
 </template>
 
 <script>
