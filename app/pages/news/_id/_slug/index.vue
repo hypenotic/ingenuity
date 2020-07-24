@@ -40,6 +40,7 @@
             await store.dispatch('apiBlogs')
             await store.dispatch('apiMenu')
         },
+        layout: 'withfooter',
         head () {
             return {
                 title: helper.decodeHtmlEntity(this.post.title.rendered),

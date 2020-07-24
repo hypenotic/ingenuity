@@ -55,6 +55,7 @@
             await store.dispatch('apiServices')
             await store.dispatch('apiBlogs')
         },
+        layout: 'withfooter',
         head () {
             return {
                 title: helper.decodeHtmlEntity(this.service.title.rendered),

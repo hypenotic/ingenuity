@@ -29,6 +29,7 @@
             await store.dispatch('apiMenu')
             await store.dispatch('apiBlogs')
         },
+        layout: 'withfooter',
         head () {
             return {
                 title: "Projects",
@@ -66,7 +67,7 @@
     };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import '~/assets/sass/variables.scss';
     @import '~/assets/sass/typography.scss';
     @import '~/assets/sass/global.scss';

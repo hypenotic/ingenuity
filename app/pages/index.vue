@@ -24,7 +24,6 @@
         async fetch ({store}) {
             await store.dispatch('apiMenu')
         },
-        layout: 'no-footer',
         components: {
             appNav: Nav,
         },
@@ -57,7 +56,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import '~/assets/sass/variables.scss';
     @import '~/assets/sass/views/home.scss';
 </style>
