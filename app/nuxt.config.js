@@ -90,55 +90,6 @@ export default {
         ],
     },
     /*
-     ** Used to go to top of page for pagaination
-     */
-    router: {
-        // base: process.env.BASE_ROUTER,
-        // scrollBehavior: function (to, from, savedPosition) {
-        //     return { x: 0, y: 0 }
-        // }
-        scrollBehavior: async function (to, from, savedPosition) {
-            if (savedPosition) {
-                return savedPosition;
-            }
-
-            const findEl = async (hash, x = 0) => {
-                return (
-                    document.querySelector(hash) ||
-                    new Promise(resolve => {
-                        if (x > 50) {
-                            return resolve(document.querySelector("#app"));
-                        }
-                        setTimeout(() => {
-                            resolve(findEl(hash, ++x || 1));
-                        }, 100);
-                    })
-                );
-            };
-
-            if (to.hash) {
-                let el = await findEl(to.hash);
-                el.focus();
-                if ("scrollBehavior" in document.documentElement.style) {
-                    return window.scrollTo({
-                        top: el.offsetTop,
-                        behavior: "smooth"
-                    });
-                } else {
-                    return window.scrollTo(0, el.offsetTop);
-                }
-            }
-
-            return {
-                x: 0,
-                y: 0
-            };
-        },
-        pathToRegexpOptions: {
-            strict: true
-        }
-    },
-    /*
      ** Customize the progress-bar color
      */
     // loading: { color: '#ec515e', height: '3px' },
@@ -150,43 +101,29 @@ export default {
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: [{
-            src: '~/plugins/vue-smooth'
-        },
-        {
-            src: "~/plugins/aos.js",
-            ssr: false
-        },
-        {
-            src: "~/plugins/replaceme.js",
-            ssr: false
-        }
+    plugins: [
+        {src: "~/plugins/aos.js", ssr: false},
+        {src: "~/plugins/replaceme.js", ssr: false}
+    ],
+    /*
+     ** Nuxt.js dev-modules
+     */
+    buildModules: [
+        '@nuxtjs/dotenv',
     ],
     /*
      ** Nuxt.js modules
      */
     modules: [
         '@nuxtjs/axios',
-        '@nuxtjs/dotenv',
-        ['@nuxtjs/google-analytics', {
-            ua: 'UA-72042036-1'
-        }]
+        ['@nuxtjs/google-analytics', {ua: 'UA-72042036-1'}]
         // ['@nuxtjs/google-tag-manager', { id: 'GTM-PTWZM2' }]
     ],
-    /*
-     ** Server configuration
-     */
+    router: process.env.BASE ? {base: process.env.BASE} : {},
     server: {
-        port: 9000, // default: 3000
+        port: process.env.NUXT_PORT, // default: 3000
     },
-    /*
-     ** Build configuration
-     */
     build: {
-        /*
-         ** You can extend webpack config here
-         */
-
         extend(config, ctx) {}
     }
 }
