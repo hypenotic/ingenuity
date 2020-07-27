@@ -49,5 +49,8 @@
 
 <style lang="scss" scoped>
 
+.default-hero{
+    color: white;
+}
 
 </style>

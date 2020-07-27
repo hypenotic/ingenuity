@@ -33,6 +33,7 @@
             await store.dispatch('apiBlogs')
             await store.dispatch('apiMenu')
         },
+        layout: 'withfooter',
         head () {
             // console.log(this.page.meta_box._page_hero_image);
             return {

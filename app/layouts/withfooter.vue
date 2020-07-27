@@ -3,6 +3,7 @@
       <nuxt-link :to="{hash: '#content-start'}" class="skip-to-content">Skip to content</nuxt-link>
       <navigation></navigation>
       <nuxt/>
+      <app-footer></app-footer>
    </div>
 </template>
 
@@ -36,6 +37,6 @@ export default {
    @import '~/assets/sass/components/menu.scss';
    @import '~/assets/sass/components/footer.scss';
    @import '~/assets/sass/components/skip-to-content.scss';
-   
+
 </style>
 

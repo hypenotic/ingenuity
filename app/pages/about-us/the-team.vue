@@ -106,6 +106,7 @@
       await store.dispatch('apiMenu')
       await store.dispatch('apiBlogs')
     },
+    layout: 'withfooter',
     head() {
       return {
         title: "The Team",

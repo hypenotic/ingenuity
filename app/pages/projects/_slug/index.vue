@@ -84,6 +84,7 @@
             await store.dispatch('apiMenu')    
             await store.dispatch('apiBlogs')
         },
+        layout: 'withfooter',
         head () {
             return {
                 title: helper.decodeHtmlEntity(this.project.title.rendered),
@@ -139,6 +140,9 @@
     };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @import '~/assets/sass/variables.scss';
+    @import '~/assets/sass/typography.scss';
+    @import '~/assets/sass/global.scss';
     @import '~/assets/sass/views/projects.scss';
 </style>
