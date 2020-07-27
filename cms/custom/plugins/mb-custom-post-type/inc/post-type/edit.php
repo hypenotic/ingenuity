@@ -173,6 +173,12 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 			),
 		);
 
+		$menu_icon_options = array();
+		$icons = mb_cpt_get_dashicons();
+		foreach ( $icons as $icon ) {
+			$menu_icon_options[ $icon ] = $icon;
+		}
+
 		$advanced_fields = array(
 			array(
 				'name'        => __( 'Description', 'mb-custom-post-type' ),
@@ -255,7 +261,7 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 				'name'    => __( 'Menu icon', 'mb-custom-post-type' ),
 				'id'      => $args_prefix . 'menu_icon',
 				'type'    => 'radio',
-				'options' => mb_cpt_get_dashicons(),
+				'options' => $menu_icon_options,
 			),
 			array(
 				'name'    => __( 'Capability type', 'mb-custom-post-type' ),
@@ -281,7 +287,13 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 				'id'   => $args_prefix . 'has_archive',
 				'type' => 'checkbox',
 				'std'  => 1,
-				'desc' => __( 'Enables post type archives. Will use the post type slug as the archive slug by default.', 'mb-custom-post-type' ),
+				'desc' => __( 'Enables post type archives.', 'mb-custom-post-type' ),
+			),
+			array(
+				'name' => __( 'Custom archive slug', 'mb-custom-post-type' ),
+				'id'   => $args_prefix . 'archive_slug',
+				'type' => 'text',
+				'desc' => __( 'Default is the post type slug.', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'Query var', 'mb-custom-post-type' ),
@@ -314,6 +326,8 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 				'desc' => __( 'Do not prepend the permalink structure with the front base.', 'mb-custom-post-type' ),
 			),
 		);
+
+		$advanced_fields = apply_filters( 'mbcpt_advanced_fields', $advanced_fields, $label_prefix, $args_prefix );
 
 		$code_fields = array(
 			array(
@@ -370,10 +384,12 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 			),
 		);
 
-		$buttons = '<button type="button" class="button" id="mb-cpt-toggle-labels">' . esc_html__( 'Toggle Labels Settings', 'mb-custom-post-type' ) . '</button> <button type="button" class="button" id="mb-cpt-toggle-code">' . esc_html__( 'Get PHP Code', 'mb-custom-post-type' ) . '</button>';
+		$buttons = '<button type="button" class="button" id="mb-cpt-toggle-settings">' . esc_html__( 'Advanced Settings', 'mb-custom-post-type' ) . '</button>';
+		$buttons .= ' <button type="button" class="button" id="mb-cpt-toggle-labels">' . esc_html__( 'Labels Settings', 'mb-custom-post-type' ) . '</button>';
+		$buttons .= ' <button type="button" class="button" id="mb-cpt-toggle-code">' . esc_html__( 'Get PHP Code', 'mb-custom-post-type' ) . '</button>';
 
 		if ( function_exists( 'mb_builder_load' ) ) {
-			$buttons .= ' <a class="button button-primary" href="' . esc_url( admin_url( 'edit.php?post_type=meta-box' ) ) . '" target="_blank">' . esc_html__( 'Add Custom Fields', 'mb-custom-post-type' ) . '</a>';
+			$buttons .= ' <a class="button" href="' . esc_url( admin_url( 'edit.php?post_type=meta-box' ) ) . '" target="_blank">' . esc_html__( 'Add Custom Fields', 'mb-custom-post-type' ) . '</a>';
 		}
 
 		$meta_boxes[] = array(
@@ -528,8 +544,7 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 			$icons = mb_cpt_get_dashicons();
 			foreach ( $icons as $icon ) {
 				$html .= sprintf(
-					'
-					<label class="icon-single%s">
+					'<label class="icon-single%s">
 						<i class="wp-menu-image dashicons-before %s"></i>
 						<input type="radio" name="args_menu_icon" value="%s" class="hidden"%s>
 					</label>',

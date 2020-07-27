@@ -68,6 +68,9 @@ class RWMB_Media_Field extends RWMB_File_Field {
 		 */
 		$ids = (array) $meta;
 		if ( $field['clone'] ) {
+			foreach ( $ids as &$value ) {
+				$value = (array) $value;
+			}
 			$ids = call_user_func_array( 'array_merge', $ids );
 		}
 		update_meta_cache( 'post', $ids );
@@ -113,6 +116,7 @@ class RWMB_Media_Field extends RWMB_File_Field {
 				'force_delete'     => false,
 				'max_status'       => true,
 				'js_options'       => array(),
+				'add_to'           => 'end',
 			)
 		);
 
@@ -123,6 +127,7 @@ class RWMB_Media_Field extends RWMB_File_Field {
 				'maxFiles'    => $field['max_file_uploads'],
 				'forceDelete' => $field['force_delete'] ? true : false,
 				'maxStatus'   => $field['max_status'],
+				'addTo'       => $field['add_to'],
 			)
 		);
 
@@ -142,14 +147,26 @@ class RWMB_Media_Field extends RWMB_File_Field {
 	public static function get_attributes( $field, $value = null ) {
 		$value = (array) $value;
 
-		$attributes          = parent::get_attributes( $field, $value );
-		$attributes['type']  = 'hidden';
-		$attributes['name']  = $field['clone'] ? str_replace( '[]', '', $attributes['name'] ) : $attributes['name'];
-		$attributes['id']    = false;
-		$attributes['value'] = implode( ',', $value );
+		$attributes           = parent::get_attributes( $field, $value );
+		$attributes['type']   = 'hidden';
+		$attributes['name']   = $field['clone'] ? str_replace( '[]', '', $attributes['name'] ) : $attributes['name'];
+		$attributes['id']     = false;
+		$attributes['value']  = implode( ',', $value );
+		$attributes['class'] .= ' rwmb-media';
 
 		// Add attachment details.
-		$attachments = array_values( array_filter( array_map( 'wp_prepare_attachment_for_js', $value ) ) );
+		$attachments = array();
+		foreach ( $value as $media ) {
+			$media = wp_prepare_attachment_for_js( $media );
+			// Some themes/plugins add HTML, shortcodes to "compat" attrbute which break JSON validity.
+			if ( isset( $media['compat'] ) ) {
+				unset( $media['compat'] );
+			}
+			if ( ! empty( $media ) ) {
+				$attachments[] = $media;
+			}
+		}
+		$attachments                    = array_values( $attachments );
 		$attributes['data-attachments'] = json_encode( $attachments );
 
 		return $attributes;
