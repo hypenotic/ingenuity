@@ -10,11 +10,27 @@
  */
 class RWMB_About {
 	/**
+	 * The updater checker object.
+	 *
+	 * @var object
+	 */
+	private $update_checker;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param object $update_checker The updater checker object.
+	 */
+	public function __construct( $update_checker ) {
+		$this->update_checker = $update_checker;
+	}
+
+	/**
 	 * Init hooks.
 	 */
 	public function init() {
 		// Add links to about page in the plugin action links.
-		add_filter( 'plugin_action_links_meta-box/meta-box.php', array( $this, 'plugin_links' ) );
+		add_filter( 'plugin_action_links_meta-box/meta-box.php', array( $this, 'plugin_links' ), 20 );
 
 		// Add a shared top-level admin menu and Dashboard page. Use priority 5 to show Dashboard at the top.
 		add_action( 'admin_menu', array( $this, 'add_menu' ), 5 );
@@ -36,6 +52,9 @@ class RWMB_About {
 	 */
 	public function plugin_links( $links ) {
 		$links[] = '<a href="' . esc_url( $this->get_menu_link() ) . '">' . esc_html__( 'About', 'meta-box' ) . '</a>';
+		if ( ! $this->update_checker->has_extensions() ) {
+			$links[] = '<a href="https://metabox.io/pricing/" style="color: #39b54a; font-weight: bold">' . esc_html__( 'Go Pro', 'meta-box' ) . '</a>';
+		}
 		return $links;
 	}
 
@@ -98,20 +117,20 @@ class RWMB_About {
 					<div id="post-body-content">
 						<div class="about-wrap">
 							<?php
-							include dirname( __FILE__ ) . '/sections/welcome.php';
-							include dirname( __FILE__ ) . '/sections/tabs.php';
-							include dirname( __FILE__ ) . '/sections/getting-started.php';
-							include dirname( __FILE__ ) . '/sections/extensions.php';
-							include dirname( __FILE__ ) . '/sections/support.php';
+							include __DIR__ . '/sections/welcome.php';
+							include __DIR__ . '/sections/tabs.php';
+							include __DIR__ . '/sections/getting-started.php';
+							include __DIR__ . '/sections/extensions.php';
+							include __DIR__ . '/sections/support.php';
 							do_action( 'rwmb_about_tabs_content' );
 							?>
 						</div>
 					</div>
 					<div id="postbox-container-1" class="postbox-container">
 						<?php
-						include dirname( __FILE__ ) . '/sections/newsletter.php';
-						if ( ! $this->is_premium_user() ) {
-							include dirname( __FILE__ ) . '/sections/upgrade.php';
+						include __DIR__ . '/sections/products.php';
+						if ( ! $this->update_checker->has_extensions() ) {
+							include __DIR__ . '/sections/upgrade.php';
 						}
 						?>
 					</div>
@@ -133,16 +152,8 @@ class RWMB_About {
 	 * Change WordPress footer text on about page.
 	 */
 	public function change_footer_text() {
-		$allowed_html = array(
-			'a'      => array(
-				'href'   => array(),
-				'target' => array(),
-			),
-			'strong' => array(),
-		);
-
 		// Translators: %1$s - link to review form.
-		echo wp_kses( sprintf( __( 'Please rate <strong>Meta Box</strong> <a href="%1$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%1$s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the Meta Box team!', 'meta-box' ), 'https://wordpress.org/support/view/plugin-reviews/meta-box?filter=5#new-post' ), $allowed_html );
+		echo wp_kses_post( sprintf( __( 'Please rate <strong>Meta Box</strong> <a href="%1$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%1$s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the Meta Box team!', 'meta-box' ), 'https://wordpress.org/support/view/plugin-reviews/meta-box?filter=5#new-post' ) );
 	}
 
 	/**
@@ -152,11 +163,16 @@ class RWMB_About {
 	 * @param bool   $network_wide Whether to enable the plugin for all sites in the network
 	 *                             or just the current site. Multisite only. Default is false.
 	 */
-	public function redirect( $plugin, $network_wide ) {
-		if ( 'cli' !== php_sapi_name() && ! $network_wide && 'meta-box/meta-box.php' === $plugin && ! $this->is_bundled() ) {
-			wp_safe_redirect( $this->get_menu_link() );
-			die;
+	public function redirect( $plugin, $network_wide = false ) {
+		$is_cli           = 'cli' === php_sapi_name();
+		$is_plugin        = 'meta-box/meta-box.php' === $plugin;
+		$is_bulk_activate = 'activate-selected' === rwmb_request()->post( 'action' ) && count( rwmb_request()->post( 'checked' ) ) > 1;
+
+		if ( ! $is_plugin || $network_wide || $is_cli || $is_bulk_activate || $this->is_bundled() ) {
+			return;
 		}
+		wp_safe_redirect( $this->get_menu_link() );
+		die;
 	}
 
 	/**
@@ -189,6 +205,8 @@ class RWMB_About {
 
 	/**
 	 * Check if Meta Box is bundled by TGM Activation Class.
+	 *
+	 * @return bool
 	 */
 	protected function is_bundled() {
 		// @codingStandardsIgnoreLine
@@ -198,21 +216,5 @@ class RWMB_About {
 			}
 		}
 		return false;
-	}
-
-	/**
-	 * Check if current user is a premium user.
-	 *
-	 * @return bool
-	 */
-	protected function is_premium_user() {
-		$option = is_multisite() ? get_site_option( 'meta_box_updater' ) : get_option( 'meta_box_updater' );
-		if ( empty( $option['api_key'] ) ) {
-			return false;
-		}
-		if ( isset( $option['status'] ) && 'success' !== $option['status'] ) {
-			return false;
-		}
-		return true;
 	}
 }
