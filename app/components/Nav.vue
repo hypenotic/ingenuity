@@ -6,16 +6,16 @@
                 <span v-if="scrolled || small" class="logo-text">Ingenuity</span>
             </nuxt-link>
         </div>
-        <div @click="open = !open" class="button">
-            <nuxt-link :class="{open: open, button: true}" :to="{hash:'#menu'}">
+        <button @click="open = !open" class="button">
+            <div :class="{open: open, button: true}">
                 <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
                 </div>
                 {{(open) ? 'Close' : 'Menu'}}
-            </nuxt-link>
-        </div>
+            </div>
+        </button>
         <div id="menu">
             <transition name="expand">
                 <div v-if="menu && open" class="menu-overlay">
