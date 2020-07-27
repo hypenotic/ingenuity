@@ -1,5 +1,8 @@
 {
     "name": "ingenuity",
+    "version": "2.0.0",
+    "description": "Ingenuity Nuxt App",
+    "author": "hubret",
     "scripts": {
         "dev": "nuxt",
         "build": "nuxt build",
