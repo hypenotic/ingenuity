@@ -2,12 +2,9 @@
     <div class="home-hero" id="header-check">
         <div class="video-overlay">
         </div>
-        <div class="video">
-            <!-- <video playsinline autoplay muted loop id="bgvid">
-                <source src="/assets/videos/ingenuity_fast.mp4" type="video/mp4">
-            </video> -->
-            <iframe name="iframe1" id="iframe1" src="https://player.vimeo.com/video/442032431?autoplay=1&loop=1&autopause=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
+        <video playsinline autoplay muted loop poster="https://ingenuity.ca/cms/custom/uploads/2018/02/poster.jpg" id="bgvid">
+            <source src="~/assets/videos/ingenuity_fast.mp4" type="video/mp4">
+        </video>
         <div class="hgroup rw-wrapper" id="content-start">
             <h2 class="rw-sentence">
                 A <nuxt-link to="services/design-build/" class="sentence-link">Design Build</nuxt-link> &amp; <nuxt-link to="services/general-contracting/" class="sentence-link">General Contracting</nuxt-link>&nbsp;<nuxt-link to="about-us/the-team/" class="sentence-link">team</nuxt-link> that <nuxt-link to="about-us/" class="sentence-link">believes</nuxt-link> in <nuxt-link to="projects/" class="rotator-link"><span class="replace-me"> happiness, <span style="display: none">craft, productivity, detail, creativity</span></span></nuxt-link><span class="sq-ft">&nbsp;/sq&nbsp;ft.</span>
@@ -61,8 +58,4 @@
     @import '~/assets/sass/variables.scss';
     @import '~/assets/sass/views/home.scss';
 
-    .video iframe{
-        width: 101%;
-        height: 101%;
-    }
 </style>
