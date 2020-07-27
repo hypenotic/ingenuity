@@ -5,7 +5,7 @@
       <div class="video-overlay">
       </div>
       <div class="video">
-          <video playsinline autoplay muted loop poster="https://ingenuity.ca/cms/custom/uploads/2018/02/poster.jpg" id="bgvid">
+          <video playsinline autoplay muted loop poster="https://ingenuity.ca/cms/custom/uploads/2018/02/poster.jpg" id="bgvid" type='video/mp4'>
               <source src="~/assets/videos/ingenuity_fast.mp4" type="video/mp4">
           </video>
       </div>
