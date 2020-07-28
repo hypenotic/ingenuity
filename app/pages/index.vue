@@ -25,6 +25,7 @@
         components: {
             appNav: Nav,
         },
+        layout: "home",
         head () {
             return {
                 title: "Ingenuity",

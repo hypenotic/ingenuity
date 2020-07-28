@@ -230,7 +230,7 @@ h2.rw-sentence{
 	    font-size: 110px; //32px
 		line-height: 1.25;
 	}
-	@media (orientation: landscape) {
+	@media (max-width: 810px) and (orientation: landscape){
 		margin: 0 10%;
 		font-size: 36px;
 		line-height: 1.25;
@@ -239,7 +239,7 @@ h2.rw-sentence{
 		margin: 0 0 0 5px;
  
  
-		font-size: 40px;
+		font-size: 45px;
 		line-height: 1.25;
 	}
 	@media screen and (min-width: 1900px) {
