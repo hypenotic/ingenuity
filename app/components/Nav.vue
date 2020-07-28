@@ -17,7 +17,6 @@
             </div>
         </button>
         <div id="menu">
-            <transition name="expand">
                 <div v-if="menu && open" class="menu-overlay">
                     <ul>
                         <li v-for="page in menu.items" :key="page.id"  class="menu-item-has-children">
@@ -39,7 +38,6 @@
                         </li>
                     </ul>
                 </div>
-            </transition>
         </div>
     </nav>
 </template>
@@ -126,7 +124,7 @@
 
     .button{
         user-select: none;
-        z-index: 100;
+        z-index: 10000;
     }
 
     .hamburger{
