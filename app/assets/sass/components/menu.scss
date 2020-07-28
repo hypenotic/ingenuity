@@ -58,6 +58,10 @@
             font-family: $main-headings;
             font-size: 20px;
             line-height: 20px;
+            @media (max-width: 380px){
+                font-size: 16px;
+                line-height: 16px;
+            }
             text-transform:uppercase;
             letter-spacing: 3px;
             padding: 8px 0;
