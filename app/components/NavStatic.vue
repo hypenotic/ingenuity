@@ -71,7 +71,7 @@
 
     .button{
         user-select: none;
-        z-index: 100;
+        z-index: 10000;
     }
 
     .hamburger{
