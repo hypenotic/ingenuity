@@ -6,7 +6,7 @@
                 <span v-if="scrolled || small" class="logo-text">Ingenuity</span>
             </nuxt-link>
         </div>
-        <button @click="open = !open" class="button">
+        <button @click.prevent="open = !open" class="button">
             <div :class="{open: open, button: true}">
                 <div class="hamburger hamburger--emphatic" :class="{'is-active': open}">
                     <span class="hamburger-box">
