@@ -4,7 +4,7 @@
     "description": "Ingenuity Nuxt App",
     "author": "hubret",
     "scripts": {
-        "dev": "nuxt --hostname 0.0.0.0",
+        "dev": "nuxt",
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate"
